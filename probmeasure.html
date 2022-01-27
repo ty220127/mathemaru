@@ -24,14 +24,15 @@
   MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
   MathJax.Hub.Config({ TeX: { Macros: { bs: '\\boldsymbol', cpl: '\\mathrm{c}'}
   }
-});</script>
+});
+</script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>
 <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
 </head>
-<body class="ss">
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #ffff99; background-color: #ffff99;">
+<body>
+<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #ffff99; background-color: #ffff99;" class="ss">
 <b>定義：確率測度，確率空間</b><br>
 $(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される関数 $ P:\mathcal{F}\rightarrow\mathbb{R}$ を確率測度と呼ぶ：<br>
 <ol>
@@ -46,10 +47,10 @@ $A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\b
 </div>
 <br><br>
 
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;">
+<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;" class="ss">
 任意の確率空間の確率測度 $P$ に対して，<center>$ P(\emptyset) = 0$.</cetner>
 </div>
-<Details>
+<Details class="ss">
 <summary>証明</summary>
 $\emptyset = \displaystyle\bigcup_{i}\emptyset$ かつ $\emptyset\cap\emptyset = \emptyset$ であるから，$ P$ が確率測度であるための条件 iii より
 <center>
@@ -59,12 +60,12 @@ $ P(\emptyset) =  P\left(\displaystyle\bigcup_{i}\emptyset\right) = \displaystyl
 </Details>
 <br><br>
 
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;" id="prop1">
+<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;" id="prop1" class="ss">
 確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の有限個の可測集合 $A_i\,(i=1,\,2,\,\cdots,\,n)$ に対して，
 <center>
 $A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{i=1}^{n} P(A_i).$
 </center> </div>
-<Details>
+<Details class="ss">
 <summary>証明</summary>
 $A_i\,(i=n+1,\,\cdots)$ に対して $A_i=\emptyset$ を定義すれば $\displaystyle\bigcup_{i=1}^{n}A_i = \displaystyle\bigcup_{i\in\mathbb{N}}A_i$ かつ任意の $i\neq j$ に対して $A_i\cap A_j=\emptyset$ であるから，$ P$ が確率測度であるための条件 iii より
 <center>
@@ -78,11 +79,10 @@ $ P\left(\displaystyle\bigcup_{i=1}^{n}A_i\right) = \sum_{i} P(A_i) = \sum_{i=1}
 </Details>
 <br><br>
 
-<a href="https://sites.google.com/view/problemath/ホーム/確率測度#example">ここをクリック！</a>
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;">
+<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;" class="ss">
 確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の集合 $A\in\mathcal{F}$ に対して $ P(A^{\mathrm{c}}) = 1- P(A)$.
 </div>
-<Details>
+<Details class="ss">
 <summary>証明</summary>
 任意の $\varOmega$ の部分集合 $A$ について，$A\cup A^\cpl = \varOmega$ かつ $A\cap A^\cpl = \emptyset$ であるから，<a href="#prop1">命題#1</a>より，
 <center>
@@ -92,7 +92,7 @@ $P(A) + P(A^\cpl) = P(\varOmega) = 1\,\,\Longleftrightarrow\,\, P(A^\cpl) = 1-P(
 <br><br>
 
 <div id="example"></div>
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2ffb2; background-color: #b2ffb2;">
+<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2ffb2; background-color: #b2ffb2;" class="ss">
 以下の正六面体サイコロのモデルを考える（$p$ は実数定数）：<br>
 <center>
 $\varOmega = \{1,\,2,\,3,\,4,\,5,\,6\};\,\,^\forall \omega\in\varOmega,\, P(\{\omega\}) = p$.
@@ -103,7 +103,7 @@ $\varOmega = \{1,\,2,\,3,\,4,\,5,\,6\};\,\,^\forall \omega\in\varOmega,\, P(\{\o
 <li>偶数の目が出る確率を求めよ．</li>
 </ol>
 </div>
-<Details>
+<Details class="ss">
 <summary>解答</summary>
 確率測度に対応する可測空間の集合 $\varOmega$ に対して $\varOmega = \varOmega \cap \emptyset$ かつ $\varOmega \cup \emptyset = \emptyset$ であるから，確率測度の仮定 i および ii を用いて<br>
 <center>
@@ -112,7 +112,7 @@ $ P(\varOmega) =  P(\varOmega) +  P(\emptyset)\,\,\Longleftrightarrow\,\, 1=1+ P
 </Details>
 <br><br>
 
-<font size="2.5">
+<font size="2.5" class="ss">
 <b>参考文献</b><br>
 <ul>
 <li> 熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
