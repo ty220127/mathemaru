@@ -43,22 +43,22 @@
     <br><br>
     
     <div class="prp">
-      <b>命題：Archimedes の公理</b><br>
+      <b>命題：Archimedes の公理とその同値条件</b><br>
       次は同値：
       <ol>
+        <li> 任意の正の実数 $a,\,b$ に対して自然数 $N$ が存在して，$aN\gt b$ が成り立つ（Archimedes の公理）．</li>
         <li> $\displaystyle\lim_{n\rightarrow\infty}n=\infty$</li>
-        <li> 任意の正の実数 $a,\,b$ に対して自然数 $N$ が存在して，$aN\gt b$ が成り立つ．</li>
       </ol>
     </div>
       <Details>
         <summary>証明</summary>
-        まず，命題 1 が成立しているとする．つまり，任意の正の実数 $K$ に対して自然数 $N$ が存在して
+        まず，命題 1 が成立しているとする．このとき，任意の正の実数 $K$ に対して自然数 $N$ が存在して $N\gt K$が成り立つ（命題 2 において，$a=1$ の場合）．よって，自然数 $n$ に対して
+        <center> $n\geq N\,\,\Longleftrightarrow\,\, n>K$</center>
+        が成り立つので，命題 2 の成立がいえる．<br>
+        逆に，命題 2 が成り立つとする．つまり，任意の正の実数 $K$ に対して自然数 $N$ が存在して
         <center> $n\geq N\,\,\Longrightarrow\,\, n\gt K$ </center>
         が成立している．ここで $K$ は正の実数 $a,\,b$ を用いて $K=\frac{\,b\,}{\,a\,}$ と書くことができる．すなわち $n\gt\frac{\,b\,}{\,a\,}\,\,\Longleftrightarrow\,\,an\gt b$．
-        ここで，$K$ の任意性より $a,\,b$ も任意の値をとることができるから，命題 2 の成立がいえる．<br>
-        逆に，命題 2 が成り立つとする．このとき，任意の正の実数 $K$ に対して自然数 $N$ が存在して $N\gt K$が成り立つ（命題 2 において，$a=1$ の場合）．よって，自然数 $n$ に対して
-        <center> $n\geq N\,\,\Longleftrightarrow\,\, n>K$</center>
-        が成り立つので，命題 1 が成立する．
+        ここで，$K$ の任意性より $a,\,b$ も任意の値をとることができるから，命題 1 が成立する．
       </Details>
     <br><br>
     
