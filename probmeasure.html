@@ -1,125 +1,177 @@
-﻿<head>
-<title>確率測度｜演習問題集</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-   titlehead{
-      font-size: 40px;
-      font-family: sans-serif;
-   }
-   ol li {
-	   list-style-type: lower-roman;
-   }
-   h2{
-        margin-top:10px;
-        margin-bottom:20px;
-        padding-left:10px;
-        border-left: solid 10px #ff0000;
-        background-color: #e8e8e8;
-        font-size:14px;
-        display: block;
-        pointer-events: none;
-        text-decoration: none;
-        color: #000000
-    }
-</style>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-  MathJax.Hub.Config({ TeX: { Macros: { bs: '\\boldsymbol', cpl: '\\mathrm{c}'}
-  }
-});
-</script>
-<script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
-</head>
-<body>
-	<center><titlehead>確率測度</titlehead></center>
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #ffff99; background-color: #ffff99;" class="ss">
-<b>定義：確率測度，確率空間</b><br>
-$(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される関数 $ P:\mathcal{F}\rightarrow\mathbb{R}$ を確率測度と呼ぶ：<br>
-<ol>
-<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
-<li> $ P(\varOmega)=1$, </li>
-<li> [測度の $\sigma$ 加法性] $A_i\in\mathcal{F}(i=1,\,2,\,\cdots)$ に対して<br>
-<center>
-$A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\bigcup_{i}A_i\right) = \sum_{i} P(A_i).$
-</center> </li>
-</ol>
-このとき，組 $(\varOmega,\,\mathcal{F},\, P)$ を確率空間と呼ぶ．
-</div>
-<br><br>
+<html>
+  <head>
+    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim',
+	sig: '\\displaystyle\\sum',
+	cpl: '\\mathrm{c}'
+      }}});
+    </script>
+    <title>確率測度｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+      titlehead{
+        font-size: 200%;
+        font-family: sans-serif;
+      }
+      .def{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #ffff99;
+      }
+      .prp{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2f9ff;
+      }
+      .clc{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2ffb2;
+      }
+      .fl{
+        font-size: 75%;
+        text-align: right; 
+      }
+      bib{
+        font-size: 85%;
+      }
+    </style>
+  </head>
 
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;" class="ss">
-任意の確率空間の確率測度 $P$ に対して，<center>$ P(\emptyset) = 0$.</cetner>
-</div>
-<Details class="ss">
-<summary>証明</summary>
-$\emptyset = \displaystyle\bigcup_{i}\emptyset$ かつ $\emptyset\cap\emptyset = \emptyset$ であるから，$ P$ が確率測度であるための条件 iii より
-<center>
-$ P(\emptyset) =  P\left(\displaystyle\bigcup_{i}\emptyset\right) = \displaystyle\sum_{i}  P(\emptyset)$.
-</center>
-ここで，$ P(\emptyset)\geq 0$ を仮定すると，右辺は限りなく大きくなる．ところが左辺は条件 i より $1$ 以下であるから，ここに矛盾が生じる．よって，$ P(\emptyset) = 0$．
-</Details>
-<br><br>
+  <body>
+    <center><titlehead>数列の極限</titlehead></center>
+    <br><br>
+    
+    <div class="def" id="fl1">
+      <b>定義：確率測度，確率空間</b><br>
+      $(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される関数 $ P:\mathcal{F}\rightarrow\mathbb{R}$ を確率測度と呼ぶ：<br>
+      <ol>
+	<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
+	<li> $ P(\varOmega)=1$, </li>
+	<li> [測度の $\sigma$ 加法性] $A_i\in\mathcal{F}(i=1,\,2,\,\cdots)$ に対して<br>
+		<center>
+		$A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\bigcup_{i}A_i\right) = \sum_{i} P(A_i).$
+		</center> </li>
+      </ol>
+      このとき，組 $(\varOmega,\,\mathcal{F},\, P)$ を確率空間と呼ぶ．
+    </div>
+    <br><br>
+    
+    <div class="prp">
+      <b>命題：空集合の確率</b><br>
+      任意の確率空間の確率測度 $P$ に対して，<center>$ P(\emptyset) = 0$.</cetner>
+    </div>
+      <Details>
+        <summary>証明</summary>
+        $\emptyset = \displaystyle\bigcup_{i}\emptyset$ かつ $\emptyset\cap\emptyset = \emptyset$ であるから，$ P$ が確率測度であるための条件 iii より
+	<center>
+		$ P(\emptyset) =  P\left(\displaystyle\bigcup_{i}\emptyset\right) = \displaystyle\sum_{i}  P(\emptyset)$.
+	</center>
+	ここで，$ P(\emptyset)\geq 0$ を仮定すると，右辺は限りなく大きくなる．ところが左辺は条件 i より $1$ 以下であるから，ここに矛盾が生じる．よって，$ P(\emptyset) = 0$．
+      </Details>
+    <br><br>
+    
+    <div class="prp" id="fl2">
+      <b>命題：確率測度に関する有限加法性</b><br>
+      確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の有限個の可測集合 $A_i\,(i=1,\,2,\,\cdots,\,n)$ に対して，
+            <center>
+	    $A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{i=1}^{n} P(A_i).$
+	    </center>
+    </div>
+      <Details>
+        <summary>証明</summary>
+        $A_i\,(i=n+1,\,\cdots)$ に対して $A_i=\emptyset$ を定義すれば $\displaystyle\bigcup_{i=1}^{n}A_i = \displaystyle\bigcup_{i\in\mathbb{N}}A_i$ かつ任意の $i\neq j$ に対して $A_i\cap A_j=\emptyset$ であるから，$ P$ が確率測度であるための条件 iii より
+        <center> $ P\left(\displaystyle\bigcup_{i=1}^{n}A_i\right) =  P\left(\displaystyle\bigcup_{i\in\mathbb{N}}A_i\right) = \sum_{i} P(A_i)$. </center>
+	ここで，$i > n+1$ に対して $ P(A_i) =  P(\emptyset) = 0$ であるから，
+	      <center>$ P\left(\displaystyle\bigcup_{i=1}^{n}A_i\right) = \sum_{i} P(A_i) = \sum_{i=1}^{n} P(A_i)$</center>
+	を得る．
+      </Details>
+      <Details>
+        <summary>補足</summary>
+        <a href="#fl1">発散の定義</a>において，$N=\left\lceil\fraction{K}{k}\right\rceil +1$ である．
+      </Details>
+    <br><br>
+    
+    <div class="prp">
+      <b>命題：補集合の確率</b><br>
+      確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の集合 $A\in\mathcal{F}$ に対して $ P(A^{\mathrm{c}}) = 1- P(A)$.
+    </div>
+      <Details>
+        <summary>証明</summary>
+        任意の $\varOmega$ の部分集合 $A$ について，$A\cup A^\cpl = \varOmega$ かつ $A\cap A^\cpl = \emptyset$ であるから，<a href="#fl2">命題#1</a>より，
+	<center>
+	$P(A) + P(A^\cpl) = P(\varOmega) = 1\,\,\Longleftrightarrow\,\, P(A^\cpl) = 1-P(A)$.
+	</center>
 
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;" id="prop1" class="ss">
-確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の有限個の可測集合 $A_i\,(i=1,\,2,\,\cdots,\,n)$ に対して，
-<center>
-$A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{i=1}^{n} P(A_i).$
-</center> </div>
-<Details class="ss">
-<summary>証明</summary>
-$A_i\,(i=n+1,\,\cdots)$ に対して $A_i=\emptyset$ を定義すれば $\displaystyle\bigcup_{i=1}^{n}A_i = \displaystyle\bigcup_{i\in\mathbb{N}}A_i$ かつ任意の $i\neq j$ に対して $A_i\cap A_j=\emptyset$ であるから，$ P$ が確率測度であるための条件 iii より
-<center>
-$ P\left(\displaystyle\bigcup_{i=1}^{n}A_i\right) =  P\left(\displaystyle\bigcup_{i\in\mathbb{N}}A_i\right) = \sum_{i} P(A_i)$.
-</center>
-ここで，$i > n+1$ に対して $ P(A_i) =  P(\emptyset) = 0$ であるから，
-<center>
-$ P\left(\displaystyle\bigcup_{i=1}^{n}A_i\right) = \sum_{i} P(A_i) = \sum_{i=1}^{n} P(A_i)$
-</center>
-を得る．
-</Details>
-<br><br>
-
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;" class="ss">
-確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の集合 $A\in\mathcal{F}$ に対して $ P(A^{\mathrm{c}}) = 1- P(A)$.
-</div>
-<Details class="ss">
-<summary>証明</summary>
-任意の $\varOmega$ の部分集合 $A$ について，$A\cup A^\cpl = \varOmega$ かつ $A\cap A^\cpl = \emptyset$ であるから，<a href="#prop1">命題#1</a>より，
-<center>
-$P(A) + P(A^\cpl) = P(\varOmega) = 1\,\,\Longleftrightarrow\,\, P(A^\cpl) = 1-P(A)$.
-</center>
-</Details>
-<br><br>
-
-<div id="example"></div>
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2ffb2; background-color: #b2ffb2;" class="ss">
-以下の正六面体サイコロのモデルを考える（$p$ は実数定数）：<br>
-<center>
-$\varOmega = \{1,\,2,\,3,\,4,\,5,\,6\};\,\,^\forall \omega\in\varOmega,\, P(\{\omega\}) = p$.
-</center>
-ここで $\varOmega$ は出る目，$ P(\{\omega\})$ は $\omega$ の目が出る確率を表す．
-<ol>
-<li>$p$ の値を求めよ．</li>
-<li>偶数の目が出る確率を求めよ．</li>
-</ol>
-</div>
-<Details class="ss">
-<summary>解答</summary>
-確率測度に対応する可測空間の集合 $\varOmega$ に対して $\varOmega = \varOmega \cap \emptyset$ かつ $\varOmega \cup \emptyset = \emptyset$ であるから，確率測度の仮定 i および ii を用いて<br>
-<center>
-$ P(\varOmega) =  P(\varOmega) +  P(\emptyset)\,\,\Longleftrightarrow\,\, 1=1+ P(\emptyset)\,\,\Longleftrightarrow\,\,  P(\emptyset) = \boxed{0}\,.$
-</center>
-</Details>
-<br><br>
-
-<font size="2.5" class="ss">
-<b>参考文献</b><br>
-<ul>
-<li> 熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
-<li> 今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
-</ul>
-</font>
-</body>
+      </Details>
+    <br><br>
+    
+    <div class="clc">
+      <b>計算問題：確率測度の決定</b><br>
+      正六面体サイコロのモデルを以下の確率空間 $(\varOmega,\,2^\varOmega,\,P)$ で定義する（$p$ は実数定数）：<br>
+	<center>
+	$\varOmega = \{1,\,2,\,3,\,4,\,5,\,6\};\,\,^\forall \omega\in\varOmega,\, P(\{\omega\}) = p$.
+	</center>
+　　　 ここで $\varOmega$ は出る目，$ P(\{\omega\})$ は $\omega$ の目が出る確率を表す．
+	<ol>
+	<li>$p$ の値を求めよ．</li>
+	<li>偶数の目が出る確率を求めよ．</li>
+	</ol>
+    </div>
+      <Details>
+        <summary>解答</summary>
+        <ol>
+	<li> $\sig_{\omega=1}^{6}P(\{\omega\}) = P(\varOmega)\,\,\Longleftrightarrow\,\, 6p=1\,\,p=\boxed{\fraction{1}{6}}\,.$</li>
+	<li> $P(\{2,\,4,\,6\}) = P(\{2\})+P(\{4\})+P(\{6\}) = 3p = \boxed{\fraction{1}{2}}\,.$</li>
+	</ol>
+      </Details>
+    <br><br>
+    
+    <div class="def">
+      <b>定義：数列の発散②</b><br>
+      $\{a_n\}$ を実数の数列とする．このとき，任意の $K>0$ に対してある自然数 $N$ が存在して，<br>
+      <center>$n>N\,\,\Longrightarrow\,\,a_n<-K$</center>
+      を満たすならば，$\{a_n\}$ は $-\infty$ に発散するといい，
+      <center>$\displaystyle\lim_{n\rightarrow\infty}a_n = -\infty,\quad a_n\rightarrow -\infty\,(n\rightarrow-\infty)$</center>
+      と書く．
+    </div>
+    <br><br>
+    
+    <div class="def">
+      <b>定義：数列の収束</b><br>
+      $\{a_n\}$ を実数の数列とする．$\alpha$ を実数としたとき，任意の $\varepsilon>0$ に対してある自然数 $N$ が存在して，<br>
+      <center>$n>N\,\,\Longrightarrow\,\,|a_n-\alpha|<-K$</center>
+      を満たすならば，$\{a_n\}$ は $\alpha$ に収束するといい，
+      <center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \alpha,\quad a_n\rightarrow\alpha\,(n\rightarrow-\infty)$</center>
+      と書く．
+    </div>
+    <br><br>
+    
+    <div class="prp">
+      <b>命題：発散する数列の例</b><br>
+      $\limit_{n\rightarrow\infty}\fraction{\,1\,}{\,n\,} = 0$.
+    </div>
+      <Details>
+        <summary>証明</summary>
+      </Details>
+    <br><br>
+    
+    <bib>
+      <b>参考文献</b>
+      <ul>
+        <li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
+        <li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
+        <li><a href="https://gleamath.com/uploads/axiom-of-Archimedes01.pdf">アルキメデスの公理</a></li>
+      </ul>
+    </bib>
+  </body>
+</html>
