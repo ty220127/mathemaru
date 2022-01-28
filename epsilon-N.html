@@ -1,6 +1,8 @@
 <html>
   <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+    </script>
     <title>数列の極限｜演習問題集</title>
     <style>
       titlehead{
@@ -31,9 +33,9 @@
     
     <div class="def">
       <b>定義：数列の発散①</b><br>
-      \(\{a_n\}\) を実数の数列とする．このとき，任意の \(K>0\) に対してある自然数 \(N\) が存在して，<br>
+      $\{a_n\}$ を実数の数列とする．このとき，任意の $K>0$ に対してある自然数 $N$ が存在して，<br>
       $$n>N\,\,\Longrightarrow\,\,a_n>K$$
-      を満たすならば，\(\{a_n\}\) は \(\infty\) に発散するといい，
+      を満たすならば，$\{a_n\}$ は $\infty$ に発散するといい，
       $$\lim_{n\rightarrow\infty}a_n = \infty,\quad a_n\rightarrow\infty\,(n\rightarrow\infty)$$
       と書く．
     </div>
@@ -43,27 +45,31 @@
       <b>命題：Archimedes の公理</b><br>
       次は同値：
       <ol>
-        <li> \(\displaystyle\lim_{n\rightarrow\infty}n=\infty\)</li>
-        <li> 任意の正の実数 \(a,\,b\) に対して自然数 \(N\) が存在して，\(b\lt aN\) が成り立つ．</li>
+        <li> $\displaystyle\lim_{n\rightarrow\infty}n=\infty$</li>
+        <li> 任意の正の実数 $a,\,b$ に対して自然数 $N$ が存在して，$b\lt aN$ が成り立つ．</li>
       </ol>
     </div>
     <br><br>
     
     <div class="def">
       <b>定義：数列の発散②</b><br>
-      \(\{a_n\}\) を実数の数列とする．このとき，任意の \(K>0\) に対してある自然数 \(N\) が存在して，<br>
-      $$n>N\,\,\Longrightarrow\,\,a_n<-K$$
-      を満たすならば，\(\{a_n\}\) は \(\infty\) に発散するといい，
+      $\{a_n\}$ を実数の数列とする．このとき，任意の $K>0$ に対してある自然数 $N$ が存在して，<br>
+      \\(n>N\,\,\Longrightarrow\,\,a_n<-K\\)
+      を満たすならば，$\{a_n\}$ は $\infty$ に発散するといい，
       $$\lim_{n\rightarrow\infty}a_n = -\infty,\quad a_n\rightarrow\infty\,(n\rightarrow-\infty)$$
       と書く．
     </div>
+      <Details>
+        <summary>証明</summary>
+        よって，成立する．
+      </Details>
     <br><br>
     
     <div class="def">
       <b>定義：数列の収束</b><br>
-      \(\{a_n\}\) を実数の数列とする．\(\alpha\) を実数としたとき，任意の \(\varepsilon>0\) に対してある自然数 \(N\) が存在して，<br>
+      $\{a_n\}$ を実数の数列とする．$\alpha$ を実数としたとき，任意の $\varepsilon>0$ に対してある自然数 $N$ が存在して，<br>
       $$n>N\,\,\Longrightarrow\,\,|a_n-\alpha|<-K$$
-      を満たすならば，\(\{a_n\}\) は \(\alpha\) に収束するといい，
+      を満たすならば，$\{a_n\}$ は $\alpha$ に収束するといい，
       $$\lim_{n\rightarrow\infty}a_n = \alpha,\quad a_n\rightarrow\alpha\,(n\rightarrow-\infty)$$
       と書く．
     </div>
