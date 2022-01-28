@@ -2,7 +2,7 @@
   <head>
     <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { bs: '\\boldsymbol', bcu: '\\displaystyle\\bigcup', bca: '\\displaystyle\\bigcap', fraction: ['\\displaystyle\\frac{\,#1\,}{\,#2\,}', 2]}}});
+      MathJax.Hub.Config({ TeX: { Macros: { bs: '\\boldsymbol', bcu: '\\displaystyle\\bigcup', bca: '\\displaystyle\\bigcap', fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2]}}});
     </script>
     <title>数列の極限｜演習問題集</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
@@ -72,11 +72,11 @@
       <Details>
         <summary>証明</summary>
         $K>0$ を任意に固定すれば，
-        <center> $n\geq \lceil\fraction{K}{k}\rceil +1\,\,\Longrightarrow\,\,  n \gt\fraction{K}{k}\,\,\Longleftrightarrow\,\, kn \gt K.$ </center>
+        <center> $n\geq \left\lceil\fraction{K}{k}\right\rceil +1\,\,\Longrightarrow\,\,  n \gt\fraction{K}{k}\,\,\Longleftrightarrow\,\, kn \gt K.$ </center>
       </Details>
       <Details>
         <summary>補足</summary>
-        発散の定義において，$N=\lceil\fraction{K}{k}\rceil +1$ である．
+        発散の定義において，$N=\left\lceil\fraction{K}{k}\right\rceil +1$ である．
       </Details>
     <br><br>
     
