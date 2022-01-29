@@ -1,114 +1,83 @@
-<head>
-<title>累積分布関数｜演習問題集</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-   titlehead{
-      font-size: 40px;
-      font-family: sans-serif;
-   }
-   ol li {
-	   list-style-type: lower-roman;
-   }
-   h2{
-        margin-top:10px;
-        margin-bottom:20px;
-        padding-left:10px;
-        border-left: solid 10px #ff0000;
-        background-color: #e8e8e8;
-        font-size:14px;
-        display: block;
-        pointer-events: none;
-        text-decoration: none;
-        color: #000000
-    }
-</style>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-  MathJax.Hub.Config({ TeX: { Macros: { bs: '\\boldsymbol', 
-		pr: '\\mathbb{P}', 
-		limit: '\\displaystyle\\lim', 
-		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-		lt: '\\,{<}\\,',
-		rt: '\\,{>}\\,'}
-  }
-});</script>
-<script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
-</head>
-<body>
-<center><titlehead>累積分布関数</titlehead></center>
+<html>
+  <head>
+    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ TeX: { Macros: { bs: '\\boldsymbol', bcu: '\\displaystyle\\bigcup', bca: '\\displaystyle\\bigcap'}}});
+    </script>
+    <title>累積分布関数，確率密度関数｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+      titlehead{
+        font-size: 40px;
+        font-family: sans-serif;
+      }
+      .def{
+        padding: 10px; 
+        margin-bottom: 10px; 
+        border: none; 
+        background-color: #ffff99;
+      }
+      .prp{
+        padding: 10px; 
+        margin-bottom: 10px; 
+        border: none; 
+        background-color: #b2f9ff;
+      }
+      bib{
+        font-size: 15px;
+      }
+    </style>
+  </head>
 
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #ffff99; background-color: #ffff99;">
-<b>定義：累積分布関数</b><br>
-$F(x) = \pr((-\infty,\,x]) = \pr(\{\omega\in\mathbb{R}\,|\,-\infty <\omega \leq x\})$ なる関数 $F:\mathcal{B}(\mathbb{R})\rightarrow [0,\,1]$ を（累積）分布関数と呼ぶ．
-</div>
-<br><br>
-
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;">
-分布関数 $F$ は単調非減少である，つまり，
-<center>$x\leq y\,\,\Longrightarrow\,\, F(x)\leq F(y)$.</cetner>
-</div>
-<Details>
-<summary>証明</summary>
-</Details>
-<br><br>
-
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;">
-分布関数 $F$ は右連続である，つまり，
-<center>$\limit_{x\rightarrow a+0} F(x) = F(a)$.</center>
- </div>
-<Details>
-<summary>証明</summary>
-</Details>
-<br><br>
-
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;">
-分布関数 $F$ について，
-<center>$\limit_{x\rightarrow -\infty} F(x) = 0$,　$\limit_{x\rightarrow +\infty}F(x) =  1$.</center>
-</div>
-<Details>
-<summary>証明</summary>
-</Details>
-<br><br>
-
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2f9ff; background-color: #b2f9ff;">
-分布関数 $F$ について，<br>
-<center>
-$F(x) = \left\{\begin{array}{ll}0 & (x\lt a)\\ mx+n & (a\leq x\lt b) \\ 1 & (b\leq x) \end{array}\right.\,\,\Longleftrightarrow\,\, (m,\,n) = \left(\fraction{1}{b-a},\,-\fraction{a}{b-a}\right)$.
-</center>
-</div>
-<Details>
-<summary>証明</summary>
-</Details>
-<br><br>
-
-<div style="padding: 10px; margin-bottom: 10px; border: 1px dashed #b2ffb2; background-color: #b2ffb2;">
-以下の正六面体サイコロのモデルを考える（$p$ は実数定数）：<br>
-<center>
-$\varOmega = \{1,\,2,\,3,\,4,\,5,\,6\};\,\,^\forall \omega\in\varOmega,\,\pr(\{\omega\}) = p$.
-</center>
-ここで $\varOmega$ は出る目，$\pr(\{\omega\})$ は $\omega$ の目が出る確率を表す．
-<ol>
-<li>$p$ の値を求めよ．</li>
-<li>偶数の目が出る確率を求めよ．</li>
-</ol>
-</div>
-<Details>
-<summary>解答</summary>
-確率測度に対応する可測空間の集合 $\varOmega$ に対して $\varOmega = \varOmega \cap \emptyset$ かつ $\varOmega \cup \emptyset = \emptyset$ であるから，確率測度の仮定 i および ii を用いて<br>
-<center>
-$\pr(\varOmega) = \pr(\varOmega) + \pr(\emptyset)\,\,\Longleftrightarrow\,\, 1=1+\pr(\emptyset)\,\,\Longleftrightarrow\,\, \pr(\emptyset) = \boxed{0}\,.$
-</center>
-</Details>
-<br><br>
-
-<font size="2.5">
-<b>参考文献</b><br>
-<ul>
-<li> 熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
-<li> 今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
-</ul>
-</font>
-</body>
+  <body>
+    <center><titlehead>σ加法族</titlehead></center>
+    <br><br>
+    
+    <div class="def" id="17">
+      <b>[#17]定義：累積分布関数</b><br>
+      $F(x) = \pr((-\infty,\,x]) = \pr(\{\omega\in\mathbb{R}\,|\,-\infty <\omega \leq x\})$ なる関数 $F:\mathcal{B}(\mathbb{R})\rightarrow [0,\,1]$ を（累積）分布関数と呼ぶ．
+    </div>
+    <br><br>
+    
+    <div class="prp" id="18">
+      <b>[#18]命題：累積分布関数は単調非減少</b><br>
+      分布関数 $F$ は単調非減少である，つまり，
+	<center>$x\leq y\,\,\Longrightarrow\,\, F(x)\leq F(y)$.</cetner>
+    </div>
+    <Details>
+	    <summary>証明</summary>
+    </Details>
+    <br><br>
+	  
+    <div class="prp" id="19">
+      <b>[#19]命題：累積分布関数は右連続</b><br>
+      分布関数 $F$ は右連続である，つまり，
+	<center>$\limit_{x\rightarrow a+0} F(x) = F(a)$.</center>
+    </div>
+    <Details>
+	    <summary>証明</summary>
+    </Details>
+    <br><br>
+	  
+    <div class="prp" id="20">
+      <b>[#20]命題：累積分布関数の性質</b><br>
+      分布関数 $F$ について，
+	<center>$\limit_{x\rightarrow -\infty} F(x) = 0$,　$\limit_{x\rightarrow +\infty}F(x) =  1$.</center>
+    </div>
+    <Details>
+	    <summary>証明</summary>
+    </Details>
+    <br><br>
+	  
+    <bib>
+      <b>参考文献</b>
+      <ul>
+        <li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+        <li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+      </ul>
+    </bib>
+	  
+    <p style="text-align:right;">
+    <a href="<% index.html">トップページに戻る</a>
+    </p>
+  </body>
+</html>
