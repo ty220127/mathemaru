@@ -37,10 +37,6 @@
         border: none; 
         background-color: #b2ffb2;
       }
-      .fl{
-        font-size: 75%;
-        text-align: right; 
-      }
       bib{
         font-size: 85%;
       }
@@ -51,8 +47,8 @@
     <center><titlehead>数列の極限</titlehead></center>
     <br><br>
     
-    <div class="def" id="fl1">
-      <b>定義：確率測度，確率空間</b><br>
+    <div class="def" id="12">
+      <b>[#12]定義：確率測度，確率空間</b><br>
       $(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される関数 $ P:\mathcal{F}\rightarrow\mathbb{R}$ を確率測度と呼ぶ：<br>
       <ol>
 	<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
@@ -66,8 +62,8 @@
     </div>
     <br><br>
     
-    <div class="prp">
-      <b>命題：空集合の確率</b><br>
+    <div class="prp" id="13">
+      <b>[#13]命題：空集合の確率</b><br>
       任意の確率空間の確率測度 $P$ に対して，<center>$ P(\emptyset) = 0$.</cetner>
     </div>
       <Details>
@@ -80,8 +76,8 @@
       </Details>
     <br><br>
     
-    <div class="prp" id="fl2">
-      <b>命題：確率測度に関する有限加法性</b><br>
+    <div class="prp" id="14">
+      <b>[#14]命題：確率測度に関する有限加法性</b><br>
       確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の有限個の可測集合 $A_i\,(i=1,\,2,\,\cdots,\,n)$ に対して，
             <center>
 	    $A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{i=1}^{n} P(A_i).$
@@ -95,19 +91,15 @@
 	      <center>$ P\left(\displaystyle\bigcup_{i=1}^{n}A_i\right) = \sum_{i} P(A_i) = \sum_{i=1}^{n} P(A_i)$</center>
 	を得る．
       </Details>
-      <Details>
-        <summary>補足</summary>
-        <a href="#fl1">発散の定義</a>において，$N=\left\lceil\fraction{K}{k}\right\rceil +1$ である．
-      </Details>
     <br><br>
     
-    <div class="prp">
-      <b>命題：補集合の確率</b><br>
+    <div class="prp" id="15">
+      <b>[#15]命題：補集合の確率</b><br>
       確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の集合 $A\in\mathcal{F}$ に対して $ P(A^{\mathrm{c}}) = 1- P(A)$.
     </div>
       <Details>
         <summary>証明</summary>
-        任意の $\varOmega$ の部分集合 $A$ について，$A\cup A^\cpl = \varOmega$ かつ $A\cap A^\cpl = \emptyset$ であるから，<a href="#fl2">命題#1</a>より，
+        任意の $\varOmega$ の部分集合 $A$ について，$A\cup A^\cpl = \varOmega$ かつ $A\cap A^\cpl = \emptyset$ であるから，<a href="#14">命題#14</a>より，
 	<center>
 	$P(A) + P(A^\cpl) = P(\varOmega) = 1\,\,\Longleftrightarrow\,\, P(A^\cpl) = 1-P(A)$.
 	</center>
@@ -115,8 +107,8 @@
       </Details>
     <br><br>
     
-    <div class="clc">
-      <b>計算問題：確率測度の決定</b><br>
+    <div class="clc" id="16">
+      <b>[#16]計算：確率測度の決定</b><br>
       正六面体サイコロのモデルを以下の確率空間 $(\varOmega,\,2^\varOmega,\,P)$ で定義する（$p$ は実数定数）：<br>
 	<center>
 	$\varOmega = \{1,\,2,\,3,\,4,\,5,\,6\};\,\,^\forall \omega\in\varOmega,\, P(\{\omega\}) = p$.
