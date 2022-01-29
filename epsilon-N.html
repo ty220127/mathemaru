@@ -65,7 +65,7 @@
       <Details>
         <summary>証明</summary>
         まず，命題 1 が成立しているとする．このとき，任意の正の実数 $K$ に対して自然数 $N$ が存在して $N\gt K$が成り立つ（命題 2 において，$a=1$ の場合）．よって，自然数 $n$ に対して
-        <center> $n\geq N\,\,\Longleftrightarrow\,\, n>K$</center>
+        <center> $n\geq N\,\,\Longrightarrow\,\, n>K$</center>
         が成り立つので，命題 2 の成立がいえる．<br>
         逆に，命題 2 が成り立つとする．つまり，任意の正の実数 $K$ に対して自然数 $N$ が存在して
         <center> $n\geq N\,\,\Longrightarrow\,\, n\gt K$ </center>
@@ -81,19 +81,39 @@
       $k$ を正の実数として，$\limit_{n\rightarrow\infty}(kn)=\infty$.
     </div>
       <Details>
-        <summary>証明</summary>
+        <summary>証明１</summary>
         $K>0$ を任意に固定すれば，
         <center> $n\geq \left\lceil\fraction{K}{k}\right\rceil +1\,\,\Longrightarrow\,\,  n \gt\fraction{K}{k}\,\,\Longleftrightarrow\,\, kn \gt K.$ </center>
       </Details>
       <Details>
+        <summary>証明２</summary>
+        Archimedes の原理より，任意の $K>0$ に対して自然数 $N$ が存在して $kN\gt K$ である．よって，
+        <center> $n\geq N\,\,\Longrightarrow\,\, kn \geq kN \gt K$ </center>
+        であることより題意は示される．
+      </Details>
+      <Details>
         <summary>補足</summary>
-        <a href="#fl1">発散の定義</a>において，$N=\left\lceil\fraction{K}{k}\right\rceil +1$ である．
+        証明１において，<a href="#fl1">発散の定義</a>において，$N=\left\lceil\fraction{K}{k}\right\rceil +1$ である．
       </Details>
     <br><br>
     
     <div class="prp">
+      <b>命題：追い出しの原理</b><br>
+      $\{a_n\},\,\{b_n\}$ を実数列とする．任意の $n$ に対して $a_n\lt b_n$ でありかつ $\limit_{n\rightarrow\infty}a_n=\infty$ であるとき，$\limit_{n\rightarrow\infty}b_n=\infty$．
+    </div>
+      <Details>
+        <summary>証明</summary>
+        $\limit_{n\rightarrow\infty}a_n=\infty$ であることと任意の $n$ に対して $a_n\lt b_n$ であることを併せれば，
+        <center>
+        ${}^\forall K>0,\,{}^\exists N\in\mathbb{N}\,{\rm s.t.}\,\,[n\geq N\,\,\Longrightarrow\,\,b_n\gt a_n\gt K].$
+        </center>
+        よって $\limit_{n\rightarrow\infty}b_n=\infty$．
+    </Details>
+    <br><br>
+    
+    <div class="prp">
       <b>命題：発散する数列の例</b><br>
-      $p$ を $1$ より大きい実数として，$\limit_{n\rightarrow\infty}n^p=\infty$.
+      $k$ を正の実数，$p$ を $1$ 以上の大きい実数として，$\limit_{n\rightarrow\infty}(kn^p)=\infty$.
     </div>
       <Details>
         <summary>証明</summary>
@@ -144,6 +164,7 @@
       <b>参考文献</b>
       <ul>
         <li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
+        <li>加藤文元(監修): チャート式シリーズ 大学教養 微分積分, 数研出版 (2019).</li>
         <li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
         <li><a href="https://gleamath.com/uploads/axiom-of-Archimedes01.pdf">アルキメデスの公理</a></li>
       </ul>
