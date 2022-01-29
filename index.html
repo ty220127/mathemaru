@@ -1,7 +1,6 @@
 <html>
   <head>
     <title>演習問題集</title>
-    <SCRIPT LANGUAGE="JavaScript"></SCRIPT>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
     <style>
       titlehead{
@@ -36,15 +35,13 @@
     <br><br>
     
     命題番号順リスト<br>
-    <form name="form3">
-    <select name="menu3" id="menu3">
-    <option selected>▼　選択してください </option>
-    <option value="http://www.yahoo.co.jp/">Yahoo Japan </option>
-    <option value="http://www.google.co.jp/">Google </option>
-    <option value="http://www.infoseek.co.jp/">infoseek </option>
-    <option value="http://www.goo.ne.jp/">goo </option>
+    <form>
+    <select onChange="location.href=value;">
+    <option value="#">------ 移動先 -------</option>
+    <option value="http://www.yahoo.co.jp/">Yahoo!</option>
+    <option value="http://chiebukuro.yahoo.co.jp/">Yahoo! 知恵袋</option>
+    <option value="http://search.yahoo.co.jp/">Yahoo! 検索</option>
     </select>
-    <input type="button" name="Button1" value="URLに移動" onClick="MM_jumpMenuGo('menu3','parent',1)">
-    </form>
+    </form>  
   </body>
 </html>
