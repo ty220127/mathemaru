@@ -29,10 +29,6 @@
         border: none; 
         background-color: #b2f9ff;
       }
-      .fl{
-        font-size: 75%;
-        text-align: right; 
-      }
       bib{
         font-size: 85%;
       }
@@ -53,14 +49,13 @@
     </div>
     <br><br>
     
-    <div class="prp" id="fl2">
-      <b>命題：Archimedes の公理とその同値条件</b><br>
+    <div class="prp" id="2">
+      <b>[#2]命題：Archimedes の公理とその同値条件</b><br>
       次は同値：
       <ol>
         <li> 任意の正の実数 $a,\,b$ に対して自然数 $N$ が存在して，$aN\gt b$ が成り立つ（Archimedes の公理）．</li>
         <li> $\displaystyle\lim_{n\rightarrow\infty}n=\infty .$</li>
       </ol>
-      <p class="fl">[#2]</p>
     </div>
       <Details>
         <summary>証明</summary>
@@ -76,10 +71,9 @@
     
     ★ 以降，Archimedes の公理は成立しているものとして議論を進める．<br><br>
     
-    <div class="prp" id="fl3">
-      <b>命題：発散する数列の例</b><br>
+    <div class="prp" id="3">
+      <b>[#3]命題：発散する数列の例</b><br>
       $k$ を正の実数として，$\limit_{n\rightarrow\infty}(kn)=\infty$.
-      <p class="fl">[#3]</p>
     </div>
       <Details>
         <summary>証明１</summary>
@@ -88,7 +82,7 @@
       </Details>
       <Details>
         <summary>証明２</summary>
-        <a href="#fl2">Archimedes の公理</a>より，任意の $K>0$ に対して自然数 $N$ が存在して $kN\gt K$ である．よって，
+        <a href="#2">Archimedes の公理</a>より，任意の $K>0$ に対して自然数 $N$ が存在して $kN\gt K$ である．よって，
         <center> $n\geq N\,\,\Longrightarrow\,\, kn \geq kN \gt K$ </center>
         であることより題意は示される．
       </Details>
@@ -98,10 +92,9 @@
       </Details>
     <br><br>
     
-    <div class="prp" id="fl4">
-      <b>命題：追い出しの原理</b><br>
+    <div class="prp" id="4">
+      <b>[#4]命題：追い出しの原理</b><br>
       $\{a_n\},\,\{b_n\}$ を実数列とする．任意の $n$ に対して $a_n\leq b_n$ でありかつ $\limit_{n\rightarrow\infty}a_n=\infty$ であるとき，$\limit_{n\rightarrow\infty}b_n=\infty$．
-      <p class="fl">[#4]</p>
     </div>
       <Details>
         <summary>証明</summary>
@@ -113,10 +106,9 @@
     </Details>
     <br><br>
     
-    <div class="prp" id="fl5">
-      <b>命題：発散する数列の例</b><br>
+    <div class="prp" id="5">
+      <b>[#5]命題：発散する数列の例</b><br>
       $k$ を正の実数，$p$ を $1$ 以上の大きい実数として，$\limit_{n\rightarrow\infty}(kn^p)=\infty$.
-      <p class="fl">[#5]</p>
     </div>
       <Details>
         <summary>証明</summary>
@@ -126,14 +118,13 @@
           kn^p-kn = kn(n^{p-1}-1) \geq 0.
           \end{align*}$
         </center>
-        ここで不等号は $p-1\geq 0$ に対して $n^{p-1}\geq 1$ であることから従う．よって，<a href="#fl3">命題#3</a>と<a href="#fl4">命題#4</a>より $\limit_{n\rightarrow\infty}(kn^p)=\infty$.
+        ここで不等号は $p-1\geq 0$ に対して $n^{p-1}\geq 1$ であることから従う．よって，<a href="#3">命題#3</a>と<a href="#4">命題#4</a>より $\limit_{n\rightarrow\infty}(kn^p)=\infty$.
       </Details>
     <br><br>
     
-    <div class="prp" id="fl6">
-      <b>命題：発散する数列の例</b><br>
+    <div class="prp" id="6">
+      <b>[#6]命題：発散する数列の例</b><br>
       $r$ を $1$ より大きい実数として，$\limit_{n\rightarrow\infty}r^n=\infty$.
-      <p class="fl">[#6]</p>
     </div>
       <Details>
         <summary>証明</summary>
@@ -141,32 +132,29 @@
       </Details>
     <br><br>
     
-    <div class="def" id="fl7">
-      <b>定義：数列の発散②</b><br>
+    <div class="def" id="7">
+      <b>[#7]定義：数列の発散②</b><br>
       $\{a_n\}$ を実数の数列とする．このとき，任意の $K>0$ に対してある自然数 $N$ が存在して，<br>
       <center>$n>N\,\,\Longrightarrow\,\,a_n<-K$</center>
       を満たすならば，$\{a_n\}$ は $-\infty$ に発散するといい，
       <center>$\displaystyle\lim_{n\rightarrow\infty}a_n = -\infty,\quad a_n\rightarrow -\infty\,(n\rightarrow-\infty)$</center>
       と書く．
-      <p class="fl">[#7]</p>
     </div>
     <br><br>
     
-    <div class="def" id="fl8">
-      <b>定義：数列の収束</b><br>
+    <div class="def" id="8">
+      <b>[#8]定義：数列の収束</b><br>
       $\{a_n\}$ を実数の数列とする．$\alpha$ を実数としたとき，任意の $\varepsilon>0$ に対してある自然数 $N$ が存在して，<br>
       <center>$n>N\,\,\Longrightarrow\,\,|a_n-\alpha|<-K$</center>
       を満たすならば，$\{a_n\}$ は $\alpha$ に収束するといい，
       <center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \alpha,\quad a_n\rightarrow\alpha\,(n\rightarrow-\infty)$</center>
       と書く．
-      <p class="fl">[#8]</p>
     </div>
     <br><br>
     
-    <div class="prp" id="fl9">
-      <b>命題：発散する数列の例</b><br>
+    <div class="prp" id="9">
+      <b>[#9]命題：発散する数列の例</b><br>
       $\limit_{n\rightarrow\infty}\fraction{\,1\,}{\,n\,} = 0$.
-      <p class="fl">[#9]</p>
     </div>
       <Details>
         <summary>証明</summary>
