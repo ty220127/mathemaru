@@ -1,12 +1,14 @@
 <html>
   <head>
     <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ TeX: { Macros: { bs: '\\boldsymbol', 
-		bcu: '\\displaystyle\\bigcup', 
-		bca: '\\displaystyle\\bigcap',
-		limit: '\\displaystyle\\lim'
-	}}});
-    </script>
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim'
+      }}});    </script>
     <title>累積分布関数，確率密度関数｜演習問題集</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
     <style>
