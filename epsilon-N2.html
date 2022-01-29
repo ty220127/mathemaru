@@ -1,1 +1,71 @@
+<html>
+  <head>
+    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim'
+      }}});
+    </script>
+    <title>数列の収束｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+      titlehead{
+        font-size: 200%;
+        font-family: sans-serif;
+      }
+      .def{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #ffff99;
+      }
+      .prp{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2f9ff;
+      }
+      bib{
+        font-size: 85%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center><titlehead>数列の極限</titlehead></center>
+    <br><br>
+        
+    <div class="def" id="8">
+      <b>[#8]定義：数列の収束</b><br>
+      $\{a_n\}$ を実数の数列とする．$\alpha$ を実数としたとき，任意の $\varepsilon>0$ に対してある自然数 $N$ が存在して，<br>
+      <center>$n>N\,\,\Longrightarrow\,\,|a_n-\alpha|<-K$</center>
+      を満たすならば，$\{a_n\}$ は $\alpha$ に収束するといい，
+      <center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \alpha,\quad a_n\rightarrow\alpha\,(n\rightarrow-\infty)$</center>
+      と書く．
+    </div>
+    <br><br>
+    
+    <div class="prp" id="9">
+      <b>[#9]命題：発散する数列の例</b><br>
+      $\limit_{n\rightarrow\infty}\fraction{\,1\,}{\,n\,} = 0$.
+    </div>
+      <Details>
+        <summary>証明</summary>
+      </Details>
+    <br><br>
+    
+    <bib>
+      <b>参考文献</b>
+      <ul>
+        <li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
+        <li>加藤文元(監修): チャート式シリーズ 大学教養 微分積分, 数研出版 (2019).</li>
+        <li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
+      </ul>
+    </bib>
+  </body>
+</html>
 
