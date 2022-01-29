@@ -99,13 +99,13 @@
     
     <div class="prp">
       <b>命題：追い出しの原理</b><br>
-      $\{a_n\},\,\{b_n\}$ を実数列とする．任意の $n$ に対して $a_n\lt b_n$ でありかつ $\limit_{n\rightarrow\infty}a_n=\infty$ であるとき，$\limit_{n\rightarrow\infty}b_n=\infty$．
+      $\{a_n\},\,\{b_n\}$ を実数列とする．任意の $n$ に対して $a_n\leq b_n$ でありかつ $\limit_{n\rightarrow\infty}a_n=\infty$ であるとき，$\limit_{n\rightarrow\infty}b_n=\infty$．
     </div>
       <Details>
         <summary>証明</summary>
-        $\limit_{n\rightarrow\infty}a_n=\infty$ であることと任意の $n$ に対して $a_n\lt b_n$ であることを併せれば，
+        $\limit_{n\rightarrow\infty}a_n=\infty$ であることと任意の $n$ に対して $a_n\leq b_n$ であることを併せれば，
         <center>
-        ${}^\forall K>0,\,{}^\exists N\in\mathbb{N}\,\,{\rm s.t.}\,\,[n\geq N\,\,\Longrightarrow\,\,b_n\gt a_n\gt K].$
+        ${}^\forall K>0,\,{}^\exists N\in\mathbb{N}\,\,{\rm s.t.}\,\,[n\geq N\,\,\Longrightarrow\,\,b_n\geq a_n\gt K].$
         </center>
         よって $\limit_{n\rightarrow\infty}b_n=\infty$．
     </Details>
@@ -117,7 +117,13 @@
     </div>
       <Details>
         <summary>証明</summary>
-        $K>0$ を任意に固定すれば，
+        最初に，$kn^p\geq kn$ であることを以下より確認できる：
+        <center>
+          $\begin{align*}
+          kn^p-kn = kn(n^{p-1}-1) \geq 0.
+          \end{align*}$
+        </center>
+        ここで不等号は $p-1\geq 0$ に対して $n^{p-1}\geq 1$ であることから従う．よって，命題#2と命題#3より $\limit_{n\rightarrow\infty}(kn^p)=\infty$.
       </Details>
     <br><br>
     
