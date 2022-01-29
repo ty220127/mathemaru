@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim',
+	sig: '\\displaystyle\\sum',
+	cpl: '\\mathrm{c}'
+      }}});
+    </script>
+    <title>確率測度｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+      titlehead{
+        font-size: 200%;
+        font-family: sans-serif;
+      }
+      .def{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #ffff99;
+      }
+      .prp{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2f9ff;
+      }
+      .clc{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2ffb2;
+      }
+      bib{
+        font-size: 85%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center><titlehead>数列の極限</titlehead></center>
+    <br><br>
+    
+    <div class="def" id="21">
+      <b>[#21]定義：増大情報系</b><br>
+      $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とする．$\mathcal{F}$ の部分集合族の列 $\{\mathcal{F}_t\}_{t\geq 0}$ が<br>
+		  <center>
+		  $0\leq s\leq t \,\,\Longrightarrow\,\, \mathcal{F}_s\subset\mathcal{F}_t$
+		  </center> </li>
+      </ol>
+      を満たすとき，これを増大情報系 (filtration) と呼ぶ．
+    </div>
+    <br><br>
+        
+    <bib>
+      <b>参考文献</b>
+      <ul>
+        <li>石村直之: 数学のかんどころ26 確率微分方程式入門 数理ファイナンスへの応用, 共立出版 (2014).</li>
+        <li>舟木直久: 講座&lt;20&gt; 確率論, 朝倉書店 (2004).</li>
+      </ul>
+    </bib>
+      
+    <p style="text-align:right;">
+    <a href="index.html">トップページに戻る</a>
+    </p>
+  </body>
+</html>
