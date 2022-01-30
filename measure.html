@@ -48,22 +48,31 @@
     <br><br>
     
     <div class="def" id="24">
-      <b>[#24]定義：測度</b><br>
+      <b>[#24]定義：測度，測度空間</b><br>
       $(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が以下の条件を満たすとき，これを $(\varOmega,\,\mathcal{F})$ 上の測度 (measure) と呼ぶ：
       <ol>
       <li> $\mu(\emptyset) = 0$,</li>
-      <li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cup A_j$ であるとき，$\mu\left(\bca_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$.
+      <li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$（測度の $\sigma$ 加法性）.
       </ol>
-      また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を測度空間と呼ぶ．
+      また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を測度空間 (measure space) と呼ぶ．
     </div>
+    <br><br>
+        
+    <div class="prp" id="25">
+      <b>[#24]定義：測度の有限加法性</b><br>
+      $\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i=1}^{n} A_i\right) = \sig_{i=1}^{n}\mu(A_i)$.
+    </div>
+    <Details>
+    <summary>証明</summary>
+    $i= n+1,\,n+2,\,\cdots$ に対して $A_i=\emptyset$ と定めれば，$\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \mu\left(\bcu_{i=1}^{n} A_i\right)$．
+    一方，測度の $\sigma$ 加法性（<a href="#24">定義#24</a>-i）より $\mu(\emptyset)=0$ であるから，$\sig_{i\in\mathbb{N}}\mu(A_i) = \sig_{i=1}^{n}\mu(A_i)$．
+</Details>
     <br><br>
         
     <bib>
       <b>参考文献</b>
       <ul>
-        <li>石村直之: 数学のかんどころ26 確率微分方程式入門 数理ファイナンスへの応用, 共立出版 (2014).</li>
-        <li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
-        <li>舟木直久: 講座＜数学の考え方＞20 確率論, 朝倉書店 (2004).</li>
+      <li><a href="https://mathlandscape.com/measure/">測度の定義と具体例4つ・性質5つを証明付きで徹底解説 | 数学の景色</a></li>
       </ul>
     </bib>
       
