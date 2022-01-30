@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim',
+	sig: '\\displaystyle\\sum',
+	cpl: '\\mathrm{c}'
+      }}});
+    </script>
+    <title>可測関数｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+      titlehead{
+        font-size: 200%;
+        font-family: sans-serif;
+      }
+      .def{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #ffff99;
+      }
+      .prp{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2f9ff;
+      }
+      .clc{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2ffb2;
+      }
+      bib{
+        font-size: 95%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center><titlehead>可測関数</titlehead></center>
+    <br><br>
+    
+    <div class="def" id="29">
+      <b>[#29]定義：可測関数</b><br>
+      $(\varOmega,\,\mathcal{F})$，$(\varOmega',\,\mathcal{G})$ を可測空間とする．関数 $f:\varOmega\rightarrow\varOmega'$ が以下の条件
+      <center>
+      $C\in\mathcal{F}'\,\,\Longrightarrow\,\,f^{-1}(C)\in\mathcal{F}
+      </center>
+      を満たすとき，これを $(\varOmega,\,\mathcal{F})$ 上の可測関数 (measurable function) と呼ぶ．
+    </div>
+    <br><br>
+        
+    <bib>
+      <b>参考文献</b>
+      <ul>
+      <li><a href="https://mathlandscape.com/measurable-func/">可測関数とは～定義と理解しておくべき大事な性質～ | 数学の景色</a></li>
+      </ul>
+    </bib>
+      
+    <p style="text-align:right;">
+    <a href="index.html">トップページに戻る</a>
+    </p>
+  </body>
+</html>
