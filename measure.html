@@ -59,14 +59,27 @@
     <br><br>
         
     <div class="prp" id="25">
-      <b>[#24]定義：測度の有限加法性</b><br>
+      <b>[#24]命題：測度の有限加法性</b><br>
       $\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i=1}^{n} A_i\right) = \sig_{i=1}^{n}\mu(A_i)$.
     </div>
     <Details>
     <summary>証明</summary>
     $i= n+1,\,n+2,\,\cdots$ に対して $A_i=\emptyset$ と定めれば，$\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \mu\left(\bcu_{i=1}^{n} A_i\right)$．
-    一方，測度の $\sigma$ 加法性（<a href="#24">定義#24</a>-i）より $\mu(\emptyset)=0$ であるから，$\sig_{i\in\mathbb{N}}\mu(A_i) = \sig_{i=1}^{n}\mu(A_i)$．
-</Details>
+    一方，<a href="#24">定義#24</a>-i より $\mu(\emptyset)=0$ であるから，$\sig_{i\in\mathbb{N}}\mu(A_i) = \sig_{i=1}^{n}\mu(A_i)$．
+    以上と測度の $\sigma$ 加法性（<a href="#24">定義#24</a>-ii）より，題意は示される．
+    </Details>
+    <br><br>
+        
+    <div class="prp" id="25">
+      <b>[#25]命題：測度の単調性</b><br>
+      $A,\,B\in\mathcal{F}$ が $A\subset B$ ならば $\mu(B\backslash A) = \mu(B)-\mu(A)$ であり，それ故に $\mu(B)-\mu(A)\geq 0$ である.
+    </div>
+    <Details>
+    <summary>証明</summary>
+    $A\cap B\backslash A = \emptyset$ かつ $A\cup B\backslash A = B$ であるから測度の有限加法性<a href="#25">[#25]</a>より，
+    <center>$\mu(A)+\mu(B\backslash A) = \mu(B)\,\,\Longleftrightarrow\,\,\mu(B\backslash A) = \mu(B)-\mu(A)$.</center>
+    また，測度の値域<a href="#23">[#23]</a>より，$\mu(B)-\mu(A) = \mu(B\backslash A)\geq 0$ である．
+    </Details>
     <br><br>
         
     <bib>
