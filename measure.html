@@ -59,7 +59,7 @@
     <br><br>
         
     <div class="prp" id="25">
-      <b>[#24]命題：測度の有限加法性</b><br>
+      <b>[#25]命題：測度の有限加法性</b><br>
       $\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i=1}^{n} A_i\right) = \sig_{i=1}^{n}\mu(A_i)$.
     </div>
     <Details>
@@ -78,7 +78,27 @@
     <summary>証明</summary>
     $A\cap B\backslash A = \emptyset$ かつ $A\cup B\backslash A = B$ であるから測度の有限加法性<a href="#25">[#25]</a>より，
     <center>$\mu(A)+\mu(B\backslash A) = \mu(B)\,\,\Longleftrightarrow\,\,\mu(B\backslash A) = \mu(B)-\mu(A)$.</center>
-    また，測度の値域<a href="#24">[#23]</a>より，$\mu(B)-\mu(A) = \mu(B\backslash A)\geq 0$ である．
+    また，測度の値域<a href="#24">[#24]</a>より，$\mu(B)-\mu(A) = \mu(B\backslash A)\geq 0$ である．
+    </Details>
+    <br><br>
+        
+    <div class="prp" id="27">
+      <b>[#27]命題：増大する測度の連続性</b><br>
+      集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\subset A_2\subset \cdots$ でかつ $\limit_{n\rightarrow\infty}A_n =A$ を満たすならば， $\limit_{n\rightarrow\infty}\mu(A_n) = \mu(A)$ である.
+    </div>
+    <Details>
+    <summary>証明</summary>
+    $\{B_i\}_{i\in\mathbb{N}}$ を $B_1=A_1$，$B_i = A_i\backslash A_{i-1}\,(i\geq 2)$ と定義すると，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから，
+    </Details>
+    <br><br>
+        
+    <div class="prp" id="28">
+      <b>[#28]命題：減少する測度の連続性</b><br>
+      集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\supset A_2\supset \cdots$ でかつ $\mu(A_n)<\infty$，$\limit_{n\rightarrow\infty}A_n =A$ を満たすならば， $\limit_{n\rightarrow\infty}\mu(A_n) = \mu(A)$ である.
+    </div>
+    <Details>
+    <summary>証明</summary>
+    $\{B_i\}_{i\in\mathbb{N}}$ を $B_1=A_1$，$B_i = A_i\backslash A_{i-1}\,(i\geq 2)$ と定義すると，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから，
     </Details>
     <br><br>
         
