@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim',
+	sig: '\\displaystyle\\sum',
+	cpl: '\\mathrm{c}'
+      }}});
+    </script>
+    <title>測度｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+      titlehead{
+        font-size: 200%;
+        font-family: sans-serif;
+      }
+      .def{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #ffff99;
+      }
+      .prp{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2f9ff;
+      }
+      .clc{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2ffb2;
+      }
+      bib{
+        font-size: 95%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center><titlehead>測度</titlehead></center>
+    <br><br>
+    
+    <div class="def" id="24">
+      <b>[#24]定義：測度</b><br>
+      $(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が以下の条件を満たすとき，これを $(\varOmega,\,\mathcal{F})$ 上の測度 (measure) と呼ぶ：
+      <ol>
+      <li> $\mu(\emptyset) = 0$,</li>
+      <li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cup A_j$ であるとき，$\mu\left(\bca_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$.
+      </ol>
+      また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を測度空間と呼ぶ．
+    </div>
+    <br><br>
+        
+    <bib>
+      <b>参考文献</b>
+      <ul>
+        <li>石村直之: 数学のかんどころ26 確率微分方程式入門 数理ファイナンスへの応用, 共立出版 (2014).</li>
+        <li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
+        <li>舟木直久: 講座＜数学の考え方＞20 確率論, 朝倉書店 (2004).</li>
+      </ul>
+    </bib>
+      
+    <p style="text-align:right;">
+    <a href="index.html">トップページに戻る</a>
+    </p>
+  </body>
+</html>
