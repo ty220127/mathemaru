@@ -53,6 +53,7 @@
       <ol>
 	<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
 	<li> $ P(\varOmega)=1$, </li>
+        <li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$P\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}P(A_i)$（確率測度の $\sigma$ 加法性）.
       </ol>
       このとき，組 $(\varOmega,\,\mathcal{F},\, P)$ を確率空間と呼ぶ．
     </div>
@@ -64,16 +65,17 @@
     <br><br>
     
     <div class="prp" id="13">
-      <b>[#13]命題：空集合の確率（※測度の定義を前提としない場合）</b><br>
-      任意の確率空間の確率測度 $P$ に対して，<center>$ P(\emptyset) = 0$.</cetner>
+      <b>[#13]命題：空集合の確率</b><br>
+      確率空間 $(\varOmega,\,\mathcal{F},\, P)$ に対して，確率測度 $P$ は測度<a href="measure.html#24">[#24]</a> である．
     </div>
       <Details>
         <summary>証明</summary>
-        $\emptyset = \displaystyle\bigcup_{i}\emptyset$ かつ $\emptyset\cap\emptyset = \emptyset$ であるから，$ P$ が確率測度であるための条件 iii より
+        $\emptyset = \displaystyle\bigcup_{i}\emptyset$ かつ $\emptyset\cap\emptyset = \emptyset$ であるから，確率測度の定義<a href="#12">[#12]</a>-iii より
 	<center>
 		$ P(\emptyset) =  P\left(\displaystyle\bigcup_{i}\emptyset\right) = \displaystyle\sum_{i}  P(\emptyset)$.
 	</center>
-	ここで，$ P(\emptyset)\geq 0$ を仮定すると，右辺は限りなく大きくなる．ところが左辺は条件 i より $1$ 以下であるから，ここに矛盾が生じる．よって，$ P(\emptyset) = 0$．
+	ここで，$ P(\emptyset)\geq 0$ を仮定すると，右辺は限りなく大きくなる．ところが左辺は条件 i より $1$ 以下であるから，ここに矛盾が生じる．よって，$P(\emptyset) = 0$．<br>
+	
       </Details>
     <br><br>
     
