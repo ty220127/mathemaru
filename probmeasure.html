@@ -49,7 +49,7 @@
     
     <div class="def" id="12">
       <b>[#12]定義：確率測度，確率空間</b><br>
-      $(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される測度 $ P:\mathcal{F}\rightarrow[0,\,1]$ を確率測度と呼ぶ：<br>
+      $(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される測度 $ P:\mathcal{F}\rightarrow[0,\,\infty)$ を確率測度と呼ぶ：<br>
       <ol>
 	<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
 	<li> $ P(\varOmega)=1$, </li>
@@ -57,25 +57,25 @@
       </ol>
       このとき，組 $(\varOmega,\,\mathcal{F},\, P)$ を確率空間と呼ぶ．
     </div>
-      <Details>
-        <summary>補足</summary>
-	ここでは，測度の定義<a href="measure.html#24">[#24]</a> を前提に確率測度を定義しているが，一般の測度を導入せずに確率測度を導入する例も少なくない．
-	その場合は，以上の条件に加えて確率測度に関する $\sigma$ 加法性についてもここで言及される．なお，空集合の測度が $0$ であることについては，確率測度の定義により従うので，測度が定義されていなくてもここで与える必要はない（<a href="#13">[#13]</a>）．
-      </Details>
     <br><br>
     
     <div class="prp" id="13">
-      <b>[#13]命題：空集合の確率</b><br>
+      <b>[#13]命題：確率測度が測度であることの確認</b><br>
       確率空間 $(\varOmega,\,\mathcal{F},\, P)$ に対して，確率測度 $P$ は測度<a href="measure.html#24">[#24]</a> である．
     </div>
       <Details>
         <summary>証明</summary>
-        $\emptyset = \displaystyle\bigcup_{i}\emptyset$ かつ $\emptyset\cap\emptyset = \emptyset$ であるから，確率測度の定義<a href="#12">[#12]</a>-iii より
+        $\emptyset = \displaystyle\bigcup_{i}\emptyset$ かつ $\emptyset\cap\emptyset = \emptyset$ であるから，確率測度の定義 <a href="#12">[#12]</a>-iii より
 	<center>
 		$ P(\emptyset) =  P\left(\displaystyle\bigcup_{i}\emptyset\right) = \displaystyle\sum_{i}  P(\emptyset)$.
 	</center>
 	ここで，$ P(\emptyset)\geq 0$ を仮定すると，右辺は限りなく大きくなる．ところが左辺は条件 i より $1$ 以下であるから，ここに矛盾が生じる．よって，$P(\emptyset) = 0$．<br>
-	
+	測度の $\sigma$ 加法性は確率測度の $\sigma$ 加法性により従うから，以上により $P$ は確率測度である．
+      </Details>
+      <Details>
+        <summary>補足</summary>
+	ほぼ自明な命題であり，最初から確率測度が測度の一種であるとしても良い．その際，この主張は定義の一部となる．ただし確率測度は一般の測度を導入せずに定義されることも少なくなく，その際には空集合の確率測度が $0$ であることは確認することになる．当サイトではそれに従い，先ず一般の測度とは独立に確率測度を定義し，その上でそれが一般の測度の一種であることを確認する流れとした．<br>
+	なお，最初から確率測度が測度の一種であるとする場合，確率測度として新たに追加するべき条件は <a href="#12">[#12]</a>-i, ii のみである．
       </Details>
     <br><br>
     
