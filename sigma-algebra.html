@@ -65,7 +65,67 @@
     </div>
     <Details>
     <summary>証明</summary>
-    $\sigma$ 加法族の<a href="#10">定義#10</a>-i より，$\emptyset\in\mathcal{F}$．よって，同じく<a href="#10">定義#10</a>-ii より，$\varOmega =\emptyset^{\mathrm{c}}\in\mathcal{F}$.
+    $\sigma$ 加法族の定義 <a href="#10">[#10]</a>-i より，$\emptyset\in\mathcal{F}$．よって，同じく <a href="#10">[#10]</a>-ii より，$\varOmega =\emptyset^{\mathrm{c}}\in\mathcal{F}$.
+    </Details>
+    <br><br>
+	  
+    <div class="prp" id="14">
+      <b>[#14]命題：可測集合の差も可測集合</b><br>
+      $A,\,B$ が可測空間 $(\varOmega,\,\mathcal{F})$ の可測集合であるならば，$A\backslash B$ もまた可測集合である．
+    </div>
+    <Details>
+    <summary>証明</summary>
+    
+    </Details>
+    <br><br>
+	  
+    <div class="prp" id="15">
+      <b>[#15]命題：可測集合たちの積も可測集合</b><br>
+      $\varLambda$ を添字集合（添字を付す対象が非加算濃度でも良いことを表す）とし，$\{\mathcal{F}_{\lambda}\}_{\lambda\in\varLambda}$ を集合 $\varOmega$ 上の $\sigma$ 加法族の族とする．
+      このとき，$\bca_{\lambda\in\varLambda} \mathcal{F}_{\lambda}$ もまた $\varOmega$ 上の $\sigma$ 加法族である．
+    </div>
+    <Details>
+    <summary>証明</summary>
+    
+    </Details>
+    <br><br>
+	  
+    <div class="clc" id="31">
+      <b>[#31]計算：集合族により生成される $\sigma$ 加法族</b><br>
+      $\varOmega = \{a,\,b,\,c\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{b\},\,\{c\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．
+    </div>
+    <Details>
+    <summary>証明</summary>
+	    
+    </Details>
+    <br><br>
+	  
+    <div class="clc" id="32">
+      <b>[#32]計算：集合族により生成される $\sigma$ 加法族</b><br>
+      $\varOmega = \{a,\,b,\,c,\,d,\,e\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{b\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．
+    </div>
+    <Details>
+    <summary>証明</summary>
+	<ul>
+	<li> $\varOmega$の$\sigma$加法族は$\emptyset$と$\varOmega$を含む．</li>
+	<li> $\sigma(\mathcal{A})$は$\mathcal{A}$を含むので，$\{a\},\,\{b\}\in\sigma(\mathcal{A})$．</li>
+	<li> $\sigma(\mathcal{A})$は$\mathcal{A}$の成分の補集合も含むので，$\{b,\,c,\,d,\,e\},\,\{a,\,c,\,d,\,e\}\in\sigma(\mathcal{A})$．</li>
+	<li> $\sigma(\mathcal{A})$は$\mathcal{A}$の成分の和集合及びその補集合も含むので，$\{a,\,b\},\,\{c,\,d,\,e\}\in\sigma(\mathcal{A})$．</li>
+	</ul>
+	以上で挙げられた集合たちの和集合はまた上で挙げられたもののいずれかになるので，<br>
+	<center>
+	$\boxed{\sigma(\mathcal{A}) = \{\emptyset,\,\{a\},\,\{b\},\,\{a,\,b\},\,\{c,\,d,\,e\},\,\{b,\,c,\,d,\,e\},\,\{a,\,c,\,d,\,e\},\varOmega\}}\,.$
+	</center>
+    </Details>
+    <br><br>
+	  
+    <div class="clc" id="33">
+      <b>[#33]計算：集合族により生成される $\sigma$ 加法族</b><br>
+      $\varOmega = \{a,\,b,\,c,\,d,\,e\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{a,\,b,\,c\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．
+    </div>
+    <Details>
+    <summary>証明</summary>
+	    
     </Details>
     <br><br>
 	  
