@@ -79,36 +79,6 @@
       </Details>
     <br><br>
     
-    <div class="prp" id="14">
-      <b>[#14]命題：確率測度に関する有限加法性</b><br>
-      確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の有限個の可測集合 $A_i\,(i=1,\,2,\,\cdots,\,n)$ に対して，
-            <center>
-	    $A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{i=1}^{n} P(A_i).$
-	    </center>
-    </div>
-      <Details>
-        <summary>証明</summary>
-        $A_i\,(i=n+1,\,\cdots)$ に対して $A_i=\emptyset$ を定義すれば $\displaystyle\bigcup_{i=1}^{n}A_i = \displaystyle\bigcup_{i\in\mathbb{N}}A_i$ かつ任意の $i\neq j$ に対して $A_i\cap A_j=\emptyset$ であるから，$ P$ が確率測度であるための条件 iii より
-        <center> $ P\left(\displaystyle\bigcup_{i=1}^{n}A_i\right) =  P\left(\displaystyle\bigcup_{i\in\mathbb{N}}A_i\right) = \sum_{i} P(A_i)$. </center>
-	ここで，$i > n+1$ に対して $ P(A_i) =  P(\emptyset) = 0$ であるから，
-	      <center>$ P\left(\displaystyle\bigcup_{i=1}^{n}A_i\right) = \sum_{i} P(A_i) = \sum_{i=1}^{n} P(A_i)$</center>
-	を得る．
-      </Details>
-    <br><br>
-    
-    <div class="prp" id="15">
-      <b>[#15]命題：補集合の確率</b><br>
-      確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の集合 $A\in\mathcal{F}$ に対して $ P(A^{\mathrm{c}}) = 1- P(A)$.
-    </div>
-      <Details>
-        <summary>証明</summary>
-        任意の $\varOmega$ の部分集合 $A$ について，$A\cup A^\cpl = \varOmega$ かつ $A\cap A^\cpl = \emptyset$ であるから，<a href="#14">命題#14</a>より，
-	<center>
-	$P(A) + P(A^\cpl) = P(\varOmega) = 1\,\,\Longleftrightarrow\,\, P(A^\cpl) = 1-P(A)$.
-	</center>
-      </Details>
-    <br><br>
-    
     <div class="clc" id="16">
       <b>[#16]計算：確率測度の決定</b><br>
       正六面体サイコロのモデルを以下の確率空間 $(\varOmega,\,2^\varOmega,\,P)$ で定義する（$p$ は実数定数）：<br>
