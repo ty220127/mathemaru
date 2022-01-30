@@ -49,21 +49,22 @@
     
     <div class="def" id="12">
       <b>[#12]定義：確率測度，確率空間</b><br>
-      $(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される関数 $ P:\mathcal{F}\rightarrow\mathbb{R}$ を確率測度と呼ぶ：<br>
+      $(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される測度 $ P:\mathcal{F}\rightarrow[0,\,1]$ を確率測度と呼ぶ：<br>
       <ol>
 	<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
 	<li> $ P(\varOmega)=1$, </li>
-	<li> [測度の $\sigma$ 加法性] $A_i\in\mathcal{F}(i=1,\,2,\,\cdots)$ に対して<br>
-		<center>
-		$A_i\cap A_j=\emptyset\,(i\neq j)\,\,\Longrightarrow\,\,\displaystyle  P\left(\bigcup_{i}A_i\right) = \sum_{i} P(A_i).$
-		</center> </li>
       </ol>
       このとき，組 $(\varOmega,\,\mathcal{F},\, P)$ を確率空間と呼ぶ．
     </div>
+      <Details>
+        <summary>補足</summary>
+	ここでは，測度の定義<a href="measure.html#24">[#24]</a> を前提に確率測度を定義しているが，一般の測度を導入せずに確率測度を導入する例も少なくない．
+	その場合は，以上の条件に加えて確率測度に関する $\sigma$ 加法性についてもここで言及される．なお，空集合の測度が $0$ であることについては，確率測度の定義により従うので，測度が定義されていなくてもここで与える必要はない（<a href="#13">[#13]</a>）．
+      </Details>
     <br><br>
     
     <div class="prp" id="13">
-      <b>[#13]命題：空集合の確率</b><br>
+      <b>[#13]命題：空集合の確率（※測度の定義を前提としない場合）</b><br>
       任意の確率空間の確率測度 $P$ に対して，<center>$ P(\emptyset) = 0$.</cetner>
     </div>
       <Details>
@@ -103,7 +104,6 @@
 	<center>
 	$P(A) + P(A^\cpl) = P(\varOmega) = 1\,\,\Longleftrightarrow\,\, P(A^\cpl) = 1-P(A)$.
 	</center>
-
       </Details>
     <br><br>
     
