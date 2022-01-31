@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
   <head>
     <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -15,31 +16,6 @@
     <title>確率測度｜演習問題集</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
     <style>
-      titlehead{
-        font-size: 200%;
-        font-family: sans-serif;
-      }
-      .def{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #ffff99;
-      }
-      .prp{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2f9ff;
-      }
-      .clc{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2ffb2;
-      }
-      bib{
-        font-size: 85%;
-      }
     </style>
   </head>
 
@@ -50,7 +26,7 @@
     <div class="def" id="12">
       <b>[#12]定義：確率測度，確率空間</b><br>
       $(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される測度 $ P:\mathcal{F}\rightarrow[0,\,\infty)$ を確率測度と呼ぶ：<br>
-      <ol>
+      <ul class="defl">
 	<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
 	<li> $ P(\varOmega)=1$, </li>
         <li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$P\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}P(A_i)$（確率測度の $\sigma$ 加法性）.
