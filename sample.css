@@ -203,6 +203,14 @@ footer {
   clear: left;
 }
 
+ul.romaA{
+  list-style-type: lower-roman;
+}
+
+ul.romaB{
+  list-style-type: upper-roman;
+}
+
 @media all and (max-width: 1000px) {
   .lesson {
     width: 50%;
