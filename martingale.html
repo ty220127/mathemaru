@@ -81,19 +81,19 @@
         
     <div class="prp" id="39">
       	<b>[#39]命題：停止時刻によるσ加法族</b><br>
-      	$\tau$ を $\mathcal{F}_t$ -停止時刻とするとき，$\mathcal{F}_\tau := \{A\in\mathcal{F}\,|\,{}^\forall t\in\mathbb{T},\,A\cap\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}\in\mathcal{F}_t\}$ は $\sigma$ 加法族 <a href="sigma-algebra#10">[#10]</a>である．
+      	$\tau$ を $\mathcal{F}_t$ -停止時刻とするとき，$\mathcal{G}_\tau := \{A\in\mathcal{F}\,|\,{}^\forall t\in\mathbb{T},\,A\cap\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}\in\mathcal{F}_t\}$ は $\sigma$ 加法族 <a href="sigma-algebra#10">[#10]</a>である．
     </div>
     <Details>
     <summary>証明</summary>
     $\sigma$ 加法族の定義に沿って題意を示す．以下，$\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}=:S_t$ とおき，$t$ は任意の $\mathbb{T}$ の元とする．
    <ol>
    <li> $\emptyset \cap S_t = \emptyset \in\mathcal{F}_t$．</li>
-   <li> $A\in\mathcal{F}_\tau\,\,\Longrightarrow\,\,A^{\cpl}\cap S_t = S_t\backslash(A\cap S_t)$．ここで，停止時刻の定義 <a href="#38">[#38]</a> より $S_t\in\mathcal{F}_t$ であり，仮定より $A\cap S_t\in\mathcal{F}_t$ であるから，可測集合の差に関する命題 <a href="sigma-algebra#14">[#14]</a> より $A^{\cpl}\cap S_t=S_t\backslash(A\cap S_t)\in\mathcal{F}_t$．よって，$A^\cpl\in\mathcal{F}_\tau$．</li>
-   <li> 互いに素な $\mathcal{F}_\tau$ の可測集合列 $\{A_i\}_{i\in\mathbb{N}}$ について考えると，すべての $i$ について $A_i\cap S_t\in\mathcal{F}_t$ であり，$\{A_i\cap S_t\}_{i\in\mathbb{N}}$ たちもまた互いに素であるから，
+   <li> $A\in\mathcal{G}_\tau\,\,\Longrightarrow\,\,A^{\cpl}\cap S_t = S_t\backslash(A\cap S_t)$．ここで，停止時刻の定義 <a href="#38">[#38]</a> より $S_t\in\mathcal{F}_t$ であり，仮定より $A\cap S_t\in\mathcal{F}_t$ であるから，可測集合の差に関する命題 <a href="sigma-algebra#14">[#14]</a> より $A^{\cpl}\cap S_t=S_t\backslash(A\cap S_t)\in\mathcal{F}_t$．よって，$A^\cpl\in\mathcal{G}_\tau$．</li>
+   <li> 互いに素な $\mathcal{G}_\tau$ の可測集合列 $\{A_i\}_{i\in\mathbb{N}}$ について考えると，すべての $i$ について $A_i\cap S_t\in\mathcal{F}_t$ であり，$\{A_i\cap S_t\}_{i\in\mathbb{N}}$ たちもまた互いに素であるから，
    <center>
    $\left(\bcu_{i\in\mathbb{N}} A_i\right) \cap S_t= \bcu_{i\in\mathbb{N}} (A_i\cap S_t) \in\mathcal{F}_t$.
    </center>
-   よって，$\bcu_{i\in\mathbb{N}} A_i\in\mathcal{F}_\tau$ となる．
+   よって，$\bcu_{i\in\mathbb{N}} A_i\in\mathcal{G}_\tau$ となる．
    </ol>
    </Details>
     <br><br>
@@ -101,7 +101,7 @@
     <div class="prp" id="40">
       	<b>[#40]命題：停止時刻によるσ加法族の包含関係</b><br>
       	$\tau,\,\upsilon$ は$\mathcal{F}$ -停止時刻で，かつ $\omega\in\varOmega$ に対してほとんど確実に $\tau(\omega)\leq\upsilon(\omega)$ であるとする．
-	このとき，<a href="#39">[#39]</a> で定められる $\mathcal{F}_\tau,\,\mathcal{F}_\upsilon$ に対して $\mathcal{F}_\tau\subset\mathcal{F}_\upsilon$ が成り立つ．
+	このとき，<a href="#39">[#39]</a> で定められる $\mathcal{G}_\tau,\,\mathcal{F}_\upsilon$ に対して $\mathcal{F}_\tau\subset\mathcal{F}_\upsilon$ が成り立つ．
     </div>
     <Details>
     <summary>証明</summary>
