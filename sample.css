@@ -1,6 +1,9 @@
+body{
+      font-family: sans-serif;
+}
+
 #titlehead{
       font-size: 200%;
-      font-family: sans-serif;
 }
 #bib{
       font-size: 90%;
@@ -26,5 +29,5 @@ background-color: #b2ffb2;
 }
 
 ul.prpl{
-      list-style-type: upper-roman;      
+      list-style-type: lower-roman;      
 }
