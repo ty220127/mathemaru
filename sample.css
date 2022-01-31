@@ -1,1 +1,26 @@
 
+      titlehead{
+        font-size: 200%;
+        font-family: sans-serif;
+      }
+      .def{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #ffff99;
+      }
+      .prp{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2f9ff;
+      }
+      .clc{
+        padding: 0.5%; 
+        margin-bottom: 0.5%; 
+        border: none; 
+        background-color: #b2ffb2;
+      }
+      bib{
+        font-size: 90%;
+      }
