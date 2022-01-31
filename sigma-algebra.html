@@ -69,19 +69,29 @@
     </Details>
     <br><br>
 	  
+    <div class="prp" id="41">
+      <b>[#41]命題：可測集合の積</b><br>
+      $A,\,B$ が可測空間 $(\varOmega,\,\mathcal{F})$ の可測集合であるならば，$A\cap B$ もまた可測集合である．
+    </div>
+    <Details>
+    <summary>証明</summary>
+    $A\cap B = (A^\cpl\cup B^\cpl)^\cpl$．有限加法性 <a href="#41">[#41]</a> より，$A\cap B^\cpl\in\mathcal{F}$．
+    </Details>
+    <br><br>
+	  
     <div class="prp" id="14">
-      <b>[#14]命題：可測集合の差も可測集合</b><br>
+      <b>[#14]命題：可測集合の差</b><br>
       $A,\,B$ が可測空間 $(\varOmega,\,\mathcal{F})$ の可測集合であるならば，$A\backslash B$ もまた可測集合である．
     </div>
     <Details>
     <summary>証明</summary>
-    
+    $A\backslash B = A\cap B^\cpl$．可測集合の積に関する命題 <a href="#41">[#41]</a> より，$A\cap B^\cpl\in\mathcal{F}$．
     </Details>
     <br><br>
 	  
     <div class="prp" id="31">
-      <b>[#31]命題：可測集合たちの積も可測集合</b><br>
-      $\varLambda$ を添字集合（添字を付す対象が非加算濃度でも良いことを表す）とし，$\{\mathcal{F}_{\lambda}\}_{\lambda\in\varLambda}$ を集合 $\varOmega$ 上の $\sigma$ 加法族の族とする．
+      <b>[#31]命題：非加算濃度の可測集合の積</b><br>
+      $\varLambda$ を添字集合とし，$\{\mathcal{F}_{\lambda}\}_{\lambda\in\varLambda}$ を集合 $\varOmega$ 上の $\sigma$ 加法族の族とする．
       このとき，$\bca_{\lambda\in\varLambda} \mathcal{F}_{\lambda}$ もまた $\varOmega$ 上の $\sigma$ 加法族である．
     </div>
     <Details>
