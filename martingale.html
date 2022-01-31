@@ -75,26 +75,35 @@
 	<center>
 	$\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}\in\mathcal{F}_t$
       	</center>
-	を満たすとき，これを $\mathcal{F}_t$-停止時刻 (stopping time) と呼ぶ．
+	を満たすとき，これを $\mathcal{F}_t$ -停止時刻 (stopping time) と呼ぶ．
     </div>
     <br><br>
         
-    <div class="def" id="39">
-      	<b>[#39]命題：停止時刻</b><br>
-      	$\tau$ を停止時刻とするとき，$\mathcal{F}_\tau := \{A\in\mathcal{F}\,|\,{}^\forall t\in\mathbb{T},\,A\cap\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}\in\mathcal{F}_t\}$ は $\sigma$ 加法族 <a href="sigma-algebra#10">[#10]</a>である．
+    <div class="plp" id="39">
+      	<b>[#39]命題：停止時刻によるσ加法族</b><br>
+      	$\tau$ を $\mathcal{F}_t$ -停止時刻とするとき，$\mathcal{F}_\tau := \{A\in\mathcal{F}\,|\,{}^\forall t\in\mathbb{T},\,A\cap\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}\in\mathcal{F}_t\}$ は $\sigma$ 加法族 <a href="sigma-algebra#10">[#10]</a>である．
     </div>
     <Details>
     <summary>証明</summary>
-    $\sigma$ 加法族の定義に沿って題意を示す．以下，$\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}=:S$ とおき，$t$ は任意の $\mathbb{T}$ の元とする．
+    $\sigma$ 加法族の定義に沿って題意を示す．以下，$\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}=:S_t$ とおき，$t$ は任意の $\mathbb{T}$ の元とする．
    <ol>
-   <li> $\emptyset \cap S = \emptyset \in\mathcal{F}_t$．</li>
-   <li> $A\in\mathcal{F}_\tau\,\,\Longrightarrow\,\,A^{\cpl}\cap S = S\backslash(A\cap S)$．ここで，停止時刻の定義 <a href="#38">[#38]</a> より $S\in\mathcal{F}_t$ であり，仮定より $A\cap S\in\mathcal{F}_t$ であるから，可測集合の差集合に関する命題 <a href="sigma-algebra#14">[#14]</a> より $A^{\cpl}\cap S=S\backslash(A\cap S)\in\mathcal{F}_t$．よって，$A^\cpl\in\mathcal{F}_\tau$．</li>
-   <li> 互いに素な $\mathcal{F}_\tau$ の可測集合列 $\{A_i\}_{i\in\mathbb{N}}$ について考えると，すべての $i$ について $A_i\cap S\in\mathcal{F}_t$ であり，$\{A_i\cap S\}_{i\in\mathbb{N}}$ たちもまた互いに素であるから，
+   <li> $\emptyset \cap S_t = \emptyset \in\mathcal{F}_t$．</li>
+   <li> $A\in\mathcal{F}_\tau\,\,\Longrightarrow\,\,A^{\cpl}\cap S_t = S_t\backslash(A\cap S_t)$．ここで，停止時刻の定義 <a href="#38">[#38]</a> より $S_t\in\mathcal{F}_t$ であり，仮定より $A\cap S_t\in\mathcal{F}_t$ であるから，可測集合の差集合に関する命題 <a href="sigma-algebra#14">[#14]</a> より $A^{\cpl}\cap S_t=S_t\backslash(A\cap S_t)\in\mathcal{F}_t$．よって，$A^\cpl\in\mathcal{F}_\tau$．</li>
+   <li> 互いに素な $\mathcal{F}_\tau$ の可測集合列 $\{A_i\}_{i\in\mathbb{N}}$ について考えると，すべての $i$ について $A_i\cap S_t\in\mathcal{F}_t$ であり，$\{A_i\cap S_t\}_{i\in\mathbb{N}}$ たちもまた互いに素であるから，
    <center>
-   $\left(\bca_{i\in\mathbb{N}} A_i\right) \cap S= \bca_{i\in\mathbb{N}} (A_i\cap S) \in\mathcal{F}_t$.
+   $\left(\bca_{i\in\mathbb{N}} A_i\right) \cap S_t= \bca_{i\in\mathbb{N}} (A_i\cap S_t) \in\mathcal{F}_t$.
    </center>
    よって，$\bca_{i\in\mathbb{N}} A_i\in\mathcal{F}_\tau$ となる．
    </ol>
+    <br><br>
+        
+    <div class="plp" id="40">
+      	<b>[#40]命題：停止時刻によるσ加法族の包含関係</b><br>
+      	$\tau,\,\upsilon$ は$\mathcal{F}$ -停止時刻で，かつ $\omega\in\varOmega$ に対してほとんど確実に $\tau(\omega)\leq\upsilon(\omega)$ であるとする．
+	このとき，<a href="#39">[#39]</a> で定められる $\mathcal{F}_\tau,\,\mathcal{F}_\upsilon$ に対して $\mathcal{F}_\tau\subset\mathcal{F}_\upsilon$ が成り立つ．
+    </div>
+    <Details>
+    <summary>証明</summary>
     <br><br>
         
     <bib>
