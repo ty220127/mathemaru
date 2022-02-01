@@ -62,7 +62,7 @@
     <Details>
     <summary>証明</summary>
     $\sigma$ 加法族の定義に沿って題意を示す．以下，$\{\omega\in\varOmega\,|\,\tau(\omega)\leq t\}=:S_{\tau,t}$ とおき，$t$ は任意の $\mathbb{T}$ の元とする．
-   <ol>
+   <ul class="defl">
    <li> $\emptyset \cap S_{\tau,t} = \emptyset \in\mathcal{F}_t$．</li>
    <li> $A\in\mathcal{G}_\tau\,\,\Longrightarrow\,\,A^{\cpl}\cap S_{\tau,t} = S_{\tau,t}\backslash(A\cap S_{\tau,t})$．ここで，停止時刻の定義 <a href="#38">[#38]</a> より $S_{\tau,t}\in\mathcal{F}_t$ であり，仮定より $A\cap S_{\tau,t}\in\mathcal{F}_t$ であるから，可測集合の差に関する命題 <a href="sigma-algebra#14">[#14]</a> より $A^{\cpl}\cap S_{\tau,t}=S_{\tau,t}\backslash(A\cap S_{\tau,t})\in\mathcal{F}_t$．よって，$A^\cpl\in\mathcal{G}_\tau$．</li>
    <li> 互いに素な $\mathcal{G}_\tau$ の可測集合列 $\{A_i\}_{i\in\mathbb{N}}$ について考えると，すべての $i$ について $A_i\cap S_{\tau,t}\in\mathcal{F}_t$ であり，$\{A_i\cap S_{\tau,t}\}_{i\in\mathbb{N}}$ たちもまた互いに素であるから，
@@ -70,7 +70,7 @@
    $\left(\bcu_{i\in\mathbb{N}} A_i\right) \cap S_{\tau,t}= \bcu_{i\in\mathbb{N}} (A_i\cap S_{\tau,t}) \in\mathcal{F}_t$.
    </center>
    よって，$\bcu_{i\in\mathbb{N}} A_i\in\mathcal{G}_\tau$ となる．
-   </ol>
+   </ul>
    </Details>
     <br><br>
         
@@ -81,10 +81,10 @@
     </div>
     <Details>
     <summary>証明</summary>
-    <a href="#39">[#39]</a> の $S_{\tau,\,t}$ を用いて $A\in\mathcal{G}_\tau\,\,\Longrightarrow\,\,A\in\mathcal{G}_{\tau'}$ を示す．<br>
+    <a href="#39">[#39]</a> の $S_{\tau,\,t}$ を用いて $[A\in\mathcal{G}_\tau\,\,\Longrightarrow\,\,A\in\mathcal{G}_{\tau'}]$ を示す．<br>
     $A\in\mathcal{G}_\tau$ であるとすれば，直ちに $A\cap S_{\tau,\,t}\in\mathcal{F}_t$ がいえる．このとき，$\tau'$ は停止時刻であることから $S_{\tau',\,t}\in\mathcal{F}_t$ である．
     可測集合の積に関する命題 <a href="sigma-algebra#42">[#42]</a> より，$A\cap S_{\tau,\,t}\cap S_{\tau',\,t}\in\mathcal{F}_t$ である．ここで，$\tau(\omega)\leq\tau'(\omega)$ である
-    から $[\tau'(\omega)\leq t\,\,\Longrightarrow\,\,\tau(\omega)\leq t]$ であり，$S_{\tau,\,t}\cap S_{\tau',\,t}=S_{\tau',\,t}$．よって，$A\cap S_{\tau',\,t} =A\cap S_{\tau,\,t}\cap S_{\tau',\,t}\in\mathcal{F}_t$，すなわち$A\in\mathcal{F}_{\tau'}$ である．<br>
+    から $[\tau'(\omega)\leq t\,\,\Longrightarrow\,\,\tau(\omega)\leq t]$ であり，$S_{\tau,\,t}\cap S_{\tau',\,t}=S_{\tau',\,t}$．よって，$A\cap S_{\tau',\,t} =A\cap S_{\tau,\,t}\cap S_{\tau',\,t}\in\mathcal{F}_t$，すなわち$A\in\mathcal{G}_{\tau'}$ である．<br>
    </Details>
     <br><br>
         
