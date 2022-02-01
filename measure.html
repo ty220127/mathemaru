@@ -1,116 +1,103 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
-  <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-        limit: '\\displaystyle\\lim',
-	sig: '\\displaystyle\\sum',
-	cpl: '\\mathrm{c}'
-      }}});
-    </script>
-    <title>測度｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-      titlehead{
-        font-size: 200%;
-        font-family: sans-serif;
-      }
-      .def{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #ffff99;
-      }
-      .prp{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2f9ff;
-      }
-      .clc{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2ffb2;
-      }
-      bib{
-        font-size: 95%;
-      }
-    </style>
-  </head>
+<head>
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+	MathJax.Hub.Config({ TeX: { Macros: { 
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}'
+	}}});
+</script>
+<title>測度｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
 
-  <body>
-    <center><titlehead>測度</titlehead></center>
-    <br><br>
+<body>
+<center><div id="titlehead">測度</div></center>
+<br><br>
     
-    <div class="def" id="24">
-      <b>[#24]定義：測度，測度空間</b><br>
-      $(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が以下の条件を満たすとき，これを $(\varOmega,\,\mathcal{F})$ 上の測度 (measure) と呼ぶ：
-      <ol>
-      <li> $\mu(\emptyset) = 0$,</li>
-      <li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$（測度の $\sigma$ 加法性）.
-      </ol>
-      また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を測度空間 (measure space) と呼ぶ．
-    </div>
-    <br><br>
+<div class="def" id="24">
+	<b>[#24]定義：測度，測度空間</b><br>
+	$(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が以下の条件を満たすとき，これを $(\varOmega,\,\mathcal{F})$ 上の測度 (measure) と呼ぶ：
+	<ol class="defl">
+	<li> $\mu(\emptyset) = 0$,</li>
+	<li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$（測度の $\sigma$ 加法性）.
+	</ol>
+	また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を測度空間 (measure space) と呼ぶ．
+</div>
+<br><br>
         
-    <div class="prp" id="25">
-      <b>[#25]命題：測度の有限加法性</b><br>
-      $\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i=1}^{n} A_i\right) = \sig_{i=1}^{n}\mu(A_i)$.
-    </div>
-    <Details>
-    <summary>証明</summary>
-    $i= n+1,\,n+2,\,\cdots$ に対して $A_i=\emptyset$ と定めれば，$\mu\left(\bcu_{i=1}^{n} A_i\right)=\mu\left(\bcu_{i\in\mathbb{N}} A_i\right)$．
-    一方，$\mu(\emptyset)=0$ であるから（<a href="#24">[#24]</a>-i），$\sig_{i\in\mathbb{N}}\mu(A_i) = \sig_{i=1}^{n}\mu(A_i)$．
-    以上と測度の $\sigma$ 加法性（<a href="#24">[#24]</a>-ii）より，題意は示される．
-    </Details>
-    <br><br>
+<div class="prp" id="25">
+	<b>[#25]命題：測度の有限加法性</b><br>
+	$\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i=1}^{n} A_i\right) = \sig_{i=1}^{n}\mu(A_i)$.
+</div>
+<Details>
+	<summary>証明</summary>
+	$i= n+1,\,n+2,\,\cdots$ に対して $A_i=\emptyset$ と定めれば，$\mu\left(\bcu_{i=1}^{n} A_i\right)=\mu\left(\bcu_{i\in\mathbb{N}} A_i\right)$．
+	一方，$\mu(\emptyset)=0$ であるから（<a href="#24">[#24]</a>-i），$\sig_{i\in\mathbb{N}}\mu(A_i) = \sig_{i=1}^{n}\mu(A_i)$．
+	以上と測度の $\sigma$ 加法性（<a href="#24">[#24]</a>-ii）より，題意は示される．
+</Details>
+<br><br>
         
-    <div class="prp" id="26">
-      <b>[#26]命題：測度の単調性</b><br>
-      $A,\,B\in\mathcal{F}$ が $A\subset B$ ならば $\mu(B\backslash A) = \mu(B)-\mu(A)$ であり，それ故に $\mu(B)-\mu(A)\geq 0$ である.
-    </div>
-    <Details>
-    <summary>証明</summary>
-    $A\cap B\backslash A = \emptyset$ かつ $A\cup B\backslash A = B$ であるから測度の有限加法性<a href="#25">[#25]</a>より，
-    <center>$\mu(A)+\mu(B\backslash A) = \mu(B)\,\,\Longleftrightarrow\,\,\mu(B\backslash A) = \mu(B)-\mu(A)$.</center>
-    また，測度の値域<a href="#24">[#24]</a>より，$\mu(B)-\mu(A) = \mu(B\backslash A)\geq 0$ である．
-    </Details>
-    <br><br>
+<div class="prp" id="26">
+	<b>[#26]命題：測度の単調性</b><br>
+	$A,\,B\in\mathcal{F}$ が $A\subset B$ ならば $\mu(B\backslash A) = \mu(B)-\mu(A)$ であり，それ故に $\mu(B)-\mu(A)\geq 0$ である.
+</div>
+<Details>
+	<summary>証明</summary>
+	$A\cap B\backslash A = \emptyset$ かつ $A\cup B\backslash A = B$ であるから測度の有限加法性<a href="#25">[#25]</a>より，
+	<center>$\mu(A)+\mu(B\backslash A) = \mu(B)\,\,\Longleftrightarrow\,\,\mu(B\backslash A) = \mu(B)-\mu(A)$.</center>
+	また，測度の値域<a href="#24">[#24]</a>より，$\mu(B)-\mu(A) = \mu(B\backslash A)\geq 0$ である．
+</Details>
+<br><br>
         
-    <div class="prp" id="27">
-      <b>[#27]命題：増大する測度の連続性</b><br>
-      集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\subset A_2\subset \cdots$ でかつ $\limit_{n\rightarrow\infty}A_n =A$ を満たすならば， $\limit_{n\rightarrow\infty}\mu(A_n) = \mu(A)$ である.
-    </div>
-    <Details>
-    <summary>証明</summary>
-    $\{B_i\}_{i\in\mathbb{N}}$ を $B_1=A_1$，$B_i = A_i\backslash A_{i-1}\,(i\geq 2)$ と定義すると，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから，
-    </Details>
-    <br><br>
+<div class="prp" id="46">
+	<b>[#46]命題：和の測度と積の測度の関係</b><br>
+	測度空間 $(\varOmega\,\mathcal{F},\,\mu)$ 上の可測集合　$A,\,B\in\mathcal{F}$ に対して，$\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$.
+</div>
+<Details>
+	<summary>証明</summary>
+	$A\cup B = A \cup (B\backslash A)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より $\mu(A\cup B) = \mu(A)+\mu(B\backslash A)$．
+	更に，$(A\cap B)\subset B$ から測度の単調性 <a href="#26">[#26]</a> より $\mu(B\backslash A) = \mu(B\backslash (A\cap B)) = \mu(B) - \mu(A\cap B)$．
+	以上により，$\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$ が成り立つ．	
+</Details>
+<br><br>
         
-    <div class="prp" id="28">
-      <b>[#28]命題：減少する測度の連続性</b><br>
-      集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\supset A_2\supset \cdots$ でかつ $\mu(A_n)<\infty$，$\limit_{n\rightarrow\infty}A_n =A$ を満たすならば， $\limit_{n\rightarrow\infty}\mu(A_n) = \mu(A)$ である.
-    </div>
-    <Details>
-    <summary>証明</summary>
-    $\{B_i\}_{i\in\mathbb{N}}$ を $B_1=A_1$，$B_i = A_i\backslash A_{i-1}\,(i\geq 2)$ と定義すると，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから，
-    </Details>
-    <br><br>
+<div class="prp" id="27">
+	<b>[#27]命題：増大する測度の連続性</b><br>
+	集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\subset A_2\subset \cdots$ でかつ $\limit_{n\rightarrow\infty}A_n =A$ を満たすならば， $\limit_{n\rightarrow\infty}\mu(A_n) = \mu(A)$ である.
+</div>
+<Details>
+	<summary>証明</summary>
+	$\{B_i\}_{i\in\mathbb{N}}$ を $B_1=A_1$，$B_i = A_i\backslash A_{i-1}\,(i\geq 2)$ と定義すると，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから，
+</Details>
+<br><br>
         
-    <bib>
-      <b>参考文献</b>
-      <ul>
-      <li><a href="https://mathlandscape.com/measure/">測度の定義と具体例4つ・性質5つを証明付きで徹底解説 | 数学の景色</a></li>
-      </ul>
-    </bib>
+<div class="prp" id="28">
+	<b>[#28]命題：減少する測度の連続性</b><br>
+	集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\supset A_2\supset \cdots$ でかつ $\mu(A_n)<\infty$，$\limit_{n\rightarrow\infty}A_n =A$ を満たすならば， $\limit_{n\rightarrow\infty}\mu(A_n) = \mu(A)$ である.
+</div>
+<Details>
+	<summary>証明</summary>
+	$\{B_i\}_{i\in\mathbb{N}}$ を $B_1=A_1$，$B_i = A_i\backslash A_{i-1}\,(i\geq 2)$ と定義すると，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから，
+</Details>
+<br><br>
+        
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://mathlandscape.com/measure/">測度の定義と具体例4つ・性質5つを証明付きで徹底解説 | 数学の景色</a></li>
+</ul>
+</div>
       
-    <p style="text-align:right;">
-    <a href="index.html">トップページに戻る</a>
-    </p>
-  </body>
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
 </html>
