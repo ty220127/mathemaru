@@ -4,6 +4,8 @@ body{
 
 #titlehead{
       font-size: 200%;
+      font-family: serif;
+      font-weight: bold;
 }
 #bib{
       font-size: 90%;
