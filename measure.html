@@ -60,13 +60,18 @@
         
 <div class="prp" id="46">
 	<b>[#46]命題：和の測度と積の測度の関係</b><br>
-	測度空間 $(\varOmega\,\mathcal{F},\,\mu)$ 上の可測集合　$A,\,B\in\mathcal{F}$ に対して，$\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$.
+	測度空間 $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合　$A,\,B\in\mathcal{F}$ に対して，$\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$.
 </div>
 <Details>
-	<summary>証明</summary>
+	<summary>証明１</summary>
 	$A\cup B = A \cup (B\backslash A)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より $\mu(A\cup B) = \mu(A)+\mu(B\backslash A)$．
 	更に，$(A\cap B)\subset B$ から測度の単調性 <a href="#26">[#26]</a> より $\mu(B\backslash A) = \mu(B\backslash (A\cap B)) = \mu(B) - \mu(A\cap B)$．
 	以上により，$\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$ が成り立つ．	
+</Details>
+<Details>
+	<summary>証明２</summary>
+	$A\cup B = A \cup (B\backslash A)$ かつ $(B\backslash A) \cup (A\cap B)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より 
+	$\mu(A\cup B) +\mu(A\cap B) = \mu(A)+ \mu(B\backslash A) + \mu(A\cap B) = \mu(A) + \mu(B)$．よって $\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$ が成り立つ．
 </Details>
 <br><br>
         
