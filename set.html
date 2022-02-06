@@ -157,22 +157,19 @@
 <br><br>
 
 <div class="prp" id="56">
-	<b>[#56]命題：集合の演算と包含</b><br>
+	<b>[#56]命題：集合の包含と共通部分</b><br>
 	集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，
-	<center>$A = (A\cap B)\cup (A\backslash B).$</center>
+	<center>$A\cap B=A.$</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	<center> 
-		$\begin{align*} x\in (A\cap B)\cup (A\backslash B)\,\,&\Longleftrightarrow\,\, x\in A\cap B\,\,\text{or}\,\, x\in (A\backslash B)\\
-		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\, x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{or}\,\,x\notin B)\\
-		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\,(x\in B\,\,\text{or}\,\,x\notin B)\\
-		&\Longleftrightarrow\,\,x\in A.\end{align*}$
+	$[x\in A\cap B\Rightarrow x\in A]$ は自明である．仮定より $[x\in A\rightarrow x\in B]$ であるから，
+	<center>
+		$x\in A\,\,\Longrightarrow\,\, x\in A\,\,\text{and}\,\,x\in B\,\,\Longrightarrow x\in A\cap B.$
 	</center>
 </Details>
 <br><br>
-
-
+	
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
