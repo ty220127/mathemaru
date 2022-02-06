@@ -28,8 +28,7 @@
 	<b>[#48]定義：集合に関する諸定義</b><br>
   ものの集まりのことを【集合(set)】と呼ぶ．
   <ul class="defl">
-    <li> 今，集合 $S$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $S$ の【元(要素; element)】と呼び，$x\in S$ と書く．
-      逆に，$x$ が $S$ の要素でないことは $x\neq S$ と書く．</li>
+    <li> 今，集合 $S$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $S$ の【元(要素; element)】と呼び，$x\in S$ と書く．</li>
     <li> 集合 $S$，$T$ に対して
       <center> $x\in S\,\,\Longrightarrow\,\, x\in T$ </center>
       が成り立つことを【$S$ は $T$ に含まれる】と云い，$S$ は $T$ の【部分集合(subset)】と呼ばれる．また，これを $S\subset T$ と表す．</li>
@@ -71,7 +70,7 @@
     <li> 集合 $S$ に属し $T$ に属さないような要素の集合を $S$ から $T$ の【差集合(set difference)】と呼び，$S\backslash T$ と書く：
 	  <center>$S\backslash T= \{x\,|\,\,x\in S\,\,\text{and}\,\, x\notin T\}$.</li>
     <li> 集合 $S$ か $T$ の一方に属しもう一方に属さないような要素の集合を $S$ と $T$ の【対称差(symmetric difference)】と呼び，$S\bigtriangleup T$ と書く：
-	  <center>$S\bigtriangleup T= (S\backslash T)\cup (T\backslash S)= \{x\,|\,\,x\in S\,\,\text{xor}\,\, x\notin T\}$.</li>
+	  <center>$S\bigtriangleup T= (S\backslash T)\cup (T\backslash S)= \{x\,|\,\,x\in S\,\,\text{xor}\,\, x\in T\}$.</li>
   </ul>
 </div>
 <br><br>
@@ -99,7 +98,7 @@
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の交換法則により従う．例えば $[(S\cup T)\cup U=S\cup (T\cup U)]$ に対して，
+	命題の結合法則により従う．例えば $[(S\cup T)\cup U=S\cup (T\cup U)]$ に対して，
 	<center> 
 		$\begin{align*} x\in (S\cup T)\cup U\,\,&\Longleftrightarrow\,\, (x\in S\cup T)\,\,\text{or}\,\, x\in U\\
 		&\Longleftrightarrow\,\,(x\in S\,\,\text{or}\,\,x\in T)\,\,\text{or}\,\, x\in U\\
@@ -119,13 +118,29 @@
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の交換法則により従う．例えば $[S\cap (T\cup U)=(S\cap T)\cup (S\cap U)]$ に対して，
+	命題の分配法則により従う．例えば $[S\cap (T\cup U)=(S\cap T)\cup (S\cap U)]$ に対して，
 	<center> 
 		$\begin{align*} x\in S\cap (T\cup U)\,\,&\Longleftrightarrow\,\, x\in S\,\,\text{and}\,\, x\in (T\cup U)\\
 		&\Longleftrightarrow\,\,x\in S\,\,\text{and}\,\, (x\in T\,\,\text{or}\,\, x\in U)\\
 		&\Longleftrightarrow\,\,(x\in S\,\,\text{and}\,\,x\in T)\,\,\text{or}\,\, (x\in S\,\,\text{and}\,\,x\in U)\\
 		&\Longleftrightarrow\,\,(x\in S\cap T)\,\,\text{or}\,\, (x\in S\cap U)\\
 		&\Longleftrightarrow\,\,x\in (S\cap T)\cup (S\cap U).\end{align*}$
+	</center>
+</Details>
+<br><br>
+
+<div class="prp" id="55">
+	<b>[#55]命題：共通部分による集合の分解</b><br>
+	集合 $S,\,T$ に対して 
+	<center>$S = (S\cap T)\cup (S\backslash T).$</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	<center> 
+		$\begin{align*} x\in (S\cap T)\cup (S\backslash T)\,\,&\Longleftrightarrow\,\, x\in S\cap T\,\,\text{or}\,\, x\in (S\backslash T)\\
+		&\Longleftrightarrow\,\,(x\in S\,\,\text{and}\,\, x\in T)\,\,\text{or}\,\, (x\in S\,\,\text{or}\,\,x\notin T)\\
+		&\Longleftrightarrow\,\,x\in S\,\,\text{and}\,\,(x\in T\,\,\text{or}\,\,x\notin T)\\
+		&\Longleftrightarrow\,\,x\in S.\end{align*}$
 	</center>
 </Details>
 <br><br>
