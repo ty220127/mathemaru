@@ -26,8 +26,8 @@
     
 <div class="def" id="48">
 	<b>[#48]定義：集合に関する諸定義</b><br>
-  ものの集まりのことを<b>集合</b>と呼ぶ．
-  <ul id="defl">
+  ものの集まりのことを【集合】と呼ぶ．
+  <ul class="defl">
     <li> 今，集合 $S$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $S$ の【元】または【要素】と呼び，$x\in S$ と書く．
       逆に，$x$ が $S$ の要素でないことは $x\neq S$ と書く．</li>
     <li> 集合 $S$，$T$ に対して
@@ -49,9 +49,26 @@
 </Details>
 <br><br>
 
+<div class="def" id="50">
+	<b>[#50]定義：集合の演算</b><br>
+  <ul class="defl">
+    <li> 集合 $S$ または $T$ に属するような要素の集合を $S$ と $T$ の【和(sum)】または【合併(union)】と呼び，$S\cup T$ と書く：
+	  <center>$S\cup T= \{x\,|\,x\in S\,\text{or}\, x\in T\}$.</li>
+    <li> 集合 $S$ と $T$ の両方属するような要素の集合を $S$ と $T$ の【共通部分(intersection)】または【交叉(meet)】と呼び，$S\cap T$ と書く：
+	  <center>$S\cap T= \{x\,|\,x\in S\,\text{and}\, x\in T\}$.</li>
+    <li> 集合 $S$ に属し $T$ に属さないような要素の集合を $S$ から $T$ の【差集合(set difference)】と呼び，$S\backslash T$ と書く：
+	  <center>$S\backslash T= \{x\,|\,x\in S\,\text{and}\, x\nin T\}$.</li>
+    <li> 集合 $S$ か $T$ の一方に属しもう一方に属さないような要素の集合を $S$ と $T$ の【対称差(symmetric difference)】と呼び，$S\bigtriangleup T$ と書く：
+	  <center>$S\bigtriangleup T= (S\backslash T)\cup (T\backslash S)$.</li>
+  </ul>
+</div>
+<br><br>
+  
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+	<li><a href="https://mathwords.net/wasyugou">和集合と積集合の意味と公式｜具体例で学ぶ数学</a></li>
+	<li><a href="https://wiis.info/math/set/set/symmetric-difference/">対称差｜WIIS</a></li>
 </ul>
 </div>
       
