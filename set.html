@@ -157,15 +157,30 @@
 <br><br>
 
 <div class="prp" id="56">
-	<b>[#56]命題：集合の包含と共通部分</b><br>
+	<b>[#56]命題：集合の包含と和</b><br>
+	集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，
+	<center>$A\cup B=B.$</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	$[x\in B\Rightarrow x\in A\cup B]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，
+	<center>
+		$\begin{align*}x\in A\cup B&\,\,&\Longleftrightarrow\,\, \underline{x\in A}\,\,\text{or}\,\,x\in B\,\,\\
+		&\Longrightarrow\,\, \underline{x\in B}\text{or}\,\, x\in B\,\,\Longleftrightarrow\,\, x\in B.\end{align*}$
+	</center>
+</Details>
+<br><br>
+	
+<div class="prp" id="57">
+	<b>[#57]命題：集合の包含と共通部分</b><br>
 	集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，
 	<center>$A\cap B=A.$</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	$[x\in A\cap B\Rightarrow x\in A]$ は自明である．仮定より $[x\in A\rightarrow x\in B]$ であるから，
+	$[x\in A\cap B\Rightarrow x\in A]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，
 	<center>
-		$x\in A\,\,\Longrightarrow\,\, x\in A\,\,\text{and}\,\,x\in B\,\,\Longrightarrow x\in A\cap B.$
+		$x\in A\,\,\Longrightarrow\,\, x\in A\,\,\text{and}\,\,x\in B\,\,\Longleftrightarrow\,\, x\in A\cap B.$
 	</center>
 </Details>
 <br><br>
