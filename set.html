@@ -81,10 +81,30 @@
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の交換法則により従う．例えば $[S\cup T\LeftrightarrowT\cup S]$ に対して，
+	命題の交換法則により従う．例えば $[S\cup T\Leftrightarrow T\cup S]$ に対して，
 	<center> 
 		$\begin{align*} x\in S\cup T\,\,&\Longleftrightarrow\,\, x\in S\,\,\text{or}\,\,x\in T\\
-		&\,\,x\in T\,\,\text{or}\,\,x\in S\,\,\Longleftrightarrow\,\, x\in T\cup S.\end{align*}$
+		&\Longleftrightarrow\,\,x\in T\,\,\text{or}\,\,x\in S\,\,\Longleftrightarrow\,\, x\in T\cup S.\end{align*}$
+	</center>
+</Details>
+<br><br>
+
+<div class="prp" id="53">
+	<b>[#53]命題：集合演算の結合法則</b><br>
+	集合 $S,\,T,\,U$ に対して 
+	<center>$(S\cup T)\cup U\,\,\Longleftrightarrow\,\,S\cup (T\cup U)$，<br>
+		$(S\cap T)\cup U\,\,\Longleftrightarrow\,\,S\cup (T\cap U)$.</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	命題の交換法則により従う．例えば $[(S\cup T)\cup U\Leftrightarrow S\cup (T\cup U)]$ に対して，
+	<center> 
+		$\begin{align*} x\in (S\cup T)\cup U\,\,&\Longleftrightarrow\,\, (x\in S\cup T)\,\,\text{or}\,\, x\in U\\
+		&\Longleftrightarrow\,\,(x\in S\,\,\text{or}\,\,x\in T)\,\,\text{or}\,\, x\in U\\
+		&\Longleftrightarrow\,\,x\in S\,\,\text{or}\,\,x\in T\,\,\text{or}\,\, x\in U\\
+		&\Longleftrightarrow\,\,x\in S\,\,\text{or}\,\,(x\in T\,\,\text{or}\,\, x\in U)\\
+		&\Longleftrightarrow\,\,x\in S\,\,\text{or}\,\,(x\in T\cup U)\\
+		&\Longleftrightarrow\,\,x\in S\cup (x\in T\cup U)\end{align*}$
 	</center>
 </Details>
 <br><br>
