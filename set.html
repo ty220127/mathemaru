@@ -26,15 +26,15 @@
     
 <div class="def" id="48">
 	<b>[#48]定義：集合に関する諸定義</b><br>
-  ものの集まりのことを【集合】と呼ぶ．
+  ものの集まりのことを【集合(set)】と呼ぶ．
   <ul class="defl">
-    <li> 今，集合 $S$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $S$ の【元】または【要素】と呼び，$x\in S$ と書く．
+    <li> 今，集合 $S$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $S$ の【元(要素; element)】と呼び，$x\in S$ と書く．
       逆に，$x$ が $S$ の要素でないことは $x\neq S$ と書く．</li>
     <li> 集合 $S$，$T$ に対して
       <center> $x\in S\,\,\Longrightarrow\,\, x\in T$ </center>
-      が成り立つことを【 $S$ は $T$ に含まれる】と云い，$S$ は $T$ の【部分集合】と呼ばれる．また，これを $S\subset T$ と表す．</li>
+      が成り立つことを【 $S$ は $T$ に含まれる】と云い，$S$ は $T$ の【部分集合(subset)】と呼ばれる．また，これを $S\subset T$ と表す．</li>
     <li> $S\subset T$ かつ $S\supset T$ であるとき，集合 $S$ と $T$ を構成する元が全く同じとなる．このような場合，【集合 $S$ と $T$ は等しい】と云い，$S=T$ と書く．</li>
-    <li> 要素を1つも持たないような集合を【空集合】と呼び，$\emptyset$ と書く．</li>
+    <li> 要素を1つも持たないような集合を【空集合(empty set)】と呼び，$\emptyset$ と書く．</li>
   </ul>
 </div>
 <br><br>
@@ -46,6 +46,16 @@
 <Details>
 	<summary>証明</summary>
 	任意の $x$ に対して $x\in\emptyset$ が成り立たないことから，すべての集合 $S$ に対して $[x\in\emptyset\Rightarrow x\in S]$ は真となる．
+</Details>
+<br><br>
+
+<div class="prp" id="51">
+	<b>[#51]命題：集合は自身の部分集合</b><br>
+	 任意の集合 $S$ に対して，$S\subset S$.
+</div>
+<Details>
+	<summary>証明</summary>
+	任意の $x$ に対して $[x\inS \Rightarrow x\in S]$ は明らかに真である．
 </Details>
 <br><br>
 
