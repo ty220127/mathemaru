@@ -28,13 +28,13 @@
 	<b>[#48]定義：集合に関する諸定義</b><br>
   ものの集まりのことを【集合(set)】と呼ぶ．
   <ul class="defl">
-    <li> 今，集合 $S$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $S$ の【元(要素; element)】と呼び，$x\in S$ と書く．</li>
-    <li> 集合 $S$，$T$ に対して
-      <center> $x\in S\,\,\Longrightarrow\,\, x\in T$ </center>
-      が成り立つことを【$S$ は $T$ に含まれる】と云い，$S$ は $T$ の【部分集合(subset)】と呼ばれる．また，これを $S\subset T$ と表す．</li>
-    <li> $S\subset T$ かつ $S\supset T$ であるとき，つまり
-	    <center>$x\in S\,\,\Longleftrightarrow\,\, x\in T$</center>
-	 が成り立つとき，集合 $S$ と $T$ を構成する元が全く同じとなる．このような場合，【集合 $S$ と $T$ は等しい】と云い，$S=T$ と書く．</li>
+    <li> 今，集合 $A$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $A$ の【元(要素; element)】と呼び，$x\in A$ と書く．</li>
+    <li> 集合 $A$，$B$ に対して
+      <center> $x\in A\,\,\Longrightarrow\,\, x\in B$ </center>
+      が成り立つことを【$A$ は $B$ に含まれる】と云い，$A$ は $B$ の【部分集合(subset)】と呼ばれる．また，これを $A\subset B$ と表す．</li>
+    <li> $A\subset B$ かつ $A\supset B$ であるとき，つまり
+	    <center>$x\in A\,\,\Longleftrightarrow\,\, x\in B$</center>
+	 が成り立つとき，集合 $A$ と $B$ を構成する元が全く同じとなる．このような場合，【集合 $A$ と $B$ は等しい】と云い，$A=B$ と書く．</li>
     <li> 要素を1つも持たないような集合を【空集合(empty set)】と呼び，$\emptyset$ と書く．</li>
   </ul>
 </div>
@@ -46,66 +46,66 @@
 </div>
 <Details>
 	<summary>証明</summary>
-	任意の $x$ に対して $x\in\emptyset$ が成り立たないことから，すべての集合 $S$ に対して $[x\in\emptyset\Rightarrow x\in S]$ は真となる．
+	任意の $x$ に対して $x\in\emptyset$ が成り立たないことから，すべての集合 $A$ に対して $[x\in\emptyset\Rightarrow x\in A]$ は真となる．
 </Details>
 <br><br>
 
 <div class="prp" id="50">
 	<b>[#50]命題：集合は自身の部分集合</b><br>
-	 任意の集合 $S$ に対して，$S\subset S$.
+	 任意の集合 $A$ に対して，$A\subset A$.
 </div>
 <Details>
 	<summary>証明</summary>
-	任意の $x$ に対して $[x\in S \Rightarrow x\in S]$ は明らかに真である．
+	任意の $x$ に対して $[x\in A \Rightarrow x\in A]$ は明らかに真である．
 </Details>
 <br><br>
 
 <div class="def" id="51">
 	<b>[#51]定義：集合の演算</b><br>
   <ul class="defl">
-    <li> 集合 $S$ または $T$ に属するような要素の集合を $S$ と $T$ の【和(sum)】または【合併(union)】と呼び，$S\cup T$ と書く：
-	  <center>$S\cup T= \{x\,|\,x\in S\,\,\text{or}\,\, x\in T\}$.</li>
-    <li> 集合 $S$ と $T$ の両方属するような要素の集合を $S$ と $T$ の【共通部分(intersection)】または【交叉(meet)】と呼び，$S\cap T$ と書く：
-	  <center>$S\cap T= \{x\,|\,x\in S\,\,\text{and}\,\, x\in T\}$.</li>
-    <li> 集合 $S$ に属し $T$ に属さないような要素の集合を $S$ から $T$ の【差集合(set difference)】と呼び，$S\backslash T$ と書く：
-	  <center>$S\backslash T= \{x\,|\,\,x\in S\,\,\text{and}\,\, x\notin T\}$.</li>
-    <li> 集合 $S$ か $T$ の一方に属しもう一方に属さないような要素の集合を $S$ と $T$ の【対称差(symmetric difference)】と呼び，$S\bigtriangleup T$ と書く：
-	  <center>$S\bigtriangleup T= (S\backslash T)\cup (T\backslash S)= \{x\,|\,\,x\in S\,\,\text{xor}\,\, x\in T\}$.</li>
+    <li> 集合 $A$ または $B$ に属するような要素の集合を $A$ と $B$ の【和(sum)】または【合併(union)】と呼び，$A\cup B$ と書く：
+	  <center>$A\cup B= \{x\,|\,x\in A\,\,\text{or}\,\, x\in B\}$.</li>
+    <li> 集合 $A$ と $B$ の両方属するような要素の集合を $A$ と $B$ の【共通部分(intersection)】または【交叉(meet)】と呼び，$A\cap B$ と書く：
+	  <center>$A\cap B= \{x\,|\,x\in A\,\,\text{and}\,\, x\in B\}$.</li>
+    <li> 集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\backslash B$ と書く：
+	  <center>$A\backslash B= \{x\,|\,\,x\in A\,\,\text{and}\,\, x\notin B\}$.</li>
+    <li> 集合 $A$ か $B$ の一方に属しもう一方に属さないような要素の集合を $A$ と $B$ の【対称差(symmetric difference)】と呼び，$A\bigtriangleup B$ と書く：
+	  <center>$A\bigtriangleup B= (A\backslash B)\cup (B\backslash A)= \{x\,|\,\,x\in A\,\,\text{xor}\,\, x\in B\}$.</li>
   </ul>
 </div>
 <br><br>
   
 <div class="prp" id="52">
 	<b>[#52]命題：集合演算の交換法則</b><br>
-	集合 $S,\,T$ に対して 
-	<center>$S\cup T=T\cup S$，$S\cap T=T\cap S$.</center>
+	集合 $A,\,B$ に対して 
+	<center>$A\cup B=B\cup A$，$A\cap B=B\cap A$.</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の交換法則により従う．例えば $[S\cup T\Leftrightarrow T\cup S]$ に対して，
+	命題の交換法則により従う．例えば $[A\cup B\Leftrightarrow B\cup A]$ に対して，
 	<center> 
-		$\begin{align*} x\in S\cup T\,\,&\Longleftrightarrow\,\, x\in S\,\,\text{or}\,\,x\in T\\
-		&\Longleftrightarrow\,\,x\in T\,\,\text{or}\,\,x\in S\,\,\Longleftrightarrow\,\, x\in T\cup S.\end{align*}$
+		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, x\in A\,\,\text{or}\,\,x\in B\\
+		&\Longleftrightarrow\,\,x\in B\,\,\text{or}\,\,x\in A\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
 	</center>
 </Details>
 <br><br>
 
 <div class="prp" id="53">
 	<b>[#53]命題：集合演算の結合法則</b><br>
-	集合 $S,\,T,\,U$ に対して 
-	<center>$(S\cup T)\cup U=S\cup (T\cup U)$，<br>
-		$(S\cap T)\cup U=S\cup (T\cap U)$.</center>
+	集合 $A,\,B,\,C$ に対して 
+	<center>$(A\cup B)\cup C=A\cup (B\cup C)$，<br>
+		$(A\cap B)\cup C=A\cup (B\cap C)$.</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の結合法則により従う．例えば $[(S\cup T)\cup U=S\cup (T\cup U)]$ に対して，
+	命題の結合法則により従う．例えば $[(A\cup B)\cup C=A\cup (B\cup C)]$ に対して，
 	<center> 
-		$\begin{align*} x\in (S\cup T)\cup U\,\,&\Longleftrightarrow\,\, (x\in S\cup T)\,\,\text{or}\,\, x\in U\\
-		&\Longleftrightarrow\,\,(x\in S\,\,\text{or}\,\,x\in T)\,\,\text{or}\,\, x\in U\\
-		&\Longleftrightarrow\,\,x\in S\,\,\text{or}\,\,x\in T\,\,\text{or}\,\, x\in U\\
-		&\Longleftrightarrow\,\,x\in S\,\,\text{or}\,\,(x\in T\,\,\text{or}\,\, x\in U)\\
-		&\Longleftrightarrow\,\,x\in S\,\,\text{or}\,\,(x\in T\cup U)\\
-		&\Longleftrightarrow\,\,x\in S\cup (T\cup U).\end{align*}$
+		$\begin{align*} x\in (A\cup B)\cup C\,\,&\Longleftrightarrow\,\, (x\in A\cup B)\,\,\text{or}\,\, x\in C\\
+		&\Longleftrightarrow\,\,(x\in A\,\,\text{or}\,\,x\in B)\,\,\text{or}\,\, x\in C\\
+		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,x\in B\,\,\text{or}\,\, x\in C\\
+		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,(x\in B\,\,\text{or}\,\, x\in C)\\
+		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,(x\in B\cup C)\\
+		&\Longleftrightarrow\,\,x\in A\cup (B\cup C).\end{align*}$
 	</center>
 </Details>
 <Details>
@@ -116,45 +116,62 @@
 
 <div class="prp" id="54">
 	<b>[#54]命題：集合演算の分配法則</b><br>
-	集合 $S,\,T,\,U$ に対して 
-	<center>$S\cap (T\cup U)=(S\cap T)\cup (S\cap U)$，<br>
-		$S\cup (T\cap U)=(S\cup T)\cap (S\cup U)$.</center>
+	集合 $A,\,B,\,C$ に対して 
+	<center>$A\cap (B\cup C)=(A\cap B)\cup (A\cap C)$，<br>
+		$A\cup (B\cap C)=(A\cup B)\cap (A\cup C)$.</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の分配法則により従う．例えば $[S\cap (T\cup U)=(S\cap T)\cup (S\cap U)]$ に対して，
+	命題の分配法則により従う．例えば $[A\cap (B\cup C)=(A\cap B)\cup (A\cap C)]$ に対して，
 	<center> 
-		$\begin{align*} x\in S\cap (T\cup U)\,\,&\Longleftrightarrow\,\, x\in S\,\,\text{and}\,\, x\in (T\cup U)\\
-		&\Longleftrightarrow\,\,x\in S\,\,\text{and}\,\, (x\in T\,\,\text{or}\,\, x\in U)\\
-		&\Longleftrightarrow\,\,(x\in S\,\,\text{and}\,\,x\in T)\,\,\text{or}\,\, (x\in S\,\,\text{and}\,\,x\in U)\\
-		&\Longleftrightarrow\,\,(x\in S\cap T)\,\,\text{or}\,\, (x\in S\cap U)\\
-		&\Longleftrightarrow\,\,x\in (S\cap T)\cup (S\cap U).\end{align*}$
+		$\begin{align*} x\in A\cap (B\cup C)\,\,&\Longleftrightarrow\,\, x\in A\,\,\text{and}\,\, x\in (B\cup C)\\
+		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\, (x\in B\,\,\text{or}\,\, x\in C)\\
+		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\,x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{and}\,\,x\in C)\\
+		&\Longleftrightarrow\,\,(x\in A\cap B)\,\,\text{or}\,\, (x\in A\cap C)\\
+		&\Longleftrightarrow\,\,x\in (A\cap B)\cup (A\cap C).\end{align*}$
 	</center>
 </Details>
 <Details>
 	<summary>補足</summary>
 	集合の交換法則 <a href="#52">[#52]</a> と組み合わせることにより，左側に括弧がある場合：
-	<center>$(S\cap T)\cup U=(S\cup U)\cap (T\cup U)$，<br>
-		$(S\cup T)\cap U=(S\cap U)\cup (T\cap U)$.</center>
+	<center>$(A\cap B)\cup C=(A\cup C)\cap (B\cup C)$，<br>
+		$(A\cup B)\cap C=(A\cap C)\cup (B\cap C)$.</center>
 	の成立も確認できる．
 </Details>
 <br><br>
 
 <div class="prp" id="55">
 	<b>[#55]命題：共通部分による集合の分解</b><br>
-	集合 $S,\,T$ に対して 
-	<center>$S = (S\cap T)\cup (S\backslash T).$</center>
+	集合 $A,\,B$ に対して 
+	<center>$A = (A\cap B)\cup (A\backslash B).$</center>
 </div>
 <Details>
 	<summary>証明</summary>
 	<center> 
-		$\begin{align*} x\in (S\cap T)\cup (S\backslash T)\,\,&\Longleftrightarrow\,\, x\in S\cap T\,\,\text{or}\,\, x\in (S\backslash T)\\
-		&\Longleftrightarrow\,\,(x\in S\,\,\text{and}\,\, x\in T)\,\,\text{or}\,\, (x\in S\,\,\text{or}\,\,x\notin T)\\
-		&\Longleftrightarrow\,\,x\in S\,\,\text{and}\,\,(x\in T\,\,\text{or}\,\,x\notin T)\\
-		&\Longleftrightarrow\,\,x\in S.\end{align*}$
+		$\begin{align*} x\in (A\cap B)\cup (A\backslash B)\,\,&\Longleftrightarrow\,\, x\in A\cap B\,\,\text{or}\,\, x\in (A\backslash B)\\
+		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\, x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{or}\,\,x\notin B)\\
+		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\,(x\in B\,\,\text{or}\,\,x\notin B)\\
+		&\Longleftrightarrow\,\,x\in A.\end{align*}$
 	</center>
 </Details>
 <br><br>
+
+<div class="prp" id="56">
+	<b>[#56]命題：集合の演算と包含</b><br>
+	集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，
+	<center>$A = (A\cap B)\cup (A\backslash B).$</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	<center> 
+		$\begin{align*} x\in (A\cap B)\cup (A\backslash B)\,\,&\Longleftrightarrow\,\, x\in A\cap B\,\,\text{or}\,\, x\in (A\backslash B)\\
+		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\, x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{or}\,\,x\notin B)\\
+		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\,(x\in B\,\,\text{or}\,\,x\notin B)\\
+		&\Longleftrightarrow\,\,x\in A.\end{align*}$
+	</center>
+</Details>
+<br><br>
+
 
 <div id="bib"><b>参考文献</b>
 <ul>
