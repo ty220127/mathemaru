@@ -26,16 +26,25 @@
     
 <div class="def" id="58">
 	<b>[#58]定義：命題に関する諸定義</b><br>
-  ある物事について，それが「成り立つ」か「成り立たない」かを判定することができるとき，その物事を【命題(proposition)】と呼ぶ．
-  また，命題が成り立つことを【真(true)】であると云い，成り立たないことを【偽(false)】であると云う．以下，$P$，$Q$ を命題であるとする．
-  <ul class="defl">
-    <li> 「命題 $P$ が成り立たない」という命題を$P$ の【否定(negation)】と云い．$\neg P$ と書く．</li>
-    <li> 「命題 $P$，$Q$ が両方成り立つ」という命題を $P$ と $Q$ の【論理積(logical conjunction)】と呼び，$P$【かつ(and)】$Q$ または $P\land Q$ と書く．</li>
-    <li> 「命題 $P$，$Q$ の少なくとも何れかが成り立つ」という命題を $P$ と $Q$ の【論理和(logical disjunction)】と呼び，$P$【または(or)】$Q$ または $P\cplus Q$ と書く．</li>
-    <li> 「命題 $P$，$Q$ の一方は成り立ち，もう一方は成り立たない」という命題を $P$ と $Q$ の【排他的論理和(exclusive disjunction)】と呼び，$P$【xor】$Q$ または $P\lor Q$ と書く．</li>
-    <li> 「命題 $P$ が成り立つならば命題 $Q$ が成り立つ」という命題を $P$ と $Q$ の【論理包含(implication)】と呼び，$P$ は【仮定(assumption)】，$Q$ は【結論(conclusion)】と呼ばれる．
-	また，$P$【ならば】$Q$ または $P\Rightarrow Q$ と書く．</li>
-  </ul>
+  	ある物事について，それが「成り立つ」か「成り立たない」かを判定することができるとき，その物事を【命題(proposition)】と呼ぶ．
+  	また，命題が成り立つことを【真(true)】であると云い，成り立たないことを【偽(false)】であると云う．以下，$P$，$Q$ を命題であるとする．
+  	<ul class="defl">
+    		<li> 「命題 $P$ が成り立たない」という命題を$P$ の【否定(negation)】と云い．$\neg P$ と書く．</li>
+    		<li> 「命題 $P$，$Q$ が両方成り立つ」という命題を $P$ と $Q$ の【論理積(logical conjunction)】と呼び，$P$【かつ(and)】$Q$ または $P\land Q$ と書く．</li>
+    		<li> 「命題 $P$，$Q$ の少なくとも何れかが成り立つ」という命題を $P$ と $Q$ の【論理和(logical disjunction)】と呼び，$P$【または(or)】$Q$ または $P\oplus Q$ と書く．</li>
+    		<li> 「命題 $P$ が成り立つならば命題 $Q$ が成り立つ」という命題を $P$ と $Q$ の【論理包含(implication)】と呼び，
+		$P$ は【仮定(assumption)】または【前件(antecedent)】，$Q$ は【結論(conclusion)】または【後件(descendant)】と呼ばれる．
+		また，$P$【ならば】$Q$ または $P\Rightarrow Q$ と書く．</li>
+  	</ul>
+	以下，命題が真であることを $\mathbb{T}$，偽であることを $\mathbb{F}$ で表す．$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．<br>
+	<center>
+		$\begin{array}{|c||c|}\hline P & \neg P \\ \hline \mathsf{T} & \mathsf{F} \\ \hline \mathsf{F} & \mathsf{T} \\ \hline \end{array}\quad
+		\begin{array}{|c|c||c|c|c|}\hline P & Q & P\land Q& P\lor Q& P\Rightarrow Q \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{T}\\ \hline \end{array}$
+	</center>
 </div>
 <br><br>
   
@@ -52,6 +61,7 @@
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+	<li>長岡亮介: 総合的研究 論理学で学ぶ数学 – 思考ツールとしてのロジック</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-1_meidaironri.pdf">尾畑伸明, pdf</a></li>
 </ul>
 </div>
