@@ -31,7 +31,7 @@
   	<ul class="defl">
     		<li> 「命題 $P$ が成り立たない」という命題を$P$ の【否定(negation)】と云い．$\neg P$ と書く．</li>
     		<li> 「命題 $P$，$Q$ が両方成り立つ」という命題を $P$ と $Q$ の【論理積(logical conjunction)】と呼び，$P$【かつ(and)】$Q$ または $P\land Q$ と書く．</li>
-    		<li> 「命題 $P$，$Q$ の少なくとも何れかが成り立つ」という命題を $P$ と $Q$ の【論理和(logical disjunction)】と呼び，$P$【または(or)】$Q$ または $P\oplus Q$ と書く．</li>
+    		<li> 「命題 $P$，$Q$ の少なくとも何れかが成り立つ」という命題を $P$ と $Q$ の【論理和(logical disjunction)】と呼び，$P$【または(or)】$Q$ または $P\lor Q$ と書く．</li>
     		<li> 「命題 $P$ が成り立つならば命題 $Q$ が成り立つ」という命題を $P$ と $Q$ の【論理包含(implication)】と呼び，
 		$P$ は【仮定(assumption)】または【前件(antecedent)】，$Q$ は【結論(conclusion)】または【後件(descendant)】と呼ばれる．
 		また，$P$【ならば】$Q$ または $P\Rightarrow Q$ と書く．</li>
@@ -63,7 +63,7 @@
 </div>
 <Details>
 	<summary>証明</summary>
-	真理値表は以下の通りであり，$[P\Rightarrow Q]\land [Q\Rightarrow P]$ はすべての $P,\,Q$ の真理値の組み合わせにおいて真になるから，常に真といえる．
+	真理値表は以下の通りであり，$[P\Rightarrow Q]\land [Q\Rightarrow P]$ は真であるのは，$P$ と $Q$ が共に真であるときか，共に偽であるときである．
 	<center>
 		$\begin{array}{|c|c||c|c|c|}\hline P & Q & P\Rightarrow Q& Q\Rightarrow P& [P\Rightarrow Q]\land [Q\Rightarrow P] \\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
