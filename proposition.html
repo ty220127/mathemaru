@@ -36,7 +36,8 @@
 		$P$ は【仮定(assumption)】または【前件(antecedent)】，$Q$ は【結論(conclusion)】または【後件(descendant)】と呼ばれる．
 		また，$P$【ならば】$Q$ または $P\Rightarrow Q$ と書く．</li>
   	</ul>
-	以下，命題が真であることを $\mathbb{T}$，偽であることを $\mathbb{F}$ で表す．$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．<br>
+	以下，命題が真であることを $\mathsf{T}$，偽であることを $\mathsf{F}$ で表す（これらをまとめて【真理値(truth value)】と呼ぶ）．
+	$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．<br>
 	<center>
 		$\begin{array}{|c||c|}\hline P & \neg P \\ \hline \mathsf{T} & \mathsf{F} \\ \hline \mathsf{F} & \mathsf{T} \\ \hline \end{array}\quad
 		\begin{array}{|c|c||c|c|c|}\hline P & Q & P\land Q& P\lor Q& P\Rightarrow Q \\ \hline
@@ -48,13 +49,20 @@
 </div>
 <br><br>
   
-<div class="prp" id="">
-	<b>[#]命題：</b><br>
-	 
+<div class="prp" id="59">
+	<b>[#59]命題：同値</b><br>
+	$[P\Rightarrow Q]\land [Q\Rightarrow P]$ は真であるのは，$P$ と $Q$ が共に真であるときか，共に偽であるときである．
 </div>
 <Details>
 	<summary>証明</summary>
-	
+	真理値表は以下の通りであり，$[P\Rightarrow Q]\land [Q\Rightarrow P]$ はすべての $P,\,Q$ の真理値の組み合わせにおいて真になるから，常に真といえる．
+	<center>
+		$\begin{array}{|c|c||c|c|c|}\hline P & Q & P\Rightarrow Q& Q\Rightarrow P& [P\Rightarrow Q]\land [Q\Rightarrow P] \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline \end{array}$
+	</center>
 </Details>
 <br><br>
 
