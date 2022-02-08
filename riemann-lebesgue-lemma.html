@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+    intgrl: '\\displaystyle\\int',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+    rd: '\\mathrm{d}'
+	}}});
+</script>
+<title>Riemann-Lebesgue の補題｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">Riemann-Lebesgue の補題</div></center>
+<br><br>
+    
+<div class="prp" id="59">
+	<b>[#59]命題：Riemann-Lebesgue の補題</b><br>
+  関数 $f(x)$ が区間 $a\leq x\leq b$ で区分的に連続であるとき，
+  <center>
+    $\begin{align*}\limit_{n\rightarrow\infty}\intgrl_a^b f(x)\sin(\omega x)\rd x &= 0\\
+    \limit_{n\rightarrow\infty}\intgrl_a^b f(x)\cos(\omega x)\rd x &= 0\end{align*}$
+  </center>
+</div>
+<br><br>
+  
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://univ-study.net/riemann-lebesgue-emma/">リーマン・ルベーグの補助定理の証明をサクッとやってみた｜理系大学生の数学駆け込み寺</a>.</li>
+	<li><a href="https://yossii.net/mod/page/view.php?id=350">リーマン・ルベーグのレンマ｜大学生のための数学教材</a>.</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
+
