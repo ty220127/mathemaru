@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}'
+	}}});
+</script>
+<title>含意｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">含意</div></center>
+<br><br>
+    
+<div class="prp" id="">
+	<b>[#]命題：論理包含の意味</b><br>
+	命題 $P,\,Q$ に対して，
+	<center>$[P\Rightarrow Q]\equiv [\neg P\lor Q].$</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	真理値表は以下の通りであり，あらゆる $P,\,Q$ の真偽の組み合わせにおいて $[P\Rightarrow Q]$ と $[\neg P\lor Q]$ の真偽が一致することから，両者は同値である．<br><br>
+	<center>
+		$\begin{array}{|c|c||c|c|c|}\hline P & Q & \neg P& P\Rightarrow Q& \neg P\lor Q \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline \end{array}$
+	</center>
+</Details>
+<Details>
+	<summary>補足</summary>
+	$[P\Rightarrow Q]$ では，$P$ が真であるときは $Q$ も真である．これは直感的にも理解しやすいところではあるが，
+	そもそも $P$ が偽であるときは $Q$ の真偽に関わらず $[P\Rightarrow Q]$ は真とする点に注意が必要．
+</Details>
+<br><br>
+
+<div class="prp" id="">
+	<b>[#]命題：同値</b><br>
+	$[P\Rightarrow Q]\land [Q\Rightarrow P]$ は真であるのは，$P$ と $Q$ が共に真であるときか，共に偽であるときである．
+</div>
+<Details>
+	<summary>証明</summary>
+	真理値表は以下の通りであり，$[P\Rightarrow Q]\land [Q\Rightarrow P]$ は真であるのは，$P$ と $Q$ が共に真であるときか，共に偽であるときである．
+	<center>
+		$\begin{array}{|c|c||c|c|c|}\hline P & Q & P\Rightarrow Q& Q\Rightarrow P& [P\Rightarrow Q]\land [Q\Rightarrow P] \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline \end{array}$
+	</center>
+</Details>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+	<li>長岡亮介: 総合的研究 論理学で学ぶ数学 – 思考ツールとしてのロジック.</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
+
