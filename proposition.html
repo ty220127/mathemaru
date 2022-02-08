@@ -46,7 +46,7 @@
 		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline 
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{T}\\ \hline \end{array}$
 	</center>
-	2 つの命題 $R,\,S$ があらゆる状況において等しい真理値をもつとき，$R$ と $S$ は【同値(equivalent)】であるという．
+	2 つの命題 $P,\,Q$ があらゆる状況において等しい真理値をもつとき，$P$ と $Q$ は【同値(equivalent)】であると云い，$P\equiv Q$ と書く．
 </div>
 <Details>
 	<summary>補足１</summary>
@@ -59,7 +59,30 @@
 <br><br>
   
 <div class="prp" id="59">
-	<b>[#59]命題：同値</b><br>
+	<b>[#59]命題：論理包含の意味</b><br>
+	命題 $P,\,Q$ に対して，
+	<center>$[P\Rightarrow Q]\equiv [\neg P\lor Q].$</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	真理値表は以下の通りであり，あらゆる $P,\,Q$ の真偽の組み合わせにおいて $[P\Rightarrow Q]$ と $[\neg P\lor Q]$ の真偽が一致することから，両者は同値である．
+	<center>
+		$\begin{array}{|c|c||c|c|c|}\hline P & Q & \neg P& P\Rightarrow Q& \neg P\lor Q \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline \end{array}$
+	</center>
+</Details>
+<Details>
+	<summary>補足</summary>
+	$[P\Rightarrow Q]$ では，$P$ が真であるときは $Q$ も真である．これは直感的にも理解しやすいところではあるが，
+	そもそも $P$ が偽であるときは $Q$ の真偽に関わらず $[P\Rightarrow Q]$ は真とする点に注意が必要．
+</Details>
+<br><br>
+
+<div class="prp" id="">
+	<b>[#]命題：同値</b><br>
 	$[P\Rightarrow Q]\land [Q\Rightarrow P]$ は真であるのは，$P$ と $Q$ が共に真であるときか，共に偽であるときである．
 </div>
 <Details>
