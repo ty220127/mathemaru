@@ -32,9 +32,6 @@
     		<li> 「命題 $P$ が成り立たない」という命題を$P$ の【否定(negation)】と云い．$\neg P$ と書く．</li>
     		<li> 「命題 $P$，$Q$ の両方が成り立つ」という命題を $P$ と $Q$ の【合接(連言; conjunction)】または【論理積(logical product)】と呼び，$P\land Q$ と書いて「$P$ かつ $Q$ ($P$ and $Q$)」と読む．</li>
     		<li> 「命題 $P$，$Q$ の少なくとも何れかが成り立つ」という命題を $P$ と $Q$ の【離接(選言; disjunction)】または【論理和(logical sum)】と呼び，$P\lor Q$ と書いて「$P$ または $Q$ ($P$ or $Q$)」と読む．</li>
-    		<li> 「命題 $P$ が成り立つならば命題 $Q$ が成り立つ」という命題を $P$ と $Q$ の【論理包含(implication)】と呼び，
-		$P$ は【仮定(assumption)】または【前件(antecedent)】，$Q$ は【結論(conclusion)】または【後件(descendant)】と呼ばれる．
-		また，$P$【ならば】$Q$ または $P\Rightarrow Q$ と書く．</li>
   	</ul>
 	以下，命題が真であることを $\mathsf{T}$，偽であることを $\mathsf{F}$ で表す（これらをまとめて【真理値(truth value)】と呼ぶ）．
 	$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．<br><br>
@@ -56,30 +53,27 @@
 </Details>
 <Details>
 	<summary>補足２</summary>
-	命題を【証明する(prove; n. proof)】とは，命題が真であることを論理的に導くことである．
+	命題 $P$ の【証明(proof)】とは，$P$ が（時にいくつかの条件も加味した上で）常に真であること，つまり $P\equiv\mathsf{T}$ であることを論理的に導くことである．
 </Details>
 <br><br>
   
-<div class="prp" id="59">
-	<b>[#59]命題：論理包含の意味</b><br>
-	命題 $P,\,Q$ に対して，
-	<center>$[P\Rightarrow Q]\equiv [\neg P\lor Q].$</center>
+<div class="prp" id="60">
+	<b>[#60]命題：対称律，交換法則</b><br>
+	命題 $P$ に対して，
+	<center>$P\lor \neg P\equiv\mathsf{T},\quad P\land \neg P\equiv \mathsf{F}.$</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	真理値表は以下の通りであり，あらゆる $P,\,Q$ の真偽の組み合わせにおいて $[P\Rightarrow Q]$ と $[\neg P\lor Q]$ の真偽が一致することから，両者は同値である．<br><br>
+	真理値表は以下の通りであることから，$P\lor \neg P$ は恒真命題，$P\land \neg P$ は恒偽命題であることがわかる．<br><br>
 	<center>
-		$\begin{array}{|c|c||c|c|c|}\hline P & Q & \neg P& P\Rightarrow Q& \neg P\lor Q \\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline 
-		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
-		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline \end{array}$
+		$\begin{array}{|c|c||c|c|}\hline P & \neg P & P\lor \neg P& P\land \neg P\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} \\ \hline 
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} \\ \hline\end{array}$
 	</center>
 </Details>
 <Details>
 	<summary>補足</summary>
-	$[P\Rightarrow Q]$ では，$P$ が真であるときは $Q$ も真である．これは直感的にも理解しやすいところではあるが，
-	そもそも $P$ が偽であるときは $Q$ の真偽に関わらず $[P\Rightarrow Q]$ は真とする点に注意が必要．
+	$P\lor \neg P\equiv\mathsf{T}$ を【排中律(law of exculded middle)】，$P\land \neg P\equiv \mathsf{F}$ を【矛盾律(law of contradiction)】と呼ぶ．
 </Details>
 <br><br>
 
@@ -100,23 +94,6 @@
 <Details>
 	<summary>補足</summary>
 	$P\lor \neg P\equiv\mathsf{T}$ を【排中律(law of exculded middle)】，$P\land \neg P\equiv \mathsf{F}$ を【矛盾律(law of contradiction)】と呼ぶ．
-</Details>
-<br><br>
-
-<div class="prp" id="">
-	<b>[#]命題：同値</b><br>
-	$[P\Rightarrow Q]\land [Q\Rightarrow P]$ は真であるのは，$P$ と $Q$ が共に真であるときか，共に偽であるときである．
-</div>
-<Details>
-	<summary>証明</summary>
-	真理値表は以下の通りであり，$[P\Rightarrow Q]\land [Q\Rightarrow P]$ は真であるのは，$P$ と $Q$ が共に真であるときか，共に偽であるときである．
-	<center>
-		$\begin{array}{|c|c||c|c|c|}\hline P & Q & P\Rightarrow Q& Q\Rightarrow P& [P\Rightarrow Q]\land [Q\Rightarrow P] \\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
-		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F}\\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline 
-		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline \end{array}$
-	</center>
 </Details>
 <br><br>
 
