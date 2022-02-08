@@ -37,7 +37,7 @@
 		また，$P$【ならば】$Q$ または $P\Rightarrow Q$ と書く．</li>
   	</ul>
 	以下，命題が真であることを $\mathsf{T}$，偽であることを $\mathsf{F}$ で表す（これらをまとめて【真理値(truth value)】と呼ぶ）．
-	$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．<br>
+	$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．<br><br>
 	<center>
 		$\begin{array}{|c||c|}\hline P & \neg P \\ \hline \mathsf{T} & \mathsf{F} \\ \hline \mathsf{F} & \mathsf{T} \\ \hline \end{array}\quad
 		\begin{array}{|c|c||c|c|c|}\hline P & Q & P\land Q& P\lor Q& P\Rightarrow Q \\ \hline
@@ -45,8 +45,10 @@
 		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F}\\ \hline
 		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline 
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{T}\\ \hline \end{array}$
-	</center>
+	</center><br>
 	2 つの命題 $P,\,Q$ があらゆる状況において等しい真理値をもつとき，$P$ と $Q$ は【同値(equivalent)】であると云い，$P\equiv Q$ と書く．
+	また，常に真であるような命題を【恒真命題(tautology)】，常に偽であるような命題を【恒偽命題(non-tautology)】と呼び，
+	命題 $P$ が恒真命題であることを $P\equiv\mathsf{T}$，恒偽命題であることを $P\equiv \mathsf{F}$ と書く．
 </div>
 <Details>
 	<summary>補足１</summary>
@@ -65,7 +67,7 @@
 </div>
 <Details>
 	<summary>証明</summary>
-	真理値表は以下の通りであり，あらゆる $P,\,Q$ の真偽の組み合わせにおいて $[P\Rightarrow Q]$ と $[\neg P\lor Q]$ の真偽が一致することから，両者は同値である．
+	真理値表は以下の通りであり，あらゆる $P,\,Q$ の真偽の組み合わせにおいて $[P\Rightarrow Q]$ と $[\neg P\lor Q]$ の真偽が一致することから，両者は同値である．<br><br>
 	<center>
 		$\begin{array}{|c|c||c|c|c|}\hline P & Q & \neg P& P\Rightarrow Q& \neg P\lor Q \\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline 
@@ -78,6 +80,22 @@
 	<summary>補足</summary>
 	$[P\Rightarrow Q]$ では，$P$ が真であるときは $Q$ も真である．これは直感的にも理解しやすいところではあるが，
 	そもそも $P$ が偽であるときは $Q$ の真偽に関わらず $[P\Rightarrow Q]$ は真とする点に注意が必要．
+</Details>
+<br><br>
+
+<div class="prp" id="59">
+	<b>[#60]命題：自らの否定との関係</b><br>
+	命題 $P$ に対して，
+	<center>$P\lor \neg P\equiv\mathsf{T},\quad P\land \neg P\equiv \mathsf{F}.$</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	真理値表は以下の通りであることから，$P\lor \neg P$ は恒真命題，$P\land \neg P$ は恒偽命題であることがわかる．<br><br>
+	<center>
+		$\begin{array}{|c|c||c|c|}\hline P & \neg P & P\lor \neg P& P\land \neg P\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} \\ \hline 
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} \\ \hline\end{array}$
+	</center>
 </Details>
 <br><br>
 
