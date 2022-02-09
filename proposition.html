@@ -99,30 +99,38 @@
 	<summary>証明</summary>
 	前者について，以下の真理値表の通り示される．<br><br>
 	<center>
-		$\begin{array}{|c|c|c||c|c||c|c|}\hline P & Q & R & P\land Q & Q\land R & (P\land Q)\land R & P\land (Q\land R)\\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} \\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline
-		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline
-		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\\hline
+		$\begin{array}{|c|c|c||c|c||c|c|}\hline P & Q & R & P\land Q & Q\land R & \color{red}{(P\land Q)\land R} & \color{red}{P\land (Q\land R)}\\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\\hline
 		\end{array}$
 	</center><br><br>
 	後者について，以下の真理値表の通り示される．<br><br>
 	<center>
-		$\begin{array}{|c|c|c||c|c||c|c|}\hline P & Q & R & P\lor Q & Q\lor R & (P\lor Q)\lor R & P\lor (Q\lor R)\\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} \\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
-		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
-		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\\hline
+		$\begin{array}{|c|c|c||c|c||c|c|}\hline P & Q & R & P\lor Q & Q\lor R & \color{red}{(P\lor Q)\lor R} & \color{red}{P\lor (Q\lor R)}\\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\\hline
 		\end{array}$
 	</center><br><br>
+</Details>
+<Details>
+	<summary>補足</summary>
+	この命題から，同値で結ばれた2つの命題に対して括弧付けによる区別は不要であるため，しばしば括弧は省略される：
+	<center>
+		$\begin{align*} (P\land Q)\land R &\equiv P\land (Q\land R) \equiv P\land Q\land R\\
+		(P\lor Q)\lor R &\equiv P\lor (Q\lor R)  \equiv P\lor Q\lor R \end{align*}$
+	</center>
 </Details>
 <br><br>
 
@@ -138,28 +146,28 @@
 	<summary>証明</summary>
 	前者について，以下の真理値表の通り示される．<br><br>
 	<center>
-		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\land Q & (P\land Q)\lor R & P\lor R  & Q\lor R & (P\lor R)\land (Q\lor R) \\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F}\\ \hline
-		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
-		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\\hline
+		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\land Q & \color{red}{(P\land Q)\lor R} & P\lor R  & Q\lor R & \color{red}{(P\lor R)\land (Q\lor R)} \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\\hline
 		\end{array}$
 	</center><br><br>
 	後者について，以下の真理値表の通り示される．<br><br>
 	<center>
-		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\lor Q & (P\lor Q)\land R & P\land R  & Q\land R & (P\land R)\lor (Q\land R) \\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T}\\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
-		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
-		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\\hline
+		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\lor Q & \color{red}{(P\lor Q)\land R} & P\land R  & Q\land R & \color{red}{(P\land R)\lor (Q\land R)} \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\\hline
 		\end{array}$
 	</center><br><br>
 </Details>
