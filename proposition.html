@@ -37,11 +37,11 @@
 	$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．<br><br>
 	<center>
 		$\begin{array}{|c||c|}\hline P & \neg P \\ \hline \mathsf{T} & \mathsf{F} \\ \hline \mathsf{F} & \mathsf{T} \\ \hline \end{array}\quad
-		\begin{array}{|c|c||c|c|c|}\hline P & Q & P\land Q& P\lor Q& P\Rightarrow Q \\ \hline
-		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
-		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F}\\ \hline
-		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline 
-		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{T}\\ \hline \end{array}$
+		\begin{array}{|c|c||c|c|}\hline P & Q & P\land Q& P\lor Q \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} \\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline \end{array}$
 	</center><br>
 	2 つの命題 $P,\,Q$ があらゆる状況において等しい真理値をもつとき，$P$ と $Q$ は【同値(equivalent)】であると云い，$P\equiv Q$ と書く．
 	また，常に真であるような命題を【恒真命題(tautology)】，常に偽であるような命題を【恒偽命題(non-tautology)】と呼び，
@@ -58,42 +58,31 @@
 <br><br>
   
 <div class="prp" id="60">
-	<b>[#60]命題：対称律，交換法則</b><br>
-	命題 $P$ に対して，
-	<center>$P\lor \neg P\equiv\mathsf{T},\quad P\land \neg P\equiv \mathsf{F}.$</center>
+	<b>[#60]命題：命題に関する自明な事実</b><br>
+	命題 $P,\,Q$ に対して，以下が成立する：
+	<ul class="prpl">
+		<li> $P\land P \equiv P$ </li>
+		<li> $P\lor P \equiv P$ </li>
+		<li> $\neg(\neg P) \equiv P$ （二重否定）</li>
+		<li> $P\lor \neg P\equiv\mathsf{T}$ （排中律）</li>
+		<li> $P\land \neg P\equiv \mathsf{F}$ （矛盾律）</li>
+		<li> $P\land Q \equiv Q\land P$ （交換法則１）</li>
+		<li> $P\lor Q \equiv Q\lor P$ （交換法則２）</li>
+	</ul>
 </div>
 <Details>
 	<summary>証明</summary>
-	真理値表は以下の通りであることから，$P\lor \neg P$ は恒真命題，$P\land \neg P$ は恒偽命題であることがわかる．<br><br>
+	いずれも以下の真理値表の通り示される．<br><br>
 	<center>
-		$\begin{array}{|c|c||c|c|}\hline P & \neg P & P\lor \neg P& P\land \neg P\\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} \\ \hline 
-		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} \\ \hline\end{array}$
+		$\begin{array}{|c|c||c|c|}\hline P & $P\land P \equiv P$ & $P\lor P \equiv P$ & $\neg(\neg P) \equiv P$& \neg P & P\lor \neg P& P\land \neg P\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} &\mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{F} \\ \hline 
+		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} \\ \hline\end{array}\quad
+		\begin{array}{|c|c||c|c|}\hline P & Q & P\land Q& Q\land P& P\lor Q& P\lor Q \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{T} \\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} &\mathsf{F} & \mathsf{T}& \mathsf{T} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} & \mathsf{T}& \mathsf{T} \\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{F} &\mathsf{F} &\mathsf{F} & \mathsf{F} \\ \hline \end{array}$
 	</center>
-</Details>
-<Details>
-	<summary>補足</summary>
-	$P\lor \neg P\equiv\mathsf{T}$ を【排中律(law of exculded middle)】，$P\land \neg P\equiv \mathsf{F}$ を【矛盾律(law of contradiction)】と呼ぶ．
-</Details>
-<br><br>
-
-<div class="prp" id="60">
-	<b>[#60]命題：排中律，矛盾律</b><br>
-	命題 $P$ に対して，
-	<center>$P\lor \neg P\equiv\mathsf{T},\quad P\land \neg P\equiv \mathsf{F}.$</center>
-</div>
-<Details>
-	<summary>証明</summary>
-	真理値表は以下の通りであることから，$P\lor \neg P$ は恒真命題，$P\land \neg P$ は恒偽命題であることがわかる．<br><br>
-	<center>
-		$\begin{array}{|c|c||c|c|}\hline P & \neg P & P\lor \neg P& P\land \neg P\\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} \\ \hline 
-		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} \\ \hline\end{array}$
-	</center>
-</Details>
-<Details>
-	<summary>補足</summary>
-	$P\lor \neg P\equiv\mathsf{T}$ を【排中律(law of exculded middle)】，$P\land \neg P\equiv \mathsf{F}$ を【矛盾律(law of contradiction)】と呼ぶ．
 </Details>
 <br><br>
 
