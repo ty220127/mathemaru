@@ -31,17 +31,7 @@ background-color: #b2ffb2;
 }
 
 ul.defl{
-      list-style-type: none;
-      counter-increment: cnt;
-      position: relative;
-}
-
-ul.defl li:before {
-      content: "(" counter(cnt) ")";
-      text-align: right;
-      position: absolute;
-      top: 0;
-      left: -40px; /* 好みで位置の調整 */
+      list-style-type: lower-roman;
 }
 
 ul.prpl{
