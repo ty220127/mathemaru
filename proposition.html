@@ -72,11 +72,12 @@
 </div>
 <Details>
 	<summary>証明</summary>
-	いずれも以下の真理値表の通り示される．<br><br>
+	いずれも以下の真理値表の通り示される．たとえば，$P$ が真偽のいずれであっても $P\land P$ は $P$ と同じ真理値となることから $P\land P$ と $P$ は同値であること，つまり $P\land P\equiv P$ がいえる．
+	また，$P$ が真偽のいずれであっても $P\lor \neg P$ は真であることから $P\lor \neg P$ は恒真命題であること，つまり $P\lor \neg P\equiv\mathsf{T}$ がいえる．<br><br>
 	<center>
 		$\begin{array}{|c||c|c|c|c|c|c|}\hline P & P\land P & P\lor P & \neg(\neg P) & \neg P & P\lor \neg P& P\land \neg P\\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{T} &\mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{F} \\ \hline 
-		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} \\ \hline\end{array}$<br><br>
+		\mathsf{T} & \mathsf{T} & \mathsf{T} &\mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{F} \\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} \\ \hline\end{array}$<br><br>
 		
 		$\begin{array}{|c|c||c|c|c|c|}\hline P & Q & P\land Q& Q\land P& P\lor Q& P\lor Q \\ \hline
     		\mathsf{T} & \mathsf{T} & \mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{T} \\ \hline 
