@@ -61,7 +61,7 @@
 	<b>[#60]命題：命題に関する自明な事実</b><br>
 	命題 $P,\,Q$ に対して以下が成立する：
 	<ul>
-		<li> $P\land P \equiv P$ </li>
+		<li> $P\land P \equiv P$　　 </li>
 		<li> $P\lor P \equiv P$ </li>
 		<li> $\neg(\neg P) \equiv P$ 【二重否定(double negation)】</li>
 		<li> $P\lor \neg P\equiv\mathsf{T}$ 【排中律(law of excluded middle)】</li>
@@ -121,6 +121,45 @@
 		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\\hline
+		\end{array}$
+	</center><br><br>
+</Details>
+<br><br>
+
+<div class="prp" id="62">
+	<b>[#62]命題：命題の分配法則(distributive law)</b><br>
+	命題 $P,\,Q,\,R$ に対して
+	<center>
+		$\begin{align*} (P\land Q)\lor R &\equiv (P\lor R)\land (Q\lor R)\\
+				(P\lor Q)\land R &\equiv (P\land R)\lor (Q\land R) \end{align*}$
+	</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	前者について，以下の真理値表の通り示される．<br><br>
+	<center>
+		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\land Q & (P\land Q)\lor R & P\lor R  & Q\lor R & (P\lor R)\land (Q\lor R) \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\\hline
+		\end{array}$
+	</center><br><br>
+	後者について，以下の真理値表の通り示される．<br><br>
+	<center>
+		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\lor Q & (P\lor Q)\land R & P\land R  & Q\land R & (P\land R)\lor (Q\land R) \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\\hline
 		\end{array}$
 	</center><br><br>
 </Details>
