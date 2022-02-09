@@ -23,17 +23,13 @@ body{
       border: none; 
       background-color: #b2f9ff;
 }
-.clc{
+.exr{
       padding: 0.5%; 
       margin-bottom: 0.5%; 
       border: none; 
-background-color: #b2ffb2;
+      background-color: #b2ffb2;
 }
 
 ul.defl{
       list-style-type: lower-roman;
-}
-
-ul.prpl{
-      list-style-type: upper-latin;     
 }
