@@ -173,6 +173,35 @@
 </Details>
 <br><br>
 
+<div class="prp" id="63">
+	<b>[#63]命題：de Morgan の法則</b><br>
+	命題 $P,\,Q$ に対して
+	<center>
+		$\begin{align*} \neg (P\land Q) &\equiv (\neg P)\lor (\neq Q),\\
+				\neg (P\lor Q) &\equiv (\neg P)\land (\neq Q). \end{align*}$
+	</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	前者について，以下の真理値表の通り示される．<br><br>
+	<center>
+		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & P\land Q & \color{red}{\neg(P\land Q)}  & \neg P & \neg Q & \color{red}{(\neg P)\lor (\neg Q)} \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} \\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
+	</center><br><br>
+	後者について，以下の真理値表の通り示される．<br><br>
+	<center>
+		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & P\lor Q & \color{red}{\neg(P\lor Q)}  & \neg P & \neg Q & \color{red}{(\neg P)\land (\neg Q)} \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
+	</center><br><br>
+</Details>
+<br><br>
+
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
