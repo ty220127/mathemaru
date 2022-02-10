@@ -66,6 +66,10 @@
 		<li> $\neg(\neg P) \equiv P$ 【二重否定(double negation)】</li>
 		<li> $P\lor \neg P\equiv\mathsf{T}$ 【排中律(law of excluded middle)】</li>
 		<li> $P\land \neg P\equiv \mathsf{F}$ 【矛盾律(law of contradiction)】</li>
+		<li> $P\land \mathsf{T} \equiv P$（$\mathsf{T}$ は恒真命題）</li>
+		<li> $P\land \mathsf{F} \equiv mathsf{F}$（$\mathsf{F}$ は恒偽命題）</li>
+		<li> $P\lor \mathsf{T} \equiv \mathsf{T}$（$\mathsf{T}$ は恒真命題）</li>
+		<li> $P\lor \mathsf{F} \equiv P$（$\mathsf{F}$ は恒偽命題）</li>
 		<li> $P\land Q \equiv Q\land P$ 【交換法則(commutative law)１】</li>
 		<li> $P\lor Q \equiv Q\lor P$ 【交換法則２】</li>
 	</ul>
@@ -75,9 +79,9 @@
 	いずれも以下の真理値表の通り示される．たとえば，$P$ が真偽のいずれであっても $P\land P$ は $P$ と同じ真理値となることから $P\land P$ と $P$ は同値であること，つまり $P\land P\equiv P$ がいえる．
 	また，$P$ が真偽のいずれであっても $P\lor \neg P$ は真であることから $P\lor \neg P$ は恒真命題であること，つまり $P\lor \neg P\equiv\mathsf{T}$ がいえる．<br><br>
 	<center>
-		$\begin{array}{|c||c|c|c|c|c|c|}\hline P & \neg P & P\land P & P\lor P & \neg(\neg P)  & P\lor \neg P& P\land \neg P\\ \hline
-		\mathsf{T} & \mathsf{F} & \mathsf{T} &\mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{F} \\ \hline 
-		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} \\ \hline\end{array}$<br><br>
+		$\begin{array}{|c||c|c|c|c|c|c|c|c|}\hline P & \neg P & P\land P & P\lor P & \neg(\neg P)  & P\lor \neg P& P\land \neg P & P\land\mathsf{T} & P\land\mathsf{F} & P\lor\mathsf{T} & P\lor\mathsf{F}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} &\mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{F} &\mathsf{T} &\mathsf{F} &\mathsf{T} &\mathsf{T} \\ \hline 
+		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} &\mathsf{F} \\ \hline\end{array}$<br><br>
 		
 		$\begin{array}{|c|c||c|c|c|c|}\hline P & Q & P\land Q& Q\land P& P\lor Q& Q\lor P \\ \hline
     		\mathsf{T} & \mathsf{T} & \mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{T} \\ \hline 
