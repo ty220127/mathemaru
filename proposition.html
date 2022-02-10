@@ -208,21 +208,21 @@
 
 <div class="exr" id="64">
 	<b>[#64]演習：含意(implication)</b><br>
-	命題 $P,\,Q$ に対して論理演算子 $\Rightarrow$ を
+	命題 $P,\,Q$ に対して論理演算子 $\rightarrow$ を
 	<center>
-		$P\Rightarrow Q\equiv \neg P\lor Q$
+		$P\rightarrow Q\equiv \neg P\lor Q$
 	</center>
-	で定義する．また，論理演算子 $\Leftrightarrow$ を
+	で定義する．また，論理演算子 $\leftrightarrow$ を
 	<center>
-		$P\Leftrightarrow Q\equiv (P\Rightarrow Q)\land (Q\Rightarrow P)$
+		$P\leftrightarrow Q\equiv (P\rightarrow Q)\land (Q\rightarrow P)$
 	</center>
-	で定義する．このとき $P\Rightarrow Q$ と $P\Leftrightarrow Q$ の真理値表を作成せよ．
+	で定義する．このとき $P\rightarrow Q$ と $P\leftrightarrow Q$ の真理値表を作成せよ．
 </div>
 <Details>
 	<summary>解答</summary>
 	真理値表は以下の通り．<br><br>
 	<center>
-		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & \neg P & \neg Q & \color{red}{P\Rightarrow Q} & Q\Rightarrow P & \color{red}{P\Leftrightarrow Q}\\ \hline
+		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & \neg P & \neg Q & \color{red}{P\rightarrow Q} & Q\rightarrow P & \color{red}{P\leftrightarrow Q}\\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline
 		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{T} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
