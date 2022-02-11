@@ -136,6 +136,27 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 </Details>
 <br><br>
 
+<div class="prp" id="72">
+	<b>[#72]命題：含意と合接</b><br>
+	<p>命題 $P,\,Q$ に対して</p>
+	<p><center>$P\land (P\rightarrow Q)\equiv P\land Q.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>含意の定義 <a href="#65">[#65]</a> と分配法則 <a href="proposition.html#62">[#62]</a> より</p>
+	<p><center>
+		$\begin{align*}P\land (P\rightarrow Q) &\equiv P\land (\neg P\lor Q)\\
+		&\equiv (P\land (\neg P))\lor (P\land Q)\\
+		&\equiv \mathsf{F}\lor (P\land Q)\\
+		&\equiv P\land Q.\end{align*}$
+	</center></p>
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>証明でよく用いる論理展開である．</p>
+</Details>
+<br><br>
+
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
