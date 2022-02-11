@@ -22,6 +22,9 @@
 
 <body>
 <center><div id="titlehead">含意</div></center>
+
+<p style="text-align:right;">
+established before 2022/2/22<br>
 <time id="modify"></time>
 <script>
 /* 更新日の取得 */
@@ -31,8 +34,9 @@ const month = last.getMonth() + 1;
 const date = last.getDate();
 /* 日付を書き換える */
 const target = document.getElementById('modify');
-target.textContent = year + '-' + month + '-' + date;
+target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 </script>
+</p>
 <br><br>
     
 <div class="def" id="65">
