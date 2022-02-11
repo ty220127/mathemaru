@@ -26,11 +26,11 @@
     
 <div class="def" id="65">
 	<b>[#65]定義：含意と諸定義</b><br>
-	命題 $P,\,Q$ に対して，「$P$ が偽であるか $Q$ が真である」という命題を $P$ から $Q$ への【含意(implication)】と呼び，$P\rightarrow Q$ で表す：
+	<p>命題 $P,\,Q$ に対して，「$P$ が偽であるか $Q$ が真である」という命題を $P$ から $Q$ への【含意(implication)】と呼び，$P\rightarrow Q$ で表す：</p>
 	<center>$P\rightarrow Q\equiv \neg P\lor Q.$</center>
-	また，$P\rightarrow Q$ であることを「$P$ ならば $Q$ が成り立つ (if $P$, then $Q$ holds)」と云う．
+	<p>また，$P\rightarrow Q$ であることを「$P$ ならば $Q$ が成り立つ (if $P$, then $Q$ holds)」と云う．
 	ここで，$P$ は【仮定(assumption)】または【前件(antecedent)】，$Q$ は【結論(conclusion)】または【後件(consequence)】と呼ばれる．
-	さらに $P\rightarrow Q$ かつ $Q\rightarrow P$ であることを $P\leftrightarrow Q$ と表し，$P$ と $Q$ の【双条件文(biconditional)】と云う．
+	さらに $P\rightarrow Q$ かつ $Q\rightarrow P$ であることを $P\leftrightarrow Q$ と表し，$P$ と $Q$ の【双条件(biconditional)】と云う．</p>
 </div>
 <Details>
 	<summary>補足</summary>
@@ -40,13 +40,13 @@
 <br><br>
 
 <div class="prp" id="66">
-	<b>[#66]命題：含意と同値</b><br>
+	<b>[#66]命題：双条件と同値</b><br>
 	命題 $P,\,Q$ に対して
 	<center>$P\leftrightarrow Q \equiv (P\land Q)\lor (\neg P\land \neg Q).$</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	含意の定義より
+	双条件及び含意の定義　< a href="#65">[#65]</a> より
 	<center>
 		$P\leftrightarrow Q \equiv (P\rightarrow Q)\land (Q\rightarrow P)\equiv (\neg P\lor Q)\land (\neg Q\lor P).$
 	</center>
@@ -64,7 +64,7 @@
 <Details>
 	<summary>補足</summary>
 	この命題から $P\leftrightarrow Q$ は，$P$ と $Q$ の一方は真であればもう一方も真であり，一方が偽であればもう一方も偽であることを意味することがわかる．
-	つまり，$P\leftrightarrow Q$ が真であることは，$P$ と$Q$ が同値であることを意味する．
+	つまり，$P\leftrightarrow Q$ が真であることは，$P$ と $Q$ が同値であることを意味する．
 </Details>
 <br><br>
 
@@ -75,7 +75,7 @@
 </div>
 <Details>
 	<summary>証明</summary>
-	含意の定義と交換法則，二重否定の法則 <a href="proposition.html#60">[#60]</a> を組み合わせることにより，以下のように題意を得ることができる：
+	含意の定義　< a href="#65">[#65]</a> と交換法則，二重否定の法則 <a href="proposition.html#60">[#60]</a> を組み合わせることにより，以下のように題意を得ることができる：
 	<center>
 		$\begin{align*}P\rightarrow Q &\equiv \neg P\lor Q\\
 		&\equiv Q\lor \neg P\\
@@ -85,7 +85,7 @@
 </Details>
 <Details>
 	<summary>補足</summary>
-	含意 $P\rightarrow Q$ に対して，前後件を入れ替えて否定したような命題を【対偶(contraposition)】と呼ぶ．任意の含意とその対偶は常に同値である．
+	含意 $P\rightarrow Q$ に対して，前後件を否定して入れ替えた命題を【対偶(contraposition)】と呼ぶ．任意の含意とその対偶は常に同値である．
 </Details>
 <br><br>
 
