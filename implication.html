@@ -14,6 +14,15 @@
 		trp: '\\mathsf{T}'
 	}}});
 </script>
+<title>含意｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">含意</div></center>
+<time id="modify"></time>
 <script>
 /* 更新日の取得 */
 const last = new Date(document.lastModified);
@@ -24,15 +33,6 @@ const date = last.getDate();
 const target = document.getElementById('modify');
 target.textContent = year + '-' + month + '-' + date;
 </script>
-<title>含意｜演習問題集</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-</style>
-</head>
-
-<body>
-<center><div id="titlehead">含意</div></center>
-<time id="modify"></time>
 <br><br>
     
 <div class="def" id="65">
@@ -124,7 +124,7 @@ target.textContent = year + '-' + month + '-' + date;
 	<summary>証明</summary>
 	<p>含意の定義 <a href="#65">[#65]</a> より</p>
 	<p><center>
-		$(P\rightarrow Q)\kand (Q\rightarrow P) \equiv \neg P\lor Q\lor \neg Q\lor P\equiv \mathsf{T}.$
+		$(P\rightarrow Q)\land (Q\rightarrow P) \equiv \neg P\lor Q\lor \neg Q\lor P\equiv \mathsf{T}.$
 	</center></p>
 </Details>
 <Details>
