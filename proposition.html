@@ -43,15 +43,15 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
     
 <div class="def" id="58">
 	<b>[#58]定義：命題に関する諸定義</b><br>
-  	ある物事について，それが「成り立つ」か「成り立たない」かを判定することができるとき，その物事を【命題(proposition)】と呼ぶ．
-  	また，命題が成り立つことを【真(true)】であると云い，成り立たないことを【偽(false)】であると云う．以下，$P$，$Q$ を命題であるとする．
+  	<p>ある物事について，それが「成り立つ」か「成り立たない」かを判定することができるとき，その物事を【命題(proposition)】と呼ぶ．
+	また，命題が成り立つことを【真(true)】であると云い，成り立たないことを【偽(false)】であると云う．以下，$P$，$Q$ を命題であるとする．</p>
   	<ul class="defl">
     		<li> 「命題 $P$ が成り立たない」という命題を$P$ の【否定(negation)】と云い．$\neg P$ と書く．</li>
     		<li> 「命題 $P$，$Q$ の両方が成り立つ」という命題を $P$ と $Q$ の【合接(連言; conjunction)】または【論理積(logical product)】と呼び，$P\land Q$ と書いて「$P$ かつ $Q$ ($P$ and $Q$)」と読む．</li>
     		<li> 「命題 $P$，$Q$ の少なくとも何れかが成り立つ」という命題を $P$ と $Q$ の【離接(選言; disjunction)】または【論理和(logical sum)】と呼び，$P\lor Q$ と書いて「$P$ または $Q$ ($P$ or $Q$)」と読む．</li>
   	</ul>
-	以下，命題が真であることを $\mathsf{T}$，偽であることを $\mathsf{F}$ で表す（これらをまとめて【真理値(truth value)】と呼ぶ）．
-	$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．<br><br>
+	<p>以下，命題が真であることを $\mathsf{T}$，偽であることを $\mathsf{F}$ で表す（これらをまとめて【真理値(truth value)】と呼ぶ）．$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．
+		これらのような真偽をまとめた表を【真理値表(truth table)】と呼ぶ．</p>
 	<center>
 		$\begin{array}{|c||c|}\hline P & \neg P \\ \hline \mathsf{T} & \mathsf{F} \\ \hline \mathsf{F} & \mathsf{T} \\ \hline \end{array}\quad
 		\begin{array}{|c|c||c|c|}\hline P & Q & P\land Q& P\lor Q \\ \hline
@@ -59,24 +59,24 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} \\ \hline
 		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} \\ \hline 
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline \end{array}$
-	</center><br>
-	2 つの命題 $P,\,Q$ があらゆる状況において等しい真理値をもつとき，$P$ と $Q$ は【同値(equivalent)】であると云い，$P\equiv Q$ と書く．
-	また，常に真であるような命題を【恒真命題(tautology)】，常に偽であるような命題を【恒偽命題(non-tautology)】と呼び，
-	命題 $P$ が恒真命題であることを $P\equiv\mathsf{T}$，恒偽命題であることを $P\equiv \mathsf{F}$ と書く．
+	</center>
+	<p>2 つの命題 $P,\,Q$ があらゆる状況において等しい真理値をもつとき，$P$ と $Q$ は【同値(equivalent)】であると云い，$P\equiv Q$ と書く．
+		また，常に真であるような命題を【恒真命題(tautology)】，常に偽であるような命題を【恒偽命題(non-tautology)】と呼び，
+		命題 $P$ が恒真命題であることを $P\equiv\mathsf{T}$，恒偽命題であることを $P\equiv \mathsf{F}$ と書く．</p>
 </div>
 <Details>
 	<summary>補足１</summary>
-	これらの用語は，<a href="set.html">集合</a>のそれらと非常に相性が良い．実際，集合論における基本的な法則は，命題論理における法則と強い対応を持っている．
+	<p>これらの用語は，<a href="set.html">集合</a>のそれらと非常に相性が良い．実際，集合論における基本的な法則は，命題論理における法則と強い対応を持っている．</p>
 </Details>
 <Details>
 	<summary>補足２</summary>
-	命題 $P$ の【証明(proof)】とは，$P$ が（時にいくつかの条件も加味した上で）常に真であること，つまり $P\equiv\mathsf{T}$ であることを論理的に導くことである．
+	<p>命題 $P$ の【証明(proof)】とは，$P$ が（時にいくつかの条件も加味した上で）常に真であること，つまり $P\equiv\mathsf{T}$ であることを論理的に導くことである．</p>
 </Details>
 <br><br>
   
 <div class="prp" id="60">
 	<b>[#60]命題：命題に関する自明な事実</b><br>
-	命題 $P,\,Q$ に対して以下が成立する：
+	<p>命題</p> $P,\,Q$ に対して以下が成立する：
 	<ul>
 		<li> $P\land P \equiv P$ 【冪等則(idempotent law)１】</li>
 		<li> $P\lor P \equiv P$ 【冪等則(idempotent law)２】</li>
@@ -93,9 +93,9 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 </div>
 <Details>
 	<summary>証明</summary>
-	いずれも以下の真理値表の通り示される．たとえば，$P$ が真偽のいずれであっても $P\land P$ は $P$ と同じ真理値となることから $P\land P$ と $P$ は同値であること，つまり $P\land P\equiv P$ がいえる．
-	また，$P$ が真偽のいずれであっても $P\lor \neg P$ は真であることから $P\lor \neg P$ は恒真命題であること，つまり $P\lor \neg P\equiv\mathsf{T}$ がいえる．<br><br>
-	<center>
+	<p>いずれも以下の真理値表の通り示される．たとえば，$P$ が真偽のいずれであっても $P\land P$ は $P$ と同じ真理値となることから $P\land P$ と $P$ は同値であること，つまり $P\land P\equiv P$ がいえる．
+		また，$P$ が真偽のいずれであっても $P\lor \neg P$ は真であることから $P\lor \neg P$ は恒真命題であること，つまり $P\lor \neg P\equiv\mathsf{T}$ がいえる．</p>
+	<p><center>
 		$\begin{array}{|c||c|c|c|c|c|c|c|c|}\hline P & \neg P & P\land P & P\lor P & \neg(\neg P)  & P\lor \neg P& P\land \neg P & P\land\mathsf{T} & P\land\mathsf{F} & P\lor\mathsf{T} & P\lor\mathsf{F}\\ \hline
 		\mathsf{T} & \mathsf{F} & \mathsf{T} &\mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{F} &\mathsf{T} &\mathsf{F} &\mathsf{T} &\mathsf{T} \\ \hline 
 		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} &\mathsf{F} \\ \hline\end{array}$<br><br>
@@ -105,41 +105,41 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
     		\mathsf{T} & \mathsf{F} & \mathsf{F} &\mathsf{F} & \mathsf{T}& \mathsf{T} \\ \hline
     		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} & \mathsf{T}& \mathsf{T} \\ \hline 
     		\mathsf{F} & \mathsf{F} & \mathsf{F} &\mathsf{F} &\mathsf{F} & \mathsf{F} \\ \hline \end{array}$
-	</center>
+	</center></p>
 </Details>
 <br><br>
 
 <div class="prp" id="70">
 	<b>[#70]命題：命題の吸収法則(distributive law)</b><br>
-	命題 $P,\,Q$ に対して
-	<center>
+	<p>命題 $P,\,Q$ に対して</p>
+	<p><center>
 		$\begin{align*} P\lor (P\land Q)\equiv P\\
 				P\land (P\lor Q)\equiv P\\. \end{align*}$
-	</center>
+	</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	前者について，以下の真理値表の通り示される．<br><br>
-	<center>
+	<p>前者について，以下の真理値表の通り示される．</p>
+	<p><center>
 		$\begin{array}{|c|c||c|c||c|c|}\hline P & Q & P\land Q& P\lor Q & P\lor (P\land Q) & P\land (P\lor Q)\\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
 		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
 		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline 
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline \end{array}$
-	</center><br><br>
+	</center></p>
 </Details>
 <br><br>
 
 <div class="prp" id="61">
 	<b>[#61]命題：命題の結合法則(associative law)</b><br>
-	命題 $P,\,Q,\,R$ に対して
-	<center>
+	<p>命題 $P,\,Q,\,R$ に対して</p>
+	<p><center>
 		$\begin{align*} (P\land Q)\land R &\equiv P\land (Q\land R),\\ (P\lor Q)\lor R &\equiv P\lor (Q\lor R). \end{align*}$
-	</center>
+	</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	前者について，以下の真理値表の通り示される．<br><br>
+	<p>前者について，以下の真理値表の通り示される．</p>
 	<center>
 		$\begin{array}{|c|c|c||c|c||c|c|}\hline P & Q & R & P\land Q & Q\land R & \color{red}{(P\land Q)\land R} & \color{red}{P\land (Q\land R)}\\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
@@ -151,9 +151,9 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\\hline
 		\end{array}$
-	</center><br><br>
-	後者について，以下の真理値表の通り示される．<br><br>
-	<center>
+	</center>
+	<p>後者について，以下の真理値表の通り示される．</p>
+	<p><center>
 		$\begin{array}{|c|c|c||c|c||c|c|}\hline P & Q & R & P\lor Q & Q\lor R & \color{red}{(P\lor Q)\lor R} & \color{red}{P\lor (Q\lor R)}\\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
@@ -164,30 +164,30 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\\hline
 		\end{array}$
-	</center><br><br>
+	</center></p>
 </Details>
 <Details>
 	<summary>補足</summary>
-	この命題から，同値で結ばれた2つの命題に対して括弧付けによる区別は不要であるため，しばしば括弧は省略される：
-	<center>
+	<p>この命題から，同値で結ばれた2つの命題に対して括弧付けによる区別は不要であるため，しばしば括弧は省略される：</p>
+	<p><center>
 		$\begin{align*} (P\land Q)\land R &\equiv P\land (Q\land R) \equiv P\land Q\land R,\\
 		(P\lor Q)\lor R &\equiv P\lor (Q\lor R)  \equiv P\lor Q\lor R. \end{align*}$
-	</center>
+	</center></p>
 </Details>
 <br><br>
 
 <div class="prp" id="62">
 	<b>[#62]命題：命題の分配法則(distributive law)</b><br>
-	命題 $P,\,Q,\,R$ に対して
-	<center>
+	<p>命題 $P,\,Q,\,R$ に対して</p>
+	<p><center>
 		$\begin{align*} (P\land Q)\lor R &\equiv (P\lor R)\land (Q\lor R),\\
 				(P\lor Q)\land R &\equiv (P\land R)\lor (Q\land R). \end{align*}$
-	</center>
+	</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	前者について，以下の真理値表の通り示される．<br><br>
-	<center>
+	<p>前者について，以下の真理値表の通り示される．</p>
+	<p><center>
 		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\land Q & \color{red}{(P\land Q)\lor R} & P\lor R  & Q\lor R & \color{red}{(P\lor R)\land (Q\lor R)} \\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
@@ -198,9 +198,9 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\\hline
 		\end{array}$
-	</center><br><br>
-	後者について，以下の真理値表の通り示される．<br><br>
-	<center>
+	</center></p>
+	<p>後者について，以下の真理値表の通り示される．</p>
+	<p><center>
 		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\lor Q & \color{red}{(P\lor Q)\land R} & P\land R  & Q\land R & \color{red}{(P\land R)\lor (Q\land R)} \\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}}\\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\ \hline
@@ -211,61 +211,78 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\\hline
 		\end{array}$
-	</center><br><br>
+	</center></p>
 </Details>
 <br><br>
 
 <div class="prp" id="63">
 	<b>[#63]命題：de Morgan の法則</b><br>
-	命題 $P,\,Q$ に対して
-	<center>
+	<p>命題 $P,\,Q$ に対して</p>
+	<p><center>
 		$\begin{align*} \neg (P\land Q) &\equiv (\neg P)\lor (\neg Q),\\
 				\neg (P\lor Q) &\equiv (\neg P)\land (\neg Q). \end{align*}$
-	</center>
+	</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	前者について，以下の真理値表の通り示される．<br><br>
-	<center>
+	<p>前者について，以下の真理値表の通り示される．</p>
+	<p><center>
 		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & P\land Q & \color{red}{\neg(P\land Q)}  & \neg P & \neg Q & \color{red}{(\neg P)\lor (\neg Q)} \\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline
 		\mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
-	</center><br><br>
-	後者について，以下の真理値表の通り示される．<br><br>
-	<center>
+	</center></p>
+	<p>後者について，以下の真理値表の通り示される．</p>
+	<p><center>
 		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & P\lor Q & \color{red}{\neg(P\lor Q)}  & \neg P & \neg Q & \color{red}{(\neg P)\land (\neg Q)} \\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
-	</center><br><br>
+	</center></p>
+</Details>
+<br><br>
+
+<div class="prp" id="">
+	<b>[#]命題：3命題以上に対する de Morgan の法則</b><br>
+	<p>$n$ 個の命題 $P_1,\,P_2,\,\cdots,\,P_n$ に対して</p>
+	<p><center>
+		$\begin{align*} \neg (P_1\land P_2\land \cdots\land P_n) &\equiv (\neg P_1)\lor (\neg P_2)\lor \cdots\lor (\neg P_n),\\
+				\neg (P_1\lor P_2\lor \cdots\lor P_n) &\equiv (\neg P_1)\land (\neg P_2)\land \cdots\land (\neg P_n). \end{align*}$
+	</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>$n=3$ の場合を考える．2 つの命題に対する de Morgan の法則 <a href="#63">[#63]</a> を繰り返し用いることにより，</p>
+	<center>$\begin{align*}\neg (P_1\land P_2\land P_3) &\equiv (\neg (P_1\land P_2))\lor (\neg P_3)\\
+		&\equiv (\neg P_1)\lor (\neg P_2)\lor (\neg P_3)$</center>
+	<p>を得る．</p>
 </Details>
 <br><br>
 
 <div class="exr" id="64">
 	<b>[#64]演習：含意(implication)</b><br>
-	命題 $P,\,Q$ に対して論理演算子 $\rightarrow$ を
+	<p>命題 $P,\,Q$ に対して論理演算子 $\rightarrow$ を</p>
 	<center>
 		$P\rightarrow Q\equiv \neg P\lor Q$
 	</center>
-	で定義する．また，論理演算子 $\leftrightarrow$ を
+	<p>で定義する．また，論理演算子 $\leftrightarrow$ を</p>
 	<center>
 		$P\leftrightarrow Q\equiv (P\rightarrow Q)\land (Q\rightarrow P)$
 	</center>
-	で定義する．このとき $P\rightarrow Q$ と $P\leftrightarrow Q$ の真理値表を作成せよ．
+	<p>で定義する．このとき $P\rightarrow Q$ と $P\leftrightarrow Q$ の真理値表を作成せよ．</p>
 </div>
 <Details>
 	<summary>解答</summary>
-	真理値表は以下の通り．<br><br>
-	<center>
+	<p>真理値表は以下の通り．</p>
+	<p><center>
 		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & \neg P & \neg Q & \color{red}{P\rightarrow Q} & Q\rightarrow P & \color{red}{P\leftrightarrow Q}\\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline
 		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{T} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
-	</center><br><br>
+	</center></p>
 </Details>
 <br><br>
 
