@@ -41,25 +41,25 @@
 
 <div class="prp" id="66">
 	<b>[#66]命題：双条件と同値</b><br>
-	命題 $P,\,Q$ に対して
+	<p>命題 $P,\,Q$ に対して</p>
 	<center>$P\leftrightarrow Q \equiv (P\land Q)\lor (\neg P\land \neg Q).$</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	双条件及び含意の定義　< a href="#65">[#65]</a> より
+	<p>双条件及び含意の定義　< a href="#65">[#65]</a> より</p>
 	<center>
 		$P\leftrightarrow Q \equiv (P\rightarrow Q)\land (Q\rightarrow P)\equiv (\neg P\lor Q)\land (\neg Q\lor P).$
 	</center>
-	命題の分配法則 <a href="proposition.html#62">[#62]</a> を繰り返し用いることで
+	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> を繰り返し用いることで</p>
 	<center>
 		$\begin{align*}(\neg P\lor Q)\land (\neg Q\lor P) &\equiv ((\neg P\lor Q)\land \neg Q)\lor ((\neg P\lor Q)\land P)\\
 		&\equiv (\neg P\land \neg Q)\lor (Q\land \neg Q)\lor (\neg P\land P)\lor (Q\land P)\end{align*}$
 	</center>
-	を得る．ここで <a href="proposition.html#60">[#60]</a> より $Q\land \neg Q\equiv \neg P\land P\equiv \mathsf{F}$ であり，また選言で結ばれた $\mathsf{F}$ は無視してよいから，
+	<p>を得る．ここで <a href="proposition.html#60">[#60]</a> より $Q\land \neg Q\equiv \neg P\land P\equiv \mathsf{F}$ であり，また選言で結ばれた $\mathsf{F}$ は無視してよいから，</p>
 	<center>
 		$(\neg P\land \neg Q)\lor (Q\land \neg Q)\lor (\neg P\land P)\lor (Q\land P)\equiv (\neg P\land \neg Q)\lor (Q\land P).$
 	</center>
-	以上の結果をまとめることで題意を得る．
+	<p>以上の結果をまとめることで題意を得る．</p>
 </Details>
 <Details>
 	<summary>補足</summary>
@@ -70,12 +70,12 @@
 
 <div class="prp" id="67">
 	<b>[#67]命題：対偶</b><br>
-	命題 $P,\,Q$ に対して
+	<p>命題 $P,\,Q$ に対して</p>
 	<center>$P\rightarrow Q \equiv \neg Q\rightarrow \neg P.$</center>
 </div>
 <Details>
 	<summary>証明</summary>
-	含意の定義　< a href="#65">[#65]</a> と交換法則，二重否定の法則 <a href="proposition.html#60">[#60]</a> を組み合わせることにより，以下のように題意を得ることができる：
+	<p>含意の定義　< a href="#65">[#65]</a> と交換法則，二重否定の法則 <a href="proposition.html#60">[#60]</a> を組み合わせることにより，以下のように題意を得ることができる：</p>
 	<center>
 		$\begin{align*}P\rightarrow Q &\equiv \neg P\lor Q\\
 		&\equiv Q\lor \neg P\\
