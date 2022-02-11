@@ -64,7 +64,28 @@
 <Details>
 	<summary>補足</summary>
 	この命題から $P\leftrightarrow Q$ は，$P$ と $Q$ の一方は真であればもう一方も真であり，一方が偽であればもう一方も偽であることを意味することがわかる．
-	つまり，これは $P\equiv Q$ を表す命題であるといえる（命題に関する命題）．
+	つまり，$P\leftrightarrow Q$ が真であることは，$P$ と$Q$ が同値であることを意味する．
+</Details>
+<br><br>
+
+<div class="prp" id="67">
+	<b>[#67]命題：対偶</b><br>
+	命題 $P,\,Q$ に対して
+	<center>$P\rightarrow Q \equiv \neg Q\rightarrow \neg P.$</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	含意の定義と交換法則，二重否定の法則 <a href="proposition.html#60">[#60]</a> を組み合わせることにより，以下のように題意を得ることができる：
+	<center>
+		$\begin{align*}P\rightarrow Q &\equiv \neg P\lor Q\\
+		&\equiv Q\lor \neg P\\
+		&\equiv \neg(\neg Q)\lor \neg P\\
+		&\equiv \neg Q\rightarrow \neg P.$
+	</center>
+</Details>
+<Details>
+	<summary>補足</summary>
+	含意 $P\rightarrow Q$ に対して，前後件を入れ替えて否定したような命題を【対偶(contraposition)】と呼ぶ．任意の含意とその対偶は常に同値である．
 </Details>
 <br><br>
 
