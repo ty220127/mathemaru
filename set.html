@@ -22,45 +22,59 @@
 
 <body>
 <center><div id="titlehead">集合と演算</div></center>
-<br><br>
+
+<p style="text-align:right;">
+established on 2022/2/11<br>
+<time id="modify"></time>
+<script>
+/* 更新日の取得 */
+const last = new Date(document.lastModified);
+const year = last.getFullYear();
+const month = last.getMonth() + 1;
+const date = last.getDate();
+/* 日付を書き換える */
+const target = document.getElementById('modify');
+target.textContent = 'updated on ' + year + '/' + month + '/' + date;
+</script>
+</p>
     
 <div class="def" id="48">
 	<b>[#48]定義：集合に関する諸定義</b><br>
-  ものの集まりのことを【集合(set)】と呼ぶ．
-  <ul class="defl">
-    <li> 今，集合 $A$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $A$ の【元(要素; element)】と呼び，$x\in A$ と書く．</li>
-    <li> 集合 $A$，$B$ に対して
-      <center> $x\in A\,\,\Longrightarrow\,\, x\in B$ </center>
-      が成り立つことを【$A$ は $B$ に含まれる】と云い，$A$ は $B$ の【部分集合(subset)】と呼ばれる．また，これを $A\subset B$ と表す．</li>
-    <li> $A\subset B$ かつ $A\supset B$ であるとき，つまり
-	    <center>$x\in A\,\,\Longleftrightarrow\,\, x\in B$</center>
+	<p>ものの集まりのことを【集合(set)】と呼ぶ．</p>
+  	<ul class="defl">
+    	<li> 今，集合 $A$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $A$ の【元(要素; element)】と呼び，$x\in A$ と書く．</li>
+   	 <li> 集合 $A$，$B$ に対して
+		 <center> $x\in A\,\,\Longrightarrow\,\, x\in B$ </center></p>
+      	が成り立つことを【$A$ は $B$ に含まれる】と云い，$A$ は $B$ の【部分集合(subset)】と呼ばれる．また，これを $A\subset B$ と表す．</li>
+    	<li> $A\subset B$ かつ $A\supset B$ であるとき，つまり
+		<p><center>$x\in A\,\,\Longleftrightarrow\,\, x\in B$</center></p>
 	 が成り立つとき，集合 $A$ と $B$ を構成する元が全く同じとなる．このような場合，【集合 $A$ と $B$ は等しい】と云い，$A=B$ と書く．</li>
-    <li> 要素を1つも持たないような集合を【空集合(empty set)】と呼び，$\emptyset$ と書く．</li>
+    	<li> 要素を1つも持たないような集合を【空集合(empty set)】と呼び，$\emptyset$ と書く．</li>
   </ul>
 </div>
 <br><br>
   
 <div class="prp" id="49">
 	<b>[#49]命題：集合は自身の部分集合</b><br>
-	 空集合 $\emptyset$ は任意の集合の部分集合である．
+	<p>空集合 $\emptyset$ は任意の集合の部分集合である．</p>
 </div>
 <Details>
 	<summary>証明</summary>
-	任意の $x$ に対して $x\in\emptyset$ が成り立たないことから，論理包含の定義 <a href="proposition#58">[#58]</a> よりすべての集合 $A$ に対して $[x\in\emptyset\Rightarrow x\in A]$ は真となる．
+	<p>任意の $x$ に対して $x\in\emptyset$ が成り立たないことから，含意の定義 <a href="implication.html#65">[#65]</a> よりすべての集合 $A$ に対して $[x\in\emptyset\Rightarrow x\in A]$ である．</p>
 </Details>
 <Details>
 	<summary>補足</summary>
-	論理包含の命題に対して，仮定が偽である場合に結論の真偽に関わらずこれを真とすることで都合が良くなる例の一つである（cf. 論理包含の意味 <a href="proposition#59">[#59]<a/>）．
+	<p>論理包含の命題に対して，仮定が偽である場合に結論の真偽に関わらずこれを真とすることで都合が良くなる例の一つである．</p>
 </Details>
 <br><br>
 
 <div class="prp" id="50">
 	<b>[#50]命題：集合は自身の部分集合</b><br>
-	 任意の集合 $A$ に対して，$A\subset A$.
+	<p>任意の集合 $A$ に対して，$A\subset A$.</p>
 </div>
 <Details>
 	<summary>証明</summary>
-	任意の $x$ に対して $[x\in A \Rightarrow x\in A]$ は明らかに真である．
+	<p><a href="implication.html#66">[#66]</a> より任意の $x$ に対して $[x\in A \Rightarrow x\in A]$ である．
 </Details>
 <br><br>
 
@@ -68,124 +82,130 @@
 	<b>[#51]定義：集合の演算</b><br>
   <ul class="defl">
     <li> 集合 $A$ または $B$ に属するような要素の集合を $A$ と $B$ の【和(sum)】または【合併(union)】と呼び，$A\cup B$ と書く：
-	  <center>$A\cup B= \{x\,|\,x\in A\,\,\text{or}\,\, x\in B\}$.</li>
+	    <p><center>$A\cup B= \{x\,|\,x\in A\,\,\text{or}\,\, x\in B\}$.</li></p>
     <li> 集合 $A$ と $B$ の両方属するような要素の集合を $A$ と $B$ の【共通部分(intersection)】または【交叉(meet)】と呼び，$A\cap B$ と書く：
-	  <center>$A\cap B= \{x\,|\,x\in A\,\,\text{and}\,\, x\in B\}$.</li>
+	    <p><center>$A\cap B= \{x\,|\,x\in A\,\,\text{and}\,\, x\in B\}$.</li></p>
     <li> 集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\backslash B$ と書く：
-	  <center>$A\backslash B= \{x\,|\,\,x\in A\,\,\text{and}\,\, x\notin B\}$.</li>
+	    <p><center>$A\backslash B= \{x\,|\,\,x\in A\,\,\text{and}\,\, x\notin B\}$.</li></p>
     <li> 集合 $A$ か $B$ の一方に属しもう一方に属さないような要素の集合を $A$ と $B$ の【対称差(symmetric difference)】と呼び，$A\bigtriangleup B$ と書く：
-	  <center>$A\bigtriangleup B= (A\backslash B)\cup (B\backslash A)= \{x\,|\,\,x\in A\,\,\text{xor}\,\, x\in B\}$.</li>
+	    <p><center>$A\bigtriangleup B= (A\backslash B)\cup (B\backslash A)= \{x\,|\,\,x\in A\,\,\text{xor}\,\, x\in B\}$.</li></p>
   </ul>
 </div>
 <br><br>
   
 <div class="prp" id="52">
 	<b>[#52]命題：集合演算の交換法則</b><br>
-	集合 $A,\,B$ に対して 
-	<center>$A\cup B=B\cup A$，$A\cap B=B\cap A$.</center>
+	<p>集合 $A,\,B$ に対して </p>
+	<p><center>$A\cup B=B\cup A$，$A\cap B=B\cap A$.</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の交換法則により従う．例えば $[A\cup B\Leftrightarrow B\cup A]$ に対して，
-	<center> 
+	<p>命題の交換法則 <a href="proposition.html#60">[#60]</a> により従う．例えば $[A\cup B\Leftrightarrow B\cup A]$ に対して，</p>
+	<p><center> 
 		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, x\in A\,\,\text{or}\,\,x\in B\\
 		&\Longleftrightarrow\,\,x\in B\,\,\text{or}\,\,x\in A\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
-	</center>
+	</center></p>
 </Details>
 <br><br>
 
 <div class="prp" id="53">
 	<b>[#53]命題：集合演算の結合法則</b><br>
-	集合 $A,\,B,\,C$ に対して 
-	<center>$(A\cup B)\cup C=A\cup (B\cup C)$，<br>
-		$(A\cap B)\cup C=A\cup (B\cap C)$.</center>
+	<p>集合 $A,\,B,\,C$ に対して </p>
+	<p><center>$\begin{align*}(A\cup B)\cup C &=A\cup (B\cup C)，\\
+				  (A\cap B)\cup C &=A\cup (B\cap C).\end{align*}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の結合法則により従う．例えば $[(A\cup B)\cup C=A\cup (B\cup C)]$ に対して，
-	<center> 
+	<p>命題の結合法則 <a href="proposition.html#61">[#61]</a> により従う．例えば $[(A\cup B)\cup C=A\cup (B\cup C)]$ に対して，</p>
+	<p><center> 
 		$\begin{align*} x\in (A\cup B)\cup C\,\,&\Longleftrightarrow\,\, (x\in A\cup B)\,\,\text{or}\,\, x\in C\\
 		&\Longleftrightarrow\,\,(x\in A\,\,\text{or}\,\,x\in B)\,\,\text{or}\,\, x\in C\\
 		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,x\in B\,\,\text{or}\,\, x\in C\\
 		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,(x\in B\,\,\text{or}\,\, x\in C)\\
 		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,(x\in B\cup C)\\
 		&\Longleftrightarrow\,\,x\in A\cup (B\cup C).\end{align*}$
-	</center>
+	</center></p>
 </Details>
 <Details>
 	<summary>補足</summary>
-	この命題により，括弧付けによる 2 式の区別は基本的に不要であるため，強調等の意図がない場合は括弧を省略する．
+	<p>この命題により，括弧付けによる 2 式の区別は基本的に不要であるため，強調等の意図がない場合は括弧を省略する：</p>
+	<p><center>
+		$\begin{align*} (A\cup B)\cup C &=A\cup (B\cup C) = A\cup B\cup C,\\
+				(A\cap B)\cap C &=A\cap (B\cap C) = A\cap B\cap C.\end{align*}$
+	</center></p>
 </Details>
 <br><br>
 
 <div class="prp" id="54">
 	<b>[#54]命題：集合演算の分配法則</b><br>
-	集合 $A,\,B,\,C$ に対して 
-	<center>$A\cap (B\cup C)=(A\cap B)\cup (A\cap C)$，<br>
-		$A\cup (B\cap C)=(A\cup B)\cap (A\cup C)$.</center>
+	<p>集合 $A,\,B,\,C$ に対して </p>
+	<p><center>$\begin{align*}A\cap (B\cup C) &=(A\cap B)\cup (A\cap C)，\\
+			          A\cup (B\cap C) &=(A\cup B)\cap (A\cup C).\end{align*}$
+	</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	命題の分配法則により従う．例えば $[A\cap (B\cup C)=(A\cap B)\cup (A\cap C)]$ に対して，
-	<center> 
+	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> により従う．例えば $[A\cap (B\cup C)=(A\cap B)\cup (A\cap C)]$ に対して，</p>
+	<p><center> 
 		$\begin{align*} x\in A\cap (B\cup C)\,\,&\Longleftrightarrow\,\, x\in A\,\,\text{and}\,\, x\in (B\cup C)\\
 		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\, (x\in B\,\,\text{or}\,\, x\in C)\\
 		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\,x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{and}\,\,x\in C)\\
 		&\Longleftrightarrow\,\,(x\in A\cap B)\,\,\text{or}\,\, (x\in A\cap C)\\
 		&\Longleftrightarrow\,\,x\in (A\cap B)\cup (A\cap C).\end{align*}$
-	</center>
+	</center></p>
 </Details>
 <Details>
 	<summary>補足</summary>
-	集合の交換法則 <a href="#52">[#52]</a> と組み合わせることにより，左側に括弧がある場合：
-	<center>$(A\cap B)\cup C=(A\cup C)\cap (B\cup C)$，<br>
-		$(A\cup B)\cap C=(A\cap C)\cup (B\cap C)$.</center>
-	の成立も確認できる．
+	<p>集合の交換法則 <a href="#52">[#52]</a> と組み合わせることにより，左側に括弧がある場合：</p>
+	<p><center>$(A\cap B)\cup C=(A\cup C)\cap (B\cup C)$，<br>
+		$(A\cup B)\cap C=(A\cap C)\cup (B\cap C)$.</center></p>
+	<p>の成立も確認できる．</p>
 </Details>
 <br><br>
 
 <div class="prp" id="55">
 	<b>[#55]命題：共通部分による集合の分解</b><br>
-	集合 $A,\,B$ に対して 
-	<center>$A = (A\cap B)\cup (A\backslash B).$</center>
+	<p>集合 $A,\,B$ に対して </p>
+	<p><center>$A = (A\cap B)\cup (A\backslash B).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<center> 
+	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> と $"x\in B"\lor "x\notin B"\equiv \mathsf{T}$ であることから，
+	<p><center> 
 		$\begin{align*} x\in (A\cap B)\cup (A\backslash B)\,\,&\Longleftrightarrow\,\, x\in A\cap B\,\,\text{or}\,\, x\in (A\backslash B)\\
-		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\, x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{or}\,\,x\notin B)\\
+		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\, x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{and}\,\,x\notin B)\\
 		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\,(x\in B\,\,\text{or}\,\,x\notin B)\\
 		&\Longleftrightarrow\,\,x\in A.\end{align*}$
-	</center>
+	</center></p>
 </Details>
 <br><br>
 
 <div class="prp" id="56">
 	<b>[#56]命題：集合の包含と和</b><br>
-	集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，
-	<center>$A\cup B=B.$</center>
+	<p>集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，</p>
+	<p><center>$A\cup B=B.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	$[x\in B\Rightarrow x\in A\cup B]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，
-	<center>
+	<p>$[x\in B\Rightarrow x\in A\cup B]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，</p>
+	<p><center>
 		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, \underline{x\in A}\,\,\text{or}\,\,x\in B\\
 		&\,\Longrightarrow\,\, \underline{x\in B}\,\,\text{or}\,\, x\in B\,\,\Longleftrightarrow\,\, x\in B.\end{align*}$
-	</center>
+	</center></p>
 </Details>
 <br><br>
 	
 <div class="prp" id="57">
 	<b>[#57]命題：集合の包含と共通部分</b><br>
-	集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，
-	<center>$A\cap B=A.$</center>
+	<p>集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，</p>
+	<p><center>$A\cap B=A.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	$[x\in A\cap B\Rightarrow x\in A]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，
-	<center>
+	<p>$[x\in A\cap B\Rightarrow x\in A]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，</p>
+	<p><center>
 		$x\in A\,\,\Longrightarrow\,\, x\in A\,\,\text{and}\,\,x\in B\,\,\Longleftrightarrow\,\, x\in A\cap B.$
-	</center>
+	</center></p>
 </Details>
 <br><br>
 	
