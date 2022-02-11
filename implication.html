@@ -27,22 +27,22 @@
 <div class="def" id="65">
 	<b>[#65]定義：含意と諸定義</b><br>
 	<p>命題 $P,\,Q$ に対して，「$P$ が偽であるか $Q$ が真である」という命題を $P$ から $Q$ への【含意(implication)】と呼び，$P\rightarrow Q$ で表す：</p>
-	<center>$P\rightarrow Q\equiv \neg P\lor Q.$</center>
+	<p><center>$P\rightarrow Q\equiv \neg P\lor Q.$</center></p>
 	<p>また，$P\rightarrow Q$ であることを「$P$ ならば $Q$ が成り立つ (if $P$, then $Q$ holds)」と云う．
 	ここで，$P$ は【仮定(assumption)】または【前件(antecedent)】，$Q$ は【結論(conclusion)】または【後件(consequence)】と呼ばれる．
 	さらに $P\rightarrow Q$ かつ $Q\rightarrow P$ であることを $P\leftrightarrow Q$ と表し，$P$ と $Q$ の【双条件(biconditional)】と云う．</p>
 </div>
 <Details>
 	<summary>補足</summary>
-	$P\rightarrow Q$ では，$P$ が真であるときは $Q$ も真である．これは直感的にも理解しやすいところではあるが，
-	そもそも $P$ が偽であるときは $Q$ の真偽に関わらず $P\rightarrow Q$ は真とする点に注意が必要．
+	<p>$P\rightarrow Q$ では，$P$ が真であるときは $Q$ も真である．これは直感的にも理解しやすいところではあるが，
+	そもそも $P$ が偽であるときは $Q$ の真偽に関わらず $P\rightarrow Q$ は真とする点に注意が必要．</p>
 </Details>
 <br><br>
 
 <div class="prp" id="66">
 	<b>[#66]命題：双条件と同値</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
-	<center>$P\leftrightarrow Q \equiv (P\land Q)\lor (\neg P\land \neg Q).$</center>
+	<p><center>$P\leftrightarrow Q \equiv (P\land Q)\lor (\neg P\land \neg Q).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
@@ -63,29 +63,29 @@
 </Details>
 <Details>
 	<summary>補足</summary>
-	この命題から $P\leftrightarrow Q$ は，$P$ と $Q$ の一方は真であればもう一方も真であり，一方が偽であればもう一方も偽であることを意味することがわかる．
-	つまり，$P\leftrightarrow Q$ が真であることは，$P$ と $Q$ が同値であることを意味する．
+	<p>この命題から $P\leftrightarrow Q$ は，$P$ と $Q$ の一方は真であればもう一方も真であり，一方が偽であればもう一方も偽であることを意味することがわかる．
+	つまり，$P\leftrightarrow Q$ が真であることは，$P$ と $Q$ が同値であることを意味する．</p>
 </Details>
 <br><br>
 
 <div class="prp" id="67">
 	<b>[#67]命題：対偶</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
-	<center>$P\rightarrow Q \equiv \neg Q\rightarrow \neg P.$</center>
+	<p><center>$P\rightarrow Q \equiv \neg Q\rightarrow \neg P.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
 	<p>含意の定義　<a href="#65">[#65]</a> と交換法則，二重否定の法則 <a href="proposition.html#60">[#60]</a> を組み合わせることにより，以下のように題意を得ることができる：</p>
-	<center>
+	<p><center>
 		$\begin{align*}P\rightarrow Q &\equiv \neg P\lor Q\\
 		&\equiv Q\lor \neg P\\
 		&\equiv \neg(\neg Q)\lor \neg P\\
 		&\equiv \neg Q\rightarrow \neg P.\end{align*}$
-	</center>
+	</center></p>
 </Details>
 <Details>
 	<summary>補足</summary>
-	含意 $P\rightarrow Q$ に対して，前後件を否定して入れ替えた命題を【対偶(contraposition)】と呼ぶ．任意の含意とその対偶は常に同値である．
+	<p>含意 $P\rightarrow Q$ に対して，前後件を否定して入れ替えた命題を【対偶(contraposition)】と呼ぶ．任意の含意とその対偶は常に同値である．</p>
 </Details>
 <br><br>
 
