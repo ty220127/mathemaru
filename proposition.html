@@ -113,13 +113,13 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<b>[#70]命題：命題の吸収法則(distributive law)</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>
-		$\begin{align*} P\lor (P\land Q)\equiv P\\
-				P\land (P\lor Q)\equiv P\\. \end{align*}$
+		$\begin{align*} P\lor (P\land Q)\equiv P,\\
+				P\land (P\lor Q)\equiv P. \end{align*}$
 	</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>前者について，以下の真理値表の通り示される．</p>
+	<p>以下の真理値表の通り示される．</p>
 	<p><center>
 		$\begin{array}{|c|c||c|c||c|c|}\hline P & Q & P\land Q& P\lor Q & P\lor (P\land Q) & P\land (P\lor Q)\\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
@@ -283,6 +283,33 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
 	</center></p>
+</Details>
+<br><br>
+
+<div class="exr" id="71">
+	<b>[#71]演習：論理演算子の関係</b><br>
+	<p>命題 $P\land Q$ を論理演算子として $\neg,\,\lor$ のみを必要最小限の個数で用いて表せ．</p>
+</div>
+<Details>
+	<summary>解答</summary>
+	<p>de Morgan の法則 <a href="#63">[#63]</a> より</p>
+	<p><center>
+		$\neg(P\land Q) \equiv (\neg P)\lor (\neg Q).$
+	</center></p>
+	<p>よって，$\neg(P\land Q)$ の否定をとることにより</p>
+	<p><center>
+		$\neg(\neg(P\land Q)) \equiv \neg((\neg P)\lor (\neg Q))$
+	</center></p>
+	<p>を得る．一方で二重否定 <a href="60">[#60]</a> より</p>
+	<p><center>
+		$\neg(\neg(P\land Q)) \equiv P\land Q$
+	</center></p>
+	<p>であるから，</p>
+	<p><center>
+		$\color{red}{P\land Q \equiv \neg((\neg P)\lor (\neg Q))}$
+	</center></p>
+	<p>を得る．</p>
+</Details>
 </Details>
 <br><br>
 
