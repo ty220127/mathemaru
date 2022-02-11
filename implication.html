@@ -14,6 +14,16 @@
 		trp: '\\mathsf{T}'
 	}}});
 </script>
+<script>
+/* 更新日の取得 */
+const last = new Date(document.lastModified);
+const year = last.getFullYear();
+const month = last.getMonth() + 1;
+const date = last.getDate();
+/* 日付を書き換える */
+const target = document.getElementById('modify');
+target.textContent = year + '-' + month + '-' + date;
+</script>
 <title>含意｜演習問題集</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 <style>
@@ -22,6 +32,7 @@
 
 <body>
 <center><div id="titlehead">含意</div></center>
+<time id="modify"></time>
 <br><br>
     
 <div class="def" id="65">
@@ -97,6 +108,25 @@
 		&\equiv \neg(\neg Q)\lor \neg P\\
 		&\equiv \neg Q\rightarrow \neg P.\end{align*}$
 	</center></p>
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>含意 $P\rightarrow Q$ に対して，前後件を否定して入れ替えた命題を【対偶(contraposition)】と呼ぶ．任意の含意とその対偶は常に同値である．</p>
+</Details>
+<br><br>
+
+<div class="prp" id="69">
+	<b>[#69]命題：含意の離接</b><br>
+	<p>命題 $P,\,Q$ に対して</p>
+	<p><center>$(P\rightarrow Q)\lor (Q\rightarrow P)\equiv \mathsf{T}.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>含意の定義 <a href="#65">[#65]</a> より</p>
+	<p><center>
+		$(P\rightarrow Q)\kand (Q\rightarrow P) \equiv \neg P\lor Q\lor \neg Q\lor P$
+	</center></p>
+	<p>これらを</p>
 </Details>
 <Details>
 	<summary>補足</summary>
