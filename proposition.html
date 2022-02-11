@@ -22,6 +22,23 @@
 
 <body>
 <center><div id="titlehead">命題論理</div></center>
+
+<p style="text-align:right;">
+established before 2022/2/11<br>
+<time id="modify"></time>
+<script>
+/* 更新日の取得 */
+const last = new Date(document.lastModified);
+const year = last.getFullYear();
+const month = last.getMonth() + 1;
+const date = last.getDate();
+/* 日付を書き換える */
+const target = document.getElementById('modify');
+target.textContent = 'updated on ' + year + '/' + month + '/' + date;
+</script>
+</p>
+<br><br>
+   
 <br><br>
     
 <div class="def" id="58">
@@ -61,8 +78,8 @@
 	<b>[#60]命題：命題に関する自明な事実</b><br>
 	命題 $P,\,Q$ に対して以下が成立する：
 	<ul>
-		<li> $P\land P \equiv P$　　 </li>
-		<li> $P\lor P \equiv P$ </li>
+		<li> $P\land P \equiv P$ 【冪等則(idempotent law)１】</li>
+		<li> $P\lor P \equiv P$ 【冪等則(idempotent law)２】</li>
 		<li> $\neg(\neg P) \equiv P$ 【二重否定(double negation)】</li>
 		<li> $P\lor \neg P\equiv\mathsf{T}$ 【排中律(law of excluded middle)】</li>
 		<li> $P\land \neg P\equiv \mathsf{F}$ 【矛盾律(law of contradiction)】</li>
@@ -89,6 +106,27 @@
     		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} & \mathsf{T}& \mathsf{T} \\ \hline 
     		\mathsf{F} & \mathsf{F} & \mathsf{F} &\mathsf{F} &\mathsf{F} & \mathsf{F} \\ \hline \end{array}$
 	</center>
+</Details>
+<br><br>
+
+<div class="prp" id="70">
+	<b>[#70]命題：命題の吸収法則(distributive law)</b><br>
+	命題 $P,\,Q$ に対して
+	<center>
+		$\begin{align*} P\lor (P\land Q)\equiv P\\
+				P\land (P\lor Q)\equiv P\\. \end{align*}$
+	</center>
+</div>
+<Details>
+	<summary>証明</summary>
+	前者について，以下の真理値表の通り示される．<br><br>
+	<center>
+		$\begin{array}{|c|c||c|c||c|c|}\hline P & Q & P\land Q& P\lor Q & P\lor (P\land Q) & P\land (P\lor Q)\\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{T}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline \end{array}$
+	</center><br><br>
 </Details>
 <br><br>
 
