@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}'
+	}}});
+</script>
+<title>確率変数の収束｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">確率変数の収束</div></center>
+
+<p style="text-align:right;">
+established on 2022/2/12<br>
+<time id="modify"></time>
+<script>
+/* 更新日の取得 */
+const last = new Date(document.lastModified);
+const year = last.getFullYear();
+const month = last.getMonth() + 1;
+const date = last.getDate();
+/* 日付を書き換える */
+const target = document.getElementById('modify');
+target.textContent = 'updated on ' + year + '/' + month + '/' + date;
+</script>
+</p>
+    
+<div class="def" id="78">
+	<b>[#78]定義：概収束</b><br>
+	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
+  <p><center>$P\left(\left\{\omega\in\varOmega\,|\,\limit_{n\rightarrow\infty}X_n(\omega)=X(\omega)\right\}\right)=1$</center></p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【概収束(almost sure convergence)】するといい，$X_n \rightarrow X\,\mathrm{a.s.}$ と表す．</p>
+</div>
+<br><br>
+
+<div class="def" id="79">
+	<b>[#79]定義：$\bs{p}$ 次平均収束</b><br>
+	<p> $p>1$ とする．実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
+  <p><center>$\limit_{n\rightarrow\infty}\mathbb{E}[|X_n-X|^p] = 0$</center></p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【$p$ 次平均収束(convergence in the mean of order $p$)】するといい，$X_n \overset{L^p}{\rightarrow} X$ と表す．</p>
+</div>
+<br><br>
+  
+<div class="def" id="80">
+	<b>[#80]定義：確率収束</b><br>
+	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して，任意の $\varepsilon>0$ について確率変数 $X$ が存在して</p>
+  <p><center>$\limit_{n\rightarrow\infty}P\left(\left\{\omega\in\varOmega\,|\,|X_n(\omega)-X(\omega)|\gt\varepsilon\right\}\right)=1$</center></p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【確率収束(stochastic convergence)】するといい，$X_n \overset{\mathrm{P}}{\rightarrow} X$ と表す．</p>
+</div>
+<br><br>
+
+<div class="def" id="81">
+	<b>[#81]定義：弱収束</b><br>
+	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して，任意の実数値有界関数 $f$ について確率変数 $X$ が存在して</p>
+  <p><center>$\limit_{n\rightarrow\infty}\mathbb{E}[f(X_n)]=\mathbb{E}[f(X)]$</center></p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【弱収束(weak convergence)】，【法則収束(convergence in law)】或いは【分布収束(convergence in distrbution)】するといい，$X_n \overset{\mathrm{W}}{\rightarrow} X$ と表す．</p>
+</div>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+	<li>長岡亮介: 総合的研究 論理学で学ぶ数学 – 思考ツールとしてのロジック.</li>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-1_meidaironri.pdf">尾畑伸明, pdf</a>.</li>
+	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2021/L03_0428.pdf">桂田祐史: 数理リテラシー 第 3 回 ～ 論理 (3) ～, pdf</a>.</li>
+	<li><a href="https://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">岡田光弘: 「論理学入門」講義ノート, pdf</a>.</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
+
