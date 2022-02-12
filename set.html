@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<center><div id="titlehead">集合と演算</div></center>
+<center><div id="titlehead">集合</div></center>
 
 <p style="text-align:right;">
 established on 2022/2/6<br>
@@ -82,13 +82,12 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<b>[#51]定義：集合の演算</b><br>
   <ul class="defl">
     <li> 集合 $A$ または $B$ に属するような要素の集合を $A$ と $B$ の【和(sum)】または【合併(union)】と呼び，$A\cup B$ と書く：
-	    <p><center>$A\cup B= \{x\,|\,x\in A\,\,\text{or}\,\, x\in B\}$.</li></p>
+	    <p><center>$A\cup B= \{x\,|\,(x\in A) \lor (x\in B)\}.$</li></p>
     <li> 集合 $A$ と $B$ の両方属するような要素の集合を $A$ と $B$ の【共通部分(intersection)】または【交叉(meet)】と呼び，$A\cap B$ と書く：
-	    <p><center>$A\cap B= \{x\,|\,x\in A\,\,\text{and}\,\, x\in B\}$.</li></p>
+	    <p><center>$A\cap B= \{x\,|\,(x\in A) \land (x\in B)\}.$</li></p>
     <li> 集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\backslash B$ と書く：
-	    <p><center>$A\backslash B= \{x\,|\,\,x\in A\,\,\text{and}\,\, x\notin B\}$.</li></p>
-    <li> 集合 $A$ か $B$ の一方に属しもう一方に属さないような要素の集合を $A$ と $B$ の【対称差(symmetric difference)】と呼び，$A\bigtriangleup B$ と書く：
-	    <p><center>$A\bigtriangleup B= (A\backslash B)\cup (B\backslash A)= \{x\,|\,\,x\in A\,\,\text{xor}\,\, x\in B\}$.</li></p>
+	    <p><center>$\begin{align*}A\backslash B &= \{x\,|\,\,(x\in A) \land (x\notin B)\}\\
+		    				    &= \{x\,|\,\,(x\in A) \land (\neg(x\in B))\}.\end{align*}$</li></p>
   </ul>
 </div>
 <br><br>
@@ -102,8 +101,8 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>命題の交換法則 <a href="proposition.html#60">[#60]</a> により従う．例えば $[A\cup B= B\cup A]$ に対して，</p>
 	<p><center> 
-		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, x\in A\,\,\text{or}\,\,x\in B\\
-		&\Longleftrightarrow\,\,x\in B\,\,\text{or}\,\,x\in A\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
+		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, (x\in A) \lor (x\in B)\\
+		&\Longleftrightarrow\,\,(x\in B) \lor (x\in A)\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
 	</center></p>
 </Details>
 <br><br>
@@ -118,11 +117,12 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>命題の結合法則 <a href="proposition.html#61">[#61]</a> により従う．例えば $[(A\cup B)\cup C=A\cup (B\cup C)]$ に対して，</p>
 	<p><center> 
-		$\begin{align*} x\in (A\cup B)\cup C\,\,&\Longleftrightarrow\,\, (x\in A\cup B)\,\,\text{or}\,\, x\in C\\
-		&\Longleftrightarrow\,\,(x\in A\,\,\text{or}\,\,x\in B)\,\,\text{or}\,\, x\in C\\
-		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,(x\in B\,\,\text{or}\,\, x\in C)\\
-		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,(x\in B\cup C)\\
-		&\Longleftrightarrow\,\,x\in A\cup (B\cup C).\end{align*}$
+		$\begin{align*} \,\,& x\in (A\cup B)\cup C\\
+		\Longleftrightarrow\,\,& (x\in A\cup B) \lor (x\in C)\\
+		\Longleftrightarrow\,\,& ((x\in A) \lor (x\in B)) \lor (x\in C)\\
+		\Longleftrightarrow\,\,& (x\in A) \lor ((x\in B) \lor (x\in C))\\
+		\Longleftrightarrow\,\,& (x\in A) \lor (x\in B\cup C)\\
+		\Longleftrightarrow\,\,& x\in A\cup (B\cup C).\end{align*}$
 	</center></p>
 </Details>
 <Details>
@@ -146,7 +146,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> により従う．例えば $[(A\cap B)\cup C =(A\cup C)\cap (B\cup C)]$ に対して，</p>
 	<p><center> 
-		$\begin{align*} x\in (A\cap B)\cup C\,\,
+		$\begin{align*}\,\,& x\in (A\cap B)\cup C\\
 		\Longleftrightarrow\,\,& (x\in A\cap B)\lor (x\in C)\\
 		\Longleftrightarrow\,\,& ((x\in A)\land (x\in B))\lor (x\in C)\\
 		\Longleftrightarrow\,\,& ((x\in A)\lor (x\in C))\land ((x\in B)\lor (x\in C))\\
@@ -170,12 +170,13 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> と $[(x\in B)\lor (x\notin B)\equiv \mathsf{T}]$ であることから，
+	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> と $[(x\in B)\lor (x\notin B)\equiv \mathsf{T}]$ である <a href="proposition.html#58">[#58]</a> ことから，
 	<p><center> 
-		$\begin{align*} x\in (A\cap B)\cup (A\backslash B)\,\,\Longleftrightarrow\,\, x\in A\cap B\,\,\text{or}\,\, x\in (A\backslash B)\\
-		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\, x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{and}\,\,x\notin B)\\
-		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\,(x\in B\,\,\text{or}\,\,x\notin B)\\
-		&\Longleftrightarrow\,\,x\in A.\end{align*}$
+		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\backslash B)\\
+		\Longleftrightarrow\,\,& (x\in A\cap B) \lor (x\in (A\backslash B))\\
+		\Longleftrightarrow\,\,& ((x\in A) land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
+		\Longleftrightarrow\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
+		\Longleftrightarrow\,\,& x\in A.\end{align*}$
 	</center></p>
 </Details>
 <br><br>
@@ -189,8 +190,8 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>$[x\in B\Rightarrow x\in A\cup B]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，</p>
 	<p><center>
-		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, \underline{x\in A}\,\,\text{or}\,\,x\in B\\
-		&\,\Longrightarrow\,\, \underline{x\in B}\,\,\text{or}\,\, x\in B\,\,\Longleftrightarrow\,\, x\in B.\end{align*}$
+		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, \underline{(x\in A)}\lor (x\in B)\\
+		&\,\Longrightarrow\,\, \underline{(x\in B)}\lor (x\in B)\,\,\Longleftrightarrow\,\, x\in B.\end{align*}$
 	</center></p>
 </Details>
 <br><br>
@@ -204,7 +205,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>$[x\in A\cap B\Rightarrow x\in A]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，</p>
 	<p><center>
-		$x\in A\,\,\Longrightarrow\,\, x\in A\,\,\text{and}\,\,x\in B\,\,\Longleftrightarrow\,\, x\in A\cap B.$
+		$x\in A\,\,\Longrightarrow\,\, (x\in A)\and (x\in B)\,\,\Longleftrightarrow\,\, x\in A\cap B.$
 	</center></p>
 </Details>
 <br><br>
