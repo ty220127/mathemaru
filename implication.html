@@ -81,12 +81,14 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	</center>
 	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> を繰り返し用いることで</p>
 	<center>
-		$\begin{align*}(\neg P\lor Q)\land (\neg Q\lor P) &\equiv ((\neg P\lor Q)\land \neg Q)\lor ((\neg P\lor Q)\land P)\\
-		&\equiv (\neg P\land \neg Q)\lor (Q\land \neg Q)\lor (\neg P\land P)\lor (Q\land P)\end{align*}$
+		$\begin{align*}&\,\, (\neg P\lor Q)\land (\neg Q\lor P) \\
+		\equiv &\,\,  ((\neg P\lor Q)\land \neg Q)\lor ((\neg P\lor Q)\land P)\\
+		\equiv &\,\,  (\neg P\land \neg Q)\lor (Q\land \neg Q)\lor (\neg P\land P)\lor (Q\land P)\end{align*}$
 	</center>
 	<p>を得る．ここで <a href="proposition.html#60">[#60]</a> より $Q\land \neg Q\equiv \neg P\land P\equiv \mathsf{F}$ であり，また選言で結ばれた $\mathsf{F}$ は無視してよいから，</p>
 	<center>
-		$(\neg P\land \neg Q)\lor (Q\land \neg Q)\lor (\neg P\land P)\lor (Q\land P)\equiv (\neg P\land \neg Q)\lor (Q\land P).$
+		$\begin{align*}&\,\,(\neg P\land \neg Q)\lor (Q\land \neg Q)\lor (\neg P\land P)\lor (Q\land P)\\
+		\equiv &\,\, (\neg P\land \neg Q)\lor (Q\land P).\end{align*}$
 	</center>
 	<p>以上の結果をまとめることで題意を得る．</p>
 </Details>
@@ -127,7 +129,8 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>含意の定義 <a href="#65">[#65]</a> より</p>
 	<p><center>
-		$(P\rightarrow Q)\land (Q\rightarrow P) \equiv \neg P\lor Q\lor \neg Q\lor P\equiv \mathsf{T}.$
+		$\begin{align*}&\,\,(P\rightarrow Q)\land (Q\rightarrow P)\\
+		\equiv &\,\, (\neg P)\lor Q\lor (\neg Q)\lor P\equiv \mathsf{T}.\end{align*}$
 	</center></p>
 </Details>
 <Details>
@@ -145,10 +148,11 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>含意の定義 <a href="#65">[#65]</a> と分配法則 <a href="proposition.html#62">[#62]</a> より</p>
 	<p><center>
-		$\begin{align*}P\land (P\rightarrow Q) &\equiv P\land (\neg P\lor Q)\\
-		&\equiv (P\land (\neg P))\lor (P\land Q)\\
-		&\equiv \mathsf{F}\lor (P\land Q)\\
-		&\equiv P\land Q.\end{align*}$
+		$\begin{align*}&\,\, P\land (P\rightarrow Q)\\
+		\equiv &\,\, P\land (\neg P\lor Q)\\
+		\equiv &\,\, (P\land (\neg P))\lor (P\land Q)\\
+		\equiv &\,\, \mathsf{F}\lor (P\land Q)\\
+		\equiv &\,\, P\land Q.\end{align*}$
 	</center></p>
 </Details>
 <Details>
@@ -172,8 +176,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	</center></p>
 	<p>よって，<a href="#66">[#66]</a> より，
 	<p><center>
-		$\begin{align*}&((P\rightarrow Q)\rightarrow P)\rightarrow P\\
-		\equiv\,\, & P\rightarrow P\equiv P.\end{align*}$
+		$((P\rightarrow Q)\rightarrow P)\rightarrow P \equiv P\rightarrow P \equiv \mathsf{T}.$
 	</center></p>
 </Details>
 <br><br>
