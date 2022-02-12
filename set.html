@@ -120,7 +120,6 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<p><center> 
 		$\begin{align*} x\in (A\cup B)\cup C\,\,&\Longleftrightarrow\,\, (x\in A\cup B)\,\,\text{or}\,\, x\in C\\
 		&\Longleftrightarrow\,\,(x\in A\,\,\text{or}\,\,x\in B)\,\,\text{or}\,\, x\in C\\
-		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,x\in B\,\,\text{or}\,\, x\in C\\
 		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,(x\in B\,\,\text{or}\,\, x\in C)\\
 		&\Longleftrightarrow\,\,x\in A\,\,\text{or}\,\,(x\in B\cup C)\\
 		&\Longleftrightarrow\,\,x\in A\cup (B\cup C).\end{align*}$
@@ -139,26 +138,27 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 <div class="prp" id="54">
 	<b>[#54]命題：集合演算の分配法則</b><br>
 	<p>集合 $A,\,B,\,C$ に対して </p>
-	<p><center>$\begin{align*}A\cap (B\cup C) &=(A\cap B)\cup (A\cap C)，\\
-			          A\cup (B\cap C) &=(A\cup B)\cap (A\cup C).\end{align*}$
+	<p><center>$\begin{align*}(A\cap B)\cup C &=(A\cup C)\cap (B\cup C)，\\
+			          (A\cup B)\cap C &=(A\cap C)\cup (B\cap C).\end{align*}$
 	</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> により従う．例えば $[A\cap (B\cup C)=(A\cap B)\cup (A\cap C)]$ に対して，</p>
+	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> により従う．例えば $[(A\cap B)\cup C =(A\cup C)\cap (B\cup C)]$ に対して，</p>
 	<p><center> 
-		$\begin{align*} x\in A\cap (B\cup C)\,\,&\Longleftrightarrow\,\, x\in A\,\,\text{and}\,\, x\in (B\cup C)\\
-		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\, (x\in B\,\,\text{or}\,\, x\in C)\\
-		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\,x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{and}\,\,x\in C)\\
-		&\Longleftrightarrow\,\,(x\in A\cap B)\,\,\text{or}\,\, (x\in A\cap C)\\
-		&\Longleftrightarrow\,\,x\in (A\cap B)\cup (A\cap C).\end{align*}$
+		$\begin{align*} x\in (A\cap B)\cup C\,\,
+		\Longleftrightarrow\,\,& (x\in A\cap B)\lor (x\in C)\\
+		\Longleftrightarrow\,\,& ((x\in A)\land (x\in B))\lor (x\in C)\\
+		\Longleftrightarrow\,\,& ((x\in A)\lor (x\in C))\land ((x\in B)\lor (x\in C))\\
+		\Longleftrightarrow\,\,& (x\in A\cup C)\land (x\in B\cup C)\\
+		\Longleftrightarrow\,\,& x\in (A\cup C)\cap (B\cup C).\end{align*}$
 	</center></p>
 </Details>
 <Details>
 	<summary>補足</summary>
-	<p>集合の交換法則 <a href="#52">[#52]</a> と組み合わせることにより，左側に括弧がある場合：</p>
-	<p><center>$(A\cap B)\cup C=(A\cup C)\cap (B\cup C)$，<br>
-		$(A\cup B)\cap C=(A\cap C)\cup (B\cap C)$.</center></p>
+	<p>集合の交換法則 <a href="#52">[#52]</a> と組み合わせることにより，右側に括弧がある場合：</p>
+	<p><center>$\begin{align*} A\cup (B\cap C) &=(A\cup B)\cap (A\cup C)，\\<br>
+		A\cap (B\cup C) &=(A\cap B)\cup (A\cap C).\end{align*}$</center></p>
 	<p>の成立も確認できる．</p>
 </Details>
 <br><br>
@@ -172,7 +172,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> と $[(x\in B)\lor (x\notin B)\equiv \mathsf{T}]$ であることから，
 	<p><center> 
-		$\begin{align*} x\in (A\cap B)\cup (A\backslash B)\,\,&\Longleftrightarrow\,\, x\in A\cap B\,\,\text{or}\,\, x\in (A\backslash B)\\
+		$\begin{align*} x\in (A\cap B)\cup (A\backslash B)\,\,\Longleftrightarrow\,\, x\in A\cap B\,\,\text{or}\,\, x\in (A\backslash B)\\
 		&\Longleftrightarrow\,\,(x\in A\,\,\text{and}\,\, x\in B)\,\,\text{or}\,\, (x\in A\,\,\text{and}\,\,x\notin B)\\
 		&\Longleftrightarrow\,\,x\in A\,\,\text{and}\,\,(x\in B\,\,\text{or}\,\,x\notin B)\\
 		&\Longleftrightarrow\,\,x\in A.\end{align*}$
@@ -218,28 +218,26 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>命題の de Morgan の法則 <a href="proposition.html#63">[#63]</a> により従う．前者は $[\neg (P\land Q) &\equiv (\neg P)\lor (\neg Q)]$ を用いて</p>
+	<p>命題の de Morgan の法則 <a href="proposition.html#63">[#63]</a> により従う．前者は $[\neg (P\land Q) \equiv (\neg P)\lor (\neg Q)]$ を用いて</p>
 	<p><center>
-		$\begin{align*} & x\in (A\cap B)^{\rm c}\\
-		\Leftrightarrow & (x\in\varOmega)\land (x\notin A\cap B)\\
-		\Leftrightarrow & (x\in\varOmega)\land \neg(x\in A\cap B)\\
-		\Leftrightarrow & (x\in\varOmega)\land ((\neg(x\in A))\lor (\neg(x\in B)))\\
-		\Leftrightarrow & ((x\in\varOmega)\land (\neg(x\in A))) \lor ((x\in\varOmega)\land (\neg(x\in B)))\\
-		\Leftrightarrow & (x\in \varOmega\backslash A)\lor (x\in \varOmega\backslash B)\\
-		\Leftrightarrow & (x\in A^{\rm c})\lor (x\in B^{\rm c})\\
-		\Leftrightarrow & x\in A^{\rm c}\cup B^{\rm c}.$
+		$\begin{align*} x\in (A\cap B)^{\rm c} \,\,\Leftrightarrow\,\, & (x\in\varOmega)\land (x\notin A\cap B)\\
+		\Leftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cap B)\\
+		\Leftrightarrow\,\, & (x\in\varOmega)\land ((\neg(x\in A))\lor (\neg(x\in B)))\\
+		\Leftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \lor ((x\in\varOmega)\land (\neg(x\in B)))\\
+		\Leftrightarrow\,\, & (x\in \varOmega\backslash A)\lor (x\in \varOmega\backslash B)\\
+		\Leftrightarrow\,\, & (x\in A^{\rm c})\lor (x\in B^{\rm c})\\
+		\Leftrightarrow\,\, & x\in A^{\rm c}\cup B^{\rm c}.\end{align*}$
 	</center></p>
 	<p>ここで，変形の３行目から４行目で分配法則 <a href="proposition.html#62">[#62]</a> を用いた．<br>
-		後者は $[\neg (P\lor Q) &\equiv (\neg P)\land (\neg Q)]$ を用いて</p>
+		後者は $[\neg (P\lor Q) \equiv (\neg P)\land (\neg Q)]$ を用いて</p>
 	<p><center>
-		$\begin{align*} & x\in (A\cup B)^{\rm c}\\
-		\Leftrightarrow & (x\in\varOmega)\land (x\notin A\cup B)\\
-		\Leftrightarrow & (x\in\varOmega)\land \neg(x\in A\cup B)\\
-		\Leftrightarrow & (x\in\varOmega)\land (\neg(x\in A))\land (\neg(x\in B))\\
-		\Leftrightarrow & ((x\in\varOmega)\land (\neg(x\in A))) \land ((x\in\varOmega)\land (\neg(x\in B)))\\
-		\Leftrightarrow & (x\in \varOmega\backslash A)\land (x\in \varOmega\backslash B)\\
-		\Leftrightarrow & (x\in A^{\rm c})\land (x\in B^{\rm c})\\
-		\Leftrightarrow & x\in A^{\rm c}\cap B^{\rm c}.$
+		$\begin{align*} x\in (A\cup B)^{\rm c} \Leftrightarrow\,\, & (x\in\varOmega)\land (x\notin A\cup B)\\
+		\Leftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cup B)\\
+		\Leftrightarrow\,\, & (x\in\varOmega)\land (\neg(x\in A))\land (\neg(x\in B))\\
+		\Leftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \land ((x\in\varOmega)\land (\neg(x\in B)))\\
+		\Leftrightarrow\,\, & (x\in \varOmega\backslash A)\land (x\in \varOmega\backslash B)\\
+		\Leftrightarrow\,\, & (x\in A^{\rm c})\land (x\in B^{\rm c})\\
+		\Leftrightarrow\,\, & x\in A^{\rm c}\cap B^{\rm c}.\end{align*}$
 	</center></p>
 	<p>ここで，変形の３行目から４行目で冪等則 <a href="proposition.html#60">[#60]</a> を用いた．</p>
 </Details>
