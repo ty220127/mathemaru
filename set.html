@@ -100,7 +100,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>命題の交換法則 <a href="proposition.html#60">[#60]</a> により従う．例えば $[A\cup B\Leftrightarrow B\cup A]$ に対して，</p>
+	<p>命題の交換法則 <a href="proposition.html#60">[#60]</a> により従う．例えば $[A\cup B= B\cup A]$ に対して，</p>
 	<p><center> 
 		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, x\in A\,\,\text{or}\,\,x\in B\\
 		&\Longleftrightarrow\,\,x\in B\,\,\text{or}\,\,x\in A\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
@@ -220,24 +220,24 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>命題の de Morgan の法則 <a href="proposition.html#63">[#63]</a> により従う．前者は $[\neg (P\land Q) \equiv (\neg P)\lor (\neg Q)]$ を用いて</p>
 	<p><center>
-		$\begin{align*} x\in (A\cap B)^{\rm c} \,\,\Leftrightarrow\,\, & (x\in\varOmega)\land (x\notin A\cap B)\\
-		\Leftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cap B)\\
-		\Leftrightarrow\,\, & (x\in\varOmega)\land ((\neg(x\in A))\lor (\neg(x\in B)))\\
-		\Leftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \lor ((x\in\varOmega)\land (\neg(x\in B)))\\
-		\Leftrightarrow\,\, & (x\in \varOmega\backslash A)\lor (x\in \varOmega\backslash B)\\
-		\Leftrightarrow\,\, & (x\in A^{\rm c})\lor (x\in B^{\rm c})\\
-		\Leftrightarrow\,\, & x\in A^{\rm c}\cup B^{\rm c}.\end{align*}$
+		$\begin{align*} x\in (A\cap B)^{\rm c} \,\,\Longleftrightarrow\,\, & (x\in\varOmega)\land (x\notin A\cap B)\\
+		\Longleftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cap B)\\
+		\Longleftrightarrow\,\, & (x\in\varOmega)\land ((\neg(x\in A))\lor (\neg(x\in B)))\\
+		\Longleftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \lor ((x\in\varOmega)\land (\neg(x\in B)))\\
+		\Longleftrightarrow\,\, & (x\in \varOmega\backslash A)\lor (x\in \varOmega\backslash B)\\
+		\Longleftrightarrow\,\, & (x\in A^{\rm c})\lor (x\in B^{\rm c})\\
+		\Longleftrightarrow\,\, & x\in A^{\rm c}\cup B^{\rm c}.\end{align*}$
 	</center></p>
 	<p>ここで，変形の３行目から４行目で分配法則 <a href="proposition.html#62">[#62]</a> を用いた．<br>
 		後者は $[\neg (P\lor Q) \equiv (\neg P)\land (\neg Q)]$ を用いて</p>
 	<p><center>
-		$\begin{align*} x\in (A\cup B)^{\rm c} \Leftrightarrow\,\, & (x\in\varOmega)\land (x\notin A\cup B)\\
-		\Leftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cup B)\\
-		\Leftrightarrow\,\, & (x\in\varOmega)\land (\neg(x\in A))\land (\neg(x\in B))\\
-		\Leftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \land ((x\in\varOmega)\land (\neg(x\in B)))\\
-		\Leftrightarrow\,\, & (x\in \varOmega\backslash A)\land (x\in \varOmega\backslash B)\\
-		\Leftrightarrow\,\, & (x\in A^{\rm c})\land (x\in B^{\rm c})\\
-		\Leftrightarrow\,\, & x\in A^{\rm c}\cap B^{\rm c}.\end{align*}$
+		$\begin{align*} x\in (A\cup B)^{\rm c} \Longleftrightarrow\,\, & (x\in\varOmega)\land (x\notin A\cup B)\\
+		\Longleftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cup B)\\
+		\Longleftrightarrow\,\, & (x\in\varOmega)\land (\neg(x\in A))\land (\neg(x\in B))\\
+		\Longleftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \land ((x\in\varOmega)\land (\neg(x\in B)))\\
+		\Longleftrightarrow\,\, & (x\in \varOmega\backslash A)\land (x\in \varOmega\backslash B)\\
+		\Longleftrightarrow\,\, & (x\in A^{\rm c})\land (x\in B^{\rm c})\\
+		\Longleftrightarrow\,\, & x\in A^{\rm c}\cap B^{\rm c}.\end{align*}$
 	</center></p>
 	<p>ここで，変形の３行目から４行目で冪等則 <a href="proposition.html#60">[#60]</a> を用いた．</p>
 </Details>
