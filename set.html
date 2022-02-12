@@ -85,8 +85,8 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	    <p><center>$A\cup B= \{x\,|\,(x\in A) \lor (x\in B)\}.$</li></p>
     <li> 集合 $A$ と $B$ の両方属するような要素の集合を $A$ と $B$ の【共通部分(intersection)】または【交叉(meet)】と呼び，$A\cap B$ と書く：
 	    <p><center>$A\cap B= \{x\,|\,(x\in A) \land (x\in B)\}.$</li></p>
-    <li> 集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\backslash B$ と書く：
-	    <p><center>$\begin{align*}A\backslash B &= \{x\,|\,\,(x\in A) \land (x\notin B)\}\\
+    <li> 集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\setminus B$ と書く：
+	    <p><center>$\begin{align*}A\setminus B &= \{x\,|\,\,(x\in A) \land (x\notin B)\}\\
 		    				    &= \{x\,|\,\,(x\in A) \land (\neg(x\in B))\}.\end{align*}$</li></p>
   </ul>
 </div>
@@ -166,14 +166,14 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 <div class="prp" id="55">
 	<b>[#55]命題：共通部分による集合の分解</b><br>
 	<p>集合 $A,\,B$ に対して </p>
-	<p><center>$A = (A\cap B)\cup (A\backslash B).$</center></p>
+	<p><center>$A = (A\cap B)\cup (A\setminus B).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
 	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> と $[(x\in B)\lor (x\notin B)\equiv \mathsf{T}]$ である <a href="proposition.html#58">[#58]</a> ことから，
 	<p><center> 
-		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\backslash B)\\
-		\Longleftrightarrow\,\,& (x\in A\cap B) \lor (x\in (A\backslash B))\\
+		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\setminus B)\\
+		\Longleftrightarrow\,\,& (x\in A\cap B) \lor (x\in (A\setminus B))\\
 		\Longleftrightarrow\,\,& ((x\in A) \land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
 		\Longleftrightarrow\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
 		\Longleftrightarrow\,\,& x\in A.\end{align*}$
@@ -212,7 +212,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	
 <div class="prp" id="74">
 	<b>[#74]命題：集合の de Morgan の法則</b><br>
-	<p>$\varOmega$ を集合とし，$A,\,B$ をこの部分集合とする．また，$S\subset \varOmega$ に対して $S^{\rm c} := \varOmega\backslash S$ と書くことにする．
+	<p>$\varOmega$ を集合とし，$A,\,B$ をこの部分集合とする．また，$S\subset \varOmega$ に対して $S^{\rm c} := \varOmega\setminus S$ と書くことにする．
 		このとき，以下が成り立つ：</p>
 	<p><center>$\begin{align*}(A\cap B)^{\rm c} &=A^{\rm c}\cup B^{\rm c},\\
 				(A\cup B)^{\rm c} &=A^{\rm c}\cap B^{\rm c}.\end{align*}$</center></p>
@@ -225,7 +225,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\Longleftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cap B)\\
 		\Longleftrightarrow\,\, & (x\in\varOmega)\land ((\neg(x\in A))\lor (\neg(x\in B)))\\
 		\Longleftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \lor ((x\in\varOmega)\land (\neg(x\in B)))\\
-		\Longleftrightarrow\,\, & (x\in \varOmega\backslash A)\lor (x\in \varOmega\backslash B)\\
+		\Longleftrightarrow\,\, & (x\in \varOmega\setminus A)\lor (x\in \varOmega\setminus B)\\
 		\Longleftrightarrow\,\, & (x\in A^{\rm c})\lor (x\in B^{\rm c})\\
 		\Longleftrightarrow\,\, & x\in A^{\rm c}\cup B^{\rm c}.\end{align*}$
 	</center></p>
@@ -236,7 +236,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\Longleftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cup B)\\
 		\Longleftrightarrow\,\, & (x\in\varOmega)\land (\neg(x\in A))\land (\neg(x\in B))\\
 		\Longleftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \land ((x\in\varOmega)\land (\neg(x\in B)))\\
-		\Longleftrightarrow\,\, & (x\in \varOmega\backslash A)\land (x\in \varOmega\backslash B)\\
+		\Longleftrightarrow\,\, & (x\in \varOmega\setminus A)\land (x\in \varOmega\setminus B)\\
 		\Longleftrightarrow\,\, & (x\in A^{\rm c})\land (x\in B^{\rm c})\\
 		\Longleftrightarrow\,\, & x\in A^{\rm c}\cap B^{\rm c}.\end{align*}$
 	</center></p>
