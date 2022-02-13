@@ -42,13 +42,13 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<b>[#48]定義：集合に関する諸定義</b><br>
 	<p>ものの集まりのことを【集合(set)】と呼ぶ．</p>
   	<ul class="defl">
-    	<li> 今，集合 $A$ という集まりの中に $x$ というものがあるとする．このとき，$x$ は集合 $A$ の【元(要素; element)】と呼び，$x\in A$ と書く．</li>
-   	 <li> 集合 $A$，$B$ に対して
-		 <center> $x\in A\,\,\Longrightarrow\,\, x\in B$ </center></p>
-      	が成り立つことを【$A$ は $B$ に含まれる】と云い，$A$ は $B$ の【部分集合(subset)】と呼ばれる．また，これを $A\subset B$ と表す．</li>
+    	<li> 今，集合 $A$ という集まりの中に $x$ というものがあるとき，$x$ は集合 $A$ の【元(要素; element)】と呼び，$x\in A$ と表す．</li>
+   	<li> 集合 $A$，$B$ に対して
+		<p><center> $x\in A\,\,\Longrightarrow\,\, x\in B$ </center></p>
+      	が成り立つことを「$A$ は $B$ に含まれる ($A$ is included in $B$)」と云い，$A\subset B$ と表す．また，$A$ は $B$ の【部分集合(subset)】と呼ばれる．</li>
     	<li> $A\subset B$ かつ $A\supset B$ であるとき，つまり
 		<p><center>$x\in A\,\,\Longleftrightarrow\,\, x\in B$</center></p>
-	 が成り立つとき，集合 $A$ と $B$ を構成する元が全く同じとなる．このような場合，【集合 $A$ と $B$ は等しい】と云い，$A=B$ と書く．</li>
+	 が成り立つとき，「集合 $A$ と $B$ は等しい ($A$ and $B$ are equal)」と云い，$A=B$ と書く．</li>
     	<li> 要素を1つも持たないような集合を【空集合(empty set)】と呼び，$\emptyset$ と書く．</li>
   </ul>
 </div>
@@ -221,8 +221,9 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<summary>証明</summary>
 	<p>命題の de Morgan の法則 <a href="proposition.html#63">[#63]</a> により従う．前者は $[\neg (P\land Q) \equiv (\neg P)\lor (\neg Q)]$ を用いて</p>
 	<p><center>
-		$\begin{align*} x\in (A\cap B)^{\rm c} \,\,\Longleftrightarrow\,\, & (x\in\varOmega)\land (x\notin A\cap B)\\
+		$\begin{align*} & x\in (A\cap B)^{\rm c} \\
 		\Longleftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cap B)\\
+		\Longleftrightarrow\,\, & (x\in\varOmega)\land \neg((x\in A)\land (x\in B))\\
 		\Longleftrightarrow\,\, & (x\in\varOmega)\land ((\neg(x\in A))\lor (\neg(x\in B)))\\
 		\Longleftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \lor ((x\in\varOmega)\land (\neg(x\in B)))\\
 		\Longleftrightarrow\,\, & (x\in \varOmega\setminus A)\lor (x\in \varOmega\setminus B)\\
@@ -232,8 +233,9 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<p>ここで，変形の３行目から４行目で分配法則 <a href="proposition.html#62">[#62]</a> を用いた．<br>
 		後者は $[\neg (P\lor Q) \equiv (\neg P)\land (\neg Q)]$ を用いて</p>
 	<p><center>
-		$\begin{align*} x\in (A\cup B)^{\rm c} \Longleftrightarrow\,\, & (x\in\varOmega)\land (x\notin A\cup B)\\
+		$\begin{align*} & x\in (A\cup B)^{\rm c}\\
 		\Longleftrightarrow\,\, & (x\in\varOmega)\land \neg(x\in A\cup B)\\
+		\Longleftrightarrow\,\, & (x\in\varOmega)\land \neg((x\in A)\lor (x\in B))\\
 		\Longleftrightarrow\,\, & (x\in\varOmega)\land (\neg(x\in A))\land (\neg(x\in B))\\
 		\Longleftrightarrow\,\, & ((x\in\varOmega)\land (\neg(x\in A))) \land ((x\in\varOmega)\land (\neg(x\in B)))\\
 		\Longleftrightarrow\,\, & (x\in \varOmega\setminus A)\land (x\in \varOmega\setminus B)\\
