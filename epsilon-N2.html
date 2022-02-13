@@ -17,69 +17,83 @@
     </style>
   </head>
 
-  <body>
-    <center><div id="titlehead">数列の収束</div></center>
-    <br><br>
+<body>
+<center><div id="titlehead">数列の収束</div></center>
+<p style="text-align:right;">
+established on 2022/1/27<br>
+<time id="modify"></time>
+<script>
+/* 更新日の取得 */
+const last = new Date(document.lastModified);
+const year = last.getFullYear();
+const month = last.getMonth() + 1;
+const date = last.getDate();
+/* 日付を書き換える */
+const target = document.getElementById('modify');
+target.textContent = 'updated on ' + year + '/' + month + '/' + date;
+</script>
+</p>
+
         
-    <div class="def" id="8">
-      <b>[#8]定義：数列の収束</b><br>
-      $\{a_n\}$ を実数の数列とする．$\alpha$ を実数としたとき，任意の $\varepsilon>0$ に対してある自然数 $N$ が存在して，<br>
-      <center>$n>N\,\,\Longrightarrow\,\,|a_n-\alpha|<\varepsilon$</center>
-      を満たすならば，$\{a_n\}$ は $\alpha$ に収束するといい，
-      <center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \alpha,\quad a_n\rightarrow\alpha\,(n\rightarrow\infty)$</center>
-      と書く．
-    </div>
-    <br><br>
+<div class="def" id="8">
+	<b>[#8]定義：数列の収束</b><br>
+	<p>$\{a_n\}$ を実数の数列とする．$\alpha$ を実数としたとき，任意の $\varepsilon>0$ に対してある自然数 $N$ が存在して，</p>
+	<p><center>$n\geq N\,\,\Longrightarrow\,\,|a_n-\alpha|<\varepsilon$</center></p>
+	<p>を満たすならば，$\{a_n\}$ は $\alpha$ に収束するといい，</p>
+	<p><center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \alpha,\quad a_n\rightarrow\alpha\,(n\rightarrow\infty)$</center></p>
+	<p>と書く．</p>
+</div>
+<br><br>
     
-    <div class="prp" id="9">
-      <b>[#9]命題：収束する数列の例</b><br>
-      $\limit_{n\rightarrow\infty}\fraction{\,1\,}{\,n\,} = 0$.
-    </div>
-      <Details>
-        <summary>証明</summary>
-      </Details>
-    <br><br>
+<div class="prp" id="9">
+	<b>[#9]命題：収束する数列の例</b><br>
+	<p>$\limit_{n\rightarrow\infty}\fraction{\,1\,}{\,n\,} = 0$.</p>
+</div>
+<Details>
+	<summary>証明</summary>
+</Details>
+<br><br>
     
-    <div class="prp" id="35">
-      <b>[#35]命題：収束する数列の例</b><br>
-      $k$ を定数として，$\limit_{n\rightarrow\infty}\fraction{\,n\,}{\,n+k\,} = 1$.
-    </div>
-      <Details>
-        <summary>証明</summary>
-      </Details>
-    <br><br>
+<div class="prp" id="35">
+	<b>[#35]命題：収束する数列の例</b><br>
+	<p>$k$ を定数として，$\limit_{n\rightarrow\infty}\fraction{\,n\,}{\,n+k\,} = 1.$</p>
+</div>
+<Details>
+	<summary>証明</summary>
+</Details>
+<br><br>
     
-    <div class="prp" id="36">
-      <b>[#36]命題：収束する数列の定数倍</b><br>
-      定数 $c$ に対して，$\limit_{n\rightarrow\infty}a_n = \alpha\,\,\Longrightarrow\,\,\limit_{n\rightarrow\infty}ca_n = c\alpha$.
-    </div>
-      <Details>
-        <summary>証明</summary>
-      </Details>
-    <br><br>
+<div class="prp" id="36">
+	<b>[#36]命題：収束する数列の定数倍</b><br>
+	<p>定数 $c$ に対して，$\limit_{n\rightarrow\infty}a_n = \alpha\,\,\Longrightarrow\,\,\limit_{n\rightarrow\infty}ca_n = c\alpha.$</p>
+</div>
+<Details>
+	<summary>証明</summary>
+</Details>
+<br><br>
     
-    <div class="prp" id="37">
-      <b>[#37]命題：収束する数列の絶対値</b><br>
-      $\limit_{n\rightarrow\infty}a_n = \alpha\,\,\Longrightarrow\,\,\limit_{n\rightarrow\infty}|a_n| = |\alpha|$.
-    </div>
-      <Details>
-        <summary>証明</summary>
-      </Details>
-    <br><br>
+<div class="prp" id="37">
+	<b>[#37]命題：収束する数列の絶対値</b><br>
+	<p>$\limit_{n\rightarrow\infty}a_n = \alpha\,\,\Longrightarrow\,\,\limit_{n\rightarrow\infty}|a_n| = |\alpha|.$</p>
+</div>
+<Details>
+	<summary>証明</summary>
+</Details>
+<br><br>
     
-    <div id="bib">
-      <b>参考文献</b>
-      <ul>
-        <li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
-        <li>加藤文元(監修): チャート式シリーズ 大学教養 微分積分, 数研出版 (2019).</li>
-        <li>原惟行, 松永秀章: イプシロン・デルタ論法 完全攻略, 共立出版 (2011).</li>
-        <li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
-      </ul>
-    </div>
+<div id="bib">
+	<b>参考文献</b>
+	<ul>
+		<li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
+		<li>加藤文元(監修): チャート式シリーズ 大学教養 微分積分, 数研出版 (2019).</li>
+		<li>原惟行, 松永秀章: イプシロン・デルタ論法 完全攻略, 共立出版 (2011).</li>
+		<li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
+	</ul>
+</div>
 	  
-    <p style="text-align:right;">
-    <a href="index.html">トップページに戻る</a>
-    </p>
-  </body>
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
 </html>
 
