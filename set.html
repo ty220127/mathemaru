@@ -40,14 +40,16 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
     
 <div class="def" id="48">
 	<b>[#48]定義：集合に関する諸定義</b><br>
-	<p>ものの集まりのことを【集合(set)】と呼ぶ．</p>
+	<p>命題関数 <a href="predicate.html#75">[#75]</a> $P(x)$ を真とするような変項 $x$ の集まりのことを【集合(set)】と呼び，</p>
+	<p><center>\{x\,|\,P(x)\}</center></p>
+	<p>と表す．</p>
   	<ul class="defl">
-    	<li> 今，集合 $A$ という集まりの中に $x$ というものがあるとき，$x$ は集合 $A$ の【元(要素; element)】と呼び，$x\in A$ と表す．</li>
+    	<li> 集合 $A$ が命題関数 $P(x)$ で定義されているとし，$P(a)$ が真であるとき，$a$ を集合 $A$ の【元(要素; element)】と呼び，$a\in A$ と表す．</li>
    	<li> 集合 $A$，$B$ に対して
-		<p><center> $x\in A\,\,\Longrightarrow\,\, x\in B$ </center></p>
+		<p><center> $a\in A\,\,\Longrightarrow\,\, a\in B$ </center></p>
       	が成り立つことを「$A$ は $B$ に含まれる ($A$ is included in $B$)」と云い，$A\subset B$ と表す．また，$A$ は $B$ の【部分集合(subset)】と呼ばれる．</li>
     	<li> $A\subset B$ かつ $A\supset B$ であるとき，つまり
-		<p><center>$x\in A\,\,\Longleftrightarrow\,\, x\in B$</center></p>
+		<p><center>$a\in A\,\,\Longleftrightarrow\,\, a\in B$</center></p>
 	 が成り立つとき，「集合 $A$ と $B$ は等しい ($A$ and $B$ are equal)」と云い，$A=B$ と書く．</li>
     	<li> 要素を1つも持たないような集合を【空集合(empty set)】と呼び，$\emptyset$ と書く．</li>
   </ul>
