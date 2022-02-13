@@ -1,160 +1,153 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
-  <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-        limit: '\\displaystyle\\lim'
-      }}});
-    </script>
-    <title>数列の発散｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-      titlehead{
-        font-size: 200%;
-        font-family: sans-serif;
-      }
-      .def{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #ffff99;
-      }
-      .prp{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2f9ff;
-      }
-      bib{
-        font-size: 85%;
-      }
-    </style>
-  </head>
+<head>
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}'
+	}}});
+</script>
+<title>数列の発散｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
 
-  <body>
-    <center><titlehead>数列の極限</titlehead></center>
-    <br><br>
+<body>
+<center><div id="titlehead">数列の発散</titlehead></div>
+
+<p style="text-align:right;">
+established on 2022/1/27<br>
+<time id="modify"></time>
+<script>
+/* 更新日の取得 */
+const last = new Date(document.lastModified);
+const year = last.getFullYear();
+const month = last.getMonth() + 1;
+const date = last.getDate();
+/* 日付を書き換える */
+const target = document.getElementById('modify');
+target.textContent = 'updated on ' + year + '/' + month + '/' + date;
+</script>
+</p>
     
-    <div class="def" id="1">
-      <b>[#1]定義：数列の発散①</b><br>
-      $\{a_n\}$ を実数の数列とする．このとき，任意の $K>0$ に対してある自然数 $N$ が存在して，<br>
-      <center>$n>N\,\,\Longrightarrow\,\,a_n>K$</center>
-      を満たすならば，$\{a_n\}$ は $\infty$ に発散するといい，
-      <center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \infty,\quad a_n\rightarrow\infty\,(n\rightarrow\infty)$</center>
-      と書く．<br>
-    </div>
-    <br><br>
+<div class="def" id="1">
+  <b>[#1]定義：数列の発散①</b><br>
+  <p>$\{a_n\}$ を実数の数列とする．このとき，任意の $K>0$ に対してある自然数 $N$ が存在して，</p>
+  <p><center>$n\leq N\,\,\Longrightarrow\,\,a_n>K$</center></p>
+  <p>を満たすならば，$\{a_n\}$ は $\infty$ に発散するといい，</p>
+  <p><center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \infty,\quad a_n\rightarrow\infty\,(n\rightarrow\infty)$</center></p>
+  <p>と書く．</p>
+</div>
+<br><br>
     
-    <div class="prp" id="2">
-      <b>[#2]命題：Archimedes の公理とその同値条件</b><br>
-      次は同値：
-      <ol>
-        <li> 任意の正の実数 $a,\,b$ に対して自然数 $N$ が存在して，$aN\gt b$ が成り立つ（Archimedes の公理）．</li>
-        <li> $\displaystyle\lim_{n\rightarrow\infty}n=\infty .$</li>
-      </ol>
-    </div>
-      <Details>
-        <summary>証明</summary>
-        まず，命題 1 が成立しているとする．このとき，任意の正の実数 $K$ に対して自然数 $N$ が存在して $N\gt K$が成り立つ（命題 2 において，$a=1$ の場合）．よって，自然数 $n$ に対して
-        <center> $n\geq N\,\,\Longrightarrow\,\, n>K$</center>
-        が成り立つので，命題 2 の成立がいえる．<br>
-        逆に，命題 2 が成り立つとする．つまり，任意の正の実数 $K$ に対して自然数 $N$ が存在して
-        <center> $n\geq N\,\,\Longrightarrow\,\, n\gt K$ </center>
-        が成立している．ここで $K$ は正の実数 $a,\,b$ を用いて $K=b/a$ と書くことができる．すなわち $n\gt b/a\,\,\Longleftrightarrow\,\,an\gt b$．
-        ここで，$K$ の任意性より $a,\,b$ も任意の値をとることができるから，命題 1 が成立する．
-      </Details>
-    <br><br>
+<div class="prp" id="2">
+  <b>[#2]命題：Archimedes の公理とその同値条件</b><br>
+  <p>次は同値：</p>
+  <ol>
+    <li> 任意の正の実数 $a,\,b$ に対して自然数 $N$ が存在して，$aN\gt b$ が成り立つ（Archimedes の公理）．</li>
+    <li> $\displaystyle\lim_{n\rightarrow\infty}n=\infty .$</li>
+  </ol>
+</div>
+<Details>
+  <summary>証明</summary>
+  <p>まず，命題 1 が成立しているとする．このとき，任意の正の実数 $K$ に対して自然数 $N$ が存在して $N\gt K$が成り立つ（命題 2 において，$a=1$ の場合）．よって，自然数 $n$ に対して</p>
+  <p><center> $n\geq N\,\,\Longrightarrow\,\, n>K$</center></p>
+  <p>が成り立つので，命題 2 の成立がいえる．<br>
+    逆に，命題 2 が成り立つとする．つまり，任意の正の実数 $K$ に対して自然数 $N$ が存在して</p>
+  <p><center> $n\geq N\,\,\Longrightarrow\,\, n\gt K$ </center></p>
+  <p>が成立している．ここで $K$ は正の実数 $a,\,b$ を用いて $K=b/a$ と書くことができる．すなわち $n\gt b/a\,\,\Longleftrightarrow\,\,an\gt b$．
+    ここで，$K$ の任意性より $a,\,b$ も任意の値をとることができるから，命題 1 が成立する．
+</Details>
+<br><br>
     
-    ★ 以降，Archimedes の公理は成立しているものとして議論を進める．<br><br>
+  <p>★ 以降，Archimedes の公理は成立しているものとして議論を進める．</p>
     
-    <div class="prp" id="3">
-      <b>[#3]命題：発散する数列の例</b><br>
-      $k$ を正の実数として，$\limit_{n\rightarrow\infty}(kn)=\infty$.
-    </div>
-      <Details>
-        <summary>証明１</summary>
-        $K>0$ を任意に固定すれば，
-        <center> $n\geq \left\lceil\fraction{K}{k}\right\rceil +1\,\,\Longrightarrow\,\,  n \gt\fraction{K}{k}\,\,\Longleftrightarrow\,\, kn \gt K.$ </center>
-      </Details>
-      <Details>
-        <summary>証明２</summary>
-        <a href="#2">Archimedes の公理</a>より，任意の $K>0$ に対して自然数 $N$ が存在して $kN\gt K$ である．よって，
-        <center> $n\geq N\,\,\Longrightarrow\,\, kn \geq kN \gt K$ </center>
-        であることより題意は示される．
-      </Details>
-      <Details>
-        <summary>補足</summary>
-        証明１において，<a href="#1">発散の定義</a>において，$N=\left\lceil\fraction{K}{k}\right\rceil +1$ である．
-      </Details>
-    <br><br>
+<div class="prp" id="3">
+  <b>[#3]命題：発散する数列の例</b><br>
+  <p>$k$ を正の実数として，$\limit_{n\rightarrow\infty}(kn)=\infty$.</p>
+</div>
+<Details>
+  <summary>証明１</summary>
+  <p>$K\gt 0$ を任意に固定すれば，</p>
+  <p><center> $n\geq \left\lceil\fraction{K}{k}\right\rceil +1\,\,\Longrightarrow\,\,  n \gt\fraction{K}{k}\,\,\Longleftrightarrow\,\, kn \gt K.$ </center></p>
+</Details>
+<Details>
+  <summary>証明２</summary>
+  <p>Archimedes の公理 <a href="#2">[#2]</a> より，任意の $K>0$ に対して自然数 $N$ が存在して $kN\gt K$ である．よって，</p>
+  <p><center> $n\geq N\,\,\Longrightarrow\,\, kn \geq kN \gt K$ </center></p>
+  <p>であることより題意は示される．</p>
+</Details>
+<Details>
+  <summary>補足</summary>
+  <p>証明１において，発散の定義 <a href="#1">[#1]</a> において，$N=\left\lceil\fraction{K}{k}\right\rceil +1$ である．</p>
+</Details>
+<br><br>
     
-    <div class="prp" id="4">
-      <b>[#4]命題：追い出しの原理</b><br>
-      $\{a_n\},\,\{b_n\}$ を実数列とする．任意の $n$ に対して $a_n\leq b_n$ でありかつ $\limit_{n\rightarrow\infty}a_n=\infty$ であるとき，$\limit_{n\rightarrow\infty}b_n=\infty$．
-    </div>
-      <Details>
-        <summary>証明</summary>
-        $\limit_{n\rightarrow\infty}a_n=\infty$ であることと任意の $n$ に対して $a_n\leq b_n$ であることを併せれば，
-        <center>
-        ${}^\forall K>0,\,{}^\exists N\in\mathbb{N}\,\,{\rm s.t.}\,\,[n\geq N\,\,\Longrightarrow\,\,b_n\geq a_n\gt K].$
-        </center>
-        よって $\limit_{n\rightarrow\infty}b_n=\infty$．
-    </Details>
-    <br><br>
+<div class="prp" id="4">
+  <b>[#4]命題：追い出しの原理</b><br>
+  <p>$\{a_n\},\,\{b_n\}$ を実数列とする．任意の $n$ に対して $a_n\leq b_n$ でありかつ $\limit_{n\rightarrow\infty}a_n=\infty$ であるとき，$\limit_{n\rightarrow\infty}b_n=\infty$．</p>
+</div>
+<Details>
+  <summary>証明</summary>
+  <p>$\limit_{n\rightarrow\infty}a_n=\infty$ であることと任意の $n$ に対して $a_n\leq b_n$ であることを併せれば，</p>
+  <p><center>${}^\forall K>0,\,{}^\exists N\in\mathbb{N}\,\,{\rm s.t.}\,\,[n\geq N\,\,\Longrightarrow\,\,b_n\geq a_n\gt K].$</center></p>
+  <p>よって $\limit_{n\rightarrow\infty}b_n=\infty$．</p>
+</Details>
+<br><br>
     
-    <div class="prp" id="5">
-      <b>[#5]命題：発散する数列の例</b><br>
-      $k$ を正の実数，$p$ を $1$ 以上の大きい実数として，$\limit_{n\rightarrow\infty}(kn^p)=\infty$.
-    </div>
-      <Details>
-        <summary>証明</summary>
-        最初に，$kn^p\geq kn$ であることを以下より確認できる：
-        <center>
-          $\begin{align*}
-          kn^p-kn = kn(n^{p-1}-1) \geq 0.
-          \end{align*}$
-        </center>
-        ここで不等号は $p-1\geq 0$ に対して $n^{p-1}\geq 1$ であることから従う．よって，<a href="#3">命題#3</a>と<a href="#4">命題#4</a>より $\limit_{n\rightarrow\infty}(kn^p)=\infty$.
-      </Details>
-    <br><br>
+<div class="prp" id="5">
+  <b>[#5]命題：発散する数列の例</b><br>
+  <p>$k$ を正の実数，$p$ を $1$ 以上の大きい実数として，$\limit_{n\rightarrow\infty}(kn^p)=\infty$.</p>
+</div>
+<Details>
+  <summary>証明</summary>
+  <p>最初に，$kn^p\geq kn$ であることを以下より確認できる：</p>
+  <p><center>$kn^p-kn = kn(n^{p-1}-1) \geq 0.$</center></p>
+  <p>ここで不等号は $p-1\geq 0$ に対して $n^{p-1}\geq 1$ であることから従う．よって，<a href="#3">[#3]</a> と <a href="#4">[#4]</a> より $\limit_{n\rightarrow\infty}(kn^p)=\infty$.</p>
+</Details>
+<br><br>
     
-    <div class="prp" id="6">
-      <b>[#6]命題：発散する数列の例</b><br>
-      $r$ を $1$ より大きい実数として，$\limit_{n\rightarrow\infty}r^n=\infty$.
-    </div>
-      <Details>
-        <summary>証明</summary>
-        $K>0$ を任意に固定すれば，
-      </Details>
-    <br><br>
+<div class="prp" id="6">
+  <b>[#6]命題：発散する数列の例</b><br>
+  <p>$r$ を $1$ より大きい実数として，$\limit_{n\rightarrow\infty}r^n=\infty$.</p>
+</div>
+<Details>
+  <summary>証明</summary>
+  <p>$K>0$ を任意に固定すれば，</p>
+</Details>
+<br><br>
     
-    <div class="def" id="7">
-      <b>[#7]定義：数列の発散②</b><br>
-      $\{a_n\}$ を実数の数列とする．このとき，任意の $K>0$ に対してある自然数 $N$ が存在して，<br>
-      <center>$n>N\,\,\Longrightarrow\,\,a_n<-K$</center>
-      を満たすならば，$\{a_n\}$ は $-\infty$ に発散するといい，
-      <center>$\displaystyle\lim_{n\rightarrow\infty}a_n = -\infty,\quad a_n\rightarrow -\infty\,(n\rightarrow-\infty)$</center>
-      と書く．
-    </div>
-    <br><br>
+<div class="def" id="7">
+  <b>[#7]定義：数列の発散②</b><br>
+  <p>$\{a_n\}$ を実数の数列とする．このとき，任意の $K>0$ に対してある自然数 $N$ が存在して，</p>
+  <p><center>$n\geq N\,\,\Longrightarrow\,\,a_n<-K$</center></p>
+  <p>を満たすならば，$\{a_n\}$ は $-\infty$ に発散するといい，</p>
+  <p><center>$\displaystyle\lim_{n\rightarrow\infty}a_n = -\infty,\quad a_n\rightarrow -\infty\,(n\rightarrow-\infty)$</center></p>
+  <p>と書く．</p>
+</div>
+<br><br>
     
-    <bib>
-      <b>参考文献</b>
-      <ul>
-        <li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
-        <li>加藤文元(監修): チャート式シリーズ 大学教養 微分積分, 数研出版 (2019).</li>
-        <li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
-        <li><a href="https://mathlandscape.com/squeeze-infinity/">追い出しの原理とその厳密な証明～数列版・関数版～ | 数学の景色</a></li>
-        <li><a href="https://gleamath.com/uploads/axiom-of-Archimedes01.pdf">アルキメデスの公理</a></li>
-      </ul>
-    </bib>
+<div id="bib">
+<b>参考文献</b>
+  <ul>
+    <li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
+    <li>加藤文元(監修): チャート式シリーズ 大学教養 微分積分, 数研出版 (2019).</li>
+    <li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
+    <li><a href="https://mathlandscape.com/squeeze-infinity/">追い出しの原理とその厳密な証明～数列版・関数版～ | 数学の景色</a></li>
+    <li><a href="https://gleamath.com/uploads/axiom-of-Archimedes01.pdf">アルキメデスの公理</a></li>
+  </ul>
+</div>
       
-    <p style="text-align:right;">
-    <a href="index.html">トップページに戻る</a>
-    </p>
-  </body>
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
 </html>
