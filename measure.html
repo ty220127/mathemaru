@@ -21,16 +21,20 @@
 
 <body>
 <center><div id="titlehead">測度</div></center>
-<br><br>
+
+<p style="text-align:right;">
+established on 2022/2/6<br>
+updated on 2022/2/13
+</p>
     
 <div class="def" id="24">
 	<b>[#24]定義：測度，測度空間</b><br>
-	$(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が以下の条件を満たすとき，これを $(\varOmega,\,\mathcal{F})$ 上の測度 (measure) と呼ぶ：
-	<ol class="defl">
-	<li> $\mu(\emptyset) = 0$,</li>
-	<li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$（測度の $\sigma$ 加法性）.
-	</ol>
-	また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を測度空間 (measure space) と呼ぶ．
+	<p>$(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が以下の条件を満たすとき，これを $(\varOmega,\,\mathcal{F})$ 上の【測度 (measure)】と呼ぶ：</p>
+	<ul class="defl">
+		<li> $\mu(\emptyset) = 0$,</li>
+		<li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$（測度の $\sigma$ 加法性）.
+	</ul>
+	<p>また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を【測度空間 (measure space)】と呼ぶ．</p>
 </div>
 <br><br>
         
@@ -76,17 +80,26 @@
 <br><br>
         
 <div class="prp" id="27">
-	<b>[#27]命題：増大する測度の連続性</b><br>
-	集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\subset A_2\subset \cdots$ でかつ $\limit_{n\rightarrow\infty}A_n =A$ を満たすならば， $\limit_{n\rightarrow\infty}\mu(A_n) = \mu(A)$ である.
+	<b>[#27]命題：単調増大列と測度の連続性定理</b><br>
+	<p>集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\subset A_2\subset \cdots$ を満たすならば，</p>
+	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \mu\left(\limit_{n\rightarrow\infty}A_n\right).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	$\{B_i\}_{i\in\mathbb{N}}$ を $B_1=A_1$，$B_i = A_i\backslash A_{i-1}\,(i\geq 2)$ と定義すると，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから，
+	<p>$\{B_i\}_{i\in\mathbb{N}}$ を</p>
+	<p><center>$B_1=A_1,\quad B_i = A_i\backslash A_{i-1}\,(i\geq 2)$</center></p>
+	<p>と定義する．このとき，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから</p>
+	<p><center>$\mu\left(\bcu_{i\in\mathbb{N}}A_i\right)=\mu\left(\bcu_{i\in\mathbb{N}}B_i\right)=\sig_{i\in\mathbb{N}}\mu(B_i).$</center></p>
+	<p>また，$\{A_i\}$ は単調増大列であることから $\limit_{n\rightarrow\infty}A_n = \bcu_{i\in\mathbb{N}}A_i$ であるから，</p>
+	<p><center>$\mu\left(\limit_{n\rightarrow\infty}A_n\right)=\mu\left(\bcu_{i\in\mathbb{N}}A_i\right).$</center></p>
+	<p>また，$A_n=\bcu_{i=1}^{n}B_i$ であることから $\mu(A_n) = \mu(\bcu_{i=1}^{n}B_i) = \sig_{i=1}^{n}\mu(B_i)$ であるから，</p>
+	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \limit_{n\rightarrow\infty}\sig_{i=1}^{n}\mu(B_i) = \sig_{i\in\mathbb{N}}\mu(B_i).$</center></p>
+	<p>以上の議論をまとめることにより，題意は示される．</p>
 </Details>
 <br><br>
         
 <div class="prp" id="28">
-	<b>[#28]命題：減少する測度の連続性</b><br>
+	<b>[#28]命題：単調減少列と測度の連続性定理</b><br>
 	集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\supset A_2\supset \cdots$ でかつ $\mu(A_n)<\infty$，$\limit_{n\rightarrow\infty}A_n =A$ を満たすならば， $\limit_{n\rightarrow\infty}\mu(A_n) = \mu(A)$ である.
 </div>
 <Details>
