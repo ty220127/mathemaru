@@ -29,7 +29,7 @@ updated on 2022/2/13
 	  
 <div class="def" id="10">
 	<b>[#10]定義：</b>$\bs{\sigma}$ <b>加法族，可測空間，可測集合</b><br>
-	<p>ある全体集合 $\varOmega$ の空でない部分集合族 $\mathcal{F}(\subset 2^\varOmega)$ が以下の条件を満たすとき，これを【 $\sigma$ 加法族 (sigma algebra)】或いは【完全加法族 (completely additive class)】と呼ぶ：</p>
+	<p>ある全体集合 $\varOmega$ の空でない部分集合族 $\mathcal{F}(\subset 2^\varOmega)$ が以下の条件を満たすとき，これを $\varOmega$ の【 $\sigma$ 加法族 (sigma algebra)】或いは【完全加法族 (completely additive class)】と呼ぶ：</p>
 	<ul class="defl">
 		<li> $A\in\mathcal{F}\,\,\Longrightarrow\,\,A^{\rm c}\in\mathcal{F}$【余事象の可測性】, </li>
 		<li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}\,\,\Longrightarrow\,\,\bcu_{i\in\mathbb{N}}A_i\in\mathcal{F}$【$\sigma$ 加法性 (sigma additivity)】. </li>
@@ -52,13 +52,13 @@ updated on 2022/2/13
     
 <div class="prp" id="45">
 	<b>[#45]命題：冪集合は $\bs{\sigma}$ 加法族</b><br>
-	<p>組 $(\varOmega,\,2^{\varOmega})$ は可測空間．すなわち，$2^{\varOmega}$ は $\sigma$ 加法族である．</p>
+	<p>組 $(\varOmega,\,2^{\varOmega})$ は可測空間．すなわち，$2^{\varOmega}$ は $\varOmega$ の $\sigma$ 加法族である．</p>
 </div>
 <Details>
     <summary>証明</summary>
 	<p>$2^{\varOmega} = \{A\,|\,A\subset \varOmega\}$ であることに注意して，$\sigma$ 加法族の定義 <a href="#10">[#10]</a> に沿って示す．</p>
 	<ul class="defl">
-		<li> $A\in 2^\varOmega$ とすれば，$A^\cpl = \varOmega\backslash A\subset\varOmega$ であるから，$A^\cpl\in\ 2^\varOmega.$</li>
+		<li> $A\in 2^\varOmega$ とすれば，$A^\cpl = \varOmega\setminus A\subset\varOmega$ であるから，$A^\cpl\in\ 2^\varOmega.$</li>
 		<li> $\{A_i\}_{i\in\mathbb{N}}\subset 2^\varOmega$ とすれば，すべての $i\in\mathbb{N}$ に対して $A_i\subset\varOmega$ であることから，$\bcu_{i\in\mathbb{N}}A_i\subset\varOmega$，すなわち $\bcu_{i\in\mathbb{N}}A_i\in 2^\varOmega.$</li>
 	</ul>
 </Details>
@@ -66,7 +66,7 @@ updated on 2022/2/13
 	  
 <div class="prp" id="82">
 	<b>[#82]命題：最小の $\bs{\sigma}$ 加法族</b><br>
-	<p>組 $(\varOmega,\,\{\emptyset,\,\varOmega\})$ は可測空間．すなわち，$\{\emptyset,\,\varOmega\}$ は $\sigma$ 加法族である．</p>
+	<p>組 $(\varOmega,\,\{\emptyset,\,\varOmega\})$ は可測空間．すなわち，$\{\emptyset,\,\varOmega\}$ は $\varOmega$ の $\sigma$ 加法族である．</p>
 </div>
 <Details>
     <summary>証明</summary>
@@ -82,23 +82,21 @@ updated on 2022/2/13
 </Details>
 <br><br>
 	  
-<div class="prp" id="11">
-	<b>[#11]命題：全体集合は可測集合</b><br>
-	<p>任意の可測空間 $(\varOmega,\,\mathcal{F})$ に対して $\varOmega\in\mathcal{F}$.</p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>$\sigma$ 加法族の定義 <a href="#10">[#10]</a>-i より，$\emptyset\in\mathcal{F}$．よって，同じく <a href="#10">[#10]</a>-ii より，$\varOmega =\emptyset^{\mathrm{c}}\in\mathcal{F}$.</p>
-</Details>
-<br><br>
-	  
 <div class="prp" id="41">
 	<b>[#41]命題：$\bs{\sigma}$ 加法族の有限加法性</b><br>
-	<p>$A,\,B$ が可測空間 $(\varOmega,\,\mathcal{F})$ の可測集合であるならば，$A\cup B$ もまた可測集合である．</p>
+	<p>組 $(\varOmega,\,\mathcal{F})$ を可測空間とすれば，有限個の集合の族 $\{A_i\}_{i=1}^{n}$ に対して，</p>
+	<p><center>$\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,\Longrightarrow\,\,\bcu_{i=1}^{n}A_i\mathcal{F}.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>$\sigma$ 加法族の定義 <a href="#10">[#10]</a>-iii において，$A_1=A$，$A_2=B$，$A_3=A_4=\cdots=\emptyset$ とすれば，$A\cup B=\bcu_{i}A_i\in\mathcal{F}.$</p>
+	<p>$\sigma$ 加法族の定義 <a href="#10">[#10]</a>-ii において $A_{n+1}=A_{n+2}=\cdots= A_n$ とすれば，</p>
+	<p><center>$\bcu_{i=1}^{n}A_i=\bcu_{i}A_i\in\mathcal{F}.$</center></p>
+</Details>
+<Details>
+	<summary>補足１</summary>
+	<p>$\sigma$ 加法族の定義で空集合 $\emptyset$ の可測性を仮定する場合は，
+	<p><center>$A_1=A,\,A_2=B,\,A_3=A_4=\cdots= \emptyset$</center></p>
+	<p>として証明を行う場合も多い．</p>
 </Details>
 <br><br>
     
@@ -111,6 +109,16 @@ updated on 2022/2/13
 	<p>仮定と$\sigma$ 加法族の定義 <a href="#10">[#10]</a>-ii より $A^\cpl,\,B^\cpl\in\mathcal{F}$ であり，
 		更に有限加法性 <a href="#41">[#41]</a> より $A^\cpl\cup B^\cpl\in\mathcal{F}$．
 		最後に再び <a href="#10">[#10]</a>-ii を用いれば，$A\cap B = (A^\cpl\cup B^\cpl)^\cpl\in\mathcal{F}.$</p>
+</Details>
+<br><br>
+	  
+<div class="prp" id="11">
+	<b>[#11]命題：全体集合は可測集合</b><br>
+	<p>任意の可測空間 $(\varOmega,\,\mathcal{F})$ に対して $\varOmega\in\mathcal{F}$.</p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>$\sigma$ 加法族の定義 <a href="#10">[#10]</a>-i より，$\emptyset\in\mathcal{F}$．よって，同じく <a href="#10">[#10]</a>-ii より，$\varOmega =\emptyset^{\mathrm{c}}\in\mathcal{F}$.</p>
 </Details>
 <br><br>
 	  
