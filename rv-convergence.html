@@ -25,17 +25,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/12<br>
-<time id="modify"></time>
-<script>
-/* 更新日の取得 */
-const last = new Date(document.lastModified);
-const year = last.getFullYear();
-const month = last.getMonth() + 1;
-const date = last.getDate();
-/* 日付を書き換える */
-const target = document.getElementById('modify');
-target.textContent = 'updated on ' + year + '/' + month + '/' + date;
-</script>
+updated on 2022/2/13
 </p>
     
 <div class="def" id="78">
@@ -57,7 +47,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 <div class="def" id="80">
 	<b>[#80]定義：確率収束</b><br>
 	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して，任意の $\varepsilon>0$ について確率変数 $X$ が存在して</p>
-  <p><center>$\limit_{n\rightarrow\infty}P\left(\left\{\omega\in\varOmega\,|\,|X_n(\omega)-X(\omega)|\gt\varepsilon\right\}\right)=1$</center></p>
+  <p><center>$\limit_{n\rightarrow\infty}P\left(\left\{\omega\in\varOmega\,|\,|X_n(\omega)-X(\omega)|\gt\varepsilon\right\}\right)=0$</center></p>
   <p>が成り立つとき，$\{X_n\}$ は $X$ に【確率収束(stochastic convergence)】するといい，$X_n \overset{\text{P}}{\longrightarrow} X$ と表す．</p>
 </div>
 <br><br>
