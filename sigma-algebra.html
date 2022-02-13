@@ -85,7 +85,7 @@ updated on 2022/2/13
 <div class="prp" id="41">
 	<b>[#41]命題：$\bs{\sigma}$ 加法族の有限加法性</b><br>
 	<p>組 $(\varOmega,\,\mathcal{F})$ を可測空間とすれば，有限個の集合の族 $\{A_i\}_{i=1}^{n}$ に対して，</p>
-	<p><center>$\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,\Longrightarrow\,\,\bcu_{i=1}^{n}A_i\mathcal{F}.$</center></p>
+	<p><center>$\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,\Longrightarrow\,\,\bcu_{i=1}^{n}A_i\in\mathcal{F}.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
@@ -104,16 +104,16 @@ updated on 2022/2/13
 	<b>[#42]命題：可測集合の積</b><br>
 	<p>可算無限個の集合族 $\{A_i\}_{i\in\mathbb{N}}$ と有限個の集合族 $\{A_i\}_{i=1}^{n}$ に対して</p>
 	<p><center>$\begin{align*}\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i\in\mathbb{N}}A_i\in\mathcal{F},\\
-		\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i=1}^{n}A_i\in\mathcal{F}.$</p>
+		\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i=1}^{n}A_i\in\mathcal{F}.\end{align*}$</p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>それぞれの集合族の元の余集合の族 $\{A_i^\cpl\}_{i\in\mathbb{N}}$，$\{A_i^\cpl\}_{i=1}^{n}$ を考えれば $\sigma$ 加法族の条件 <a href="#10">[#10]</a>-i より，
-		何れも $\mathcal{F}$ の部分集合である．よって，$\sigma$ 加法族の条件 <a href="#10">[#10]</a>-ii より</p>
+	<p>それぞれの集合族の元の余集合の族 $\{A_i^\cpl\}_{i\in\mathbb{N}}$，$\{A_i^\cpl\}_{i=1}^{n}$ を考えれば 余集合の可測性 <a href="#10">[#10]</a>-i より，
+		何れも $\mathcal{F}$ の部分集合である．よって，$\sigma$ 加法性 <a href="#10">[#10]</a>-ii および有限加法性 <a href="#41">[#41]</a> より</p>
 	<p><center>$\begin{align*}\{A_i^\cpl\}_{i\in\mathbb{N}}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i\in\mathbb{N}}A_i^\cpl\in\mathcal{F},\\
-		\{A_i^\cpl\}_{i=1}^{n}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i=1}^{n}A_i^\cpl\in\mathcal{F}.$</center></p>
+		\{A_i^\cpl\}_{i=1}^{n}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i=1}^{n}A_i^\cpl\in\mathcal{F}.\end{align*}$</center></p>
 	<p>よって，de Morgan の法則 <a href="set.html#74">[#74]</a> を適用すると</p>
-	<p><center>$\bca_{i\in\mathbb{N}}A_i^\cpl = \left(\bcu_{i\in\mathbb{N}}A_i)^\cpl,\quad \bca_{i=1}^{n}A_i^\cpl = \left(\bcu_{i=1}^{n}A_i)^\cpl</center></p>
+	<p><center>$\bca_{i\in\mathbb{N}}A_i^\cpl = \left(\bcu_{i\in\mathbb{N}}A_i)^\cpl,\quad \bca_{i=1}^{n}A_i^\cpl = \left(\bcu_{i=1}^{n}A_i)^\cpl$</center></p>
 	<p>が云え，ここで再び $\sigma$ 加法族の条件 <a href="#10">[#10]</a>-i を用いれば題意を示すことができる．</p>
 </Details>
 <br><br>
