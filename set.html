@@ -25,17 +25,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/6<br>
-<time id="modify"></time>
-<script>
-/* 更新日の取得 */
-const last = new Date(document.lastModified);
-const year = last.getFullYear();
-const month = last.getMonth() + 1;
-const date = last.getDate();
-/* 日付を書き換える */
-const target = document.getElementById('modify');
-target.textContent = 'updated on ' + year + '/' + month + '/' + date;
-</script>
+updated on 2022/2/13
 </p>
     
 <div class="def" id="48">
@@ -48,7 +38,7 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
    	<li> 集合 $A$，$B$ に対して
 		<p><center> $a\in A\,\,\Longrightarrow\,\, a\in B$ </center></p>
       	が成り立つことを「$A$ は $B$ に含まれる ($A$ is included in $B$)」と云い，$A\subset B$ と表す．また，$A$ は $B$ の【部分集合(subset)】と呼ばれる．</li>
-    	<li> $A\subset B$ かつ $A\supset B$ であるとき，つまり
+    	<li> $A\subset B$ かつ $B\subset A$ であるとき，つまり
 		<p><center>$a\in A\,\,\Longleftrightarrow\,\, a\in B$</center></p>
 	 が成り立つとき，「集合 $A$ と $B$ は等しい ($A$ and $B$ are equal)」と云い，$A=B$ と書く．</li>
     	<li> 要素を1つも持たないような集合を【空集合(empty set)】と呼び，$\emptyset$ と書く．</li>
