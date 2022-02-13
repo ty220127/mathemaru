@@ -1,37 +1,36 @@
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
-  <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
-        limit: '\\displaystyle\\lim'
-      }}});
-    </script>
-    <title>数列の収束｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-    </style>
-  </head>
+<head>
+	<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		MathJax.Hub.Config({ TeX: { Macros: {
+			bs: '\\boldsymbol', 
+			bcu: '\\displaystyle\\bigcup', 
+			bca: '\\displaystyle\\bigcap', 
+			fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+			limit: '\\displaystyle\\lim'
+		}}});
+	</script>
+	<script>
+	$(function(){
+		var modified_dt=document.lastModified;
+		$('#res1').html(modified_dt);
+		
+		var modified_date=new Date(document.lastModified).toLocaleDateString();
+		$('#res2').html(modified_date);
+	});
+	</script>
+	<title>数列の収束｜演習問題集</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+	<style>
+	</style>
+</head>
 
 <body>
 <center><div id="titlehead">数列の収束</div></center>
 <p style="text-align:right;">
 established on 2022/1/29<br>
-<time id="modify"></time>
-<script>
-/* 更新日の取得 */
-const last = new Date(document.lastModified);
-const year = last.getFullYear();
-const month = last.getMonth() + 1;
-const date = last.getDate();
-/* 日付を書き換える */
-const target = document.getElementById('modify');
-target.textContent = 'updated on ' + year + '/' + month + '/' + date;
-</script>
+updated on <span id="res2"></span>
 </p>
 
         
