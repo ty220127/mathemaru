@@ -307,23 +307,42 @@ updated on 2022/2/15
 </Details>
 <br><br>
 
-<div class="exr" id="">
-	<b>[#]演習：排他的論理和(exclusive or)</b><br>
-	命題 $P,\,Q$ に対して論理演算子 $\oplus$ は以下の真理値表の通り定義されるとする：
-	<center>
-		$\begin{array}{|c|c||c|}\hline P & Q & P\oplus Q \\ \hline
+<div class="exr" id="87">
+	<b>[#87]演習：排他的論理和 (exclusive logical sum)</b><br>
+	<p>命題 $P,\,Q$ に対して論理演算子 $\veebar$ は以下の真理値表の通り定義されるとする：</p>
+	<p><center>
+		$\begin{array}{|c|c||c|}\hline P & Q & P\veebar Q \\ \hline
 		\mathsf{T} & \mathsf{T} & \mathsf{F}  \\ \hline 
 		\mathsf{T} & \mathsf{F} & \mathsf{T}  \\ \hline
 		\mathsf{F} & \mathsf{T} & \mathsf{T}  \\ \hline 
 		\mathsf{F} & \mathsf{F} & \mathsf{F}  \\ \hline \end{array}$
-	</center>
-	このとき $P\oplus Q$ と同値な命題を，$P,\,Q$ と括弧，論理演算子 $\neg,\,\land,\,\lor$ から必要なものを最小限用いて表せ．
+	</center></p>
+	<p>このとき $P\veebar Q$ が $R$ と $S$ の複合命題 $R\lor S$ と同値であるとき，$R,\,S$ を $P,\,Q$ と論理演算子 $\neg,\,\lor,\,\land$ を必要最低限用いて表せ．</p>
 </div>
 <Details>
 	<summary>解答</summary>
-
+	<p>以下のように命題 $R,\,S$ を構成すればよい：</p>
+		<p><center>
+		$\begin{array}{|c|c|}\hline R & S\\ \hline
+		\mathsf{F} & \mathsf{F}  \\ \hline 
+		\mathsf{T} & \mathsf{F}  \\ \hline
+		\mathsf{F} & \mathsf{T}  \\ \hline 
+		\mathsf{F} & \mathsf{F}  \\ \hline \end{array}$
+		</center></p>
+	<p>ここで，$P,\,Q$ に対して $\neg P,\,\neg Q$ は以下の通り：
+		<p><center>
+		$\begin{array}{|c|c||c|c|}\hline P & Q & \neg P & \neg Q \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline 
+		\mathsf{T} & \mathsf{F} & \mathsf{F} & \mathsf{T}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F}\\ \hline 
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T}\\ \hline \end{array}$
+		</center></p>
+	<p>これらと $R,\,S$ を比較することにより，</p>
+	<p><center>$\color{red}{R\equiv P\land \neg Q,\quad S\equiv \neg P\lor Q}$</center></p>
+	<p>を得る．</p>
 </Details>
 <br><br>
+
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
