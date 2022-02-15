@@ -24,7 +24,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/6<br>
-updated on 2022/2/14
+updated on 2022/2/15
 </p>
     
 <div class="def" id="24">
@@ -82,7 +82,7 @@ updated on 2022/2/14
 <div class="prp" id="27">
 	<b>[#27]命題：単調増大列と測度の連続性定理</b><br>
 	<p>集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\subset A_2\subset \cdots$ を満たすならば，</p>
-	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \mu\left(\limit_{n\rightarrow\infty}A_n\right).$</center></p>
+	<p><center>$\limit_{i\rightarrow\infty}\mu(A_i) = \mu\left(\bcu_{i\in\mathbb{N}}A_i\right).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
@@ -90,8 +90,6 @@ updated on 2022/2/14
 	<p><center>$B_1=A_1,\quad B_i = A_i\backslash A_{i-1}\,(i\geq 2)$</center></p>
 	<p>と定義する．このとき，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから</p>
 	<p><center>$\mu\left(\bcu_{i\in\mathbb{N}}A_i\right)=\mu\left(\bcu_{i\in\mathbb{N}}B_i\right)=\sig_{i\in\mathbb{N}}\mu(B_i).$</center></p>
-	<p>また，$\{A_i\}$ は単調増大列であることから $\limit_{n\rightarrow\infty}A_n = \bcu_{i\in\mathbb{N}}A_i$ であり，</p>
-	<p><center>$\mu\left(\limit_{n\rightarrow\infty}A_n\right)=\mu\left(\bcu_{i\in\mathbb{N}}A_i\right).$</center></p>
 	<p>一方 $A_n=\bcu_{i=1}^{n}B_i$ であることから $\mu(A_n) = \mu\left(\bcu_{i=1}^{n}B_i\right) = \sig_{i=1}^{n}\mu(B_i)$ であるから，</p>
 	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \limit_{n\rightarrow\infty}\sig_{i=1}^{n}\mu(B_i) = \sig_{i\in\mathbb{N}}\mu(B_i).$</center></p>
 	<p>以上の議論をまとめることにより，題意は示される．</p>
@@ -100,19 +98,36 @@ updated on 2022/2/14
         
 <div class="prp" id="28">
 	<b>[#28]命題：単調減少列と測度の連続性定理</b><br>
-	<p>集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\supset A_2\supset \cdots$ を満たし，かつ任意の $i\in\mathbb{N}$ に対して $\mu(A_i)\lt \infty$ であるならば，</p>
+	<p>集合の列 $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が $A_1\supset A_2\supset \cdots$ を満たし，かつ $\mu(A_1)\lt \infty$ であるならば，</p>
 	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \mu\left(\limit_{n\rightarrow\infty}A_n\right).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	$\{B_i\}_{i\in\mathbb{N}}$ を $B_1=A_1$，$B_i = A_i\backslash A_{i-1}\,(i\geq 2)$ と定義すると，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから，
+	<p>集合列 $\{B_i\}_{i\in\mathbb{N}}$ を $B_i = A_1\setminus A_i$ をおくと，$\{B_i\}$ は $\mathcal{F}$ の部分集合列で単調増大列になるから，単調増大列と測度の連続性定理 <a href="#27">[#27]</a> より</p>
+	<p><center>$\begin{align*}\mu\left(\bcu_{i\in\mathbb{N}}B_i\right) &= \limit_{i\rightarrow\infty}\mu(B_i) \\
+		&= \limit_{i\rightarrow\infty}(\mu(A_1)\setminus \mu(A_i)) = \mu(A_1) - \limit_{i\rightarrow\infty}\mu(A_i).\end{align*}$</center></p>
+	<p>一方，$\bcu_{i\in\mathbb{N}}B_i$ について，</p>
+	<p><center>
+		$\begin{align*}\bcu_{i\in\mathbb{N}}B_i &= \bcu_{i\in\mathbb{N}}(A_1\cap A_i^\cpl)\\
+		&= A_1 \cap \bcu_{i\in\mathbb{N}}A_i^\cpl\\
+		&= A_1 \cup \left(\bca_{i\in\mathbb{N}}A_i\right)^\cpl\\
+		&= A_1\setminus \bca_{i\in\mathbb{N}}A_i\end{align*}$
+	</center></p>
+	<p>と計算できるから，</p>
+	<p><center>$\begin{align*}\mu\left(\bcu_{i\in\mathbb{N}}B_i\right) &= \mu\left(A_1\setminus \bca_{i\in\mathbb{N}}A_i\right)\\
+		&= \mu(A_1) - \mu\left(\bca_{i\in\mathbb{N}}A_i\right).\end{align*}</center></p>
+	<p>以上の結果をまとめると，</p>
+	<p><center>$\begin{align*} &\mu(A_1) - \limit_{i\rightarrow\infty}\mu(A_i) = \mu(A_1) - \mu\left(\bca_{i\in\mathbb{N}}A_i\right)\\
+		\Longleftrightarrow\,\,& \limit_{i\rightarrow\infty}\mu(A_i) = \mu\left(\bca_{i\in\mathbb{N}}A_i\right)\end{align*}$</center></p>
+	<p>を得る．</p>
 </Details>
 <br><br>
         
 <div id="bib"><b>参考文献</b>
 <ul>
-	<li><a href="https://mathlandscape.com/measure/">測度の定義と具体例4つ・性質5つを証明付きで徹底解説 | 数学の景色</a></li>
 	<li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
+	<li>柴田良弘: ルベーグ積分論, 内田老鶴圃 (2006).</li>
+	<li><a href="https://mathlandscape.com/measure/">測度の定義と具体例4つ・性質5つを証明付きで徹底解説 | 数学の景色</a></li>
 </ul>
 </div>
       
