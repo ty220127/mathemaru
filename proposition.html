@@ -317,11 +317,13 @@ updated on 2022/2/15
 		\mathsf{F} & \mathsf{T} & \mathsf{T}  \\ \hline 
 		\mathsf{F} & \mathsf{F} & \mathsf{F}  \\ \hline \end{array}$
 	</center></p>
-	<p>このとき $P\veebar Q$ が $R$ と $S$ の複合命題 $R\lor S$ と同値であるとき，$R,\,S$ を $P,\,Q$ と論理演算子 $\neg,\,\lor,\,\land$ を必要最低限用いて表せ．</p>
+	<p>このとき $P\veebar Q$ が $R$ と $S$ の複合命題 $R\lor S$ と同値であるとき，$R,\,S$ はどんな命題であるか．
+		また，$P\veebar Q$ が $U$ と $V$ の複合命題 $U\land V$ と同値であるとき，$U,\,V$ はどんな命題であるか．
+		それぞれ $P,\,Q$ と論理演算子 $\neg,\,\lor,\,\land$ から必要なものを最低限用いて表せ．</p>
 </div>
 <Details>
 	<summary>解答</summary>
-	<p>以下のように命題 $R,\,S$ を構成すればよい：</p>
+	<p>$P\veebar Q\equiv R\lor S$ なる命題 $R,\,S$ は次のように構成すればよい：</p>
 		<p><center>
 		$\begin{array}{|c|c|}\hline R & S\\ \hline
 		\mathsf{F} & \mathsf{F}  \\ \hline 
@@ -339,7 +341,18 @@ updated on 2022/2/15
 		</center></p>
 	<p>これらと $R,\,S$ を比較することにより，</p>
 	<p><center>$\color{red}{R\equiv P\land \neg Q,\quad S\equiv \neg P\land Q}$</center></p>
-	<p>を得る．</p>
+	<p>を得る．<br>
+	$P\veebar Q\equiv U\land V$ なる命題 $U,\,V$ は次のように構成すればよい：</p>
+		<p><center>
+		$\begin{array}{|c|c|}\hline U & V\\ \hline
+		\mathsf{T} & \mathsf{F}  \\ \hline 
+		\mathsf{T} & \mathsf{T}  \\ \hline
+		\mathsf{T} & \mathsf{T}  \\ \hline 
+		\mathsf{F} & \mathsf{T}  \\ \hline \end{array}$
+		</center></p>
+	<p>先ほどの $P,\,Q$ およびそれらの否定に関する真理値表と比較することにより，</p>
+	<p><center>$\color{red}{U\equiv P\lor \neg Q,\quad V\equiv \neg P\lor \neg Q}$</center></p>
+	<p>を得る．<br>
 </Details>
 <br><br>
 
