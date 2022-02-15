@@ -103,16 +103,17 @@ updated on 2022/2/15
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>集合列 $\{B_i\}_{i\in\mathbb{N}}$ を $B_i = A_1\setminus A_i$ をおくと，$\{B_i\}$ は $\mathcal{F}$ の部分集合列で単調増大列になるから，単調増大列と測度の連続性定理 <a href="#27">[#27]</a> より</p>
+	<p>集合列 $\{B_i\}_{i\in\mathbb{N}}$ を $B_i = A_1\setminus A_i$ をおくと，$\{B_i\}$ は $\mathcal{F}$ の部分集合列で単調増大列になるから，
+		単調増大列と測度の連続性定理 <a href="#27">[#27]</a> と測度の単調性 <a href="#26">[#26]</a> より</p>
 	<p><center>$\begin{align*}\mu\left(\bcu_{i\in\mathbb{N}}B_i\right) &= \bca_{i\in\mathbb{N}}\mu(B_i) \\
 		&= \limit_{i\rightarrow\infty}(\mu(A_1)- \mu(A_i)) \\
 		&= \mu(A_1) - \limit_{i\rightarrow\infty}\mu(A_i).\end{align*}$</center></p>
-	<p>一方，$\bcu_{i\in\mathbb{N}}B_i$ について，</p>
+	<p>一方，$\bcu_{i\in\mathbb{N}}B_i$ について，de Morgan の法則 <a href="set.html#74">[#74]</a> より</p>
 	<p><center>
 		$\begin{align*}\bcu_{i\in\mathbb{N}}B_i &= \bcu_{i\in\mathbb{N}}(A_1\cap A_i^\cpl) = A_1 \cap \bcu_{i\in\mathbb{N}}A_i^\cpl\\
 		&= A_1 \cup \left(\bca_{i\in\mathbb{N}}A_i\right)^\cpl = A_1\setminus \bca_{i\in\mathbb{N}}A_i\end{align*}$
 	</center></p>
-	<p>と計算できるから，</p>
+	<p>と計算できるから，測度の単調性 <a href="#26">[#26]</a> より</p>
 	<p><center>$\begin{align*}\mu\left(\bcu_{i\in\mathbb{N}}B_i\right) &= \mu\left(A_1\setminus \bca_{i\in\mathbb{N}}A_i\right)\\
 		&= \mu(A_1) - \mu\left(\bca_{i\in\mathbb{N}}A_i\right).\end{align*}$</center></p>
 	<p>以上の結果をまとめると，</p>
