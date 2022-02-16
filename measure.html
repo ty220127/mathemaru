@@ -50,20 +50,24 @@ updated on 2022/2/16
 	<p>$n= N+1,\,N+2,\,\cdots$ に対して $A_n=\emptyset$ と定めれば，$\{A_n\}_{n\in\mathbb{N}}\subset\mathcal{F}$ であり，</p>
 	<p><center>$\mu\left(\bcu_{n=1}^{N} A_i\right)=\mu\left(\bcu_{n\in\mathbb{N}} A_n\right).$</center></p>
 	<p>一方，$\mu(\emptyset)=0$ であるから <a href="#24">[#24]</a>-i ，</p>
-	<p><center>$\sig_{i\in\mathbb{N}}\mu(A_i) = \sig_{i=1}^{n}\mu(A_i).$</center></p>
+	<p><center>$\sig_{n\in\mathbb{N}}\mu(A_n) = \sig_{n=1}^{N}\mu(A_n).$</center></p>
 	<p>以上と測度の $\sigma$ 加法性 <a href="#24">[#24]</a>-ii より，題意は示される．</p>
 </Details>
 <br><br>
         
 <div class="prp" id="26">
 	<b>[#26]命題：測度の単調性</b><br>
-	$A,\,B\in\mathcal{F}$ が $A\subset B$ ならば $\mu(B\backslash A) = \mu(B)-\mu(A)$ であり，それ故に $\mu(B)-\mu(A)\geq 0$ である.
+	<p>$A,\,B\in\mathcal{F}$ が $A\subset B$ ならば</p>
+	<p><center>$\mu(B\setminus A) = \mu(B)-\mu(A)$</center></p>
+	<p>であり，それ故に</p>
+	<p><center>$\mu(B)-\mu(A)\geq 0$</center></p>
+	<p>である．</p>
 </div>
 <Details>
 	<summary>証明</summary>
-	$A\cap B\backslash A = \emptyset$ かつ $A\cup B\backslash A = B$ であるから測度の有限加法性<a href="#25">[#25]</a>より，
-	<center>$\mu(A)+\mu(B\backslash A) = \mu(B)\,\,\Longleftrightarrow\,\,\mu(B\backslash A) = \mu(B)-\mu(A)$.</center>
-	また，測度の値域<a href="#24">[#24]</a>より，$\mu(B)-\mu(A) = \mu(B\backslash A)\geq 0$ である．
+	<p>$A\cap (B\setminus A) = \emptyset$ かつ $A\cup (B\setminus A) = B$ であるから測度の有限加法性<a href="#25">[#25]</a>より</p>
+	<p><center>$\mu(A)+\mu(B\setminus A) = \mu(B)\,\,\Longleftrightarrow\,\,\mu(B\setminus A) = \mu(B)-\mu(A)$.</center></p>
+	<p>また，測度の値域 <a href="#24">[#24]</a> より $\mu(B)-\mu(A) = \mu(B\setminus A)\geq 0$ である．</p>
 </Details>
 <br><br>
         
@@ -73,14 +77,14 @@ updated on 2022/2/16
 </div>
 <Details>
 	<summary>証明１</summary>
-	$A\cup B = A \cup (B\backslash A)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より $\mu(A\cup B) = \mu(A)+\mu(B\backslash A)$．
-	更に，$(A\cap B)\subset B$ から測度の単調性 <a href="#26">[#26]</a> より $\mu(B\backslash A) = \mu(B\backslash (A\cap B)) = \mu(B) - \mu(A\cap B)$．
+	$A\cup B = A \cup (B\setminus A)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より $\mu(A\cup B) = \mu(A)+\mu(B\setminus A)$．
+	更に，$(A\cap B)\subset B$ から測度の単調性 <a href="#26">[#26]</a> より $\mu(B\setminus A) = \mu(B\setminus (A\cap B)) = \mu(B) - \mu(A\cap B)$．
 	以上により，$\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$ が成り立つ．	
 </Details>
 <Details>
 	<summary>証明２</summary>
-	$A\cup B = A \cup (B\backslash A)$ かつ $B=(B\backslash A) \cup (A\cap B)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より 
-	$\mu(A\cup B) +\mu(A\cap B) = \mu(A)+ \mu(B\backslash A) + \mu(A\cap B) = \mu(A) + \mu(B)$．よって $\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$ が成り立つ．
+	$A\cup B = A \cup (B\setminus A)$ かつ $B=(B\setminus A) \cup (A\cap B)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より 
+	$\mu(A\cup B) +\mu(A\cap B) = \mu(A)+ \mu(B\setminus A) + \mu(A\cap B) = \mu(A) + \mu(B)$．よって $\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$ が成り立つ．
 </Details>
 <br><br>
         
@@ -92,7 +96,7 @@ updated on 2022/2/16
 <Details>
 	<summary>証明</summary>
 	<p>集合列 $\{B_n\}_{n\in\mathbb{N}}$ を</p>
-	<p><center>$B_1=A_1,\quad B_n = A_n\backslash \bcu_{k=1}^{n-1}A_k\,(n\geq 2)$</center></p>
+	<p><center>$B_1=A_1,\quad B_n = A_n\setminus \bcu_{k=1}^{n-1}A_k\,(n\geq 2)$</center></p>
 	<p>と定義する．このとき，$\{B_n\}$ は互いに素でかつ $\bcu_{n\in\mathbb{N}}B_n = \bcu_{n\in\mathbb{N}}A_n$ であるから</p>
 	<p><center>$\mu\left(\bcu_{n\in\mathbb{N}}A_n\right)=\mu\left(\bcu_{n\in\mathbb{N}}B_n\right)=\sig_{n\in\mathbb{N}}\mu(B_n).$</center></p>
 	<p>一方，$B_n$ の定義より $B_n\supset A_n$ であるから，測度の単調性 <a href="#26">[#26]</a> より $\mu(B_n)\leq \mu(A_n)$ が成り立つので</p>
@@ -109,7 +113,7 @@ updated on 2022/2/16
 <Details>
 	<summary>証明</summary>
 	<p>集合列 $\{B_i\}_{i\in\mathbb{N}}$ を</p>
-	<p><center>$B_1=A_1,\quad B_i = A_i\backslash A_{i-1}\,(i\geq 2)$</center></p>
+	<p><center>$B_1=A_1,\quad B_i = A_i\setminus A_{i-1}\,(i\geq 2)$</center></p>
 	<p>と定義する．このとき，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから</p>
 	<p><center>$\mu\left(\bcu_{i\in\mathbb{N}}A_i\right)=\mu\left(\bcu_{i\in\mathbb{N}}B_i\right)=\sig_{i\in\mathbb{N}}\mu(B_i).$</center></p>
 	<p>一方 $A_n=\bcu_{i=1}^{n}B_i$ より $\mu(A_n) = \mu\left(\bcu_{i=1}^{n}B_i\right) = \sig_{i=1}^{n}\mu(B_i)$ であるから，</p>
