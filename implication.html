@@ -44,7 +44,12 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 	<p><center>$P\rightarrow Q\equiv \neg P\lor Q.$</center></p>
 	<p>また，$P\rightarrow Q$ であることを「$P$ ならば $Q$ が成り立つ (if $P$, then $Q$ holds)」と云う．
 	ここで，$P$ は【仮定(assumption)】または【前件(antecedent)】，$Q$ は【結論(conclusion)】または【後件(consequence)】と呼ばれる．
-	さらに $P\rightarrow Q$ かつ $Q\rightarrow P$ であることを $P\leftrightarrow Q$ と表し，$P$ と $Q$ の【双条件(biconditional)】と云う．</p>
+	さらに $P\rightarrow Q$ かつ $Q\rightarrow P$ であることを $P\leftrightarrow Q$ と表し，$P$ と $Q$ の【双条件(biconditional)】と云う．<br>
+		なお，命題 $P\rightarrow Q$ が恒真命題であることをしばしば</p>
+	<p><center>$P\,\,\Longrightarrow \,\,Q$</center></p>
+	<p>と書く．特に $P\Rightarrow Q$ かつ $Q\Rightarrow P$ であるときは</p>
+	<p><center>$P\,\,\Longleftrightarrow\,\,Q$</center></p>
+	<p>と書く．</p>
 </div>
 <Details>
 	<summary>補足</summary>
@@ -133,10 +138,6 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 		\equiv &\,\, (\neg P)\lor Q\lor (\neg Q)\lor P\equiv \mathsf{T}.\end{align*}$
 	</center></p>
 </Details>
-<Details>
-	<summary>補足</summary>
-	<p>含意 $P\rightarrow Q$ に対して，前後件を否定して入れ替えた命題を【対偶(contraposition)】と呼ぶ．任意の含意とその対偶は常に同値である．</p>
-</Details>
 <br><br>
 
 <div class="prp" id="72">
@@ -164,7 +165,32 @@ target.textContent = 'updated on ' + year + '/' + month + '/' + date;
 <div class="prp" id="73">
 	<b>[#73]命題：含意の性質</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
-	<p><center>$((P\rightarrow Q)\rightarrow P)\rightarrow P\equiv \mathsf{T}.$</center></p>
+	<p><center>$((P\rightarrow Q)\rightarrow P)\Rightarrow P.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>含意の定義 <a href="#65">[#65]</a>，de Morgan の法則<a href="proposition.html#63">[#63]</a> と吸収法則 <a href="proposition.html#70">[#70]</a> より</p>
+	<p><center>
+		$\begin{align*}(P\rightarrow Q)\rightarrow P &\equiv \neg(\neg P\lor Q)\lor P\\
+		&\equiv (P\land (\neg Q))\lor P\\
+		&\equiv P.\end{align*}$
+	</center></p>
+	<p>よって，<a href="#66">[#66]</a> より，
+	<p><center>
+		$((P\rightarrow Q)\rightarrow P)\rightarrow P \equiv P\rightarrow P \equiv \mathsf{T}.$
+	</center></p>
+</Details>
+<br><br>
+
+<div class="prp" id="88">
+	<b>[#88]命題：含意を通した論理和・論理積の意味</b><br>
+	<p>命題 $P,\,Q$ に対して</p>
+	<p><center>$\begin{align} 
+		P\land Q\Rightarrow P\\
+		P\Rightarrow P\lor Q\\
+		P\rightarrow (P\land Q)\equiv P\rightarrow Q\\
+		(P\lor Q)\rightarrow P\equiv Q\rightarrow P.
+		\end{align}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
