@@ -32,7 +32,9 @@ updated on 2022/2/16
 	<p>$(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が $(\varOmega,\,\mathcal{F})$ 上の【測度 (measure)】であるとは， $\mu$ が以下の条件を満たすことを云う：</p>
 	<ul class="defl">
 		<li> $\mu(\emptyset) = 0$,</li>
-		<li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$（測度の $\sigma$ 加法性）.
+		<li> $\mathcal{F}$ の部分集合列 $\{A_i\}_{i\in\mathbb{N}}$ について，
+			<center>$\{A_n\}$ が互いに素$\,\,\Longrightarrow\,\,\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$</center>
+			が成り立つ【測度の $\sigma$ 加法族】．</li>
 	</ul>
 	<p>また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を【測度空間 (measure space)】と呼ぶ．</p>
 </div>
@@ -82,7 +84,7 @@ updated on 2022/2/16
 <div class="prp" id="89">
 	<b>[#89]命題：測度の劣加法性</b><br>
 	<p>必ずしも互いに素でない集合の列 $\{A_n\}_{n\in\mathbb{N}}$ に対して</p>
-	<p><center>$\{A_n\}\subset\mathcal{F}\,\,\Longrightarrow\,\, P\left(\bcu_{n\in\mathbb{N}}A_n\right) \leq \sum_{n\in\mathbb{N}}P(A_n).$</center></p>
+	<p><center>$\{A_n\}\subset\mathcal{F}\,\,\Longrightarrow\,\, P\left(\bcu_{n\in\mathbb{N}}A_n\right) \leq \sig_{n\in\mathbb{N}}P(A_n).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
