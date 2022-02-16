@@ -24,7 +24,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/6<br>
-updated on 2022/2/15
+updated on 2022/2/16
 </p>
     
 <div class="def" id="24">
@@ -76,6 +76,23 @@ updated on 2022/2/15
 	<summary>証明２</summary>
 	$A\cup B = A \cup (B\backslash A)$ かつ $B=(B\backslash A) \cup (A\cap B)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より 
 	$\mu(A\cup B) +\mu(A\cap B) = \mu(A)+ \mu(B\backslash A) + \mu(A\cap B) = \mu(A) + \mu(B)$．よって $\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$ が成り立つ．
+</Details>
+<br><br>
+        
+<div class="prp" id="89">
+	<b>[#89]命題：劣加法性</b><br>
+	<p>必ずしも互いに素でない集合の列 $\{A_n\}_{n\in\mathbb{N}}$ に対して</p>
+	<p><center>$\{A_n\}\subset\mathcal{F}\,\,\Longrightarrow\,\, P\left(\bcu_{n\in\mathbb{N}}A_n\right) \leq \sum_{n\in\mathbb{N}}P(A_n).$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>集合列 $\{B_i\}_{i\in\mathbb{N}}$ を</p>
+	<p><center>$B_1=A_1,\quad B_i = A_i\backslash A_{i-1}\,(i\geq 2)$</center></p>
+	<p>と定義する．このとき，$\{B_i\}$ は互いに素でかつ $\bcu_{i\in\mathbb{N}}B_i = \bcu_{i\in\mathbb{N}}A_i$ であるから</p>
+	<p><center>$\mu\left(\bcu_{i\in\mathbb{N}}A_i\right)=\mu\left(\bcu_{i\in\mathbb{N}}B_i\right)=\sig_{i\in\mathbb{N}}\mu(B_i).$</center></p>
+	<p>一方 $A_n=\bcu_{i=1}^{n}B_i$ より $\mu(A_n) = \mu\left(\bcu_{i=1}^{n}B_i\right) = \sig_{i=1}^{n}\mu(B_i)$ であるから，</p>
+	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \limit_{n\rightarrow\infty}\sig_{i=1}^{n}\mu(B_i) = \sig_{i\in\mathbb{N}}\mu(B_i).$</center></p>
+	<p>以上の議論をまとめることにより，題意は示される．</p>
 </Details>
 <br><br>
         
