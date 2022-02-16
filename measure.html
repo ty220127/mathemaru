@@ -84,12 +84,12 @@ updated on 2022/2/16
 <div class="prp" id="89">
 	<b>[#89]命題：測度の劣加法性</b><br>
 	<p>必ずしも互いに素でない集合の列 $\{A_n\}_{n\in\mathbb{N}}$ に対して</p>
-	<p><center>$\{A_n\}\subset\mathcal{F}\,\,\Longrightarrow\,\, P\left(\bcu_{n\in\mathbb{N}}A_n\right) \leq \sig_{n\in\mathbb{N}}P(A_n).$</center></p>
+	<p><center>$\{A_n\}\subset\mathcal{F}\,\,\Longrightarrow\,\, \mu\left(\bcu_{n\in\mathbb{N}}A_n\right) \leq \sig_{n\in\mathbb{N}}\mu(A_n).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
 	<p>集合列 $\{B_n\}_{n\in\mathbb{N}}$ を</p>
-	<p><center>$B_1=A_1,\quad B_n = A_n\backslash \bcu_{k\in\mathbb{N}}A_k\,(n\geq 2)$</center></p>
+	<p><center>$B_1=A_1,\quad B_n = A_n\backslash \bcu_{k=1}^{n-1}A_k\,(n\geq 2)$</center></p>
 	<p>と定義する．このとき，$\{B_n\}$ は互いに素でかつ $\bcu_{n\in\mathbb{N}}B_n = \bcu_{n\in\mathbb{N}}A_n$ であるから</p>
 	<p><center>$\mu\left(\bcu_{n\in\mathbb{N}}A_n\right)=\mu\left(\bcu_{n\in\mathbb{N}}B_n\right)=\sig_{n\in\mathbb{N}}\mu(B_n).$</center></p>
 	<p>一方，$B_n$ の定義より $B_n\supset A_n$ であるから，測度の単調性 <a href="#26">[#26]</a> より $\mu(B_n)\leq \mu(A_n)$ が成り立つので</p>
