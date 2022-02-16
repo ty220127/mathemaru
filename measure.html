@@ -32,7 +32,7 @@ updated on 2022/2/16
 	<p>$(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が $(\varOmega,\,\mathcal{F})$ 上の【測度 (measure)】であるとは， $\mu$ が以下の条件を満たすことを云う：</p>
 	<ul class="defl">
 		<li> $\mu(\emptyset) = 0$,</li>
-		<li> $\mathcal{F}$ の部分集合列 $\{A_i\}_{i\in\mathbb{N}}$ について，
+		<li> $\mathcal{F}$ の無限加算個の部分集合列 $\{A_n\}_{n\in\mathbb{N}}$ について，
 			<center>$\{A_n\}$ が互いに素$\,\,\Longrightarrow\,\,\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$</center>
 			が成り立つ【測度の $\sigma$ 加法族】．</li>
 	</ul>
@@ -42,13 +42,15 @@ updated on 2022/2/16
         
 <div class="prp" id="25">
 	<b>[#25]命題：測度の有限加法性</b><br>
-	$\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$\mu\left(\bcu_{i=1}^{n} A_i\right) = \sig_{i=1}^{n}\mu(A_i)$.
+	<p>有限個の集合列 $\{A_n\}_{n=1}^{N}\subset\mathcal{F}$ について</p>
+	<p><center>$\{A_n\}$ が互いに素$\,\,\Longrightarrow\,\,\mu\left(\bcu_{n=1}^{N} A_n\right) = \sig_{n=1}^{N}\mu(A_n).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	$i= n+1,\,n+2,\,\cdots$ に対して $A_i=\emptyset$ と定めれば，$\mu\left(\bcu_{i=1}^{n} A_i\right)=\mu\left(\bcu_{i\in\mathbb{N}} A_i\right)$．
-	一方，$\mu(\emptyset)=0$ であるから（<a href="#24">[#24]</a>-i），$\sig_{i\in\mathbb{N}}\mu(A_i) = \sig_{i=1}^{n}\mu(A_i)$．
-	以上と測度の $\sigma$ 加法性（<a href="#24">[#24]</a>-ii）より，題意は示される．
+	<p>$n= N+1,\,N+2,\,\cdots$ に対して $A_n=\emptyset$ と定めれば，$\{A_n\}_{n\in\mathbb{N}}\subset\mathcal{F}$ であり，</p>
+	<p><center>$\mu\left(\bcu_{n=1}^{N} A_i\right)=\mu\left(\bcu_{n\in\mathbb{N}} A_n\right).$</center></p>
+	<p>一方，$\mu(\emptyset)=0$ であるから（<a href="#24">[#24]</a>-i），$\sig_{i\in\mathbb{N}}\mu(A_i) = \sig_{i=1}^{n}\mu(A_i)$．
+		以上と測度の $\sigma$ 加法性（<a href="#24">[#24]</a>-ii）より，題意は示される．</p>
 </Details>
 <br><br>
         
