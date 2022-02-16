@@ -176,10 +176,10 @@ updated on 2022/2/16<br>
 	<b>[#88]命題：含意を通した論理和・論理積の意味</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>$\begin{align} 
-		P\land Q\,\,&\Longrightarrow P \tag{1}\\
-		P &\Longrightarrow P\lor Q \tag{2}\\
-		P\rightarrow (P\land Q) &\equiv P\rightarrow Q \tag{3}\\
-		(P\lor Q)\rightarrow P &\equiv Q\rightarrow P. \tag{4}
+		&P\land Q\,\,\Longrightarrow P \tag{1}\\
+		&P \Longrightarrow P\lor Q \tag{2}\\
+		P\rightarrow &(P\land Q) \equiv P\rightarrow Q \tag{3}\\
+		(P\lor &Q)\rightarrow P \equiv Q\rightarrow P. \tag{4}
 		\end{align}$</center></p>
 </div>
 <Details>
@@ -187,7 +187,8 @@ updated on 2022/2/16<br>
 	<p>de Morgan の法則 <a href="proposition.html#63">[#63]</a> や恒真命題に関する性質 <a href="proposition.html#60">[#60]</a> ，
 		分配法則 <a href="proposition.html#62">[#62]</a>，含意の定義 <a href="#65">[#65]</a> を用いて証明を行う．</p>
 	<p>(1) 式について，</p>
-	<p><center>$\begin{align*} (P\land Q)\rightarrow P &\equiv \neg (P\land Q)\lor P\equiv \neg P\lor \neg Q\lor P\\
+	<p><center>$\begin{align*} (P\land Q)\rightarrow P &\equiv \neg (P\land Q)\lor P\\
+		&\equiv \neg P\lor \neg Q\lor P\\
 		&\equiv \mathsf{T}\lor \neg Q\equiv \mathsf{T}.
 		\end{align*}$</center></p>
 	<p>(2) 式について，</p>
