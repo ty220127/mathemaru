@@ -36,12 +36,14 @@ updated on 2022/2/19
 	  <li> <p><b>【辺集合 (edge set)】</b>辺で結ばれる頂点同士の組の集合：頂点集合を $V$ として
 		  <p><center><ruby class="under">$E$ は $V$ の辺集合<rt class="rtsize">$E$ is an edge set of $V$</rt></ruby>
 			  $\overset{\hspace{-1.25pt}\text{def}}{\Longleftrightarrow}\,\,E\subset \left(\begin{array}{cc}V\\ 2\end{array}\right) := \{\{u,\,v\}\,|\,(u,\,v\in V)\land (u\neq v)\}$</center></p>
-		  <p>で定義されるような $V$ の 2 元部分集合族 $E$．元 $\{u,\,v\}$ はしばしば $uv$ と略記される．</p>
+		  <p>元 $\{u,\,v\}$ はしばしば $uv$ と略記される．</p>
 	  <li> <p><b>【グラフ (graph)】</b>頂点及び辺からなる図形：</p>
 		  <p><center><ruby class="under">$G$ はグラフ<rt class="rtsize">$G$ is a graph</rt></ruby>$\,\,\overset{\hspace{-1.25pt}\text{def}}{\Longleftrightarrow}\,\,G=(V,\,E)$，</center></p>
 		  <p>ただし $V$ は頂点集合で，$E$ は $V$ の辺集合．</li>
-	  <li> <p><b>【隣接 (connected)】</b>頂点同士が辺で結ばれていることを云う：
-	  <li> <p><b>【近傍 (neighborhood)】</b>「頂点 $v$ の近傍」とは，$v$ と隣接している頂点の集合のことを云う．</p>
+	  <li> <p><b>【隣接 (adjacency)】</b>グラフの頂点同士が辺で結ばれていること：$V$ を頂点集合として，
+		  <p><center><ruby class="under">$u,\,v\in V$ は隣接している<rt class="rtsize">$u$ and $v$ are adjacent</rt></ruby>$\equiv u\sim v\,\,\overset{\hspace{-1.25pt}\text{def}}{\Longleftrightarrow}\,\,uv\in E$，</center></p>
+	  <li> <p><b>【近傍 (neighborhood)】</b>ある頂点と隣接している頂点の集合：$V$ を頂点集合として，</p>
+		  <p><center><ruby class="under">$u\in V$ は $v$ の近傍<rt class="rtsize">$u$ is a neighborhood of $v$</rt></ruby>$\equiv u\in N_G(v)\,\,\overset{\hspace{-1.25pt}\text{def}}{\Longleftrightarrow}\,\,u\sim v$，</center></p>
   </ul>
 </div>
 <br><br>
