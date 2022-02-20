@@ -36,77 +36,6 @@ updated on 2022/2/20
 </div>
 <br><br>
   
-<div class="prp" id="52">
-	<b>[#52]命題：集合演算の交換法則</b><br>
-	<p>集合 $A,\,B$ に対して </p>
-	<p><center>$A\cup B=B\cup A$，$A\cap B=B\cap A$.</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>命題の交換法則 <a href="proposition.html#60">[#60]</a> により従う．例えば $[A\cup B= B\cup A]$ に対して，</p>
-	<p><center> 
-		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, (x\in A) \lor (x\in B)\\
-		&\Longleftrightarrow\,\,(x\in B) \lor (x\in A)\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
-	</center></p>
-</Details>
-<br><br>
-
-<div class="prp" id="53">
-	<b>[#53]命題：集合演算の結合法則</b><br>
-	<p>集合 $A,\,B,\,C$ に対して </p>
-	<p><center>$\begin{align*}(A\cup B)\cup C &=A\cup (B\cup C),\\
-				  (A\cap B)\cap C &=A\cap (B\cap C).\end{align*}$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>命題の結合法則 <a href="proposition.html#61">[#61]</a> により従う．例えば $[(A\cup B)\cup C=A\cup (B\cup C)]$ に対して，</p>
-	<p><center> 
-		$\begin{align*} \,\,& x\in (A\cup B)\cup C\\
-		\Longleftrightarrow\,\,& (x\in A\cup B) \lor (x\in C)\\
-		\Longleftrightarrow\,\,& ((x\in A) \lor (x\in B)) \lor (x\in C)\\
-		\Longleftrightarrow\,\,& (x\in A) \lor ((x\in B) \lor (x\in C))\\
-		\Longleftrightarrow\,\,& (x\in A) \lor (x\in B\cup C)\\
-		\Longleftrightarrow\,\,& x\in A\cup (B\cup C).\end{align*}$
-	</center></p>
-</Details>
-<Details>
-	<summary>補足</summary>
-	<p>この命題により，括弧付けによる 2 式の区別は基本的に不要であるため，強調等の意図がない場合は括弧を省略する：</p>
-	<p><center>
-		$\begin{align*} (A\cup B)\cup C &=A\cup (B\cup C) = A\cup B\cup C,\\
-				(A\cap B)\cap C &=A\cap (B\cap C) = A\cap B\cap C.\end{align*}$
-	</center></p>
-</Details>
-<br><br>
-
-<div class="prp" id="54">
-	<b>[#54]命題：集合演算の分配法則</b><br>
-	<p>集合 $A,\,B,\,C$ に対して </p>
-	<p><center>$\begin{align*}(A\cap B)\cup C &=(A\cup C)\cap (B\cup C),\\
-			          (A\cup B)\cap C &=(A\cap C)\cup (B\cap C).\end{align*}$
-	</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> により従う．例えば $[(A\cap B)\cup C =(A\cup C)\cap (B\cup C)]$ に対して，</p>
-	<p><center> 
-		$\begin{align*}\,\,& x\in (A\cap B)\cup C\\
-		\Longleftrightarrow\,\,& (x\in A\cap B)\lor (x\in C)\\
-		\Longleftrightarrow\,\,& ((x\in A)\land (x\in B))\lor (x\in C)\\
-		\Longleftrightarrow\,\,& ((x\in A)\lor (x\in C))\land ((x\in B)\lor (x\in C))\\
-		\Longleftrightarrow\,\,& (x\in A\cup C)\land (x\in B\cup C)\\
-		\Longleftrightarrow\,\,& x\in (A\cup C)\cap (B\cup C).\end{align*}$
-	</center></p>
-</Details>
-<Details>
-	<summary>補足</summary>
-	<p>集合の交換法則 <a href="#52">[#52]</a> と組み合わせることにより，右側に括弧がある場合：</p>
-	<p><center>$\begin{align*} A\cup (B\cap C) &=(A\cup B)\cap (A\cup C),\\<br>
-		A\cap (B\cup C) &=(A\cap B)\cup (A\cap C).\end{align*}$</center></p>
-	<p>の成立も確認できる．</p>
-</Details>
-<br><br>
-
 <div class="prp" id="55">
 	<b>[#55]命題：共通部分による集合の分解</b><br>
 	<p>集合 $A,\,B$ に対して </p>
@@ -125,35 +54,6 @@ updated on 2022/2/20
 </Details>
 <br><br>
 
-<div class="prp" id="56">
-	<b>[#56]命題：集合の包含と和</b><br>
-	<p>集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，</p>
-	<p><center>$A\cup B=B.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>$[x\in B\Rightarrow x\in A\cup B]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，</p>
-	<p><center>
-		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, \underline{(x\in A)}\lor (x\in B)\\
-		&\,\Longrightarrow\,\, \underline{(x\in B)}\lor (x\in B)\,\,\Longleftrightarrow\,\, x\in B.\end{align*}$
-	</center></p>
-</Details>
-<br><br>
-	
-<div class="prp" id="57">
-	<b>[#57]命題：集合の包含と共通部分</b><br>
-	<p>集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，</p>
-	<p><center>$A\cap B=A.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>$[x\in A\cap B\Rightarrow x\in A]$ は自明である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，</p>
-	<p><center>
-		$x\in A\,\,\Longrightarrow\,\, (x\in A)\land (x\in B)\,\,\Longleftrightarrow\,\, x\in A\cap B.$
-	</center></p>
-</Details>
-<br><br>
-	
 <div class="def" id="83">
 	<b>[#83]定義：普遍集合，補集合</b><br>
 	<p>集合を用いた複雑な議論を行う際，しばしば予め大きな（多くの元を持つ）集合を定義し，その部分集合の範囲で議論を行うことを考える．この大きな集合のことを【普遍集合 (全体集合; universal set)】と呼ぶ．
