@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}'
+	}}});
+</script>
+<title>位相空間｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">位相空間</div></center>
+
+<p style="text-align:right;">
+established on 2022/2/20<br>
+updated on 2022/2/20
+</p>
+    
+<div class="def" id="98">
+	<b>[#98]定義：位相空間，開集合</b><br>
+  <p>普遍集合 $\varOmega$ とその部分集合族 $\mathal{O}(\varOmega)$ の組 $(\varOmega,\,\mathcal{O}(\varOmega))$ が【位相空間 (topological space)】であるとは，
+    $\mathcal{O}(\varOmega)$ が以下の 3 条件を満たすことを云う：</p>
+  <ul class="defl">
+    <li> $\emptyset,\,\varOmega\in\mathcal{O}(\varOmega).$</li>
+    <li> $\varLambda$ を添字集合として，
+      <p><center>$\{U_\lambda\}_{\lambda\in\varLambda}\subset \mathcal{O}(\varOmega)\,\,\Longrightarrow\,\,\bcu_{\lambda\in\varLambda}U_\lambda\in\mathcal{O}(\varOmega).$</center></p>
+    <li> $\{U_n\}_{n\in\mathbb{N}}\subset \mathcal{O}(\varOmega)\,\,\Longrightarrow\,\,\bca_{n\in\mathbb{N}}U_n\in\mathcal{O}(\varOmega).$
+  </ul>
+</div>
+<br><br>
+  
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
