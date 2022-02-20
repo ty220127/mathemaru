@@ -64,8 +64,8 @@ updated on 2022/2/20
 	<summary>証明</summary>
 	<p><center> 
 		$\begin{align*} \,\,& x\in A \cup (B\setminus A)\\
-		\Longleftrightarrow\,\,& (x\in A)\lor ((x\in B)\land \neg(x\in A))\\
-		\underset{\href{set.html#54}{\sf[\# 54]}}{\Longleftrightarrow}\,\,& ((x\in A)\lor (B\in A))\land ((x\in A)\lor \neg(x\in A))\\
+		\underset{\href{#95}{\sf[\# 95]}}{\Longleftrightarrow}\,\,& (x\in A)\lor ((x\in B)\land \neg(x\in A))\\
+		\underset{\href{proposition.html#62}{\sf[\# 62]}}{\Longleftrightarrow}\,\,& ((x\in A)\lor (x\in A))\land ((x\in A)\lor \neg(x\in A))\\
 		\underset{\href{proposition.html#60}{\sf[\# 60]}}{\Longleftrightarrow}\,\,& (x\in A\cup B)\land \mathsf{T}\\
 		\underset{\href{proposition.html#60}{\sf[\# 60]}}{\Longleftrightarrow}\,\,& x\in A\cup B.\end{align*}$
 	</center></p>
@@ -81,13 +81,13 @@ updated on 2022/2/20
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>命題の分配法則 <a href="proposition.html#62">[#62]</a> と $[(x\in B)\lor (x\notin B)\equiv \mathsf{T}]$ である <a href="proposition.html#58">[#58]</a> ことから，
 	<p><center> 
 		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\setminus B)\\
 		\Longleftrightarrow\,\,& (x\in A\cap B) \lor (x\in (A\setminus B))\\
-		\Longleftrightarrow\,\,& ((x\in A) \land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
-		\Longleftrightarrow\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
-		\Longleftrightarrow\,\,& x\in A.\end{align*}$
+		\underset{\href{#95}{\sf[\# 95]}}{\Longleftrightarrow}\,\,& ((x\in A) \land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
+		\underset{\href{proposition.html#62}{\sf[\# 62]}}{\Longleftrightarrow}\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
+		\underset{\href{proposition.html#58}{\sf[\# 58]}}{\Longleftrightarrow}\,\,& (x\in A) \land \mathsf{T}\\
+		\Longleftrightarrow\,\,& (x\in A).\end{align*}$
 	</center></p>
 </Details>
 <br><br>
