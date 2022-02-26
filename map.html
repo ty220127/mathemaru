@@ -95,9 +95,23 @@ updated on 2022/2/26
 <Details>
 	<summary>証明</summary>
 	<p> $g$ は全射 <a href="#100">[#100]</a> であるから，任意の $z\in Z$ に対して $z=g(y)$ なる $y\in Y$ が存在する．
-		また，$f$ も全射であるから，この $y$ に対して $y=f(x)$ となる $x\in X$ が存在する．
-		つまり，任意の $z\in Z$ に対して $z = g(f(x)) = g\circ f(x)$ となるような $x\in X$ が存在する．
+		また，$f$ も全射であるから，この $y$ に対して $y=f(x)$ なる $x\in X$ が存在する．
+		つまり，任意の $z\in Z$ に対して $z = g(f(x)) = g\circ f(x)$ なる $x\in X$ が存在する．
 		以上により，定義 <a href="#100">[#100]</a> から $g\circ f$ は全射である．</p>
+</Details>
+<br><br>
+  
+<div class="prp" id="105">
+	<b>[#105]命題：単射性を持つ合成写像</b><br>
+	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ の合成写像 $g\circ f:X\rightarrow Z$ が単射であるならば，$f$ もまた単射である．</p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $x_1,\,x_2\in X$ が $f(x_1)=f(x_2)$ を満たすとするとき，</p>
+	<p><center>$g(f(x_1))=g(f(x_2))\quad\text{i.e.}\quad g\circ f(x_1)=g\circ f(x_2)$</center></p>
+	<p>である．ここで $g\circ f$ は単射であるから，その性質 <a href="#101">[#101]</a> より $x_1=x_2$ である．以上により</p>
+	<p><center>$f(x_1)=f(x_2)\,\,\Longrightarrow\,\, x_1=x_2$</center></p>
+	<p>であること，つまり $f$ の単射性が示された．</p>
 </Details>
 <br><br>
   
