@@ -51,17 +51,15 @@ updated on 2022/2/27
 <div class="prp" id="109">
 	<b>[#109]命題：合成写像の結合法則</b><br>
 	<p>写像 $f:X\rightarrow Y,\,g:Y\rightarrow Z,\,h:Z\rightarrow W$ に対して，</p>
-	<p><center>$(f\circ g)\circ h = f\circ (g\circ h).$</center></p>
+	<p><center>$(h\circ g)\circ f = h\circ (g\circ f).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>恒等写像の定義 <a href="#107">[#107]</a> より，任意の集合 $S$ に対して</p>
-	<p><center>$\mathrm{id}_S(s) = s\quad (s\in S)$</center></p>
-	<p>となる．よって，$x\in X$ に対して</p>
-	<p><center>$f\circ\mathrm{id}_X(x) = f(\mathrm{id}_X(x)) = f(x)$</center></p>
-	<p>であり，$y\in Y$ に対して</p>
-	<p><center>$\mathrm{id}_Y\circ f(x) = \mathrm{id}_Y(f(x)) = f(x)$</center></p>
-	<p>である．つまり，題意が成り立つ．</p>
+	<p>合成写像の定義 <a href="#102">[#102]</a> を繰り返し用いることにより，両者が等しいことが確認される：</p>
+	<p><center>$\begin{align*}
+		((h\circ g)\circ f)(x) &= h\circ g(f(x)) = h(g(f(x))),\\
+		(h\circ (g\circ f))(x) &= h(g\circ f(x)) = h(g(f(x))).
+		\end{align*}$</center></p>
 </Details>
 <br><br>
   
