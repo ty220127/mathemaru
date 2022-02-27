@@ -40,90 +40,12 @@ updated on 2022/2/26
 </div>
 <br><br>
   
-<div class="def" id="100">
-	<b>[#100]定義：全射・単射・全単射</b><br>
-	<ul>
-		<li><p>写像 $f:X\rightarrow Y$ が【全射 (surjection)】であるとは，$f$ は任意の $Y$ の元が $X$ の元の像であるような写像であることを云う：</p>
-			<p><center>$f:\text{surjection}\,\,\overset{\hspace{-1.25pt}\text{def}}{\Longleftrightarrow}\,\,{}^\forall y\in Y\,({}^\exists x\in X\,\,\text{s.t.}\,\,y=f(x)).$</center></p></li>
-		<li><p>写像 $f:X\rightarrow Y$ が【単射 (injection)】であるとは，$f$ は任意の $X$ の異なる元を $Y$ の元に移すような写像であることを云う：</p>
-			<p><center>$f:\text{injection}\,\,\overset{\hspace{-1.25pt}\text{def}}{\Longleftrightarrow}\,\,{}^\forall x_1,\,x_2\in X\,(x_1\neq x_2\rightarrow f(x_1)\neq f(x_2)).$</center></p></li>
-		<li><p>単射かつ全射であるような写像を【全単射 (bijection)】と呼ぶ．</p>
-	</ul>
-</div>
-<br><br>
-  
-<div class="prp" id="101">
-	<b>[#101]命題：単射の特徴づけ</b><br>
-	<p><center>$f:\mathrm{injection}\,\,\Longleftrightarrow\,\,{}^\forall x_1,\,x_2\in X\,(f(x_1)=f(x_2)\rightarrow x_1=x_2).$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>単射の定義 <a href="#100">[#100]</a> より，</p>
-	<p><center>$f:\text{injection}\,\,\Longleftrightarrow\,\,{}^\forall x_1,\,x_2\in X\,(\neg(x_1= x_2)\rightarrow \neg(f(x_1)= f(x_2))).$</center></p>
-	<p>ここで，論理式右辺の括弧内の対偶をとることにより，</p>
-	<p><center>$\begin{align*} & {}^\forall x_1,\,x_2\in X\,(\neg(x_1= x_2)\rightarrow \neg(f(x_1)= f(x_2)))\\
-		\underset{\href{implication.html#68}{\sf[\# 68]}}{\Longleftrightarrow}\,\,& {}^\forall x_1,\,x_2\in X\,(f(x_1)= f(x_2)\rightarrow x_1= x_2).\end{align*}$</center></p>
-	<p>以上の議論をまとめることで，題意は示される．</p>
-</Details>
-<br><br>
-  
 <div class="def" id="102">
 	<b>[#102]定義：合成写像</b><br>
 	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ に対して記号 $g\circ f$ を</p>
 	<p><center>$g\circ f(x) = g(f(x))\quad(x\in X)$</center></p>
 	<p>と定義する．このとき $g\circ f$ は $X$ から $Z$ への写像であり，$f$ と $g$ の【合成写像 (composition)】と呼ばれる．</p>
 </div>
-<br><br>
-  
-<div class="prp" id="103">
-	<b>[#103]命題：単射の合成</b><br>
-	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ が共に単射であるならば，合成写像 $g\circ f:X\rightarrow Z$ もまた単射である．</p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p> $x_1,\,x_2\in X$ に対して $g\circ f(x_1)=g\circ f(x_2)$ すなわち $g(f(x_1))=g(f(x_2))$ であるとする．このとき，$g$ が単射であることからその性質 <a href="#101">[#101]</a> より $f(x_1)=f(x_2)$ であり，
-		更に $f$ も単射であるから <a href="#101">[#101]</a> より $x_1=x_2$ が従う．以上により</p>
-	<p><center>$g\circ f(x_1)=g\circ f(x_2)\,\,\Longrightarrow\,\, x_1=x_2$</center></p>
-	<p>が云えるので，合成写像 $g\circ f$ も単射である．</p>
-</Details>
-<br><br>
-  
-<div class="prp" id="104">
-	<b>[#104]命題：全射の合成</b><br>
-	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ が共に全射であるならば，合成写像 $g\circ f:X\rightarrow Z$ もまた全射である．</p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p> $g$ は全射 <a href="#100">[#100]</a> であるから，任意の $z\in Z$ に対して $z=g(y)$ なる $y\in Y$ が存在する．
-		また，$f$ も全射であるから，この $y$ に対して $y=f(x)$ なる $x\in X$ が存在する．
-		つまり，任意の $z\in Z$ に対して $z = g(f(x)) = g\circ f(x)$ なる $x\in X$ が存在する．
-		以上により，定義 <a href="#100">[#100]</a> から $g\circ f$ は全射である．</p>
-</Details>
-<br><br>
-  
-<div class="prp" id="105">
-	<b>[#105]命題：単射性を持つ合成写像</b><br>
-	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ の合成写像 $g\circ f:X\rightarrow Z$ が単射であるならば，$f$ もまた単射である．</p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p> $x_1,\,x_2\in X$ が $f(x_1)=f(x_2)$ を満たすとするとき，</p>
-	<p><center>$g(f(x_1))=g(f(x_2))\quad\text{i.e.}\quad g\circ f(x_1)=g\circ f(x_2)$</center></p>
-	<p>である．ここで $g\circ f$ は単射であるから，その性質 <a href="#101">[#101]</a> より $x_1=x_2$ である．以上により</p>
-	<p><center>$f(x_1)=f(x_2)\,\,\Longrightarrow\,\, x_1=x_2$</center></p>
-	<p>であること，つまり $f$ の単射性が示された．</p>
-</Details>
-<br><br>
-  
-<div class="prp" id="106">
-	<b>[#106]命題：全射性を持つ合成写像</b><br>
-	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ の合成写像 $g\circ f:X\rightarrow Z$ が全射であるならば，$g$ もまた全射である．</p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>合成写像 $g\circ f$ は全射 <a href="#100">[#100]</a> であるから，任意の $z\in Z$ に対して $z=g\circ f(x) = g(f(x))$ なる $x$ が存在する．
-		ここで，$f(x)\in Y$ であることから，任意の $z\in Z$ に対して $z=g(y)$ なる $y\in Y$ が存在することになる．つまり，$g$ は全射である．</p>
-</Details>
 <br><br>
   
 <div class="def" id="#107">
@@ -165,6 +87,7 @@ updated on 2022/2/26
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社 (2012).</li>
+	<li>星明考: 群論序説, 日本評論社 (2016).</li>
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2014/mapping.pdf">桂田祐史: 写像, pdf</a>.</li>
 </ul>
 </div>
