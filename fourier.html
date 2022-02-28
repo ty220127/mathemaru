@@ -11,41 +11,40 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}'
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}'
 	}}});
 </script>
-<title>フーリエ変換｜演習問題集</title>
+<title>Fourier 変換｜演習問題集</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 <style>
 </style>
 </head>
 
 <body>
-<center><div id="titlehead">フーリエ変換</div></center>
+<center><div id="titlehead">Fourier 変換</div></center>
 
 <p style="text-align:right;">
 established on 2022/2/28<br>
 updated on 2022/2/28
 </p>
      
-<div class="def" id="112">
-	<b>[#112]定義：集合の像，逆像</b><br>
-	<p>写像 $f:X\rightarrow Y$ と部分集合 $A\subset X$ に対して</p>
+<div class="def" id="118">
+	<b>[#118]定義：Fourier 変換</b><br>
+	<p>関数 $f(x)\in C^{\infty}(\mathbb{R})$ に対して実数関数 $\mathcal{F}[f](\omega)$ を</p>
 	<p><center>$\begin{align*}
-		f(A) &=\{y\in Y\,|\,{}^\exists x\in A\,\,\text{s.t.}\,\,y=f(x)\}\\
-		&=\{f(x)\,|\,x\in A\}
+		\mathcal{F}[f](\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}\rd x
 		\end{align*}$</center></p>
-	<p>を定義する．この $f(A)$ を $f$ による $A$ の【像 (image)】と云う．特に $f(X)$ を $f$ の【値域 (range)】と呼び，しばしば $\mathrm{Im}\,f$ と表す．
-		また，部分集合 $B\subset Y$ に対して</p>
-	<p><center>$f^{-1}(B)=\{x\in X\,|\,f(x)\in B\}$</center></p>
-	<p>を定義する．この $f^{-1}(B)$ を $f$ による $B$ の【逆像 (inverse image)】と云う．</p>
+	<p>と定義する．この値が収束するとき，$\mathcal{F}[f](\omega)$ を $f$ の【Fourier 変換 (Fourier transformation)】と呼ぶ．</p>
 </div>
 <br><br>
   
-<div class="prp" id="113">
-	<b>[#113]命題：逆像の像</b><br>
-	<p>写像 $f:X\rightarrow Y$ と部分集合 $B\subset Y$ に対して</p>
-	<p><center>$f(f^{-1}(B))\subset B.$</center></p>
+<div class="prp" id="119">
+	<b>[#119]命題：Fourier 逆変換</b><br>
+	<p>関数 $f\in C^{\infty}(\omega)$ とその Fourier 変換 $\mathcal{F}[f](\omega)$ に対して</p>
+	<p><center>$\begin{align*}
+		f(x) = \int_{-\infty}^{\infty}\mathcal{F}[f](\omega)e^{i\omega x}\rd \omega.
+		\end{align*}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
@@ -55,57 +54,6 @@ updated on 2022/2/28
 		=\,\, & \{y\in B\,|\,{}^\exists x\in X\,\,\text{s.t.}\,\,y=f(x)\}
 		\end{align*}$</center></p>
 	<p>であるから，$f(f^{-1}(B))\subset B.$
-</Details>
-<br><br>
-  
-<div class="prp" id="114">
-	<b>[#114]命題：像の逆像</b><br>
-	<p>写像 $f:X\rightarrow Y$ と部分集合 $A\subset X$ に対して</p>
-	<p><center>$f^{-1}(f(A))\supset A.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p> $a\in A$ とすれば $f(a)\in f(A)$ であるから，逆像の定義 <a href="#112">[#112]</a> より $a\in f^{-1}(f(A)).$</p>
-</Details>
-<br><br>
-  
-<div class="prp" id="115">
-	<b>[#115]命題：像と逆像の包含関係</b><br>
-	<p>写像 $f:X\rightarrow Y$ と部分集合 $A_1,\,A_2\subset X,\,B_1,\,B_2\subset Y$ に対して</p>
-	<p><center>$\begin{align*}
-		A_1\subset A_2\,\,&\Longrightarrow\,\,f(A_1)\subset f(A_2), \tag{115.1}\\
-		B_1\subset B_2\,\,&\Longrightarrow\,\,f^{-1}(B_1)\subset f^{-1}(B_2). \tag{115.2}
-		\end{align*}$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>集合の包含 <a href="set.html#111">[#111]</a> より，</p>
-	<p><center>$\begin{align*}
-		(x\in A_1)\land (y=f(x))\,\,\Longrightarrow\,\, (x\in A_2)\land (y=f(x))
-		\end{align*}$</center></p>
-	<p>であることから (115.1) 式が従う．<br> 
-		(115.2) 式も同様にして</p>
-	<p><center>$\begin{align*}
-		f(x)\in B_1\,\,\Longrightarrow\,\, f(x)\in B_2
-		\end{align*}$</center></p>
-	<p>であることから従う．<br> 
-</Details>
-<br><br>
-  
-<div class="prp" id="">
-	<b>[#]命題：像の性質</b><br>
-	<p>写像 $f:X\rightarrow Y$ と部分集合 $A_1,\,A_2\subset X$ に対して</p>
-	<p><center>$\begin{align*}f(A_1\cup A_2) &= f(A_1)\cup f(A_2), \tag{116.1}\\
-		f(A_1\cap A_2) &\subset f(A_1)\cap f(A_2). \tag{116.2}\end{align*}$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>また $i=1,\,2$ に対して</p>
-	<p><center>$\begin{align*}
-		f(A_1\cap A_2) &= \{y\in Y\,|\,{}^\exists x\in A_1\cap A_2\,\,\text{s.t.}\,\,y=f(x)\}\\
-		&\subset \{y\in Y\,|\,{}^\exists x\in A_i\,\,\text{s.t.}\,\,y=f(x)\} = f(A_i)
-		\end{align*}$</center></p>
-	<p>である．つまり $f(A_1\cap A_2)\subset f(A_1)$ かつ $f(A_1\cap A_2)\subset f(A_2)$ であることより (116.1) 式が従う．</p>
 </Details>
 <br><br>
   
