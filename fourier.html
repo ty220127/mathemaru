@@ -33,7 +33,7 @@ updated on 2022/2/28
 	<b>[#118]定義：Fourier 変換</b><br>
 	<p>関数 $f(x)\in C^{\infty}(\mathbb{R})$ に対して実数関数 $\mathcal{F}[f](\omega)$ を</p>
 	<p><center>$\begin{align*}
-		\mathcal{F}[f](\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}\rd x
+		\hat{f}(\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}\rd x
 		\end{align*}$</center></p>
 	<p>と定義する．この値が収束するとき，$\mathcal{F}[f](\omega)$ を $f$ の【Fourier 変換 (Fourier transformation)】と呼ぶ．</p>
 </div>
@@ -41,28 +41,27 @@ updated on 2022/2/28
   
 <div class="prp" id="119">
 	<b>[#119]命題：Fourier 逆変換</b><br>
-	<p>関数 $f\in C^{\infty}(\omega)$ とその Fourier 変換 $\mathcal{F}[f](\omega)$ に対して</p>
+	<p>関数 $f\in C^{\infty}(\omega)$ とその Fourier 変換 $\hat{f}(\omega)$ に対して</p>
 	<p><center>$\begin{align*}
-		f(x) = \int_{-\infty}^{\infty}\mathcal{F}[f](\omega)e^{i\omega x}\rd \omega.
+		f(x) = \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}\frac{\rd \omega}{2\pi}.
 		\end{align*}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
+	<p> Fourier 変換の定義 <a href="#118">[#118]</a> より</p>
 	<p><center>$\begin{align*}
-		f(f^{-1}(B)) \underset{\href{#112}{\scriptsize{\sf[\# 112]}}}{=} &\{y\in Y\,|\,{}^\exists x\in f^{-1}(B)\,\,\text{s.t.}\,\,y=f(x)\}\\
-		=\,\, & \{y\in Y\,|\,{}^\exists x\in X\,\,\text{s.t.}\,\,y=f(x)\in B\}\\
-		=\,\, & \{y\in B\,|\,{}^\exists x\in X\,\,\text{s.t.}\,\,y=f(x)\}
+		\int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}\frac{\rd \omega}{2\pi} &= \int_{-\infty}^{\infty}\left(\int_{-\infty}^{\infty}f(y)e^{-i\omega y}\rd\right) ye^{i\omega x}\frac{\rd \omega}{2\pi}\\
+		&= 
 		\end{align*}$</center></p>
-	<p>であるから，$f(f^{-1}(B))\subset B.$
+	<p>よって，題意は示される．$
 </Details>
 <br><br>
   
 <div id="bib"><b>参考文献</b>
 <ul>
-	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
-	<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社 (2012).</li>
-	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2014/mapping.pdf">桂田祐史: 写像, pdf</a>.</li>
-	<li><a href="https://mathlandscape.com/map-image/">写像の像・逆像の定義と具体例をわかりやすく｜数学の景色</a></li>
+	<li>岡本清郷: すうがくぶっくす17 フーリエ解析の展望, 朝倉書店 (1997).</li>
+	<li>馬場敬之, 高杉豊: スバラシク実力がつくと評判の フーリエ変換 キャンパス・ゼミ, マセマ出版社 (2007).</li>
+	<li><a href="https://manabitimes.jp/math/2280">フーリエ変換の意味と応用例｜高校数学の美しい物語</a></li>
 </ul>
 </div>
       
