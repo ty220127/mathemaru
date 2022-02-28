@@ -92,8 +92,25 @@ updated on 2022/2/28
 </Details>
 <br><br>
   
-<div class="prp" id="">
-	<b>[#]命題：像の性質</b><br>
+<div class="prp" id="116">
+	<b>[#116]命題：像の性質</b><br>
+	<p>写像 $f:X\rightarrow Y$ と部分集合 $A_1,\,A_2\subset X$ に対して</p>
+	<p><center>$\begin{align*}f(A_1\cup A_2) &= f(A_1)\cup f(A_2), \tag{116.1}\\
+		f(A_1\cap A_2) &\subset f(A_1)\cap f(A_2). \tag{116.2}\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>また $i=1,\,2$ に対して</p>
+	<p><center>$\begin{align*}
+		f(A_1\cap A_2) &= \{y\in Y\,|\,{}^\exists x\in A_1\cap A_2\,\,\text{s.t.}\,\,y=f(x)\}\\
+		&\subset \{y\in Y\,|\,{}^\exists x\in A_i\,\,\text{s.t.}\,\,y=f(x)\} = f(A_i)
+		\end{align*}$</center></p>
+	<p>である．つまり $f(A_1\cap A_2)\subset f(A_1)$ かつ $f(A_1\cap A_2)\subset f(A_2)$ であることより (116.1) 式が従う．</p>
+</Details>
+<br><br>
+  
+<div class="prp" id="117">
+	<b>[#117]命題：逆像の性質</b><br>
 	<p>写像 $f:X\rightarrow Y$ と部分集合 $A_1,\,A_2\subset X$ に対して</p>
 	<p><center>$\begin{align*}f(A_1\cup A_2) &= f(A_1)\cup f(A_2), \tag{116.1}\\
 		f(A_1\cap A_2) &\subset f(A_1)\cap f(A_2). \tag{116.2}\end{align*}$</center></p>
