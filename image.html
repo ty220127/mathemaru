@@ -106,7 +106,7 @@ updated on 2022/2/28
 	<p><center>$\begin{align*}
 		&y\in f(A_1)\cup f(A_2)\\
 		\Longleftrightarrow\,\,&\left({}\exists x\in A_1\,\,\text{s.t.} y=f(x)\right)\lor \left({}\exists x\in A_2\,\,\text{s.t.} y=f(x)\right)\\
-		\Longrightiarrow\,\,&{}^\exists x\in A_1\cup A_2\,\,\text{s.t.}\,\,y=f(x)\\
+		\Longrightarrow\,\,&{}^\exists x\in A_1\cup A_2\,\,\text{s.t.}\,\,y=f(x)\\
 		\Longleftrightarrow\,\,& y\in f(A_1\cup A_2).
 		\end{align*}$</center></p>
 	<p>以上をまとめると，$[y\in f(A_1\cup A_2)\Leftrightarrow y\in f(A_1)\cup f(A_2)]$ であるから，題意は示される．</p>
@@ -156,12 +156,12 @@ updated on 2022/2/28
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>また $i=1,\,2$ に対して</p>
 	<p><center>$\begin{align*}
-		f(A_1\cap A_2) &= \{y\in Y\,|\,{}^\exists x\in A_1\cap A_2\,\,\text{s.t.}\,\,y=f(x)\}\\
-		&\subset \{y\in Y\,|\,{}^\exists x\in A_i\,\,\text{s.t.}\,\,y=f(x)\} = f(A_i)
+		x\in f^{-1}(B_1\cap B_2) \,\,\Longleftrightarrow\,\,& f(x)\in B_1\cap B_2\\
+		\Longleftrightarrow\,\,& (f(x)\in B_1)\land (f(x)\in B_2)\\
+		\Longleftrightarrow\,\,& (x\in f^{-1}(B_1))\land (x\in f^{-1}(B_2))\\
+		\Longleftrightarrow\,\,& x\in f^{-1}(B_1)\cap f^{-1}(B_2).\\
 		\end{align*}$</center></p>
-	<p>である．つまり $f(A_1\cap A_2)\subset f(A_1)$ かつ $f(A_1\cap A_2)\subset f(A_2)$ であることより (116.1) 式が従う．</p>
 </Details>
 <br><br>
   
