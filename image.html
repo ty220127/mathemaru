@@ -32,7 +32,7 @@ updated on 2022/2/28
 	<b>[#112]定義：集合の像，逆像</b><br>
 	<p>写像 $f:X\rightarrow Y$ と部分集合 $A\subset X$ に対して</p>
 	<p><center>$\begin{align*}
-		f(A) &=\{y\in Y\,|\,{}^\exists x\in A\,\,\text{s.t.}\,\,y=f(x)\}\\
+		f(A) &=\{y\in Y\,|\,{}^\exists x\in A\,\,\,\text{s.t.}\,\,\,y=f(x)\}\\
 		&=\{f(x)\,|\,x\in A\}
 		\end{align*}$</center></p>
 	<p>を定義する．この $f(A)$ を $f$ による $A$ の【像 (image)】と云う．特に $f(X)$ を $f$ の【値域 (range)】と呼び，しばしば $\mathrm{Im}\,f$ と表す．
@@ -50,9 +50,9 @@ updated on 2022/2/28
 <Details>
 	<summary>証明</summary>
 	<p><center>$\begin{align*}
-		f(f^{-1}(B)) \underset{\href{#112}{\scriptsize{\sf[\# 112]}}}{=} &\{y\in Y\,|\,{}^\exists x\in f^{-1}(B)\,\,\text{s.t.}\,\,y=f(x)\}\\
-		=\,\, & \{y\in Y\,|\,{}^\exists x\in X\,\,\text{s.t.}\,\,y=f(x)\in B\}\\
-		=\,\, & \{y\in B\,|\,{}^\exists x\in X\,\,\text{s.t.}\,\,y=f(x)\}
+		f(f^{-1}(B)) \underset{\href{#112}{\scriptsize{\sf[\# 112]}}}{=} &\{y\in Y\,|\,{}^\exists x\in f^{-1}(B)\,\,\,\text{s.t.}\,\,\,y=f(x)\}\\
+		=\,\, & \{y\in Y\,|\,{}^\exists x\in X\,\,\,\text{s.t.}\,\,\,y=f(x)\in B\}\\
+		=\,\, & \{y\in B\,|\,{}^\exists x\in X\,\,\,\text{s.t.}\,\,\,y=f(x)\}
 		\end{align*}$</center></p>
 	<p>であるから，$f(f^{-1}(B))\subset B.$
 </Details>
@@ -105,8 +105,8 @@ updated on 2022/2/28
 		一方，$y\in f(A_1)\cup f(A_2)$ に対して，</p>
 	<p><center>$\begin{align*}
 		&y\in f(A_1)\cup f(A_2)\\
-		\Longleftrightarrow\,\,&\left({}\exists x\in A_1\,\,\text{s.t.}\,\, y=f(x)\right)\lor \left({}\exists x\in A_2\,\,\text{s.t.}\,\, y=f(x)\right)\\
-		\Longrightarrow\,\,&{}^\exists x\in A_1\cup A_2\,\,\text{s.t.}\,\,y=f(x)\\
+		\Longleftrightarrow\,\,&\left({}\exists x\in A_1\,\,\,\text{s.t.}\,\,\, y=f(x)\right)\lor \left({}\exists x\in A_2\,\,\,\text{s.t.}\,\,\, y=f(x)\right)\\
+		\Longrightarrow\,\,&{}^\exists x\in A_1\cup A_2\,\,\,\text{s.t.}\,\,\,y=f(x)\\
 		\Longleftrightarrow\,\,& y\in f(A_1\cup A_2).
 		\end{align*}$</center></p>
 	<p>以上をまとめると，$[y\in f(A_1\cup A_2)\Leftrightarrow y\in f(A_1)\cup f(A_2)]$ であるから，題意は示される．</p>
@@ -122,8 +122,8 @@ updated on 2022/2/28
 	<summary>証明</summary>
 	<p> $i=1,\,2$ に対して</p>
 	<p><center>$\begin{align*}
-		f(A_1\cap A_2) &= \{y\in Y\,|\,{}^\exists x\in A_1\cap A_2\,\,\text{s.t.}\,\,y=f(x)\}\\
-		&\subset \{y\in Y\,|\,{}^\exists x\in A_i\,\,\text{s.t.}\,\,y=f(x)\} = f(A_i)
+		f(A_1\cap A_2) &= \{y\in Y\,|\,{}^\exists x\in A_1\cap A_2\,\,\,\text{s.t.}\,\,\,y=f(x)\}\\
+		&\subset \{y\in Y\,|\,{}^\exists x\in A_i\,\,\,\text{s.t.}\,\,\,y=f(x)\} = f(A_i)
 		\end{align*}$</center></p>
 	<p>である．つまり $f(A_1\cap A_2)\subset f(A_1)$ かつ $f(A_1\cap A_2)\subset f(A_2)$ であることより題意が示される．</p>
 </Details>
