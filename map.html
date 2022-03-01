@@ -25,7 +25,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/21<br>
-updated on 2022/2/27
+updated on 2022/3/1
 </p>
     
 <div class="def" id="99">
@@ -67,23 +67,22 @@ updated on 2022/2/27
 	<b>[#107]定義：恒等写像</b><br>
 	<p>何も変えない $X$ 上の（$X$ から $X$ への）写像 $\mathrm{id}_X$ を $X$ 上の【恒等写像 (identity map)】と云う：</p>
 	<p><center>$\mathrm{id}_X:X\rightarrow X,\quad x\mapsto x.$</center></p>
+	<p>すなわち $\mathrm{id}_X(x)=x$ である．</p>
 </div>
 <br><br>
   
 <div class="prp" id="108">
 	<b>[#108]命題：恒等写像の意味</b><br>
-	<p>写像 $f:X\rightarrow Y$ に対して，</p>
-	<p><center>$f\circ \mathrm{id}_X = f,\quad \mathrm{id}_Y\circ f = f.$</center></p>
+	<p>写像 $f:X\rightarrow Y$ に対して</p>
+	<p><center>$f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>恒等写像の定義 <a href="#107">[#107]</a> より，任意の集合 $S$ に対して</p>
-	<p><center>$\mathrm{id}_S(s) = s\quad (s\in S)$</center></p>
-	<p>となる．よって，$x\in X$ に対して</p>
+	<p>恒等写像の定義 <a href="#107">[#107]</a> より，$x\in X$ に対して</p>
 	<p><center>$f\circ\mathrm{id}_X(x) = f(\mathrm{id}_X(x)) = f(x)$</center></p>
-	<p>であり，$y\in Y$ に対して</p>
+	<p>であり，</p>
 	<p><center>$\mathrm{id}_Y\circ f(x) = \mathrm{id}_Y(f(x)) = f(x)$</center></p>
-	<p>である．つまり，題意が成り立つ．</p>
+	<p>である．故に $f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.$</p>
 </Details>
 <br><br>
 
