@@ -127,9 +127,17 @@ updated on 2022/3/1
 		&\subset \{y\in Y\,|\,{}^\exists x\in A_i\,\,\,\text{s.t.}\,\,\,y=f(x)\} = f(A_i)
 		\end{align*}$</center></p>
 	<p>である．つまり $f(A_1\cap A_2)\subset f(A_1)$ かつ $f(A_1\cap A_2)\subset f(A_2)$ であることより</p>
-	<p><center>$\begin{align*}f(A_1\cap A_2) \subset f(A_1)\cap f(A_2).\end{align*}$</center></p>
+	<p><center>$\begin{align*}f(A_1\cap A_2) \subset f(A_1)\cap f(A_2)\end{align*}$</center></p>
 	<p>が成り立つ．<br>
-		特に $f$ が単射のとき，</p>
+		ところで $y\in f(A_1)\cap f(A_2)$ であることは</p>
+	<p><center>$\begin{align*}
+		\left({}^\exsits x_1\in A_1\,\,\,\text{s.t.}\,\,\,y=f(x_1)\right)\land \left({}^\exsits x_2\in A_2\,\,\,\text{s.t.}\,\,\,y=f(x_2)\right)
+		\end{align*}$</center></p>
+	<p>と同値であり，故 $f(x_1)=f(x_2)$ である．よって，もし $f$ が単射であるならばその性質 <a href="injection-surjection.html#101">[#101]</a> より $x_1=x_2$ がいえるので，
+	<p><center>$\begin{align*}
+		(x_i\in A_1\cap A_2)\land (y=f(x_i))\quad (i=1,\,2)
+		\end{align*}$</center></p>
+	<p>が成り立つ．以上により，$f$ が単射である場合は $[f(A_1\cap A_2) \supset f(A_1)\cap f(A_2)]$ が従う故，等号が成立する．
 </Details>
 <br><br>
   
