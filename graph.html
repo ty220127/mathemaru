@@ -63,8 +63,7 @@ updated on 2022/3/2
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>簡単に云えば，各頂点の次数を数え上げることで，各辺の両端をすべて数え上げることになるから，この命題の成立が云える．より
-		数学的には，以下の集合 $P$ の要素数を２通りの方法で数え上げることで題意を得る：</p>
+	<p>簡単に云えば，各頂点の次数を数え上げることで，各辺の両端をすべて数え上げることになるから，この命題の成立が云える．より数学的には，以下の集合 $P$ の要素数を２通りの方法で数え上げることで題意を得る：</p>
 	<p><center>$\begin{align*}
 		P = \{(v,\,e)\in V\times E\,|\,v\in e\}.
 		\end{align*}$</center></p>
@@ -87,8 +86,7 @@ updated on 2022/3/2
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>簡単に云えば，次数が奇数の点が奇数個であることは握手補題 <a href="#124">[#124]</a> に矛盾するからこの補題の成立が云える．
-		より数学的には，以下の $V$ の分解 $V_{\rm e},\,V_{\rm o}$ を用いる：</p>
+	<p>簡単に云えば，次数が奇数の点が奇数個であることは握手補題 <a href="#124">[#124]</a> に矛盾するからこの補題の成立が云える．より数学的には，以下の $V$ の分解 $V_{\rm e},\,V_{\rm o}$ を用いる：</p>
 	<p><center>$\begin{align*}
 		V_{\rm e} &= \{v\in V\,|\,\deg(v)\in 2\mathbb{N}_0\},\\
 		V_{\rm o} &= \{v\in V\,|\,\deg(v)\in 2\mathbb{N}_0+1\}.
@@ -98,41 +96,39 @@ updated on 2022/3/2
 	<p><center>$\begin{align*}
 		\sum_{v\in V}\deg(v)\in 2\mathbb{N}_0.
 		\end{align*}$</center></p>
-	<p>ここで明らかに $\sum_{v\in V}\deg(v) = \sum_{v\in V_{\rm e}}\deg(v) + \sum_{v\in V_{\rm o}}\deg(v)$ で
-		あり，かつ $\sum_{v\in V_{\rm e}}\deg(v)\in 2\mathbb{N}_0$ である．これらの事実は $\sum_{v\in V_{\rm o}}\deg(v)\in 2\mathbb{N}_0$ であることと同値である
-		が，$v\in V_{\rm o}$ に対して $\deg(v)$ は奇数であることから，その個数が偶数であることが必要十分条件となる．つまり，$|V_{\rm o}|\in 2\mathbb{N}_0.$</p>
+	<p>ここで明らかに $\sum_{v\in V}\deg(v) = \sum_{v\in V_{\rm e}}\deg(v) + \sum_{v\in V_{\rm o}}\deg(v)$ であり，かつ $\sum_{v\in V_{\rm e}}\deg(v)\in 2\mathbb{N}_0$ である．<br>
+		これらの事実は $\sum_{v\in V_{\rm o}}\deg(v)\in 2\mathbb{N}_0$ であることと同値であるが，$v\in V_{\rm o}$ に対して $\deg(v)$ は奇数であることから，その個数が偶数であることが必要十分条件となる．つまり，$|V_{\rm o}|\in 2\mathbb{N}_0.$</p>
 </Details>
 <br><br>
 
-<div class="def" id="125">
-	<b>[#125]定義：正則グラフ</b><br>
+<div class="def" id="126">
+	<b>[#126]定義：正則グラフ</b><br>
 	<p>任意の $v\in V$ に対して $\deg(v)= k$ であるような頂点集合 $V$ で定義されるグラフを【$k$-正則グラフ ($k$-regular graph)】と呼ぶ．</p>
 </div>
 <br><br>
 
-<div class="def" id="126">
-	<b>[#126]定義：完全グラフ</b><br>
-	<p>グラフ $K_n = (V,\,E)$ は $|V|= n$ でかつ $E= \left(\begin{array}{c}V\\2\end{array} \right)$ であるとする．
-		このようなグラフ $K_n$ を $n$ 点の【完全グラフ (complete graph)】と呼ぶ．</p>
+<div class="def" id="127">
+	<b>[#127]定義：完全グラフ</b><br>
+	<p>グラフ $K_n = (V,\,E)$ は $|V|= n$ でかつ $E= \left(\begin{array}{c}V\\2\end{array} \right)$ であるとする．このようなグラフ $K_n$ を $n$ 点の【完全グラフ (complete graph)】と呼ぶ．</p>
 </div>
 <br><br>
 
-<div class="prp" id="127">
-	<b>[#127]命題：完全グラフの特徴づけ</b><br>
+<div class="prp" id="128">
+	<b>[#128]命題：完全グラフの特徴づけ</b><br>
 	<p> $n$ 点完全グラフ $K_n$ は $(n-1)$-正則グラフである．</p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>定義 <a href="#126">[#126]</a> より，$K_n$ の頂点集合 $V$ に対して，その辺集合は $\left(\begin{array}{c}V\\2\end{array} \right)$ であることから，任意の $v\in V$ に対して</p>
+	<p>定義 <a href="#127">[#127]</a> より，$K_n$ の頂点集合 $V$ に対して，その辺集合は $\left(\begin{array}{c}V\\2\end{array} \right)$ であることから，任意の $v\in V$ に対して</p>
 	<p><center>$\begin{align*}
 		N_v = \{u\in V\,|\, u\sim v\} = V\setminus \{v\}.
 		\end{align*}$</center></p>
-	<p>よって $\deg(v)= |N_v|= n-1$ が従うから，定義 <a href="#125">[#125]</a> より完全グラフは $(n-1)$-正則グラフである．</p>
+	<p>よって $\deg(v)= |N_v|= n-1$ が従うから，定義 <a href="#126">[#126]</a> より完全グラフは $(n-1)$-正則グラフである．</p>
 </Details>
 <br><br>
 
-<div class="def" id="128">
-	<b>[#128]定義：補グラフ</b><br>
+<div class="def" id="129">
+	<b>[#129]定義：補グラフ</b><br>
 	<p>グラフ $G = (V,\,E)$ に対してグラフ $\overline{G}$ を</p>
 	<p><center>$\begin{align*}
 		\overline{G} := \left(V,\,\left(\begin{array}{cc}V\\2\end{array}\right)\setminus E\right)
