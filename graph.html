@@ -63,8 +63,8 @@ updated on 2022/3/2
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>簡単に云えば，各頂点の次数を数え上げることで，各辺の両端をすべて数え上げることになるから，この補題の成立が云える．
-		より数学的には，以下の集合 $P$ の要素数を２通りの方法で数え上げることで題意を得る：</p>
+	<p>簡単に云えば，各頂点の次数を数え上げることで，各辺の両端をすべて数え上げることになるから，この命題の成立が云える．より
+		数学的には，以下の集合 $P$ の要素数を２通りの方法で数え上げることで題意を得る：</p>
 	<p><center>$\begin{align*}
 		P = \{(v,\,e)\in V\times E\,|\,v\in e\}.
 		\end{align*}$</center></p>
@@ -74,7 +74,33 @@ updated on 2022/3/2
 		|P| &= \sum_{v\in V} \#\{e\in E\,|\, v\in e\} = \sum_{v\in V} \deg(v);\\
 		|P| &= \sum_{e\in E} \#\{v\in V\,|\, v\in e\} = \sum_{e\in E} 2 = 2\,|E|.
 		\end{align*}$</center></p>
-	<p>すなわち，$\sig_{v\in V}\deg(v) = 2\,|E|$ である．
+	<p>すなわち，$\sig_{v\in V}\deg(v) = 2\,|E|$ である．</p>
+</Details>
+<br><br>
+
+<div class="prp" id="125">
+	<b>[#125]命題：奇点定理</b><br>
+	<p>グラフにおける次数が奇数の点は偶数個である：グラフ $(V,\,E)$ に対して</p>
+	<p><center>$\begin{align*}
+		\#\{v\in V\,|\,\deg(v)\in 2\mathbb{N}_0+1\} \in 2\mathbb{N}_0.
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>簡単に云えば，次数が奇数の点が奇数個であることは握手補題 <a href="#124">[#124]</a> に矛盾するからこの補題の成立が云える．
+		より数学的には，以下の $V$ の分解 $V_{\rm e},\,V_{\rm o}$ を用いる：</p>
+	<p><center>$\begin{align*}
+		V_{\rm e} &= \{v\in V\,|\,\deg(v)\in 2\mathbb{N}_0\},\\
+		V_{\rm o} &= \{v\in V\,|\,\deg(v)\in 2\mathbb{N}_0+1\}.
+		\end{align*}$</center></p>
+	<p>ここで $V_{\rm e}\cup V_{\rm o} =V$ かつ $V_{\rm e}\cap V_{\rm o}=\emptyset$ に注意する（これが $V$ の「分解」と呼んでいる所以である）．<br>
+		まず握手補題 <a href="#124">[#124]</a> より</p>
+	<p><center>$\begin{align*}
+		\sum_{v\in V}\deg(v)\in 2\mathbb{N}_0.
+		\end{align*}$</center></p>
+	<p>ここで明らかに $\sum_{v\in V}\deg(v) = \sum_{v\in V_{\rm e}}\deg(v) + \sum_{v\in V_{\rm o}}\deg(v)$ で
+		あり，かつ $\sum_{v\in V_{\rm e}}\deg(v)\in 2\mathbb{N}_0$ である．これらの事実は $\sum_{v\in V_{\rm o}}\deg(v)\in 2\mathbb{N}_0$ であることと同値である
+		が，$v\in V_{\rm o}$ に対して $\deg(v)$ は奇数であることから，その個数が偶数であることが必要十分条件となる．つまり，$|V_{\rm o}|\in 2\mathbb{N}_0.$</p>
 </Details>
 <br><br>
 
