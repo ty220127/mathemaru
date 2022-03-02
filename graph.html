@@ -11,8 +11,8 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		deg: ['\\mathrm{deg}\left(#1\right)', 1],
-		num: ['\\#\left(#1\right)', 1]
+		deg: ['\\mathrm{deg}\\left(#1\\right)', 1],
+		num: ['\\#\\left(#1\\right)', 1]
 	}}});
 </script>
 <title>グラフ｜演習問題集</title>
@@ -51,7 +51,7 @@ updated on 2022/3/2
 	<p><center>$\begin{align*}
 		N_v = \{u\in V\,|\, u\sim v\}.
 		\end{align*}$</center></p>
-	<p>いま，$\deg{v} := \#N_v$ として，この $\deg{v}$ を $v$ の【次数 (degree)】と呼ぶ．
+	<p>いま，$\deg{v} := \num{N_v}$ として，この $\deg{v}$ を $v$ の【次数 (degree)】と呼ぶ．
 </div>
 <br><br>
 
@@ -59,7 +59,7 @@ updated on 2022/3/2
 	<b>[#124]命題：握手補題</b><br>
 	<p>グラフ $(V,\,E)$ に対して</p>
 	<p><center>$\begin{align*}
-		\sum_{v\in V}\deg v = 2\,\# E.
+		\sum_{v\in V}\deg v = 2\,\num{E}.
 		\end{align*}$</center></p>
 </div>
 <Details>
@@ -80,7 +80,7 @@ updated on 2022/3/2
 
 <div class="def" id="126">
 	<b>[#126]定義：完全グラフ</b><br>
-	<p>グラフ $K_n = (V,\,E)$ は $\#{V}= n$ でかつ $E= \left(\begin{array}{c}V\\2\end{array} \right)$ であるとする．
+	<p>グラフ $K_n = (V,\,E)$ は $\num{V}= n$ でかつ $E= \left(\begin{array}{c}V\\2\end{array} \right)$ であるとする．
 		このようなグラフ $K_n$ を $n$ 点の【完全グラフ (complete graph)】と呼ぶ．</p>
 </div>
 <br><br>
@@ -95,7 +95,7 @@ updated on 2022/3/2
 	<p><center>$\begin{align*}
 		N_v = \{u\in V\,|\, u\sim v\} = V\setminus \{v\}.
 		\end{align*}$</center></p>
-	<p>よって $\deg{v}= \#{N_v}= n-1$ が従うから，定義 <a href="#125">[#125]</a> より完全グラフは$(n-1)$-正則グラフである．</p>
+	<p>よって $\deg{v}= \num{N_v}= n-1$ が従うから，定義 <a href="#125">[#125]</a> より完全グラフは$(n-1)$-正則グラフである．</p>
 </Details>
 <br><br>
 
