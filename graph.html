@@ -54,21 +54,38 @@ updated on 2022/3/2
 </div>
 <br><br>
 
-<div class="def" id="124">
-	<b>[#124]定義：正則グラフ</b><br>
+<div class="prp" id="124">
+	<b>[#124]命題：握手補題</b><br>
+	<p>グラフ $(V,\,E)$ に対して</p>
+	<p><center>$\begin{align*}
+		\sum_{v\in V}\deg v = 2\# E.
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>定義 <a href="#125">[#125]</a> より，$K_n$ の頂点集合 $V$ に対して，その辺集合は $\left(\begin{array}{c}V\\2\end{array} \right)$ であることから，任意の $v\in V$ に対して</p>
+	<p><center>$\begin{align*}
+		N_v = \{u\in V\,|\, u\sim v\} = V\setminus \{v\}.
+		\end{align*}$</center></p>
+	<p>よって，$ \deg v = \# N_v = n-1 $が従うから，定義 <a href="#124">[#124]</a> より完全グラフは$(n-1)$-正則グラフである．</p>
+</Details>
+<br><br>
+
+<div class="def" id="125">
+	<b>[#125]定義：正則グラフ</b><br>
 	<p>任意の $v\in V$ に対して $\deg v = k$ であるような頂点集合 $V$ で定義されるグラフを【$k$-正則グラフ ($k$-regular graph)】と呼ぶ．</p>
 </div>
 <br><br>
 
-<div class="def" id="125">
-	<b>[#125]定義：完全グラフ</b><br>
+<div class="def" id="126">
+	<b>[#126]定義：完全グラフ</b><br>
 	<p>グラフ $K_n = (V,\,E)$ は $\# V = n$ でかつ $E= \left(\begin{array}{c}V\\2\end{array} \right)$ であるとする．
 		このようなグラフ $K_n$ を $n$ 点の【完全グラフ (complete graph)】と呼ぶ．</p>
 </div>
 <br><br>
 
-<div class="prp" id="126">
-	<b>[#126]命題：完全グラフの特徴づけ</b><br>
+<div class="prp" id="127">
+	<b>[#127]命題：完全グラフの特徴づけ</b><br>
 	<p> $n$ 点完全グラフ $K_n$ は $(n-1)$-正則グラフである．</p>
 </div>
 <Details>
@@ -81,8 +98,8 @@ updated on 2022/3/2
 </Details>
 <br><br>
 
-<div class="def" id="127">
-	<b>[#127]定義：補グラフ</b><br>
+<div class="def" id="128">
+	<b>[#128]定義：補グラフ</b><br>
 	<p>グラフ $G = (V,\,E)$ に対してグラフ $\overline{G}$ を</p>
 	<p><center>$\begin{align*}
 		\overline{G} := \left(V,\,\left(\begin{array}{cc}V\\2\end{array}\right)\setminus E\right)
