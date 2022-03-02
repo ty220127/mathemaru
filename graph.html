@@ -25,7 +25,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/18<br>
-updated on 2022/2/19
+updated on 2022/3/2
 </p>
     
 <div class="def" id="93">
@@ -50,7 +50,7 @@ updated on 2022/2/19
 	<p><center>$\begin{align*}
 		N_v = \{u\in V\,|\, u\sim v\}.
 		\end{align*}$</center></p>
-	<p>いま，$\deg x := \# N_v$ として，この $\deg x$ を $v$ の【次数 (degree)】と呼ぶ．
+	<p>いま，$\deg v := \# N_v$ として，この $\deg v$ を $v$ の【次数 (degree)】と呼ぶ．
 </div>
 <br><br>
 
@@ -65,6 +65,24 @@ updated on 2022/2/19
 	<p>グラフ $K_n = (V,\,E)$ は $\# V = n$ でかつ $E= \left(\begin{array}{c}V\\2\end{array} \right)$ であるとする．
 		このようなグラフ $K_n$ を $n$ 点の【完全グラフ (complete graph)】と呼ぶ．</p>
 </div>
+<br><br>
+
+<div class="prp" id="126">
+	<b>[#126]命題：完全グラフの特徴づけ</b><br>
+	<p> $n$ 点完全グラフ $K_n$ は $(n-1)$-正則グラフである．</p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>定義 <a href="#126">[#126]</a> より，$K_n$ の頂点集合 $V$ に対して，その辺集合は $\left(\begin{array}{c}V\\2\end{array} \right)$ であることから，任意の $v\in V$ に対して</p>
+	<p><center>$\begin{align*}
+		N_v = \{u\in V\,|\, u\sim v\} = V\setminus \{v\}
+		\end{align*}$</center></p>
+	<p>であることから，</p>
+	<p><center>$\begin{align*}
+		\deg v = \# N_v = n-1
+		\end{align*}$</center></p>
+	<p>が従う．よって，定義 <a href="#125">[#125]</a> より，完全グラフは$(n-1)$-正則グラフである．</p>
+</Details>
 <br><br>
 
 <div id="bib"><b>参考文献</b>
