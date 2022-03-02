@@ -29,6 +29,13 @@ body{
       border: none; 
       background-color: #b2ffb2;
 }
+.fct{
+      padding: 0.5%; 
+      margin-bottom: 0.5%; 
+      border: none; 
+      background-color: #c8c8c8;
+}
+
 
 ul.defl{
       list-style-type: lower-roman;
