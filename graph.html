@@ -46,7 +46,7 @@ updated on 2022/3/2
 
 <div class="def" id="123">
 	<b>[#123]定義：次数</b><br>
-	<p>$(V,\,E)$ をグラフとし，$v\in V$ に隣接するような頂点の集合を $N_v$ とおく：</p>
+	<p>$(V,\,E)$ をグラフとし，$v\in V$ の近傍の集合を $N_v$ とおく：</p>
 	<p><center>$\begin{align*}
 		N_v = \{u\in V\,|\, u\sim v\}.
 		\end{align*}$</center></p>
@@ -56,18 +56,25 @@ updated on 2022/3/2
 
 <div class="prp" id="124">
 	<b>[#124]命題：握手補題</b><br>
-	<p>グラフ $(V,\,E)$ に対して</p>
+	<p>グラフの次数の総和は辺の数の２倍に等しい：グラフ $(V,\,E)$ に対して</p>
 	<p><center>$\begin{align*}
 		\sum_{v\in V}\deg(v)= 2\,|E|.
 		\end{align*}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>定義 <a href="#125">[#125]</a> より，$K_n$ の頂点集合 $V$ に対して，その辺集合は $\left(\begin{array}{c}V\\2\end{array} \right)$ であることから，任意の $v\in V$ に対して</p>
+	<p>簡単に云えば，各頂点の次数を数え上げることで，各辺の両端をすべて数え上げることになるから，この補題の成立が云える．
+		より数学的には，以下の集合 $P$ の要素数を２通りの方法で数え上げることで題意を得る：</p>
 	<p><center>$\begin{align*}
-		N_v = \{u\in V\,|\, u\sim v\} = V\setminus \{v\}.
+		P = \{(v,\,e)\in V\times E\,|\,v\in e\}.
 		\end{align*}$</center></p>
-	<p>よって，$ \deg(v)= \#(N_v)= n-1 $が従うから，定義 <a href="#124">[#124]</a> より完全グラフは$(n-1)$-正則グラフである．</p>
+	<p>ここで辺 $e$ 自体が頂点集合 $V$ の部分集合であることに注意する（定義 <a href="#93">[#93]</a> を参照）．<br>
+		この $P$ について，要素数 $|P|$ を次の２通りに変形することができる：</p>
+	<p><center>$\begin{align*}
+		|P| &= \sum_{v\in V} \#\{e\in E\,|\, v\in e\} = \sum_{v\in V} \deg(v);\\
+		|P| &= \sum_{e\in E} \#\{v\in V\,|\, v\in e\} = \sum_{e\in E} 2 = 2\,|E|.
+		\end{align*}$</center></p>
+	<p>すなわち，$\sig_{v\in V}\deg(v) = 2\,|E|$ である．
 </Details>
 <br><br>
 
@@ -94,7 +101,7 @@ updated on 2022/3/2
 	<p><center>$\begin{align*}
 		N_v = \{u\in V\,|\, u\sim v\} = V\setminus \{v\}.
 		\end{align*}$</center></p>
-	<p>よって $\deg(v)= |N_v|= n-1$ が従うから，定義 <a href="#125">[#125]</a> より完全グラフは$(n-1)$-正則グラフである．</p>
+	<p>よって $\deg(v)= |N_v|= n-1$ が従うから，定義 <a href="#125">[#125]</a> より完全グラフは $(n-1)$-正則グラフである．</p>
 </Details>
 <br><br>
 
