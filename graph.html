@@ -10,7 +10,8 @@
 		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}'
+		cpl: '\\mathrm{c}',
+		deg: '\\mathrm{deg}'
 	}}});
 </script>
 <title>グラフ｜演習問題集</title>
@@ -40,6 +41,16 @@ updated on 2022/2/19
 	<b>[#94]定義：隣接，近傍</b><br>
 	<p>$(V,\,E)$ をグラフとする．$u,\,v\in V$ に対して $uv\in E$ であることを「$u$ と $v$ は隣接している ($u$ and $v$ are adjacent)」と云い，$u\sim v$ と表される．
 		また，$v\in V$ に対して $u\sim v$ であるような $u\in V$ を $v$ の【近傍 (neighborhood)】と呼ぶ．</p>
+</div>
+<br><br>
+
+<div class="def" id="123">
+	<b>[#123]定義：次数</b><br>
+	<p>$(V,\,E)$ をグラフとし，$v\in V$ に隣接するような頂点の集合を $N_v$ とおく：</p>
+	<p><center>$\begin{align*}
+		N_v = \{u\in V\,|\, u\sim v\}.
+		\end{align*}</center></p>
+	<p>いま，$\deg x := \# N_v$ として，この $\deg x$ を $v$ の【次数 (degree)】と呼ぶ．
 </div>
 <br><br>
 
