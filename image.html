@@ -4,6 +4,7 @@
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		Llrby: ['\\underset{\\sf [\\# #1]}{\\Longleftrightarrow}}', 2]
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -25,7 +26,7 @@
 
 <p style="text-align:right;">
 isolated from <a href="map.html">写像</a> on 2022/2/27<br>
-updated on 2022/3/3
+updated on 2022/3/4
 </p>
      
 <div class="def" id="112">
@@ -150,7 +151,7 @@ updated on 2022/3/3
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>前者について，以下のように示される．後者もほぼ同様の流れで証明できる．
+	<p>前者について，以下のように示される．後者もほぼ同様の流れで証明できる．</p>
 	<p><center>$\begin{align*}
 		x\in f^{-1}(B_1\cup B_2) \,\,\Longleftrightarrow\,\,& f(x)\in B_1\cup B_2\\
 		\Longleftrightarrow\,\,& (f(x)\in B_1)\lor (f(x)\in B_2)\\
@@ -169,11 +170,12 @@ updated on 2022/3/3
 </div>
 <Details>
 	<summary>証明</summary>
+	<p>前者について，以下のように示される．後者もほぼ同様の流れで証明できる．</p>
 	<p><center>$\begin{align*}
-		x\in f^{-1}(B_1\cap B_2) \,\,\Longleftrightarrow\,\,& f(x)\in B_1\cap B_2\\
-		\Longleftrightarrow\,\,& (f(x)\in B_1)\land (f(x)\in B_2)\\
-		\Longleftrightarrow\,\,& (x\in f^{-1}(B_1))\land (x\in f^{-1}(B_2))\\
-		\Longleftrightarrow\,\,& x\in f^{-1}(B_1)\cap f^{-1}(B_2).\\
+		x\in f^{-1}\left(\bcu_{\lambda\in\varLambda}B_\lambda\right) \,\,\Llrby{112}\,\,& f(x)\in \bcu_{\lambda\in\varLambda}B_\lambda\\
+		\Llrby{131}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,f(x)\in B_\lambda\\
+		\Llrby{112}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in f^{-1}(B_\lambda)\\
+		\Llrby{131}\,\,& x\in \bcu_{\lambda\in\varLambda}f^{-1}(B_\lambda).\\
 		\end{align*}$</center></p>
 </Details>
 <br><br>
