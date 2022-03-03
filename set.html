@@ -204,9 +204,28 @@ updated on 2022/3/3
 <div class="def" id="130">
 	<b>[#130]定義：無限個の集合と和，共通部分</b><br>
 	<p>集合 $\varLambda$ の各元 $\lambda\in\varLambda$ に対応する集合を $A_\lambda$ し，$A_\lambda$ たちの【和 (sum)】と【共通部分 (intersection)】を以下で定義する：</p>
-	<p><center>　　　和： $\bcu_{\lambda\in\varLambda}A_\lambda = \{x\,|\,{}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda\},$<br>
+	<p><center>和： $\bcu_{\lambda\in\varLambda}A_\lambda = \{x\,|\,{}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda\},$<br>
 		共通部分：$\bca_{\lambda\in\varLambda}A_\lambda = \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\in A_\lambda)\}.$</center></p>
 </div>
+<br><br>
+  
+<div class="def" id="131">
+	<b>[#131]命題：無限個の集合と分配法則</b><br>
+	<p>集合 $\varLambda$ の各元 $\lambda\in\varLambda$ に対応する集合を $A_\lambda$ と集合 $B$ に対して</p>
+	<p><center>$\begin{align*}
+		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap B = \bcu_{\lambda\in\varLambda}(A_\lambda\cap B),\quad \left(\bca_{\lambda\in\varLambda}A_\lambda\right)\cup B = \bca_{\lambda\in\varLambda}(A_\lambda\cup B).
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> 集合への所属と命題の関係から題意を導く．</p>
+	<p><center>$\begin{align*}
+		x\in \left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap B\,\,&\underset{\href{#51}{\sf [\# 51]}}{\Longrightarrow}\,\, \left(x\in \bcu_{\lambda\in\varLambda}A_\lambda\right)\land (x\in B)\\
+		&\underset{\href{#131}{\sf [\# 131]}}{\Longrightarrow}\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda)\land (x\in B)\\
+		&{\Longrightarrow}\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda\cap B)\\
+		&{\Longrightarrow}\,\, x\in \bcu_{\lambda\in\varLambda}(A_\lambda\cap B).\\
+		\end{align*}$</center></p>
+</Details>
 <br><br>
   
 <div id="bib"><b>参考文献</b>
