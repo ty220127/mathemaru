@@ -4,7 +4,7 @@
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		Llrby: ['\\underset{\\href{#2}{\\sf [\\# #1]}}{\\Longleftrightarrow}}', 2],
+		numref: ['{[\\sf \\# #1]}', 1],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -172,10 +172,10 @@ updated on 2022/3/4
 	<summary>証明</summary>
 	<p>前者について，以下のように示される．後者もほぼ同様の流れで証明できる．</p>
 	<p><center>$\begin{align*}
-		x\in f^{-1}\left(\bcu_{\lambda\in\varLambda}B_\lambda\right) \,\,\Llrby{112}{#112}\,\,& f(x)\in \bcu_{\lambda\in\varLambda}B_\lambda\\
-		\Llrby{131}{set.html#131}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,f(x)\in B_\lambda\\
-		\Llrby{112}{#112}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in f^{-1}(B_\lambda)\\
-		\Llrby{131}{set.html#131}\,\,& x\in \bcu_{\lambda\in\varLambda}f^{-1}(B_\lambda).\\
+		x\in f^{-1}\left(\bcu_{\lambda\in\varLambda}B_\lambda\right) \,\,\underset{\href{#112}{\numref{112}}}{\Longleftrightarrow}\,\,& f(x)\in \bcu_{\lambda\in\varLambda}B_\lambda\\
+		\underset{\href{set.html#131}{\numref{131}}}{\Longleftrightarrow}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,f(x)\in B_\lambda\\
+		\underset{\href{#112}{\numref{112}}}{\Longleftrightarrow}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in f^{-1}(B_\lambda)\\
+		\underset{\href{set.html#131}{\numref{131}}}{\Longleftrightarrow}\,\,& x\in \bcu_{\lambda\in\varLambda}f^{-1}(B_\lambda).\\
 		\end{align*}$</center></p>
 </Details>
 <br><br>
