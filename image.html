@@ -145,11 +145,12 @@ updated on 2022/3/1
 	<b>[#118]命題：逆像の性質</b><br>
 	<p>写像 $f:X\rightarrow Y$ と部分集合 $B_1,\,B_2\subset Y$ に対して</p>
 	<p><center>$\begin{align*}
-		f^{-1}(B_1\cup B_2) = f^{-1}(B_1)\cup f^{-1}(B_2).
+		f^{-1}(B_1\cup B_2) = f^{-1}(B_1)\cup f^{-1}(B_2),\quad f^{-1}(B_1\cap B_2) = f^{-1}(B_1)\cap f^{-1}(B_2).
 		\end{align*}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
+	<p>前者について，以下のように示される．後者もほぼ同様の流れで証明できる．
 	<p><center>$\begin{align*}
 		x\in f^{-1}(B_1\cup B_2) \,\,\Longleftrightarrow\,\,& f(x)\in B_1\cup B_2\\
 		\Longleftrightarrow\,\,& (f(x)\in B_1)\lor (f(x)\in B_2)\\
@@ -160,10 +161,10 @@ updated on 2022/3/1
 <br><br>
   
 <div class="prp" id="119">
-	<b>[#119]命題：逆像の性質</b><br>
-	<p>写像 $f:X\rightarrow Y$ と部分集合 $B_1,\,B_2\subset Y$ に対して</p>
+	<b>[#119]命題：無限個の集合と逆像の性質</b><br>
+	<p>写像 $f:X\rightarrow Y$ と部分集合 $B_\lambda \subset Y\,(\lambda\in\varLambda)$ に対して</p>
 	<p><center>$\begin{align*}
-		f^{-1}(B_1\cap B_2) = f^{-1}(B_1)\cap f^{-1}(B_2).
+		f^{-1}\left(\bcu_{\lambda\in\varLambda}B_\lambda) = \bcu_{\lambda\in\varLambda}f^{-1}(B_\lambda),\quad f^{-1}\left(\bca_{\lambda\in\varLambda}B_\lambda) = \bca_{\lambda\in\varLambda}f^{-1}(B_\lambda).
 		\end{align*}$</center></p>
 </div>
 <Details>
