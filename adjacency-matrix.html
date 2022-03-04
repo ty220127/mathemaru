@@ -6,7 +6,7 @@
 			     TeX: {  extensions: ["cancel.js"] },
 			   });
 	MathJax.Hub.Config({ TeX: { Macros: { 
-		numref: ['{[\\sf \\# #1]}', 1],
+		numref: ['{\\sf [\\# #1]}', 1],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -14,8 +14,10 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
 		deg: '\\mathrm{deg}',
-		tr: '\\mathrm{tr}'
+		tr: '\\mathrm{tr}',
+		diag: '\\mathrm{diag}'
 	}}});
 </script>
 <title>隣接行列｜演習問題集</title>
@@ -39,12 +41,29 @@ updated on 2022/3/4
     		A(G) = [a_{uv}]_{u,v\in V}\in \mathbb{C}^{V\times V}\,\,\,\text{with}\,\,\,
     		a_{uv} = \left\{\begin{array}{ll} 1 & (u\sim v)\\ 0 & (u\,\cancel{\sim}\,v) \end{array}\right..
     	\end{align*}$</center></p>
-	<p>また $A(G)$ の固有値の集合を $G$ の【スペクトル (spectrum)】と呼び，$\mathrm{Spec}(G)$ で表す．</p>
+	<p>なお $A(G)$ の固有値を $G$ の固有値と云って良い．また $G$ の固有値の集合を $G$ の【スペクトル (spectrum)】と呼び，$\mathrm{Spec}(G)$ で表す．</p>
 </div>
 <br><br>
 
 <div class="prp" id="134">
-	<b>[#134]命題：隣接行列の跡</b><br>
+	<b>[#134]命題：隣接行列の性質</b><br>
+	<p>任意のグラフ $G$ の隣接行列 $A(G)$ は対称行列：</p>
+	<p><center>$\begin{align*}
+    		A(G) = A(G)^\trp.
+    	\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $G=(V,\,E)$ とするとき $u,\,v\in V$ に対して</p>
+	<p><center>$\begin{align*}
+    		u\sim v\,\,\underset{\href{graph.html#94}{\numref{94}}}{\Longleftrightarrow}\,\,\{u,\,v\}\in E\,\,\Longleftrightarrow\,\,\{v,\,u\}\in E\,\,\underset{\href{graph.html#94}{\numref{94}}}{\Longleftrightarrow}\,\,v\sim u.
+    	\end{align*}$</center></p>
+	<p>よって $a_{uv}=a_{vu}$ が従うから，$A(G)$ は対称行列である．
+</Details>
+<br><br>
+
+<div class="prp" id="135">
+	<b>[#135]命題：隣接行列の跡</b><br>
 	<p>任意のグラフ $G$ の隣接行列 $A(G)$ に対して</p>
 	<p><center>$\begin{align*}
     		\tr(A(G)) = 0.
@@ -52,6 +71,38 @@ updated on 2022/3/4
 </div>
 <Details>
 	<summary>証明</summary>
+	<p> $G=(V,\,E)$ とするとき，グラフの定義 <a href="graph.html#93">$\numref{93}$</a> より任意の
+		$v\in V$ に対して $vv\notin E$，すなわち $v\,\cancel{\sim}\,v$ であるから，定義 <a href="#133">$\numref{133}$</a> より $A(G) = [a_{uv}]_{u,v\in V}$ に対して
+		$a_{vv}=0$．よって</p>
+	<p><center>$\begin{align*}
+    		\tr(A(G)) = \sum_{v\in V}a_{vv} = 0.
+    	\end{align*}$</center></p>
+</Details>
+<br><br>
+
+<div class="prp" id="136">
+	<b>[#136]命題：グラフの固有値の性質</b><br>
+	<p>$G = (V,\,E)$ を $n$ 頂点グラフとする $(|V|=n)$．いま，$G$ の固有値を $\lambda_i\,(i=1,\,\cdots,\,n)$ とすれば，以下が成り立つ：</p>
+	<p><center>$\begin{align*}
+    		\sum_{i=1}^{n}\lambda_i &= 0, \tag{136.1}\\
+		\sum_{i=1}^{n}\lambda_i^2 &= 2\,|E|. \tag{136.2}
+    	\end{align*}$</center></p>
+</div>
+<!--<Details>-->
+	<summary>証明 (136.1)</summary>
+	<p> $G$ の隣接行列を $A$ とする．隣接行列の性質 <a href="#134">$\numref{134}$</a> より $A$ は対称行列であるから，ある直交行列 $P$ が存在して</p>
+	<p><center>$\begin{align*}
+    		P^{-1}AP = \diag(\lambda_1,\,\cdots,\,\lambda_n)
+    	\end{align*}$</center></p>
+	<p>である．ここで両辺の跡をとると
+	<p><center>$\begin{align*}
+    		&\tr(P^{-1}AP) = \tr(\diag(\lambda_1,\,\cdots,\,\lambda_n)),\\
+		\text{i.e.,}\,\,\,& \tr(A) = \sum_{i=1}^{n}\lambda_i.
+    	\end{align*}$</center></p>
+	<p>よって，隣接行列の跡は $0$ である <a href="#135">$\numref{135}$</a> ことから $\sig_{i=1}^{n}\lambda_i = 0$ が従う．
+</Details>
+<Details>
+	<summary>証明 (136.2)</summary>
 	<p> $G=(V,\,E)$ とするとき，グラフの定義 <a href="graph.html#93">$\numref{93}$</a> より任意の
 		$v\in V$ に対して $vv\notin E$，すなわち $v\,\cancel{\sim}\,v$ であるから，定義 <a href="#133">$\numref{133}$</a> より $A(G) = [a_{uv}]_{u,v\in V}$ に対して
 		$a_{vv}=0$．よって</p>
