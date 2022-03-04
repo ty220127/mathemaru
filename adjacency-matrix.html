@@ -81,15 +81,32 @@ updated on 2022/3/4
 <br><br>
 
 <div class="prp" id="136">
-	<b>[#136]命題：グラフの固有値の性質</b><br>
+	<b>[#136]命題：隣接行列を用いた次数の特徴づけ</b><br>
+	<p>任意のグラフ $G = (V,\,E)$ の隣接行列 $A(G) = [a_{uv}]_{u,v\in V}$ に対して</p>
+	<p><center>$\begin{align*}
+    		\sum_{u\in V}a_{uv} = \deg(v).
+    	\end{align*}$</center></p>
+</div>
+<!--<Details>-->
+	<summary>証明</summary>
+	<p><center>$\begin{align*}
+    		\sum_{u\in V}a_{uv} &\,\,=\,\, \sum_{u\sim v} a_{uv} + \sum_{u\sim v\hspace{-11pt}/} a_{uv}\\
+		&\underset{\scriptsize\href{#133}{\numref{133}}}{=} \sum_{u\sim v} 1 + \sum_{u\sim v\hspace{-11pt}/} 0\\
+		&\,\,=\,\, \#\{u\in V\,|\,u\sim v\}\underset{\scriptsize\href{graph.html#123}{\numref{123}}}{=} \deg(v).
+    	\end{align*}$</center></p>
+</Details>
+<br><br>
+
+<div class="prp" id="137">
+	<b>[#137]命題：グラフの固有値の性質</b><br>
 	<p>$G = (V,\,E)$ を $n$ 頂点グラフとする $(|V|=n)$．いま，$G$ の固有値を $\lambda_i\,(i=1,\,\cdots,\,n)$ とすれば，以下が成り立つ：</p>
 	<p><center>$\begin{align*}
-    		\sum_{i=1}^{n}\lambda_i &= 0, \tag{136.1}\\
-		\sum_{i=1}^{n}\lambda_i^2 &= 2\,|E|. \tag{136.2}
+    		\sum_{i=1}^{n}\lambda_i &= 0, \tag{137.1}\\
+		\sum_{i=1}^{n}\lambda_i^2 &= 2\,|E|. \tag{137.2}
     	\end{align*}$</center></p>
 </div>
 <Details>
-	<summary>証明 (136.1)</summary>
+	<summary>証明 (137.1)</summary>
 	<p> $G$ の隣接行列を $A = [a_{uv}]_{u,v\in V}$ とする．隣接行列の性質 <a href="#134">$\numref{134}$</a> より $A$ は対称行列であるから，ある直交行列 $P$ が存在して</p>
 	<p><center>$\begin{align*}
     		P^{-1}AP = \diag(\lambda_1,\,\cdots,\,\lambda_n)　\tag{*}
@@ -102,7 +119,7 @@ updated on 2022/3/4
 	<p>よって，隣接行列の跡は $0$ である <a href="#135">$\numref{135}$</a> ことから $\sig_{i=1}^{n}\lambda_i = 0$ が従う．
 </Details>
 <Details>
-	<summary>証明 (136.2)</summary>
+	<summary>証明 (137.2)</summary>
 	<p> (136.1) 式の証明中の $(*)$ の両辺を２乗して跡をとると，
 	<p><center>$\begin{align*}
     		&\tr(P^{-1}A^2P) = \tr(\diag(\lambda_1{}^2,\,\cdots,\,\lambda_n{}^2)),\\
@@ -118,7 +135,7 @@ updated on 2022/3/4
 	<p><center>$\begin{align*}
     		\sum_{i=1}^{n}\lambda_i{}^2 &\,\,=\,\, \tr(A^2)\\
 		&\,\,=\,\, \sum_{v\in V} \deg(v)\\
-		&\underset{\scriptsize\href{graph.html#124}{\numref{124}}}{=} 2\,|E|.\\
+		&\underset{\scriptsize\href{graph.html#124}{\numref{124}}}{=} 2\,|E|.
     	\end{align*}$</center></p>
 </Details>
 <br><br>
