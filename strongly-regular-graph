@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
+			     TeX: {  extensions: ["cancel.js"] },
+			   });
+	MathJax.Hub.Config({ TeX: { Macros: { 
+		numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		deg: '\\mathrm{deg}',
+		tr: '\\mathrm{tr}',
+		diag: '\\mathrm{diag}'
+	}}});
+</script>
+<title>強正則グラフ｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">強正則グラフ</div></center>
+
+<p style="text-align:right;">
+established on 2022/3/4<br>
+updated on 2022/3/4
+</p>
+    
+<div class="def" id="138">
+	<b>[#138]定義：強正則グラフ</b><br>
+	<p>以下の条件を満たすようなグラフ $G=(V,\,E)$ をパラメータ $(n,\,k,\,r,\,s)$ の【強正則グラフ (strongly regular graph)】と呼ぶ：</p>
+  <ul class="defl">
+    <li>　$|V| = n.$</li>
+    <li>　$G$ は $k$-正則である．</li>
+    <li>　隣接する２点 $u,\,v\in V$ が $r$ 個の頂点に共通して隣接する：
+      <p><center>\begin{align*}
+        u\sim v\,\,\Longrightarrow\,\,|N_u\cap N_v| = r.
+        \end{align*}</center></p>
+        </li>
+     <li>　隣接しない２点 $u,\,v\in V$ が $s$ 個の頂点に共通して隣接する：
+      <p><center>\begin{align*}
+        u\,\cancel{\sim}\, v\,\,\Longrightarrow\,\,|N_u\cap N_v| = s.
+        \end{align*}</center></p>
+        </li>
+  </ul>
+</div>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://ocw.hokudai.ac.jp/wp-content/uploads/2016/01/GraphTheory-2007-Note-all.pdf">井上純一: グラフ理論 講義ノート, pdf</a>.</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
