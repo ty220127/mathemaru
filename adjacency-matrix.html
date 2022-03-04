@@ -90,7 +90,7 @@ updated on 2022/3/4
 </div>
 <Details>
 	<summary>証明 (136.1)</summary>
-	<p> $G$ の隣接行列を $A$ とする．隣接行列の性質 <a href="#134">$\numref{134}$</a> より $A$ は対称行列であるから，ある直交行列 $P$ が存在して</p>
+	<p> $G$ の隣接行列を $A = [a_{uv}]_{u,v\in V}$ とする．隣接行列の性質 <a href="#134">$\numref{134}$</a> より $A$ は対称行列であるから，ある直交行列 $P$ が存在して</p>
 	<p><center>$\begin{align*}
     		P^{-1}AP = \diag(\lambda_1,\,\cdots,\,\lambda_n)　\tag{*}
     	\end{align*}$</center></p>
@@ -108,9 +108,17 @@ updated on 2022/3/4
     		&\tr(P^{-1}A^2P) = \tr(\diag(\lambda_1{}^2,\,\cdots,\,\lambda_n{}^2)),\\
 		\text{i.e.,}\,\,\,& \tr(A^2) = \sum_{i=1}^{n}\lambda_i{}^2.
     	\end{align*}$</center></p>
-	<p>ここで $A^2$ の成分を調べると</p>
+	<p>ここで $A^2$ の対角成分を調べると</p>
 	<p><center>$\begin{align*}
-    		(A^2)_{uv} &= \sum{w\in V} a_{uw}a_{wv}
+    		(A^2)_{vv} &\,\,=\,\, \sum_{w\in V} a_{vw}a_{wv}\\
+		&\underset{\scriptsize\href{#134}{\numref{134}}}{=} \sum_{w\in V} a_{vw}{}^2\\
+		&\,\,=\,\, \sum_{w\in V} a_{vw} = \deg(v).\\
+    	\end{align*}$</center></p>
+	<p>よって</p>
+	<p><center>$\begin{align*}
+    		\sum_{i=1}^{n}\lambda_i{}^2 &\,\,=\,\, \tr(A^2)\\
+		&\,\,=\,\, \sum_{v\in V} \deg(v)\\
+		&\underset{\scriptsize\href{graph.html#124}{\numref{124}}}{=} 2\,|E|.\\
     	\end{align*}$</center></p>
 </Details>
 <br><br>
