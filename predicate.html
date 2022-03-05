@@ -25,7 +25,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/12<br>
-updated on 2022/3/2
+updated on 2022/3/5
 </p>
     
 <div class="def" id="75">
@@ -55,6 +55,22 @@ updated on 2022/3/2
 	<p><center>$^\exists x\,\,\,\text{s.t.}\,\,\,P(x)$</center></p>
 	<p>と表す．ここで，記号 $\forall$，$\exists$ をまとめて【量化子(quantifier)】と呼ぶ．
 </div>
+<!--<Details>-->
+	<summary>記法</summary>
+	<p>特に，全称命題 $\left[{}^\forall x\,(P(x)\rightarrow Q(x))\right]$ は</p>
+	<p><center>$\begin{align*}
+		{}^\forall x:P(x)\,\,(Q(x)),
+		\end{align*}$</center></p>
+	<p>存在命題 $\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\cap Q(x)\right]$ は</p>
+	<p><center>$\begin{align*}
+		{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)
+		\end{align*}$</center></p>
+	<p>と表記する．さらにそれぞれ</p>
+	<p><center>$\begin{align*}
+		P\left({}^\forall x\right)\,\,(Q(x)),\quad P\left({}^\exists x\right)\,\,\,\text{s.t.}\,\,\,Q(x)
+		\end{align*}$</center></p>
+	<p>と略記することもある（変更の傍らに直接量化子を付す）．</p>
+</Details>
 <Details>
 	<summary>補足</summary>
 	<p>「ある $x$ が存在して，$P(x)$ が成り立つ」とは，$P(x)$ が真となるような $x$ が少なくとも１つは存在するという意味である．</p>
@@ -65,8 +81,8 @@ updated on 2022/3/2
 	<b>[#122]事実：全称・存在命題の否定</b><br>
 	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
 	<p><center>$\begin{align*}
-		&\neg({}^\forall x\,(P(x))) \equiv {}^\exists x\,\,\,\text{s.t.}\,\,\,\neg P(x),\\
-		&\neg({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)) \equiv {}^\forall x\,(\neg P(x)).
+		&\left[\neg\left({}^\forall x\,(P(x))\right)\right] \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,\neg P(x)\right],\\
+		&\left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right)\right] \equiv \left[{}^\forall x\,(\neg P(x))\right].
 		\end{align*}$</center></p>
 </div>
 <Details>
@@ -91,4 +107,3 @@ updated on 2022/3/2
 </p>
 </body>
 </html>
-
