@@ -50,30 +50,47 @@ updated on 2022/3/5
 <div class="def" id="77">
 	<b>[#77]定義：全称命題，存在命題</b><br>
 	<p>変項 $x$ についての条件 $P(x)$ に対して「すべての[任意の] $x$ で $P(x)$ が成り立つ (For all [any] $x$, $P(x)$ holds)」という命題を【全称命題(universal proposition)】と呼び，</p>
-	<p><center>$^\forall x\,(P(x))$</center></p>
+	<p><center>$^\forall x,\,\,P(x)$</center></p>
 	<p>と表す．また，「ある $x$ が存在して，$P(x)$ が成り立つ (There exists $x$ such that $P(x)$ holds)」という命題を【存在命題(existential proposition)】と呼び，</p>
 	<p><center>$^\exists x\,\,\,\text{s.t.}\,\,\,P(x)$</center></p>
 	<p>と表す．ここで，記号 $\forall$，$\exists$ をまとめて【量化子(quantifier)】と呼ぶ．
 </div>
 <Details>
 	<summary>記法</summary>
-	<p>特に，全称命題 $\left[{}^\forall x\,(P(x)\rightarrow Q(x))\right]$ は</p>
+	<p>特に，全称命題 $\left[{}^\forall x,\,\,P(x)\rightarrow Q(x)\right]$ は</p>
 	<p><center>$\begin{align*}
-		{}^\forall x:P(x)\,\,(Q(x)),
+		{}^\forall x:P(x),\,\,Q(x)
 		\end{align*}$</center></p>
-	<p>存在命題 $\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right]$ は</p>
+	<p>と表記し，存在命題 $\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right]$ は</p>
 	<p><center>$\begin{align*}
 		{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)
 		\end{align*}$</center></p>
 	<p>と表記する．さらにそれぞれ</p>
 	<p><center>$\begin{align*}
-		P\left({}^\forall x\right)\,\,(Q(x)),\quad P\left({}^\exists x\right)\,\,\,\text{s.t.}\,\,\,Q(x)
+		P({}^\forall x),\,\,Q(x);\quad P({}^\exists x)\,\,\,\text{s.t.}\,\,\,Q(x)
 		\end{align*}$</center></p>
-	<p>と略記することもある（変更の傍らに直接量化子を付す）．</p>
+	<p>と略記することもある（変項の傍らに直接量化子を付す）．</p>
 </Details>
 <Details>
-	<summary>補足</summary>
+	<summary>補足１</summary>
 	<p>「ある $x$ が存在して，$P(x)$ が成り立つ」とは，$P(x)$ が真となるような $x$ が少なくとも１つは存在するという意味である．</p>
+</Details>
+<Details>
+	<summary>補足２</summary>
+	<p>全称命題は，あらゆる変項 $x$ に対する共通部分と解釈できる．つまり</p>
+	<p><center>$\begin{align*}
+		\left[^\forall x,\,\,P(x)\right]\equiv \left[\bigwedge_{x} P(x)\right]
+		\end{align*}$</center></p>
+	<p>といった書き方も考えられる．一方で，存在命題はあらゆる変項 $x$ に対する和であると解釈でき，</p>
+	<p><center>$\begin{align*}
+		\left[^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\equiv \left[\bigvee_{x} P(x)\right]
+		\end{align*}$</center></p>
+	<p>といった書き方も考えられる．同様にして</p>
+	<p><center>$\begin{align*}
+		\left[{}^\forall x:P(x),\,\,Q(x)\right] &\equiv \left[\bigwedge_{x:P(x)}Q(x)\right],\\
+		\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right] &\equiv \left[\bigvee_{x:P(x)}Q(x)\right]
+		\end{align*}$</center></p>
+	<p>と考えても良い．</p>
 </Details>
 <br><br>
   
@@ -81,8 +98,8 @@ updated on 2022/3/5
 	<b>[#122]事実：全称・存在命題の否定</b><br>
 	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
 	<p><center>$\begin{align*}
-		&\left[\neg\left({}^\forall x\,(P(x))\right)\right] \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,\neg P(x)\right],\\
-		&\left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right)\right] \equiv \left[{}^\forall x\,(\neg P(x))\right].
+		&\left[\neg\left({}^\forall x,\,\,P(x)\right)\right] \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,\neg P(x)\right],\\
+		&\left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right)\right] \equiv \left[{}^\forall x,\,\,\neg P(x)\right].
 		\end{align*}$</center></p>
 </div>
 <Details>
