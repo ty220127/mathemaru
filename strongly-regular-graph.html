@@ -38,20 +38,19 @@ updated on 2022/3/5
 <div class="def" id="138">
 	<b>[#138]定義：強正則グラフ</b><br>
 	<p>以下の条件を満たすようなグラフ $G=(V,\,E)$ をパラメータ $(n,\,k,\,r,\,s)$ の【強正則グラフ (strongly regular graph)】と呼び，$\srg(n,\,k,\,r,\,s)$ で表す：</p>
-  <ul class="defl">
-    <li>　$G$ の頂点数は $n$ である： $|V| = n.$</li>
-    <li>　$G$ は $k$-正則である．</li>
-    <li>　隣接する任意の２点 $u,\,v\in V$ を選べば，それらに共通して隣接する頂点が $r$ 個ある：
-      <p><center>\begin{align*}
-        u\sim v\,\,\Longrightarrow\,\,|N_u\cap N_v| = r.
-        \end{align*}</center></p>
-        </li>
-     <li>　隣接しない任意の２点 $u,\,v\in V$ を選べば，それらに共通して隣接する頂点が $s$ 個ある：
-      <p><center>\begin{align*}
-        u\,\cancel{\sim}\, v\,\,\Longrightarrow\,\,|N_u\cap N_v| = s.
-        \end{align*}</center></p>
-        </li>
-  </ul>
+	<ul class="defl">
+		<li>　$G$ は完全グラフ <a href="graph.html#127">$\numref{127}$</a> や $E=\emptyset$ なるグラフではない．
+		<li>　$G$ の頂点数は $n$ である： $|V| = n.$</li>
+		<li>　$G$ は $k$-正則である．</li>
+		<li>　隣接する任意の２点 $u,\,v\in V$ を選べば，それらに共通して隣接する頂点が $r$ 個ある：
+			<p><center>\begin{align*}
+				u\sim v\,\,\Longrightarrow\,\,|N_u\cap N_v| = r.
+				\end{align*}</center></p></li>
+		<li>　隣接しない任意の２点 $u,\,v\in V$ を選べば，それらに共通して隣接する頂点が $s$ 個ある：
+			<p><center>\begin{align*}
+				u\,\cancel{\sim}\, v\,\,\Longrightarrow\,\,|N_u\cap N_v| = s.
+				\end{align*}</center></p></li>
+	</ul>
 </div>
 <br><br>
 
