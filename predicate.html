@@ -70,7 +70,7 @@ updated on 2022/3/5
 	<p><center>$\begin{align*}
 		P({}^\forall x),\,\,Q(x);\quad P({}^\exists x)\,\,\,\text{s.t.}\,\,\,Q(x)
 		\end{align*}$</center></p>
-	<p>と略記することもある（変項の傍らに直接量化子を付す）．</p>
+	<p>と略記することもある（命題関数中の変項の傍らに直接量化子を付す）．</p>
 </Details>
 <Details>
 	<summary>補足１</summary>
@@ -78,11 +78,11 @@ updated on 2022/3/5
 </Details>
 <Details>
 	<summary>補足２</summary>
-	<p>全称命題は，あらゆる変項 $x$ に対する共通部分と解釈できる．つまり</p>
+	<p>全称命題は $x$ にあらゆる記号を代入した命題たちの共通部分と解釈できる．つまり</p>
 	<p><center>$\begin{align*}
 		\left[^\forall x,\,\,P(x)\right]\equiv \left[\bigwedge_{x} P(x)\right]
 		\end{align*}$</center></p>
-	<p>といった書き方も考えられる．一方で，存在命題はあらゆる変項 $x$ に対する和であると解釈でき，</p>
+	<p>といった書き方も考えられる．一方で，存在命題は $x$ にあらゆる記号を代入した命題たちの和であると解釈でき，</p>
 	<p><center>$\begin{align*}
 		\left[^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\equiv \left[\bigvee_{x} P(x)\right]
 		\end{align*}$</center></p>
@@ -117,22 +117,22 @@ updated on 2022/3/5
 		&\left[\neg\left({}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right)\right] \equiv \left[{}^\forall x:P(x),\,\,\neg Q(x)\right].
 		\end{align*}$</center></p>
 </div>
-<!--<Details>-->
+<Details>
 	<summary>証明</summary>
-	<p><center>$\begin{eqnarray}
+	<p><center>$\begin{align*}
 		\left[\neg\left({}^\forall x:P(x),\,\,Q(x)\right)\right] 
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[\neg\left({}^\forall x,\,\,P(x)\rightarrow Q(x)\right)\right]
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[\neg\left({}^\forall x,\,\,P(x)\rightarrow Q(x)\right)\right]\\
 		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[\neg\left({}^\forall x,\,\,\neg P(x)\lor Q(x)\right)\right]\\
-		&\underset{\href{#122}{\numref{122}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land \neg Q(x)\right]
+		&\underset{\href{#122}{\numref{122}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land \neg Q(x)\right]\\
 		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,\neg Q(x)\right],
-		\end{eqnarray}$</center></p>
-	<p><center>$\begin{eqnarray}
+		\end{align*}$</center></p>
+	<p><center>$\begin{align*}
 		\left[\neg\left({}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right)\right] 
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right)\right]
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right)\right]\\
 		&\underset{\href{#122}{\numref{122}}}{\equiv} \left[{}^\forall x,\,\,\neg P(x)\lor \neg Q(x)\right]\\
-		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[\neg\left({}^\forall x,\,\,P(x)\rightarrow \neg Q(x)\right)\right]
+		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[\neg\left({}^\forall x,\,\,P(x)\rightarrow \neg Q(x)\right)\right]\\
 		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\forall x:P(x),\,\,\neg Q(x)\right],
-		\end{eqnarray}$</center></p>
+		\end{align*}$</center></p>
 </Details>
 <br><br>
   
