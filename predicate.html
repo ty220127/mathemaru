@@ -4,6 +4,7 @@
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -105,6 +106,33 @@ updated on 2022/3/5
 <Details>
 	<summary>補足</summary>
 	<p>全称記号が論理積，存在記号が論理和と相性が良いと考えると，de Morgan の法則 <a href="proposition.html#63">[#63]</a> と比較して筋が通っているといえる．</p>
+</Details>
+<br><br>
+  
+<div class="prp" id="139">
+	<b>[#139]命題：全称・存在命題の否定</b><br>
+	<p>変項 $x$ についての条件 $P(x),\,Q(x)$ に対して</p>
+	<p><center>$\begin{align*}
+		&\left[\neg\left({}^\forall x:P(x),\,\,Q(x)\right)\right] \equiv \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,\neg Q(x)\right],\\
+		&\left[\neg\left({}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right)\right] \equiv \left[{}^\forall x:P(x),\,\,\neg Q(x)\right].
+		\end{align*}$</center></p>
+</div>
+<!--<Details>-->
+	<summary>証明</summary>
+	<p><center>$\begin{eqnarray}
+		\left[\neg\left({}^\forall x:P(x),\,\,Q(x)\right)\right] 
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[\neg\left({}^\forall x,\,\,P(x)\rightarrow Q(x)\right)\right]
+		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[\neg\left({}^\forall x,\,\,\neg P(x)\lor Q(x)\right)\right]\\
+		&\underset{\href{#122}{\numref{122}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land \neg Q(x)\right]
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,\neg Q(x)\right],
+		\end{eqnarray}$</center></p>
+	<p><center>$\begin{eqnarray}
+		\left[\neg\left({}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right)\right] 
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right)\right]
+		&\underset{\href{#122}{\numref{122}}}{\equiv} \left[{}^\forall x,\,\,\neg P(x)\lor \neg Q(x)\right]\\
+		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[\neg\left({}^\forall x,\,\,P(x)\rightarrow \neg Q(x)\right)\right]
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\forall x:P(x),\,\,\neg Q(x)\right],
+		\end{eqnarray}$</center></p>
 </Details>
 <br><br>
   
