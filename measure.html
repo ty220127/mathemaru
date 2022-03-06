@@ -11,7 +11,7 @@
 		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}'
+		cpl: '\\mathsf{c}'
 	}}});
 </script>
 <title>測度｜演習問題集</title>
@@ -24,7 +24,7 @@
 <center><div id="titlehead">測度</div></center>
 
 <p style="text-align:right;">
-established on 2022/2/6<br>
+established on 2022/1/30<br>
 updated on 2022/3/6
 </p>
     
@@ -35,7 +35,7 @@ updated on 2022/3/6
 		<li> $\mu(\emptyset) = 0$,</li>
 		<li> 無限加算個の部分集合列 $\{A_n\}_{n\in\mathbb{N}}$ について，
 			<center>$\{A_n\}\subset\mathcal{F}$ かつ $\{A_n\}$ が互いに素$\,\,\Longrightarrow\,\,\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$</center>
-			が成り立つ【測度の $\sigma$ 加法族】．</li>
+			が成り立つ【測度の $\sigma$ 加法性】．</li>
 	</ul>
 	<p>また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を【測度空間 (measure space)】と呼ぶ．</p>
 </div>
@@ -50,7 +50,7 @@ updated on 2022/3/6
 	<summary>証明</summary>
 	<p>$n= N+1,\,N+2,\,\cdots$ に対して $A_n=\emptyset$ と定めれば $\{A_n\}_{n\in\mathbb{N}}$ は互いに素な $\mathcal{F}$ の部分集合列であり，</p>
 	<p><center>$\mu\left(\bcu_{n=1}^{N} A_n\right)=\mu\left(\bcu_{n\in\mathbb{N}} A_n\right).$</center></p>
-	<p>一方，$\mu(\emptyset)=0$ であるから <a href="#24">[#24]</a>-i ，</p>
+	<p>一方，<a href="#24">[#24]</a>-i より $\mu(\emptyset)=0$ であるから，</p>
 	<p><center>$\sig_{n\in\mathbb{N}}\mu(A_n) = \sig_{n=1}^{N}\mu(A_n).$</center></p>
 	<p>以上と測度の $\sigma$ 加法性 <a href="#24">[#24]</a>-ii より，題意は示される．</p>
 </Details>
@@ -68,7 +68,7 @@ updated on 2022/3/6
 	<summary>証明</summary>
 	<p><a href="complement-set.html#96">[#96]</a> および <a href="complement-set.html#97">[#97]</a> より $A\cap (B\setminus A) = \emptyset$ かつ $A\cup (B\setminus A) = B$ であるから，
 		測度の有限加法性<a href="#25">[#25]</a>より</p>
-	<p><center>$\mu(A)+\mu(B\setminus A) = \mu(B)\,\,\Longleftrightarrow\,\,\mu(B\setminus A) = \mu(B)-\mu(A)$.</center></p>
+	<p><center>$\mu(A)+\mu(B\setminus A) = \mu(B),\,\,\,\text{i.e.,}\,\,\,\mu(B\setminus A) = \mu(B)-\mu(A)$.</center></p>
 	<p>また，測度の値域 <a href="#24">[#24]</a> より $\mu(B)-\mu(A) = \mu(B\setminus A)\geq 0$ である．</p>
 </Details>
 <br><br>
@@ -137,7 +137,7 @@ updated on 2022/3/6
 	<summary>証明</summary>
 	<p>集合列 $\{B_i\}_{i\in\mathbb{N}}$ を $B_i = A_1\setminus A_i$ をおくと，$\{B_i\}$ は $\mathcal{F}$ の部分集合列で単調増大列になるから，
 		単調増大列と測度の連続性定理 <a href="#27">[#27]</a> と測度の単調性 <a href="#26">[#26]</a> より</p>
-	<p><center>$\begin{align*}\mu\left(\bcu_{i\in\mathbb{N}}B_i\right) &= \bca_{i\in\mathbb{N}}\mu(B_i) \\
+	<p><center>$\begin{align*}\mu\left(\bcu_{i\in\mathbb{N}}B_i\right) &= \bcu_{i\in\mathbb{N}}\mu(B_i) \\
 		&= \limit_{i\rightarrow\infty}(\mu(A_1)- \mu(A_i)) \\
 		&= \mu(A_1) - \limit_{i\rightarrow\infty}\mu(A_i).\end{align*}$</center></p>
 	<p>一方，$\bcu_{i\in\mathbb{N}}B_i$ について，de Morgan の法則 <a href="set.html#74">[#74]</a> より</p>
