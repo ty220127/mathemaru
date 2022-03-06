@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
-<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
 		bs: '\\boldsymbol', 
@@ -25,7 +26,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/6<br>
-updated on 2022/3/4
+updated on 2022/3/6
 </p>
     
 <div class="def" id="48">
@@ -35,6 +36,26 @@ updated on 2022/3/4
 	<p>と表す．$A$ を命題関数 $P(x)$ で定義された集合であるとするとき，記号 $a$ に対して $P(a)$ が真であることを
 		「$a$ は $A$ に属する ($a$ belongs to $A$)」と云い，$a\in A$ と表す．また，$a$ を集合 $A$ の【元 (要素; element)】と呼ぶ．</p>
 </div>
+<Details>
+	<summary>記法</summary>
+	<p>集合 $\{x\,|\,P(x)\land Q(x)\}$ を</p>
+	<p><center>$\begin{align*}
+		\{x:P(x)\,|\,Q(x)\}
+		\end{align*}$</center></p>
+	<p>と表記することがある．このような $P(x)$ は $x$ の【付帯条件 (side condition)】と呼ばれる．特に，ある集合 $\varOmega$ の範囲内で新たな集合を定義するとき，つまり</p>
+	<p><center>$\begin{align*}
+		\{x\,|\,(x\in\varOmega)\land P(x)\}
+		\end{align*}$</center></p>
+	<p>のような集合を考えるときはこれを</p>
+	<p><center>$\begin{align*}
+		\{x:(x\in\varOmega)\,|\,P(x)\}
+		\end{align*}$</center></p>
+	<p>と表記して良いということになるが，一般的には</p>
+	<p><center>$\begin{align*}
+		\{x\in\varOmega\,|\,P(x)\}
+		\end{align*}$</center></p>
+	<p>と略記される．</p>
+</Details>
 <br><br>
   
 <div class="def" id="110">
