@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
   <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
       MathJax.Hub.Config({ TeX: { Macros: { 
         bs: '\\boldsymbol', 
@@ -10,7 +11,7 @@
         fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
         limit: '\\displaystyle\\lim',
 	sig: '\\displaystyle\\sum',
-	cpl: '\\mathrm{c}'
+	cpl: '\\mathsf{c}'
       }}});
     </script>
     <title>σ加法族｜演習問題集</title>
@@ -24,14 +25,14 @@
  
 <p style="text-align:right;">
 established on 2022/1/27<br>
-updated on 2022/2/17
+updated on 2022/3/6
 </p>
 	  
 <div class="def" id="10">
 	<b>[#10]定義：</b>$\bs{\sigma}$ <b>加法族，可測空間，可測集合</b><br>
 	<p>ある全体集合 $\varOmega$ の空でない部分集合族 $\mathcal{F}(\subset 2^\varOmega)$ が以下の条件を満たすとき，これを $\varOmega$ 上の【 $\sigma$ 加法族 (sigma algebra)】或いは【完全加法族 (completely additive class)】と呼ぶ：</p>
 	<ul class="defl">
-		<li> $A\in\mathcal{F}\,\,\Longrightarrow\,\,A^{\rm c}\in\mathcal{F}$【補集合の可測性】, </li>
+		<li> $A\in\mathcal{F}\,\,\Longrightarrow\,\,A^\cpl\in\mathcal{F}$【補集合の可測性】, </li>
 		<li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}\,\,\Longrightarrow\,\,\bcu_{i\in\mathbb{N}}A_i\in\mathcal{F}$【$\sigma$ 加法性 (sigma additivity)】. </li>
 	</ul>
 	<p>また，組 $(\varOmega,\,\mathcal{F})$ を【可測空間 (measurable space)】と呼ぶ．また，$A\in\mathcal{F}$ なる集合を $\mathcal{F}$ の【可測集合 (measurable set)】と呼ぶ．</p>
@@ -116,7 +117,7 @@ updated on 2022/2/17
 	<p>$\{A_i\}_{i\in\mathbb{N}},\,\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ とする．このときそれぞれの集合族の元の補集合の族 $\{A_i^\cpl\}_{i\in\mathbb{N}}$，$\{A_i^\cpl\}_{i=1}^{n}$ を考えれば補集合の可測性 <a href="#10">[#10]</a>-i より，
 		何れも $\mathcal{F}$ の部分集合である．よって，$\sigma$ 加法性 <a href="#10">[#10]</a>-ii および有限加法性 <a href="#41">[#41]</a> より</p>
 	<p><center>$\bcu_{i\in\mathbb{N}}A_i^\cpl,\,\,\bcu_{i=1}^{n}A_i^\cpl\in\mathcal{F}.$</center></p>
-	<p>ここで，de Morgan の法則 <a href="set.html#74">[#74]</a> を適用すると</p>
+	<p>ここで，de Morgan の法則 <a href="set.html#132">[#132]</a> を適用すると</p>
 	<p><center>$\bcu_{i\in\mathbb{N}}A_i^\cpl = \left(\bca_{i\in\mathbb{N}}A_i \right)^\cpl,\quad \bcu_{i=1}^{n}A_i^\cpl = \left(\bca_{i=1}^{n}A_i \right)^\cpl$</center></p>
 	<p>が云える．よって，再び補集合の可測性 <a href="#10">[#10]</a>-i を用いることで題意を示すことができる．</p>
 </Details>
@@ -142,7 +143,7 @@ updated on 2022/2/17
 	<summary>証明</summary>
 	<p>$A\in\mathcal{F}$ とすれば，可測集合の差の性質 <a href="#14">[#14]</a> より</p>
 	<p><center>$\emptyset = A\setminus A\in\mathcal{F}.$</center></p>
-	<p>よって，補集合の可測性 <a href="#10">[#10]</a>-i より $\varOmega =\emptyset^{\mathrm{c}}\in\mathcal{F}$.</p>
+	<p>よって，補集合の可測性 <a href="#10">[#10]</a>-i より $\varOmega =\emptyset^{ \cpl}\in\mathcal{F}$.</p>
 </Details>
 <br><br>
 	  
@@ -153,11 +154,11 @@ updated on 2022/2/17
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>$\sigma$ 加法族の定義 <a href="#10">[#10]</a> に沿って証明する．</p>
+	<p>各 $\mathcal{F}_\lambda$ が $\sigma$ 加法族であることに注意し，$\sigma$ 加法族の定義 <a href="#10">[#10]</a> に沿って証明する．</p>
 	<ul class="defl">
-		<li> すべての $\lambda\in\varLambda$ に対して $\emptyset\in\mathcal{F}_\lambda$ であるから，$\emptyset\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>
-		<li> $A\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda$ であるとすると，すべての $\lambda\in\varLambda$ に対して $A\in\mathcal{F}_\lambda$，すなわち $A^\cpl\in\mathcal{F}_\lambda$．よって，$A^\cpl\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>
-		<li> 各 $A_i\,(i\in\mathbb{N})$ について $A_i\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda$ であるとする．このときすべての $\lambda\in\varLambda$ に対して $A_i\in\mathcal{F}_\lambda$，すなわち $\bcu_{i\in\mathbb{N}}A_i\in\mathcal{F}_\lambda$．よって，$\bcu_{i\in\mathbb{N}}A_i\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>
+		<!--<li> すべての $\lambda\in\varLambda$ に対して $\emptyset\in\mathcal{F}_\lambda$ であるから，$\emptyset\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>-->
+		<li> $A\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda$ であるとすると，定義 <a href="set.html#130">[#130]</a> より任意の $\lambda\in\varLambda$ に対して $A\in\mathcal{F}_\lambda$ であり，故に補集合の可測性 <a href="#10">[#10]</a>-i から任意の $\lambda\in\varLambda$ に対して $A^\cpl\in\mathcal{F}_\lambda$ が云える．よって $A^\cpl\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>
+		<li> 各 $A_i\,(i\in\mathbb{N})$ について $A_i\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda$ であるとする．このとき上と同様，任意の $\lambda\in\varLambda$ に対して $A_i\in\mathcal{F}_\lambda$ であり，故に $\sigma$ 加法性 <a href="#10">[#10]</a>-ii から任意の $\lambda\in\varLambda$ に対して $\bcu_{i\in\mathbb{N}}A_i\in\mathcal{F}_\lambda$ が云える．よって $\bcu_{i\in\mathbb{N}}A_i\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>
 	</ul>
 </Details>
 <br><br>
