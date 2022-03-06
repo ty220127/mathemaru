@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
-<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['{[\\sf \\# #1]}', 1],
+		numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -26,7 +27,7 @@
 
 <p style="text-align:right;">
 isolated from <a href="map.html">写像</a> on 2022/2/27<br>
-updated on 2022/3/4
+updated on 2022/3/6
 </p>
      
 <div class="def" id="112">
@@ -99,7 +100,7 @@ updated on 2022/3/4
 	<p><center>$\begin{align*}f(A_1\cup A_2) = f(A_1)\cup f(A_2).\end{align*}$</center></p>
 </div>
 <Details>
-	<summary>証明</summary>
+	<summary>証明１</summary>
 	<p>まず $y\in f(A_1\cup A_2)$ に対して $y=f(x)$ なる $x\in A_1\cup A_2$ が存在する．
 		もしこの $x$ が $A_1$ の元であるならば，$f(x)\in f(A_1)$ が云え，$x$ が $A_2$ の元であるならば，$f(x)\in f(A_2)$ が云える．
 		よって，$y\in f(A_1)\cup f(A_2)$．<br>
@@ -111,6 +112,20 @@ updated on 2022/3/4
 		\Longleftrightarrow\,\,& y\in f(A_1\cup A_2).
 		\end{align*}$</center></p>
 	<p>以上をまとめると，$[y\in f(A_1\cup A_2)\Leftrightarrow y\in f(A_1)\cup f(A_2)]$ であるから，題意は示される．</p>
+</Details>
+<Details>
+	<summary>証明２</summary>
+	<p>同値変形のみで証明を行う．</p>
+	<p><center>$\begin{align*}
+		&y\in f(A_1)\cup f(A_2)\\
+		\underset{\href{#112}{\numref{112}}}{\Longleftrightarrow}\,\,&(x\in A_1\,\,\,\text{s.t.}\,\,\,y=f(x))\lor (x\in A_2\,\,\,\text{s.t.}\,\,\,y=f(x))\\
+		\underset{\href{predicate.html#77}{\numref{77}}}{\Longleftrightarrow}\,\,&(x\,\,\,\text{s.t.}\,\,\,(x\in A_1)\land(y=f(x)))\lor (x\,\,\,\text{s.t.}\,\,\,(x\in A_2)\land(y=f(x)))\\
+		\underset{\href{predicate.html#140}{\numref{140}}}{\Longleftrightarrow}\,\,&x\,\,\,\text{s.t.}\,\,\,[(x\in A_1)\land(y=f(x))]\lor [(x\in A_2)\land(y=f(x))]\\
+		\underset{\href{proposition.html#61}{\numref{61}}}{\Longleftrightarrow}\,\,&x\,\,\,\text{s.t.}\,\,\,[(x\in A_1)\lor (x\in A_2)]\land(y=f(x))\\
+		\underset{\href{set.html#51}{\numref{51}}}{\Longleftrightarrow}\,\,&x\,\,\,\text{s.t.}\,\,\,(x\in A_1\cup A_2)\land(y=f(x))\\
+		\underset{\href{predicate.html#77}{\numref{77}}}{\Longleftrightarrow}\,\,&x\in A_1\cup A_2\,\,\,\text{s.t.}\,\,\,y=f(x)\\
+		\underset{\href{#112}{\numref{112}}}{\Longleftrightarrow}\,\,&y\in f(A_1\cup A_2).
+		\end{align*}$</center></p>
 </Details>
 <br><br>
   
