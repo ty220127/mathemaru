@@ -73,7 +73,7 @@ updated on 2022/3/6
 	<p><center>$\begin{align*}
 		P({}^\forall x),\,\,Q(x);\quad P({}^\exists x)\,\,\,\text{s.t.}\,\,\,Q(x)
 		\end{align*}$</center></p>
-	<p>と略記することもある（命題関数中の変項の傍らに直接量化子を付す）．</p>
+	<p>と略記することもある（命題関数中の変項の傍らに直接量化子を付す）．なお，このような $P(x)$ は $x$ の【付帯条件 (side condition)】と呼ばれる．</p>
 </Details>
 <Details>
 	<summary>補足１</summary>
@@ -99,7 +99,7 @@ updated on 2022/3/6
 <br><br>
   
 <div class="fct" id="122">
-	<b>[#122]事実：全称・存在命題の否定</b><br>
+	<b>[#122]事実：付帯条件付き全称・存在命題の否定</b><br>
 	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
 	<p><center>$\begin{align*}
 		&\left[\neg\left({}^\forall x,\,\,P(x)\right)\right] \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,\neg P(x)\right],\\
@@ -157,6 +157,35 @@ updated on 2022/3/6
 	<summary>補足</summary>
 	<p>全称記号が共通部分，存在記号が和と相性が良いと考えると，結合法則 <a href="proposition.html#61">[#61]</a> と比較して上2式は筋が通っているといえる．また，分配法則 
 		<a href="proposition.html#62">[#62]</a> と比較すれば，下2式のような分配法則の不成立も納得がいく．</p>
+</Details>
+<br><br>
+  
+<div class="prp" id="141">
+	<b>[#141]命題：付帯条件付き全称・存在命題の結合法則</b><br>
+	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
+	<p><center>$\begin{align*}
+		\left[{}^\forall x:P(x),\,\,Q(x)\land R(x)\right] &\equiv \left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],\\
+		\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\lor R(x)\right] &\equiv \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>$\begin{align*}
+		\left[{}^\forall x:P(x),\,\,Q(x)\land R(x)\right] 
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\forall x,\,\,P(x)\rightarrow(Q(x)\land R(x))\right]\\
+		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[{}^\forall x,\,\,\neg P(x)\lor (Q(x)\land R(x))\right]\\
+		&\underset{\href{proposition.html#62}{\numref{62}}}{\equiv} \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\land (\neg P(x)\lor R(x))\right]\\
+		&\underset{\href{#140}{\numref{140}}}{\equiv} \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\right]\land \left[{}^\forall x,\,\,(\neg P(x)\lor R(x))\right]\\
+		&\underset{\href{implication#65}{\numref{65}}}{\equiv} \left[{}^\forall x,\,\,P(x)\rightarrow Q(x)\right]\land \left[{}^\forall x,\,\,P(x)\rightarrow R(x)\right]\\
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],
+		\end{align*}$</center></p>
+	<p><center>$\begin{align*}
+		\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\lor R(x)\right] 
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land(Q(x)\lor R(x))\right]\\
+		&\underset{\href{proposition.html#62}{\numref{62}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\lor (P(x)\land R(x))\right]\\
+		&\underset{\href{#140}{\numref{140}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\right]\lor \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land R(x))\right]\\
+		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
+		\end{align*}$</center></p>
 </Details>
 <br><br>
   
