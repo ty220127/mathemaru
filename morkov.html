@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } ,
+			     TeX: {  extensions: ["cancel.js"] },
+			   });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}'
+	}}});
+</script>
+<title>Markov 連鎖｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">Markov 連鎖</div></center>
+
+<p style="text-align:right;">
+established on 2022/3/7<br>
+updated on 2022/3/7
+</p>
+    
+<div class="def" id="143">
+	<b>[#143]定義：Markov 連鎖</b><br>
+  <p>未来の状態が現在の状態によってのみ決定される離散的な確率過程 $\{S_t\}_{t\in\mathbb{N}}$ を【 Markov 連鎖 (Markov chain)】と呼ぶ：状態空間 $\varOmega$ に対して</p>
+  <p><center>$\begin{align*}
+    P(S_t=\omega_t\,|\,(S_{t-1},\,\cdots,\,S_0)=(\omega_{t-1},\,\cdots,\,\omega_{0})) = P(S_t=\omega_t\,|\,S_{t-1}=\omega_{t-1}).
+    \end{align*}$</center></p>
+  <p>また Markov 連鎖のこの性質をしばしば【 Markov 性 (Markov property)】と呼ぶ．</p>
+</div>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://manabitimes.jp/math/1269">ノルムの意味とL1，L2，L∞ノルム｜高校数学の美しい物語</a>.</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
