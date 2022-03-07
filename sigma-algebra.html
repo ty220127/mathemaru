@@ -4,14 +4,15 @@
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-        limit: '\\displaystyle\\lim',
-	sig: '\\displaystyle\\sum',
-	cpl: '\\mathsf{c}'
+      MathJax.Hub.Config({ TeX: { Macros: {
+	      numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
+	      bs: '\\boldsymbol', 
+	      bcu: '\\displaystyle\\bigcup', 
+	      bca: '\\displaystyle\\bigcap', 
+	      fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+	      limit: '\\displaystyle\\lim',
+	      sig: '\\displaystyle\\sum',
+	      cpl: '\\mathsf{c}'
       }}});
     </script>
     <title>σ加法族｜演習問題集</title>
@@ -25,7 +26,7 @@
  
 <p style="text-align:right;">
 established on 2022/1/27<br>
-updated on 2022/3/6
+updated on 2022/3/7
 </p>
 	  
 <div class="def" id="10">
@@ -129,8 +130,10 @@ updated on 2022/3/6
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>仮定と補集合の可測性 <a href="#10">[#10]</a>-i より $B^\cpl\in\mathcal{F}$ である．よって，
-		可測集合の積に関する命題 <a href="#42">[#42]</a> より $A\setminus B =A\cap B^\cpl\in\mathcal{F}$．</p>
+	<p>仮定と補集合の可測性 <a href="#10">[#10]</a>-i より $B^\cpl\in\mathcal{F}$ である．よって可測集合の積に関する命題 <a href="#42">[#42]</a> より</p>
+	<p><center>$\begin{align*}
+		A\setminus B \underset{\href{complement-set.html#85}{\numref{85}}}{=} A\cap B^\cpl\in\mathcal{F}.
+		\end{align*}$</center></p>		
 </Details>
 <br><br>
 
