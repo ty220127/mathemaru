@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
+			     TeX: {  extensions: ["cancel.js"] },
+			   });
+	MathJax.Hub.Config({ TeX: { Macros: { 
+		numref: ['{\\sf [\\# #1]}', 1],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		deg: '\\mathrm{deg}',
+		tr: '\\mathrm{tr}',
+		diag: '\\mathrm{diag}'
+	}}});
+</script>
+<title>行列｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">行列</div></center>
+
+<p style="text-align:right;">
+established on 2022/3/14<br>
+updated on 2022/3/14
+</p>
+    
+<div class="def" id="144">
+	<b>[#144] 定義：行列</b><br>
+  <p> $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個と長方形状に並べた表を $m\times n$ 型【行列 (matrix)】と呼ぶ．</p>
+  <ul>
+    <li> 行列の上から $i$ 番目を【第 $i$ 行 (the $i$-th row)】，左から $j$ 番目を【第 $j$ 列 (the $j$-th column)】と呼ぶ．</li>
+    <li> $m\times n$ 型行列が持つ $mn$ 個の数を行列の【成分 (component)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の $(i,\,j)$ 成分と呼ぶ．</li>
+    <li> $1\leq i\leq m$ ，$1\leq j\leq n$ に対して行列 $A$ の $(i,\,j)$ 成分を $a_{ij}$ と書くと決めれば，行列 $A$ は
+      <p><center>$\begin{align}
+        A= \left[\begin{array}{cccc}
+            a_{11} & a_{12} & \cdots & a_{1n}\\
+            a_{21} & a_{22} & \cdots & a_{2n}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{array}\right]
+        \end{align}$</center></p>
+      と表記される．なお，記法上の誤解が生じない場合はこれを $A=[a_{ij}]$ と略記することもある．</li>
+    <li> 特に $m=n$ の場合はこれを $n$ 次【正方行列 (square matrix)】と呼ぶ．また $n=1$ の場合は $m$ 次【列ベクトル (row vector)】，$m=1$ の場合は $n$ 次【行ベクトル (column vector)】と呼ぶ．</li>
+  </ul>
+</div>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>齋藤正彦, 線型代数学, 東京図書 (2014).</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
