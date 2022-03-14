@@ -37,28 +37,72 @@ updated on 2022/3/14
     
 <div class="def" id="144">
 	<b>[#144] 定義：行列</b><br>
-  <p> $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個と長方形状に並べた表を $m\times n$ 型【行列 (matrix)】と呼ぶ．</p>
-  <ul>
-    <li> 行列の上から $i$ 番目を【第 $i$ 行 (the $i$-th row)】，左から $j$ 番目を【第 $j$ 列 (the $j$-th column)】と呼ぶ．</li>
-    <li> $m\times n$ 型行列が持つ $mn$ 個の数を行列の【成分 (component)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の $(i,\,j)$ 成分と呼ぶ．</li>
-    <li> $1\leq i\leq m$ ，$1\leq j\leq n$ に対して行列 $A$ の $(i,\,j)$ 成分を $a_{ij}$ と書くと決めれば，行列 $A$ は
-      <p><center>$\begin{align}
-        A= \left[\begin{array}{cccc}
-            a_{11} & a_{12} & \cdots & a_{1n}\\
-            a_{21} & a_{22} & \cdots & a_{2n}\\
-            \vdots & \vdots & \ddots & \vdots\\
-            a_{m1} & a_{m2} & \cdots & a_{mn}
-        \end{array}\right]
-        \end{align}$</center></p>
-      と表記される．なお，記法上の誤解が生じない場合はこれを $A=[a_{ij}]$ と略記することもある．</li>
-    <li> 特に $m=n$ の場合はこれを $n$ 次【正方行列 (square matrix)】と呼ぶ．また $n=1$ の場合は $m$ 次【列ベクトル (row vector)】，$m=1$ の場合は $n$ 次【行ベクトル (column vector)】と呼ぶ．</li>
+	<p> $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個と長方形状に並べた表を $m\times n$ 型【行列 (matrix)】と呼ぶ．</p>
+	<ul>
+		<li> 行列の上から $i$ 番目を【第 $i$ 行 (the $i$-th row)】，左から $j$ 番目を【第 $j$ 列 (the $j$-th column)】と呼ぶ．</li>
+		<li> $m\times n$ 型行列が持つ $mn$ 個の数を行列の【成分 (component)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の $(i,\,j)$ 成分と呼ぶ．</li>
+		<li> $1\leq i\leq m$ ，$1\leq j\leq n$ に対して行列 $A$ の $(i,\,j)$ 成分を $a_{ij}$ と書くと決めれば，行列 $A$ は
+			<p><center>$\begin{align}
+				A= \left[\begin{array}{cccc}
+				a_{11} & a_{12} & \cdots & a_{1n}\\
+				a_{21} & a_{22} & \cdots & a_{2n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				a_{m1} & a_{m2} & \cdots & a_{mn}
+				\end{array}\right]
+				\end{align}$</center></p>
+			と表記される．なお，記法上の誤解が生じない場合はこれを $A=[a_{ij}]$ と略記することもある．</li>
+		<li>  $m=n$ であるような行列を $n$ 次【正方行列 (square matrix)】と呼ぶ．また $n=1$ の行列は $m$ 次【列ベクトル (row vector)】，$m=1$ の行列は $n$ 次【行ベクトル (column vector)】と呼ばれる．</li>
+		<li> 行列 $A = [a_{ij}]$ と $B=[b_{k\ell}]$ が等しいとは $i=k$ かつ $j=\ell$ であり，更に任意の組 $(i,\,j)$ に対して $a_{ij} = b_{ij}$ が成り立つことを云う．</li>
   </ul>
+</div>
+<br><br>
+
+<div class="def" id="145">
+	<b>[#145] 定義：行列の和とスカラー倍</b><br>
+	<p> $m\times n$ 型行列 $A,\,B$ を</p>
+	<p><center>$\begin{align}
+		A= \left[\begin{array}{cccc}
+		a_{11} & a_{12} & \cdots & a_{1n}\\
+	  	a_{21} & a_{22} & \cdots & a_{2n}\\
+	  	\vdots & \vdots & \ddots & \vdots\\
+	  	a_{m1} & a_{m2} & \cdots & a_{mn}
+	  	\end{array}\right],\quad
+		B= \left[\begin{array}{cccc}
+	  	b_{11} & b_{12} & \cdots & b_{1n}\\
+	  	b_{21} & b_{22} & \cdots & b_{2n}\\
+	  	\vdots & \vdots & \ddots & \vdots\\
+	  	b_{m1} & b_{m2} & \cdots & b_{mn}
+	  	\end{array}\right]
+		\end{align}$</center></p>
+	<p>と定義すると，これらの和とスカラー倍は以下のように定義される．</p>
+	<ul>
+		<li>和：
+			<p><center>$\begin{align*}
+				A+B = \left[\begin{array}{cccc}
+				a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n}\\
+				a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
+				\end{array}\right].
+				\end{align*}$</center></p></li>
+		<li>スカラー倍：数 $c$ に対して
+			<p><center>$\begin{align*}
+				cA = \left[\begin{array}{cccc}
+				ca_{11} & ca_{12} & \cdots & ca_{1n}\\
+			  	ca_{21} & ca_{22} & \cdots & ca_{2n}\\
+			  	\vdots & \vdots & \ddots & \vdots\\
+			  	ca_{m1} & ca_{m2} & \cdots & ca_{mn}
+				\end{array}\right].
+				\end{align*}$</center></p></li>
+	</ul>
+	<p>なお，特に行列 $(-1)A$ を $-A$ と表記し，$A+(-B)$ を $A-B$ と表記する．</p>
 </div>
 <br><br>
 
 <div id="bib"><b>参考文献</b>
 <ul>
-	<li>齋藤正彦, 線型代数学, 東京図書 (2014).</li>
+	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
+	<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2020_05_03.pdf">嶺幸太郎: 線形代数学 講義ノート (2020/05/03ver.), pdf</a>.</li>
 </ul>
 </div>
       
