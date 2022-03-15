@@ -35,7 +35,7 @@ established on 2022/3/15<br>
 updated on 2022/3/15
 </p>
     
-<div class="def" id="144">
+<div class="def" id="146">
 	<b>[#146] 定義：有向グラフ</b><br>
 	<p> 以下の条件を満たす集合 $V,\,A$ による組 $(V,\,A)$ を【有向グラフ (directed graph)】と云う：</p>
 	<ul>
