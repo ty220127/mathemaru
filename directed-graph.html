@@ -37,11 +37,24 @@ updated on 2022/3/15
     
 <div class="def" id="146">
 	<b>[#146] 定義：有向グラフ</b><br>
-	<p> 以下の条件を満たす集合 $V,\,A$ による組 $(V,\,A)$ を【有向グラフ (directed graph)】と云う：</p>
-	<ul>
+	<p> 以下の条件を満たす集合 $V,\,E$ による組 $G=(V,\,E)$ を【有向グラフ (directed graph)】と云う：</p>
+	<ul class="defl">
 		<li> $|V|<\infty.$</li>
-		<li> $A\subset V\times V\setminus \{(v,\,v)\,|\,v\in V\}.$</li>
-  </ul>
+		<li> $E\subset V\times V\setminus \{(v,\,v)\,|\,v\in V\}.$</li>
+	</ul>
+	<p>ここで $E$ の元を $G$ の【アーク (arc)】と呼ぶ．</p>
+</div>
+<br><br>
+
+<div class="def" id="147">
+	<b>[#147] 定義：有向グラフの隣接行列</b><br>
+	<p> 有向グラフ $G=(V,\,E)$ に対し以下で定義される行列 $A = [a_{uv}]_{u,v\in V}$ を $G$ の【隣接行列 (adjacency graph)】と呼ぶ：</p>
+	<p><center>$\begin{align*}
+		a_{uv} = \left\{\begin{array}{ll}
+			1 & ((u,\,v)\in E)\\ 0 & ((u,\,v) \cancel{\in} E)
+			\end{array}\right.
+		\end{align*}$</center></p>
+	<p>なお $A$ の固有値を $G$ の固有値と呼んで良い．また $G$ の固有値の集合を $G$ の【スペクトル (spectrum)】と呼び，$\mathrm{Spec}(G)$ で表す．</p>
 </div>
 <br><br>
 
