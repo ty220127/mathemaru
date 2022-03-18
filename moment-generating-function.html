@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
+			     TeX: {  extensions: ["cancel.js"] },
+			   });
+	MathJax.Hub.Config({ TeX: { Macros: { 
+		numref: ['{\\sf [\\# #1]}', 1],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		deg: '\\mathrm{deg}',
+		tr: '\\mathrm{tr}',
+		diag: '\\mathrm{diag}'
+	}}});
+</script>
+<title>積率母関数｜演習問題集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+</style>
+</head>
+
+<body>
+<center><div id="titlehead">積率母関数</div></center>
+
+<p style="text-align:right;">
+established on 2022/3/18<br>
+updated on 2022/3/18
+</p>
+    
+<div class="def" id="149">
+<b>[#149]定義：積率母関数とキュムラント母関数</b><br>
+	<p>確率変数 $X$ に対して関数 $M_X:\mathbb{R}\rightarrow [0,\,\infty]$ を</p>
+	<p><center>$\begin{align*}
+		M_X(t) = \mathbb{E}\!\left[e^{tX}\right]
+		\end{align*}$</center></p>
+	<p>と定義し，$X$ の【積率母関数 (moment generating function)】と呼ぶ（ただし $e$ は Napier 数）．また関数 $K_X:\mathbb{R}\rightarrow\mathbb{R}$ を</p>
+	<p><center>$\begin{align*}
+		K_X(t) = \log M_X(t)
+		\end{align*}$</center></p>
+	<p>と定義し $X$ の【キュムラント母関数 (cumulant generating function)】と呼ぶ．</p>
+</div>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
