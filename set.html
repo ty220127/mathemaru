@@ -26,36 +26,37 @@
 
 <p style="text-align:right;">
 established on 2022/2/6<br>
-updated on 2022/3/6
+updated on 2022/3/23
 </p>
     
 <div class="def" id="48">
 	<b>[#48]定義：集合，元</b><br>
-	<p>命題関数 <a href="predicate.html#75">[#75]</a> $P(x)$ を真とするような変項 $x$ の集まりのことを【集合 (set)】と呼び，</p>
-	<p><center>$\{x\,|\,P(x)\}$</center></p>
-	<p>と表す．$A$ を命題関数 $P(x)$ で定義された集合であるとするとき，記号 $a$ に対して $P(a)$ が真であることを
-		「$a$ は $A$ に属する ($a$ belongs to $A$)」と云い，$a\in A$ と表す．また，$a$ を集合 $A$ の【元 (要素; element)】と呼ぶ．</p>
-</div>
-<Details>
+	<p>命題関数 <a href="predicate.html#75">[#75]</a> $P(x)$ を真とするような変項 $x$ の実現値の集まりを【集合 (set)】と呼ぶ．また $A$ を命題関数 $P(x)$ で定義された集合であるとするとき，記号 $a$ に対して $P(a)$ が真であることを「$a$ は $A$ に属する ($a$ belongs to $A$)」と云い，$a$ を集合 $A$ の【元 (要素; element)】と呼ぶ．</p>
+	<Details>
 	<summary>記法</summary>
-	<p>集合 $\{x\,|\,P(x)\land Q(x)\}$ を</p>
-	<p><center>$\begin{align*}
-		\{x:P(x)\,|\,Q(x)\}
-		\end{align*}$</center></p>
-	<p>と表記することがあり，このとき $P(x)$ は $x$ の【付帯条件 (side condition)】と呼ばれる．特に，ある集合 $\varOmega$ の範囲内で新たな集合を定義するとき，つまり</p>
-	<p><center>$\begin{align*}
-		\{x\,|\,(x\in\varOmega)\land P(x)\}
-		\end{align*}$</center></p>
-	<p>のような集合を考えるときはこれを</p>
-	<p><center>$\begin{align*}
-		\{x:(x\in\varOmega)\,|\,P(x)\}
-		\end{align*}$</center></p>
-	<p>と表記して良いということになるが，一般的には</p>
-	<p><center>$\begin{align*}
-		\{x\in\varOmega\,|\,P(x)\}
-		\end{align*}$</center></p>
-	<p>と略記される．</p>
-</Details>
+	<ul>
+		<li> ある集合が命題関数 $P(x)$ で定義されるとき，これを $\{x\,|\,P(x)\}$ と書く．これを集合の【外延的記法 (extensive notation)】と呼ぶ．</li>
+		<li> 集合を定義する命題関数の実現値が $a_1,\,a_2,\,\cdots,\,a_n$ に限られるとき，つまり集合の元がこれらでつくされているとき，この集合を
+			<p><center>$\begin{align*}
+				\{a_1,\,a_2,\,\cdots,\,a_n\}
+				\end{align*}$</center></p>
+			と書く．これを集合の【内包的記法 (intensive notation)】と呼ぶ．なお，無限個の元によりつくされている場合でも，内容が推測可能な場合は
+			<p><center>$\begin{align*}
+				\{a_1,\,a_2,\,\cdots\}
+				\end{align*}$</center></p>
+			のような表現を行う場合がある．</li>
+		<li> 集合 $\{x\,|\,P(x)\land Q(x)\}$ を
+			<p><center>$\begin{align*}
+				\{x:P(x)\,|\,Q(x)\}
+				\end{align*}$</center></p>
+			と表記することがあり，このとき $P(x)$ は $x$ の【付帯条件 (side condition)】と呼ばれる．特に，ある集合 $\varOmega$ の範囲内で新たな集合を定義するとき，つまり $\{x\,|\,(x\in\varOmega)\land P(x)\}$ のような集合を考えるときはこれを $\{x:(x\in\varOmega)\,|\,P(x)\}$ と表記して良いということになるが，一般的には
+			<p><center>$\begin{align*}
+				\{x\in\varOmega\,|\,P(x)\}
+				\end{align*}$</center></p>
+			と略記される．
+	</ul>
+	</Details>
+</div>
 <Details>
 	<summary>補足</summary>
 	<p>上述の通り，$a\in A$ は $P(a)$ であることを意味する．つまり，変項 $x$ に対して</p>
@@ -63,6 +64,21 @@ updated on 2022/3/6
 		(x\in A)\equiv P(x)
 		\end{align*}$</center></p>
 	<p>であることに注意せよ．</p>
+</Details>
+<Details>
+	<summary>例</summary>
+	<p><center>$\begin{align*}
+		A=\{x\,|\,x:\text{A prefecture of Shikoku in Japan}\}
+		\end{align*}$</center></p>
+	<p>と定めると，</p>
+	<p><center>$\begin{align*}
+		A=\{\text{Kagawa, Ehime, Tokushima, Kochi}\}
+		\end{align*}$</center></p>
+	<p>であり，例えば</p>
+	<p><center>$\begin{align*}
+		\text{Kagawa}\in A
+		\end{align*}$</center></p>
+	<p>が成り立つ．</p>
 </Details>
 <br><br>
   
@@ -263,6 +279,7 @@ updated on 2022/3/6
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+	<li>齋藤正彦: 線型代数学, 東京都書 (2014).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-3_shugo-enzan.pdf">尾畑伸明: pdf</a>.</li>
 	<li><a href="https://mathwords.net/wasyugou">和集合と積集合の意味と公式｜具体例で学ぶ数学</a></li>
 </ul>
