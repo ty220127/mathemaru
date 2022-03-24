@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
-<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
-			     TeX: {  extensions: ["cancel.js"] },
 			   });
 	MathJax.Hub.Config({ TeX: { Macros: { 
 		numref: ['{\\sf [\\# #1]}', 1],
@@ -31,7 +31,7 @@
 
 <p style="text-align:right;">
 established on 2022/3/4<br>
-updated on 2022/3/4
+updated on 2022/3/24
 </p>
     
 <div class="def" id="133">
@@ -39,7 +39,7 @@ updated on 2022/3/4
 	<p>グラフ $G=(V,\,E)$ に対し，頂点 $u$ と $v$ が隣接しているか否かを表すような行列 $A(G)$ を $G$ の【隣接行列 (adjacency matrix)】と呼ぶ：</p>
 	<p><center>$\begin{align*}
     		A(G) = [a_{uv}]_{u,v\in V}\in \mathbb{C}^{V\times V}\,\,\,\text{with}\,\,\,
-    		a_{uv} = \left\{\begin{array}{ll} 1 & (u\sim v)\\ 0 & (u\,\cancel{\sim}\,v) \end{array}\right..
+    		a_{uv} = \left\{\begin{array}{ll} 1 & (u\sim v)\\ 0 & (u \not \sim v) \end{array}\right..
     	\end{align*}$</center></p>
 	<p>なお $A(G)$ の固有値を $G$ の固有値と云って良い．また $G$ の固有値の集合を $G$ の【スペクトル (spectrum)】と呼び，$\mathrm{Spec}(G)$ で表す．</p>
 </div>
@@ -72,7 +72,7 @@ updated on 2022/3/4
 <Details>
 	<summary>証明</summary>
 	<p> $G=(V,\,E)$ とするとき，グラフの定義 <a href="graph.html#93">$\numref{93}$</a> より任意の
-		$v\in V$ に対して $vv\notin E$，すなわち $v\,\cancel{\sim}\,v$ であるから，定義 <a href="#133">$\numref{133}$</a> より $A(G) = [a_{uv}]_{u,v\in V}$ に対して
+		$v\in V$ に対して $vv\not \in E$，すなわち $v \not \sim v$ であるから，定義 <a href="#133">$\numref{133}$</a> より $A(G) = [a_{uv}]_{u,v\in V}$ に対して
 		$a_{vv}=0$．よって</p>
 	<p><center>$\begin{align*}
     		\tr(A(G)) = \sum_{v\in V}a_{vv} = 0.
