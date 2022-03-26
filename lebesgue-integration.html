@@ -25,15 +25,20 @@
 <body>
 <center><div id="titlehead">Lebesgue 積分</div></center>
 <br><br>
-    
+
+<p style="text-align:right;">
+established on 2022/3/18<br>
+updated on 2022/3/26
+</p>
+   
 <div class="def" id="44">
-<b>[#44] 定義：Lebesgue 積分</b><br>
+<b>[#44] 定義：<ruby><rb>Lebesgue</rb><rp>（</rp><rt>ルベーグ</rt><rp>）</rp></ruby> 積分</b><br>
 	<p>$\{E_i\}_{i=1}^{n}$ を互いに素な $\mathbb{R}^{N}$ 上 Lebesgue 可測集合とする．このとき，$\varphi(x)=\sig_{i=1}^{n}a_{i}\mathbf{1}_{E_i}(x)$ を階段関数と呼び，これを用いて定義される積分$\intgrl_{\varOmega}\varphi(x)\rd\mu=\sig_{i=1}^{n}a_{i}\mu(E_i)$ をLebesgue 積分と呼ぶ．</p>
 </div>
 <br><br>
 
 <div class="prp" id="156">
-<b>[#156] 命題：Fatou の補題</b><br>
+<b>[#156] 命題：<ruby><rb>Fatou</rb><rp>（</rp><rt>ファトゥー</rt><rp>）</rp></ruby> の補題</b><br>
 	<p>非負の可測関数 $\{f_n\}_{n\in\mathbb{N}}$ に対して</p>
 	<p><center>$\begin{align*}
 		\int_{X}\underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ f_n(x)\rd \mu \leq \underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\int_{X}f(x)\rd \mu.
@@ -42,7 +47,7 @@
 <br><br>
 
 <div class="prp" id="157">
-<b>[#157] 命題：Lebesgue の収束定理</b><br>
+<b>[#157] 命題：Lebesgue の優収束定理 (Lebesgue's dominated convergence theorem)</b><br>
 	<p>$L(X)$ の関数列 $\{f_n\}_{n\in\mathbb{N}}$ が次の２つの条件を満たすとする：</p>
 	<ul class="defl">
 		<li>関数 $f$ が存在して，任意の $x\in X$ に対して $\limit_{n\rightarrow\infty}f_n(x) = f(x)\,\,\text{a.e.}$</li>
@@ -50,8 +55,13 @@
 	</ul>
 	<p>このとき</p>
 	<p><center>$\begin{align*}
+		\lim_{n\rightarrow\infty}\int_{X}|f_n(x)-f(x)|\rd \mu,
+		\end{align*}$</center></p>
+	<p>つまり</p>
+	<p><center>$\begin{align*}
 		\lim_{n\rightarrow\infty}\int_{X}f_n(x)\rd \mu = \int_{X}f(x)\rd \mu.
 		\end{align*}$</center></p>
+	<p>ここで，関数 $g$ は【優関数 (dominated function)】と呼ばれる．
 </div>
 <br><br>
 
@@ -63,6 +73,8 @@
 		<li><a href="https://www.ms.u-tokyo.ac.jp/~aida/lecture/19/Lebesgue-text2.pdf">会田茂樹: ルベーグ積分入門, pdf (2007)</a>.</li>
 		<li><a href="https://mathematics-pdf.com/pdf/measure.pdf">測度｜MATHEMATICS.PDF</a></li> 
 		<li><a href="https://watanabeckeiich.hatenablog.com/entry/2016/10/08/214834">よくわかる測度論とルベーグ積分。｜べっく日記</a></li>
+		<li><a href="https://mathlandscape.com/dct/">ルベーグの収束定理(優収束定理)とその例題・証明｜数学の景色</a></li>
+		<li><a href="https://mathlandscape.com/fatou/">Fatouの補題とその証明・具体例・活用例｜数学の景色</a></li>
 </ul>	      
 </div>
       
