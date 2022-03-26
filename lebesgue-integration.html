@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
   <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
       MathJax.Hub.Config({ TeX: { Macros: { 
         bs: '\\boldsymbol', 
@@ -21,27 +22,52 @@
     </style>
   </head>
 
-  <body>
-     <center><div id="titlehead">Lebesgue 積分</div></center>
-    <br><br>
+<body>
+<center><div id="titlehead">Lebesgue 積分</div></center>
+<br><br>
     
-    <div class="def" id="44">
-      <b>[#44]定義：Lebesgue 積分</b><br>
-    $\{E_i\}_{i=1}^{n}$ を互いに素な $\mathbb{R}^{N}$ 上 Lebesgue 可測集合とする．このとき，$\varphi(x)=\sig_{i=1}^{n}a_{i}\mathbf{1}_{E_i}(x)$ を階段関数と呼び，これを用いて定義される積分$\intgrl_{\varOmega}\varphi(x)\rd\mu=\sig_{i=1}^{n}a_{i}\mu(E_i)$ をLebesgue 積分と呼ぶ．
-    </div>
-    <br><br>
+<div class="def" id="44">
+<b>[#44] 定義：Lebesgue 積分</b><br>
+	<p>$\{E_i\}_{i=1}^{n}$ を互いに素な $\mathbb{R}^{N}$ 上 Lebesgue 可測集合とする．このとき，$\varphi(x)=\sig_{i=1}^{n}a_{i}\mathbf{1}_{E_i}(x)$ を階段関数と呼び，これを用いて定義される積分$\intgrl_{\varOmega}\varphi(x)\rd\mu=\sig_{i=1}^{n}a_{i}\mu(E_i)$ をLebesgue 積分と呼ぶ．</p>
+</div>
+<br><br>
 
-    <div id="bib">
-      <b>参考文献</b>
-      <ul>
-        <li><a href="https://www.ms.u-tokyo.ac.jp/~aida/lecture/19/Lebesgue-text2.pdf">会田茂樹: ルベーグ積分入門, pdf (2007)</a>.</li>
-	<li><a href="https://mathematics-pdf.com/pdf/measure.pdf">測度｜MATHEMATICS.PDF</a></li> 
-        <li><a href="https://watanabeckeiich.hatenablog.com/entry/2016/10/08/214834">よくわかる測度論とルベーグ積分。｜べっく日記</a></li>
-      </ul>	      
-    </div>
+<div class="prp" id="156">
+<b>[#156] 命題：Fatou の補題</b><br>
+	<p>非負の可測関数 $\{f_n\}_{n\in\mathbb{N}}$ に対して</p>
+	<p><center>$\begin{align*}
+		\int_{X}\underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ f_n(x)\rd \mu \leq \underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\int_{X}f(x)\rd \mu.
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="157">
+<b>[#157] 命題：Lebesgue の収束定理</b><br>
+	<p>$L(X)$ の関数列 $\{f_n\}_{n\in\mathbb{N}}$ が次の２つの条件を満たすとする：</p>
+	<ul class="defl">
+		<li>関数 $f$ が存在して，任意の $x\in X$ に対して $\limit_{n\rightarrow\infty}f_n(x) = f(x)\,\,\text{a.e.}$</li>
+		<li>関数 $g\in L^1(X,\,\mu)$ が存在して，任意の $n\in\mathbb{N}$，$x\in X$ に対して $|f_n(x)|\leq g(x)\,\,\text{a.e.}$</li>
+	</ul>
+	<p>このとき</p>
+	<p><center>$\begin{align*}
+		\lim_{n\rightarrow\infty}\int_{X}f_n(x)\rd \mu = \int_{X}f(x)\rd \mu.
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+		<li>柴田良弘: ルベーグ積分論, 内田老鶴圃, (2006).</li>
+		<li><a href="https://www.ms.u-tokyo.ac.jp/~aida/lecture/19/Lebesgue-text2.pdf">会田茂樹: ルベーグ積分入門, pdf (2007)</a>.</li>
+		<li><a href="https://mathematics-pdf.com/pdf/measure.pdf">測度｜MATHEMATICS.PDF</a></li> 
+		<li><a href="https://watanabeckeiich.hatenablog.com/entry/2016/10/08/214834">よくわかる測度論とルベーグ積分。｜べっく日記</a></li>
+</ul>	      
+</div>
       
-    <p style="text-align:right;">
-    <a href="index.html">トップページに戻る</a>
-    </p>
-  </body>
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
 </html>
