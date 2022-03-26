@@ -14,6 +14,7 @@
 		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
+		rd: '\\mathrm{d}',
 		cpl: '\\mathrm{c}',
 		trp: '\\mathsf{T}',
 		deg: '\\mathrm{deg}',
@@ -32,7 +33,7 @@
 
 <p style="text-align:right;">
 established on 2022/3/20<br>
-updated on 2022/3/20
+updated on 2022/3/26
 </p>
     
 <div class="def" id="152">
@@ -43,6 +44,18 @@ updated on 2022/3/20
 		\end{align*}$</center></p>
 	<p>で与えられるような分布を平均 $m$，分散 $v$ の【正規分布 (normal distribution)】或いは【<ruby><rb>Gauss</rb><rp>（</rp><rt>ガウス</rt><rp>）</rp></ruby> 分布 (Gaussian distribution)】と呼び，$\mathrm{N}(m,\,v)$ で表す．特に平均 $0$，分散 $1$ の正規分布 $\mathrm{N}(0,\,1)$ を【標準正規分布 (standard normal distribution)】と呼ぶ．
 </div>
+<Details>
+<summary> $f$ が確率密度関数であることの確認</summary>
+	<p>全確率が $1$ であること，すなわち</p>
+	<p><center>$\begin{align*}
+		I := \int_{-\infty}^{\infty}\fraction{1}{\sqrt{2\pi v}}\exp\left(-\fraction{(x-m)^2}{2v}\right)\rd x = 1
+		\end{align*}$</center></p>
+	<p>を示す．$t=(x-m)/\sqrt{2v}$ とおくと $\rd t = \rd x/\sqrt{2v}$．故に</p>
+	<p><center>$\begin{align*}
+		I = \fraction{1}{\sqrt{2\pi v}}\int_{-\infty}^{\infty}\exp\left(-t^2\right)\cdot\sqrt{2v}\ \rd t = \fraction{1}{\sqrt{\pi}}\int_{-\infty}^{\infty}\exp\left(-t^2\right)\rd t.
+		\end{align*}$</center></p>
+	<p>よって Gauss 積分 $\int_{-\infty}^{\infty}\exp\left(-t^2\right)\rd t = \sqrt{\pi}$ より $I=1.$</p>
+</Details>
 <br><br>
 
 <div id="bib"><b>参考文献</b>
