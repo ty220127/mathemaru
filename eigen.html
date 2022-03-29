@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+  <head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim',
+	sig: '\\displaystyle\\sum',
+	intgrl: '\\displaystyle\\int',
+	cpl: '\\mathrm{c}',
+	rd: '\\mathrm{d}',
+      }}});
+    </script>
+    <title>固有値と固有ベクトル｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+    </style>
+  </head>
+
+<body>
+<center><div id="titlehead">固有値と固有ベクトル</div></center>
+
+<p style="text-align:right;">
+established on 2022/3/29<br>
+updated on 2022/3/29
+</p>
+
+<div class="def" id="160">
+<b>[#160] 定義：固有値，固有ベクトル</b><br>
+	<p> $n$ 次正方行列 $A$ に対して数 $\lambda\in\mathbb{C}$ と $n$ 次列ベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
+	<p><center>$\begin{align*}
+		A\bs{x} = \lambda\bs{x}
+		\end{align*}$</center></p>
+	<p>が成り立つとき，$\lambda$ を $A$ の【固有値 (eigenvalue)】，$\bs{x}$ を $\lambda$ に属する【固有ベクトル (eigenvector)】と呼ぶ．</p>
+</div>
+<br><br>
+
+<div class="prp" id="161">
+<b>[#161] 命題：固有方程式，固有多項式</b><br>
+	<p> $A$ を $n$ 次正方行列として，数 $\lambda\in\mathbb{C}$ が $A$ の固有値，$n$ 次列ベクトル $\bs{x}\not =\bs{0}$ が $\lambda$ に属する固有ベクトル $A$ の固有ベクトルであることは，以下の等式が成り立つことと同値である：</p>
+	<p><center>$\begin{align*}
+		\det(A -\lambda I) = 0.
+		\end{align*}$</center></p>
+	<p>ただし $I$ は $n$ 次の単位行列である．</p>
+</div>
+<br><br>
+
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
+</ul>	      
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
