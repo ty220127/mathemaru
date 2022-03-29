@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+  <head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim',
+	sig: '\\displaystyle\\sum',
+	intgrl: '\\displaystyle\\int',
+	cpl: '\\mathrm{c}',
+	rd: '\\mathrm{d}',
+      }}});
+    </script>
+    <title>正則行列と逆行列｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+    </style>
+  </head>
+
+<body>
+<center><div id="titlehead">正則行列と逆行列</div></center>
+
+<p style="text-align:right;">
+established on 2022/3/29<br>
+updated on 2022/3/29
+</p>
+
+<div class="def" id="163">
+<b>[#163] 定義：正則，逆行列</b><br>
+	<p> $n$ 次正方行列 $A$ と $n$ 次単位行列 $I$ に対して
+	<p><center>$\begin{align*}
+		AX=XA=I
+		\end{align*}$</center></p>
+	<p>を満たすような $n$ 次正方行列 $X$ が存在することを $A$ は【正則 (regular)】である，或いは【可逆 (invertible)】であると云う．また行列 $X$ を $A$ の【逆行列 (inverse matrix)】と呼び，$A^{-1}$ で表す．</p>
+</div>
+<br><br>
+
+<div class="prp" id="164">
+<b>[#164] 定義：正則行列の一意性</b><br>
+	<p> $n$ 次の正則行列 $A$ に対し逆行列 $A^{-1}$ は一意に定まる．</p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p>$n$ 次正方行列 $X,\,Y$ はともに $A$ の逆行列であるとする．このとき逆行列の定義 <a href="#163">[#163]</a> より</p>
+	<p><center>$\begin{align*}
+		AX=I.
+		\end{align*}$</center></p>
+	<p>いま，この式の両辺に左から $Y$ をかければ</p>
+	<p><center>$\begin{align*}
+		YAX=Y.
+		\end{align*}$</center></p>
+	<p>いま，逆行列の定義 <a href="#163">[#163]</a> より $YA=I$ であるから，</p>
+	<p><center>$\begin{align*}
+		IX=Y,\,\,\,\text{i.e.,}\,\,\,X=Y.
+		\end{align*}$</center></p>
+	<p>以上により $X$ と $Y$ は一致することから，これらを $A^{-1}$ と定めれば良い．</p>
+</Details>
+<br><br>
+
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>江川博康: 弱点克服 大学生の線形代数, 東京図書 (2006).</li>
+		<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社 (2012).</li>
+		<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
+		<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2020_05_03.pdf">嶺幸太郎: 線形代数学 講義ノート (2020/05/03ver.), pdf</a>.</li>
+</ul>	      
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
