@@ -5,11 +5,12 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
       MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-        limit: '\\displaystyle\\lim',
+	numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
+	bs: '\\boldsymbol', 
+	bcu: '\\displaystyle\\bigcup', 
+	bca: '\\displaystyle\\bigcap', 
+	fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+	limit: '\\displaystyle\\lim',
 	sig: '\\displaystyle\\sum',
 	intgrl: '\\displaystyle\\int',
 	cpl: '\\mathrm{c}',
@@ -27,7 +28,7 @@
 
 <p style="text-align:right;">
 established on 2022/3/29<br>
-updated on 2022/3/29
+updated on 2022/3/30
 </p>
 
 <div class="def" id="163">
@@ -41,7 +42,7 @@ updated on 2022/3/29
 <br><br>
 
 <div class="prp" id="164">
-<b>[#164] 定義：逆行列の一意性</b><br>
+<b>[#164] 命題：逆行列の一意性</b><br>
 	<p> $n$ 次の正則行列 $A$ に対し逆行列 $A^{-1}$ は一意に定まる．</p>
 </div>
 <Details>
@@ -59,6 +60,48 @@ updated on 2022/3/29
 		IX=Y,\,\,\,\text{i.e.,}\,\,\,X=Y.
 		\end{align*}$</center></p>
 	<p>以上により $X$ と $Y$ は一致することから，これらを $A^{-1}$ と定めれば良い．</p>
+</Details>
+<br><br>
+
+<div class="prp" id="165">
+<b>[#165] 命題：逆行列の逆行列</b><br>
+	<p> $n$ 次の正則行列 $A$ に対して
+	<p><center>$\begin{align*}
+		(A^{-1})^{-1} = A.
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p>$A^{-1} = B$ とすれば逆行列の定義 <a href="#163">[#163]</a>より，$I$ を $n$ 次の単位行列として</p>
+	<p><center>$\begin{align*}
+		AB = BA = I.
+		\end{align*}$</center></p>
+	<p>この式は $A$ が $B$ の逆行列であることも意味する．つまり</p>
+	<p><center>$\begin{align*}
+		(A^{-1})^{-1} = B^{-1} = A.
+		\end{align*}$</center></p>
+</Details>
+<br><br>
+
+<div class="prp" id="166">
+<b>[#166] 命題：正則行列の積の逆行列</b><br>
+	<p> $n$ 次の正則行列 $A_1,\,A_2,\,\cdots,\,A_{N-1},\,A_N$ に対して，その積 $P=A_1A_2\cdots A_{N-1}A_N$ を定義すれば，これもまた正則であり，逆行列は
+	<p><center>$\begin{align*}
+		P^{-1} = A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}.
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p> $Q=A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}$ とすれば，逆行列の定義 <a href="#163">[#163]</a> を繰り返し用いることにより</p>
+	<p><center>$\begin{align*}
+		PQ =\,\,& (A_1A_2\cdots A_{N-1}A_N)(A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1})\\
+			=\,\,&A_1A_2\cdots A_{N-1}(A_NA_N^{-1}) A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}\\
+			\underset{\href{#163}{\numref{163}}}{=}& A_1A_2\cdots A_{N-1}I A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}\\
+			=\,\,&A_1A_2\cdots A_{N-2}(A_{N-1}A_{N-1}^{-1})A_{N-2}^{-1}\cdots A_2^{-1} A_1^{-1}\\
+			=\,\,&\cdots\\
+			=\,\,&A_1A_1^{-1} \underset{\href{#163}{\numref{163}}}{=} I,
+		\end{align*}$</center></p>
+	<p>つまり $PQ=I$ を得る．同様にして $QP=I$ も得られ，逆行列は一意である <a href="#164">[#164]</a> ことから $Q=P^{-1}$ が従う．</p>
 </Details>
 <br><br>
 
