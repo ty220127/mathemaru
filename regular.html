@@ -15,6 +15,7 @@
 	intgrl: '\\displaystyle\\int',
 	cpl: '\\mathrm{c}',
 	rd: '\\mathrm{d}',
+	twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
       }}});
     </script>
     <title>正則行列と逆行列｜演習問題集</title>
@@ -92,16 +93,38 @@ updated on 2022/3/30
 </div>
 <Details>
 <summary>証明</summary>
-	<p> $Q=A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}$ とすれば，逆行列の定義 <a href="#163">[#163]</a> を繰り返し用いることにより</p>
+	<p> $X=A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}$ とすれば，逆行列の定義 <a href="#163">[#163]</a> を繰り返し用いることにより</p>
 	<p><center>$\begin{align*}
-		PQ =\,\,& (A_1A_2\cdots A_{N-1}A_N)(A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1})\\
+		PX =\,\,& (A_1A_2\cdots A_{N-1}A_N)(A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1})\\
 			=\,\,&A_1A_2\cdots A_{N-1}(A_NA_N^{-1}) A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}\\
 			\underset{\href{#163}{\numref{163}}}{=}& A_1A_2\cdots A_{N-1}I A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}\\
 			=\,\,&A_1A_2\cdots A_{N-2}(A_{N-1}A_{N-1}^{-1})A_{N-2}^{-1}\cdots A_2^{-1} A_1^{-1}\\
 			=\,\,&\cdots\\
 			=\,\,&A_1A_1^{-1} \underset{\href{#163}{\numref{163}}}{=} I,
 		\end{align*}$</center></p>
-	<p>つまり $PQ=I$ を得る．同様にして $QP=I$ も得られ，逆行列は一意である <a href="#164">[#164]</a> ことから $Q=P^{-1}$ が従う．</p>
+	<p>つまり $PX=I$ を得る．同様にして $XP=I$ も得られ，逆行列は一意である <a href="#164">[#164]</a> ことから $X=P^{-1}$ が従う．</p>
+</Details>
+<br><br>
+
+<div class="prp" id="167">
+<b>[#167] 命題：２次正方行列の逆行列</b><br>
+	<p> ２次正方行列 $A = \twobytwo{a}{b}{c}{d}$ が正則であるならば，その逆行列は
+	<p><center>$\begin{align*}
+		A^{-1} = \fraction{1}{ad-bc}\twobytwo{d}{-b}{-c}{a}.
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p> $X=\fraction{1}{ad-bc}\twobytwo{d}{-b}{-c}{a}$ とすれば</p>
+	<p><center>$\begin{align*}
+		AX =\,\,& \twobytwo{a}{b}{c}{d}\left(\fraction{1}{ad-bc}\twobytwo{d}{-b}{-c}{a}\right)\\
+		=\,\,& \fraction{1}{ad-bc}\twobytwo{ad-bc}{ab-ab}{cd-cd}{ad-bc} = I,
+		\end{align*}$</center></p>
+	<p><center>$\begin{align*}
+		XA =\,\,& \left(\fraction{1}{ad-bc}\twobytwo{d}{-b}{-c}{a}\right)\twobytwo{a}{b}{c}{d}\\
+		=\,\,& \fraction{1}{ad-bc}\twobytwo{ad-bc}{bd-bd}{ac-ac}{ad-bc} = I
+		\end{align*}$</center></p>
+	<p>を得る．逆行列は一意である <a href="#164">[#164]</a> ことから $X=A^{-1}$ が従う．</p>
 </Details>
 <br><br>
 
