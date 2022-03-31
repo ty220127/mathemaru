@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+  <head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+        bs: '\\boldsymbol', 
+        bcu: '\\displaystyle\\bigcup', 
+        bca: '\\displaystyle\\bigcap', 
+        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        limit: '\\displaystyle\\lim',
+	sig: '\\displaystyle\\sum',
+	intgrl: '\\displaystyle\\int',
+	cpl: '\\mathrm{c}',
+	rd: '\\mathrm{d}',
+      }}});
+    </script>
+    <title>指示関数｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+    </style>
+  </head>
+
+<body>
+<center><div id="titlehead">指示関数</div></center>
+
+<p style="text-align:right;">
+isolated from <a href="simple-function.html">単関数</a> on 2022/3/31<br>
+updated on 2022/3/31
+</p>
+   
+<div class="def" id="158">
+<b>[#158] 定義：指示関数</b><br>
+	<p>集合 $\varOmega$ とその部分集合 $A$ に対して，引数が $A$ に属するか否かを表す関数 $\mathbf{1}_A: \varOmega\rightarrow \{0,\,1\}$ を【指示関数 (indicator function)】或いは【定義関数 (defining function)】と呼ぶ：</p>
+	<p><center>$\begin{align*}
+		\mathbf{1}_A(x) = \left\{\begin{array}{ll}
+		1 & (x\in A) \\ 0 & (x\not\in A)
+		\end{array}\right..
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="168">
+<b>[#168] 命題：指示関数の性質</b><br>
+	<p>集合 $A$ と互いに素な集合列 $\{B_\lambda\}_{\lambda\in\varLambda}$ が $A\subset \bigcup_{\lambda\in\varLambda} B_\lambda$ を満たすとき，</p>
+	<p><center>$\begin{align*}
+		\mathbf{1}_A = \sum_{\lambda\in\varLambda}\mathbf{1}_{A\cup B_\lambda}.
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+		<li><a href="https://mathlandscape.com/indicator-function/">定義関数(指示関数,特性関数)とは｜数学の景色</a></li>
+</ul>	      
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
