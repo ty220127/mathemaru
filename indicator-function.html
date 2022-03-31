@@ -42,7 +42,20 @@ updated on 2022/3/31
 <br><br>
 
 <div class="prp" id="168">
-<b>[#168] 命題：指示関数の性質</b><br>
+<b>[#168] 命題：指示関数の基本的性質</b><br>
+	<p>指示関数を，$\varOmega$ を定義域として定めるとき，</p>
+	<p><center>$\begin{align*}
+		\mathbf{1}_\varOmega \equiv 1,\quad \mathbf{1}_\emptyset \equiv 0.
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p>指示関数の定義 <a href="#158">[#158]</a> より，任意の $x\in\varOmega$ に対して $\mathbf{1}_\varOmega (x) = 1$ であり，また空集合の定義 <a href="set.html#110">[#110]</a> より $x\not\in\emptyset$ であるから $\mathbf{1}_\emptyset(x) = 0.$</p>
+</Details>
+<br><br>
+
+<div class="prp" id="169">
+<b>[#169] 命題：指示関数の性質</b><br>
 	<p>集合 $A$ と互いに素な集合列 $\{B_\lambda\}_{\lambda\in\varLambda}$ が $A\subset \bigcup_{\lambda\in\varLambda} B_\lambda$ を満たすとき，</p>
 	<p><center>$\begin{align*}
 		\mathbf{1}_A = \sum_{\lambda\in\varLambda}\mathbf{1}_{A\cup B_\lambda}.
