@@ -1,89 +1,91 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
   <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
       MathJax.Hub.Config({ TeX: { Macros: { 
         bs: '\\boldsymbol', 
         bcu: '\\displaystyle\\bigcup', 
         bca: '\\displaystyle\\bigcap', 
         fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-        limit: '\\displaystyle\\lim'
-      }}});    </script>
-    <title>累積分布関数，確率密度関数｜演習問題集</title>
+        limit: '\\displaystyle\\lim',
+	sig: '\\displaystyle\\sum',
+	intgrl: '\\displaystyle\\int',
+	cpl: '\\mathrm{c}',
+	rd: '\\mathrm{d}',
+      }}});
+    </script>
+    <title>分布関数｜演習問題集</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
     <style>
-      titlehead{
-        font-size: 40px;
-        font-family: sans-serif;
-      }
-      .def{
-        padding: 10px; 
-        margin-bottom: 10px; 
-        border: none; 
-        background-color: #ffff99;
-      }
-      .prp{
-        padding: 10px; 
-        margin-bottom: 10px; 
-        border: none; 
-        background-color: #b2f9ff;
-      }
-      bib{
-        font-size: 15px;
-      }
     </style>
   </head>
 
-  <body>
-    <center><titlehead>σ加法族</titlehead></center>
-    <br><br>
-    
-    <div class="def" id="17">
-      <b>[#17]定義：累積分布関数</b><br>
-      $F(x) =  P((-\infty,\,x]) =  P(\{\omega\in\mathbb{R}\,|\,-\infty \lt\omega \leq x\})$ なる関数 $F:\mathcal{B}(\mathbb{R})\rightarrow [0,\,1]$ を（累積）分布関数と呼ぶ．
-    </div>
-    <br><br>
-    
-    <div class="prp" id="18">
-      <b>[#18]命題：累積分布関数は単調非減少</b><br>
-      分布関数 $F$ は単調非減少である，つまり，
-	<center>$x\leq y\,\,\Longrightarrow\,\, F(x)\leq F(y)$.</cetner>
-    </div>
-    <Details>
-	    <summary>証明</summary>
-    </Details>
-    <br><br>
+<body>
+<center><div id="titlehead">分布関数</div></center>
+
+<p style="text-align:right;">
+established on 2022/1/27<br>
+updated on 2022/4/2
+</p>
+   
+<div class="def" id="17">
+<b>[#17] 定義：分布関数</b><br>
+	<p>実数空間 $\mathbb{R}$ とその Borel 集合族 <a href="borel-set.html#148">[#148]</a> $\mathcal{B}(\mathbb{R})$ により定義される確率空間 $(\mathbb{R},\,\mathcal{B}(\mathbb{R}),\,P)$ に対し，関数 $F:\mathcal{B}(\mathbb{R})\rightarrow [0,\,1]$ を</p>
+	<p><center>$\begin{align*}
+		F(x) :=  P((-\infty,\,x]) =  P(\{\omega\in\mathbb{R}\,|\,-\infty \lt\omega \leq x\})
+		\end{align*}$</center></p>
+	<p>と定義し，これを【分布関数 (distribution function)】或いは【累積分布関数 (cumulative distribution function】と呼ぶ．</p>
+</div>
+<br><br>
+
+<div class="prp" id="18">
+<b>[#18] 命題：分布関数は単調非減少</b><br>
+	<p>分布関数 $F$ は単調非減少である，つまり</p>
+	<p><center>$\begin{align*}
+		x\leq y\,\,\Longrightarrow\,\, F(x)\leq F(y).
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+</Details>
+<br><br>
 	  
-    <div class="prp" id="19">
-      <b>[#19]命題：累積分布関数は右連続</b><br>
-      分布関数 $F$ は右連続である，つまり，
-	<center>$\limit_{x\rightarrow a+0} F(x) = F(a)$.</center>
-    </div>
-    <Details>
-	    <summary>証明</summary>
-    </Details>
-    <br><br>
+<div class="prp" id="19">
+<b>[#19] 命題：分布関数は右連続</b><br>
+	<p>分布関数 $F$ は右連続である，つまり</p>
+	<p><center>$\begin{align*}
+		\limit_{x\rightarrow a+0} F(x) = F(a).
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+</Details>
+<br><br>
 	  
-    <div class="prp" id="20">
-      <b>[#20]命題：累積分布関数の性質</b><br>
-      分布関数 $F$ について，
-	<center>$\limit_{x\rightarrow -\infty} F(x) = 0$,　$\limit_{x\rightarrow +\infty}F(x) =  1$.</center>
-    </div>
-    <Details>
-	    <summary>証明</summary>
-    </Details>
-    <br><br>
-	  
-    <bib>
-      <b>参考文献</b>
-      <ul>
-        <li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
-        <li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
-      </ul>
-    </bib>
-	  
-    <p style="text-align:right;">
-    <a href="index.html">トップページに戻る</a>
-    </p>
-  </body>
+<div class="prp" id="20">
+<b>[#20] 命題：分布関数の性質</b><br>
+	<p>分布関数 $F$ について</p>
+	<p><center>$\begin{align*}
+		\limit_{x\rightarrow -\infty} F(x) = 0,\,\,\limit_{x\rightarrow +\infty}F(x) =  1.
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+</Details>
+<br><br>
+
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+		<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+</ul>	      
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
 </html>
