@@ -27,12 +27,12 @@
 
 <p style="text-align:right;">
 established on 2022/1/27<br>
-updated on 2022/4/3
+updated on 2022/4/4
 </p>
    
 <div class="def" id="17">
 <b>[#17] 定義：分布関数</b><br>
-	<p>実数空間 $\mathbb{R}$ とその Borel 集合族 <a href="borel-set.html#148">[#148]</a> $\mathcal{B}(\mathbb{R})$ により定義される確率空間 $(\mathbb{R},\,\mathcal{B}(\mathbb{R}),\,P)$ に対し，関数 $F:\mathbb{R}\rightarrow [0,\,1]$ を</p>
+	<p>実数空間 $\mathbb{R}$ とその Borel 集合族 <a href="borel-set.html#148">[#148]</a> $\mathcal{B}(\mathbb{R})$ により定義される確率空間 <a href="probmeasure.html#12">[#12]</a> $(\mathbb{R},\,\mathcal{B}(\mathbb{R}),\,P)$ に対し，関数 $F:\mathbb{R}\rightarrow [0,\,1]$ を</p>
 	<p><center>$\begin{align*}
 		F(x) :=  P((-\infty,\,x]) =  P(\{\omega\in\mathbb{R}\,|\,-\infty \lt\omega \leq x\})
 		\end{align*}$</center></p>
@@ -40,20 +40,41 @@ updated on 2022/4/3
 </div>
 <br><br>
 
-<div class="prp" id="18">
-<b>[#18] 命題：分布関数は単調非減少</b><br>
-	<p>分布関数 $F$ は単調非減少である，つまり</p>
+<div class="prp" id="170">
+<b>[#170] 命題：左に有界な区間の分布関数</b><br>
+	<p>確率空間 $(\mathbb{R},\,\mathcal{B}(\mathbb{R}),\,P)$ 上の分布関数を $F$ とするとき，</p>
 	<p><center>$\begin{align*}
-		x\leq y\,\,\Longrightarrow\,\, F(x)\leq F(y).
+		P((x,\,\infty)) = 1-F(x).
 		\end{align*}$</center></p>
 </div>
 <Details>
 <summary>証明</summary>
-	<p>仮定より $(-\infty,\,x]\subset (-\infty,\,y]$ であることから，測度の単調性 <a href="measure.html#26">[#26]</a> により
+	<p> $(x,\,\infty)\subset \mathbb{R}\setminus (-\infty,\,x]$ であることから，測度の単調性 <a href="measure.html#26">[#26]</a> により
 	<p><center>$\begin{align*}
-		P((-\infty,\,x]) \leq  P((-\infty,\,y])
+		P((x,\,\infty)) =  P(\mathbb{R}) - P((-\infty,\,x])
 		\end{align*}$</center></p>
-	<p>が成り立つ．よって分布関数の定義 <a href="#17">[#17]</a> より題意は示される．</p>
+	<p>が成り立つ．普遍集合の確率測度は $1$ であり（$P(\mathbb{R})=1$; <a href="probmeasure.html#12">[#12]</a> -(i)），かつ分布関数の定義 <a href="#17">[#17]</a> より $P((-\infty,\,x]) = F(x)$ であることから題意は示される．</p>
+</Details>
+<br><br>
+	  
+<div class="prp" id="18">
+<b>[#18] 命題：分布関数の単調非減少性</b><br>
+	<p>確率空間 $(\mathbb{R},\,\mathcal{B}(\mathbb{R}),\,P)$ 上の分布関数を $F$ とするとき，$x\lt y$ であるならば</p>
+	<p><center>$\begin{align*}
+		P((x,\,y]) = F(y)- F(x)
+		\end{align*}$</center></p>
+	<p>であり，特に</p>
+	<p><center>$\begin{align*}
+		F(x)\lt F(y).
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p>仮定より $(x,\,y]\subset (-\infty,\,y]\setminus (-\infty,\,x]$ であることから，測度の単調性 <a href="measure.html#26">[#26]</a> により
+	<p><center>$\begin{align*}
+		P((x,\,y]) =  P((-\infty,\,y]) - P((-\infty,\,x])
+		\end{align*}$</center></p>
+	<p>が成り立つ．よって分布関数の定義 <a href="#17">[#17]</a> より題意の等式は示される．また，続く不等式も，測度の定義 <a href="measure.html#24">[#24]</a> により直ちに従う．</p>
 </Details>
 <br><br>
 	  
@@ -81,11 +102,21 @@ updated on 2022/4/3
 </Details>
 <br><br>
 
+<div class="prp" id="171">
+<b>[#171] 命題：分布関数の不連続点</b><br>
+	<p>分布関数 $F$ の不連続点は高々加算個である．</p>
+</div>
+<Details>
+<summary>証明</summary>
+</Details>
+<br><br>
+	  
 <div id="bib">
 <b>参考文献</b>
 	<ul>
 		<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
 		<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+		<li><a href="https://mathlandscape.com/distrib-func/#toc12">累積分布関数(分布関数)の定義と例と性質7つ｜数学の景色</a></li>
 </ul>	      
 </div>
       
