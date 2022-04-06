@@ -1,70 +1,62 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
   <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
       MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-        limit: '\\displaystyle\\lim',
-	sig: '\\displaystyle\\sum',
-	cpl: '\\mathrm{c}'
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		intgrl: '\\displaystyle\\int',
+		cpl: '\\mathrm{c}',
+		rd: '\\mathrm{d}',
       }}});
     </script>
     <title>確率変数｜演習問題集</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
     <style>
-      titlehead{
-        font-size: 200%;
-        font-family: sans-serif;
-      }
-      .def{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #ffff99;
-      }
-      .prp{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2f9ff;
-      }
-      .clc{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2ffb2;
-      }
-      bib{
-        font-size: 95%;
-      }
     </style>
   </head>
 
-  <body>
-    <center><titlehead>確率変数</titlehead></center>
-    <br><br>
-    
-    <div class="def" id="23">
-      <b>[#23]定義：確率変数</b><br>
-      $(\varOmega,\,\mathcal{F}),\,(\varOmega',\,\mathcal{F}')$ を可測空間とする．$(\varOmega,\,\mathcal{F})$ 上の確率測度が定まっているとき，
-	    $\mathcal{F}/\mathcal{F}'$ -可測関数<a href="measurable-function.html#29">[#29]</a> $X:\varOmega\rightarrow\varOmega'$ を $\varOmega'$-値確率変数 (random variable) と呼ぶ．
-      特に $\varOmega'=\mathbb{R}$，$\mathcal{F}'=\mathcal{B}(\mathbb{R})$ であるときは，単に確率変数と呼ぶ．
-    </div>
-    <br><br>
-        
-    <bib>
-      <b>参考文献</b>
-      <ul>
-        <li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
-	<li><a href="https://www.math.kyoto-u.ac.jp/~ichiro/lectures/06bpr.pdf">重川一郎: 確率論基礎, pdf (2007).</a>
-      </ul>
-    </bib>
+<body>
+<center><div id="titlehead">確率変数</div></center>
+
+<p style="text-align:right;">
+established on 2022/1/30<br>
+updated on 2022/4/6
+</p>
+   
+<div class="def" id="23">
+<b>[#23] 定義：確率変数</b><br>
+	<p> $(\varOmega,\,\mathcal{F}),\,(\varOmega',\,\mathcal{F}')$ を可測空間 <a href="measure.html#10">[#10]</a> とする．$(\varOmega,\,\mathcal{F})$ 上の確率測度 <a href="probmeasure.html#12">[#12]</a> が定まっているとき，$\mathcal{F}/\mathcal{F}'$ -可測関数 <a href="measurable-function.html#29">[#29]</a> $X:\varOmega\rightarrow\varOmega'$ を $\varOmega$ 上の【$\varOmega'$-値確率変数 ($\varOmega$-valued random variable)】と呼ぶ．特に $\varOmega'=\mathbb{R}$，$\mathcal{F}'=\mathcal{B}(\mathbb{R})$ であるときは，単に【確率変数 (random variable)】と呼ぶ．</p>
+</div>
+<br><br>
+  
+<div class="def" id="172">
+<b>[#172] 定義：像測度，分布</b><br>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間 <a href="probmeasure.html#12">[#12]</a>，$(\varOmega',\,\mathcal{F}')$ を可測空間 <a href="measure.html#10">[#10]</a> とし，$X:\varOmega\rightarrow\varOmega'$ を $\varOmega$ 上の $\varOmega'$-値確率変数とする．このとき，写像 $P^X:\mathcal{F}'\rightarrow [0,\,1]$ を</p>
+	<p><center>$\begin{align*}
+		P^X = P\circ X^{-1}
+		\end{align*}$</center></p>
+	<p>と定め，これを $X$ による $(\varOmega',\,\mathcal{F})$ への【像測度 (image measure)】と呼ぶ．特に $(\varOmega',\,\mathcal{F}) = (\mathbb{R},\,\mathcal{B}(\mathbb{R}))$ のとき $P^X$ は $X$ の【分布 (distribution)】或いは【法則 (law)】と呼ばれる．
+</div>
+<br><br>
+  
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+		<li><a href="https://www.math.kyoto-u.ac.jp/~ichiro/lectures/06bpr.pdf">重川一郎: 確率論基礎, pdf (2007).</a></li>
+	</ul>	      
+</div>
       
-    <p style="text-align:right;">
-    <a href="index.html">トップページに戻る</a>
-    </p>
-  </body>
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
 </html>
