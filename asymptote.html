@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+  <head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		intgrl: '\\displaystyle\\int',
+		cpl: '\\mathrm{c}',
+		rd: '\\mathrm{d}',
+      }}});
+    </script>
+    <title>漸近記法｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+    </style>
+  </head>
+
+<body>
+<center><div id="titlehead">漸近記法</div></center>
+
+<p style="text-align:right;">
+established on 2022/4/8<br>
+updated on 2022/4/8
+</p>
+   
+<div class="def" id="174">
+<b>[#174] 定義：Landau の記法</b><br>
+	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとする．</p>
+	<ul> 
+		<li>$f(x)$ の発散スピードが速くとも $g(x)$ と同じ程度であることを $f(x)\in O(g(x))$ 或いは $f(x) = O(g(x))\,(x\rightarrow a)$ と書く：
+		<p><center>$\begin{align*}
+			f(x) = O(g(x))\,(x\rightarrow a)\,\,\overset{\rm def}{\Longleftrightarrow}\,\,\lim_{x\rightarrow a} \fraction{f(x)}{g(x)} \lt \infty.
+			\end{align*}$</center></p>
+		<li>$f(x)$ の発散スピードが速くとも $g(x)$ 未満であることを $f(x) = o(g(x))\,(x\rightarrow a)$ と書く：
+		<p><center>$\begin{align*}
+			f(x) = o(g(x))\,(x\rightarrow a)\,\,\overset{\rm def}{\Longleftrightarrow}\,\,\lim_{x\rightarrow a} \fraction{f(x)}{g(x)} = 0.
+			\end{align*}$</center></p>
+	</ul>
+	<p>これら $O,\,o$ をまとめて【<ruby><rb>Landau</rb><rp>（</rp><rt>ランダウ</rt><rp>）</rp></ruby> の記号 (Landau symbol)】と呼ぶ．
+</div>
+<br><br>
+	  
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li><a href="https://www.kurims.kyoto-u.ac.jp/~ishimoto/files/note_calculus.pdf">石本健太: 講義ノート「微分積分学」, pdf (2020)</a>.</li>
+		<li><a href="https://mathlandscape.com/landau-o/">ランダウの記号とは～ビッグオー・スモールオー～｜数学の景色</a></li>
+		<li><a href="https://manabitimes.jp/math/1200">オーダー記法の定義と大雑把な意味｜高校数学の美しい物語</a></li>
+		<li><a href="https://www.hanachiru-blog.com/entry/2020/05/31/120000">オーダー記法(O記法，Ω記法，Θ記法)の定義についてのメモ｜はなちるのマイノート</a></li>
+		<li><a href="https://algo-logic.info/asymptotic-analysis/">漸近記法の定義とアルゴリズムの計算量の解析｜アルゴリズムロジック</a></li>
+</ul>	      
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
