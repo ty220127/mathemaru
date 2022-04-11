@@ -32,53 +32,52 @@
 
 <p style="text-align:right;">
 established on 2022/3/14<br>
-updated on 2022/3/14
+updated on 2022/4/11
 </p>
     
 <div class="def" id="144">
 	<b>[#144] 定義：行列</b><br>
-	<p> $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個と長方形状に並べた表を $m\times n$ 型【行列 (matrix)】と呼ぶ．</p>
+	<p> $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個と長方形状に並べた表を【$(m,\,n)$-行列 ($(m,\,n)$-matrix)】と呼ぶ．</p>
 	<ul>
-		<li> 行列の上から $i$ 番目を【第 $i$ 行 (the $i$-th row)】，左から $j$ 番目を【第 $j$ 列 (the $j$-th column)】と呼ぶ．</li>
-		<li> $m\times n$ 型行列が持つ $mn$ 個の数を行列の【成分 (component)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の $(i,\,j)$ 成分と呼ぶ．</li>
-		<li> $1\leq i\leq m$ ，$1\leq j\leq n$ に対して行列 $A$ の $(i,\,j)$ 成分を $a_{ij}$ と書くと決めれば，行列 $A$ は
+		<li> 行列の縦の並びを【行 (row)】，横の並びを【列 (column)】と呼び，特に行列の上から $i$ 番目を【第 $i$ 行 (the $i$-th row)】，左から $j$ 番目を【第 $j$ 列 (the $j$-th column)】と呼ぶ．</li>
+		<li> $m\times n$ 型行列が持つ $mn$ 個の各数を行列の【成分 (element, entry)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の【$(i,\,j)$-成分 ($(i,\,j)$-element)】と呼ぶ．</li>
+		<li>  行と列の数が等しく，その数が $n$ であるような行列を【 $n$ 次正方行列 (square matrix of order $n$)】と呼ぶ．
+		<li> $m$ 個の数による行のみの行列（$n=1$）を【 $m$ 次行ベクトル ($m$-row vector)】，$n$ 個の数による列のみの行列（$m=1$）を【 $n$ 次列ベクトル ($n$-column vector)】と呼ばれる．</li>
+		<!--<li> 「$m\times n$ 行列 $A = [a_{ij}]$ と $s\times t$ 行列 $B=[b_{ij}]$ が等しい」とは $m=s$ かつ $n=t$ であり，更に任意の組 $(i,\,j)$ に対して $a_{ij} = b_{ij}$ が成り立つことを云う．</li>-->
+  </ul>
+
+	<Details>
+	<summary>記法</summary>
+	<ul>
+		<li> $1\leq i\leq m$ ，$1\leq j\leq n$ に対して行列 $A$ の $(i,\,j)$-成分を $a_{ij}$ と書くと決めれば，行列 $A$ は
 			<p><center>$\begin{align}
 				A= \left[\begin{array}{cccc}
 				a_{11} & a_{12} & \cdots & a_{1n}\\
 				a_{21} & a_{22} & \cdots & a_{2n}\\
 				\vdots & \vdots & \ddots & \vdots\\
 				a_{m1} & a_{m2} & \cdots & a_{mn}
-				\end{array}\right]
+				\end{array}\right],\quad 
+				A= \left(\begin{array}{cccc}
+				a_{11} & a_{12} & \cdots & a_{1n}\\
+				a_{21} & a_{22} & \cdots & a_{2n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				a_{m1} & a_{m2} & \cdots & a_{mn}
+				\end{array}\right)
 				\end{align}$</center></p>
-			と表記される．なお，記法上の誤解が生じない場合はこれを $A=[a_{ij}]$ と略記することもある．</li>
-		<li>  $m=n$ であるような行列を $n$ 次【正方行列 (square matrix)】と呼ぶ．また $n=1$ の行列は $m$ 次【列ベクトル (row vector)】，$m=1$ の行列は $n$ 次【行ベクトル (column vector)】と呼ばれる．</li>
-		<li> 「$m\times n$ 行列 $A = [a_{ij}]$ と $s\times t$ 行列 $B=[b_{ij}]$ が等しい」とは $m=s$ かつ $n=t$ であり，更に任意の組 $(i,\,j)$ に対して $a_{ij} = b_{ij}$ が成り立つことを云う．</li>
-  </ul>
+			などと表記される（本サイトでは左の表記を採用する）．</li>
+		<li>記法上の誤解が生じない場合は，上の取り決めのもとで $A=[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ と略記することがある．行列の型も自明な場合は更に簡略化して $A=[a_{ij}]$ と書く．</li>
+	</ul>
+	</Details>
 </div>
 <br><br>
 
 <div class="def" id="145">
 	<b>[#145] 定義：行列の和とスカラー倍</b><br>
-	<p> $m\times n$ 型行列 $A,\,B$ を</p>
-	<p><center>$\begin{align}
-		A= \left[\begin{array}{cccc}
-		a_{11} & a_{12} & \cdots & a_{1n}\\
-	  	a_{21} & a_{22} & \cdots & a_{2n}\\
-	  	\vdots & \vdots & \ddots & \vdots\\
-	  	a_{m1} & a_{m2} & \cdots & a_{mn}
-	  	\end{array}\right],\quad
-		B= \left[\begin{array}{cccc}
-	  	b_{11} & b_{12} & \cdots & b_{1n}\\
-	  	b_{21} & b_{22} & \cdots & b_{2n}\\
-	  	\vdots & \vdots & \ddots & \vdots\\
-	  	b_{m1} & b_{m2} & \cdots & b_{mn}
-	  	\end{array}\right]
-		\end{align}$</center></p>
-	<p>と定義すると，これらの和とスカラー倍は以下のように定義される．</p>
+	<p> $(m,\,n)$-行列 $A,\,B$ を $A=[a_{ij}]$，$B=[b_{ij}]$ と定義すると，これらの和とスカラー倍は以下のように定義される．</p>
 	<ul>
 		<li>和：
 			<p><center>$\begin{align*}
-				A+B = \left[\begin{array}{cccc}
+				A+B = [a_{ij}+b_{ij}]= \left[\begin{array}{cccc}
 				a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n}\\
 				a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n}\\
 				\vdots & \vdots & \ddots & \vdots\\
@@ -87,7 +86,7 @@ updated on 2022/3/14
 				\end{align*}$</center></p></li>
 		<li>スカラー倍：数 $c$ に対して
 			<p><center>$\begin{align*}
-				cA = \left[\begin{array}{cccc}
+				cA = [ca_{ij}]= \left[\begin{array}{cccc}
 				ca_{11} & ca_{12} & \cdots & ca_{1n}\\
 			  	ca_{21} & ca_{22} & \cdots & ca_{2n}\\
 			  	\vdots & \vdots & \ddots & \vdots\\
@@ -101,6 +100,7 @@ updated on 2022/3/14
 
 <div id="bib"><b>参考文献</b>
 <ul>
+	<li><a href="https://joshua.smcvt.edu/linearalgebra/book.pdf">Jim Hefferon: Linear algebra, fourth edition, pdf</a>.</li>
 	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
 	<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2020_05_03.pdf">嶺幸太郎: 線形代数学 講義ノート (2020/05/03ver.), pdf</a>.</li>
 </ul>
