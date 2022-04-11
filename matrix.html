@@ -72,10 +72,10 @@ updated on 2022/4/11
 <br><br>
 
 <div class="def" id="145">
-	<b>[#145] 定義：行列の和とスカラー倍</b><br>
-	<p> $(m,\,n)$-行列 $A,\,B$ を $A=[a_{ij}]$，$B=[b_{ij}]$ と定義すると，これらの和とスカラー倍は以下のように定義される．</p>
+	<b>[#145] 定義：行列の線形演算</b><br>
+	<p> $A=[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$，$B=[b_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ をそれぞれ $(m,\,n)$-行列とする．</p>
 	<ul>
-		<li>和：
+		<li>以下で定義される演算 $A+B$ を行列の【加法 (addition)】と呼び，その結果を【和 (sum)】と呼ぶ：
 			<p><center>$\begin{align*}
 				A+B =\,\,& [a_{ij}+b_{ij}]\\
 				=\,\,&\left[\begin{array}{cccc}
@@ -85,7 +85,7 @@ updated on 2022/4/11
 				a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
 				\end{array}\right].
 				\end{align*}$</center></p></li>
-		<li>スカラー倍：数 $c$ に対して
+		<li> $c$ を数として定義される以下の演算を行列の【スカラー倍 (scalar multiplication)】と呼び，$c$ を【スカラー (scalar)】と呼ぶ：
 			<p><center>$\begin{align*}
 				cA =\,\,& [ca_{ij}]\\
 				=\,\,&\left[\begin{array}{cccc}
@@ -96,13 +96,66 @@ updated on 2022/4/11
 				\end{array}\right].
 				\end{align*}$</center></p></li>
 	</ul>
-	<p>なお，特に行列 $(-1)A$ を $-A$ と表記し，$A+(-B)$ を $A-B$ と表記する．</p>
+	<p>以上の和とスカラー倍をまとめて行列の【線形演算 (linear operation)】と呼ぶ．<br>
+		なお，特に行列 $(-1)A$ を $-A$ と表記し，$A+(-B)$ を $A-B$ と表記する．</p>
+</div>
+<br><br>
+
+<div class="def" id="178">
+	<b>[#178] 定義：零行列</b><br>
+	<p>すべての成分が $0$ であるような行列を【零行列 (zero matrix)】と呼ぶ．$(m,\,n)$ 型の零行列はしばしば $O_{mn}$ と表記される：</p>
+	<p><center>$\begin{align*}
+		O_{mn} := [0]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}.
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="179">
+	<b>[#179] 定義：行列の線形演算の性質</b><br>
+	<p> $A=[a_{mn}]$，$B=[b_{mn}]$，$C=[c_{mn}]$ を $(m,\,n)$-行列，$O_{mn}$ を $(m,\,n)$ 型の零行列，$\alpha,\,\beta$ を数とする．このとき以下が成り立つ：</p>
+	<ol>
+		<li>  $A+B = B+A$ （交換法則）</li>
+		<li>  $(A+B)+C = A+(B+C)$　（結合法則）</li>
+		<li>  $A+O=O+A =A$　（零行列の性質１）</li>
+		<li>  $A-A = O$ （零行列の性質２）</li>
+		<li>  $\alpha(A+B) = \alpha A + \alpha B$　（スカラー倍の分配法則１）</li>
+		<li>  $(\alpha +\beta)A = \alpha A + \beta A$　（スカラー倍の分配法則２）</li>
+		<li>  $(\alpha\beta)A = \alpha (\beta A)$　（スカラー倍の結合法則）</li>
+		<li>  $1A = A$　（特別なスカラーの性質１）</li>
+		<li>  $0A = O$　（特別なスカラーの性質２）</li>
+	</ol>
+</div>
+<Details>
+<summary>証明</summary>
+	<p>$i=1,\,\cdots,\,m$，$j=1,\,\cdots,\,n$ に対して</p>
+	<ol>
+		<li> $a_{ij}+b_{ij} = b_{ij}+a_{ij}$．
+		<li> $(a_{ij}+b_{ij})+c_{ij} = a_{ij}+(b_{ij}+c_{ij})$．
+		<li> $a_{ij}+0 = 0+a_{ij} = a_{ij}$．
+		<li> $a_{ij}-a_{ij} = 0$．
+		<li> $\alpha (a_{ij}+b_{ij}) = \alpha a_{ij} + \alpha b_{ij}$．
+		<li> $(\alpha +\beta)a_{ij} = \alpha a_{ij} + \beta a_{ij}$．
+		<li> $(\alpha \beta) a_{ij} = \alpha (\beta a_{ij})$．
+		<li> $1\cdot a_{ij} = a_{ij}$．
+		<li> $0\cdot a_{ij} = 0$．
+	</ol>
+</Details>
+<br><br>
+
+<div class="def" id="180">
+	<b>[#180] 定義：行列の積</b><br>
+	<p> $A=[a_{ij}]^{i=1,\,\cdots,\,\ell}_{j=1,\,\cdots,\,m}$ を $(\ell,\,m)$-行列，$B=[b_{jk}]^{j=1,\,\cdots,\,m}_{k=1,\,\cdots,\,n}$ を $(m,\,n)$-行列とする．以下で定義される演算 $AB$ を行列の【乗法 (multiplication)】と呼び，その結果を【積 (product)】と呼ぶ：</p>
+	<p><center>$\begin{align*}
+		AB = [p_{ik}]^{i=1,\,\cdots,\,\ell}_{k=1,\,\cdots,\,n}\quad\text{with}\quad p_{ik} = \sum_{j=1}^{m}a_{ij}b_{jk}.
+		\end{align*}$</center></p>
+	<p>ここで，積 $AB$ は $(\ell,\,n)$-行列であることに注意せよ．</p>
 </div>
 <br><br>
 
 <div id="bib"><b>参考文献</b>
 <ul>
-	<li><a href="https://joshua.smcvt.edu/linearalgebra/book.pdf">Jim Hefferon: Linear algebra, fourth edition, pdf</a>.</li>
+	<li><a href="https://web.stanford.edu/~boyd/vmls/vmls.pdf">Boys, S., Vandenberghe, L.: Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares, Cambridge University Press, Cambridge (2018)</a>.</li>
+	<li><a href="https://joshua.smcvt.edu/linearalgebra/book.pdf">Hefferon, J.: Linear algebra, fourth edition, pdf</a>.</li>
 	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
 	<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2020_05_03.pdf">嶺幸太郎: 線形代数学 講義ノート (2020/05/03ver.), pdf</a>.</li>
 </ul>
