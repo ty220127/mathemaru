@@ -32,12 +32,12 @@
 
 <p style="text-align:right;">
 established on 2022/3/14<br>
-updated on 2022/4/11
+updated on 2022/4/12
 </p>
     
 <div class="def" id="144">
 	<b>[#144] 定義：行列</b><br>
-	<p>数を重宝形状に並べた表を【行列 (matrix)】と呼ぶ．特に $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個並べたものを $(m,\,n)$ 型の行列，或いは【$(m,\,n)$-行列 ($(m,\,n)$-matrix)】と呼ぶ．</p>
+	<p>数を長方形状に並べた表を【行列 (matrix)】と呼ぶ．特に $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個並べたものを「 $(m,\,n)$ 型の行列」，或いは「 $(m,\,n)$-行列」と呼ぶ．</p>
 	<ul>
 		<li> 行列の縦の並びを【行 (row)】，横の並びを【列 (column)】と呼び，特に行列の上から $i$ 番目を【第 $i$ 行 (the $i$-th row)】，左から $j$ 番目を【第 $j$ 列 (the $j$-th column)】と呼ぶ．</li>
 		<li> $(m,\,n)$-行列が持つ $mn$ 個の各数を行列の【成分 (element, entry)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の【$(i,\,j)$-成分 ($(i,\,j)$-element)】と呼ぶ．</li>
@@ -112,7 +112,7 @@ updated on 2022/4/11
 
 <div class="prp" id="179">
 	<b>[#179] 定義：行列の線形演算の性質</b><br>
-	<p> $A=[a_{mn}]$，$B=[b_{mn}]$，$C=[c_{mn}]$ を $(m,\,n)$-行列，$O_{mn}$ を $(m,\,n)$ 型の零行列，$\alpha,\,\beta$ を数とする．このとき以下が成り立つ：</p>
+	<p> $A=[a_{ij}]$，$B=[b_{ij}]$，$C=[c_{ij}]$ を $(m,\,n)$-行列，$O_{mn}$ を $(m,\,n)$ 型の零行列，$\alpha,\,\beta$ を数とする．このとき以下が成り立つ：</p>
 	<ol>
 		<li>  $A+B = B+A$ （交換法則）</li>
 		<li>  $(A+B)+C = A+(B+C)$　（結合法則）</li>
@@ -127,7 +127,7 @@ updated on 2022/4/11
 </div>
 <Details>
 <summary>証明</summary>
-	<p>$i=1,\,\cdots,\,m$，$j=1,\,\cdots,\,n$ に対して</p>
+	<p>$i=1,\,\cdots,\,m$，$j=1,\,\cdots,\,n$ に対してそれぞれ</p>
 	<ol>
 		<li> $a_{ij}+b_{ij} = b_{ij}+a_{ij}$．
 		<li> $(a_{ij}+b_{ij})+c_{ij} = a_{ij}+(b_{ij}+c_{ij})$．
@@ -139,6 +139,7 @@ updated on 2022/4/11
 		<li> $1\cdot a_{ij} = a_{ij}$．
 		<li> $0\cdot a_{ij} = 0$．
 	</ol>
+	<p>が成り立つことと線形演算の定義 <a href="#177">[#177]</a> から題意が示される．</p>
 </Details>
 <br><br>
 
