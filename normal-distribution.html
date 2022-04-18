@@ -33,7 +33,7 @@
 
 <p style="text-align:right;">
 established on 2022/3/20<br>
-updated on 2022/4/9
+updated on 2022/4/18
 </p>
     
 <div class="def" id="152">
@@ -88,11 +88,41 @@ updated on 2022/4/9
 </Details>
 <br><br>
 
+
+<div class="def" id="181">
+<b>[#181] 定義：対数正規分布</b><br>
+	<p>確率変数 $Y$ が正規分布に従うとき，$e^Y$ が従う分布を【対数正規分布 (log-normal distribution)】と呼ぶ．</p>
+</div>
+<Details>
+<summary>補足</summary>
+	<p>確率変数 $X$ が対数正規分布に従うとき，$\log X$ は正規分布に従う．</p>
+</Details>
+<br><br>
+
+
+<div class="prp" id="182">
+<b>[#182] 命題：対数正規分布の確率密度関数</b><br>
+	<p>確率変数 $X$ が対数正規分布に従うとき，その確率密度関数は $m\in\mathbb{R},\,v\gt 0$ を用いて</p>
+	<p><center>$\begin{align*}
+		f(x) = \left\{\begin{array}{ll}
+			\fraction{1}{\sqrt{2\pi v}\,x}\,\exp\!\left(-\fraction{(\log x-m)^2}{2v}\right) & (x\gt 0)\\
+			0 & (x\leq 0) \end{array}\right.
+		\end{align*}$</center></p>
+	<p>と書ける．また $X$ の確率密度関数が上記であることは，$\log X\sim\mathrm{N}(m,\,v)$ であることと同値である．</p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p></p>
+</Details>
+<br><br>
+
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
 	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
 	<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会 (2013).</li>
+	<li><a href="https://manabitimes.jp/math/1297">対数正規分布の例と平均，分散｜高校数学の美しい物語</a></li>
+	<li><a href="https://nkoda-studynote.com/statistics/lognormal_distribution/">【統計検定１級対策】対数正規分布の期待値・分散の導出｜nkoda's Study Note</a></li>
 </ul>
 </div>
       
