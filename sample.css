@@ -23,11 +23,17 @@ body{
       border-left: solid 0.3em #597dff; 
       background-color: #b2f9ff;
 }
-.exr{
+.exm{
       padding: 0.5%; 
       margin-bottom: 0.5%; 
       border-left: solid 0.3em #59c859; 
       background-color: #b2ffb2;
+}
+.exr{
+      padding: 0.5%; 
+      margin-bottom: 0.5%; 
+      border-left: solid 0.3em #c85959; 
+      background-color: #ffc8c8;
 }
 .fct{
       padding: 0.5%; 
