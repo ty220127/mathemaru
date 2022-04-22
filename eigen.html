@@ -8,12 +8,13 @@
         bs: '\\boldsymbol', 
         bcu: '\\displaystyle\\bigcup', 
         bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+        fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
         limit: '\\displaystyle\\lim',
 	sig: '\\displaystyle\\sum',
 	intgrl: '\\displaystyle\\int',
 	cpl: '\\mathrm{c}',
 	rd: '\\mathrm{d}',
+	trp: '\\mathsf{T}',
       }}});
     </script>
     <title>固有値と固有ベクトル｜演習問題集</title>
@@ -27,7 +28,7 @@
 
 <p style="text-align:right;">
 established on 2022/3/29<br>
-updated on 2022/3/29
+updated on 2022/4/22
 </p>
 
 <div class="def" id="160">
@@ -49,6 +50,58 @@ updated on 2022/3/29
 	<p>ただし $I$ は $n$ 次の単位行列である．<br>
 		なお $\lambda$ が未知のとき，上の等式は $A$ の【特性方程式 (characteristic equation)】，等式の左辺は $A$ の【特性多項式 (characteristic polynomial)】と呼ばれる．</p>
 </div>
+<br><br>
+
+
+<div class="exm" id="183">
+<b>[#183] 例題：固有値の導出</b><br>
+	<p>正方行列 $A$ を</p>
+	<p><center>$\begin{align*}
+		A= \left[\begin{array}{ccc} 1 & \sqrt{2} & 0\\ \sqrt{2} & 1 & \sqrt{2} \\ 0 & \sqrt{2} & 1 \end{array}\right]
+		\end{align*}$</center></p>
+	<p>とする．<br>
+		$A$ のすべての固有値と，それらに対応する固有ベクトルを求めよ．ただし，固有ベクトルとして，ノルムは $1$ かつ第一要素は非負実数であるものを選べ．</p>
+	<p style="text-align:right;">［出典：東京大学 大学院情報理工学系研究科(2020)］
+</div>
+<Details>
+<summary>解答</summary>
+	<p> $A$ の固有値を $\lambda$ とすれば，命題 <a href="#161">[#161]</a> より固有方程式</p>
+	<p><center>$\begin{align*}
+		\det (A-\lambda I) = 0,\,\,\text{i.e.,}\,\,
+			\left|\begin{array}{cc} 1-\lambda & \sqrt{2} & 0\\ \sqrt{2} & 1-\lambda & \sqrt{2} \\ 0 & \sqrt{2} & 1-\lambda\end{array}\right| =0
+		\end{align*}$</center></p>
+	<p>が成り立つ．ここで $I$ は３次の単位行列である．左辺を整理すると</p>
+	<p><center>$\begin{align*}
+		\left|\begin{array}{cc} 1-\lambda & \sqrt{2} & 0\\ \sqrt{2} & 1-\lambda & \sqrt{2} \\ 0 & \sqrt{2} & 1-\lambda\end{array}\right| &= (1-\lambda)^3 -4(1-\lambda) \\
+			&= (1-\lambda)(1-2\lambda+\lambda^2 -4)\\
+			&= -(\lambda -1)(\lambda +1)(\lambda -3)
+		\end{align*}$</center></p>
+	<p>となるから，固有方程式の解は $\lambda = \pm 1,\,3$ であり，これらが $A$ の固有値となる．<br>
+		以下，各固有値 $\lambda$ に対応する固有ベクトル $\bs{x} = [x\,\,y\,\,z]^\trp$ を求める．まず，固有値の定義 <a href="#160">[#160]</a>より
+	<p><center>$\begin{align*}
+		A\bs{x} = \lambda\bs{x},\,\,\text{i.e.,}\,\,
+		\left[\begin{array}{ccc} 1-\lambda & \sqrt{2} & 0\\ \sqrt{2} & 1-\lambda & \sqrt{2} \\ 0 & \sqrt{2} & 1-\lambda \end{array}\right]\left[\begin{array}{c} x\\ y\\ z\end{array}\right]= \bs{0}
+		\end{align*}$</center></p>
+	<p>である．まずここに $\lambda=1$ を代入すると
+	<p><center>$\begin{align*}
+		\left[\begin{array}{ccc} 0 & \sqrt{2} & 0\\ \sqrt{2} & 0 & \sqrt{2} \\ 0 & \sqrt{2} & 0 \end{array}\right]\left[\begin{array}{c} x\\ y\\ z\end{array}\right]= \bs{0}
+		\end{align*}$</center></p>
+	<p>であり，これは $y=0,\,x=-z$ であることと同値だから，所望の固有ベクトルは $\bs{x} = \fraction{1}{\sqrt{2}}\left[\begin{array}{c} 1\\ 0\\ -1\end{array}\right].$
+	<p>次に $\lambda=-1$ を代入すると
+	<p><center>$\begin{align*}
+		\left[\begin{array}{ccc} 2 & \sqrt{2} & 0\\ \sqrt{2} & 2 & \sqrt{2} \\ 0 & \sqrt{2} & 2 \end{array}\right]\left[\begin{array}{c} x\\ y\\ z\end{array}\right]= \bs{0}
+		\end{align*}$</center></p>
+	<p>であり，これは $-\sqrt{2}x = y = -\sqrt{2}z$ であることと同値だから，所望の固有ベクトルは $\bs{x} = \fraction{1}{2}\left[\begin{array}{c} 1\\ -\sqrt{2}\\ 1\end{array}\right].$
+	<p>更に $\lambda=3$ を代入すると
+	<p><center>$\begin{align*}
+		\left[\begin{array}{ccc} -2 & \sqrt{2} & 0\\ \sqrt{2} & -2 & \sqrt{2} \\ 0 & \sqrt{2} & -2 \end{array}\right]\left[\begin{array}{c} x\\ y\\ z\end{array}\right]= \bs{0}
+		\end{align*}$</center></p>
+	<p>であり，これは $\sqrt{2}x = y = \sqrt{2}z$ であることと同値だから，所望の固有ベクトルは $\bs{x} = \fraction{1}{2}\left[\begin{array}{c} 1\\ \sqrt{2}\\ 1\end{array}\right].$</br>
+		以上により，結論は以下のようにまとめられる：</p>
+	<p><center>$\begin{align*}\color{red}{
+		(\lambda,\,\bs{x}) = \left( 1,\,\fraction{1}{\sqrt{2}}\left[\begin{array}{c} 1\\ 0\\ -1\end{array}\right]\right),\,\left( -1,\,\fraction{1}{2}\left[\begin{array}{c} 1\\ -\sqrt{2}\\ 1\end{array}\right]\right),\,\left(3,\,\fraction{1}{2}\left[\begin{array}{c} 1\\ \sqrt{2}\\ 1\end{array}\right]\right).}
+		\end{align*}$</center></p>
+</Details>
 <br><br>
 
 <div id="bib">
