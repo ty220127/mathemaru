@@ -176,7 +176,41 @@ updated on 2022/4/23
 <br><br>
 
 <div class="exr" id="186">
-	<b>[#186] 演習：逆行列の特定 → <a href="regular.html#163">[#163]</a></b><br>
+	<b>[#186] 演習：行列の積と連立方程式 → <a href="regular.html#163">[#]</a></b><br>
+	<p> 3 次正方行列 $A$ と 3 次列ベクトル $\bs{p}$ を</p>
+	<p><center>$\begin{align*}
+		A= \left[\begin{array}{ccc} 1 & 2 & -1\\ 0 & 3 & 2\\ 2 & 1 & 1\end{array}\right],\,\,\bs{p} = \left[\begin{array}{c} -1\\ -1\\ 4\end{array}\right]
+		\end{align*}$</center></p>
+	<p>と定義する．このとき $A\bs{x} = \bs{p}$ を満たすような 3 次列ベクトル $\bs{x}$ を求めよ．</p>
+</div>
+<Details>
+<summary>解答</summary>
+	<p> $X=\left[\begin{array}{cc} x & y \\ z & w \end{array}\right]$ とおくと</p>
+	<p><center>$\begin{align*}
+		AX = \left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right]\left[\begin{array}{cc} x & y \\ z & w \end{array}\right]
+		= \left[\begin{array}{cc} x+2z & y+2w \\ -2x+3z & -2y+3w \end{array}\right]
+		\end{align*}$</center></p>
+	<p>が成り立ち，これが単位行列 $I=\left[\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right]$ に一致することから，以下の連立方程式を得る：</p>
+	<p><center>$\begin{align*}
+		\left\{\begin{array}{l} x+2z=1\\ -2x+3z=0 \end{array}\right. ,\quad \left\{\begin{array}{l} y+2w=0\\ -2y+3w=1 \end{array}\right. .
+		\end{align*}$</center></p>
+	<p>これらを解くと $x = \displaystyle\frac{\,3\,}{7},\,y = -\displaystyle\frac{\,2\,}{7},\,z = \displaystyle\frac{\,2\,}{7},\,w = \displaystyle\frac{\,1\,}{7}$ となるから，求める行列は</p>
+	<p><center>$\begin{align*}
+		X=\color{red}{\displaystyle\frac{\,1\,}{7}\left[\begin{array}{cc} 3 & -2 \\ 2 & 1 \end{array}\right]}.
+		\end{align*}$</center></p>
+	<p>また，$XA$は以下のように計算される：</p>
+	<p><center>$\begin{align*}
+		XA = \displaystyle\frac{\,1\,}{7}\left[\begin{array}{cc} 3 & -2 \\ 2 & 1 \end{array}\right]\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right] = \color{red}{\left[\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right]}.
+		\end{align*}$</center></p>
+</Details>
+<Details>
+<summary>補足</summary>
+	<p>問題の行列 $X$ は $AX=XA=I$ を満たした．このような行列は「$A$ の逆行列」と呼ばれる．</p>
+</Details>
+<br><br>
+
+<div class="exr" id="187">
+	<b>[#187] 演習：逆行列の特定 → <a href="regular.html#163">[#163]</a></b><br>
 	<p> 2 次正方行列 $A$ を $A=\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right]$，$I$ を 2 次単位行列とする．このとき $AX=I$ を満たすような 2 次正方行列 $X$ を求めよ．また $XA$ を計算せよ．</p>
 </div>
 <Details>
@@ -203,7 +237,6 @@ updated on 2022/4/23
 <summary>補足</summary>
 	<p>問題の行列 $X$ は $AX=XA=I$ を満たした．このような行列は「$A$ の逆行列」と呼ばれる．</p>
 </Details>
-
 <br><br>
 
 <div id="bib"><b>参考文献</b>
