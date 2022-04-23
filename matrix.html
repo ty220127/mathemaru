@@ -32,7 +32,7 @@
 
 <p style="text-align:right;">
 established on 2022/3/14<br>
-updated on 2022/4/12
+updated on 2022/4/23
 </p>
     
 <div class="def" id="144">
@@ -40,7 +40,7 @@ updated on 2022/4/12
 	<p>数を長方形状に並べた表を【行列 (matrix)】と呼ぶ．特に $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個並べたものを「 $(m,\,n)$ 型の行列」，或いは「 $(m,\,n)$-行列」と呼ぶ．</p>
 	<ul>
 		<li> 行列の縦の並びを【行 (row)】，横の並びを【列 (column)】と呼び，特に行列の上から $i$ 番目を【第 $i$ 行 (the $i$-th row)】，左から $j$ 番目を【第 $j$ 列 (the $j$-th column)】と呼ぶ．</li>
-		<li> $(m,\,n)$-行列が持つ $mn$ 個の各数を行列の【成分 (element, entry)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の【$(i,\,j)$-成分 ($(i,\,j)$-element)】と呼ぶ．</li>
+		<li> $(m,\,n)$-行列が持つ $mn$ 個の各数を行列の【成分 (entry, element)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の【$(i,\,j)$-成分 ($(i,\,j)$-element)】と呼ぶ．特に $(i,\,i)$-成分のことを【対角成分 (diagonal entry)】と呼ぶ．</li>
 		<li>  行と列の数が等しく，その数が $n$ であるような行列を【 $n$ 次正方行列 (square matrix of order $n$)】と呼ぶ．
 		<li> $m$ 個の数による行のみの行列（$n=1$）を【 $m$ 次行ベクトル ($m$-row vector)】，$n$ 個の数による列のみの行列（$m=1$）を【 $n$ 次列ベクトル ($n$-column vector)】と呼ばれる．</li>
 		<!--<li> 「$m\times n$ 行列 $A = [a_{ij}]$ と $s\times t$ 行列 $B=[b_{ij}]$ が等しい」とは $m=s$ かつ $n=t$ であり，更に任意の組 $(i,\,j)$ に対して $a_{ij} = b_{ij}$ が成り立つことを云う．</li>-->
@@ -151,6 +151,59 @@ updated on 2022/4/12
 		\end{align*}$</center></p>
 	<p>ここで，積 $AB$ は $(\ell,\,n)$-行列であることに注意せよ．</p>
 </div>
+<br><br>
+
+<div class="def" id="184">
+	<b>[#184] 定義：単位行列</b><br>
+	<p>すべての対角成分が $1$ でそれ以外の成分がすべて $0$ であるような $n$ 次正方行列 $I_n$ を【単位行列 (unit matrix)】或いは【恒等行列 (identity matrix)】と呼ぶ：$\delta_{ij}$ を Kronecker のデルタとして</p>
+	<p><center>$\begin{align*}
+		I_{n} := [\delta_{ij}]^{i=1,\,\cdots,\,n}_{j=1,\,\cdots,\,n}.
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="185">
+	<b>[#185] 命題：行列の積の性質</b><br>
+	<p> $A=[a_{ij}],\,C=[c_{ij}]$ を $(\ell,\,m)$-行列，$B=[b_{ij}],\,D=[d_{ij}]$ を $(m,\,n)$-行列，$O_{mn}$ を $(m,\,n)$ 型の零行列，$I_n$ を $n$ 次の正方行列とする．このとき以下が成り立つ：</p>
+	<ol>
+		<li>  $A(B+D) = AB + AD$（分配法則１）</li>
+		<li>  $(A+C)B = AB + CB$（分配法則２）</li>
+		<li>  $\alpha (AB) = (\alpha A)B = A(\alpha B)$（$\alpha$ は数）</li>
+		<li>  $AO_{mn} = O_{\ell m}B = O_{\ell n}$（積における零行列の性質）</li>
+		<li>  $AI_{m} = I_{\ell}A = A$（積における単位行列の性質）</li>
+	</ol>
+</div>
+<br><br>
+
+<div class="exr" id="186">
+	<b>[#186] 演習：逆行列の特定 → <a href="regular.html#163">[#163]</a></b><br>
+	<p> 2 次正方行列 $A$ を $A=\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right]$，$I$ を 2 次単位行列とする．このとき $AX=I$ を満たすような 2 次正方行列 $X$ を求めよ．また $XA$ を計算せよ．</p>
+</div>
+<Details>
+<summary>解答</summary>
+	<p> $X=\left[\begin{array}{cc} x & y \\ z & w \end{array}\right]$ とおくと</p>
+	<p><center>$\begin{align*}
+		AX = \left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right]\left[\begin{array}{cc} x & y \\ z & w \end{array}\right]
+		= \left[\begin{array}{cc} x+2z & y+2w \\ -2x+3z & -2y+3w \end{array}\right]
+		\end{align*}$</center></p>
+	<p>が成り立ち，これが単位行列 $I=\left[\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right]$ に一致することから，以下の連立方程式を得る：</p>
+	<p><center>$\begin{align*}
+		\left\{\begin{array}{l} x+2z=1\\ -2x+3z=0 \end{array}\right. ,\quad \left\{\begin{array}{l} y+2w=0\\ -2y+3w=1 \end{array}\right. .
+		\end{align*}$</center></p>
+	<p>これらを解くと $x = \displaystyle\frac{\,3\,}{7},\,y = -\displaystyle\frac{\,2\,}{7},\,z = \displaystyle\frac{\,2\,}{7},\,w = \displaystyle\frac{\,1\,}{7}$ となるから，求める行列は</p>
+	<p><center>$\begin{align*}
+		X=\color{red}{\displaystyle\frac{\,1\,}{7}\left[\begin{array}{cc} 3 & -2 \\ 2 & 1 \end{array}\right]}.
+		\end{align*}$</center></p>
+	<p>また，$XA$は以下のように計算される：</p>
+	<p><center>$\begin{align*}
+		XA = \displaystyle\frac{\,1\,}{7}\left[\begin{array}{cc} 3 & -2 \\ 2 & 1 \end{array}\right]\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right] = \color{red}{\left[\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right]}.
+		\end{align*}$</center></p>
+</Details>
+<Details>
+<summary>補足</summary>
+	<p>問題の行列 $X$ は $AX=XA=I$ を満たした．このような行列は「$A$ の逆行列」と呼ばれる．</p>
+</Details>
+
 <br><br>
 
 <div id="bib"><b>参考文献</b>
