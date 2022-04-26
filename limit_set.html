@@ -1,0 +1,116 @@
+
+   <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+  <head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({ TeX: { Macros: { 
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		intgrl: '\\displaystyle\\int',
+		cpl: '\\mathrm{c}',
+		rd: '\\mathrm{d}',
+      }}});
+    </script>
+    <title>集合列と極限｜演習問題集</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <style>
+    </style>
+  </head>
+
+<body>
+<center><div id="titlehead">集合列と極限</div></center>
+
+<p style="text-align:right;">
+established on 2022/4/26<br>
+updated on 2022/4/26
+</p>
+        
+<div class="def" id="189">
+	<b>[#189] 定義：上極限集合，下極限集合，極限集合</b><br>
+	<p>集合列 $\{A_n\}_{n=1}^{\infty}$ に対して</p>
+	<p><center>$\begin{align*}
+		\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n &= \bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_m\\
+			&=\{x\,|\,{}^\forall n\geq 1,\,\,{}^\exists m\geq n\,\,\text{s.t.}\,\,x\in A_m\},\\
+		\underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ A_n &= \bcu_{n=1}^{\infty}\bca_{m=n}^{\infty}A_m\\
+			&=\{x\,|\,{}^\exists n\geq 1\,\,\text{s.t.}\,\,{}^\forall m\geq n,\,\,x\in A_m\}\\
+		\end{align*}$</center></p>
+	<p>をそれぞれ【上極限集合 (limit superior set)】，【下極限集合 (limit inferior set)】と呼ぶ．<br>
+		また $\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n = \underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ A_n$ であるときはこれを $\limit_{n\rightarrow\infty}A_n$ と書き，【極限集合 (limit set)】と呼ぶ．</p>
+</div>
+<br><br>
+    
+<div class="def" id="190">
+	<b>[#190] 定義：単調列</b><br>
+	<p>集合列 $\{A_n\}_{n=1}^{\infty}$ に対して</p>
+	<ul>
+		<p><li>任意の $n$ に対して $A_n\subset A_{n+1}$ であるとき，$\{A_n\}$ を【単調非減少列 (monotonically non-decreasing sequence)】と呼ぶ．</li></p>
+		<p><li>任意の $n$ に対して $A_n\supset A_{n+1}$ であるとき，$\{A_n\}$ を【単調非増加列 (monotonically non-increasing sequence)】と呼ぶ．</li></p>
+	</ul>
+</div>
+<br><br>
+
+<div class="prp" id="191">
+	<b>[#191] 定義：単調列の極限</b><br>
+	<p>集合列 $\{A_n\}_{n=1}^{\infty}$ が単調列であるとき，その極限が存在する：</p>
+	<ul>
+		<p><li> $\{A_n\}$ が単調非減少列であるとき</li></p>
+		<p><center>$\begin{align*} \lim_{n\rightarrow\infty}A_n = \bcu_{n=1}^{\infty}A_n.\end{align*}$</center></p>
+		<p><li> $\{A_n\}$ が単調非増加列であるとき</li></p>
+		<p><center>$\begin{align*} \lim_{n\rightarrow\infty}A_n = \bca_{n=1}^{\infty}A_n.\end{align*}$</center></p>
+	</ul>
+</div>
+<Details>
+<summary>証明</summary>
+	<p>まず $\{A_n\}$ が単調非減少列である場合を考える．$A_n\subset\bigcap_{m=n+1}^{\infty}A_m$ であることから，集合の包含と共通部分の関係 <a href="set.html#57">[#57]</a> より</p>
+	<p><center>$\begin{align*}
+		\bca_{m=n}^{\infty}A_m = A_n\cap \bigcap_{m=n+1}^{\infty}A_m = A_n
+		\end{align*}$</center></p>
+	<p>である．よって下極限集合の定義 <a href="#189">[#189]</a> より</p>
+	<p><center>$\begin{align*}
+		\underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ A_n = \bcu_{n=1}^{\infty}\bca_{m=n}^{\infty}A_m = \bcu_{n=1}^{\infty}A_n.
+		\end{align*}$</center></p>
+	<p>また，仮定より $\bigcup_{m=1}^{n-1}A_m \subset \bigcup_{m=n}^{\infty}A_m$ であることから，集合の包含と和の関係 <a href="set.html#56">[#56]</a> より</p>
+	<p><center>$\begin{align*}
+		\bigcup_{m=n}^{\infty}A_m = \bigcup_{m=1}^{n-1}A_m \cup \bigcup_{m=n}^{\infty}A_m = \bigcup_{m=1}^{\infty}A_m.
+		\end{align*}$</center></p>
+	<p>よって，上極限集合の定義 <a href="#189">[#189]</a> より</p>
+	<p><center>$\begin{align*}
+		\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n = \bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_m = \bca_{n=1}^{\infty}\bcu_{m=1}^{\infty}A_m = \bcu_{m=1}^{\infty}A_m.
+		\end{align*}$</center></p>
+	<p>以上の議論をまとめると，$\{A_n\}$ の上極限集合と下極限集合は一致して</p>
+	<p><center>$\begin{align*}
+		\lim_{n\rightarrow\infty} A_n = \bcu_{n=1}^{\infty}A_m.
+		\end{align*}$</center></p>
+</Details>
+<br><br>
+
+<div class="prp" id="192">
+	<b>[#192] 定義：上極限集合と下極限集合の包含関係</b><br>
+	<p>任意の集合列 $\{A_n\}_{n=1}^{\infty}$ に対して</p>
+	<p><center>$\begin{align*}
+		\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n \supset \underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ A_n.
+		\end{align*}$</center></p>
+</div>
+<br><br>
+    
+<div id="bib">
+	<b>参考文献</b>
+	<ul>
+		<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+		<li><a href="https://mathlandscape.com/limit-set/">上極限集合・下極限集合の定義とその包含関係の証明｜数学の景色</a></li>
+		<li><a href="https://ushitora.net/archives/1300">上極限集合_下極限集合とボレル・カンテリの補題｜USHITORA Lab.</a></li>
+	</ul>
+</div>
+	  
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
