@@ -97,7 +97,7 @@ updated on 2022/4/28
 		\end{align*}$</center></p>
 	<p>である．よって上極限集合の定義 <a href="#189">[#189]</a> より</p>
 	<p><center>$\begin{align*}
-		\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n = \bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_m = \bca_{n=1}^{\infty}\bcu_{m=1}^{\infty}A_m = \bca_{m=1}^{\infty}A_n.
+		\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n = \bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_m = \bca_{n=1}^{\infty}\bcu_{m=1}^{\infty}A_m = \bca_{n=1}^{\infty}A_n.
 		\end{align*}$</center></p>
 	<p>また $A_{n-1} = \bigcap_{m=1}^{n-1}A_m$ で，かつ $m\geq n$ に対して $A_{n-1}\supset A_m$ であることから，集合の包含と共通部分の関係 <a href="set.html#56">[#57]</a> より</p>
 	<p><center>$\begin{align*}
@@ -121,6 +121,15 @@ updated on 2022/4/28
 		\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n \supset \underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ A_n.
 		\end{align*}$</center></p>
 </div>
+<Details>
+<summary>証明</summary>
+	<p> $B_n=\bca_{m=n}^{\infty}A_m,\,C_n=\bcu_{m=n}^{\infty}A_m$ とおけば，$B_n$ は単調非減少列，$C_n$ は単調非増加列である．よって
+	<p><center>$\begin{align*}
+		&\lim_{n\rightarrow\infty}B_n \refeq{#191}{191} \bcu_{n=1}^{\infty}B_n = \bcu_{n=1}^{\infty}\bca_{m=n}^{\infty}A_m = \underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ A_n,\\
+		&\lim_{n\rightarrow\infty}C_n \refeq{#191}{191} \bca_{n=1}^{\infty}C_n = \bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_m = \underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n.
+		\end{align*}$</center></p>
+	<p>ここで $B_n\subset A_n\subset C_n$ であることから $\limit_{n\rightarrow\infty}B_n\subset \limit_{n\rightarrow\infty}C_n$ を得るが，これは題意と同値である．
+</Details>
 <br><br>
     
 <div id="bib">
