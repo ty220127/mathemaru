@@ -28,7 +28,7 @@
 
 <p style="text-align:right;">
 established on 2022/1/27<br>
-updated on 2022/4/9
+updated on 2022/4/29
 </p>
    
 <div class="def" id="17">
@@ -142,6 +142,33 @@ updated on 2022/4/9
 			<p>と書けるような分布関数を【連続型 (continuous)】であると云う．またこの $f$ は【確率密度関数 (probability density function)】と呼ばれる．</p></li>
 	</ul>
 </div>
+<br><br>
+	  
+<div class="exm" id="193">
+<b>[#193] 例題：確率密度関数の決定</b><br>
+	<p> 確率変数 $X$ の密度関数 $f(x)$ が次のように与えられているとする．</p>
+	<p><center>$\begin{align*}
+		f(x) = \left\{\begin{array}{ll}
+			0, & x\lt 0,\\ cx(2-x), & 0\leq x\lt 2, \\ 0, & 2\lt x.
+			\end{array}\right.
+		\end{align*}$</center></p>
+	<p>ただし，$c$ はある正の定数である．$c$ の値はいくらか．</p>
+	<p style="text-align:right;">
+	[2017.11 統計検定２級]
+	</p>
+</div>
+<Details>
+<summary>解答</summary>
+	<p>  $f(x)$ に対応する分布関数を $F(x)$ とすれば，</p>
+	<p><center>$\begin{align*}
+		F(x) = \int_{-\infty}^{x} f(t)\rd t
+		\end{align*}$</center></p>
+	<p>と書くことができる．ここで分布関数の性質 <a href="#20">[#20]</a> より</p>
+	<p><center>$\begin{align*}
+		F(x) = \int_{-\infty}^{\infty} f(t)\rd t = c\int_{-\infty}^{\infty} t(2-t)\rd t = \fraction{4}{3}c = 1
+		\end{align*}$</center></p>
+	<p>であるから，$\color{red}{c=\fraction{3}{4}}.$
+</Details>
 <br><br>
 	  
 <div class="exr" id="177">
