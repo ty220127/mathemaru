@@ -1,9 +1,12 @@
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
-<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -25,11 +28,11 @@
 
 <p style="text-align:right;">
 isolated from <a href="set.html">集合</a> on 2022/2/20<br>
-updated on 2022/3/3
+updated on 2022/4/29
 </p>
 
 <div class="def" id="95">
-	<b>[#95]定義：差集合</b><br>
+	<b>[#95] 定義：差集合</b><br>
   <p>集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\setminus B$ と書く：</p>
 	    <p><center>$\begin{align*}A\setminus B &= \{x\,|\,\,(x\in A) \land (x\notin B)\}\\
         &= \{x\,|\,\,(x\in A) \land (\neg(x\in B))\}.\end{align*}$</center></p>
@@ -37,7 +40,7 @@ updated on 2022/3/3
 <br><br>
   
 <div class="prp" id="96">
-	<b>[#96]命題：差集合と共通部分</b><br>
+	<b>[#96] 命題：差集合と共通部分</b><br>
 	<p>集合 $A,\,B$ に対して </p>
 	<p><center>$A \cap (B\setminus A) = \emptyset.$</center></p>
 </div>
@@ -53,7 +56,7 @@ updated on 2022/3/3
 <br><br>
 
 <div class="prp" id="97">
-	<b>[#97]命題：差集合と和</b><br>
+	<b>[#97] 命題：差集合と和</b><br>
 	<p>集合 $A,\,B$ に対して </p>
 	<p><center>$A \cup (B\setminus A) = A\cup B.$</center></p>
 	<p>特に $A\subset B$ であるならば
@@ -74,32 +77,36 @@ updated on 2022/3/3
 <br><br>
 
 <div class="prp" id="55">
-	<b>[#55]命題：共通部分による集合の分解</b><br>
-	<p>集合 $A,\,B$ に対して </p>
-	<p><center>$A = (A\cap B)\cup (A\setminus B).$</center></p>
+	<b>[#55] 命題：共通部分による集合の分割</b><br>
+	<p>集合 $A,\,B$ はともに空集合でないとする．このとき集合族 $\{A\cap B,\,A\setminus B\}$ は $A$ の分割である．
 </div>
 <Details>
 	<summary>証明</summary>
+	<p>まず，</p>
+	<p><center>\begin{align*}
+		(A\cap B)\cap (A\setminus B) \refeq{set.html#53}{53} A\cap \{B\cap (A\setminus B)\}
+			\refeq{#96}{96} A\cap \emptyset = \emptyset
+		\end{align*}</center></p>
+	<p>より $A\cap B$ と $A\setminus B$ は互いに素である．<br> 次に，これらの和（直和）を調べると</p>
 	<p><center> 
-		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\setminus B)\\
-		\Longleftrightarrow\,\,& (x\in A\cap B) \lor (x\in (A\setminus B))\\
-		\underset{\href{#95}{\sf[\# 95]}}{\Longleftrightarrow}\,\,& ((x\in A) \land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
-		\underset{\href{proposition.html#62}{\sf[\# 62]}}{\Longleftrightarrow}\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
-		\underset{\href{proposition.html#58}{\sf[\# 58]}}{\Longleftrightarrow}\,\,& (x\in A) \land \mathsf{T}\\
-		\Longleftrightarrow\,\,& (x\in A).\end{align*}$
+		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\setminus B)\,\,\reflr{set.html#51}{51}\,\, (x\in A\cap B) \lor (x\in (A\setminus B))\\
+		\reflr{#95}{95}\,\,& ((x\in A) \land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
+		\reflr{proposition.html#62}{62}\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
+		\reflr{proposition.html#58}{58}\,\,& (x\in A) \land \mathsf{T}\,\,\reflr{proposition.html#60}{60}\,\, x\in A.\end{align*}$
 	</center></p>
+	<p>以上により，$\{A\cap B,\,A\setminus B\}$ は $A$ の分割である．
 </Details>
 <br><br>
 
 <div class="def" id="83">
-	<b>[#83]定義：普遍集合，補集合</b><br>
+	<b>[#83] 定義：普遍集合，補集合</b><br>
 	<p>集合を用いた複雑な議論を行う際，しばしば予め大きな（多くの元を持つ）集合を定義し，その部分集合の範囲で議論を行うことを考える．この大きな集合のことを【普遍集合 (全体集合; universal set)】と呼ぶ．
 		普遍集合 $\varOmega$ を定義している下で，その部分集合 $A$ に対し，$A^\cpl := \varOmega\setminus A$ と定義し，これを $A$ の【補集合 (complement)】と呼ぶ．</p>
 </div>
 <br><br>
 
 <div class="prp" id="84">
-	<b>[#84]定義：補集合の性質</b><br>
+	<b>[#84] 定義：補集合の性質</b><br>
 	<p>普遍集合 $\varOmega$ が仮定されているとき，任意の変項 $x$ と集合 $A$ に対して</p>
 	<p><center>$x\notin A\,\,\Longleftrightarrow\,\,x\in A^\cpl.$</center></p>
 </div>
@@ -116,7 +123,7 @@ updated on 2022/3/3
 	<p>★ 以下，何らかの普遍集合の下で議論が行われているものとする．</p><br>
 
 <div class="prp" id="85">
-	<b>[#85]命題：補集合を用いた差集合の表現</b><br>
+	<b>[#85] 命題：補集合を用いた差集合の表現</b><br>
 	<p>集合 $A,\,B$ に対して</p>
 	<p><center>$A\setminus B=A\cap B^\cpl.$</center></p>
 </div>
@@ -132,7 +139,7 @@ updated on 2022/3/3
 <br><br>
 
 <div class="prp" id="86">
-	<b>[#86]命題：補集合の包含関係</b><br>
+	<b>[#86] 命題：補集合の包含関係</b><br>
 	<p>集合 $A,\,B$ に対して</p>
 	<p><center>$A\subset B\,\,\Longleftrightarrow\,\,B^\cpl \subset A^\cpl.$</center></p>
 </div>
@@ -151,7 +158,7 @@ updated on 2022/3/3
 <br><br>
 
 <div class="prp" id="74">
-	<b>[#74]命題：集合の de Morgan の法則</b><br>
+	<b>[#74] 命題：集合の de Morgan の法則</b><br>
 	<p>集合 $A,\,B$ に対して</p>
 	<p><center>$\begin{align*}(A\cap B)^{\rm c} &=A^{\rm c}\cup B^{\rm c},\\
 				(A\cup B)^{\rm c} &=A^{\rm c}\cap B^{\rm c}.\end{align*}$</center></p>
@@ -176,7 +183,7 @@ updated on 2022/3/3
 <br><br>
 	
 <div class="prp" id="132">
-	<b>[#132]命題：無限個の集合に対する de Morgan の法則</b><br>
+	<b>[#132] 命題：無限個の集合に対する de Morgan の法則</b><br>
 	<p>集合 $\varLambda$ の各元 $\lambda\in\varLambda$ に対応する集合 $A_\lambda$ に対して</p>
 	<p><center>$\begin{align*}
 		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)^\cpl = \bca_{\lambda\in\varLambda}A_\lambda^\cpl,\quad \left(\bca_{\lambda\in\varLambda}A_\lambda\right)^\cpl = \bcu_{\lambda\in\varLambda}A_\lambda^\cpl
