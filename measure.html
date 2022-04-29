@@ -8,6 +8,7 @@
 		numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
 		limit: '\\displaystyle\\lim',
@@ -30,12 +31,12 @@ updated on 2022/4/26
 </p>
     
 <div class="def" id="24">
-	<b>[#24]定義：測度，測度空間</b><br>
+	<b>[#24] 定義：測度，測度空間</b><br>
 	<p>$(\varOmega,\,\mathcal{F})$ を可測空間とする．関数 $\mu:\mathcal{F}\rightarrow [0,\,\infty)$ が $(\varOmega,\,\mathcal{F})$ 上の【測度 (measure)】であるとは， $\mu$ が以下の条件を満たすことを云う：</p>
 	<ul class="defl">
 		<li> $\mu(\emptyset) = 0$,</li>
 		<li> 無限加算個の部分集合列 $\{A_n\}_{n\in\mathbb{N}}$ について，
-			<center>$\{A_n\}\subset\mathcal{F}$ かつ $\{A_n\}$ が互いに素$\,\,\Longrightarrow\,\,\mu\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}\mu(A_i)$</center>
+			<center>$\{A_n\}\subset\mathcal{F}$ かつ $\{A_n\}$ が互いに素 <a href="mutuall-disjoint.html#196">[#196]</a> $\,\,\Longrightarrow\,\,\mu\left(\bsqcu_{n=1}^{\infty} A_n\right) = \sig_{n=1}^{\infty}\mu(A_n)$</center>
 			が成り立つ【測度の $\sigma$ 加法性】．</li>
 	</ul>
 	<p>また，組 $(\varOmega,\,\mathcal{F},\,\mu)$ を【測度空間 (measure space)】と呼ぶ．</p>
@@ -43,9 +44,9 @@ updated on 2022/4/26
 <br><br>
         
 <div class="prp" id="25">
-	<b>[#25]命題：測度の有限加法性</b><br>
+	<b>[#25] 命題：測度の有限加法性</b><br>
 	<p>有限個の集合列 $\{A_n\}_{n=1}^{N}$ について</p>
-	<p><center>$\{A_n\}\subset\mathcal{F}$ かつ $\{A_n\}$ が互いに素$\,\,\Longrightarrow\,\,\mu\left(\bcu_{n=1}^{N} A_n\right) = \sig_{n=1}^{N}\mu(A_n).$</center></p>
+	<p><center>$\{A_n\}\subset\mathcal{F}$ かつ $\{A_n\}$ が互いに素 <a href="mutuall-disjoint.html#196">[#196]</a> $\,\,\Longrightarrow\,\,\mu\left(\bcu_{n=1}^{N} A_n\right) = \sig_{n=1}^{N}\mu(A_n).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
@@ -58,7 +59,7 @@ updated on 2022/4/26
 <br><br>
         
 <div class="prp" id="26">
-	<b>[#26]命題：測度の単調性</b><br>
+	<b>[#26] 命題：測度の単調性</b><br>
 	<p>$A,\,B\in\mathcal{F}$ が $A\subset B$ ならば</p>
 	<p><center>$\mu(B\setminus A) = \mu(B)-\mu(A)$</center></p>
 	<p>であり，それ故に</p>
@@ -75,7 +76,7 @@ updated on 2022/4/26
 <br><br>
         
 <div class="prp" id="46">
-	<b>[#46]命題：和の測度と積の測度の関係</b><br>
+	<b>[#46] 命題：和の測度と積の測度の関係</b><br>
 	<p>測度空間 $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合　$A,\,B\in\mathcal{F}$ に対して，</p>
 	<p><center>$\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B).$</center></p>
 </div>
@@ -96,7 +97,7 @@ updated on 2022/4/26
 <br><br>
         
 <div class="prp" id="89">
-	<b>[#89]命題：測度の劣加法性</b><br>
+	<b>[#89] 命題：測度の劣加法性</b><br>
 	<p>必ずしも互いに素でない集合の列 $\{A_n\}_{n\in\mathbb{N}}$ に対して</p>
 	<p><center>$\{A_n\}\subset\mathcal{F}\,\,\Longrightarrow\,\, \mu\left(\bcu_{n\in\mathbb{N}}A_n\right) \leq \sig_{n\in\mathbb{N}}\mu(A_n).$</center></p>
 </div>
@@ -113,7 +114,7 @@ updated on 2022/4/26
 <br><br>
         
 <div class="prp" id="27">
-	<b>[#27]命題：単調非減少列と測度の連続性定理</b><br>
+	<b>[#27] 命題：単調非減少列と測度の連続性定理</b><br>
 	<p>集合の列 $\{A_n\}_{n\in\mathbb{N}}\subset\mathcal{F}$ が 単調非減少列 <a href="limit-set.html#190">[#190]</a> であるならば，</p>
 	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \mu\left(\lim_{n\rightarrow\infty}A_n\right).$</center></p>
 </div>
@@ -130,7 +131,7 @@ updated on 2022/4/26
 <br><br>
         
 <div class="prp" id="28">
-	<b>[#28]命題：単調非増加列と測度の連続性定理</b><br>
+	<b>[#28] 命題：単調非増加列と測度の連続性定理</b><br>
 	<p>集合の列 $\{A_n\}_{n\in\mathbb{N}}\subset\mathcal{F}$ が単調非増加列 <a href="limit-set.html#190">[#190]</a> であるならば，</p>
 	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \mu\left(\lim_{n\rightarrow\infty}A_i\right).$</center></p>
 </div>
