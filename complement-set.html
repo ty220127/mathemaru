@@ -28,7 +28,7 @@
 
 <p style="text-align:right;">
 isolated from <a href="set.html">集合</a> on 2022/2/20<br>
-updated on 2022/4/29
+updated on 2022/4/30
 </p>
 
 <div class="def" id="95">
@@ -77,8 +77,11 @@ updated on 2022/4/29
 <br><br>
 
 <div class="prp" id="55">
-	<b>[#55] 命題：共通部分による集合の分割</b><br>
-	<p>集合 $A,\,B$ はともに空集合でないとする．このとき集合族 $\{A\cap B,\,A\setminus B\}$ は $A$ の分割である．
+	<b>[#55] 命題：直和による集合の分解</b><br>
+	<p>集合 $A,\,B$ に対して，$A\cap B$ と $A\setminus B$ は互いに素であり，
+	<p><center>$\begin{align*}
+		(A\cap B)\sqcup(A\setminus B) = A.
+		\end{align*}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
@@ -87,14 +90,14 @@ updated on 2022/4/29
 		(A\cap B)\cap (A\setminus B) \refeq{set.html#53}{53} A\cap \{B\cap (A\setminus B)\}
 			\refeq{#96}{96} A\cap \emptyset = \emptyset
 		\end{align*}</center></p>
-	<p>より $A\cap B$ と $A\setminus B$ は互いに素である．<br> 次に，これらの和（直和）を調べると</p>
+	<p>より $A\cap B$ と $A\setminus B$ は互いに素である．また，これらの和（直和）について，</p>
 	<p><center> 
 		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\setminus B)\,\,\reflr{set.html#51}{51}\,\, (x\in A\cap B) \lor (x\in (A\setminus B))\\
 		\reflr{#95}{95}\,\,& ((x\in A) \land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
 		\reflr{proposition.html#62}{62}\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
 		\reflr{proposition.html#58}{58}\,\,& (x\in A) \land \mathsf{T}\,\,\reflr{proposition.html#60}{60}\,\, x\in A.\end{align*}$
 	</center></p>
-	<p>以上により，$\{A\cap B,\,A\setminus B\}$ は $A$ の分割である．
+	<p>であることから $(A\cap B)\sqcup(A\setminus B) = A$ がいえる．</p>
 </Details>
 <br><br>
 
