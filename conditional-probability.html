@@ -1,0 +1,75 @@
+
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "条件付き確率"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
+<p style="text-align:right;">
+established on 2022/5/1<br>
+updated on 2022/5/1
+</p>
+   
+<div class="def" id="201">
+<b>[#201] 定義：条件付き確率</b><br>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，$A,\,B\in\mathcal{F}$，$P(B)\gt 0$ とする．このとき，以下で定義される $P(A\,|\,B)$ を事象 $A$ の下での事象 $B$ の【条件付き確率 (conditional probability)】と呼ぶ：</p>
+	<p><center>\begin{align*}
+		P(A\,|\,B) = \fraction{P(A\cap B)}{P(B)}.
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="202">
+<b>[#202] 命題：全確率の公式 (law of total probability)</b><br>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，$A\in\mathcal{F}$ とする．また，集合族 $\{B_k\}_{k=1}^{n}\subset \mathcal{F}$ は互いに排反で $\bigsqcup_{k=1}^{n}B_k$ を満たし，更にすべての $k\in\{1,\,\cdots,\,n\}$ に対し $P(B_k)\gt 0$ とする．以上の下で，以下が成り立つ：</p>
+	<p><center>\begin{align*}
+		P(A) = \sum_{k=1}^{n}P(A\,|\,B_k)P(B_k).
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="203">
+<b>[#203] 命題：<ruby><rb>Bayes</rb><rp>（</rp><rt>ベイズ</rt><rp>）</rp></ruby> の定理 (Bayes' theorem)</b><br>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，集合族 $\{B_k\}_{k=1}^{n}\subset \mathcal{F}$ は互いに排反で $\bigsqcup_{k=1}^{n}B_k$ を満たし，更にすべての $k\in\{1,\,\cdots,\,n\}$ に対し $P(B_k)\gt 0$ とする．このとき，$P(A)\gt 0$ を満たす事象 $A\in\mathcal{F}$ に対して</p>
+	<p><center>\begin{align*}
+		P(B_j\,|\,A) = \fraction{P(A\,|\,B_j)P(B_j)}{\sum_{k=1}^{n}P(A\,|\,B_k)P(B_k)}\quad(j=1,\,\cdots,\,n).
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+		<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+		<li>舟木直久: 講座＜数学の考え方＞20 確率論, 朝倉書店, (2004).</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
