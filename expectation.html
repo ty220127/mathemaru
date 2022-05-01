@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+	}}});
+</script>
+<script>
+	const ttl = "期待値と分散"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+	table{
+		font-size: 14px;
+	}
+</style>
+</head>
+
+<body>
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
+<p style="text-align:right;">
+established on 2022/5/1<br>
+updated on 2022/5/1
+</p>
+    
+<div class="def" id="198">
+	<b>[#198] 定義：期待値</b><br>
+	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，Lebesgue 積分</p>
+	<p><center>\begin{align*}
+		\mathbb{E}[X] := \int_{\varOmega}X(\omega)\,P(\rd\omega)
+		\end{align*}</center></p>
+	<p>が存在するとき，この $\mathbb{E}[X]$ を $X$ の【期待値 (expectation)】或いは【平均値 (mean)】と呼ぶ．
+</div>
+<br><br>
+
+<div class="def" id="199">
+	<b>[#199] 定義：分散</b><br>
+	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，</p>
+	<p><center>\begin{align*}
+		\mathbb{V}[X] := \mathbb{E}\left[(X-\mathbb{E}[X])^2\right]
+		\end{align*}</center></p>
+	<p>が存在するとき，この $\mathbb{V}[X]$ を $X$ の【分散 (variance)】と呼ぶ．
+</div>
+<br><br>
+
+<div class="def" id="200">
+	<b>[#200] 定義：モーメント，中心モーメント</b><br>
+	<p> $k$ を $1$ 以上の整数とする．確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，</p>
+	<ul>
+		<p><li> $\mu_k := \mathbb{E}\left[X^k\right]$ を $X$ に関する $k$ 次の【積率 (モーメント; moment)】と呼ぶ．</li></p>
+		<p><li> $\mu'_k := \mathbb{E}\left[(X-\mathbb{E}[X])^k\right]$ を $X$ に関する $k$ 次の【中心積率 (中心モーメント; central moment)】と呼ぶ．</li></p>
+</div>
+<Details>
+<summary>補足</summary>
+	<p> $k=1$ のとき $\mu_1 = \mathbb{E}[X]$ は $X$ の期待値， $k=2$ のとき $\mu'_2 = \mathbb{E}\left[(X-\mathbb{E}[X])^2\right]$ は $X$ の分散である．</p>
+</Details>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+	<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会 (1991).</li>
+</ul>
+</div>
+	            
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
