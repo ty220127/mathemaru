@@ -43,7 +43,7 @@ updated on 2022/5/1
 
 <div class="prp" id="202">
 <b>[#202] 命題：全確率の公式 (law of total probability)</b><br>
-	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，$A\in\mathcal{F}$ とする．また，集合族 $\{B_k\}_{k=1}^{n}\subset \mathcal{F}$ は互いに排反で $\bigsqcup_{k=1}^{n}B_k$ を満たし，更にすべての $k\in\{1,\,\cdots,\,n\}$ に対し $P(B_k)\gt 0$ とする．以上の下で，以下が成り立つ：</p>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，$A\in\mathcal{F}$ とする．また，集合列 $\{B_k\}_{k=1}^{n}\subset \mathcal{F}$ は互いに排反で $\bigsqcup_{k=1}^{n}B_k$ を満たし，更にすべての $k\in\{1,\,\cdots,\,n\}$ に対し $P(B_k)\gt 0$ とする．以上の下で，以下が成り立つ：</p>
 	<p><center>\begin{align*}
 		P(A) = \sum_{k=1}^{n}P(A\,|\,B_k)P(B_k).
 		\end{align*}</center></p>
@@ -52,7 +52,7 @@ updated on 2022/5/1
 
 <div class="prp" id="203">
 <b>[#203] 命題：<ruby><rb>Bayes</rb><rp>（</rp><rt>ベイズ</rt><rp>）</rp></ruby> の定理 (Bayes' theorem)</b><br>
-	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，集合族 $\{B_k\}_{k=1}^{n}\subset \mathcal{F}$ は互いに排反で $\bigsqcup_{k=1}^{n}B_k$ を満たし，更にすべての $k\in\{1,\,\cdots,\,n\}$ に対し $P(B_k)\gt 0$ とする．このとき，$P(A)\gt 0$ を満たす事象 $A\in\mathcal{F}$ に対して</p>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，集合列 $\{B_k\}_{k=1}^{n}\subset \mathcal{F}$ は互いに排反で $\bigsqcup_{k=1}^{n}B_k$ を満たし，更にすべての $k\in\{1,\,\cdots,\,n\}$ に対し $P(B_k)\gt 0$ とする．このとき，$P(A)\gt 0$ を満たす事象 $A\in\mathcal{F}$ に対して</p>
 	<p><center>\begin{align*}
 		P(B_j\,|\,A) = \fraction{P(A\,|\,B_j)P(B_j)}{\sum_{k=1}^{n}P(A\,|\,B_k)P(B_k)}\quad(j=1,\,\cdots,\,n).
 		\end{align*}</center></p>
