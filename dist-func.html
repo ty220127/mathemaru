@@ -13,7 +13,7 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		intgrl: '\\displaystyle\\int',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		rd: '\\mathrm{d}',
       }}});
     </script>
@@ -28,7 +28,7 @@
 
 <p style="text-align:right;">
 established on 2022/1/27<br>
-updated on 2022/4/29
+updated on 2022/5/2
 </p>
    
 <div class="def" id="17">
@@ -49,12 +49,23 @@ updated on 2022/4/29
 		\end{align*}$</center></p>
 </div>
 <Details>
-<summary>証明</summary>
-	<p> $(x,\,\infty)\subset \mathbb{R}\setminus (-\infty,\,x]$ であることから，測度の単調性 <a href="measure.html#26">[#26]</a> により
+<summary>証明１</summary>
+	<p>$\mathbb{R}$ が全事象であることから $(x,\,\infty)= (-\infty,\,x]^\cpl$ がいえる．よって，余事象の確率の公式 <a href="probmeasure.html#15">[#15]</a> より
+	<p><center>$\begin{align*}
+		P((x,\,\infty)) =  1 - P((-\infty,\,x]) \refeq{#17}{17} 1-F(x).
+		\end{align*}$</center></p>
+</Details>
+<Details>
+<summary>証明２</summary>
+	<p> $(x,\,\infty)= \mathbb{R}\setminus (-\infty,\,x]$ であることから，測度の単調性 <a href="measure.html#26">[#26]</a> により
 	<p><center>$\begin{align*}
 		P((x,\,\infty)) =  P(\mathbb{R}) - P((-\infty,\,x])
 		\end{align*}$</center></p>
 	<p>が成り立つ．普遍集合の確率測度は $1$ であり（$P(\mathbb{R})=1$; <a href="probmeasure.html#12">[#12]</a> - ii），かつ分布関数の定義 <a href="#17">[#17]</a> より $P((-\infty,\,x]) = F(x)$ であることから題意は示される．</p>
+</Details>
+<Details>
+<summary>補足</summary>
+	<p>証明１，２の違いは既に示された余事象の確率に関する事実を踏まえるか否かだけであって，本質的には何も変わりない．</p>
 </Details>
 <br><br>
 	  
