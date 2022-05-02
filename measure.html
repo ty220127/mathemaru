@@ -3,31 +3,36 @@
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bsqcu: '\\displaystyle\\bigsqcup', 
 		bca: '\\displaystyle\\bigcap', 
-		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathsf{c}'
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
 	}}});
 </script>
-<title>測度｜演習問題集</title>
+<script>
+	const ttl = "測度"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-</style>
 </head>
 
 <body>
-<center><div id="titlehead">測度</div></center>
-
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/1/30<br>
-updated on 2022/4/29
+updated on 2022/5/2
 </p>
     
 <div class="def" id="24">
@@ -46,7 +51,7 @@ updated on 2022/4/29
 <div class="prp" id="25">
 	<b>[#25] 命題：測度の有限加法性</b><br>
 	<p>有限個の集合列 $\{A_n\}_{n=1}^{N}$ について</p>
-	<p><center>$\{A_n\}\subset\mathcal{F}$ かつ $\{A_n\}$ が互いに素 <a href="mutually-disjoint.html#196">[#196]</a> $\,\,\Longrightarrow\,\,\mu\left(\bcu_{n=1}^{N} A_n\right) = \sig_{n=1}^{N}\mu(A_n).$</center></p>
+	<p><center>$\{A_n\}\subset\mathcal{F}$ かつ $\{A_n\}$ が互いに素 <a href="mutually-disjoint.html#196">[#196]</a> $\,\,\Longrightarrow\,\,\mu\left(\bsqcu_{n=1}^{N} A_n\right) = \sig_{n=1}^{N}\mu(A_n).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
@@ -55,6 +60,18 @@ updated on 2022/4/29
 	<p>一方，<a href="#24">[#24]</a>-i より $\mu(\emptyset)=0$ であるから，</p>
 	<p><center>$\sig_{n\in\mathbb{N}}\mu(A_n) = \sig_{n=1}^{N}\mu(A_n).$</center></p>
 	<p>以上と測度の $\sigma$ 加法性 <a href="#24">[#24]</a>-ii より，題意は示される．</p>
+</Details>
+<br><br>
+        
+<div class="prp" id="205">
+	<b>[#205] 命題：集合を用いた測度の分解</b><br>
+	<p>集合 $A,\,B\in \mathcal{F}$ に対して</p>
+	<p><center>$\mu(A) = \mu(A\cap B) + \mu(A\setminus B).$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>命題 <a href="complement-set.html#55">[#55]</a> より $A\cap B$ と $A\setminus B$ は互いに素で $(A\cap B)\sqcup(A\setminus B) = A$ である．よって，測度の有限加法性 <a href="#25">[#25]</a> より</p>
+	<p><center>$\mu(A) = \mu(A\cap B) + \mu(A\setminus B).$</center></p>
 </Details>
 <br><br>
         
@@ -67,10 +84,18 @@ updated on 2022/4/29
 	<p>である．</p>
 </div>
 <Details>
-	<summary>証明</summary>
+	<summary>証明１</summary>
 	<p><a href="complement-set.html#96">[#96]</a> および <a href="complement-set.html#97">[#97]</a> より $A\cap (B\setminus A) = \emptyset$ かつ $A\cup (B\setminus A) = B$ であるから，
 		測度の有限加法性<a href="#25">[#25]</a>より</p>
 	<p><center>$\mu(A)+\mu(B\setminus A) = \mu(B),\,\,\,\text{i.e.,}\,\,\,\mu(B\setminus A) = \mu(B)-\mu(A)$.</center></p>
+	<p>また，測度の値域 <a href="#24">[#24]</a> より $\mu(B)-\mu(A) = \mu(B\setminus A)\geq 0$ である．</p>
+</Details>
+<Details>
+	<summary>証明２</summary>
+	<p>命題 <a href="#205">[#205]</a> より</p>
+	<p><center>$\mu(B) = \mu(A\cap B) + \mu(B\setminus A).$</center></p>
+	<p>集合の包含と共通部分に関する命題 <a href="set.html#57">[#57]</a> より，$A\cap B = A$．よって</p>
+	<p><center>$\mu(B)=\mu(A)+\mu(B\setminus A),\,\,\,\text{i.e.,}\,\,\,\mu(B\setminus A) = \mu(B)-\mu(A)$.</center></p>
 	<p>また，測度の値域 <a href="#24">[#24]</a> より $\mu(B)-\mu(A) = \mu(B\setminus A)\geq 0$ である．</p>
 </Details>
 <br><br>
@@ -93,6 +118,39 @@ updated on 2022/4/29
 	<p>$A\cup B = A \cup (B\setminus A)$ かつ $B=(B\setminus A) \cup (A\cap B)$ であるから，測度の有限加法性 <a href="#25">[#25]</a> より</p>
 	<p><center>$\mu(A\cup B) +\mu(A\cap B) = \mu(A)+ \mu(B\setminus A) + \mu(A\cap B) = \mu(A) + \mu(B).$</center></p>
 	<p>よって $\mu(A\cup B) = \mu(A) + \mu(B) -\mu(A\cap B)$ が成り立つ．</p>
+</Details>
+<br><br>
+        
+<div class="prp" id="206">
+	<b>[#206] 命題：集合列を用いた測度の分解</b><br>
+	<p>集合 $A\in \mathcal{F}$ とする．</p>
+	<ul>
+		<li><p> $\{B_n\}_{n=1}^{\infty}\subset\mathcal{F}$ が互いに素で $\sqcup_{n=1}^{\infty}B_n = \varOmega$ を満たすとき</p>
+			<p><center>\begin{align*}
+				\mu(A) = \sum_{n=1}^{\infty}\mu(A\cap B_n)
+				\end{align*}</center></p></li>
+		<li><p> $\{B_n\}_{n=1}^{N}\subset\mathcal{F}$ が互いに素で $\sqcup_{n=1}^{N}B_n = \varOmega$ を満たすとき</p>
+			<p><center>\begin{align*}
+				\mu(A) = \sum_{n=1}^{N}\mu(A\cap B_n)
+				\end{align*}</center></p></li>
+	</ul>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>前者について示す．<br>
+		$m,\,n\lt \infty$ に対して</p>
+	<p><center>\begin{align*}
+		(A\cap B_m)\cap (A\cap B_n) = A\cap B_m\cap B_n = \emptyset
+		\end{align*}</center></p>
+	<p>であるから，$\{A\cap B_n\}_{n=1}^{\infty}$ は互いに素である．また，</p>
+	<p><center>\begin{align*}
+		\bsqcu_{n=1}^{\infty}(A\cap B_n) \refeq{set.html#131}{131} A\cap \bsqcu_{n=1}^{\infty}B_n = A\cap \varOmega = A
+		\end{align*}</center></p>
+	<p>が成り立つから，測度の $\sigma$ 加法性 <a href="#24">[#24]</a> より</p>
+	<p><center>\begin{align*}
+		\mu(A) = \mu\left(\bsqcu_{n=1}^{\infty}(A\cap B_n)\right)= \sum_{n=1}^{\infty}\mu(A\cap B_n)
+		\end{align*}</center></p>
+	<p>後者についても，測度の有限加法性 <a href="#25">[#25]</a> を用いることで同様に示せる．</p>
 </Details>
 <br><br>
         
