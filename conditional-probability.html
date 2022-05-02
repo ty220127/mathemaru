@@ -6,8 +6,12 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
@@ -48,6 +52,18 @@ updated on 2022/5/2
 		P(A) = \sum_{k=1}^{n}P(A\,|\,B_k)P(B_k).
 		\end{align*}</center></p>
 </div>
+<Details>
+<summary>証明</summary>
+	<p>集合列を用いた測度の分解 <a href="measure.html#206">[#206]</a> より</p>
+	<p><center>\begin{align*}
+		P(A) = \sum_{k=1}^{n}P(A\cap B_k).
+		\end{align*}</center></p>
+	<p>ここで，条件付き確率の定義 <a href="#201">[#201]</a> より，$k=1,\,\cdots,\,n$ に対して</p>
+	<p><center>\begin{align*}
+		P(A\cap B_k) = P(A\,|\,B_k)P(B_k).
+		\end{align*}</center></p>
+	<p>以上の議論をまとめることで題意を得る．</p>
+</Details>
 <br><br>
 
 <div class="prp" id="203">
@@ -57,6 +73,40 @@ updated on 2022/5/2
 		P(B_j\,|\,A) = \fraction{P(A\,|\,B_j)P(B_j)}{\sum_{k=1}^{n}P(A\,|\,B_k)P(B_k)}\quad(j=1,\,\cdots,\,n).
 		\end{align*}</center></p>
 </div>
+<Details>
+<summary>証明</summary>
+	<p>条件付き確率の定義 <a href="#201">[#201]</a> より，$j=1,\,\cdots,\,n$ に対して</p>
+	<p><center>\begin{align*}
+		P(A\cap B_j) = P(A\,|\,B_j)P(B_j).
+		\end{align*}</center></p>
+	<p>一方，集合の交換法則 <a href="set.html#52">[#52]</a> より $A\cap B_j = B_j \cap A$ であることから</p>
+	<p><center>\begin{align*}
+		P(A\cap B_j) = P(B_j\cap A) \refeq{#201}{201} P(B_j\,|\,A)P(A).
+		\end{align*}</center></p>
+	<p>以上により，$P(A)\gt 0$ に注意して</p>
+	<p><center>\begin{align*}
+		P(B_j\,|\,A)P(A) = P(A\,|\,B_j)P(B_j),\quad\text{i.e.,}\quad P(B_j\,|\,A) = \fraction{P(A\,|\,B_j)P(B_j)}{P(A)}.
+		\end{align*}</center></p>
+	<p>最後に，全確率の公式 <a href="#202">[#202]</a> より</p>
+	<p><center>\begin{align*}
+		P(B_j\,|\,A) = \fraction{P(A\,|\,B_j)P(B_j)}{\sum_{k=1}^{n}P(A\,|\,B_k)P(B_k)}.
+		\end{align*}</center></p>
+</Details>
+<br><br>
+
+<div class="exm" id="207">
+<b>[#207] 例題：事前確率と事後確率</b><br>
+	<p>いろいろな動物の絵がプリントされているクッキーを，工場 A と工場 B で生産している．工場 A で製造されたクッキーの箱の中には $2\,\%$ の確率でカモノハシの絵がプリントされているクッキーが入っており，工場 B で製造されたクッキーの箱の中には $8\,\%$ の確率でカモノハシの絵がプリントされているクッキーが入っている．ある商店のうち，$70\,\%$ を工場 A から，$30\,\%$ を工場 B から仕入れている．</p>
+	<ol>
+	<li><p>仕入れたクッキーの箱を無作為に $1$ 個抽出する．このクッキーの箱の中にカモノハシの絵がプリントされているクッキーが入っている確率はいくらか．</p></li>
+	<li><p>仕入れたクッキーの箱を無作為に $1$ 個抽出したところ，箱の中にカモノハシの絵がプリントされているクッキーが入っていた．このとき，このクッキーが工場 A で製造された確率はいくらか．</p></li>
+	</ol>
+	<p>解答は小数第 4 位を四捨五入せよ．</p>
+	<p style="text-align:right;">[2018.11 統計検定 2級]</p>
+</div>
+<Details>
+<summary>解答</summary>
+</Details>
 <br><br>
 
 <div id="bib">
