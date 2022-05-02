@@ -68,34 +68,38 @@ updated on 2022/5/2
 
 <div class="prp" id="203">
 <b>[#203] 命題：<ruby><rb>Bayes</rb><rp>（</rp><rt>ベイズ</rt><rp>）</rp></ruby> の定理 (Bayes' theorem)</b><br>
-	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，集合列 $\{B_k\}_{k=1}^{n}\subset \mathcal{F}$ は互いに排反で $\bigsqcup_{k=1}^{n}B_k = \varOmega$ を満たし，更にすべての $k\in\{1,\,\cdots,\,n\}$ に対し $P(B_k)\gt 0$ とする．このとき，$P(A)\gt 0$ を満たす事象 $A\in\mathcal{F}$ に対して</p>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，集合列 $\{H_k\}_{k=1}^{n}\subset \mathcal{F}$ は互いに排反で $\bigsqcup_{k=1}^{n}H_k = \varOmega$ を満たし，更にすべての $k\in\{1,\,\cdots,\,n\}$ に対し $P(H_k)\gt 0$ とする．このとき，$P(A)\gt 0$ を満たす事象 $A\in\mathcal{F}$ に対して</p>
 	<p><center>\begin{align*}
-		P(B_j\,|\,A) = \fraction{P(A\,|\,B_j)P(B_j)}{\sum_{k=1}^{n}P(A\,|\,B_k)P(B_k)}\quad(j=1,\,\cdots,\,n).
+		P(H_j\,|\,A) = \fraction{P(A\,|\,H_j)P(H_j)}{\sum_{k=1}^{n}P(A\,|\,H_k)P(H_k)}\quad(j=1,\,\cdots,\,n).
 		\end{align*}</center></p>
 </div>
 <Details>
 <summary>証明</summary>
 	<p>条件付き確率の定義 <a href="#201">[#201]</a> より，$j=1,\,\cdots,\,n$ に対して</p>
 	<p><center>\begin{align*}
-		P(A\cap B_j) = P(A\,|\,B_j)P(B_j).
+		P(A\cap H_j) = P(A\,|\,H_j)P(H_j).
 		\end{align*}</center></p>
-	<p>一方，集合の交換法則 <a href="set.html#52">[#52]</a> より $A\cap B_j = B_j \cap A$ であることから</p>
+	<p>一方，集合の交換法則 <a href="set.html#52">[#52]</a> より $A\cap H_j = H_j \cap A$ であることから</p>
 	<p><center>\begin{align*}
-		P(A\cap B_j) = P(B_j\cap A) \refeq{#201}{201} P(B_j\,|\,A)P(A).
+		P(A\cap H_j) = P(H_j\cap A) \refeq{#201}{201} P(H_j\,|\,A)P(A).
 		\end{align*}</center></p>
 	<p>以上により，$P(A)\gt 0$ に注意して</p>
 	<p><center>\begin{align*}
-		P(B_j\,|\,A)P(A) = P(A\,|\,B_j)P(B_j),\quad\text{i.e.,}\quad P(B_j\,|\,A) = \fraction{P(A\,|\,B_j)P(B_j)}{P(A)}.
+		P(H_j\,|\,A)P(A) = P(A\,|\,H_j)P(H_j),\quad\text{i.e.,}\quad P(H_j\,|\,A) = \fraction{P(A\,|\,H_j)P(H_j)}{P(A)}.
 		\end{align*}</center></p>
 	<p>最後に，全確率の公式 <a href="#202">[#202]</a> より</p>
 	<p><center>\begin{align*}
-		P(B_j\,|\,A) = \fraction{P(A\,|\,B_j)P(B_j)}{\sum_{k=1}^{n}P(A\,|\,B_k)P(B_k)}.
+		P(H_j\,|\,A) = \fraction{P(A\,|\,H_j)P(H_j)}{\sum_{k=1}^{n}P(A\,|\,H_k)P(H_k)}.
 		\end{align*}</center></p>
+</Details>
+<Details>
+<summary>補足</summary>
+	<p>Bayes の定理において，しばしば事象 $A$ は「結果」，事象 $H_k$ たちは「原因」と解釈される．また $P(H_k)$ は【事前確率 (prior probability)】，$P(H_k\,|\,A)$ は【事後確率 (posterior probability)】と呼ばれる．この定理はある $H_j$ に対する事後確率を求めるための式であるが，これは $A$ という結果が起こった原因が $H_j$ である確率を表している．つまり，Bayes の定理は結果から原因を検討するための定理と云える．</p>
 </Details>
 <br><br>
 
 <div class="exm" id="207">
-<b>[#207] 例題：事前確率と事後確率</b><br>
+<b>[#207] 例題：事後確率の求値</b><br>
 	<p>いろいろな動物の絵がプリントされているクッキーを，工場 A と工場 B で生産している．工場 A で製造されたクッキーの箱の中には $2\,\%$ の確率でカモノハシの絵がプリントされているクッキーが入っており，工場 B で製造されたクッキーの箱の中には $8\,\%$ の確率でカモノハシの絵がプリントされているクッキーが入っている．ある商店のうち，$70\,\%$ を工場 A から，$30\,\%$ を工場 B から仕入れている．</p>
 	<ol>
 	<li><p>仕入れたクッキーの箱を無作為に $1$ 個抽出する．このクッキーの箱の中にカモノハシの絵がプリントされているクッキーが入っている確率はいくらか．</p></li>
@@ -114,9 +118,14 @@ updated on 2022/5/2
 	<ul>
 		<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
 		<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+		<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会 (1991).</li>
 		<li>舟木直久: 講座＜数学の考え方＞20 確率論, 朝倉書店, (2004).</li>
 </ul>
 </div>
+<b>その他参考コンテンツ</b>
+<center>
+<iframe width="480" height="270" src="https://www.youtube.com/embed/oUN_GhB00fU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
       
 <p style="text-align:right;">
 <a href="index.html">トップページに戻る</a>
