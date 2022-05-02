@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
@@ -5,6 +6,9 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -12,23 +16,23 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}'
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
 	}}});
 </script>
-<title>集合｜演習問題集</title>
+<script>
+	const ttl = "集合"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-	table{
-		font-size: 14px;
-	}
-</style></head>
+</head>
 
 <body>
-<center><div id="titlehead">集合</div></center>
-
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/2/6<br>
-updated on 2022/5/1
+updated on 2022/5/2
 </p>
     
 <div class="def" id="48">
@@ -158,6 +162,27 @@ updated on 2022/5/1
 </Details>
 <br><br>
 
+<div class="prp" id="204">
+	<b>[#204] 命題：集合とその和・共通部分との関係</b><br>
+	<p>集合 $A,\,B$ に対して </p>
+	<p><center>$A\subset A\cup B$，$A\cap B\subset A$.</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>命題論理における論理和・論理積の性質 <a href="implication.html#88">[#88]</a> を用いる：</p>
+	<p><center>\begin{align*}
+		& x\in A\,\,\underset{(2)}{\Longrightarrow}\,\, (x\in A)\lor (x\in B) \,\,\reflr{#51}{51}\,\, x\in A\cup B,\\
+		& x\in A\cap B\,\,\reflr{#51}{51}\,\, (x\in A)\land (x\in B) \,\,\underset{(1)}{\Longrightarrow}\,\, x\in A.
+		\end{align*}</center></p>
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>集合の交換法則 <a href="#52">[#52]</a> を用いることで，直ちに</p>
+	<p><center>$B\subset A\cup B$，$A\cap B\subset B$</center></p>
+	<p>も云える．</p>
+</Details>
+<br><br>
+  
 <div class="prp" id="53">
 	<b>[#53] 命題：集合演算の結合法則</b><br>
 	<p>集合 $A,\,B,\,C$ に対して </p>
@@ -225,30 +250,56 @@ updated on 2022/5/1
 
 <div class="prp" id="56">
 	<b>[#56] 命題：集合の包含と和</b><br>
-	<p>集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，</p>
-	<p><center>$A\cup B=B.$</center></p>
+	<p>集合 $A,\,B$ について</p>
+	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A\cup B=B.$</center></p>
 </div>
 <Details>
-	<summary>証明</summary>
-	<p> <a href="implication.html#88">[#88]</a> より $[x\in B\Rightarrow x\in A\cup B]$ である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，</p>
-	<p><center>
-		$\begin{align*} x\in A\cup B\,\,&\Longleftrightarrow\,\, \underline{(x\in A)}\lor (x\in B)\\
-		&\,\Longrightarrow\,\, \underline{(x\in B)}\lor (x\in B)\,\,\Longleftrightarrow\,\, x\in B.\end{align*}$
-	</center></p>
+	<summary>証明 $(\Rightarrow)$</summary>
+	<p>まず，<a href="#204">[#204]</a> より $A\cup B\supset B$ である．<br>
+		一方，$A\subset B$ であることから，その定義 <a href="#111">[#111]</a> より $[\,x\in A\ \Rightarrow\ x\in B\,\,\cdots (*)\,]$ ．よって</p>
+	<p><center>\begin{align*}
+		x\in A\cup B\,\,&\reflr{#51}{51}\,\, \underline{(x\in A)}\lor (x\in B)\\
+		&\,\underset{(*)}{\Longrightarrow}\,\, \underline{(x\in B)}\lor (x\in B)\,\,\Longleftrightarrow\,\, x\in B,
+		\end{align*}</center></p>
+	<p>つまり $A\cup B\subset B.$<br>
+		以上により，$A\cup B= B.$</p>
+</Details>
+<Details>
+	<summary>証明 $(\Leftarrow)$</summary>
+	<p> $A\cup B= B\,\cdots (\dagger)$ であることに注意して，</p>
+	<p><center>\begin{align*}
+		x\in A\,\,&\,\,\refr{#204}{204}\,\, x\in A\cup B\\
+		&\,\underset{(\dagger)}{\Longleftrightarrow}\,\, x\in B
+		\end{align*}</center></p>
+	<p>より $A\subset B.$</p>
 </Details>
 <br><br>
 	
 <div class="prp" id="57">
 	<b>[#57] 命題：集合の包含と共通部分</b><br>
-	<p>集合 $A,\,B$ が包含関係 $A\subset B$ を持つとき，</p>
-	<p><center>$A\cap B=A.$</center></p>
+	<p>集合 $A,\,B$ について</p>
+	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A\cap B=A.$</center></p>
 </div>
 <Details>
-	<summary>証明</summary>
-	<p> <a href="implication.html#88">[#88]</a> より $[x\in A\cap B\Rightarrow x\in A]$ である．仮定より $[x\in A\Rightarrow x\in B]$ であるから，</p>
-	<p><center>
-		$x\in A\,\,\Longrightarrow\,\, (x\in A)\land (x\in B)\,\,\Longleftrightarrow\,\, x\in A\cap B.$
-	</center></p>
+	<summary>証明 $(\Rightarrow)$</summary>
+	<p>まず，<a href="#204">[#204]</a> より $A\cap B\subset A$ である．<br>
+		一方，</p>
+	<p><center>\begin{align*}
+		A\subset B\,\,\reflr{#111}{111}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in B\,]\\
+			\reflr{proposition.html#88}{88}\,\,&[\,x\in A\,\,\longrightarrow\,\,(x\in A) \land (x\in B)\,]\\
+			\reflr{#51}{51}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in A\cap B\,]\\
+			\,\,\reflr{#111}{111}\,\,& A\subset A\cap B.
+		\end{align*}</center></p>
+	<p>以上により，$A\cap B= A.$</p>
+</Details>
+<Details>
+	<summary>証明 $(\Leftarrow)$</summary>
+	<p> $A\cap B= A\,\cdots (\dagger)$ であることに注意して，</p>
+	<p><center>\begin{align*}
+		x\in A\,\,&\,\underset{(\dagger)}{\Longleftrightarrow}\,\, x\in A\cap B\\
+			&\,\,\refr{#204}{204}\,\, x\in B
+		\end{align*}</center></p>
+	<p>より $A\subset B.$</p>
 </Details>
 <br><br>
 	
@@ -315,6 +366,7 @@ updated on 2022/5/1
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-3_shugo-enzan.pdf">尾畑伸明: pdf</a>.</li>
 	<li>齋藤正彦: 線型代数学, 東京都書 (2014).</li>
+	<li><a href="http://math.shinshu-u.ac.jp/~hanaki/edu/set/set2011.pdf">花木章秀: 集合論, pdf (2011)</a>.</li>
 	<li><a href="http://sss.sci.ibaraki.ac.jp/teaching/set/set2005.pdf">山上滋: 集合入門, pdf (2005)</a></li>
 	<li><a href="http://www.math.titech.ac.jp/~kotaro/class/2011/set/lecture.pdf">山田光太郎: 集合と位相第一 講義ノート, pdf (2011)</a>.</li>
 	<li><a href="https://mathwords.net/wasyugou">和集合と積集合の意味と公式 - 具体例で学ぶ数学</a></li>
