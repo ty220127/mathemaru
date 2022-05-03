@@ -28,7 +28,7 @@
 
 <p style="text-align:right;">
 isolated from <a href="set.html">集合</a> on 2022/2/20<br>
-updated on 2022/4/30
+updated on 2022/5/3
 </p>
 
 <div class="def" id="95">
@@ -39,6 +39,36 @@ updated on 2022/4/30
 </div>
 <br><br>
   
+<div class="prp" id="211">
+	<b>[#211] 命題：差集合と空集合</b><br>
+	<p>集合 $A$ に対して </p>
+	<p><center>$A\setminus \emptyset = A,\quad\emptyset\setminus A = \emptyset,\quad A\setminus A = \emptyset.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $A\setminus\emptyset =A:$</p>
+	<p><center>\begin{align*}
+		x\in A\setminus \emptyset &\,\,\reflr{#95}{95}\,\,(x\in A)\land (\neg(x\in \emptyset))\\
+		&\,\,\reflr{#110}{110}\,\,(x\in A)\land (\neg\ \mathsf{F})\\
+		&\,\,\Longleftrightarrow\,\,(x\in A)\land \mathsf{T}\,\,\reflr{proposition.html#60}{60}\,\,x\in A.\\
+	\end{align*}</center></p>
+
+	<p> $\emptyset\setminus A =\emptyset:$</p>
+	<p><center>\begin{align*}
+		x\in \emptyset\setminus A &\,\,\reflr{#95}{95}\,\,(x\in \emptyset)\land (x\not\in A)\\
+		&\,\,\reflr{set.html#110}{110}\,\,\mathsf{F} \land (x\not \in A)\\
+		&\,\,\reflr{proposition.html#60}{60}\,\,\mathsf{F}\,\,\reflr{set.html#110}{110}\,\,x\in \emptyset.\\
+	\end{align*}</center></p>
+
+	<p> $A\setminus A =\emptyset:$</p>
+	<p><center>\begin{align*}
+		x\in A\setminus A &\,\,\reflr{#95}{95}\,\,(x\in A)\land (\neg(x\in A))\\
+		&\,\,\reflr{proposition.html#60}{60}\,\,\mathsf{F}\,\,\reflr{set.html#110}{110}\,\,x\in \emptyset.\\
+	\end{align*}</center></p>
+
+</Details>
+<br><br>
+
 <div class="prp" id="96">
 	<b>[#96] 命題：差集合と共通部分</b><br>
 	<p>集合 $A,\,B$ に対して </p>
@@ -98,6 +128,36 @@ updated on 2022/4/30
 		\reflr{proposition.html#58}{58}\,\,& (x\in A) \land \mathsf{T}\,\,\reflr{proposition.html#60}{60}\,\, x\in A.\end{align*}$
 	</center></p>
 	<p>であることから $(A\cap B)\sqcup(A\setminus B) = A$ がいえる．</p>
+</Details>
+<br><br>
+
+<div class="prp" id="212">
+	<b>[#212] 命題：差集合の分配法則</b><br>
+	<p>集合 $A,\,B,\,C$ に対して </p>
+	<p><center>$\begin{align*}
+		(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C),\\
+		(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C).
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C):$</p>
+	<p><center>\begin{align*}
+		x\in (A\cup B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cup B)\land (x\not\in C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\lor (x\in B)\}\ \land (x\not\in C)\\
+		&\,\,\reflr{proposition.html#62}{62}\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
+		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\lor (x\in B\setminus C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cup (x\in B\setminus C).
+	\end{align*}</center></p>
+
+	<p> $(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C):$</p>
+	<p><center>\begin{align*}
+		x\in (A\cap B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cap B)\land (x\not\in C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\land (x\in B)\}\ \land (x\not\in C)\\
+		&\,\,\Longleftrightarrow\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
+		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\land (x\in B\setminus C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cap (x\in B\setminus C).
+	\end{align*}</center></p>
 </Details>
 <br><br>
 
