@@ -1,0 +1,66 @@
+
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "事象の独立性"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
+<p style="text-align:right;">
+established on 2022/5/3<br>
+updated on 2022/5/3
+</p>
+   
+<div class="def" id="209">
+<b>[#209] 定義：事象の独立性</b><br>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とする．事象列 $\{A_\lambda\}_{\lambda\in\varLambda}\subset\mathcal{F}$ が以下の関係を満たすことを $\{A_\lambda\}$（或いは $A_\lambda$ たち）は【独立 (independent)】であると云う：</p>
+	<p><center>\begin{align*}
+		P\left(\bca_{\lambda\in\varLambda} A_\lambda\right) = \prod_{\lambda\in\varLambda} A_\lambda.
+		\end{align*}</center></p>
+	<p>特に，$\varLambda = \{1,\,2\}$ のとき $A_1 = A$，$A_2 = B$ とすれば</p>
+	<p><center>\begin{align*}
+		P\left(A\cap B\right) = P(A)P(B).
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>石村直之: 数学のかんどころ26 確率微分方程式入門 数理ファイナンスへの応用, 共立出版 (2014).</li>
+		<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+		<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会 (1991).</li>
+		<li>舟木直久: 講座＜数学の考え方＞20 確率論, 朝倉書店, (2004).</li>
+</ul>
+</div>
+
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
