@@ -9,14 +9,15 @@
 		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
 		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
-		bs: '\\boldsymbol', 
+		bs: '\\boldsymbol',
+		indep: '\\perp\\!\\!\\!\\perp',
 		bcu: '\\displaystyle\\bigcup', 
 		bsqcu: '\\displaystyle\\bigsqcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
@@ -46,7 +47,27 @@ updated on 2022/5/3
 	<p><center>\begin{align*}
 		P\left(A\cap B\right) = P(A)P(B).
 		\end{align*}</center></p>
+	<p>事象 $A$ と $B$ が独立であることをしばしば $A\indep B$ と書く．</p>
 </div>
+<br><br>
+
+<div class="prp" id="210">
+<b>[#210] 定義：独立と余事象</b><br>
+	<p>事象 $A,\,B$ について</p>
+	<p><center>\begin{align*}
+		A\indep B\,\,\Longleftrightarrow\,\,A^\cpl\indep B\,\,\Longleftrightarrow\,\,A^\cpl\indep B^\cpl.
+		\end{align*}</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p>事象 $A,\,B$ が独立であるとすれば</p>
+	<p><center>\begin{align*}
+		P(A^\cpl\cap B) &= P(B) - P(A\cap B) \refeq{#209}{209} P(B) - P(A)P(B)\\
+		&= (1-P(A))P(B) \refeq{probmeasure.html#15}{15} P(A^\cpl)P(B),
+		\end{align*}</center></p>
+	<p>つまり $P(A^\cpl\cap B) = P(A^\cpl)P(B)$．よって，定義 <a href="#209">[#209]</a> より $A^\cpl$ と $B$ は独立である．<br>
+		逆に，$A^\cpl,\,B$ が独立であるとすれば，今示した事実より $(A^\cpl)^\cpl =A$ と $B$ が独立になる．以上により，題意の第１項と第２項の同値関係が示された．そしてこの同値関係により，第２項と第３項も同値である．</p>
+</Details>
 <br><br>
 
 <div id="bib">
