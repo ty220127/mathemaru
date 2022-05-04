@@ -3,6 +3,10 @@ body{
       font-size: 14px;
 }
 
+table{
+	font-size: 14px;
+}
+
 #titlehead{
       font-size: 200%;
       font-family: sans-serif;
