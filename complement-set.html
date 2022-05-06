@@ -1,3 +1,5 @@
+
+
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
@@ -7,6 +9,7 @@
 	MathJax.Hub.Config({ TeX: { Macros: {
 		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
 		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -14,152 +17,24 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}'
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
 	}}});
 </script>
-<title>差集合と補集合｜演習問題集</title>
+<script>
+	const ttl = "普遍集合と補集合"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-</style>
 </head>
 
 <body>
-<center><div id="titlehead">差集合と補集合</div></center>
-
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 isolated from <a href="set.html">集合</a> on 2022/2/20<br>
-updated on 2022/5/4
+updated on 2022/5/6
 </p>
-
-<div class="def" id="95">
-	<b>[#95] 定義：差集合</b><br>
-  <p>集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\setminus B$ と書く：</p>
-	    <p><center>$\begin{align*}A\setminus B &= \{x\,|\,\,(x\in A) \land (x\notin B)\}\\
-        &= \{x\,|\,\,(x\in A) \land (\neg(x\in B))\}.\end{align*}$</center></p>
-</div>
-<br><br>
-  
-<div class="prp" id="211">
-	<b>[#211] 命題：差集合と空集合</b><br>
-	<p>集合 $A$ に対して </p>
-	<p><center>$A\setminus \emptyset = A,\quad\emptyset\setminus A = \emptyset,\quad A\setminus A = \emptyset.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p> $A\setminus\emptyset =A:$</p>
-	<p><center>\begin{align*}
-		x\in A\setminus \emptyset &\,\,\reflr{#95}{95}\,\,(x\in A)\land (\neg(x\in \emptyset))\\
-		&\,\,\reflr{set.html#110}{110}\,\,(x\in A)\land (\neg\ \mathsf{F})\\
-		&\,\,\Longleftrightarrow\,\,(x\in A)\land \mathsf{T}\,\,\reflr{proposition.html#60}{60}\,\,x\in A.\\
-	\end{align*}</center></p>
-
-	<p> $\emptyset\setminus A =\emptyset:$</p>
-	<p><center>\begin{align*}
-		x\in \emptyset\setminus A &\,\,\reflr{#95}{95}\,\,(x\in \emptyset)\land (x\not\in A)\\
-		&\,\,\reflr{set.html#110}{110}\,\,\mathsf{F} \land (x\not \in A)\\
-		&\,\,\reflr{proposition.html#60}{60}\,\,\mathsf{F}\,\,\reflr{set.html#110}{110}\,\,x\in \emptyset.\\
-	\end{align*}</center></p>
-
-	<p> $A\setminus A =\emptyset:$</p>
-	<p><center>\begin{align*}
-		x\in A\setminus A &\,\,\reflr{#95}{95}\,\,(x\in A)\land (\neg(x\in A))\\
-		&\,\,\reflr{proposition.html#60}{60}\,\,\mathsf{F}\,\,\reflr{set.html#110}{110}\,\,x\in \emptyset.\\
-	\end{align*}</center></p>
-
-</Details>
-<br><br>
-
-<div class="prp" id="96">
-	<b>[#96] 命題：差集合と共通部分</b><br>
-	<p>集合 $A,\,B$ に対して </p>
-	<p><center>$A \cap (B\setminus A) = \emptyset.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p><center> 
-		$\begin{align*} \,\,& x\in A \cap (B\setminus A)\\
-		\Longleftrightarrow\,\,& (x\in A)\land (x\in B)\land (\neg(x\in A))\\
-		\Longleftrightarrow\,\,& \mathsf{F}\land (x\in B) \equiv \mathsf{F}.\end{align*}$
-	</center></p>
-	<p>よって空集合の定義により，上の $x$ について $x\in\emptyset$．</p>
-</Details>
-<br><br>
-
-<div class="prp" id="97">
-	<b>[#97] 命題：差集合と和</b><br>
-	<p>集合 $A,\,B$ に対して </p>
-	<p><center>$A \cup (B\setminus A) = A\cup B.$</center></p>
-	<p>特に $A\subset B$ であるならば
-	<p><center>$A \cup (B\setminus A) = B.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p><center> 
-		$\begin{align*} \,\,& x\in A \cup (B\setminus A)\\
-		\underset{\href{#95}{\sf[\# 95]}}{\Longleftrightarrow}\,\,& (x\in A)\lor ((x\in B)\land \neg(x\in A))\\
-		\underset{\href{proposition.html#62}{\sf[\# 62]}}{\Longleftrightarrow}\,\,& ((x\in A)\lor (x\in A))\land ((x\in A)\lor \neg(x\in A))\\
-		\underset{\href{proposition.html#60}{\sf[\# 60]}}{\Longleftrightarrow}\,\,& (x\in A\cup B)\land \mathsf{T}\\
-		\underset{\href{proposition.html#60}{\sf[\# 60]}}{\Longleftrightarrow}\,\,& x\in A\cup B.\end{align*}$
-	</center></p>
-	<p>特に $A\subset B$ であるならば <a href="set.html#56">[#56]</a> より</p>
-	<p><center>$A \cup (B\setminus A) = A\cup B = B.$</center></p>
-</Details>
-<br><br>
-
-<div class="prp" id="55">
-	<b>[#55] 命題：直和による集合の分解</b><br>
-	<p>集合 $A,\,B$ に対して，$A\cap B$ と $A\setminus B$ は互いに素であり，
-	<p><center>$\begin{align*}
-		(A\cap B)\sqcup(A\setminus B) = A.
-		\end{align*}$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>まず，</p>
-	<p><center>\begin{align*}
-		(A\cap B)\cap (A\setminus B) \refeq{set.html#53}{53} A\cap \{B\cap (A\setminus B)\}
-			\refeq{#96}{96} A\cap \emptyset = \emptyset
-		\end{align*}</center></p>
-	<p>より $A\cap B$ と $A\setminus B$ は互いに素である．また，これらの和（直和）について，</p>
-	<p><center> 
-		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\setminus B)\,\,\reflr{set.html#51}{51}\,\, (x\in A\cap B) \lor (x\in (A\setminus B))\\
-		\reflr{#95}{95}\,\,& ((x\in A) \land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
-		\reflr{proposition.html#62}{62}\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
-		\reflr{proposition.html#58}{58}\,\,& (x\in A) \land \mathsf{T}\,\,\reflr{proposition.html#60}{60}\,\, x\in A.\end{align*}$
-	</center></p>
-	<p>であることから $(A\cap B)\sqcup(A\setminus B) = A$ がいえる．</p>
-</Details>
-<br><br>
-
-<div class="prp" id="212">
-	<b>[#212] 命題：差集合の分配法則</b><br>
-	<p>集合 $A,\,B,\,C$ に対して </p>
-	<p><center>$\begin{align*}
-		(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C),\\
-		(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C).
-		\end{align*}$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p> $(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C):$</p>
-	<p><center>\begin{align*}
-		x\in (A\cup B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cup B)\land (x\not\in C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\lor (x\in B)\}\ \land (x\not\in C)\\
-		&\,\,\reflr{proposition.html#62}{62}\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
-		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\lor (x\in B\setminus C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cup (B\setminus C).
-	\end{align*}</center></p>
-
-	<p> $(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C):$</p>
-	<p><center>\begin{align*}
-		x\in (A\cap B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cap B)\land (x\not\in C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\land (x\in B)\}\ \land (x\not\in C)\\
-		&\,\,\Longleftrightarrow\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
-		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\land (x\in B\setminus C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cap (B\setminus C).
-	\end{align*}</center></p>
-</Details>
-<br><br>
 
 <div class="def" id="83">
 	<b>[#83] 定義：普遍集合，補集合</b><br>
@@ -275,7 +150,6 @@ updated on 2022/5/4
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-3_shugo-enzan.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第３章), 公開pdf</a>.</li>
-	<li><a href="https://mathwords.net/wasyugou">和集合と積集合の意味と公式｜具体例で学ぶ数学</a></li>
 </ul>
 </div>
       
