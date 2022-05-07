@@ -33,21 +33,21 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/5/1<br>
-updated on 2022/5/3
+updated on 2022/5/7
 </p>
    
 <div class="def" id="201">
 <b>[#201] 定義：条件付き確率</b><br>
-	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，$A,\,B\in\mathcal{F}$，$P(B)\gt 0$ とする．このとき，以下で定義される $P(A\,|\,B)$ を事象 $A$ の下での事象 $B$ の【条件付き確率 (conditional probability)】と呼ぶ：</p>
+	<p> $(\varOmega,\,\mathcal{F},\,P)$ を確率空間とし，$A,\,B\in\mathcal{F}$，$P(B)\gt 0$ とする．このとき，事象 $B$ の成立を前提にして測られる事象 $A$ の確率を，事象 $B$ の下での事象 $A$ の【条件付き確率 (conditional probability)】と呼び，$P(A\,|\,B)$ 或いは $P_B(A)$ で表す：</p>
 	<p><center>\begin{align*}
-		P(A\,|\,B) = \fraction{P(A\cap B)}{P(B)}.
+		P(A\,|\,B) := \fraction{P(A\cap B)}{P(B)}.
 		\end{align*}</center></p>
 </div>
 <br><br>
 
 <div class="exm" id="215">
 <b>[#215] 例題：条件付き確率の計算</b><br>
-	<p>ある試行における２つの事象 $A$ と $B$ に対して，確率 $P(A) = \fraction{7}{9}$，$P(A\cap B)=\fraction{1}{7}$，$P(\bar{A}\cap B)= \fraction{1}{6}$ で与えられている．このとき，次の確率を求めよ．</p>
+	<p>ある試行における２つの事象 $A$ と $B$ に対して，確率 $P(A) = \fraction{7}{9}$，$P(A\cap B)=\fraction{1}{7}$，$P(\overline{A}\cap B)= \fraction{1}{6}$ で与えられている．このとき，次の確率を求めよ．</p>
 	<ol>
 	<p><li> $P_A(\overline{B})$ </li></p>
 	<p><li> $P(B)$ </li></p>
@@ -55,6 +55,24 @@ updated on 2022/5/3
 	</ol>
 	<p style="text-align:right;">[2021 西南学院大学]</p>
 </div>
+<Details>
+<summary>解答</summary>
+	<p>事象 $A$，$B$ 及びその余事象に関する Karnaugh 表は以下のようになる：</p>
+	<p><center>\begin{align*}
+		\begin{array}{|c||c|c|c|}\hline
+		  \cap & B & \overline{B}(=B^\cpl) & \\ \hline \hline
+		  A & 1/7 & 40/63 & 7/9 \\ \hline
+		  \overline{A}(=A^\cpl) & 1/6 & 1/18 & 2/9\\ \hline
+		  & 13/42 & 29/42 & 1\\ \hline
+		\end{array}
+		\end{align*}</center></p>
+	<p>これを踏まえ，計算を行う．</p>
+	<ol>
+	<p><li> $\displaystyle P_A(\overline{B})\refeq{#201}{201} \fraction{P(A\cap \overline{B})}{P(A)} = \fraction{40/63}{7/9} = \color{red}{\fraction{40}{49}}.$</li></p>
+	<p><li> 上の表より，$\displaystyle P(B) = \color{red}{\fraction{13}{42}}.$</li></p>
+	<p><li> $\displaystyle P_{\overline{B}}(\overline{A})\refeq{#201}{201} \fraction{P(\overline{B}\cap \overline{A})}{P(\overline{B})} = \fraction{1/18}{29/42} = \color{red}{\fraction{7}{87}}.$</li></p>
+	</ol>
+</Details>
 <br><br>
 
 <div class="prp" id="202">
