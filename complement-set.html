@@ -39,7 +39,7 @@ updated on 2022/5/8
 <div class="def" id="84">
 	<b>[#84] 定義：補集合</b><br>
 	<p>ある集合 $A$ に含まれないような記号の集合を $A$ の【補集合 (complement)】と呼び，$A^\cpl$ 或いは $\overline{A}$ を書く：</p>
-	<p><center>$A^\cpl := \{x\,|\,x\notin A\}.$</center></p>
+	<p><center>$A^\cpl := \{x\,|\,x\notin A\} = \{x\,|\,\neg(x\in A)\}.$</center></p>
 </div>
 <br><br>
 
@@ -74,6 +74,20 @@ updated on 2022/5/8
 	<p>集合の包含の定義 <a href="set.html#48">[#48]</a> より</p>
 	<p><center>$[x\in B^\cpl\rightarrow x\in A^\cpl]\,\,\Longleftrightarrow\,\,B^\cpl\subset A^\cpl.$</center></p>
 	<p>以上の議論をまとめることで，題意を得る．</p>
+</Details>
+<br><br>
+
+<div class="prp" id="218">
+	<b>[#218] 命題：補集合の補集合</b><br>
+	<p>集合 $A$ に対して</p>
+	<p><center>$(A^\cpl)^\cpl = A.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		x\in (A^\cpl)^\cpl &\,\,\reflr{#84}{84}\,\, x\notin A^\cpl \,\,\Longleftrightarrow\,\,\neg(x \in A^\cpl)\\
+			&\,\,\Longleftrightarrow\,\,\neg(\neg(x\in A))\,\,\reflr{proposition.html#60}{60}\,\,x\in A.
+		\end{align*}</center></p>
 </Details>
 <br><br>
 
