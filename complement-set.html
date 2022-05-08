@@ -23,7 +23,7 @@
 	}}});
 </script>
 <script>
-	const ttl = "普遍集合と補集合"
+	const ttl = "補集合"
 	document.title= ttl + "｜演習問題集"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
@@ -33,103 +33,14 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 isolated from <a href="set.html">集合</a> on 2022/2/20<br>
-updated on 2022/5/7
+updated on 2022/5/8
 </p>
 
-	<p>★ このページでは，ある普遍集合 $\varOmega$ の下で議論が行われているものとする．</p><br>
-
-<div class="def" id="83">
-	<b>[#83] 定義：普遍集合，補集合</b><br>
-	<p>集合を用いた複雑な議論を行う際，しばしば予め大きな（多くの元を持つ）集合を定義し，その部分集合の範囲で議論を行うことを考える．この大きな集合のことを【普遍集合 (全体集合; universal set)】と呼ぶ．普遍集合 $\varOmega$ が定義されているとき，任意の記号 $x$ と集合 $A$ に対して</p>
-	<p><center>\begin{align*}
-		x\in\varOmega,\quad A\subset \varOmega
-		\end{align*}</center></p>
-	<p>はそれぞれ恒真命題 <a href="proposition.html#58">[#58]</a> であるとする．<br>
-		またこの下で，ある集合 $A$ に属さない元の集合を $A$ の【補集合 (complement)】と呼び，$A^\cpl$ で表す：</p>
-	<p><center>\begin{align*}
-		A^\cpl := \varOmega\setminus A.
-		\end{align*}</center></p>
+<div class="def" id="84">
+	<b>[#84] 定義：補集合</b><br>
+	<p>ある集合 $A$ に含まれないような記号の集合を $A$ の【補集合 (complement)】と呼び，$A^\cpl$ 或いは $\overline{A}$ を書く：</p>
+	<p><center>$A^\cpl := \{x\,|\,x\notin A\}.$</center></p>
 </div>
-<br><br>
-
-<div class="prp" id="215">
-	<b>[#215] 命題：普遍集合との和・共通部分</b><br>
-	<p>任意の集合 $A$ に対して</p>
-	<p><center>$A\cup \varOmega = \varOmega,\quad A\cap \varOmega = A.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>普遍集合の定義 <a href="#83">[#83]</a> により $A\subset \varOmega$ であるから，集合の包含と和及び共通部分に関する性質 <a href="set.html#56">[#56]</a> ，<a href="set.html#57">[#57]</a> により従う．</p>
-</Details>
-<br><br>
-
-<div class="prp" id="84">
-	<b>[#84] 命題：補集合の意味</b><br>
-	<p>任意の変項 $x$ と集合 $A$ に対して</p>
-	<p><center>$x\notin A\,\,\Longleftrightarrow\,\,x\in A^\cpl.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>普遍集合が仮定されていることに注意して</p>
-	<p><center>\begin{align*}
-		x\notin A&\,\,\reflr{proposition.html#60}{60}\,\,\mathsf{T} \land (x\notin A)\,\,\reflr{#83}{83}\,\,(x\in \varOmega) \land (x\notin A)\\
-		&\,\,\reflr{difference-set.html#95}{95}\,\, x\in \varOmega\setminus A\,\,\reflr{#83}{83}\,\, x\in A^\cpl.
-		\end{align*}</center></p>
-</Details>
-<Details>
-<summary>補足</summary>
-	<p>普遍集合と余事象を導入することの大きな意義は，このように「ある集合に属さない」ことから「別の集合に属する」ことへの換言を可能にすることである．これにより，論理命題との対応も更に明確化することができる → <a href="#216">[#216]</a>．</p>
-</Details>
-<br><br>
-
-<div class="prp" id="213">
-	<b>[#213] 命題：普遍集合と空集合の補集合</b><br>
-	<p>普遍集合 $\varOmega$ と空集合 $\emptyset$ に対して</p>
-	<p><center>$\varOmega^\cpl = \emptyset,\quad \emptyset^\cpl = \varOmega.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p><center>\begin{align*}\begin{array}{ccccc}
-		x\in\varOmega^\cpl  &  \reflr{#83}{83}  &  x\in\varOmega\setminus\varOmega  &  \reflr{difference-set.html#211}{211}  &  x\in\emptyset,\\
-		x\in\emptyset^\cpl  &  \reflr{#83}{83}  &  x\in\varOmega\setminus\emptyset  &  \reflr{difference-set.html#211}{211}  &  x\in\varOmega.\\
-		\end{array}\end{align*}</center></p>
-</Details>
-<br><br>
-
-<div class="prp" id="214">
-	<b>[#214] 命題：補集合を用いた普遍集合の分解</b><br>
-	<p>任意の集合 $A$ に対して</p>
-	<p><center>$A\cap A^\cpl = \emptyset,\quad A\cup A^\cpl = \varOmega.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p><center>\begin{align*}\begin{array}{ccccccc}
-		x\in A\cap A^\cpl  &  \hspace{-5pt}\reflr{#84}{84}\hspace{-5pt}  &  (x\in A)\land (x\not\in A)  &  \hspace{-5pt}\reflr{proposition.html#60}{60}\hspace{-5pt}  &  \mathsf{F} &  \hspace{-5pt}\reflr{set.html#110}{110}\hspace{-5pt}  &  x\in\emptyset,\\
-		x\in A\cup A^\cpl  &  \hspace{-5pt}\reflr{#84}{84}\hspace{-5pt}  &  (x\in A)\lor (x\not\in A)  &  \hspace{-5pt}\reflr{proposition.html#60}{60}\hspace{-5pt}  &  \mathsf{T} &  \hspace{-5pt}\reflr{#83}{83}\hspace{-5pt}  &  x\in\varOmega.\\
-		\end{array}\end{align*}</center></p>
-</Details>
-<br><br>
-
-<div class="prp" id="216">
-	<b>[#216] 命題：集合による含意の換言</b><br>
-	<p>集合 $A,\,B$ に対して</p>
-	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A^\cpl\cup B = \varOmega.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>$(\Rightarrow):$ まず，普遍集合の定義 <a href="#83">[#83]</a> より $A^\cpl\cup B\subset \varOmega$．一方で，は$A\subset B$ であることに注意すれば</p>
-	<p><center>\begin{align*}
-		A^\cpl\cup B \supset A^\cpl\cup A \refeq{#214}{214} \varOmega.
-		\end{align*}</center></p>
-	<p>よって，集合の相等の定義 <a href="set.html#111">[#111]</a> より $A^\cpl\cup B= \varOmega.$</p>
-
-	<p>$(\Leftarrow):$ $A^\cpl\cup B = \varOmega$ であることに注意すれば</p>
-	<p><center>\begin{align*}
-		A &\refeq{#215}{215} A\cap \varOmega = A\cap (A^\cpl\cup B)\\
-		&\,\refeq{set.html#54}{54} (A\cap A^\cpl)\cup (A\cap B)\refeq{#214}{214} \emptyset \cup (A\cap B)\\
-		&\,\,= A\cap B \refsb{set.html#204}{204} B.
-		\end{align*}</center></p>
-</Details>
 <br><br>
 
 <div class="prp" id="85">
@@ -139,12 +50,11 @@ updated on 2022/5/7
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>普遍集合を $\varOmega$ とする．補集合の性質 <a href="#84">[#84]</a> と命題の分配法則 <a href="proposition.html#62">[#62]</a> を用いて以下のように示される：</p>
-	<p><center>
-		$\begin{align*} x\in A\setminus B\,\,\Longleftrightarrow\,\,& (x\in A)\land (x\notin B)\\
-		\Longleftrightarrow\,\,& (x\in A)\land (x\in B^\cpl)\\
-		\Longleftrightarrow\,\,& x\in A\cap B^\cpl.\end{align*}$
-	</center></p>
+	<p><center>\begin{align*}
+		x\in A\setminus B\,\,\reflr{difference-set.html#95}{95}\,\,& (x\in A)\land (x\notin B)\\
+		\reflr{#84}{84}\,\,& (x\in A)\land (x\in B^\cpl)\\
+		\reflr{set.html#51}{51}\,\,& x\in A\cap B^\cpl.
+		\end{align*}</center></p>
 </Details>
 <br><br>
 
@@ -159,7 +69,7 @@ updated on 2022/5/7
 	<p><center>$A\subset B\,\,\Longleftrightarrow\,\,[x\in A\rightarrow x\in B].$</center></p>
 	<p>この命題の対偶は同値である <a href="implication.html#68">[#68]</a> から</p>
 	<p><center>$[x\in A\rightarrow x\in B]\,\,\Longleftrightarrow\,\,[\neg(x\in B)\rightarrow \neg(x\in A)].$</center></p>
-	<p>補集合の性質 <a href="#84">[#84]</a> より</p>
+	<p>補集合の定義 <a href="#84">[#84]</a> より</p>
 	<p><center>$[\neg(x\in B)\rightarrow \neg(x\in A)]\,\,\Longleftrightarrow\,\,[x\in B^\cpl\rightarrow x\in A^\cpl].$</center></p>
 	<p>集合の包含の定義 <a href="set.html#48">[#48]</a> より</p>
 	<p><center>$[x\in B^\cpl\rightarrow x\in A^\cpl]\,\,\Longleftrightarrow\,\,B^\cpl\subset A^\cpl.$</center></p>
