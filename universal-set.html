@@ -48,17 +48,6 @@ updated on 2022/5/8
 </div>
 <br><br>
 
-<div class="prp" id="215">
-	<b>[#215] 命題：普遍集合との和・共通部分</b><br>
-	<p>任意の集合 $A$ に対して</p>
-	<p><center>$A\cup \varOmega = \varOmega,\quad A\cap \varOmega = A.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>普遍集合の定義 <a href="#83">[#83]</a> により $A\subset \varOmega$ であるから，集合の包含と和及び共通部分に関する性質 <a href="set.html#56">[#56]</a> ，<a href="set.html#57">[#57]</a> により従う．</p>
-</Details>
-<br><br>
-
 <div class="prp" id="213">
 	<b>[#213] 命題：普遍集合と空集合の補集合</b><br>
 	<p>普遍集合 $\varOmega$ と空集合 $\emptyset$ に対して</p>
@@ -67,8 +56,8 @@ updated on 2022/5/8
 <Details>
 	<summary>証明</summary>
 	<p><center>\begin{align*}\begin{array}{ccccc}
-		x\in\varOmega^\cpl  &  \reflr{#83}{83}  &  x\in\varOmega\setminus\varOmega  &  \reflr{difference-set.html#211}{211}  &  x\in\emptyset,\\
-		x\in\emptyset^\cpl  &  \reflr{#83}{83}  &  x\in\varOmega\setminus\emptyset  &  \reflr{difference-set.html#211}{211}  &  x\in\varOmega.\\
+		x\in\varOmega^\cpl  &  \reflr{complement-set.html#83}{83}  &  x\in\varOmega\setminus\varOmega  &  \reflr{difference-set.html#211}{211}  &  x\in\emptyset,\\
+		x\in\emptyset^\cpl  &  \reflr{complement-set.html#83}{83}  &  x\in\varOmega\setminus\emptyset  &  \reflr{difference-set.html#211}{211}  &  x\in\varOmega.\\
 		\end{array}\end{align*}</center></p>
 </Details>
 <br><br>
@@ -84,6 +73,17 @@ updated on 2022/5/8
 		x\in A\cap A^\cpl  &  \hspace{-5pt}\reflr{#84}{84}\hspace{-5pt}  &  (x\in A)\land (x\not\in A)  &  \hspace{-5pt}\reflr{proposition.html#60}{60}\hspace{-5pt}  &  \mathsf{F} &  \hspace{-5pt}\reflr{set.html#110}{110}\hspace{-5pt}  &  x\in\emptyset,\\
 		x\in A\cup A^\cpl  &  \hspace{-5pt}\reflr{#84}{84}\hspace{-5pt}  &  (x\in A)\lor (x\not\in A)  &  \hspace{-5pt}\reflr{proposition.html#60}{60}\hspace{-5pt}  &  \mathsf{T} &  \hspace{-5pt}\reflr{#83}{83}\hspace{-5pt}  &  x\in\varOmega.\\
 		\end{array}\end{align*}</center></p>
+</Details>
+<br><br>
+
+<div class="prp" id="215">
+	<b>[#215] 命題：普遍集合との和・共通部分</b><br>
+	<p>任意の集合 $A$ に対して</p>
+	<p><center>$A\cup \varOmega = \varOmega,\quad A\cap \varOmega = A.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>普遍集合の定義 <a href="#83">[#83]</a> により $A\subset \varOmega$ であるから，集合の包含と和及び共通部分に関する性質 <a href="set.html#56">[#56]</a> ，<a href="set.html#57">[#57]</a> により従う．</p>
 </Details>
 <br><br>
 
