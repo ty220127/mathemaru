@@ -26,7 +26,7 @@
 
 <p style="text-align:right;">
 established on 2022/2/12<br>
-updated on 2022/5/8
+updated on 2022/5/9
 </p>
     
 <div class="def" id="78">
@@ -38,10 +38,10 @@ updated on 2022/5/8
 <br><br>
 
 <div class="def" id="79">
-	<b>[#79] 定義：$\bs{p}$ 次平均収束</b><br>
-	<p> $p>1$ とする．実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
+	<b>[#79] 定義：平均収束</b><br>
+	<p> $p\geq 1$ とする．実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
   <p><center>$\limit_{n\rightarrow\infty}\mathbb{E}[|X_n-X|^p] = 0$</center></p>
-  <p>が成り立つとき，$\{X_n\}$ は $X$ に【 $p$ 次平均収束(convergence in the mean of order $p$)】するといい，$X_n \overset{L^p}{\longrightarrow} X$ と表す．</p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【$L^p$ 収束】或いは【 $p$ 次平均収束(convergence in the mean of order $p$ )】するといい，$X_n \overset{L^p}{\longrightarrow} X$ と表す．</p>
 </div>
 <br><br>
   
@@ -61,6 +61,42 @@ updated on 2022/5/8
 </div>
 <br><br>
 
+<div class="prp" id="219">
+<b>[#219] 命題：概収束ならば確率収束</b><br>
+	<p>実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に概収束するならば，$\{X_n\}$ は $X$ に確率収束する：</p>
+	<p><center>\begin{align*}
+		X_n \rightarrow X\,\,\text{a.s.}\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="220">
+<b>[#220] 命題：平均収束の強さの比較</b><br>
+	<p>$p\geq q\geq 1$ とする．実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に $p$ 次平均収束するならば，$\{X_n\}$ は $X$ に $q$ 次平均収束する：</p>
+	<p><center>\begin{align*}
+		X_n \overset{L^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{L^q}{\longrightarrow} X.
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="221">
+<b>[#221] 命題：平均収束ならば確率収束</b><br>
+	<p>$p\geq 1$ とする．実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に $p$ 次平均収束するならば，$\{X_n\}$ は $X$ に確率収束する：</p>
+	<p><center>\begin{align*}
+		X_n \overset{L^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="222">
+<b>[#222] 命題：確率収束ならば弱収束</b><br>
+	<p>実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に確率収束するならば，$\{X_n\}$ は $X$ に弱収束する：</p>
+	<p><center>\begin{align*}
+		X_n \overset{\text{P}}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{\text{W}}{\longrightarrow} X.
+		\end{align*}</center></p>
+</div>
+<br><br>
+
 <div class="prp" id="151">
 <b>[#151] 命題：Lévy の連続性定理 (Lévy's continuity theorem)</b><br>
 	<p>確率変数列を $\{X_n\}_{k=1}^{\infty}$ とし，各 $X_n$ に対してその分布関数を $F_n$，特性関数を $\varphi_n$ とおく．またある確率変数 $X$ の分布関数を $F$，特性関数を $\varphi$ とする．このとき以下が成り立つ：</p>
@@ -74,7 +110,7 @@ updated on 2022/5/8
 <b>[#153] 命題：中心極限定理 (central limit theorem)</b><br>
 	<p>独立同分布な確率変数列 $\{X_n\}_{n=1}^{\infty}$ に対して $S_n=\sum_{i=1}^{n}X_i$ とおく．$X_n$ たちの従う分布の平均が $\mu$，標準偏差が $\sigma$ であるとき，</p>
 	<p><center>$\begin{align*}
-		\fraction{S_n-\mu n}{\sigma\sqrt{n}}\overset{\mathrm{D}}{\longrightarrow} \mathrm{N}(\mu n,\,\sigma\sqrt{n})
+		\fraction{S_n-\mu n}{\sigma\sqrt{n}}\overset{\mathrm{W}}{\longrightarrow} \mathrm{N}(\mu n,\,\sigma\sqrt{n})
 		\end{align*}$</center></p>
 	<p>が成り立つ．</p>
 </div>
