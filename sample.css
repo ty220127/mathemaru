@@ -19,24 +19,28 @@ table{
       padding: 0.5%; 
       margin-bottom: 0.5%; 
       border-left: solid 0.3em #aaaa4a; 
+      border-bottom:0.1em solid #aaaa4a;
       background-color: #ffff99;
 }
 .prp{
       padding: 0.5%; 
       margin-bottom: 0.5%; 
-      border-left: solid 0.3em #597dff; 
+      border-left: solid 0.3em #597dff;
+      border-bottom:0.1em solid #597dff;
       background-color: #b2f9ff;
 }
 .exm{
       padding: 0.5%; 
       margin-bottom: 0.5%; 
       border-left: solid 0.3em #59c859; 
+      border-bottom:0.1em solid #59c859;
       background-color: #b2ffb2;
 }
 .exr{
       padding: 0.5%; 
       margin-bottom: 0.5%; 
       border-left: solid 0.3em #c85959; 
+      border-bottom:0.1em solid #c85959;
       background-color: #ffc8c8;
 }
 
@@ -44,6 +48,7 @@ table{
       padding: 0.5%; 
       margin-bottom: 0.5%; 
       border-left: solid 0.3em #646464; 
+      border-bottom:0.1em solid #646464;
       background-color: #c8c8c8;
 }
 
