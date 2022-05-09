@@ -1,0 +1,69 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "系と族"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
+<p style="text-align:right;">
+established on 2022/5/8<br>
+updated on 2022/5/8
+</p>
+
+<p>★系，族，列の定義の仕方は，専門書によって微妙に異なっている（写像とするか，集合とするか，系と族を同じ概念とするか）．本サイトでは，以下 [#223] のように定義する．</p>
+
+<div class="def" id="223">
+	<b>[#223] 定義：系，族，列</b><br>
+	<p>空でない集合 $\varLambda$ からある集合 $S$ への写像 <a href="map.html#99">[#99]</a>
+	<p><center>\begin{align*}
+		A:\varLambda\rightarrow S,\quad \lambda\mapsto A_\lambda
+		\end{align*}</center><?/p>
+	<p>を $\varLambda$ 上の【系 (collection)】と呼び，系の像 $\mathrm{Im}\ A$ を【 $\varLambda$ に添字づけられた族 (family indexed by $\varLambda$ )】と呼ぶ．ここで $\varLambda$ を【添字集合 (index set)】と呼ぶ．また，特に $\varLambda = \mathbb{N}$ であるような族を【列 (sequence)】と呼ぶ．<Details>
+	<summary>記法</summary>
+		<p> $\varLambda$ に添字づけられた族 $\mathrm{Im}\ A$ は $\{A_\lambda\}_{\lambda\in\varLambda}$ などと表記する．添字集合が自明であったり，誤解を生じる恐れのない場合は $\{A_\lambda\}$ と略記する．逆に，添字集合を略記せず明示してある場合は，これを単に「族」と呼んでも良いとする．なお，この定義によれば，$\lambda\not =\mu$ に対して $A_\lambda = A_\mu$ であることがあり得る（つまり，単射 <a href="injection-surjection.html#100">[#100]</a> を仮定していない）．通常の集合であれば，等しい元は区別されないが，これを区別したい場合は族を $(A_\lambda)_{\lambda\in\varLambda}$ などと表記することがある．</p>
+	</Details>
+</div>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-4_shazo.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第４章), 公開pdf</a>.</li>
+	<li><a href="https://ja.wikipedia.org/wiki/%E6%97%8F_(%E6%95%B0%E5%AD%A6)">族 (数学) - Wikipedia</a></li>
+</ul>
+</div>
+<b>その他参考コンテンツ</b>
+<center>
+<iframe width="480" height="270" src="https://www.youtube.com/embed/YoZJmu0LCEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+	            
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
