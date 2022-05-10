@@ -1,49 +1,57 @@
+
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
-			     TeX: {  extensions: ["cancel.js"] },
-			   });
-	MathJax.Hub.Config({ TeX: { Macros: { 
-		numref: ['{\\sf [\\# #1]}', 1],
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bca: '\\displaystyle\\bigcap', 
-		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
 		trp: '\\mathsf{T}',
-		deg: '\\mathrm{deg}',
-		tr: '\\mathrm{tr}',
-		diag: '\\mathrm{diag}'
+		rd: '\\mathrm{d}',
 	}}});
 </script>
-<title>確率測度｜演習問題集</title>
+<script>
+	const ttl = "確率測度"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 <style>
+	table{
+		font-size: 14px;
+	}
 </style>
 </head>
 
 <body>
-<center><div id="titlehead">確率測度</div></center>
-
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/1/27<br>
-updated on 2022/4/18
+updated on 2022/5/10
 </p>
 
 	<div class="def" id="12">
 	<b>[#12] 定義：確率測度，確率空間</b><br>
-		<p>$(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される測度 $ P:\mathcal{F}\rightarrow[0,\,\infty)$ を確率測度と呼ぶ：</p>
+		<p>$(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される測度 $ P:\mathcal{F}\rightarrow[0,\,\infty)$ を【確率測度 (probability measure)】或いは単に【確率 (probability)】と呼ぶ：</p>
 		<ul class="defl">
 			<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
 			<li> $ P(\varOmega)=1$, </li>
-			<li> $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が任意の $i,\,j\in\mathbb{N}$ に対して $i\neq j$ ならば $A_i\cap A_j$ であるとき，$P\left(\bcu_{i\in\mathbb{N}} A_i\right) = \sig_{i\in\mathbb{N}}P(A_i)$（確率測度の $\sigma$ 加法性）.
+		<li> 無限加算個の部分集合列 $\{A_n\}_{n\in\mathbb{N}}$ について，
+			<center>$\{A_n\}\subset\mathcal{F}$ かつ $\{A_n\}$ が互いに素 <a href="mutually-disjoint.html#196">[#196]</a> $\,\,\Longrightarrow\,\,P\left(\bsqcu_{n=1}^{\infty} A_n\right) = \sig_{n=1}^{\infty}P(A_n)$</center>
+			が成り立つ【確率測度の $\sigma$ 加法性】．</li>
 		</ul>
-		<p>このとき，組 $(\varOmega,\,\mathcal{F},\, P)$ を確率空間と呼ぶ．</p>
+		<p>このとき，組 $(\varOmega,\,\mathcal{F},\, P)$ を【確率空間 (probability space)】と呼ぶ．</p>
 	</div>
 	<br><br>
     
@@ -101,7 +109,24 @@ updated on 2022/4/18
 	</Details>
 	<br><br>
 	
-	<div id="bib">
+<div class="prp" id="226">
+	<b>[#226] 命題：<ruby><rb>Borel</rb><rp>(</rp><rt>ボレル</rt><rp>)</rp>-<ruby><rb>Cantelli</rb><rp>(</rp><rt>カンテリ</rt><rp>)</rp></ruby> の第二補題 (Borel-Cantelli second lemma)</b><br>
+	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ の可測集合列 $\{A_n\}_{n=1}^{\infty}\subset \mathcal{F}$ に対して</p>
+	<p><center>
+		$\sig_{n=1}^{\infty}\mu(A_n) =\infty$ かつ $\{A_n\}$ は独立 <a href="independence.html#209">[#209]</a> $\,\,\Longrightarrow\,\,\mu\left(\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n\right) = 1.$
+		</center></p>	
+	<p>ここで $\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n$ は $\{A_n\}$ の上極限 <a href="limit-set.html#189">[#189]</a> ．</p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p></p>	
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>この補題は確率論において，第一補題 <a href="measure.html#226">[#226]</a> とセットで頻繁に用いられる．</p>
+</Details>
+<br><br>
+        	<div id="bib">
 	<b>参考文献</b>
 	<ul>
 		<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
