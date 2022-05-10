@@ -1,3 +1,4 @@
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
@@ -5,6 +6,9 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -46,13 +50,55 @@ updated on 2022/5/1
 <br><br>
 
 <div class="def" id="199">
-	<b>[#199] 定義：分散</b><br>
+	<b>[#199] 定義：分散，標準偏差</b><br>
 	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，</p>
 	<p><center>\begin{align*}
 		\mathbb{V}[X] := \mathbb{E}\left[(X-\mathbb{E}[X])^2\right]
 		\end{align*}</center></p>
-	<p>が存在するとき，この $\mathbb{V}[X]$ を $X$ の【分散 (variance)】と呼ぶ．
+	<p>が存在するとき，この $\mathbb{V}[X]$ を $X$ の【分散 (variance)】と呼ぶ．<br>
+		また $\mathbb{D}[X] := \sqrt{\mathbb{V}[X]}$ を $X$ の【標準偏差 (standard deviation)】と呼ぶ．</p>
 </div>
+<br><br>
+
+<div class="prp" id="224">
+	<b>[#224] 命題：<ruby><rb>Markov</rb><rp>（</rp><rt>マルコフ</rt><rp>）</rp></ruby> の不等式 (Markov's inequality)</b><br>
+	<p> $a\gt 0$ とする．確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の非負確率変数 $X$ に対して</p>
+	<p><center>\begin{align*}
+		P(X\geq a) \leq \fraction{\mathbb{E}[X]}{a}. 
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="225">
+	<b>[#225] 命題：<ruby><rb>Chebyshev</rb><rp>（</rp><rt>チェビシェフ</rt><rp>）</rp></ruby> の不等式 (Chebyshev's inequality)</b><br>
+	<p> $a\gt 0$ とする．確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して</p>
+	<p><center>\begin{align*}
+		P(|X-\mathbb{E}[X]|\geq a) \leq \fraction{\mathbb{V}[X]}{a^2}. 
+		\end{align*}</center></p>
+	<p>特に $k\gt 0$ が $a = k\,\mathbb{D}[X]$ の関係にあるとき</p>
+	<p><center>\begin{align*}
+		P(|X-\mathbb{E}[X]|\geq k\,\mathbb{D}[X]) \leq \fraction{1}{k^2}. 
+		\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>確率変数 $X$ に対して $|X-\mathbb{E}[X]|$ は非負であることから $a\gt 0$ に対して</p>
+	<p><center>\begin{align*}
+		|X-\mathbb{E}[X]|\geq a\,\,\Longleftrightarrow\,\, |X-\mathbb{E}[X]|^2 \geq a^2.
+		\end{align*}</center></p>
+	<p>ここで $|X-\mathbb{E}[X]|^2$ もまた非負確率変数であることから Markov の不等式 <a href="#224">[#224]</a> が適用でき</p>
+	<p><center>\begin{align*}
+		P(|X-\mathbb{E}[X]|^2 \geq a^2) \leq \fraction{\mathbb{E}[|X-\mathbb{E}[X]|^2]}{a^2} \refeq{#199}{199} \fraction{\mathbb{V}[X]}{a^2}.
+		\end{align*}</center></p>
+	<p>以上の結果をまとめて</p>
+	<p><center>\begin{align*}
+		P(|X-\mathbb{E}[X]|\geq a) \leq \fraction{\mathbb{V}[X]}{a^2}.
+		\end{align*}</center></p>
+	<p>ここで $a = k\,\mathbb{D}[X]$ を不等式に代入すれば</p>
+	<p><center>\begin{align*}
+		P(|X-\mathbb{E}[X]|\geq k\,\mathbb{D}[X]) \leq \fraction{\mathbb{V}[X]}{(k\,\mathbb{D}[X])^2} \refeq{#199}{199} \fraction{\mathbb{V}[X]}{k^2\,\mathbb{V}[X]} = \fraction{1}{k^2}.
+		\end{align*}</center></p>
+</Details>
 <br><br>
 
 <div class="def" id="200">
@@ -73,6 +119,9 @@ updated on 2022/5/1
 	<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
 	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
 	<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会 (1991).</li>
+	<li><a href="https://manabitimes.jp/math/937">マルコフの不等式とその証明 _ 高校数学の美しい物語</a></li>
+	<li><a href="https://mathlandscape.com/markov-ineq/">マルコフの不等式とその証明をわかりやすく厳密に _ 数学の景色</a></li>
+	<li><a href="https://mathlandscape.com/chebyshev-ineq/">【確率論】チェビシェフの不等式とその例題・証明 _ 数学の景色</a></li>
 </ul>
 </div>
 	            
