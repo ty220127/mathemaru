@@ -1,3 +1,4 @@
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
@@ -6,6 +7,7 @@
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
 		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		refleq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\leq}',2],
 		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
@@ -32,7 +34,7 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/1/30<br>
-updated on 2022/5/2
+updated on 2022/5/10
 </p>
     
 <div class="def" id="24">
@@ -191,7 +193,7 @@ updated on 2022/5/2
 <div class="prp" id="28">
 	<b>[#28] 命題：単調非増加列と測度の連続性定理</b><br>
 	<p>集合の列 $\{A_n\}_{n\in\mathbb{N}}\subset\mathcal{F}$ が単調非増加列 <a href="limit-set.html#190">[#190]</a> であるならば，</p>
-	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \mu\left(\lim_{n\rightarrow\infty}A_i\right).$</center></p>
+	<p><center>$\limit_{n\rightarrow\infty}\mu(A_n) = \mu\left(\lim_{n\rightarrow\infty}A_n\right).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
@@ -215,11 +217,35 @@ updated on 2022/5/2
 </Details>
 <br><br>
         
+<div class="prp" id="226">
+	<b>[#226] 命題：<ruby><rb>Borel</rb><rp>(</rp><rt>ボレル</rt><rp>)</rp>-<ruby><rb>Cantelli</rb><rp>(</rp><rt>カンテリ</rt><rp>)</rp></ruby> の補題 (Borel-Cantelli lemma)</b><br>
+	<p>測度空間 $(\varOmega,\,\mathcal{F},\,\mu)$ について，測度 $\mu$ は非負であるとする．このとき可測集合列 $\{A_n\}_{n=1}^{\infty}\subset \mathcal{F}$ に対して</p>
+	<p><center>\begin{align*}
+		\sum_{n=1}^{\infty}\mu(A_n)\lt\infty\,\,\Longrightarrow\,\,\mu\left(\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n\right) = 0.
+		\end{align*}</center></p>	
+	<p>ここで $\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n$ は $\{A_n\}$ の上極限 <a href="limit-set.html#189">[#189]</a> ．</p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>集合列 $\{\bigcup_{m=n}^{\infty}A_n\}$ は単調非増加列 <a href="limit-set.html#190">[#190]</a> であるから</p>
+	<p><center>\begin{align*}
+		\mu\left(\underset{n\rightarrow\infty}{\mathrm{lim\,sup}}\ A_n\right) &\refeq{#190}{190} \mu\left(\bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_n\right) \refeq{limit-set.html#191}{191} \mu\left(\lim_{n\rightarrow\infty}\bcu_{m=n}^{\infty}A_n\right)\\
+			&\refeq{#28}{28} \lim_{n\rightarrow\infty}\mu\left(\bcu_{m=n}^{\infty}A_n\right) \refleq{#89}{89} \lim_{n\rightarrow\infty}\sum_{m=n}^{\infty}\mu(A_n)=0.
+		\end{align*}</center></p>	
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>この補題は，確率測度の議論で非常に重要となるが，一般の測度に対しても成立する．なお，確率論においては，ここから第二補題 <a href="probmeasure.html#227">[#227]</a> も導かれる．</p>
+</Details>
+<br><br>
+        
 <div id="bib"><b>参考文献</b>
 <ul>
+	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
 	<li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
 	<li>柴田良弘: ルベーグ積分論, 内田老鶴圃 (2006).</li>
 	<li><a href="https://mathlandscape.com/measure/">測度の定義と具体例4つ・性質5つを証明付きで徹底解説 | 数学の景色</a></li>
+	<li><a href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%AC%E3%83%AB%E3%83%BB%E3%82%AB%E3%83%B3%E3%83%86%E3%83%AA%E3%81%AE%E8%A3%9C%E9%A1%8C">ボレル・カンテリの補題 - Wikipedia</a></li>
 </ul>
 </div>
       
