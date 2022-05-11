@@ -2,89 +2,49 @@
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}'
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
 	}}});
 </script>
-<title>確率変数の収束｜演習問題集</title>
+<script>
+	const ttl = "弱収束"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 <style>
+	table{
+		font-size: 14px;
+	}
 </style>
 </head>
 
 <body>
-<center><div id="titlehead">確率変数の収束</div></center>
-
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/2/12<br>
-updated on 2022/5/9
+updated on 2022/5/11
 </p>
     
-<div class="def" id="78">
-	<b>[#78] 定義：概収束</b><br>
-	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
-  <p><center>$P\left(\left\{\omega\in\varOmega\,|\,\limit_{n\rightarrow\infty}X_n(\omega)=X(\omega)\right\}\right)=1$</center></p>
-  <p>が成り立つとき，$\{X_n\}$ は $X$ に【概収束(almost sure convergence)】するといい，$X_n \rightarrow X\,\,\text{a.s.}$ と表す．</p>
-</div>
-<br><br>
-
-<div class="def" id="79">
-	<b>[#79] 定義：平均収束</b><br>
-	<p> $p\geq 1$ とする．実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
-  <p><center>$\limit_{n\rightarrow\infty}\mathbb{E}[|X_n-X|^p] = 0$</center></p>
-  <p>が成り立つとき，$\{X_n\}$ は $X$ に【$L^p$ 収束】或いは【 $p$ 次平均収束(convergence in the mean of order $p$ )】するといい，$X_n \overset{L^p}{\longrightarrow} X$ と表す．</p>
-</div>
-<br><br>
-  
-<div class="def" id="80">
-	<b>[#80] 定義：確率収束</b><br>
-	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して，任意の $\varepsilon>0$ について確率変数 $X$ が存在して</p>
-  <p><center>$\limit_{n\rightarrow\infty}P\left(\left\{\omega\in\varOmega\,|\,|X_n(\omega)-X(\omega)|\gt\varepsilon\right\}\right)=0$</center></p>
-  <p>が成り立つとき，$\{X_n\}$ は $X$ に【確率収束(stochastic convergence)】するといい，$X_n \overset{\text{P}}{\longrightarrow} X$ と表す．</p>
-</div>
-<br><br>
-
 <div class="def" id="81">
 	<b>[#81] 定義：弱収束</b><br>
 	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して，任意の実数値有界関数 $f$ について確率変数 $X$ が存在して</p>
   <p><center>$\limit_{n\rightarrow\infty}\mathbb{E}[f(X_n)]=\mathbb{E}[f(X)]$</center></p>
   <p>が成り立つとき，$\{X_n\}$ は $X$ に【弱収束(weak convergence)】，【法則収束(convergence in law)】或いは【分布収束(convergence in distrbution)】するといい，$X_n \overset{\text{W}}{\longrightarrow} X$ と表す．</p>
-</div>
-<br><br>
-
-<div class="prp" id="219">
-<b>[#219] 命題：概収束ならば確率収束</b><br>
-	<p>実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に概収束するならば，$\{X_n\}$ は $X$ に確率収束する：</p>
-	<p><center>\begin{align*}
-		X_n \rightarrow X\,\,\text{a.s.}\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
-		\end{align*}</center></p>
-</div>
-<br><br>
-
-<div class="prp" id="220">
-<b>[#220] 命題：平均収束の強さの比較</b><br>
-	<p>$p\geq q\geq 1$ とする．実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に $p$ 次平均収束するならば，$\{X_n\}$ は $X$ に $q$ 次平均収束する：</p>
-	<p><center>\begin{align*}
-		X_n \overset{L^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{L^q}{\longrightarrow} X.
-		\end{align*}</center></p>
-</div>
-<br><br>
-
-<div class="prp" id="221">
-<b>[#221] 命題：平均収束ならば確率収束</b><br>
-	<p>$p\geq 1$ とする．実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に $p$ 次平均収束するならば，$\{X_n\}$ は $X$ に確率収束する：</p>
-	<p><center>\begin{align*}
-		X_n \overset{L^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
-		\end{align*}</center></p>
 </div>
 <br><br>
 
@@ -103,24 +63,6 @@ updated on 2022/5/9
 	<ul>
 		<li>$F_n$ が $F$ に弱収束するならば，$\varphi_n$ は $\varphi$ に各点収束する．</li>
 		<li>$\varphi_n$ が $\varphi$ に各点収束し，かつ $\varphi(t)$ が $t=0$ で連続ならば，$F_n$ は $F$ に弱収束する．</li>
-</div>
-<br><br>
-
-<div class="prp" id="154">
-	<b>[#154] 命題：大数の弱法則 (weak law of large numbers)</b><br>
-	<p>確率変数列 $\{X_i\}_{i\in\mathbb{N}}$ は独立同分布で $\mathbb{E}[X_1{}^2]\lt\infty$ であるとすれば，$X_i$ たちの平均は分布の期待値に確率収束 <a href="#80">[#80]</a> する：</p>
-	<p><center>$\begin{align*}
-		\fraction{1}{n}\sum_{i\in\mathbb{N}}X_i\,\,\overset{\mathrm{P}}{\longrightarrow}\,\,\mathbb{E}[X_1].
-		\end{align*}$</center></p>
-</div>
-<br><br>
-
-<div class="prp" id="155">
-	<b>[#155] 命題：大数の強法則 (strong law of large numbers)</b><br>
-	<p>確率変数列 $\{X_i\}_{i\in\mathbb{N}}$ は独立同分布で $\mathbb{E}[|X_1|]\lt\infty$ であるとすれば，$X_i$ たちの平均は分布の期待値に概収束 <a href="#78">[#78]</a> する：</p>
-	<p><center>$\begin{align*}
-		\fraction{1}{n}\sum_{i\in\mathbb{N}}X_i\,\,\rightarrow\,\,\mathbb{E}[X_1]\quad\text{a.s.}
-		\end{align*}$</center></p>
 </div>
 <br><br>
 
