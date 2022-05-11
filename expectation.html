@@ -36,7 +36,7 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/5/1<br>
-updated on 2022/5/10
+updated on 2022/5/11
 </p>
     
 <div class="def" id="198">
@@ -99,6 +99,24 @@ updated on 2022/5/10
 		P(|X-\mathbb{E}[X]|\geq k\,\mathbb{D}[X]) \leq \fraction{\mathbb{V}[X]}{(k\,\mathbb{D}[X])^2} \refeq{#199}{199} \fraction{\mathbb{V}[X]}{k^2\,\mathbb{V}[X]} = \fraction{1}{k^2}.
 		\end{align*}</center></p>
 </Details>
+<br><br>
+
+<div class="prp" id="154">
+	<b>[#154] 命題：大数の弱法則 (weak law of large numbers)</b><br>
+	<p>確率変数列 $\{X_i\}_{i\in\mathbb{N}}$ は独立同分布で $\mathbb{E}[X_1{}^2]\lt\infty$ であるとすれば，$X_i$ たちの平均は分布の期待値に確率収束 <a href="stochastic-convergence.html#80">[#80]</a> する：</p>
+	<p><center>$\begin{align*}
+		\fraction{1}{n}\sum_{i\in\mathbb{N}}X_i\,\,\overset{\mathrm{P}}{\longrightarrow}\,\,\mathbb{E}[X_1].
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="155">
+	<b>[#155] 命題：大数の強法則 (strong law of large numbers)</b><br>
+	<p>確率変数列 $\{X_i\}_{i\in\mathbb{N}}$ は独立同分布で $\mathbb{E}[|X_1|]\lt\infty$ であるとすれば，$X_i$ たちの平均は分布の期待値に概収束 <a href="stochastic-convergence.html#78">[#78]</a> する：</p>
+	<p><center>$\begin{align*}
+		\fraction{1}{n}\sum_{i\in\mathbb{N}}X_i\,\,\rightarrow\,\,\mathbb{E}[X_1]\quad\text{a.s.}
+		\end{align*}$</center></p>
+</div>
 <br><br>
 
 <div class="def" id="200">
