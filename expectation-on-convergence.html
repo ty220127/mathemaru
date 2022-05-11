@@ -1,0 +1,100 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+	}}});
+</script>
+<script>
+	const ttl = "期待値に関する収束"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<style>
+	table{
+		font-size: 14px;
+	}
+</style>
+</head>
+
+<body>
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
+<p style="text-align:right;">
+isolated from <a href="rv-convergence.html">確率変数の収束</a> on 2022/5/11<br>
+updated on 2022/5/11
+</p>
+    
+<div class="def" id="79">
+	<b>[#79] 定義：平均収束</b><br>
+	<p> $p\geq 1$ とする．実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
+  <p><center>$\limit_{n\rightarrow\infty}\mathbb{E}[|X_n-X|^p] = 0$</center></p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【$L^p$ 収束】或いは【 $p$ 次平均収束(convergence in the mean of order $p$ )】するといい，$X_n \overset{L^p}{\longrightarrow} X$ と表す．</p>
+</div>
+<br><br>
+
+<div class="prp" id="220">
+<b>[#220] 命題：平均収束の強さの比較</b><br>
+	<p>$p\geq q\geq 1$ とする．実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に $p$ 次平均収束するならば，$\{X_n\}$ は $X$ に $q$ 次平均収束する：</p>
+	<p><center>\begin{align*}
+		X_n \overset{L^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{L^q}{\longrightarrow} X.
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="221">
+<b>[#221] 命題：平均収束ならば確率収束</b><br>
+	<p>$p\geq 1$ とする．実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に $p$ 次平均収束するならば，$\{X_n\}$ は $X$ に確率収束する：</p>
+	<p><center>\begin{align*}
+		X_n \overset{L^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
+		\end{align*}</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="154">
+	<b>[#154] 命題：大数の弱法則 (weak law of large numbers)</b><br>
+	<p>確率変数列 $\{X_i\}_{i\in\mathbb{N}}$ は独立同分布で $\mathbb{E}[X_1{}^2]\lt\infty$ であるとすれば，$X_i$ たちの平均は分布の期待値に確率収束 <a href="#80">[#80]</a> する：</p>
+	<p><center>$\begin{align*}
+		\fraction{1}{n}\sum_{i\in\mathbb{N}}X_i\,\,\overset{\mathrm{P}}{\longrightarrow}\,\,\mathbb{E}[X_1].
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div class="prp" id="155">
+	<b>[#155] 命題：大数の強法則 (strong law of large numbers)</b><br>
+	<p>確率変数列 $\{X_i\}_{i\in\mathbb{N}}$ は独立同分布で $\mathbb{E}[|X_1|]\lt\infty$ であるとすれば，$X_i$ たちの平均は分布の期待値に概収束 <a href="#78">[#78]</a> する：</p>
+	<p><center>$\begin{align*}
+		\fraction{1}{n}\sum_{i\in\mathbb{N}}X_i\,\,\rightarrow\,\,\mathbb{E}[X_1]\quad\text{a.s.}
+		\end{align*}$</center></p>
+</div>
+<br><br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
+	<li><a href="https://math-note.xyz/analysis/measure-theory/convergence-of-sequence-of-random-variables/">確率変数の4つの収束｜概収束，平均収束，確率収束，法則収束｜あーるえぬ｜数学のあれこれ</a>.</li>
+	<li><a href="http://ibis.t.u-tokyo.ac.jp/suzuki/lecture/2017/probth/Supplementary1.pdf">鈴木大慈: 確率数理工学補足資料 大数の法則と中心極限定理, pdf (2017)</a></li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
