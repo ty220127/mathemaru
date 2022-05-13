@@ -15,7 +15,7 @@
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 	}}});
@@ -41,7 +41,7 @@ updated on 2022/5/13
     
 <div class="def" id="228">
 	<b>[#228] 定義：零集合</b><br>
-	<p>測度空間 $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合 $N\in\mathcal{F}$ で</p>
+	<p>測度空間 <a href="sigma-algebra.html#10">[#10]</a> $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合 $N\in\mathcal{F}$ で</p>
 	<p><center>\begin{align*}
 		\mu(N) = 0
 		\end{align*}</center></p>
@@ -51,7 +51,7 @@ updated on 2022/5/13
 
 <div class="def" id="229">
 	<b>[#229] 定義：完備測度空間</b><br>
-	<p>測度空間 $(\varOmega,\,\mathcal{F},\,\mu)$ 上の零集合 $N\in\mathcal{F}$ の任意の部分集合が可測であることを $\mu$ は【完備 (complete)】であると云う：</p>
+	<p>測度空間 <a href="sigma-algebra.html#10">[#10]</a> $(\varOmega,\,\mathcal{F},\,\mu)$ が【完備 (complete)】であるとは，任意の零集合 $N\in\mathcal{F}$ の部分集合が可測であることを云う：</p>
 	<p><center>\begin{align*}
 		{}^\forall N\in\mathcal{F},\,\,(\mu(N)=0)\land (A\subset N)\,\,\Longrightarrow\,\,A\in\mathcal{F}.
 		\end{align*}</center></p>
@@ -60,20 +60,29 @@ updated on 2022/5/13
 
 <div class="def" id="230">
 	<b>[#230] 定義：ほとんど至るところ</b><br>
-	<p>測度空間 $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合 $A\in\mathcal{F}$ を定める命題関数 <a href="predicate.html#75">[#75]</a> $\mathcal{P}(\omega)$ が【ほとんど至るところ (almost everywhere)】で成立するとは，$A$ の補集合 $A^\cpl$ が零集合になることを云い，このことを</p>
-	<p><center>
-		$\mathcal{P},\,\,\mu\text{-a.e.}$，$\mathcal{P}\,\,\text{a.e.}$ 或いは $P,\,\,\text{a.e.}\,\,\omega\in\varOmega$
-		</center></p>
-	<p>などと書く．</p>
+	<p>測度空間 <a href="sigma-algebra.html#10">[#10]</a> $(\varOmega,\,\mathcal{F},\,\mu)$ 上において $\omega\in\varOmega$ に関する命題関数 <a href="predicate.html#75">[#75]</a> $\mathcal{P}(\omega)$ が【ほとんど至るところ (almost everywhere)】で成立するとは，$\mathcal{P}(\omega)$ の否定により定義される可測集合が零集合であることを云う：</p>
+	<p><center>\begin{align*}
+		\mu\left(\bigl\{\omega\in\varOmega\,|\,\neg\mathcal{P}(\omega)\bigr\}\right)= \mu\left(\bigl\{\omega\in\varOmega\,|\,\mathcal{P}(\omega)\bigr\}^\cpl\right) = 0.
+		\end{align*}</center></p>
+	<Details>
+	<summary>記法</summary>
+		<p>$\mathcal{P}(\omega)$ がほとんど至るところで成立することは</p>
+		<p><center>
+			$\mathcal{P}(\omega),\,\,\,\mu\,\text{-a.e.}\,\,\,\omega\in\varOmega$
+			</center></p>
+		<p>などと書く．文脈上 $\mu$ や $\omega\in\varOmega$ が明らかな場合は，適宜省略しても良い．</p>
+	</Details>
 </div>
 <br><br>
 
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
+	<li>舟木直久: 講座＜数学の考え方＞20 確率論, 朝倉書店 (2004).</li>
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/labo/text/functional-analysis-2/node4.html">1.2 零集合、完備な測度空間 - 関数解析入門 II 積分・関数空間ノート 桂田 祐史</a></li>
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/labo/text/functional-analysis-2/node5.html">1.3 ほとんど至るところ等しい - 関数解析入門 II 積分・関数空間ノート 桂田 祐史</a></li>
-	<li><a href="https://mathlandscape.com/almost-every/">ほとんどいたるところ(almost everywhere, a.e.)の議論 _ 数学の景色</a></li>
+	<li><a href="https://mathlandscape.com/almost-every/">ほとんどいたるところ(almost everywhere, a.e.)の議論 - 数学の景色</a></li>
+	<li><a href="https://mathematics-pdf.com/pdf/measure.pdf">測度 - MATHEMATICS.PDF, 公開pdf</a>.</li>
 </ul>
 </div>
 	            
