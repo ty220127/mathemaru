@@ -17,7 +17,7 @@
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 	}}});
@@ -38,12 +38,29 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/1/27<br>
-updated on 2022/5/10
+updated on 2022/5/13
 </p>
 
-	<div class="def" id="12">
+<div class="def" id="231">
+	<b>[#231] 定義：確率論における「方言」</b><br>
+		<p>$(\varOmega,\,\mathcal{F})$ を可測空間 <a href="measure.html#10">[#10]</a> とするとき，確率論においては以下の「方言」が用いられる：</p>
+	<ul>
+		<p><li> 普遍集合 $\varOmega$ を【標本空間 (sample space)】と呼ぶ．</li></p>
+		<p><li> 普遍集合の元 $\omega\in\varOmega$ を【標本点 (sample point)】或いは【根元事象 (elementary event)】と呼ぶ．</li></p>
+		<p><li> 可測空間における可測集合 $E\in\mathcal{F}$ を【事象 (event)】と呼ぶ．</li></p>
+		<p><li> 事象 $E\in\mathcal{F}$ の補集合 <a href="complement-set.html#84">[#84]</a> $E^\cpl$ を $E$ の【余事象 (complementary event)】と呼ぶ．</li></p>
+		<p><li> 測度 $P$ を持つ測度空間 $(\varOmega,\,\mathcal{F},\,P)$ において $\omega\in \varOmega$ に対する命題関数 $\mathcal{P}(\omega)$ <a href="predicate.html#75">[#75]</a> がほとんど至るところで成り立つ <a href="complete-measure^space.html#230">[#230]</a> ことを，$\mathcal{P}(\omega)$ は【ほとんど確実に (almost surely)】成り立つと云い，</p>
+		<p><center>\begin{align*}
+			\mathcal{P}(\omega),\,\,\,\text{a.s.}
+			\end{align*}</center></p>
+		<p>と書く．</li></p>
+	</ul>
+</div>
+<br><br>
+    
+<div class="def" id="12">
 	<b>[#12] 定義：確率測度，確率空間</b><br>
-		<p>$(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される測度 $ P:\mathcal{F}\rightarrow[0,\,\infty)$ を【確率測度 (probability measure)】或いは単に【確率 (probability)】と呼ぶ：</p>
+		<p>$(\varOmega,\,\mathcal{F})$ を可測空間とするとき，以下で定義される関数 $ P:\mathcal{F}\rightarrow[0,\,\infty)$ を【確率測度 (probability measure)】或いは単に【確率 (probability)】と呼ぶ：</p>
 		<ul class="defl">
 			<li> 任意の $A\in\mathcal{F}$ に対して $0\leq P(A)\leq 1$, </li>
 			<li> $ P(\varOmega)=1$, </li>
@@ -52,12 +69,12 @@ updated on 2022/5/10
 			が成り立つ【確率測度の $\sigma$ 加法性】．</li>
 		</ul>
 		<p>このとき，組 $(\varOmega,\,\mathcal{F},\, P)$ を【確率空間 (probability space)】と呼ぶ．</p>
-	</div>
-	<br><br>
+</div>
+<br><br>
     
 	<div class="prp" id="13">
 	<b>[#13] 命題：確率測度が測度であることの確認</b><br>
-		<p>確率空間 $(\varOmega,\,\mathcal{F},\, P)$ に対して，確率測度 $P$ は測度 <a href="measure.html#24">[#24]</a> である．</p>
+		<p>確率空間 $(\varOmega,\,\mathcal{F},\, P)$ は測度空間 <a href="measure.html#24">[#24]</a> である．特に，確率測度 $P$ は測度である．</p>
 	</div>
 	<Details>
 		<summary>証明</summary>
@@ -75,18 +92,35 @@ updated on 2022/5/10
 	</Details>
 	<br><br>
     
-	<div class="prp" id="15">
-	<b>[#15] 命題：補集合の確率</b><br>
+<div class="prp" id="15">
+<b>[#15] 命題：余事象の確率</b><br>
 		<p>確率空間 $(\varOmega,\,\mathcal{F},\, P)$ 上の集合 $A\in\mathcal{F}$ に対して $ P(A^{\mathrm{c}}) = 1- P(A)$.</p>
-	</div>
-	<Details>
-		<summary>証明</summary>
-		<p>任意の $\varOmega$ の部分集合 $A$ について，$A^\cpl = \varOmega\backslash A$ であるから，測度の単調性 <a href="measure.html#26">[#26]</a> より</p>
-		<p><center>$\begin{align*}
-			P(A^\cpl) = P(\varOmega\backslash A) = P(\varOmega)-P(A) = 1-P(A).
-			\end{align*}$</center></p>
-	</Details>
-	<br><br>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>任意の $\varOmega$ の部分集合 $A$ について，$A^\cpl = \varOmega\backslash A$ であるから，測度の単調性 <a href="measure.html#26">[#26]</a> より</p>
+	<p><center>$\begin{align*}
+		P(A^\cpl) = P(\varOmega\backslash A) = P(\varOmega)-P(A) = 1-P(A).
+		\end{align*}$</center></p>
+</Details>
+<br><br>
+
+<div class="prp" id="232">
+<b>[#232] 命題：ほとんど確実に成り立つ事象</b><br>
+	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ において，$\omega\in\varOmega$ についての命題 $\mathcal{P}(\omega)$ がほとんど確実に成り立つことは，その $\mathcal{P}(\omega)$ が成り立つ確率が $1$ であることと同値である：</p>
+	<p><center>\begin{align*}
+		\mathcal{P}(\omega)\,\,\,\text{a.s.}\,\,\Longleftrightarrow\,\, P\left(\bigl\{\omega\in\varOmega\,|\,\mathcal{P}(\omega)\bigr\}\right) = 1.
+		\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>定義 <a href="complete-measure-space.html#230">[#230]</a> より，</p>
+	<p><center>\begin{align*}
+		\mathcal{P}(\omega)\,\,\,\text{a.s.}&\,\,\Longleftrightarrow\,\, P\left(\bigl\{\omega\in\varOmega\,|\,\mathcal{P}(\omega)^\cpl\bigr\}\right) = 0\\
+			&\,\,\Longleftrightarrow\,\,P\left(\bigl\{\omega\in\varOmega\,|\,\mathcal{P}(\omega)\bigr\}\right) \refeq{#15}{15} 1-P\left(\bigl\{\omega\in\varOmega\,|\,\mathcal{P}(\omega)^\cpl\bigr\}\right) = 1.
+		\end{align*}</center></p>
+</Details>
+<br><br>
 
 	<div class="exr" id="16">
 	<b>[#16] 演習：確率測度の決定</b><br>
@@ -130,6 +164,7 @@ updated on 2022/5/10
 	<b>参考文献</b>
 	<ul>
 		<li>熊谷隆: 新しい解析学の流れ 確率論, 共立出版 (2003).</li>
+		<li><a href="https://www.ms.u-tokyo.ac.jp/~kyuta/probability.pdf">小池祐太: 測度論的確率論, 公開pdf, (2022)</a>.</li>
 		<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
 	</ul>
 	</div>
