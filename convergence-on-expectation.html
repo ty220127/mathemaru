@@ -19,10 +19,11 @@
 		cpl: '\\mathrm{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
+		Llim: ['\\underset{#1}{\\mathbf{L}^{#2}\\text{-lim}}',2],
 	}}});
 </script>
 <script>
-	const ttl = "期待値に関する収束"
+	const ttl = "平均収束"
 	document.title= ttl + "｜演習問題集"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
@@ -37,14 +38,18 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 isolated from <a href="rv-convergence.html">確率変数の収束</a> on 2022/5/11<br>
-updated on 2022/5/11
+updated on 2022/5/14
 </p>
     
 <div class="def" id="79">
 	<b>[#79] 定義：平均収束</b><br>
-	<p> $p\geq 1$ とする．実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
+	<p> $p\geq 1$ とする．実数値確率変数列 $\{X_n\}_{n\in\mathbf{N}}$ に対して確率変数 $X$ が存在して</p>
   <p><center>$\limit_{n\rightarrow\infty}\mathbb{E}[|X_n-X|^p] = 0$</center></p>
-  <p>が成り立つとき，$\{X_n\}$ は $X$ に【$L^p$ 収束】或いは【 $p$ 次平均収束(convergence in the mean of order $p$ )】するといい，$X_n \overset{L^p}{\longrightarrow} X$ と表す．</p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【$\mathbf{L}^p$ 収束】或いは【 $p$ 次平均収束(convergence in the mean of order $p$ )】するといい，
+	<p><center>
+		$X_n \overset{\mathbf{L}^p}{\longrightarrow} X$　或いは　$\Llim{n\rightarrow\infty}{p}=X$
+		</center></p>
+	<p>と表す．</p>
 </div>
 <br><br>
 
@@ -52,7 +57,7 @@ updated on 2022/5/11
 <b>[#220] 命題：平均収束の強さの比較</b><br>
 	<p>$p\geq q\geq 1$ とする．実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に $p$ 次平均収束するならば，$\{X_n\}$ は $X$ に $q$ 次平均収束する：</p>
 	<p><center>\begin{align*}
-		X_n \overset{L^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{L^q}{\longrightarrow} X.
+		X_n \overset{\mathbf{L}^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{\mathbf{L}^q}{\longrightarrow} X.
 		\end{align*}</center></p>
 </div>
 <br><br>
@@ -61,7 +66,7 @@ updated on 2022/5/11
 <b>[#221] 命題：平均収束ならば確率収束</b><br>
 	<p>$p\geq 1$ とする．実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に $p$ 次平均収束するならば，$\{X_n\}$ は $X$ に確率収束 <a href="stochastic-convergence.html#80">[#80]</a> する：</p>
 	<p><center>\begin{align*}
-		X_n \overset{L^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
+		X_n \overset{\mathbf{L}^p}{\longrightarrow} X\,\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
 		\end{align*}</center></p>
 </div>
 <br><br>
