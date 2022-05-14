@@ -37,22 +37,23 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 isolated from <a href="rv-convergence.html">確率変数の収束</a> on 2022/5/11<br>
-updated on 2022/5/11
+updated on 2022/5/14
 </p>
     
 <div class="def" id="78">
-	<b>[#78] 定義：概収束</b><br>
-	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して確率変数 $X$ が存在して</p>
-  <p><center>$P\left(\left\{\omega\in\varOmega\,|\,\limit_{n\rightarrow\infty}X_n(\omega)=X(\omega)\right\}\right)=1$</center></p>
-  <p>が成り立つとき，$\{X_n\}$ は $X$ に【概収束(almost sure convergence)】するといい，$X_n \rightarrow X\,\,\text{a.s.}$ と表す．</p>
+	<b>[#78] 定義：概収束 (almost sure convergence)</b><br>
+	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ がある確率変数 $X$ にほとんど確実に <a href="probmeasure.html#231">[#231]</a> 収束することを，$\{X_n\}$ は $X$ に【概収束する (almost surely converge)】と云う：</p>
+	<p><center>\begin{align*}
+		X_n\rightarrow X,\,\,\,\text{a.s.}\,\,\reflr{probmeasure.html#232}{232}\,\,& P\left(\left\{\omega\in\varOmega\,\middle|\,\limit_{n\rightarrow\infty}X_n(\omega)=X(\omega)\right\}\right)=1.
+		\end{align*}</center></p>
 </div>
 <br><br>
 
 <div class="def" id="80">
-	<b>[#80] 定義：確率収束</b><br>
+	<b>[#80] 定義：確率収束 (stochastic convergence)</b><br>
 	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して，任意の $\varepsilon>0$ について確率変数 $X$ が存在して</p>
   <p><center>$\limit_{n\rightarrow\infty}P\left(\left\{\omega\in\varOmega\,|\,|X_n(\omega)-X(\omega)|\gt\varepsilon\right\}\right)=0$</center></p>
-  <p>が成り立つとき，$\{X_n\}$ は $X$ に【確率収束(stochastic convergence)】するといい，$X_n \overset{\text{P}}{\longrightarrow} X$ と表す．</p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【確率収束する (stochastically converge)】といい，$X_n \overset{\text{P}}{\longrightarrow} X$ と表す．</p>
 </div>
 <br><br>
 
