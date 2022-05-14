@@ -19,6 +19,7 @@
 		cpl: '\\mathrm{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
+		plim: ['\\underset{#1}{\\text{plim}}\\,\\,',1]
 	}}});
 </script>
 <script>
@@ -53,7 +54,11 @@ updated on 2022/5/14
 	<b>[#80] 定義：確率収束 (stochastic convergence)</b><br>
 	<p>実数値確率変数列 $\{X_n\}_{n\in\mathbb{N}}$ に対して，任意の $\varepsilon>0$ について確率変数 $X$ が存在して</p>
   <p><center>$\limit_{n\rightarrow\infty}P\left(\left\{\omega\in\varOmega\,|\,|X_n(\omega)-X(\omega)|\gt\varepsilon\right\}\right)=0$</center></p>
-  <p>が成り立つとき，$\{X_n\}$ は $X$ に【確率収束する (stochastically converge)】といい，$X_n \overset{\text{P}}{\longrightarrow} X$ と表す．</p>
+  <p>が成り立つとき，$\{X_n\}$ は $X$ に【確率収束する (stochastically converge)】といい，
+	<p><center>
+		$\plim{n\rightarrow\infty}X_n=X$　或いは　$X_n \overset{\text{P}}{\longrightarrow} X$
+		</center></p>
+	<p>と表す．</p>
 </div>
 <br><br>
 
@@ -61,7 +66,7 @@ updated on 2022/5/14
 <b>[#219] 命題：概収束ならば確率収束</b><br>
 	<p>実数値確率変数列 $\{X_n\}$ がある確率変数 $X$ に概収束するならば，$\{X_n\}$ は $X$ に確率収束する：</p>
 	<p><center>\begin{align*}
-		X_n \rightarrow X\,\,\text{a.s.}\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
+		X_n \rightarrow X,\,\,\text{a.s.}\,\,\Longrightarrow\,\,X_n \overset{\text{P}}{\longrightarrow} X.
 		\end{align*}</center></p>
 </div>
 <br><br>
