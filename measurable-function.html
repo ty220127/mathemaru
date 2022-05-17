@@ -1,72 +1,61 @@
-<html>
-  <head>
-    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-        limit: '\\displaystyle\\lim',
-	sig: '\\displaystyle\\sum',
-	cpl: '\\mathrm{c}'
-      }}});
-    </script>
-    <title>可測関数｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-      titlehead{
-        font-size: 200%;
-        font-family: sans-serif;
-      }
-      .def{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #ffff99;
-      }
-      .prp{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2f9ff;
-      }
-      .clc{
-        padding: 0.5%; 
-        margin-bottom: 0.5%; 
-        border: none; 
-        background-color: #b2ffb2;
-      }
-      bib{
-        font-size: 95%;
-      }
-    </style>
-  </head>
 
-  <body>
-    <center><titlehead>可測関数</titlehead></center>
-    <br><br>
-    
-    <div class="def" id="29">
-      <b>[#29]定義：可測関数</b><br>
-      $(\varOmega,\,\mathcal{F})$，$(\varOmega',\,\mathcal{F}')$ を可測空間とする．関数 $f:\varOmega\rightarrow\varOmega'$ が以下の条件
-      <center>
-      $C\in\mathcal{F}'\,\,\Longrightarrow\,\,f^{-1}(C)\in\mathcal{F}$
-      </center>
-      を満たすとき，これを $\mathcal{F}/\mathcal{F}'$ -可測関数 (measurable function) と呼び，「$f$ は $\mathcal{F}/\mathcal{F}'$ -可測」とも云う．
-    </div>
-    <br><br>
-        
-    <bib>
-      <b>参考文献</b>
-      <ul>
-      <li><a href="https://mathlandscape.com/measurable-func/">可測関数とは～定義と理解しておくべき大事な性質～ | 数学の景色</a></li>
-      <li><a href="https://www.stat.cmu.edu/~arinaldo/Teaching/36752/S18/Notes/lec_notes_2.pdf">https://www.stat.cmu.edu/~arinaldo/Teaching/36752/S18/Notes/lec_notes_2.pdf</a></li>
-      </ul>
-    </bib>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		intgrl: '\\displaystyle\\int',
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+	}}});
+</script>
+<script>
+	const ttl = "可測関数"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
+<p style="text-align:right;">
+established on 2022/1/30<br>
+updated on 2022/5/17
+</p>
+   
+<div class="def" id="29">
+<b>[#29] 定義：可測関数</b><br>
+	<p>$(\varOmega,\,\mathcal{F})$，$(\varOmega',\,\mathcal{F}')$ を可測空間 <a href="sigma-algebra.html#10">[#10]</a> とするとき，関数 $f:\varOmega\to \varOmega'$ が $\varOmega'$ -値【可測関数 (measurable function)】とは，</p>
+	<p><center>$\begin{align*}
+		C\in\mathcal{F}'\,\,\Longrightarrow\,\,f^{-1}(C)\in\mathcal{F}
+		\end{align*}$</center></p>
+	<p>であることをいう．特に $\varOmega'=\mathbb{R}$ で $\mathcal{F}'$ が Borel 集合 <a href="borel-set.html#148">[#148]</a> $\mathcal{B}(\mathbb{R})$ である場合は，単に可測関数という．</p>
+</div>
+
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
+		<li>柴田良弘: ルベーグ積分論, 内田老鶴圃 (2006).</li>
+		<li><a href="https://mathlandscape.com/measurable-func/">可測関数とは～定義と理解しておくべき大事な性質～ | 数学の景色</a></li>
+</ul>
+</div>
       
-    <p style="text-align:right;">
-    <a href="index.html">トップページに戻る</a>
-    </p>
-  </body>
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
 </html>
