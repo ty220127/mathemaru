@@ -1,43 +1,52 @@
+
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
-  <head>
+<head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-        limit: '\\displaystyle\\lim',
-	sig: '\\displaystyle\\sum',
-	intgrl: '\\displaystyle\\int',
-	cpl: '\\mathrm{c}',
-	rd: '\\mathrm{d}',
-      }}});
-    </script>
-    <title>Lebesgue積分｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-    </style>
-  </head>
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		intgrl: '\\displaystyle\\int',
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+	}}});
+</script>
+<script>
+	const ttl = "Lebesgue 積分"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
 
 <body>
-<center><div id="titlehead">Lebesgue 積分</div></center>
-
+<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/1/31<br>
-updated on 2022/3/29
+updated on 2022/5/17
 </p>
    
 <div class="def" id="44">
-<b>[#44] 定義：Lebesgue 積分</b><br>
-	<p>互いに素な $\mathbb{R}^{N}$ 上 Lebesgue 可測集合 $\{E_n\}_{n=1}^{N}$ と $\{a_n\}_{n=1}^{N}\subset\mathbb{R}$ により定義される単関数 $\varphi(x)=\sig_{n=1}^{N}a_{n}\mathbf{1}_{E_n}(x)$ に対して積分を
+<b>[#44] 定義：非負単関数の Lebesgue 積分</b><br>
+	<p>可測集合列 $\{A_k\}_{k=1}^{n}$ が普遍集合 $\varOmega$ の分割 <a href="mutually-disjoint.html#197">[#197]</a> になっているとする．これと非負な数列 $\{a_k\}_{k=1}^{n}$ により定義される単関数 <a href="simple-function.html#159">[#159]</a> $\varphi(x) = \sum_{k=1}^{n} a_n\mathbf{1}_{A_n}(x)$ に対して，積分を以下のように定義する：</p>
 	<p><center>$\begin{align*}
-		\intgrl_{\varOmega}\varphi(x)\rd\mu=\sig_{n=1}^{N}a_{n}\mu(E_n)
+		\intgrl_{\varOmega}\varphi(x) \rd\mu := \sig_{k=1}^{n}a_{n}\mu(A_n)
 		\end{align*}$</center></p>
-	<p>と定義し，これを【<ruby><rb>Lebesgue</rb><rp>（</rp><rt>ルベーグ</rt><rp>）</rp></ruby> 積分 (Lebesgue integral)】と呼ぶ．</p>
 </div>
+<Details>
+	<summary>補足</summary>
+	<p>この積分を  $\intgrl_{\varOmega}\varphi(x)\rd\mu(x),\,\intgrl_{\varOmega}\varphi(x)\mu(\rd x)$ と表記することもある．</p>
+</Details>
 <br><br>
 
 <div class="prp" id="162">
