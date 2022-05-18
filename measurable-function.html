@@ -33,24 +33,38 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/1/30<br>
-updated on 2022/5/17
+updated on 2022/5/18
 </p>
    
 <div class="def" id="29">
-<b>[#29] 定義：可測関数</b><br>
-	<p>$(\varOmega,\,\mathcal{F})$，$(\varOmega',\,\mathcal{F}')$ を可測空間 <a href="sigma-algebra.html#10">[#10]</a> とするとき，関数 $f:\varOmega\to \varOmega'$ が $\varOmega'$ -値【可測関数 (measurable function)】とは，</p>
+<b>[#29] 定義：可測写像，可測関数</b><br>
+	<p>$(\varOmega,\,\mathcal{F})$，$(E,\,\mathcal{G})$ を可測空間 <a href="sigma-algebra.html#10">[#10]</a> とする．写像 $f:\varOmega\to E$ が $\mathcal{F}/\mathcal{G}\,\text{-}$【可測 (measurable)】とは，任意の $\mathcal{G}$ の可測集合の逆像 <a href="image.html#112">[#112]</a> が $\mathcal{F}$ の可測集合であること：</p>
 	<p><center>$\begin{align*}
-		C\in\mathcal{F}'\,\,\Longrightarrow\,\,f^{-1}(C)\in\mathcal{F}
+		B\in\mathcal{G}\,\,\Longrightarrow\,\,f^{-1}(B)\in\mathcal{F}
 		\end{align*}$</center></p>
-	<p>であることをいう．特に $\varOmega'=\mathbb{R}$ で $\mathcal{F}'$ が Borel 集合 <a href="borel-set.html#148">[#148]</a> $\mathcal{B}(\mathbb{R})$ である場合は，単に可測関数という．</p>
+	<p>であることをいう．<br>
+		特に $(E,\,\mathcal{G}) = (\mathbb{R},\,\mathcal{B}(\mathbb{R}))$ であるときは $\mathcal{F}\,\text{-}$可測という．</p>
 </div>
+<br><br>
+
+<div class="prp" id="233">
+<b>[#233] 命題：生成元の集合族は可測</b><br>
+	<p>$(\varOmega,\,\mathcal{F})$，$(E,\,\mathcal{G})$ を可測空間 <a href="sigma-algebra.html#10">[#10]</a> とし，$\mathcal{C}\subset 2^E$ を $\mathcal{G}$ を生成する集合族 <a href="sigma-algebra.html#90">[#90]</a> とする．写像 $f: \varOmega\to E$ が</p>
+	<p><center>$\begin{align*}
+		B\in\mathcal{C}\,\,\Longrightarrow\,\,f^{-1}(B)\in\mathcal{F}
+		\end{align*}$</center></p>
+	<p>を満たすとき，$f$ は $\mathcal{F}/\mathcal{G}\,\text{-}$可測．</p>
+</div>
+<br><br>
 
 <div id="bib">
 <b>参考文献</b>
 	<ul>
 		<li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
-		<li>柴田良弘: ルベーグ積分論, 内田老鶴圃 (2006).</li>
+		<li>原啓介: 測度・確率・ルベーグ積分 応用への最短コース, 講談社 (2020).</li>
+		<li>舟木直久: 講座＜数学の考え方＞20 確率論, 朝倉書店 (2004).</li>
 		<li><a href="https://mathlandscape.com/measurable-func/">可測関数とは～定義と理解しておくべき大事な性質～ | 数学の景色</a></li>
+		<li><a href="https://www.blue271828.com/terms/%E5%8F%AF%E6%B8%AC%E5%86%99%E5%83%8F/">可測写像 - blue271828's misc _-)</a></li>
 </ul>
 </div>
       
