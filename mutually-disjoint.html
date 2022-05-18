@@ -26,7 +26,7 @@
 
 <p style="text-align:right;">
 established on 2022/4/29<br>
-updated on 2022/5/4
+updated on 2022/5/18
 </p>
     
 <div class="def" id="195">
@@ -46,17 +46,23 @@ updated on 2022/5/4
 <br><br>
   
 <div class="def" id="197">
-	<b>[#197] 定義：集合の分割</b><br>
-	<p>集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ が集合 $X\not =\emptyset$ に対して次の条件を満たすことを，$\{A_\lambda\}$（または $A_\lambda$ たち）は $X$ の【分割 (partition)】であると云う：
+	<b>[#197] 定義：直和分割</b><br>
+	<p>空でない集合 $S\not =\emptyset$ に対して集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ が $S$ の【直和分割 (direct sum partition)】であるとは，$\{A_\lambda\}$ が以下の条件を満たすこと：
 	<ul class="defl">
-		<li> 任意の $\lambda\in\varLambda$ に対して $A_\lambda\not =\emptyset.$</li>
+		<li> すべての $\lambda\in\varLambda$ に対して $A_\lambda \not =\emptyset$.</li>
 		<li> $\{A_\lambda\}$ は互いに素である．</li>
 		<li> $A_\lambda$ たちの直和は $X$ である：$\displaystyle\bigsqcup_{\lambda\in\varLambda}A_\lambda =X.$
 	</ul>
+	<p>各 $A_\lambda$ を【ブロック (block)】と呼ぶ．<br>
+		また，ii., iii. を満たす集合族 $\{A_\lambda\}$ を $S$ の【広義の直和分割 (improper direct sum division)】と呼ぶ．</p>
 </div>
 
 <Details>
-<summary>補足</summary>
+<summary>補足１</summary>
+	<p>「広義の直和分割」は一般的な用語ではないが，頻繁に登場するので定義しておくと便利である．なお，広義の直和分割を直和分割と定義する（ i. を課さない）文献もある．</p>
+</Details>
+<Details>
+<summary>補足２</summary>
 	<p>集合族に明確な添字が付けられていない場合でも，その集合族に対して適当に添字集合 $\varLambda$ を用意すれば対応づけを設定できるので，同様にこの定義を適用できる．</p>
 </Details>
 <br><br>
@@ -64,9 +70,11 @@ updated on 2022/5/4
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-3_shugo-enzan.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第３章), 公開pdf</a>.</li>
+	<li><a href="http://www.code.cei.uec.ac.jp/Class/dismath/dismath2007/L4relation.pdf">栗原正純: 離散数学 4. 関係, 公開 pdf</a> [2022/5/18 閲覧].</li>
 	<li><a href="http://sss.sci.ibaraki.ac.jp/teaching/set/set2005.pdf">山上滋: 集合入門, 公開pdf (2005)</a></li>
 	<li>横井英夫, 硲野敏博: 数学演習ライブラリ=5 代数演習[新訂版], サイエンス社 (2003).</li>
 	<li><a href="https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E3%81%AE%E5%88%86%E5%89%B2">集合の分割 - Wikipedia</a> [2022/4/29閲覧].</li>
+	<li><a href="https://gleamath.com/equiv-relation-quotient-set/">同値関係と商集合 - gleamath.com</a> [2022/5/18 閲覧].</li>
 </ul>
 </div>
       
