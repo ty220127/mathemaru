@@ -16,7 +16,7 @@
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
@@ -33,7 +33,7 @@
 <center><div id="titlehead"><script>document.write(ttl)</script></div></center>
 <p style="text-align:right;">
 established on 2022/5/1<br>
-updated on 2022/5/7
+updated on 2022/5/18
 </p>
    
 <div class="def" id="201">
@@ -140,6 +140,19 @@ updated on 2022/5/7
 </div>
 <Details>
 <summary>解答</summary>
+	<p> クッキーが工場 A で製造されたことを $A$，クッキーの箱の中にカモノハシの絵がプリントされているクッキーが入っていることを $D$ で表す．このときクッキーが工場 B で製造されたことを $A^\cpl$ で表すことに注意せよ．</p>
+	<ol>
+	<li> <p>全確率の公式 <a href="#202">[#202]</a> より</p>
+		<p><center>\begin{align*}
+			P(D) &= P(D\,|\,A)P(A) + P(D\,|\,A^\cpl)P(A^\cpl) \\
+			&= \fraction{2}{100}\cdot\fraction{70}{100} + \fraction{8}{100}\cdot \fraction{30}{100}\\
+			&= \fraction{19}{500} = \color{red}{0.038}.
+			\end{align*}</center></p></li>
+	<li> <p> Bayes の定理 <a href="#203">[#203]</a> より</p>
+		<p><center>\begin{align*}
+			P(A\,|\,D) &= \fraction{P(D\,|\,A)P(A)}{P(D\,|\,A)P(A) + P(D\,|\,A^\cpl)P(A^\cpl)}\\
+			&= \fraction{7}{19} = 0.3684\cdots \fallingdotseq \color{red}{0.368}.
+			\end{align*}</center></p>
 </Details>
 <br><br>
 
