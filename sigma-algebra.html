@@ -1,36 +1,52 @@
+
+
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
-  <head>
+<head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: {
-	      numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
-	      bs: '\\boldsymbol', 
-	      bcu: '\\displaystyle\\bigcup', 
-	      bca: '\\displaystyle\\bigcap', 
-	      fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-	      limit: '\\displaystyle\\lim',
-	      sig: '\\displaystyle\\sum',
-	      cpl: '\\mathsf{c}'
-      }}});
-    </script>
-    <title>σ加法族｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-    </style>
-  </head>
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		refbtn: ['\\href{#1}{\\scriptsize\\sf[\\# #2]}',2],
+		refeq: ['\\underset{\\refbtn{#1}{#2}}{=}',2],
+		reflr: ['\\underset{\\refbtn{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\refbtn{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "σ加法族"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
 
-  <body>
-    <center><div id="titlehead">$\bs{\sigma}$ 加法族</div></center>
- 
-<p style="text-align:right;">
+<body>
+<center><div id="ttlhead">$\bs{\sigma}$ 加法族</div></center>
+
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em;">
 established on 2022/1/27<br>
-updated on 2022/3/7
+updated on 2022/5/20
 </p>
 	  
 <div class="def" id="10">
-	<b>[#10]定義：</b>$\bs{\sigma}$ <b>加法族，可測空間，可測集合</b><br>
+	<b>[#10] 定義：</b>$\bs{\sigma}$ <b>加法族，可測空間，可測集合</b><br>
 	<p>ある全体集合 $\varOmega$ の空でない部分集合族 $\mathcal{F}(\subset 2^\varOmega)$ が以下の条件を満たすとき，これを $\varOmega$ 上の【 $\sigma$ 加法族 (sigma algebra)】或いは【完全加法族 (completely additive class)】と呼ぶ：</p>
 	<ul class="defl">
 		<li> $A\in\mathcal{F}\,\,\Longrightarrow\,\,A^\cpl\in\mathcal{F}$【補集合の可測性】, </li>
@@ -53,7 +69,7 @@ updated on 2022/3/7
 <br><br>
     
 <div class="prp" id="45">
-	<b>[#45]命題：冪集合は $\bs{\sigma}$ 加法族</b><br>
+	<b>[#45] 命題：冪集合は $\bs{\sigma}$ 加法族</b><br>
 	<p>組 $(\varOmega,\,2^{\varOmega})$ は可測空間．すなわち，$2^{\varOmega}$ は $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
 <Details>
@@ -67,7 +83,7 @@ updated on 2022/3/7
 <br><br>
 	  
 <div class="prp" id="82">
-	<b>[#82]命題：最小の $\bs{\sigma}$ 加法族</b><br>
+	<b>[#82] 命題：最小の $\bs{\sigma}$ 加法族</b><br>
 	<p>組 $(\varOmega,\,\{\emptyset,\,\varOmega\})$ は可測空間．すなわち，$\{\emptyset,\,\varOmega\}$ は $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
 <Details>
@@ -90,7 +106,7 @@ updated on 2022/3/7
 <br><br>
 	  
 <div class="prp" id="41">
-	<b>[#41]命題：$\bs{\sigma}$ 加法族の有限加法性</b><br>
+	<b>[#41] 命題：$\bs{\sigma}$ 加法族の有限加法性</b><br>
 	<p>組 $(\varOmega,\,\mathcal{F})$ を可測空間とすれば，有限個の集合の族 $\{A_i\}_{i=1}^{n}$ に対して，</p>
 	<p><center>$\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,\Longrightarrow\,\,\bcu_{i=1}^{n}A_i\in\mathcal{F}.$</center></p>
 </div>
@@ -108,7 +124,7 @@ updated on 2022/3/7
 <br><br>
     
 <div class="prp" id="42">
-	<b>[#42]命題：可測集合の積の可測性</b><br>
+	<b>[#42] 命題：可測集合の共通部分の可測性</b><br>
 	<p>可算無限個の集合族 $\{A_i\}_{i\in\mathbb{N}}$ と有限個の集合族 $\{A_i\}_{i=1}^{n}$ に対して</p>
 	<p><center>$\begin{align*}\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i\in\mathbb{N}}A_i\in\mathcal{F},\\
 		\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i=1}^{n}A_i\in\mathcal{F}.\end{align*}$</p>
@@ -124,8 +140,32 @@ updated on 2022/3/7
 </Details>
 <br><br>
 	  
+<div class="prp" id="234">
+	<b>[#234] 命題：上（下）極限集合の可測性</b><br>
+	<p>可算無限個の可測集合族 $\{A_n\}_{n\in\mathbb{N}}\subset\mathcal{F}$ に対し，その上極限集合と下極限集合 <a href="limit-set.html#189">[#189]</a> も可測：</p>
+	<p><center>\begin{align*}
+		\underset{n\rightarrow\infty}{\mathrm{lim\, sup}}\ A_n,\,\underset{n\rightarrow\infty}{\mathrm{lim\, inf}}\ A_n\in\mathcal{F}.\\
+		\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>上極限集合の定義 <a href="limit-set.html#189">[#189]</a> より</p>
+	<p><center>\begin{align*}
+		\underset{n\rightarrow\infty}{\mathrm{lim\, sup}}\ A_n = \bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_m.
+		\end{align*}</center></p>
+	<p>$\{A_m\}_{m=n}^{\infty}\subset\mathcal{F}$ であることから $\sigma$ 加法性 <a href="#10">[#10]</a> より各 $n$ に対して $\bigcup_{m=n}^{\infty}A_m\in\mathcal{F}$ である．よって，可測集合の共通部分の可測性 <a href="#42">[#42]</a> より
+	<p><center>\begin{align*}
+		\underset{n\rightarrow\infty}{\mathrm{lim\, sup}}\ A_n = \bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_m \in\mathcal{F}.
+		\end{align*}</center></p>
+	<p>下極限集合に関しても同様に</p>
+	<p><center>\begin{align*}
+		\underset{n\rightarrow\infty}{\mathrm{lim\, inf}}\ A_n\refeq{limit-set.html#189}{189} \bcu_{n=1}^{\infty}\underset{\in\,\mathcal{F}\,\,\refbtn{#42}{42}}{\underline{\bca_{m=n}^{\infty}A_m}}\underset{\refbtn{#10}{10}}{\in} \mathcal{F}.
+		\end{align*}</center></p>
+</Details>
+<br><br>
+	  
 <div class="prp" id="14">
-	<b>[#14]命題：可測集合の差の可測性</b><br>
+	<b>[#14] 命題：可測集合の差の可測性</b><br>
 	<p>$A,\,B$ が可測空間 $(\varOmega,\,\mathcal{F})$ の可測集合であるならば，$A\setminus B$ もまた可測集合である．</p>
 </div>
 <Details>
@@ -138,7 +178,7 @@ updated on 2022/3/7
 <br><br>
 
 <div class="prp" id="11">
-	<b>[#11]命題：空集合および全体集合の可測性</b><br>
+	<b>[#11] 命題：空集合および全体集合の可測性</b><br>
 	<p>任意の可測空間 $(\varOmega,\,\mathcal{F})$ に対して </p>
 	<p><center>$\emptyset,\,\varOmega\in\mathcal{F}$.</center></p>
 </div>
@@ -151,7 +191,7 @@ updated on 2022/3/7
 <br><br>
 	  
 <div class="prp" id="31">
-	<b>[#31]命題：σ加法族の共通部分</b><br>
+	<b>[#31] 命題：σ加法族の共通部分</b><br>
 	<p>$\varLambda$ を添字集合とし，$\{\mathcal{F}_{\lambda}\}_{\lambda\in\varLambda}$ を集合 $\varOmega$ 上の $\sigma$ 加法族の族とする．
 		このとき，$\bca_{\lambda\in\varLambda} \mathcal{F}_{\lambda}$ もまた $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
@@ -167,7 +207,7 @@ updated on 2022/3/7
 <br><br>
 
 <div class="def" id="90">
-	<b>[#90]定義：σ加法族の生成</b><br>
+	<b>[#90] 定義：σ加法族の生成</b><br>
 	<p>$\varOmega$ のある部分集合族 $\mathcal{E}$ を含む最小の $\varOmega$ 上の $\sigma$ 加法族 $\sigma(\mathcal{E})$ を 「$\mathcal{E}$ から生成される $\sigma$ 加法族」と云う．
 		つまり，$\sigma(\mathcal{E})$ は以下を課される：</p>
 	<ul class="defl">
@@ -179,7 +219,7 @@ updated on 2022/3/7
 <br><br>
 
 <div class="prp" id="91">
-	<b>[#91]命題：σ加法族の生成の一意性</b><br>
+	<b>[#91] 命題：σ加法族の生成の一意性</b><br>
 	<p>$\varOmega$ のある部分集合族 $\mathcal{E}$ から生成される $\sigma$ 加法族は唯一つ存在する．</p>
 </div>
 <Details>
@@ -189,7 +229,7 @@ updated on 2022/3/7
 <br><br>
 
 <div class="exr" id="32">
-	<b>[#32]計算：集合族により生成される $\sigma$ 加法族</b><br>
+	<b>[#32] 演習：集合族により生成される $\sigma$ 加法族</b><br>
 	<p>$\varOmega = \{a,\,b,\,c\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{b\},\,\{c\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．</p>
 </div>
 <Details>
@@ -199,7 +239,7 @@ updated on 2022/3/7
 <br><br>
 	  
     <div class="exr" id="33">
-      <b>[#33]計算：集合族により生成される $\sigma$ 加法族</b><br>
+      <b>[#33] 演習：集合族により生成される $\sigma$ 加法族</b><br>
       $\varOmega = \{a,\,b,\,c,\,d,\,e\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{b\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．
     </div>
     <Details>
@@ -218,7 +258,7 @@ updated on 2022/3/7
     <br><br>
 	  
     <div class="exr" id="34">
-      <b>[#34]計算：集合族により生成される $\sigma$ 加法族</b><br>
+      <b>[#34] 演習：集合族により生成される $\sigma$ 加法族</b><br>
       $\varOmega = \{a,\,b,\,c,\,d,\,e\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{a,\,b,\,c\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．
     </div>
     <Details>
