@@ -53,14 +53,25 @@ updated on 2022/5/20
 	<p><center>\begin{align*}
 		\ket{\hat{\psi}_t(k)} = \sum_{x\in\mathbb{Z}}e^{-ikx}\ket{\psi_t(x)}
 		\end{align*}</center></p>	
-	<p>で表される $k\in [-\pi + \delta,\,\pi +\delta)$ の関数のことである．ただし，$\delta\in\mathbb{R}$ は任意．</p>
+	<p>で表される $k\in [-\pi + \delta,\,\pi +\delta)$ の関数のことである．ただし $\delta\in\mathbb{R}$ は任意．</p>
 </div>
 <details>
-	<summary>補足１</summary>
+	<summary>補足</summary>
 	<p> $k$ の区間に含まれている $\delta$ は，区間の長さが $2\pi$ であればどんなものでも良いことを表している．よく出るケースは $\delta = 0$ のとき $\left(\,[-\pi,\,\pi)\,\right)$ や $\delta = \pi$ のとき $\left(\,[0,\,2\pi)\,\right)$．
 </details>
 <br>
 	  
+<p id="236">&nbsp;</p><div class="prp">
+	<b>[#236] 定義：量子ウォークの逆 Fourier 変換</b><br>
+	<p>時刻 $t$ における量子ウォークの系 $\ket{\psi_t(x)}$ とそのフーリエ変換 $\ket{\hat{\psi}_t(k)}$ に対して</p>
+	<p><center>\begin{align*}
+		\ket{{\psi}_t(x)} = \int_{-\pi+\delta}^{\pi+\delta}e^{ikx}\ket{\hat{\psi}_t(k)}\fraction{\rd k}{2\pi}.
+		\end{align*}</center></p>
+	<p>ただし $\delta\in\mathbb{R}$ は任意．</p>
+</div>
+<br>
+	  
+<br><br>
 <div id="bib">
 	<b>参考文献</b>
 	<ul>
@@ -68,8 +79,5 @@ updated on 2022/5/20
 	</ul>
 </div>
 	  
-<p style="text-align:right;">
-<a href="index.html">トップページに戻る</a>
-</p>
 </body>
 </html>
