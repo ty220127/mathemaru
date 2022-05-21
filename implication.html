@@ -1,9 +1,18 @@
+
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
-<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -11,24 +20,35 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}'
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		bra: ['\\langle #1 |', 1],
+		ket: ['| #1 \\rangle', 1],
 	}}});
 </script>
-<title>含意｜演習問題集</title>
+<script>
+	const ttl = "含意"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-</style>
 </head>
 
 <body>
-<center><div id="titlehead">含意</div></center>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
 
-<p style="text-align:right;">
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em;">
 established on 2022/2/8<br>
-updated on 2022/2/17<br>
+updated on 2022/5/21<br>
 </p>
     
-<div class="def" id="65">
+<p id="65">&nbsp;</p><div class="def">
 	<b>[#65]定義：含意と諸定義</b><br>
 	<p>命題 $P,\,Q$ に対して，「$P$ が偽であるか $Q$ が真である」という命題を $P$ から $Q$ への【含意(implication)】と呼び，$P\rightarrow Q$ で表す：</p>
 	<p><center>$P\rightarrow Q\equiv \neg P\lor Q.$</center></p>
@@ -50,9 +70,9 @@ updated on 2022/2/17<br>
 	<summary>補足２</summary>
 	<p>含意の考え方を用いて論理的な展開について考察するのが【推論 (inference)】の分野である．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="66">
+<p id="66">&nbsp;</p><div class="prp">
 	<b>[#66]命題：自分への含意</b><br>
 	<p>命題 $P$ に対して</p>
 	<p><center>$P\rightarrow P \equiv \mathsf{T},\quad P\rightarrow \neg P \equiv \neg P.$</center></p>
@@ -65,9 +85,9 @@ updated on 2022/2/17<br>
 		P\rightarrow \neg P &\equiv \neg P\lor \neg P \equiv \neg P.\end{align*}$</center>
 	</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="67">
+<p id="67">&nbsp;</p><div class="prp">
 	<b>[#67]命題：双条件と同値</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>$P\leftrightarrow Q \equiv (P\land Q)\lor (\neg P\land \neg Q).$</center></p>
@@ -96,9 +116,9 @@ updated on 2022/2/17<br>
 	<p>この命題から $P\leftrightarrow Q$ は，$P$ と $Q$ の一方は真であればもう一方も真であり，一方が偽であればもう一方も偽であることを意味することがわかる．
 	つまり，$P\leftrightarrow Q$ が真であることは，$P$ と $Q$ が同値であることを意味する．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="68">
+<p id="68">&nbsp;</p><div class="prp">
 	<b>[#68]命題：対偶</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>$P\rightarrow Q \equiv \neg Q\rightarrow \neg P.$</center></p>
@@ -117,9 +137,9 @@ updated on 2022/2/17<br>
 	<summary>補足</summary>
 	<p>含意 $P\rightarrow Q$ に対して，前後件を否定して入れ替えた命題を【対偶(contraposition)】と呼ぶ．任意の含意とその対偶は常に同値である．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="88">
+<p id="88">&nbsp;</p><div class="prp">
 	<b>[#88]命題：含意を通した論理和・論理積の意味</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>$\begin{align} 
@@ -151,9 +171,9 @@ updated on 2022/2/17<br>
 		&\equiv \mathsf{T}\land (\neg Q\lor P)\equiv Q\rightarrow P.
 		\end{align*}$</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="72">
+<p id="72">&nbsp;</p><div class="prp">
 	<b>[#72]命題：前件肯定 (affirming the antecedent; modus ponens)</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>$(P\rightarrow Q)\land P\equiv P\land Q$</center></p>
@@ -173,9 +193,9 @@ updated on 2022/2/17<br>
 	<p>また，<a href="#88">[#88]</a> より $P\land Q\Rightarrow Q$ であるから，</p>
 	<p><center>$(P\rightarrow Q)\land P\,\,\Longrightarrow\,\,Q.$</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="92">
+<p id="92">&nbsp;</p><div class="prp">
 	<b>[#92]命題：後件否定 (denying the consequent; modus tollens)</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>$(P\rightarrow Q)\land \neg Q\,\,\Longrightarrow\,\,\neg P.$</center></p>
@@ -194,9 +214,9 @@ updated on 2022/2/17<br>
 	<summary>補足</summary>
 	<p>【背理法 (proof by contrasiction)】の原理にもなっている．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="69">
+<p id="69">&nbsp;</p><div class="prp">
 	<b>[#69]命題：含意の離接</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>$(P\rightarrow Q)\lor (Q\rightarrow P)\equiv \mathsf{T}.$</center></p>
@@ -209,9 +229,9 @@ updated on 2022/2/17<br>
 		\equiv &\,\, (\neg P)\lor Q\lor (\neg Q)\lor P\equiv \mathsf{T}.\end{align*}$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="73">
+<p id="73">&nbsp;</p><div class="prp">
 	<b>[#73]命題：含意の性質</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>$((P\rightarrow Q)\rightarrow P) \,\,\Longrightarrow\,\, P.$</center></p>
@@ -229,8 +249,40 @@ updated on 2022/2/17<br>
 		$((P\rightarrow Q)\rightarrow P)\rightarrow P \equiv P\rightarrow P \equiv \mathsf{T}.$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
+<p id="238">&nbsp;</p><div class="prp">
+	<b>[#238]命題：複数命題への含意</b><br>
+	<p>命題 $P,\ Q,\ R$ に対して</p>
+	<p><center>$(P\to Q)\land(P\to R) \equiv (P\to (Q\land R)).$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		(P\to Q)\land(P\to R) &\,\refeqv{implication}{65}\, (\neg P\lor Q)\land (\neg P\lor R)\\
+			&\,\refeqv{proposition}{62}\, \neg P\lor (Q\land R)\\
+			&\,\refeqv{implication}{65}\, P\to (Q\land R).
+		\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="239">&nbsp;</p><div class="prp">
+	<b>[#239]命題：複数命題からの含意</b><br>
+	<p>命題 $P,\ Q,\ R$ に対して</p>
+	<p><center>$(P\to R)\land(Q\to R) \equiv ((P\lor Q)\to R).$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		(P\to R)\land(Q\to R) &\,\refeqv{implication}{65}\, (\neg P\lor R)\land (\neg Q\lor R)\\
+			&\,\refeqv{proposition}{62}\, (\neg P\land \neg Q)\lor R\\
+			&\,\refeqv{proposition}{63}\, \neg (P\lor Q)\lor R\\
+			&\,\refeqv{implication}{65}\, (P\lor Q)\to R.
+		\end{align*}</center></p>
+</Details>
+<br>
+
+<br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
