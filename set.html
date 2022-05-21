@@ -6,9 +6,10 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
-		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		refbtn: ['\\href{#1}{\\scriptsize\\sf[\\# #2]}',2],
+		refeq: ['\\underset{\\refbtn{#1}{#2}}{=}',2],
+		reflr: ['\\underset{\\refbtn{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\refbtn{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -19,6 +20,8 @@
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
+		bra: ['\\langle #1 |', 1],
+		ket: ['| #1 \\rangle', 1],
 	}}});
 </script>
 <script>
@@ -29,13 +32,20 @@
 </head>
 
 <body>
-<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
-<p style="text-align:right;">
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
 established on 2022/2/6<br>
-updated on 2022/5/8
+updated on 2022/5/21
 </p>
     
-<div class="def" id="48">
+<p id="48">&nbsp;</p><div class="def">
 	<b>[#48] 定義：集合，元</b><br>
 	<p>命題関数 <a href="predicate.html#75">[#75]</a> $P(x)$ を真とするような変項 $x$ の実現値の集まりを【集合 (set)】と呼ぶ．また $A$ を命題関数 $P(x)$ で定義された集合であるとするとき，記号 $a$ に対して $P(a)$ が真であることを「$a$ は $A$ に属する ($a$ belongs to $A$)」と云い，$a$ を集合 $A$ の【元 (要素; element)】と呼ぶ．</p>
 	<Details>
@@ -86,18 +96,18 @@ updated on 2022/5/8
 		\end{align*}$</center></p>
 	<p>が成り立つ．</p>
 </Details>
-<br><br>
+<br>
   
-<div class="def" id="110">
+<p id="110">&nbsp;</p><div class="def">
 	<b>[#110] 定義：空集合</b><br>
 	<p>一切の記号が属さないような集合を【空集合 (empty set)】と呼び，$\emptyset$ と書く：</p>
 	<p><center>\begin{align*}
 		{}^\forall x,\,\,(x\in \emptyset) \equiv \mathsf{F}.
 		\end{align*}</center></p>
 </div>
-<br><br>
+<br>
   
-<div class="def" id="111">
+<p id="111">&nbsp;</p><div class="def">
 	<b>[#111] 定義：集合の包含</b><br>
 	<p> $A,\,B$ を集合とする．
 	<ul>
@@ -113,9 +123,9 @@ updated on 2022/5/8
 		<li><p>$A\subset B$ かつ $A\neq B$ であるような集合 $A$ を $B$ の【真部分集合 (proper subset)】と呼ぶ．</p>
 	</ul>
 </div>
-<br><br>
+<br>
   
-<div class="prp" id="49">
+<p id="49">&nbsp;</p><div class="prp">
 	<b>[#49] 命題：集合は自身の部分集合</b><br>
 	<p>空集合 $\emptyset$ は任意の集合の部分集合である．</p>
 </div>
@@ -127,9 +137,9 @@ updated on 2022/5/8
 	<summary>補足</summary>
 	<p>論理包含の命題に対して，仮定が偽である場合に結論の真偽に関わらずこれを真とすることで都合が良くなる例の一つである．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="50">
+<p id="50">&nbsp;</p><div class="prp">
 	<b>[#50] 命題：集合は自身の部分集合</b><br>
 	<p>任意の集合 $A$ に対して，$A\subset A$.</p>
 </div>
@@ -137,9 +147,9 @@ updated on 2022/5/8
 	<summary>証明</summary>
 	<p><a href="implication.html#66">[#66]</a> より任意の $x$ に対して $[x\in A \Rightarrow x\in A]$ である．
 </Details>
-<br><br>
+<br>
 
-<div class="def" id="51">
+<p id="51">&nbsp;</p><div class="def">
 	<b>[#51] 定義：集合の和と共通部分</b><br>
   <ul>
     <li> 集合 $A$ と $B$ のうち一方或いはその両方に属するような要素の集合を $A$ と $B$ の【和(sum)】または【合併(union)】と呼び，$A\cup B$ と書く：
@@ -148,9 +158,9 @@ updated on 2022/5/8
 	    <p><center>$A\cap B := \{x\,|\,(x\in A) \land (x\in B)\}.$</p></center>
   </ul>
 </div>
-<br><br>
+<br>
   
-<div class="prp" id="52">
+<p id="52">&nbsp;</p><div class="prp">
 	<b>[#52] 命題：集合演算の交換法則</b><br>
 	<p>集合 $A,\,B$ に対して </p>
 	<p><center>$A\cup B=B\cup A$，$A\cap B=B\cap A$.</center></p>
@@ -163,9 +173,9 @@ updated on 2022/5/8
 		&\Longleftrightarrow\,\,(x\in B) \lor (x\in A)\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="204">
+<p id="204">&nbsp;</p><div class="prp">
 	<b>[#204] 命題：集合とその和・共通部分との関係</b><br>
 	<p>集合 $A,\,B$ に対して </p>
 	<p><center>$A\subset A\cup B$，$A\cap B\subset A$.</center></p>
@@ -184,9 +194,9 @@ updated on 2022/5/8
 	<p><center>$B\subset A\cup B$，$A\cap B\subset B$</center></p>
 	<p>も云える．</p>
 </Details>
-<br><br>
+<br>
   
-<div class="prp" id="53">
+<p id="53">&nbsp;</p><div class="prp">
 	<b>[#53] 命題：集合演算の結合法則</b><br>
 	<p>集合 $A,\,B,\,C$ に対して </p>
 	<p><center>$\begin{align*}(A\cup B)\cup C &=A\cup (B\cup C),\\
@@ -212,9 +222,9 @@ updated on 2022/5/8
 				(A\cap B)\cap C &=A\cap (B\cap C) = A\cap B\cap C.\end{align*}$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="54">
+<p id="54">&nbsp;</p><div class="prp">
 	<b>[#54] 命題：集合演算の分配法則</b><br>
 	<p>集合 $A,\,B,\,C$ に対して </p>
 	<p><center>$\begin{align*}(A\cap B)\cup C &=(A\cup C)\cap (B\cup C),\\
@@ -249,9 +259,9 @@ updated on 2022/5/8
 				(A\cap B)\cup (C\cap D) &= (A\cup C)\cap (A\cup D)\cap (B\cup C)\cap (B\cup D).\end{align*}$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="56">
+<p id="56">&nbsp;</p><div class="prp">
 	<b>[#56] 命題：集合の包含と和</b><br>
 	<p>集合 $A,\,B$ について</p>
 	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A\cup B=B.$</center></p>
@@ -276,9 +286,9 @@ updated on 2022/5/8
 		\end{align*}</center></p>
 	<p>より $A\subset B.$</p>
 </Details>
-<br><br>
+<br>
 	
-<div class="prp" id="57">
+<p id="57">&nbsp;</p><div class="prp">
 	<b>[#57] 命題：集合の包含と共通部分</b><br>
 	<p>集合 $A,\,B$ について</p>
 	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A\cap B=A.$</center></p>
@@ -306,64 +316,13 @@ updated on 2022/5/8
 </Details>
 <br><br>
 	
-<div class="def" id="194">
+<p id="194">&nbsp;</p><div class="def">
 	<b>[#194] 定義：集合族</b><br>
-	<p>集合の集まり（集合）を【集合族 (family of sets)】と呼ぶ．特に，ある集合 $\varLambda$ の元 $\lambda$ に対して割り当てられた集合 $A_\lambda$ による集合族を【$\varLambda$ に添字づけられた集合族 (family of sets indexed by $\varLambda$ )】と云い，$\varLambda$ を【添字集合 (index set)】と呼ぶ．
-	<Details>
-	<summary>記法</summary>
-		<p> $\varLambda$ に添字づけられた集合族は $\{A_\lambda\}_{\lambda\in\varLambda}$ などと表記する．添字集合が自明であったり，誤解を生じる恐れのない場合は $\{A_\lambda\}$ と略記する．逆に，添字集合を略記せず明示してある場合は，これを単に「集合族」と呼んでも良いとする．</p>
-	</Details>
+	<p>集合の集まり（集合）を【集合族 (family of sets)】と呼ぶ．</p>
 </div>
-<br><br>
+<br>
   
-<div class="def" id="130">
-	<b>[#130] 定義：無限個の集合と和，共通部分</b><br>
-	<p> $\varLambda$ に添字づけられた集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ に対し，$A_\lambda$ たちの【和 (sum)】と【共通部分 (intersection)】を以下で定義する：</p>
-	<center>
-	<table>
-	<tbody>
-	<tr><td style="text-align:right;"　rowspan="1" valign="top" nowrap="">和：&nbsp;</td>	  	<td>$\bcu_{\lambda\in\varLambda}A_\lambda = \{x\,|\,{}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda\},$</tr>
-	<tr><td style="text-align:right;"　rowspan="1" valign="top" nowrap="">共通部分：&nbsp;</td>	  	<td>$\bca_{\lambda\in\varLambda}A_\lambda = \{x\,|\,{}^\forall \lambda\in\varLambda,\,\,x\in A_\lambda\}.$</tr>
-	</tbody>
-	</table>
-	</center>
-</div>
 <br><br>
-  
-<div class="prp" id="131">
-	<b>[#131] 命題：無限個の集合と分配法則</b><br>
-	<p> $\varLambda$ に添字づけられた集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ と集合 $B$ に対して</p>
-	<p><center>$\begin{align*}
-		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap B &= \bcu_{\lambda\in\varLambda}(A_\lambda\cap B),\\
-		\left(\bca_{\lambda\in\varLambda}A_\lambda\right)\cup B &= \bca_{\lambda\in\varLambda}(A_\lambda\cup B).
-		\end{align*}$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>集合への所属と命題の関係から題意を導く．前者は以下のように示される：</p>
-	<p><center>$\begin{align*}
-		x\in \left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap B\,\,&\underset{\href{#51}{\sf [\#51]}}{\Longleftrightarrow}\,\, \left(x\in \bcu_{\lambda\in\varLambda}A_\lambda\right)\land (x\in B)\\
-		&\hspace{-2pt}\underset{\href{#130}{\sf [\#130]}}{\Longleftrightarrow}\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda)\land (x\in B)\\
-		&\,\,{\Longleftrightarrow}\,\,\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda\cap B)\\
-		&\,\,{\Longleftrightarrow}\,\,\,\, x\in \bcu_{\lambda\in\varLambda}(A_\lambda\cap B).
-		\end{align*}$</center></p>
-	<p>後者も同様の議論で証明することができる．</p>
-</Details>
-<Details>
-<summary>補足</summary>
-	<p>この命題は <a href="#53">[#53]</a> の一般化である：$\lambda_1,\,\lambda_2\in\varLambda$ について $A_{\lambda_1} = A,\,A_{\lambda_2} = B$ とし，すべての $\lambda\in\varLambda\setminus\{\lambda_1,\,\lambda_2\}$ について $A_\lambda = \emptyset$ とすれば</p>
-	<p><center>$\begin{align*}
-		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap C &= (A\cup B)\cap C,\\
-		\bcu_{\lambda\in\varLambda}(A_\lambda\cap C) &= (A\cap C)\cup (B\cap C).
-		\end{align*}$</center></p>
-	<p>また $\lambda_1\in\varLambda$ について $A_{\lambda_1} = A$ とし，すべての $\lambda\in\varLambda\setminus\{\lambda_1\}$ について $A_\lambda = B$ とすれば</p>
-	<p><center>$\begin{align*}
-		\left(\bca_{\lambda\in\varLambda}A_\lambda\right)\cup C &= (A\cap B)\cup C,\\
-		\bca_{\lambda\in\varLambda}(A_\lambda\cup C) &= (A\cup C)\cap (B\cup C).
-		\end{align*}$</center></p>
-</Details>
-<br><br>
-
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
