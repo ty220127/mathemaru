@@ -6,10 +6,11 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refbtn: ['\\href{#1}{\\scriptsize\\sf[\\# #2]}',2],
-		refeq: ['\\underset{\\hspace{-1mm}\\refbtn{#1}{#2}}{=}',2],
-		reflr: ['\\underset{\\hspace{-0.5mm}\\refbtn{#1}{#2}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\refbtn{#1}{#2}}{\\Longrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -49,15 +50,15 @@ updated on 2022/5/21
 
 <p id="223">&nbsp;</p><div class="def">
 	<b>[#223] 定義：系，族，列</b><br>
-	<p>空でない集合 $\varLambda$ からある集合 $S$ への写像 <a href="map.html#99">[#99]</a>
+	<p>空でない集合 $\varLambda$ からある集合 $S$ への写像$\nr{map}{99}$
 	<p><center>\begin{align*}
 		a:\varLambda\rightarrow S,\quad \lambda\mapsto a_\lambda
 		\end{align*}</center><?/p>
-	<p>を $\varLambda$ 上の【系 (collection)】と呼び，系の値域 <a href="image.html#112">[#112]</a> $\mathrm{Im}\ a$ を【 $\varLambda$ に添字づけられた族 (family indexed by $\varLambda$ )】と呼ぶ．ここで $\varLambda$ を【添字集合 (index set)】と呼ぶ．また，特に $\mathbb{N}$ に添字づけられた族を【列 (sequence)】と呼ぶ．
+	<p>を $\varLambda$ 上の【系 (collection)】と呼び，系の値域$\nr{image}{112}$ $\mathrm{Im}\ a$ を【 $\varLambda$ に添字づけられた族 (family indexed by $\varLambda$ )】と呼ぶ．ここで $\varLambda$ を【添字集合 (index set)】と呼ぶ．また，特に $\mathbb{N}$ に添字づけられた族を【列 (sequence)】と呼ぶ．
 </div>
 <Details>
 <summary>記法</summary>
-	<p> $\varLambda$ に添字づけられた族 $\mathrm{Im}\ a$ は $\{a_\lambda\}_{\lambda\in\varLambda}$ などと表記する．添字集合が自明であったり，誤解を生じる恐れのない場合は $\{a_\lambda\}$ と略記する．逆に，添字集合を略記せず明示してある場合は，これを単に「族」と呼んでも良いとする．なお，この定義によれば，$\lambda\not =\mu$ に対して $a_\lambda = a_\mu$ であることがあり得る（つまり，単射 <a href="injection-surjection.html#100">[#100]</a> を仮定していない）．通常の集合であれば，等しい元は区別されないが，これを区別したい場合は族を $(a_\lambda)_{\lambda\in\varLambda}$ などと表記することがある．</p>
+	<p> $\varLambda$ に添字づけられた族 $\mathrm{Im}\ a$ は $\{a_\lambda\}_{\lambda\in\varLambda}$ などと表記する．添字集合が自明であったり，誤解を生じる恐れのない場合は $\{a_\lambda\}$ と略記する．逆に，添字集合を略記せず明示してある場合は，これを単に「族」と呼んでも良いとする．なお，この定義によれば，$\lambda\not =\mu$ に対して $a_\lambda = a_\mu$ であることがあり得る（つまり，単射$\nr{injection-surjection}{100}$ を仮定していない）．通常の集合であれば，等しい元は区別されないが，これを区別したい場合は族を $(a_\lambda)_{\lambda\in\varLambda}$ などと表記することがある．</p>
 </Details>
 <br>
 
@@ -87,8 +88,8 @@ updated on 2022/5/21
 	<summary>証明</summary>
 	<p>集合への所属と命題の関係から題意を導く．前者は以下のように示される：</p>
 	<p><center>$\begin{align*}
-		x\in \left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap B\,\,&\reflr{set.html#51}{51}\,\, \left(x\in \bcu_{\lambda\in\varLambda}A_\lambda\right)\land (x\in B)\\
-		&\reflr{#130}{130}\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda)\land (x\in B)\\
+		x\in \left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap B\,\,&\reflr{set}{51}\,\, \left(x\in \bcu_{\lambda\in\varLambda}A_\lambda\right)\land (x\in B)\\
+		&\reflr{collection-family}{130}\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda)\land (x\in B)\\
 		&\,\,{\Longleftrightarrow}\,\,\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda\cap B)\\
 		&\,\,{\Longleftrightarrow}\,\,\,\, x\in \bcu_{\lambda\in\varLambda}(A_\lambda\cap B).
 		\end{align*}$</center></p>
@@ -96,7 +97,7 @@ updated on 2022/5/21
 </Details>
 <Details>
 <summary>補足</summary>
-	<p>この命題は <a href="set.html#53">[#53]</a> の一般化である：$\lambda_1,\,\lambda_2\in\varLambda$ について $A_{\lambda_1} = A,\,A_{\lambda_2} = B$ とし，すべての $\lambda\in\varLambda\setminus\{\lambda_1,\,\lambda_2\}$ について $A_\lambda = \emptyset$ とすれば</p>
+	<p>この命題は，３集合間の結合法則$\nr{set}{54}$ の一般化である：$\lambda_1,\,\lambda_2\in\varLambda$ について $A_{\lambda_1} = A,\,A_{\lambda_2} = B$ とし，すべての $\lambda\in\varLambda\setminus\{\lambda_1,\,\lambda_2\}$ について $A_\lambda = \emptyset$ とすれば</p>
 	<p><center>$\begin{align*}
 		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap C &= (A\cup B)\cap C,\\
 		\bcu_{\lambda\in\varLambda}(A_\lambda\cap C) &= (A\cap C)\cup (B\cap C).
@@ -120,17 +121,17 @@ updated on 2022/5/21
 	<summary>証明</summary>
 	<p>前者について</p>
 	<p><center>$\begin{align*}
-		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)^\cpl &\refeq{set.html#130}{130} \{x\,|\,\neg({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\, x\in A_\lambda)\}\\
-		&\refeq{predicate.html#122}{122} \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\notin A_\lambda)\}\\
-    		&\hspace{2pt}\refeq{complement-set.html#84}{84} \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\in A_\lambda^\cpl)\}\\
-    		&\refeq{set.html#130}{130} \bca_{\lambda\in\varLambda}A_\lambda^\cpl.
+		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)^\cpl &\refeq{set}{130} \{x\,|\,\neg({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\, x\in A_\lambda)\}\\
+		&\refeq{predicate}{122} \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\notin A_\lambda)\}\\
+    		&\hspace{2pt}\refeq{complement-set}{84} \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\in A_\lambda^\cpl)\}\\
+    		&\refeq{set}{130} \bca_{\lambda\in\varLambda}A_\lambda^\cpl.
 		\end{align*}$</center></p>
 	<p>後者もほぼ同様であるが，</p>
 	<p><center>$\begin{align*}
-		\left(\bca_{\lambda\in\varLambda}A_\lambda\right)^\cpl &\refeq{set.html#130}{130} \{x\,|\,\neg({}^\forall \lambda\in\varLambda\,(x\in A_\lambda))\}\\
-		&\refeq{predicate.html#122}{122} \{x\,|\,{}^\exists\lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\notin A_\lambda\}\\
-    		&\hspace{2pt}\refeq{complement-set.html#84}{84} \{x\,|\,{}^\exists\lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda^\cpl\}\\
-    		&\refeq{set.html#130}{130} \bcu_{\lambda\in\varLambda}A_\lambda^\cpl.
+		\left(\bca_{\lambda\in\varLambda}A_\lambda\right)^\cpl &\refeq{set}{130} \{x\,|\,\neg({}^\forall \lambda\in\varLambda\,(x\in A_\lambda))\}\\
+		&\refeq{predicate}{122} \{x\,|\,{}^\exists\lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\notin A_\lambda\}\\
+    		&\hspace{2pt}\refeq{complement-set}{84} \{x\,|\,{}^\exists\lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda^\cpl\}\\
+    		&\refeq{set}{130} \bcu_{\lambda\in\varLambda}A_\lambda^\cpl.
 		\end{align*}$</center></p>
 </Details>
 <br>
@@ -146,21 +147,21 @@ updated on 2022/5/21
 	<summary>証明</summary>
 	<p>前者について，以下のように示される．後者もほぼ同様の流れで証明できる．</p>
 	<p><center>$\begin{align*}
-		x\in f^{-1}\left(\bcu_{\lambda\in\varLambda}B_\lambda\right) \,\,\reflr{image.html#112}{112}\,\,& f(x)\in \bcu_{\lambda\in\varLambda}B_\lambda\\
-		\reflr{set.html#131}{131}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,f(x)\in B_\lambda\\
-		\reflr{image.html#112}{112}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in f^{-1}(B_\lambda)\\
-		\reflr{set.html#131}{131}\,\,& x\in \bcu_{\lambda\in\varLambda}f^{-1}(B_\lambda).\\
+		x\in f^{-1}\left(\bcu_{\lambda\in\varLambda}B_\lambda\right) \,\,\reflr{image}{112}\,\,& f(x)\in \bcu_{\lambda\in\varLambda}B_\lambda\\
+		\reflr{set}{131}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,f(x)\in B_\lambda\\
+		\reflr{image}{112}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in f^{-1}(B_\lambda)\\
+		\reflr{set}{131}\,\,& x\in \bcu_{\lambda\in\varLambda}f^{-1}(B_\lambda).\\
 		\end{align*}$</center></p>
 </Details>
 <br>
   
 <p id="196">&nbsp;</p><div class="def">
 	<b>[#196] 定義：互いに素な集合族と直和</b><br>
-	<p> $\varLambda$ により添字づけられた集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ について，そこからどの２つの集合を選んでもその組が互いに素 <a href="mutually-disjoint.html#195">[#195]</a> であることを，$\{A_\lambda\}$ は【互いに素 (mutually disjoint)】であると云う：任意の $\lambda,\,\mu\in\varLambda$ に対して
+	<p> $\varLambda$ により添字づけられた集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ について，そこからどの２つの集合を選んでもその組が互いに素$\nr{mutually-disjoint}{195}$ であることを，$\{A_\lambda\}$ は【互いに素 (mutually disjoint)】であると云う：任意の $\lambda,\,\mu\in\varLambda$ に対して
 	<p><center>\begin{align*}
 		\lambda\not =\mu\,\,\Longrightarrow\,\,A_\lambda\cap A_{\mu} = \emptyset.
 		\end{align*}</center></p>
-	<p>また互いに素な集合族 $\{A_\lambda\}$ に対して，和 <a href="set.html#130">[#130]</a> $\bcu_{\lambda\in\varLambda} A_\lambda$ を【直和 (direct sum)】或いは【分割和 (disjoint sum)】と呼び，$\displaystyle\bigsqcup_{\lambda\in\varLambda}A_\lambda$ 或いは $\displaystyle\bigoplus_{\lambda\in\varLambda}A_\lambda$ と書く．
+	<p>また互いに素な集合族 $\{A_\lambda\}$ に対して，和$\nr{collection-family}{130}$ $\bcu_{\lambda\in\varLambda} A_\lambda$ を【直和 (direct sum)】或いは【分割和 (disjoint sum)】と呼び，$\displaystyle\bigsqcup_{\lambda\in\varLambda}A_\lambda$ 或いは $\displaystyle\bigoplus_{\lambda\in\varLambda}A_\lambda$ と書く．
 </div>
 <br>
   
