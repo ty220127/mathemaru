@@ -6,9 +6,10 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
-		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		refbtn: ['\\href{#1}{\\scriptsize\\sf[\\# #2]}',2],
+		refeq: ['\\underset{\\hspace{-1mm}\\refbtn{#1}{#2}}{=}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\refbtn{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\refbtn{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -19,42 +20,183 @@
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
+		bra: ['\\langle #1 |', 1],
+		ket: ['| #1 \\rangle', 1],
 	}}});
 </script>
 <script>
-	const ttl = "系と族"
+	const ttl = "系と族，集合族"
 	document.title= ttl + "｜演習問題集"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
 
 <body>
-<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
-<p style="text-align:right;">
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em;">
 established on 2022/5/8<br>
-updated on 2022/5/8
+updated on 2022/5/21
 </p>
 
-<p>★系，族，列の定義の仕方は，専門書によって微妙に異なっている（写像とするか，集合とするか，系と族を同じ概念とするか）．本サイトでは，以下 [#223] のように定義する．</p>
+<p style="margin-bottom:-2em">★系，族，列の定義の仕方は，専門書によって微妙に異なっている（写像とするか，集合とするか，系と族を同じ概念とするか）．本サイトでは，以下 [#223] のように定義する．</p>
 
-<div class="def" id="223">
+<p id="223">&nbsp;</p><div class="def">
 	<b>[#223] 定義：系，族，列</b><br>
 	<p>空でない集合 $\varLambda$ からある集合 $S$ への写像 <a href="map.html#99">[#99]</a>
 	<p><center>\begin{align*}
-		A:\varLambda\rightarrow S,\quad \lambda\mapsto A_\lambda
+		a:\varLambda\rightarrow S,\quad \lambda\mapsto a_\lambda
 		\end{align*}</center><?/p>
-	<p>を $\varLambda$ 上の【系 (collection)】と呼び，系の値域 <a href="image.html#112">[#112]</a> $\mathrm{Im}\ A$ を【 $\varLambda$ に添字づけられた族 (family indexed by $\varLambda$ )】と呼ぶ．ここで $\varLambda$ を【添字集合 (index set)】と呼ぶ．また，特に $\mathbb{N}$ に添字づけられた族を【列 (sequence)】と呼ぶ．<Details>
-	<summary>記法</summary>
-  		<p> $\varLambda$ に添字づけられた族 $\mathrm{Im}\ A$ は $\{A_\lambda\}_{\lambda\in\varLambda}$ などと表記する．添字集合が自明であったり，誤解を生じる恐れのない場合は $\{A_\lambda\}$ と略記する．逆に，添字集合を略記せず明示してある場合は，これを単に「族」と呼んでも良いとする．なお，この定義によれば，$\lambda\not =\mu$ に対して $A_\lambda = A_\mu$ であることがあり得る（つまり，単射 <a href="injection-surjection.html#100">[#100]</a> を仮定していない）．通常の集合であれば，等しい元は区別されないが，これを区別したい場合は族を $(A_\lambda)_{\lambda\in\varLambda}$ などと表記することがある．</p>
-	</Details>
+	<p>を $\varLambda$ 上の【系 (collection)】と呼び，系の値域 <a href="image.html#112">[#112]</a> $\mathrm{Im}\ a$ を【 $\varLambda$ に添字づけられた族 (family indexed by $\varLambda$ )】と呼ぶ．ここで $\varLambda$ を【添字集合 (index set)】と呼ぶ．また，特に $\mathbb{N}$ に添字づけられた族を【列 (sequence)】と呼ぶ．
 </div>
-<br><br>
+<Details>
+<summary>記法</summary>
+	<p> $\varLambda$ に添字づけられた族 $\mathrm{Im}\ a$ は $\{a_\lambda\}_{\lambda\in\varLambda}$ などと表記する．添字集合が自明であったり，誤解を生じる恐れのない場合は $\{a_\lambda\}$ と略記する．逆に，添字集合を略記せず明示してある場合は，これを単に「族」と呼んでも良いとする．なお，この定義によれば，$\lambda\not =\mu$ に対して $a_\lambda = a_\mu$ であることがあり得る（つまり，単射 <a href="injection-surjection.html#100">[#100]</a> を仮定していない）．通常の集合であれば，等しい元は区別されないが，これを区別したい場合は族を $(a_\lambda)_{\lambda\in\varLambda}$ などと表記することがある．</p>
+</Details>
+<br>
 
+<p id="130">&nbsp;</p><div class="def">
+	<b>[#130] 定義：集合族と和，共通部分</b><br>
+	<p> $\varLambda$ に添字づけられた集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ に対し，$A_\lambda$ たちの【和 (sum)】と【共通部分 (intersection)】を以下で定義する：</p>
+	<center>
+	<table>
+	<tbody>
+	<tr><td style="text-align:right;"　rowspan="1" valign="top" nowrap="">和：&nbsp;</td>	  	<td>$\bcu_{\lambda\in\varLambda}A_\lambda = \{x\,|\,{}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda\},$</tr>
+	<tr><td style="text-align:right;"　rowspan="1" valign="top" nowrap="">共通部分：&nbsp;</td>	  	<td>$\bca_{\lambda\in\varLambda}A_\lambda = \{x\,|\,{}^\forall \lambda\in\varLambda,\,\,x\in A_\lambda\}.$</tr>
+	</tbody>
+	</table>
+	</center>
+</div>
+<br>
+  
+<p id="131">&nbsp;</p><div class="prp">
+	<b>[#131] 命題：集合族と分配法則</b><br>
+	<p> $\varLambda$ に添字づけられた集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ と集合 $B$ に対して</p>
+	<p><center>$\begin{align*}
+		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap B &= \bcu_{\lambda\in\varLambda}(A_\lambda\cap B),\\
+		\left(\bca_{\lambda\in\varLambda}A_\lambda\right)\cup B &= \bca_{\lambda\in\varLambda}(A_\lambda\cup B).
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>集合への所属と命題の関係から題意を導く．前者は以下のように示される：</p>
+	<p><center>$\begin{align*}
+		x\in \left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap B\,\,&\reflr{set.html#51}{51}\,\, \left(x\in \bcu_{\lambda\in\varLambda}A_\lambda\right)\land (x\in B)\\
+		&\reflr{#130}{130}\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda)\land (x\in B)\\
+		&\,\,{\Longleftrightarrow}\,\,\,\, ({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda\cap B)\\
+		&\,\,{\Longleftrightarrow}\,\,\,\, x\in \bcu_{\lambda\in\varLambda}(A_\lambda\cap B).
+		\end{align*}$</center></p>
+	<p>後者も同様の議論で証明することができる．</p>
+</Details>
+<Details>
+<summary>補足</summary>
+	<p>この命題は <a href="set.html#53">[#53]</a> の一般化である：$\lambda_1,\,\lambda_2\in\varLambda$ について $A_{\lambda_1} = A,\,A_{\lambda_2} = B$ とし，すべての $\lambda\in\varLambda\setminus\{\lambda_1,\,\lambda_2\}$ について $A_\lambda = \emptyset$ とすれば</p>
+	<p><center>$\begin{align*}
+		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)\cap C &= (A\cup B)\cap C,\\
+		\bcu_{\lambda\in\varLambda}(A_\lambda\cap C) &= (A\cap C)\cup (B\cap C).
+		\end{align*}$</center></p>
+	<p>また $\lambda_1\in\varLambda$ について $A_{\lambda_1} = A$ とし，すべての $\lambda\in\varLambda\setminus\{\lambda_1\}$ について $A_\lambda = B$ とすれば</p>
+	<p><center>$\begin{align*}
+		\left(\bca_{\lambda\in\varLambda}A_\lambda\right)\cup C &= (A\cap B)\cup C,\\
+		\bca_{\lambda\in\varLambda}(A_\lambda\cup C) &= (A\cup C)\cap (B\cup C).
+		\end{align*}$</center></p>
+</Details>
+<br>
+
+<p id="132">&nbsp;</p><div class="prp">
+	<b>[#132] 命題：集合族に対する de Morgan の法則</b><br>
+	<p>集合 $\varLambda$ の各元 $\lambda\in\varLambda$ に対応する集合 $A_\lambda$ に対して</p>
+	<p><center>$\begin{align*}
+		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)^\cpl = \bca_{\lambda\in\varLambda}A_\lambda^\cpl,\quad \left(\bca_{\lambda\in\varLambda}A_\lambda\right)^\cpl = \bcu_{\lambda\in\varLambda}A_\lambda^\cpl
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>前者について</p>
+	<p><center>$\begin{align*}
+		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)^\cpl &\refeq{set.html#130}{130} \{x\,|\,\neg({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\, x\in A_\lambda)\}\\
+		&\refeq{predicate.html#122}{122} \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\notin A_\lambda)\}\\
+    		&\hspace{2pt}\refeq{complement-set.html#84}{84} \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\in A_\lambda^\cpl)\}\\
+    		&\refeq{set.html#130}{130} \bca_{\lambda\in\varLambda}A_\lambda^\cpl.
+		\end{align*}$</center></p>
+	<p>後者もほぼ同様であるが，</p>
+	<p><center>$\begin{align*}
+		\left(\bca_{\lambda\in\varLambda}A_\lambda\right)^\cpl &\refeq{set.html#130}{130} \{x\,|\,\neg({}^\forall \lambda\in\varLambda\,(x\in A_\lambda))\}\\
+		&\refeq{predicate.html#122}{122} \{x\,|\,{}^\exists\lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\notin A_\lambda\}\\
+    		&\hspace{2pt}\refeq{complement-set.html#84}{84} \{x\,|\,{}^\exists\lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda^\cpl\}\\
+    		&\refeq{set.html#130}{130} \bcu_{\lambda\in\varLambda}A_\lambda^\cpl.
+		\end{align*}$</center></p>
+</Details>
+<br>
+	
+<p id="119">&nbsp;</p><div class="prp">
+	<b>[#119]命題：集合族と逆像の性質</b><br>
+	<p>写像 $f:X\rightarrow Y$ と部分集合 $B_\lambda \subset Y\,(\lambda\in\varLambda)$ に対して</p>
+	<p><center>$\begin{align*}
+		f^{-1}\left(\bcu_{\lambda\in\varLambda}B_\lambda\right) = \bcu_{\lambda\in\varLambda}f^{-1}(B_\lambda),\quad f^{-1}\left(\bca_{\lambda\in\varLambda}B_\lambda\right) = \bca_{\lambda\in\varLambda}f^{-1}(B_\lambda).
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>前者について，以下のように示される．後者もほぼ同様の流れで証明できる．</p>
+	<p><center>$\begin{align*}
+		x\in f^{-1}\left(\bcu_{\lambda\in\varLambda}B_\lambda\right) \,\,\reflr{#112}{112}\,\,& f(x)\in \bcu_{\lambda\in\varLambda}B_\lambda\\
+		\reflr{set.html#131}{131}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,f(x)\in B_\lambda\\
+		\reflr{#112}{112}\,\,& {}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in f^{-1}(B_\lambda)\\
+		\reflr{set.html#131}{131}\,\,& x\in \bcu_{\lambda\in\varLambda}f^{-1}(B_\lambda).\\
+		\end{align*}$</center></p>
+</Details>
+<br>
+  
+<p id="196">&nbsp;</p><div class="def">
+	<b>[#196] 定義：互いに素な集合族と直和</b><br>
+	<p> $\varLambda$ により添字づけられた集合族 <a href="#194">[#194]</a> $\{A_\lambda\}_{\lambda\in\varLambda}$ について，そこからどの２つの集合を選んでもその組が互いに素 <a href="mutually-disjoint.html#195">[#195]</a> であることを，$\{A_\lambda\}$ は【互いに素 (mutually disjoint)】であると云う：任意の $\lambda,\,\mu\in\varLambda$ に対して
+	<p><center>\begin{align*}
+		\lambda\not =\mu\,\,\Longrightarrow\,\,A_\lambda\cap A_{\mu} = \emptyset.
+		\end{align*}</center></p>
+	<p>また互いに素な集合族 $\{A_\lambda\}$ に対して，和 <a href="set.html#130">[#130]</a> $\bcu_{\lambda\in\varLambda} A_\lambda$ を【直和 (direct sum)】或いは【分割和 (disjoint sum)】と呼び，$\displaystyle\bigsqcup_{\lambda\in\varLambda}A_\lambda$ 或いは $\displaystyle\bigoplus_{\lambda\in\varLambda}A_\lambda$ と書く．
+</div>
+<br>
+  
+<p id="197">&nbsp;</p><div class="def">
+	<b>[#197] 定義：直和分割</b><br>
+	<p>空でない集合 $S\not =\emptyset$ に対して集合族 $\{A_\lambda\}_{\lambda\in\varLambda}$ が $S$ の【直和分割 (direct sum partition)】であるとは，$\{A_\lambda\}$ が以下の条件を満たすこと：
+	<ul class="defl">
+		<li> すべての $\lambda\in\varLambda$ に対して $A_\lambda \not =\emptyset$.</li>
+		<li> $\{A_\lambda\}$ は互いに素である．</li>
+		<li> $A_\lambda$ たちの直和は $X$ である：$\displaystyle\bigsqcup_{\lambda\in\varLambda}A_\lambda =X.$
+	</ul>
+	<p>各 $A_\lambda$ を【ブロック (block)】と呼ぶ．<br>
+		また，ii., iii. を満たす集合族 $\{A_\lambda\}$ を $S$ の【広義の直和分割 (improper direct sum division)】と呼ぶ．</p>
+</div>
+
+<Details>
+<summary>補足１</summary>
+	<p>「広義の直和分割」は一般的な用語ではないが，頻繁に登場するので定義しておくと便利である．なお，広義の直和分割を直和分割と定義する（ i. を課さない）文献もある．</p>
+</Details>
+<Details>
+<summary>補足２</summary>
+	<p>集合族に明確な添字が付けられていない場合でも，その集合族に対して適当に添字集合 $\varLambda$ を用意すれば対応づけを設定できるので，同様にこの定義を適用できる．</p>
+</Details>
+<br>
+
+<br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-4_shazo.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第４章), 公開pdf</a>.</li>
+	<li><a href="http://www.code.cei.uec.ac.jp/Class/dismath/dismath2007/L4relation.pdf">栗原正純: 離散数学 4. 関係, 公開 pdf</a> [2022/5/18 閲覧].</li>
+	<li>横井英夫, 硲野敏博: 数学演習ライブラリ=5 代数演習[新訂版], サイエンス社 (2003).</li>
 	<li><a href="https://ja.wikipedia.org/wiki/%E6%97%8F_(%E6%95%B0%E5%AD%A6)">族 (数学) - Wikipedia</a></li>
+	<li><a href="https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E6%97%8F">集合族 - Wikipedia</a></li>
+	<li><a href="https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E3%81%AE%E5%88%86%E5%89%B2">集合の分割 - Wikipedia</a> [2022/4/29閲覧].</li>
+	<li><a href="https://gleamath.com/equiv-relation-quotient-set/">同値関係と商集合 - gleamath.com</a> [2022/5/18 閲覧].</li>
 </ul>
 </div>
 <b>その他参考コンテンツ</b>
