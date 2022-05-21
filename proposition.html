@@ -1,9 +1,18 @@
+
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
-<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -11,25 +20,36 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}'
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		bra: ['\\langle #1 |', 1],
+		ket: ['| #1 \\rangle', 1],
 	}}});
 </script>
-<title>命題論理｜演習問題集</title>
+<script>
+	const ttl = "命題論理"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-</style>
 </head>
 
 <body>
-<center><div id="titlehead">命題論理</div></center>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
 
-<p style="text-align:right;">
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em;">
 established on 2022/2/7<br>
-updated on 2022/2/28
+updated on 2022/5/21
 </p>
     
-<div class="def" id="58">
-	<b>[#58]定義：命題に関する諸定義</b><br>
+<p id="58">&nbsp;</p><div class="def">
+	<b>[#58] 定義：命題に関する諸定義</b><br>
   	<p>ある物事について，それが「成り立つ」か「成り立たない」かを判定することができるとき，その物事を【命題 (proposition)】と呼ぶ．
 	また，命題が成り立つことを【真 (true)】であると云い，成り立たないことを【偽 (false)】であると云う．以下，$P$，$Q$ を命題であるとする．</p>
   	<ul>
@@ -59,10 +79,10 @@ updated on 2022/2/28
 	<summary>補足２</summary>
 	<p>命題 $P$ の【証明 (proof)】とは，$P$ が（時にいくつかの条件も加味した上で）常に真であること，つまり $P\equiv\mathsf{T}$ であることを論理的に導くことである．</p>
 </Details>
-<br><br>
+<br>
   
-<div class="prp" id="60">
-	<b>[#60]命題：命題に関する自明な事実</b><br>
+<p id="60">&nbsp;</p><div class="prp">
+	<b>[#60] 命題：命題に関する自明な事実</b><br>
 	<p>命題$P,\,Q$ に対して以下が成立する：</p> 
 	<ul>
 		<li> $P\land P \equiv P$ 【冪等則 (idempotent law)１】</li>
@@ -85,7 +105,7 @@ updated on 2022/2/28
 	<p><center>
 		$\begin{array}{|c||c|c|c|c|c|c|c|c|}\hline P & \neg P & P\land P & P\lor P & \neg(\neg P)  & P\lor \neg P& P\land \neg P & P\land\mathsf{T} & P\land\mathsf{F} & P\lor\mathsf{T} & P\lor\mathsf{F}\\ \hline
 		\mathsf{T} & \mathsf{F} & \mathsf{T} &\mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{F} &\mathsf{T} &\mathsf{F} &\mathsf{T} &\mathsf{T} \\ \hline 
-		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} &\mathsf{F} \\ \hline\end{array}$<br><br>
+		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} &\mathsf{F} \\ \hline\end{array}$<br>
 		
 		$\begin{array}{|c|c||c|c|c|c|}\hline P & Q & P\land Q& Q\land P& P\lor Q& Q\lor P \\ \hline
     		\mathsf{T} & \mathsf{T} & \mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{T} \\ \hline 
@@ -94,10 +114,10 @@ updated on 2022/2/28
     		\mathsf{F} & \mathsf{F} & \mathsf{F} &\mathsf{F} &\mathsf{F} & \mathsf{F} \\ \hline \end{array}$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="70">
-	<b>[#70]命題：命題の吸収法則 (absorption law)</b><br>
+<p id="70">&nbsp;</p><div class="prp">
+	<b>[#70] 命題：命題の吸収法則 (absorption law)</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>
 		$\begin{align*} P\lor (P\land Q)\equiv P,\\
@@ -115,10 +135,10 @@ updated on 2022/2/28
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline \end{array}$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="61">
-	<b>[#61]命題：命題の結合法則 (associative law)</b><br>
+<p id="61">&nbsp;</p><div class="prp">
+	<b>[#61] 命題：命題の結合法則 (associative law)</b><br>
 	<p>命題 $P,\,Q,\,R$ に対して</p>
 	<p><center>
 		$\begin{align*} (P\land Q)\land R &\equiv P\land (Q\land R),\\ (P\lor Q)\lor R &\equiv P\lor (Q\lor R). \end{align*}$
@@ -161,10 +181,10 @@ updated on 2022/2/28
 		(P\lor Q)\lor R &\equiv P\lor (Q\lor R)  \equiv P\lor Q\lor R. \end{align*}$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="62">
-	<b>[#62]命題：命題の分配法則 (distributive law)</b><br>
+<p id="62">&nbsp;</p><div class="prp">
+	<b>[#62] 命題：命題の分配法則 (distributive law)</b><br>
 	<p>命題 $P,\,Q,\,R$ に対して</p>
 	<p><center>
 		$\begin{align*} (P\land Q)\lor R &\equiv (P\lor R)\land (Q\lor R),\\
@@ -202,7 +222,7 @@ updated on 2022/2/28
 </Details>
 <Details>
 	<summary>補足１</summary>
-	<p>命題の交換法則 <a href="#58">[#58]</a> と組み合わせることにより，右側に括弧がある場合：</p>
+	<p>命題の交換法則$\nr{proposition}{58}$ と組み合わせることにより，右側に括弧がある場合：</p>
 	<p><center>$\begin{align*} P\lor (Q\land R) &\equiv (P\lor Q)\land (P\lor R)，\\<br>
 		P\land (Q\lor R) &\equiv (P\land Q)\lor (P\land R).\end{align*}$</center></p>
 	<p>の成立も確認できる．</p>
@@ -215,10 +235,10 @@ updated on 2022/2/28
 							&\equiv (P\land R)\lor (P\land S)\lor (Q\land R)\lor (Q\land S),\\
 				(P\land Q)\lor (R\land S) &\equiv (P\lor R)\land (P\lor S)\land (Q\lor R)\land (Q\lor S).\end{align*}$
 	</center></p>
-</Details><br><br>
+</Details><br>
 
-<div class="prp" id="63">
-	<b>[#63]命題：de Morgan の法則</b><br>
+<p id="63">&nbsp;</p><div class="prp">
+	<b>[#63] 命題：de Morgan の法則</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>
 		$\begin{align*} \neg (P\land Q) &\equiv (\neg P)\lor (\neg Q),\\
@@ -244,27 +264,21 @@ updated on 2022/2/28
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
 	</center></p>
 </Details>
-<br><br>
+<details>
+<summary>補足</summary>
+	<p>この命題を繰り返し用いることにより，3 つ以上（有限個）の命題についても同様の議論ができる．例えば 3 個の命題 $P,\,Q,\,R$ に対して</p>
+	<p><center>\begin{align*}
+		\neg (P\land Q\land R) &\,\refeqv{proposition}{62}\, \neg((P\land Q)\color{red}{\land} R)\\
+			&\,\refeqv{proposition}{63}\, \neg(P\color{blue}{\land} Q)\color{red}{\lor} (\neg R)\\
+			&\,\refeqv{proposition}{63}\, ((\neg P)\color{blue}{\lor} (\neg Q))\lor (\neg R)\\
+			&\,\refeqv{proposition}{62}\, (\neg P)\lor (\neg Q)\lor (\neg R).
+		\end{align*}</center></p>
+	<p>
+</details>
+<br>
 
-<div class="prp" id="">
-	<b>[#]命題：3命題以上に対する de Morgan の法則</b><br>
-	<p>$n$ 個の命題 $P_1,\,P_2,\,\cdots,\,P_n$ に対して</p>
-	<p><center>
-		$\begin{align*} \neg (P_1\land P_2\land \cdots\land P_n) &\equiv (\neg P_1)\lor (\neg P_2)\lor \cdots\lor (\neg P_n),\\
-				\neg (P_1\lor P_2\lor \cdots\lor P_n) &\equiv (\neg P_1)\land (\neg P_2)\land \cdots\land (\neg P_n). \end{align*}$
-	</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>$n=3$ の場合を考える．2 つの命題に対する de Morgan の法則 <a href="#63">[#63]</a> を繰り返し用いることにより，</p>
-	<center>$\begin{align*}\neg (P_1\land P_2\land P_3) &\equiv (\neg (P_1\land P_2))\lor (\neg P_3)\\
-		&\equiv (\neg P_1)\lor (\neg P_2)\lor (\neg P_3)$</center>
-	<p>を得る．</p>
-</Details>
-<br><br>
-
-<div class="exr" id="64">
-	<b>[#64]演習：含意と双条件 → <a href="implication.html#65">[#65]</a></b><br>
+<p id="64">&nbsp;</p><div class="exr">
+	<b>[#64] 演習：含意と双条件 <font size="1">→</font> $\numref{implication}{65}$</b><br>
 	<p>命題 $P,\,Q$ に対して論理演算子 $\rightarrow$ を</p>
 	<center>
 		$P\rightarrow Q\equiv \neg P\lor Q$
@@ -286,10 +300,35 @@ updated on 2022/2/28
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
 	</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="exr" id="71">
-	<b>[#71]演習：論理演算子の関係</b><br>
+<p id="237">&nbsp;</p><div class="exm">
+	<b>[#237] 例題：命題の真理値</b><br>
+	<p>命題 $P,\ Q,\ R$ は命題である．命題 $P$ の真理値は真であり，命題 $(\mathrm{not}\ P)\ \mathrm{or}\ Q$ 及び命題 $(\mathrm{not}\ Q)\ \mathrm{or}\ R$ のいずれも真であることがわかっている．$Q,\ R$ の真理値を求めよ．ただし，$X\ \mathrm{or}\ Y$ は $X$ と $Y$ の論理和，$\mathrm{not}\ X$ は $X$ の否定を表す．</p>
+	<p style="text-align:right;">[H31春 基本情報技術者試験]</p>
+</div>
+<details>
+	<summary>解答</summary>
+	<p>$(\mathrm{not}\ P)\ \mathrm{or}\ Q$ の真理値表は以下の通り：</p>
+	<p><center>
+		$\begin{array}{|c|c|c|c|c|c|}\hline P & Q & \neg P & (\mathrm{not}\ P)\ \mathrm{or}\ Q \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F}  & \mathsf{T} \\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{F}  & \mathsf{F} \\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{T}  & \mathsf{T} \\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T}  & \mathsf{T} \\ \hline\end{array}$
+	</center></p>
+	<p> $P$ と $(\mathrm{not}\ P)\ \mathrm{or}\ Q$ はともに真であるから，$Q$ も<font color="red">真</font>である．<br>
+		そして $P$ を $Q$，$Q$ を $R$ に置き換えれば，全く同じ議論で $R$ が<font color="red">真</font>であると結論付けられる．</p>
+</details>
+<details>
+	<summary>補足</summary>
+	<p>$(\mathrm{not}\ P)\ \mathrm{or}\ Q\ (\equiv (\neg P)\lor Q)$ は含意$\nr{implication}{65}$ の定義であり，これに照らせば直観的には当然 $Q$ は真と結論づけられる．同様に $(\mathrm{not}\ Q)\ \mathrm{or}\ R\ (\equiv (\neg Q)\lor R)$ も真なので，$Q$ が真より $R$ も真といえる．<br>
+		これは「前件肯定$\nr{implication}{72}$」という重要な議論である．</p>
+</details>
+<br>
+
+<p id="71">&nbsp;</p><div class="exr">
+	<b>[#71] 演習：論理演算子の関係</b><br>
 	<p>命題 $P\land Q$ を論理演算子 $\neg,\,\lor$ を用いて書き換えよ．ただし他の論理演算子は用いず，また演算子の個数も必要最小限とすること．</p>
 </div>
 <Details>
@@ -313,10 +352,10 @@ updated on 2022/2/28
 	<p>を得る．</p>
 </Details>
 </Details>
-<br><br>
+<br>
 
-<div class="exr" id="87">
-	<b>[#87]演習：排他的論理和 (exclusive logical sum)</b><br>
+<p id="87">&nbsp;</p><div class="exr">
+	<b>[#87] 演習：排他的論理和 (exclusive logical sum)</b><br>
 	<p>命題 $P,\,Q$ に対して論理演算子 $\veebar$ は以下の真理値表の通り定義されるとする：</p>
 	<p><center>
 		$\begin{array}{|c|c||c|}\hline P & Q & P\veebar Q \\ \hline
@@ -366,8 +405,9 @@ updated on 2022/2/28
 	<summary>補足</summary>
 	<p>交換法則 <a href="#58">[#58]</a> が成り立つので，$R$ と $S$，$U$ と $V$ はそれぞれ順不同である．</p>
 </Details>
-<br><br>
+<br>
 
+<br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
