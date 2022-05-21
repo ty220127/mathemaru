@@ -6,20 +6,22 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
-		refsb: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\subset}',2],
-		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		refbtn: ['\\href{#1}{\\scriptsize\\sf[\\# #2]}',2],
+		refeq: ['\\underset{\\refbtn{#1}{#2}}{=}',2],
+		reflr: ['\\underset{\\refbtn{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\refbtn{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathsf{c}',
+		cpl: '\\mathrm{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
+		bra: ['\\langle #1 |', 1],
+		ket: ['| #1 \\rangle', 1],
 	}}});
 </script>
 <script>
@@ -30,13 +32,20 @@
 </head>
 
 <body>
-<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
-<p style="text-align:right;">
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
 isolated from <a href="set.html">集合</a> on 2022/2/20<br>
-updated on 2022/5/14
+updated on 2022/5/
 </p>
 
-<div class="def" id="84">
+<p id="84">&nbsp;</p><div class="def">
 	<b>[#84] 定義：補集合</b><br>
 	<p>ある集合 $A$ に含まれないような記号の集合を $A$ の【補集合 (complement)】と呼び，$A^\cpl$ 或いは $\overline{A}$ を書く：</p>
 	<p><center>$A^\cpl := \{x\,|\,x\notin A\} = \{x\,|\,\neg(x\in A)\}.$</center></p>
@@ -47,9 +56,9 @@ updated on 2022/5/14
 	<p><center>$A^\cpl  = \{x\,|\,\neg P(x)\}.$</center></p>
 	<p> <a href="set.html#48">[#48]</a> の補足を参照せよ．</p>
 </Details>
-<br><br>
-
-<div class="prp" id="85">
+<br>
+  
+<p id="85">&nbsp;</p><div class="prp">
 	<b>[#85] 命題：補集合を用いた差集合の表現</b><br>
 	<p>集合 $A,\,B$ に対して</p>
 	<p><center>$A\setminus B=A\cap B^\cpl.$</center></p>
@@ -81,9 +90,9 @@ updated on 2022/5/14
 	<p><center>$[x\in B^\cpl\rightarrow x\in A^\cpl]\,\,\Longleftrightarrow\,\,B^\cpl\subset A^\cpl.$</center></p>
 	<p>以上の議論をまとめることで，題意を得る．</p>
 </Details>
-<br><br>
-
-<div class="prp" id="218">
+<br>
+  
+<p id="218">&nbsp;</p><div class="prp">
 	<b>[#218] 命題：補集合の補集合</b><br>
 	<p>集合 $A$ に対して</p>
 	<p><center>$(A^\cpl)^\cpl = A.$</center></p>
@@ -95,9 +104,9 @@ updated on 2022/5/14
 			&\,\,\Longleftrightarrow\,\,\neg(\neg(x\in A))\,\,\reflr{proposition.html#60}{60}\,\,x\in A.
 		\end{align*}</center></p>
 </Details>
-<br><br>
-
-<div class="prp" id="74">
+<br>
+  
+<p id="74">&nbsp;</p><div class="prp">
 	<b>[#74] 命題：集合の de Morgan の法則</b><br>
 	<p>集合 $A,\,B$ に対して</p>
 	<p><center>$\begin{align*}(A\cap B)^{\rm c} &=A^{\rm c}\cup B^{\rm c},\\
@@ -120,34 +129,9 @@ updated on 2022/5/14
 		\Longleftrightarrow\,\, & x\in A^{\rm c}\cap B^{\rm c}.\end{align*}$
 	</center></p>
 </Details>
+<br>
+
 <br><br>
-	
-<div class="prp" id="132">
-	<b>[#132] 命題：無限個の集合に対する de Morgan の法則</b><br>
-	<p>集合 $\varLambda$ の各元 $\lambda\in\varLambda$ に対応する集合 $A_\lambda$ に対して</p>
-	<p><center>$\begin{align*}
-		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)^\cpl = \bca_{\lambda\in\varLambda}A_\lambda^\cpl,\quad \left(\bca_{\lambda\in\varLambda}A_\lambda\right)^\cpl = \bcu_{\lambda\in\varLambda}A_\lambda^\cpl
-		\end{align*}$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>前者について</p>
-	<p><center>$\begin{align*}
-		\left(\bcu_{\lambda\in\varLambda}A_\lambda\right)^\cpl &\refeq{set.html#130}{130} \{x\,|\,\neg({}^\exists \lambda\in\varLambda\,\,\,\text{s.t.}\,\,\, x\in A_\lambda)\}\\
-		&\refeq{predicate.html#122}{122} \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\notin A_\lambda)\}\\
-    		&\hspace{2pt}\refeq{#84}{84} \{x\,|\,{}^\forall \lambda\in\varLambda\,(x\in A_\lambda^\cpl)\}\\
-    		&\refeq{set.html#130}{130} \bca_{\lambda\in\varLambda}A_\lambda^\cpl.
-		\end{align*}$</center></p>
-	<p>後者もほぼ同様であるが，</p>
-	<p><center>$\begin{align*}
-		\left(\bca_{\lambda\in\varLambda}A_\lambda\right)^\cpl &\refeq{set.html#130}{130} \{x\,|\,\neg({}^\forall \lambda\in\varLambda\,(x\in A_\lambda))\}\\
-		&\refeq{predicate.html#122}{122} \{x\,|\,{}^\exists\lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\notin A_\lambda\}\\
-    		&\hspace{2pt}\refeq{#84}{84} \{x\,|\,{}^\exists\lambda\in\varLambda\,\,\,\text{s.t.}\,\,\,x\in A_\lambda^\cpl\}\\
-    		&\refeq{set.html#130}{130} \bcu_{\lambda\in\varLambda}A_\lambda^\cpl.
-		\end{align*}$</center></p>
-</Details>
-<br><br>
-	
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
