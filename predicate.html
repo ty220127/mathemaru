@@ -189,27 +189,31 @@ updated on 2022/5/22
 	<b>[#141] 命題：付帯条件付き全称・存在命題の結合法則</b><br>
 	<p>変項 $x$ についての条件 $P(x),\ Q(x),\ R(x)$ に対して</p>
 	<p><center>$\begin{align*}
-		\left[{}^\forall x:P(x),\,\,Q(x)\land R(x)\right] &\equiv \left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],\\
-		\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\lor R(x)\right] &\equiv \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
+		&\left[{}^\forall x:P(x),\,\,Q(x)\land R(x)\right]\\
+		 \equiv\,&\left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],\hspace{14mm}
+		\end{align*}$</center></p>
+	<p><center>$\begin{align*}
+		&\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\lor R(x)\right]\\
+		\equiv\,&\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
 		\end{align*}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
 	<p><center>$\begin{align*}
-		\left[{}^\forall x:P(x),\,\,Q(x)\land R(x)\right] 
-		&\refeqv{predicate}{77} \left[{}^\forall x,\,\,P(x)\rightarrow(Q(x)\land R(x))\right]\\
-		&\refeqv{implication}{65} \left[{}^\forall x,\,\,\neg P(x)\lor (Q(x)\land R(x))\right]\\
-		&\refeqv{proposition}{62} \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\land (\neg P(x)\lor R(x))\right]\\
-		&\refeqv{predicate}{140} \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\right]\land \left[{}^\forall x,\,\,(\neg P(x)\lor R(x))\right]\\
-		&\refeqv{implication}{65} \left[{}^\forall x,\,\,P(x)\rightarrow Q(x)\right]\land \left[{}^\forall x,\,\,P(x)\rightarrow R(x)\right]\\
-		&\refeqv{predicate}{77} \left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],
+		&\left[{}^\forall x:P(x),\,\,Q(x)\land R(x)\right] \\
+		\refeqv{predicate}{77}\,& \left[{}^\forall x,\,\,P(x)\rightarrow(Q(x)\land R(x))\right]\\
+		\refeqv{implication}{65}\,& \left[{}^\forall x,\,\,\neg P(x)\lor (Q(x)\land R(x))\right]\\
+		\refeqv{proposition}{62}\,& \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\land (\neg P(x)\lor R(x))\right]\\
+		\refeqv{predicate}{140}\,& \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\right]\land \left[{}^\forall x,\,\,(\neg P(x)\lor R(x))\right]\\
+		\refeqv{implication}{65}\,& \left[{}^\forall x,\,\,P(x)\rightarrow Q(x)\right]\land \left[{}^\forall x,\,\,P(x)\rightarrow R(x)\right]\\
+		\refeqv{predicate}{77}\,& \left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],
 		\end{align*}$</center></p>
 	<p><center>$\begin{align*}
-		\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\lor R(x)\right] 
-		&\refeqv{predicate}{77} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land(Q(x)\lor R(x))\right]\\
-		&\refeqv{proposition}{62} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\lor (P(x)\land R(x))\right]\\
-		&\refeqv{predicate}{140} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\right]\lor \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land R(x))\right]\\
-		&\refeqv{predicate}{77} \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
+		&\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\lor R(x)\right]\\ 
+		\refeqv{predicate}{77}\,& \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land(Q(x)\lor R(x))\right]\\
+		\refeqv{proposition}{62}\,& \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\lor (P(x)\land R(x))\right]\\
+		\refeqv{predicate}{140}\,& \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\right]\lor \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land R(x))\right]\\
+		\refeqv{predicate}{77}\,& \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
 		\end{align*}$</center></p>
 </Details>
 <br>
@@ -249,6 +253,39 @@ updated on 2022/5/22
 	<p>であることに対応する（分配法則$\nr{proposition}{62}$ の「補足２」を参照）．</p>
 </Details>
 <br>
+
+<p id="243">&nbsp;</p><div class="prp">
+	<b>[#243] 命題：存在命題からの含意</b><br>
+	<p>変項 $x$ についての条件 $P(x)$ と命題 $Q$ に対して</p>
+	<p><center>$\begin{align*}
+		\left[{}^\exists x\ \,\text{s.t.}\, \ P(x)\right]\to Q \equiv \left[{}^\forall x,\ P(x)\to Q\right] .
+		\end{align*}$</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		\left[{}^\exists x\ \,\text{s.t.}\, \ P(x)\right]\to Q \,\refeqv{implication}{65}\,\,\,& \neg \left[{}^\exists x\ \,\text{s.t.}\, \ P(x)\right]\lor Q\\
+			\,\refeqv{predicate}{139}\,\,& \left[{}^\forall x,\ \neg P(x)\right]\lor Q\\
+			\,\refeqv{predicate}{240}\,\,& \left[{}^\forall x,\ \neg P(x)\lor Q\right]\\
+			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ P(x)\to Q\right]\\
+		\end{align*}</center></p>
+</details>
+
+<p id="244">&nbsp;</p><div class="prp">
+	<b>[#244] 命題：全称命題への含意</b><br>
+	<p>命題 $P$ と変項 $x$ についての条件 $Q(x)$ に対して</p>
+	<p><center>$\begin{align*}
+		P\to \left[{}^\forall x,\ Q(x)\right] \equiv \left[{}^\forall x,\ P\to Q(x)\right] .
+		\end{align*}$</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		P\to \left[{}^\forall x,\ Q(x)\right] \,\refeqv{implication}{65}\,\,\,& \neg P\lor \left[{}^\forall x,\ Q(x)\right]\\
+			\,\refeqv{predicate}{240}\,\,& \left[{}^\forall x,\ \neg P\lor Q(x)\right]\\
+			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ P\to Q(x)\right]\\
+		\end{align*}</center></p>
+</details>
 
 <br><br>
 <div id="bib"><b>参考文献</b>
