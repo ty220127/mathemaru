@@ -6,10 +6,11 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refbtn: ['\\href{#1}{\\scriptsize\\sf[\\# #2]}',2],
-		refeq: ['\\underset{\\refbtn{#1}{#2}}{=}',2],
-		reflr: ['\\underset{\\refbtn{#1}{#2}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\refbtn{#1}{#2}}{\\Longrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\numref{#1}{#2}}{=}',2],
+		reflr: ['\\underset{\\!\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -42,7 +43,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
 established on 2022/2/6<br>
-updated on 2022/5/21
+updated on 2022/5/22
 </p>
     
 <p id="48">&nbsp;</p><div class="def">
@@ -184,8 +185,8 @@ updated on 2022/5/21
 	<summary>証明</summary>
 	<p>命題論理における論理和・論理積の性質 <a href="implication.html#88">[#88]</a> を用いる：</p>
 	<p><center>\begin{align*}
-		& x\in A\,\,\underset{(2)}{\Longrightarrow}\,\, (x\in A)\lor (x\in B) \,\,\reflr{#51}{51}\,\, x\in A\cup B,\\
-		& x\in A\cap B\,\,\reflr{#51}{51}\,\, (x\in A)\land (x\in B) \,\,\underset{(1)}{\Longrightarrow}\,\, x\in A.
+		& x\in A\,\,\underset{(2)}{\Longrightarrow}\,\, (x\in A)\lor (x\in B) \,\,\reflr{set}{51}\,\, x\in A\cup B,\\
+		& x\in A\cap B\,\,\reflr{set}{51}\,\, (x\in A)\land (x\in B) \,\,\underset{(1)}{\Longrightarrow}\,\, x\in A.
 		\end{align*}</center></p>
 </Details>
 <Details>
@@ -271,7 +272,7 @@ updated on 2022/5/21
 	<p>まず，<a href="#204">[#204]</a> より $A\cup B\supset B$ である．<br>
 		一方，$A\subset B$ であることから，その定義 <a href="#111">[#111]</a> より $[\,x\in A\ \Rightarrow\ x\in B\,\,\cdots (*)\,]$ ．よって</p>
 	<p><center>\begin{align*}
-		x\in A\cup B\,\,&\reflr{#51}{51}\,\, \underline{(x\in A)}\lor (x\in B)\\
+		x\in A\cup B\,\,&\reflr{set}{51}\,\, \underline{(x\in A)}\lor (x\in B)\\
 		&\,\underset{(*)}{\Longrightarrow}\,\, \underline{(x\in B)}\lor (x\in B)\,\,\Longleftrightarrow\,\, x\in B,
 		\end{align*}</center></p>
 	<p>つまり $A\cup B\subset B.$<br>
@@ -281,7 +282,7 @@ updated on 2022/5/21
 	<summary>証明 $(\Leftarrow)$</summary>
 	<p> $A\cup B= B\,\cdots (\dagger)$ であることに注意して，</p>
 	<p><center>\begin{align*}
-		x\in A\,\,&\,\,\refr{#204}{204}\,\, x\in A\cup B\\
+		x\in A\,\,&\,\,\refr{set}{204}\,\, x\in A\cup B\\
 		&\,\underset{(\dagger)}{\Longleftrightarrow}\,\, x\in B
 		\end{align*}</center></p>
 	<p>より $A\subset B.$</p>
@@ -298,10 +299,10 @@ updated on 2022/5/21
 	<p>まず，<a href="#204">[#204]</a> より $A\cap B\subset A$ である．<br>
 		一方，</p>
 	<p><center>\begin{align*}
-		A\subset B\,\,\reflr{#111}{111}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in B\,]\\
-			\reflr{implication.html#88}{88}\,\,&[\,x\in A\,\,\longrightarrow\,\,(x\in A) \land (x\in B)\,]\\
-			\reflr{#51}{51}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in A\cap B\,]\\
-			\,\,\reflr{#111}{111}\,\,& A\subset A\cap B.
+		A\subset B\,\,\reflr{set}{111}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in B\,]\\
+			\reflr{implication}{88}\,\,&[\,x\in A\,\,\longrightarrow\,\,(x\in A) \land (x\in B)\,]\\
+			\reflr{set}{51}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in A\cap B\,]\\
+			\,\,\reflr{set}{111}\,\,& A\subset A\cap B.
 		\end{align*}</center></p>
 	<p>以上により，$A\cap B= A.$</p>
 </Details>
@@ -310,9 +311,45 @@ updated on 2022/5/21
 	<p> $A\cap B= A\,\cdots (\dagger)$ であることに注意して，</p>
 	<p><center>\begin{align*}
 		x\in A\,\,&\,\underset{(\dagger)}{\Longleftrightarrow}\,\, x\in A\cap B\\
-			&\,\,\refr{#204}{204}\,\, x\in B
+			&\,\,\refr{set}{204}\,\, x\in B
 		\end{align*}</center></p>
 	<p>より $A\subset B.$</p>
+</Details>
+<br><br>
+
+<p id="241">&nbsp;</p><div class="prp">
+	<b>[#241] 命題：複数の集合に含まれる集合</b><br>
+	<p>集合 $A,\ B,\ C$ について</p>
+	<p><center>\begin{align*}
+		(A\subset B)\land (A\subset C)\ \Longleftrightarrow\ A\subset B\cap C
+		\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		(A\subset B)\land (A\subset C)\ &\reflr{set}{111}\ [(x\in A)\to (x\in B)]\land [(x\in A)\to (x\in C)]\\
+			&\reflr{implication}{238}\ (x\in A)\to [(x\in B)\land (x\in C)]\\
+			&\reflr{set}{51}\ (x\in A)\to (x\in B\cap C)\\
+			&\reflr{set}{111}\ A\subset B\cap C.
+		\end{align*}</center></p>
+</Details>
+<br><br>
+	
+<p id="242">&nbsp;</p><div class="prp">
+	<b>[#242] 命題：複数の集合を含む集合</b><br>
+	<p>集合 $A,\ B,\ C$ について</p>
+	<p><center>\begin{align*}
+		(A\subset C)\land (B\subset C)\ \Longleftrightarrow\ A\cup B\subset C
+		\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		(A\subset C)\land (B\subset C)\ &\reflr{set}{111}\ [(x\in A)\to (x\in C)]\land [(x\in B)\to (x\in C)]\\
+			&\reflr{implication}{239}\ [(x\in A)\lor (x\in B)]\to (x\in C)\\
+			&\reflr{set}{51}\ (x\in A\cup B)\to (x\in C)\\
+			&\reflr{set}{111}\ A\cup B \subset C.
+		\end{align*}</center></p>
 </Details>
 <br><br>
 	
