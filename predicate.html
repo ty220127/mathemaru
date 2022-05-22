@@ -1,4 +1,5 @@
 
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -260,15 +261,30 @@ updated on 2022/5/22
 	<p><center>$\begin{align*}
 		\left[{}^\exists x\ \,\text{s.t.}\, \ P(x)\right]\to Q \equiv \left[{}^\forall x,\ P(x)\to Q\right] .
 		\end{align*}$</center></p>
+	<p>特に付帯条件 $C(x)$ のある場合</p>
+	<p><center>$\begin{align*}
+		\left[{}^\exists x:C(x)\ \,\text{s.t.}\, \ P(x)\right]\to Q \equiv \left[{}^\forall x:C(x),\ P(x)\to Q\right] .
+		\end{align*}$</center></p>
 </div>
 <details>
 	<summary>証明</summary>
+	<p>まず付帯条件を考えない場合（$(\dagger)$ とする），</p>
 	<p><center>\begin{align*}
 		\left[{}^\exists x\ \,\text{s.t.}\, \ P(x)\right]\to Q \,\refeqv{implication}{65}\,\,\,& \neg \left[{}^\exists x\ \,\text{s.t.}\, \ P(x)\right]\lor Q\\
 			\,\refeqv{predicate}{139}\,\,& \left[{}^\forall x,\ \neg P(x)\right]\lor Q\\
 			\,\refeqv{predicate}{240}\,\,& \left[{}^\forall x,\ \neg P(x)\lor Q\right]\\
 			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ P(x)\to Q\right]\\
 		\end{align*}</center></p>
+	<p>この結果を用いて，次に付帯条件のある場合を示す．</p>
+	<p><center>\begin{align*}
+		\left[{}^\exists x:C(x)\ \,\text{s.t.}\, \ P(x)\right]\to Q\,\refeqv{predicate}{77}\,\,\,& \left[{}^\exists x\ \,\text{s.t.}\, \ C(x)\land P(x)\right]\to Q\\
+			\,\underset{\scriptsize (\dagger)}{\equiv}\,\,\,& \left[{}^\forall x,\ (C(x)\land P(x))\to Q\right]\\
+			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ \neg (C(x)\land P(x))\lor Q\right]\\
+			\,\refeqv{proposition}{63}\,\,\,& \left[{}^\forall x,\ (\neg C(x))\lor (\neg P(x))\lor Q\right]\\
+			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ C(x)\to ((\neg P(x))\lor Q)\right]\\
+			\,\refeqv{predicate}{77}\,\,\,& \left[{}^\forall x:C(x),\ (\neg P(x))\lor Q\right]\\
+			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x:C(x),\ P(x)\to Q\right].
+ 		\end{align*}</center></p>
 </details>
 
 <p id="242">&nbsp;</p><div class="prp">
@@ -276,6 +292,10 @@ updated on 2022/5/22
 	<p>命題 $P$ と変項 $x$ についての条件 $Q(x)$ に対して</p>
 	<p><center>$\begin{align*}
 		P\to \left[{}^\forall x,\ Q(x)\right] \equiv \left[{}^\forall x,\ P\to Q(x)\right] .
+		\end{align*}$</center></p>
+	<p>特に付帯条件 $C(x)$ のある場合</p>
+	<p><center>$\begin{align*}
+		P\to \left[{}^\forall x:C(x),\ Q(x)\right] \equiv \left[{}^\forall x:C(x),\ P\to Q(x)\right] .
 		\end{align*}$</center></p>
 </div>
 <details>
@@ -285,6 +305,15 @@ updated on 2022/5/22
 			\,\refeqv{predicate}{240}\,\,& \left[{}^\forall x,\ \neg P\lor Q(x)\right]\\
 			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ P\to Q(x)\right]\\
 		\end{align*}</center></p>
+	<p>この結果を用いて，次に付帯条件のある場合を示す．</p>
+	<p><center>\begin{align*}
+		P\to \left[{}^\forall x:C(x),\ Q(x)\right]\,\refeqv{predicate}{77}\,\,\,& P\to \left[{}^\forall x,\ C(x)\to Q(x)\right]\\
+			\,\underset{\scriptsize (\dagger)}{\equiv}\,\,\,& \left[{}^\forall x,\ P\to (C(x)\to Q(x))\right]\\
+		\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ \neg P\lor (\neg C(x)\lor Q(x))\right]\\
+		\,\refeqv{proposition}{60}\,\,\,& \left[{}^\forall x,\ \neg C(x)\lor (\neg P\lor Q(x))\right]\\
+		\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ C(x)\to (P\to Q(x))\right]\\
+		\,\refeqv{predicate}{77}\,\,\,& \left[{}^\forall x:C(x),\ P\to Q(x)\right]
+ 		\end{align*}</center></p>
 </details>
 
 <br><br>
