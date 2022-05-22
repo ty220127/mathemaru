@@ -1,13 +1,18 @@
+
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } ,
-			     TeX: {  extensions: ["cancel.js"] },
-			   });	
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -15,32 +20,43 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}'
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		bra: ['\\langle #1 |', 1],
+		ket: ['| #1 \\rangle', 1],
 	}}});
 </script>
-<title>述語論理｜演習問題集</title>
+<script>
+	const ttl = "述語論理"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-</style>
 </head>
 
 <body>
-<center><div id="titlehead">述語論理</div></center>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
 
-<p style="text-align:right;">
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em;">
 established on 2022/2/12<br>
-updated on 2022/3/24
+updated on 2022/5/22
 </p>
     
-<div class="def" id="75">
-	<b>[#75]定義：命題関数，変項，条件，述語</b><br>
+<p id="75">&nbsp;</p><div class="def">
+	<b>[#75] 定義：命題関数，変項，条件，述語</b><br>
 	<p>未知の記号を含む事柄で，それ自身単独では真偽を判定できないが未知の記号の内容が特定されることで命題となるような事柄を【命題関数(propositional function)】と呼び，その未知の記号を【変項(variable)】と呼ぶ．
 		また，変項 $x$ を含む命題関数 $P(x)$ を $x$ についての【条件(condition)】または【述語(predicate)】とも呼ぶ．</p>
 </div>
-<br><br>
+<br>
   
-<div class="exr" id="76">
-	<b>[#76]演習：命題関数による命題</b><br>
+<p id="76">&nbsp;</p><div class="exr">
+	<b>[#76] 演習：命題関数による命題</b><br>
 	<p>命題関数 $P(x)$ を</p>
 	<p><center>$P(x): x+3=10 $</center></p>
 	<p>と定義する．このとき，$P(x)$ が真となるような $x$ を挙げよ．</p>
@@ -49,10 +65,10 @@ updated on 2022/3/24
 	<summary>解答</summary>
 	<p>$\color{red}{x=7}$ であるとき，つまり $P(7)$ は真である：$7+3=10$．</p>
 </Details>
-<br><br>
+<br>
   
-<div class="def" id="77">
-	<b>[#77]定義：全称命題，存在命題</b><br>
+<p id="77">&nbsp;</p><div class="def">
+	<b>[#77] 定義：全称命題，存在命題</b><br>
 	<p>変項 $x$ についての条件 $P(x)$ に対して「すべての[任意の] $x$ で $P(x)$ が成り立つ (For all [any] $x$, $P(x)$ holds)」という命題を【全称命題(universal proposition)】と呼び，</p>
 	<p><center>$^\forall x,\,\,P(x)$</center></p>
 	<p>と表す．また，「ある $x$ が存在して，$P(x)$ が成り立つ (There exists $x$ such that $P(x)$ holds)」という命題を【存在命題(existential proposition)】と呼び，</p>
@@ -76,16 +92,12 @@ updated on 2022/3/24
 	<p>と略記することもある（命題関数中の変項の傍らに直接量化子を付す）．なお，このような $P(x)$ は $x$ の【付帯条件 (side condition)】と呼ばれる．</p>
 </Details>
 <Details>
-	<summary>補足１</summary>
-	<p>「ある $x$ が存在して，$P(x)$ が成り立つ」とは，$P(x)$ が真となるような $x$ が少なくとも１つは存在するという意味である．</p>
-</Details>
-<Details>
-	<summary>補足２</summary>
+	<summary>解釈</summary>
 	<p>全称命題は $x$ にあらゆる記号を代入した命題たちの共通部分と解釈できる．つまり</p>
 	<p><center>$\begin{align*}
 		\left[^\forall x,\,\,P(x)\right]\equiv \left[\bigwedge_{x} P(x)\right]
 		\end{align*}$</center></p>
-	<p>といった書き方も考えられる．一方で，存在命題は $x$ にあらゆる記号を代入した命題たちの和であると解釈でき，</p>
+	<p>といった書き方も考えられる．一方で，存在命題は $P(x)$ が真となる $x$ が少なくとも１つは存在することを意味する．つまり $x$ にあらゆる記号を代入した命題たちの和であると解釈でき，</p>
 	<p><center>$\begin{align*}
 		\left[^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\equiv \left[\bigvee_{x} P(x)\right]
 		\end{align*}$</center></p>
@@ -96,10 +108,10 @@ updated on 2022/3/24
 		\end{align*}$</center></p>
 	<p>と考えても良い．</p>
 </Details>
-<br><br>
+<br>
   
-<div class="fct" id="122">
-	<b>[#122]事実：付帯条件付き全称・存在命題の否定</b><br>
+<p id="122">&nbsp;</p><div class="fct">
+	<b>[#122] 事実：付帯条件付き全称・存在命題の否定</b><br>
 	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
 	<p><center>$\begin{align*}
 		&\left[\neg\left({}^\forall x,\,\,P(x)\right)\right] \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,\neg P(x)\right],\\
@@ -107,14 +119,22 @@ updated on 2022/3/24
 		\end{align*}$</center></p>
 </div>
 <Details>
-	<summary>補足</summary>
-	<p>全称記号が共通部分，存在記号が和と相性が良いと考えると，de Morgan の法則 <a href="proposition.html#63">[#63]</a> と比較して筋が通っているといえる．</p>
+	<summary>解釈に基づく説明</summary>
+	<p>de Morgan の法則$\nr{proposition}{63}$ を考えれば</p>
+	<p><center>\begin{align*}
+		\left[\neg\left({}^\forall x,\,\,P(x)\right)\right] &\equiv \neg\left(\bigwedge_{x} P(x)\right)\\
+		&\equiv \bigvee_{x}(\neg P(x)) \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,\neg P(x)\right],
+		\end{align*}</center></p>
+	<p><center>\begin{align*}
+		\left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right)\right] &\equiv \neg\left(\bigvee_{x} P(x)\right)\\
+		&\equiv \bigwedge_{x}(\neg P(x)) \equiv \left[{}^\forall x,\,\,\neg P(x)\right].
+		\end{align*}</center></p>
 </Details>
-<br><br>
+<br>
   
-<div class="prp" id="139">
-	<b>[#139]命題：全称・存在命題の否定</b><br>
-	<p>変項 $x$ についての条件 $P(x),\,Q(x)$ に対して</p>
+<p id="139">&nbsp;</p><div class="prp">
+	<b>[#139] 命題：全称・存在命題の否定</b><br>
+	<p>変項 $x$ についての条件 $P(x),\ Q(x)$ に対して</p>
 	<p><center>$\begin{align*}
 		&\left[\neg\left({}^\forall x:P(x),\,\,Q(x)\right)\right] \equiv \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,\neg Q(x)\right],\\
 		&\left[\neg\left({}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right)\right] \equiv \left[{}^\forall x:P(x),\,\,\neg Q(x)\right].
@@ -124,51 +144,50 @@ updated on 2022/3/24
 	<summary>証明</summary>
 	<p><center>$\begin{align*}
 		\left[\neg\left({}^\forall x:P(x),\,\,Q(x)\right)\right] 
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[\neg\left({}^\forall x,\,\,P(x)\rightarrow Q(x)\right)\right]\\
-		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[\neg\left({}^\forall x,\,\,\neg P(x)\lor Q(x)\right)\right]\\
-		&\underset{\href{#122}{\numref{122}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land \neg Q(x)\right]\\
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,\neg Q(x)\right],
+		&\refeqv{predicate}{77} \left[\neg\left({}^\forall x,\,\,P(x)\rightarrow Q(x)\right)\right]\\
+		&\refeqv{implication}{65} \left[\neg\left({}^\forall x,\,\,\neg P(x)\lor Q(x)\right)\right]\\
+		&\refeqv{predicate}{122} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land \neg Q(x)\right]\\
+		&\refeqv{predicate}{77} \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,\neg Q(x)\right],
 		\end{align*}$</center></p>
 	<p><center>$\begin{align*}
 		\left[\neg\left({}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right)\right] 
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right)\right]\\
-		&\underset{\href{#122}{\numref{122}}}{\equiv} \left[{}^\forall x,\,\,\neg P(x)\lor \neg Q(x)\right]\\
-		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[{}^\forall x,\,\,P(x)\rightarrow \neg Q(x)\right]\\
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\forall x:P(x),\,\,\neg Q(x)\right].
+		&\refeqv{predicate}{77} \left[\neg\left({}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right)\right]\\
+		&\refeqv{predicate}{122} \left[{}^\forall x,\,\,\neg P(x)\lor \neg Q(x)\right]\\
+		&\refeqv{implication}{65} \left[{}^\forall x,\,\,P(x)\rightarrow \neg Q(x)\right]\\
+		&\refeqv{predicate}{77} \left[{}^\forall x:P(x),\,\,\neg Q(x)\right].
 		\end{align*}$</center></p>
 </Details>
 <Details>
 	<summary>補足</summary>
 	<p>上式について，$\neg Q(x)$ に代入するとそれが真となるような記号を命題 $\left[{}^\forall x:P(x),\,\,Q(x)\right]$ の【反例 (counterexample)】と呼ぶ．</p>
 </Details>
-<br><br>
+<br>
   
-<div class="fct" id="140">
-	<b>[#140]事実：全称・存在命題の結合法則</b><br>
-	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
+<p id="140">&nbsp;</p><div class="fct">
+	<b>[#140] 事実：全称・存在命題の結合法則</b><br>
+	<p>変項 $x$ についての条件 $P(x),\ Q(x)$ に対して</p>
 	<p><center>$\begin{align*}
 		\left[{}^\forall x,\,\,P(x)\land Q(x)\right] &\equiv \left[{}^\forall x,\,\,P(x)\right]\land \left[{}^\forall x,\,\,Q(x)\right],\\
 		\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\lor Q(x)\right] &\equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\lor \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,Q(x)\right],\\
 		\end{align*}$</center></p>
 </div>
 <Details>
-	<summary>補足１</summary>
-	<p>全称記号が共通部分，存在記号が和と相性が良いと考えると，結合法則 <a href="proposition.html#61">[#61]</a> と比較して上２式は筋が通っているといえる．</p>
+	<summary>解釈に基づく説明</summary>
+	<p>結合法則$\nr{proposition}{61}$ を考えれば</p>
+	<p><center>\begin{align*}
+		\left[{}^\forall x,\,\,P(x)\land Q(x)\right]&\equiv \bigwedge_{x} (P(x)\land Q(x))\equiv \left(\bigwedge_{x}P(x)\right)\land \left(\bigwedge_{x}Q(x)\right)\\
+		&\equiv \left[{}^\forall x,\,\,P(x)\right]\land \left[{}^\forall x,\,\,Q(x)\right],
+		\end{align*}</center></p>
+	<p><center>\begin{align*}
+		\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\lor Q(x)\right]&\equiv \bigvee_{x} (P(x)\lor Q(x))\equiv \left(\bigvee_{x}P(x)\right)\lor \left(\bigvee_{x}Q(x)\right)\\
+		&\equiv\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\lor \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,Q(x)\right]
+		\end{align*}</center></p>
 </Details>
-<Details>
-	<summary>補足２</summary>
-	<p>分配法則に対応する全称・存在命題の法則は成立しない．つまり，</p> 
-	<p><center>$\begin{align*}
-		\left[{}^\forall x,\,\,P(x)\lor Q(x)\right] &\not \equiv \left[{}^\forall x,\,\,P(x)\right]\lor \left[{}^\forall x,\,\,Q(x)\right],\\
-		\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right] &\not \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\land \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,Q(x)\right].
-		\end{align*}$</center></p>
-	<p>これらも <a href="proposition.html#62">[#62]</a> と比較すれば，下２式のような分配法則の不成立も納得がいく．</p>
-</Details>
-<br><br>
+<br>
   
-<div class="prp" id="141">
-	<b>[#141]命題：付帯条件付き全称・存在命題の結合法則</b><br>
-	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
+<p id="141">&nbsp;</p><div class="prp">
+	<b>[#141] 命題：付帯条件付き全称・存在命題の結合法則</b><br>
+	<p>変項 $x$ についての条件 $P(x),\ Q(x),\ R(x)$ に対して</p>
 	<p><center>$\begin{align*}
 		\left[{}^\forall x:P(x),\,\,Q(x)\land R(x)\right] &\equiv \left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],\\
 		\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\lor R(x)\right] &\equiv \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
@@ -178,31 +197,68 @@ updated on 2022/3/24
 	<summary>証明</summary>
 	<p><center>$\begin{align*}
 		\left[{}^\forall x:P(x),\,\,Q(x)\land R(x)\right] 
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\forall x,\,\,P(x)\rightarrow(Q(x)\land R(x))\right]\\
-		&\underset{\href{implication.html#65}{\numref{65}}}{\equiv} \left[{}^\forall x,\,\,\neg P(x)\lor (Q(x)\land R(x))\right]\\
-		&\underset{\href{proposition.html#62}{\numref{62}}}{\equiv} \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\land (\neg P(x)\lor R(x))\right]\\
-		&\underset{\href{#140}{\numref{140}}}{\equiv} \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\right]\land \left[{}^\forall x,\,\,(\neg P(x)\lor R(x))\right]\\
-		&\underset{\href{implication#65}{\numref{65}}}{\equiv} \left[{}^\forall x,\,\,P(x)\rightarrow Q(x)\right]\land \left[{}^\forall x,\,\,P(x)\rightarrow R(x)\right]\\
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],
+		&\refeqv{predicate}{77} \left[{}^\forall x,\,\,P(x)\rightarrow(Q(x)\land R(x))\right]\\
+		&\refeqv{implication}{65} \left[{}^\forall x,\,\,\neg P(x)\lor (Q(x)\land R(x))\right]\\
+		&\refeqv{proposition}{62} \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\land (\neg P(x)\lor R(x))\right]\\
+		&\refeqv{predicate}{140} \left[{}^\forall x,\,\,(\neg P(x)\lor Q(x))\right]\land \left[{}^\forall x,\,\,(\neg P(x)\lor R(x))\right]\\
+		&\refeqv{implication}{65} \left[{}^\forall x,\,\,P(x)\rightarrow Q(x)\right]\land \left[{}^\forall x,\,\,P(x)\rightarrow R(x)\right]\\
+		&\refeqv{predicate}{77} \left[{}^\forall x:P(x),\,\,Q(x)\right]\land \left[{}^\forall x:P(x),\,\,R(x)\right],
 		\end{align*}$</center></p>
 	<p><center>$\begin{align*}
 		\left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\lor R(x)\right] 
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land(Q(x)\lor R(x))\right]\\
-		&\underset{\href{proposition.html#62}{\numref{62}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\lor (P(x)\land R(x))\right]\\
-		&\underset{\href{#140}{\numref{140}}}{\equiv} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\right]\lor \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land R(x))\right]\\
-		&\underset{\href{#77}{\numref{77}}}{\equiv} \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
+		&\refeqv{predicate}{77} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land(Q(x)\lor R(x))\right]\\
+		&\refeqv{proposition}{62} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\lor (P(x)\land R(x))\right]\\
+		&\refeqv{predicate}{140} \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land Q(x))\right]\lor \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,(P(x)\land R(x))\right]\\
+		&\refeqv{predicate}{77} \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,Q(x)\right]\lor \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,R(x)\right].
 		\end{align*}$</center></p>
 </Details>
-<br><br>
+<br>
   
+<p id="240">&nbsp;</p><div class="fct">
+	<b>[#240] 事実：全称・存在命題の分配法則</b><br>
+	<p>変項 $x$ についての条件 $P(x)$ と命題 $Q$ に対して</p>
+	<p><center>$\begin{align*}
+		\left[{}^\forall x,\,\,P(x)\right]\lor Q &\equiv \left[{}^\forall x,\,\,P(x)\lor Q\right],\\
+		\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\land Q &\equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q\right],\\
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>解釈に基づく説明</summary>
+	<p>分配法則$\nr{proposition}{62}$ を考えれば</p>
+	<p><center>\begin{align*}
+		\left[{}^\forall x,\,\,P(x)\right]\lor Q &\equiv \left(\bigwedge_{x} P(x)\right)\lor Q\\
+		&\equiv \bigwedge_{x} (P(x)\lor Q)\equiv \left[{}^\forall x,\,\,P(x)\lor Q\right],
+		\end{align*}</center></p>
+	<p><center>\begin{align*}
+		\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\land Q &\equiv \left(\bigvee_{x} P(x)\right)\land Q\\
+		&\equiv \bigvee_{x} (P(x)\land Q)\equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q\right].
+		\end{align*}</center></p>
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>命題 $Q$ を条件 $Q(x)$ に取り替えたケースの分配法則は成立しない．つまり，</p> 
+	<p><center>$\begin{align*}
+		\left[{}^\forall x,\,\,P(x)\lor Q(x)\right] &\not \equiv \left[{}^\forall x,\,\,P(x)\right]\lor \left[{}^\forall x,\,\,Q(x)\right],\\
+		\left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\land Q(x)\right] &\not \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,P(x)\right]\land \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,Q(x)\right].
+		\end{align*}$</center></p>
+	<p>これは例えば</p>
+	<p><center>\begin{align*}
+		(P_1\land Q_1) \lor (Q_2\land Q_2) &\not\equiv (P_1\land P_2)\lor (Q_1\land Q_2),\\
+		(P_1\lor Q_1) \land (Q_2\lor Q_2) &\not\equiv (P_1\lor P_2)\land (Q_1\lor Q_2)
+		\end{align*}</center></p>
+	<p>であることに対応する（分配法則$\nr{proposition}{62}$ の「補足２」を参照）．</p>
+</Details>
+<br>
+
+<br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
-	<li>長岡亮介: 総合的研究 論理学で学ぶ数学 – 思考ツールとしてのロジック.</li>
-	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-1_meidaironri.pdf">尾畑伸明, pdf</a>.</li>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-1_meidaironri.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第1章), 公開pdf</a>.</li>
+	<li><a href="https://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">岡田光弘: 「論理学入門」講義ノート, pdf</a>.</li>
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2021/L03_0428.pdf">桂田祐史: 数理リテラシー 第 3 回 ～ 論理 (3) ～, pdf</a>.</li>
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/literacy/logic.pdf">桂田祐史: Part I. 論理, pdf (2013, 2021)</a>.</li>
-	<li><a href="https://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">岡田光弘: 「論理学入門」講義ノート, pdf</a>.</li>
+	<li>長岡亮介: 総合的研究 論理学で学ぶ数学 – 思考ツールとしてのロジック.</li>
 	<li><a href="https://wiis.info/math/logic/predicate-logic/">述語論理｜WIIS</a>.</li>
 </ul>
 </div>
