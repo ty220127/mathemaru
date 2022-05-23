@@ -46,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em;">
 established on 2022/2/12<br>
-updated on 2022/5/22
+updated on 2022/5/23
 </p>
     
 <p id="75">&nbsp;</p><div class="def">
@@ -279,10 +279,7 @@ updated on 2022/5/22
 	<p><center>\begin{align*}
 		\left[{}^\exists x:C(x)\ \,\text{s.t.}\, \ P(x)\right]\to Q\,\refeqv{predicate}{77}\,\,\,& \left[{}^\exists x\ \,\text{s.t.}\, \ C(x)\land P(x)\right]\to Q\\
 			\,\underset{\scriptsize (\dagger)}{\equiv}\,\,\,& \left[{}^\forall x,\ (C(x)\land P(x))\to Q\right]\\
-			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ \neg (C(x)\land P(x))\lor Q\right]\\
-			\,\refeqv{proposition}{63}\,\,\,& \left[{}^\forall x,\ (\neg C(x))\lor (\neg P(x))\lor Q\right]\\
-			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ C(x)\to ((\neg P(x))\lor Q)\right]\\
-			\,\refeqv{predicate}{77}\,\,\,& \left[{}^\forall x:C(x),\ (\neg P(x))\lor Q\right]\\
+			\,\refeqv{implication}{245}\,\,& \left[{}^\forall x,\ C(x)\to (P\to Q)\right]\\
 			\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x:C(x),\ P(x)\to Q\right].
  		\end{align*}</center></p>
 </details>
@@ -310,9 +307,7 @@ updated on 2022/5/22
 	<p><center>\begin{align*}
 		P\to \left[{}^\forall x:C(x),\ Q(x)\right]\,\refeqv{predicate}{77}\,\,\,& P\to \left[{}^\forall x,\ C(x)\to Q(x)\right]\\
 			\,\underset{\scriptsize (\dagger)}{\equiv}\,\,\,& \left[{}^\forall x,\ P\to (C(x)\to Q(x))\right]\\
-		\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ \neg P\lor (\neg C(x)\lor Q(x))\right]\\
-		\,\refeqv{proposition}{60}\,\,\,& \left[{}^\forall x,\ \neg C(x)\lor (\neg P\lor Q(x))\right]\\
-		\,\refeqv{implication}{65}\,\,\,& \left[{}^\forall x,\ C(x)\to (P\to Q(x))\right]\\
+		\,\refeqv{implication}{245}\,\,& \left[{}^\forall x,\ C(x)\to (P\to Q(x))\right]\\
 		\,\refeqv{predicate}{77}\,\,\,& \left[{}^\forall x:C(x),\ P\to Q(x)\right].
  		\end{align*}</center></p>
 </details>
