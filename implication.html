@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -277,6 +278,23 @@ updated on 2022/5/21<br>
 			&\,\refeqv{proposition}{62}\, (\neg P\land \neg Q)\lor R\\
 			&\,\refeqv{proposition}{63}\, \neg (P\lor Q)\lor R\\
 			&\,\refeqv{implication}{65}\, (P\lor Q)\to R.
+		\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="245">&nbsp;</p><div class="prp">
+	<b>[#245] 命題：複数命題の論理積からの含意</b><br>
+	<p>命題 $P,\ Q,\ R$ に対して</p>
+	<p><center>$(P\land Q)\to R\equiv P\to (Q\to R).$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		(P\land Q)\to R &\,\refeqv{implication}{65}\, (\neg (P\land Q))\lor R\\
+			&\,\refeqv{proposition}{62}\, (\neg P\lor \neg Q)\lor R\\
+			&\,\refeqv{proposition}{61}\, \neg P\lor (\neg Q\lor R)\\
+			&\,\refeqv{implication}{65}\, \neg P\lor (Q\to R)\\
+			&\,\refeqv{implication}{65}\, P\to (Q\to R).
 		\end{align*}</center></p>
 </Details>
 <br>
