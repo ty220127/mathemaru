@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -6,10 +7,12 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refbtn: ['\\href{#1}{\\scriptsize\\sf[\\# #2]}',2],
-		refeq: ['\\underset{\\refbtn{#1}{#2}}{=}',2],
-		reflr: ['\\underset{\\refbtn{#1}{#2}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\refbtn{#1}{#2}}{\\Longrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -40,7 +43,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/1/27<br>
-updated on 2022/5/20
+updated on 2022/5/23
 </p>
 	  
 <p id="10">&nbsp;</p><div class="def">
@@ -157,7 +160,7 @@ updated on 2022/5/20
 		\end{align*}</center></p>
 	<p>下極限集合に関しても同様に</p>
 	<p><center>\begin{align*}
-		\underset{n\rightarrow\infty}{\mathrm{lim\, inf}}\ A_n\refeq{limit-set.html#189}{189} \bcu_{n=1}^{\infty}\underset{\in\,\mathcal{F}\,\,\refbtn{#42}{42}}{\underline{\bca_{m=n}^{\infty}A_m}}\underset{\refbtn{#10}{10}}{\in} \mathcal{F}.
+		\underset{n\rightarrow\infty}{\mathrm{lim\, inf}}\ A_n\refeq{limit-set}{189} \bcu_{n=1}^{\infty}\underset{\in\,\mathcal{F}\,\,\numref{sigma-algebra}{42}}{\underline{\bca_{m=n}^{\infty}A_m}}\underset{\numref{sigma-algebra}{10}}{\in} \mathcal{F}.
 		\end{align*}</center></p>
 </Details>
 <br>
@@ -211,18 +214,29 @@ updated on 2022/5/20
 	<ul class="defl">
 		<li> $\sigma(\mathcal{E})$ は $\sigma$ 加法族．
 		<li> $\mathcal{E}\subset \sigma(\mathcal{E}).$</li>
-		<li> $\mathcal{E}\subset \mathcal{S}$ を満たす任意の $\varOmega$ 上の $\sigma$ 加法族 $\mathcal{S}$ に対して，$\sigma(\mathcal{E})\subset\mathcal{S}.$
+		<li> $\mathcal{E}\subset \mathcal{F}$ を満たす任意の $\varOmega$ 上の $\sigma$ 加法族 $\mathcal{S}$ に対して，$\sigma(\mathcal{E})\subset\mathcal{F}.$
 	</ul>
 </div>
 <br>
 
 <p id="91">&nbsp;</p><div class="prp">
 	<b>[#91] 命題：σ加法族の生成の一意性</b><br>
-	<p>$\varOmega$ のある部分集合族 $\mathcal{E}$ から生成される $\sigma$ 加法族は唯一つ存在する．</p>
+	<p>$\varOmega$ の任意の部分集合族 $\mathcal{E}$ から生成される $\sigma$ 加法族$\nr{sigma-algebra}{90}$ が唯一つ存在する．</p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p></p>
+	<p>$\mathcal{E}$ を含む $\varOmega$ 上の $\sigma$ 加法族を適当に集合 $\varLambda$ で添字付け，$\{\mathcal{F}_\lambda\}_{\lambda\in\varLambda}$ とおく：
+	<p><center>\begin{align*}
+		\{\mathcal{F}\,|\,(\mathcal{E}\subset\mathcal{F})\land (\mathcal{F}:\text{$\sigma\!$ -algebra})\} =: \{\mathcal{F}_\lambda\}_{\lambda\in\varLambda}.
+		\end{align*}</center></p>
+	<p> $2^\varOmega$ は明らかに $\mathcal{E}$ を含む $\sigma$ 加法族であるから$\nr{sigma-algebra}{45}$ ，$\{\mathcal{F}_\lambda\}\not =\emptyset$ である．<br>
+		ここで，集合族 $\sigma(\mathcal{E})$ を</p>
+	<p><center>\begin{align*}
+		\sigma(\mathcal{E}) := \bca_{\lambda\in\varLambda} \mathcal{F}_\lambda
+		\end{align*}</center></p>
+	<p>とおくと，これは $\mathcal{E}$ から生成される $\sigma$ 加法族$\nr{sigma-algebra}{90}$である：$\sigma(\mathcal{E})$ は $\sigma$ 加法族の共通部分であるから，$\sigma(\mathcal{E})$ もまた $\sigma$ 加法族である$\nr{sigma-algebra}{31}$．また，$\sigma(\mathcal{E})$ の定義より $\mathcal{E}\subset\sigma(\mathcal{E})$．さらに，集合族の元の共通部分に関する性質より，任意の $\lambda_0\in\varLambda$ に対して $\sigma(\mathcal{E}) = \bigcap_{\lambda\in\varLambda} \mathcal{F}_\lambda\subset \mathcal{F}_{\lambda_0}$．</p>
+	
+	<p>続いて，一意性を示す．ある集合族 $\mathcal{G}$ もまた $\mathcal{E}$ から生成される $\sigma$ 加法族であるとする．いま，定義 iii より，$\sigma(\mathcal{E})$ と $\mathcal{G}$ はともに $\{\mathcal{F}_\lambda\}$ に属する．よって $\sigma(\mathcal{E})\subset \mathcal{G}$ かつ $\sigma(\mathcal{E})\supset \mathcal{G}$ であり，集合の相等性$\nr{set}{111}$ から $\sigma(\mathcal{E})= \mathcal{G}$ が成り立つ．</p>
 </Details>
 <br>
 
@@ -232,7 +246,6 @@ updated on 2022/5/20
 </div>
 <Details>
 	<summary>証明</summary>
-	
 </Details>
 <br>
 	  
