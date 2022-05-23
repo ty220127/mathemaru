@@ -31,6 +31,15 @@
 	const ttl = "含意"
 	document.title= ttl + "｜演習問題集"
 </script>
+<style>
+	.cor{
+	        padding: 0.5%; 
+	        margin-bottom: 0.3%; 
+		font-size: 14px;
+		font-weight: normal;
+		background-color: #c8c8c8;
+	}
+</style>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
 
@@ -45,7 +54,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
 established on 2022/2/8<br>
-updated on 2022/5/21<br>
+updated on 2022/5/23<br>
 </p>
     
 <p id="65">&nbsp;</p><div class="def">
@@ -297,6 +306,19 @@ updated on 2022/5/21<br>
 			&\,\refeqv{implication}{65}\, P\to (Q\to R).
 		\end{align*}</center></p>
 </Details>
+<details>
+	<summary>補足</summary>
+	<p>命題の交換法則$\nr{proposition}{60}$ を用いることで</p>
+	<p><center>\begin{align*}
+		(P\land Q)\to R \equiv (Q\land P)\to R
+		\end{align*}</center></p>
+	<p>と書き換えられることから，次も成り立つ：</p>
+	
+	<div class="cor">
+	<b>系：</b>命題 $P,\ Q,\ R$ に対して
+		<p><center>$(P\land Q)\to R\equiv Q\to (P\to R).$</center></p>
+	</div>
+</details>
 <br>
 
 <br><br>
@@ -315,4 +337,3 @@ updated on 2022/5/21<br>
 </p>
 </body>
 </html>
-
