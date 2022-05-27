@@ -80,3 +80,19 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
 ul.defl{
       list-style-type: lower-roman;
 }
+
+ol.q li {
+	list-style-type: none;
+	counter-increment: cnt;
+	position: relative;
+}
+ 
+ol.q li::before {
+	content: "(" counter(cnt) ")　";
+	display: inline-block;
+	margin-left: -2.5em;
+	width: 3em;
+	text-align: right;
+	top: 0;
+	left: 0;
+}
