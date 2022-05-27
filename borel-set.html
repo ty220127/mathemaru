@@ -1,4 +1,5 @@
 
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -44,7 +45,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
 established on 2022/3/15<br>
-updated on 2022/5/24
+updated on 2022/5/27
 </p>
     
 <p id="148">&nbsp;</p><div class="def">
@@ -57,8 +58,8 @@ updated on 2022/5/24
 <br>
 
 <p id="246">&nbsp;</p><div class="prp">
-	<b>[#246] 命題：区間は実数空間上の Borel 集合</b><br>
-	<p>以下はすべて $\mathbb{R}$ 上の Borel 集合である： $a\lt b$ を満たす任意の $a,\ b\in\mathbb{R}$ に対して</p>
+	<b>[#246] 命題：区間は１次元 Borel 集合</b><br>
+	<p>以下はすべて $\mathbb{R}$ 上の Borel 集合である： $-\infty\leq a\lt b\leq \infty$ を満たす任意の $a,\ b\in\mathbb{R}$ に対して</p>
 	<p><center>\begin{align*}
 		(a,\ b),\ [a,\ b],\ (a,\ b],\ [a,\ b),\ \{a\}.
 		\end{align*}</center></p>
@@ -66,8 +67,18 @@ updated on 2022/5/24
 <br>
 
 <p id="247">&nbsp;</p><div class="prp">
-	<b>[#247] 命題：有理数空間は実数空間の Borel 集合</b><br>
+	<b>[#247] 命題：有理数空間は１次元 Borel 集合</b><br>
 	<p>有理数集合 $\mathbb{Q}$ は $\mathbb{R}$ 上の Borel 集合である．</p>
+</div>
+<br>
+
+<p id="248">&nbsp;</p><div class="prp">
+	<b>[#248] 命題：$d$ 次元 Borel 集合の生成</b><br>
+	<p>集合族 $\mathcal{J}_d$ を</p>
+	<p><center>\begin{align*}
+		\mathcal{J}_d = \left\{ \prod_{k=1}^{d}(a_k,\,b_k]\subset\mathbb{R}^d\,\middle|\,\begin{array}{cc} -\infty\leq a_k\leq b_k\leq \infty\\ k = 1,\,\cdots,\,d \end{array}\right\}
+		\end{align*}</center></p>
+	<p>とすると，$\mathcal{J}_d$ は $d$ 次元 Borel 集合族 $\mathcal{B}(\mathbb{R}^d)$ を生成する．</p>
 </div>
 <br>
 
@@ -75,6 +86,7 @@ updated on 2022/5/24
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
+	<li><a href="https://mathematics-pdf.com/pdf/measure.pdf">測度｜MATHEMATICS.PDF</li></a>
 	<li><a href="https://mathlandscape.com/borel-set/">ボレル集合とは～定義と性質～｜数学の景色</a></li>
 </ul>
 </div>
