@@ -1,41 +1,53 @@
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
-			     TeX: {  extensions: ["cancel.js"] },
-			   });
-	MathJax.Hub.Config({ TeX: { Macros: { 
-		numref: ['{\\sf [\\# #1]}', 1],
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
-		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
 		trp: '\\mathsf{T}',
-		deg: '\\mathrm{deg}',
-		tr: '\\mathrm{tr}',
-		diag: '\\mathrm{diag}'
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
 	}}});
 </script>
-<title>行列｜演習問題集</title>
+<script>
+	const ttl = "行列"
+	document.title= ttl + "｜演習問題集"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-</style>
 </head>
 
 <body>
-<center><div id="titlehead">行列</div></center>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
 
-<p style="text-align:right;">
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/14<br>
-updated on 2022/4/23
+updated on 2022/5/29
 </p>
     
-<div class="def" id="144">
+<p id="144">&nbsp;</p><div class="def">
 	<b>[#144] 定義：行列</b><br>
 	<p>数を長方形状に並べた表を【行列 (matrix)】と呼ぶ．特に $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個並べたものを「 $(m,\,n)$ 型の行列」，或いは「 $(m,\,n)$-行列」と呼ぶ．</p>
 	<ul>
@@ -45,8 +57,8 @@ updated on 2022/4/23
 		<li> $m$ 個の数による行のみの行列（$n=1$）を【 $m$ 次行ベクトル ($m$-row vector)】，$n$ 個の数による列のみの行列（$m=1$）を【 $n$ 次列ベクトル ($n$-column vector)】と呼ばれる．</li>
 		<!--<li> 「$m\times n$ 行列 $A = [a_{ij}]$ と $s\times t$ 行列 $B=[b_{ij}]$ が等しい」とは $m=s$ かつ $n=t$ であり，更に任意の組 $(i,\,j)$ に対して $a_{ij} = b_{ij}$ が成り立つことを云う．</li>-->
   </ul>
-
-	<Details>
+</div>
+<Details>
 	<summary>記法</summary>
 	<ul>
 		<li> $1\leq i\leq m$ ，$1\leq j\leq n$ に対して行列 $A$ の $(i,\,j)$-成分を $a_{ij}$ と書くと決めれば，行列 $A$ は
@@ -65,13 +77,14 @@ updated on 2022/4/23
 				\end{array}\right)
 				\end{align}$</center></p>
 			などと表記される（本サイトでは左の表記を採用する）．</li>
-		<li>記法上の誤解が生じない場合は，上の取り決めのもとで $A=[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ と略記することがある．行列の型も自明な場合は更に簡略化して $A=[a_{ij}]$ と書く．</li>
+		<!--<li>記法上の誤解が生じない場合は，上の取り決めのもとで $A=[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ と略記することがある．行列の型も自明な場合は更に簡略化して $A=[a_{ij}]$ と書く．</li>-->
+		<li>行列 $A$ の $(i,\,j)$-成分を $(A)_{ij}$ と書くことがある．上の表記との関係は，$(A)_{ij} = a_{ij}$．</li>
 	</ul>
-	</Details>
-</div>
-<br><br>
+</Details>
+<br>
 
-<div class="def" id="145">
+
+<p id="145">&nbsp;</p><div class="def">
 	<b>[#145] 定義：行列の線形演算</b><br>
 	<p> $A=[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$，$B=[b_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ をそれぞれ $(m,\,n)$-行列とする．</p>
 	<ul>
@@ -84,7 +97,8 @@ updated on 2022/4/23
 				\vdots & \vdots & \ddots & \vdots\\
 				a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
 				\end{array}\right].
-				\end{align*}$</center></p></li>
+				\end{align*}$</center></p>
+			<p>すなわち，$(A+B)_{ij} = (A)_{ij} +(B)_{ij}$．</p></li>
 		<li> $c$ を数として定義される以下の演算を行列の【スカラー倍 (scalar multiplication)】と呼び，$c$ を【スカラー (scalar)】と呼ぶ：
 			<p><center>$\begin{align*}
 				cA =\,\,& [ca_{ij}]\\
@@ -94,23 +108,24 @@ updated on 2022/4/23
 			  	\vdots & \vdots & \ddots & \vdots\\
 			  	ca_{m1} & ca_{m2} & \cdots & ca_{mn}
 				\end{array}\right].
-				\end{align*}$</center></p></li>
+				\end{align*}$</center></p>
+			<p>すなわち，$(cA)_{ij} = c(A)_{ij}$．</p></li>
 	</ul>
 	<p>以上の和とスカラー倍をまとめて行列の【線形演算 (linear operation)】と呼ぶ．<br>
 		なお，特に行列 $(-1)A$ を $-A$ と表記し，$A+(-B)$ を $A-B$ と表記する．</p>
 </div>
-<br><br>
+<br>
 
-<div class="def" id="178">
+<p id="178">&nbsp;</p><div class="def">
 	<b>[#178] 定義：零行列</b><br>
-	<p>すべての成分が $0$ であるような行列を【零行列 (zero matrix)】と呼ぶ．$(m,\,n)$ 型の零行列はしばしば $O_{mn}$ と表記される：</p>
+	<p>すべての成分が $0$ であるような行列を【零行列 (zero matrix)】と呼ぶ．$(m,\,n)$ 型の零行列はしばしば $O_{mn}$ と表記される： $(i,\,j)\in \{1,\,\cdots,\,m\}\times \{1,\,\cdots,\,n\}$ に対して</p>
 	<p><center>$\begin{align*}
-		O_{mn} := [0]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}.
+		(O)_{ij} := 0.
 		\end{align*}$</center></p>
 </div>
-<br><br>
+<br>
 
-<div class="prp" id="179">
+<p id="179">&nbsp;</p><div class="prp">
 	<b>[#179] 定義：行列の線形演算の性質</b><br>
 	<p> $A=[a_{ij}]$，$B=[b_{ij}]$，$C=[c_{ij}]$ を $(m,\,n)$-行列，$O_{mn}$ を $(m,\,n)$ 型の零行列，$\alpha,\,\beta$ を数とする．このとき以下が成り立つ：</p>
 	<ol>
@@ -141,28 +156,28 @@ updated on 2022/4/23
 	</ol>
 	<p>が成り立つことと線形演算の定義 <a href="#145">[#145]</a> から題意が示される．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="def" id="180">
+<p id="180">&nbsp;</p><div class="def">
 	<b>[#180] 定義：行列の乗法と積</b><br>
 	<p> $A=[a_{ij}]^{i=1,\,\cdots,\,\ell}_{j=1,\,\cdots,\,m}$ を $(\ell,\,m)$-行列，$B=[b_{jk}]^{j=1,\,\cdots,\,m}_{k=1,\,\cdots,\,n}$ を $(m,\,n)$-行列とする．以下で定義される演算 $AB$ を行列の【乗法 (multiplication)】と呼び，その結果を【積 (product)】と呼ぶ：</p>
 	<p><center>$\begin{align*}
-		AB = [p_{ik}]^{i=1,\,\cdots,\,\ell}_{k=1,\,\cdots,\,n}\quad\text{with}\quad p_{ik} = \sum_{j=1}^{m}a_{ij}b_{jk}.
+		AB = [p_{ik}]^{i=1,\,\cdots,\,\ell}_{k=1,\,\cdots,\,n}\ \ \text{with}\ \ p_{ik} = (AB)_{ik} = \sum_{j=1}^{m}a_{ij}b_{jk}.
 		\end{align*}$</center></p>
 	<p>ここで，積 $AB$ は $(\ell,\,n)$-行列であることに注意せよ．</p>
 </div>
-<br><br>
+<br>
 
-<div class="def" id="184">
+<p id="184">&nbsp;</p><div class="def">
 	<b>[#184] 定義：単位行列</b><br>
-	<p>すべての対角成分が $1$ でそれ以外の成分がすべて $0$ であるような $n$ 次正方行列 $I_n$ を【単位行列 (unit matrix)】或いは【恒等行列 (identity matrix)】と呼ぶ：$\delta_{ij}$ を Kronecker のデルタとして</p>
+	<p>すべての対角成分が $1$ でそれ以外の成分がすべて $0$ であるような $n$ 次正方行列 $I_n$ を【単位行列 (unit matrix)】或いは【恒等行列 (identity matrix)】と呼ぶ：$\delta_{ij}$ を Kronecker のデルタとして，$(i,\,j) \in \{1,\,\cdots,\,n\}^2$ に対して</p>
 	<p><center>$\begin{align*}
-		I_{n} := [\delta_{ij}]^{i=1,\,\cdots,\,n}_{j=1,\,\cdots,\,n}.
+		(I_{n})_{ij} := \delta_{ij}.
 		\end{align*}$</center></p>
 </div>
-<br><br>
+<br>
 
-<div class="prp" id="185">
+<p id="185">&nbsp;</p><div class="prp">
 	<b>[#185] 命題：行列の積の性質</b><br>
 	<p> $A=[a_{ij}],\,C=[c_{ij}]$ を $(\ell,\,m)$-行列，$B=[b_{ij}],\,D=[d_{ij}]$ を $(m,\,n)$-行列，$O_{mn}$ を $(m,\,n)$ 型の零行列，$I_n$ を $n$ 次の正方行列とする．このとき以下が成り立つ：</p>
 	<ol>
@@ -173,9 +188,9 @@ updated on 2022/4/23
 		<li>  $AI_{m} = I_{\ell}A = A$（積における単位行列の性質）</li>
 	</ol>
 </div>
-<br><br>
+<br>
 
-<div class="exr" id="186">
+<p id="186">&nbsp;</p><div class="exr">
 	<b>[#186] 演習：行列の積と連立方程式 → <a href="regular.html#163">[#]</a></b><br>
 	<p> 3 次正方行列 $A$ と 3 次列ベクトル $\bs{p}$ を</p>
 	<p><center>$\begin{align*}
@@ -207,9 +222,9 @@ updated on 2022/4/23
 <summary>補足</summary>
 	<p>問題の行列 $X$ は $AX=XA=I$ を満たした．このような行列は「$A$ の逆行列」と呼ばれる．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="exr" id="187">
+<p id="187">&nbsp;</p><div class="exr">
 	<b>[#187] 演習：逆行列の特定 → <a href="regular.html#163">[#163]</a>・<a href="regular.html#167">[#167]</a></b><br>
 	<p> 2 次正方行列 $A$ を $A=\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right]$，$I$ を 2 次単位行列とする．このとき $AX=I$ を満たすような 2 次正方行列 $X$ を求めよ．また $XA$ を計算せよ．</p>
 </div>
@@ -237,14 +252,16 @@ updated on 2022/4/23
 <summary>補足</summary>
 	<p>問題の行列 $X$ は $AX=XA=I$ を満たした．このような行列は「$A$ の逆行列」と呼ばれる．</p>
 </Details>
-<br><br>
+<br>
 
+<br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li><a href="https://web.stanford.edu/~boyd/vmls/vmls.pdf">Boys, S., Vandenberghe, L.: Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares, Cambridge University Press, Cambridge (2018)</a>.</li>
 	<li><a href="https://joshua.smcvt.edu/linearalgebra/book.pdf">Hefferon, J.: Linear algebra, fourth edition, pdf</a>.</li>
 	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
-	<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2020_05_03.pdf">嶺幸太郎: 線形代数学 講義ノート (2020/05/03ver.), pdf</a>.</li>
+	<li><a href="https://www.heisei-u.ac.jp/ba/fukui/pdf/mathtextA2a.pdf">福井正康: 基礎から学ぶシリーズ１ 基礎からの数学, 2章の1, 公開pdf</a> [2022/5/29 閲覧].</li>
+	<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2020_05_03.pdf">嶺幸太郎: 線形代数学 講義ノート (2020/05/03ver.), 公開pdf</a>.</li>
 </ul>
 </div>
       
