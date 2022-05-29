@@ -1,0 +1,86 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "転置行列"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/5/29<br>
+updated on 2022/5/29
+</p>
+
+<p id="249">&nbsp;</p><div class="def">
+	<b>[#249] 定義：転置行列</b><br>
+		<p>$(m,\,n)$-行列 $A=[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}
+$ に対して，$(n,\,m)$-行列 $T$ が</p>
+		<p><center>\begin{align*}
+			T = [a_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m}
+			\end{align*}</center></p>
+		<p>であるとする．この $T$ を $A$ の【転置行列 (transpose)】と呼び，$T=A^\trp$ で表す．</p>
+</div>
+<br>
+ 	
+<p id="250">&nbsp;</p><div class="prp">
+	<b>[#250] 定義：転置行列の転置行列は元の行列</b><br>
+		<p>任意の行列 $A$ に対して</p>
+		<p><center>\begin{align*}
+			(A^\trp)^\trp = A.
+			\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $A$ を $(m,\,n)$-行列 $[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ であるとすれば</p>
+	<p><center>\begin{align*}
+		(A^\trp)^\trp \refeq{transpose}{249} \left([a_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m}\right)^\trp \refeq{transpose}{249} [a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n} = A.
+		\end{align*}</center></p>
+</Details>
+<br>
+ 	
+<br><br>
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>齋藤正彦: 線型代数学, 東京図書, (2014).</li>
+		<li><a href="https://risalc.info/src/transpose-matrix-properties.html">転置行列の性質と公式集 (具体例と証明付) - 理数アラカルト</a></li>
+	</ul>
+</div>
+</body>
+</html>
