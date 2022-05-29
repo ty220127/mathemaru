@@ -50,9 +50,9 @@ updated on 2022/5/29
 <p id="249">&nbsp;</p><div class="def">
 	<b>[#249] 定義：転置行列</b><br>
 		<p>$(m,\,n)$-行列 $A=[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}
-$ に対して，$(n,\,m)$-行列 $T$ が</p>
+$ に対して，$(n,\,m)$-行列 $T = [t_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m}$ が，任意の取り得る組 $(i,\,j)$ に対して</p>
 		<p><center>\begin{align*}
-			T = [a_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m}
+			t_{ji} = a_{ij}
 			\end{align*}</center></p>
 		<p>であるとする．この $T$ を $A$ の【転置行列 (transpose)】と呼び，$T=A^\trp$ で表す．</p>
 </div>
@@ -67,13 +67,63 @@ $ に対して，$(n,\,m)$-行列 $T$ が</p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p> $A$ を $(m,\,n)$-行列 $[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ であるとすれば</p>
+	<p> $A$ を $(m,\,n)$-行列 $[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ であるとすれば，$A^\trp = [t_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m}$ について</p>
 	<p><center>\begin{align*}
 		(A^\trp)^\trp \refeq{transpose}{249} \left([a_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m}\right)^\trp \refeq{transpose}{249} [a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n} = A.
 		\end{align*}</center></p>
 </Details>
 <br>
  	
+<p id="251">&nbsp;</p><div class="prp">
+	<b>[#251] 定義：和の転置行列は転置行列の和</b><br>
+		<p>型の等しい行列 $A,\ B$ に対して</p>
+		<p><center>\begin{align*}
+			(A+B)^\trp = A^\trp + B^\trp.
+			\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $A,\ B$ はそれぞれ $(m,\,n)$-行列 $[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n},\ [b_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ であるとすれば</p>
+	<p><center>\begin{align*}
+		(A+B)^\trp &\,\refeq{matrix}{145}\, \left([a_{ij}+b_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}\right)^\trp \,\refeq{transpose}{249}\, [a_{ji}+b_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m} \\
+		&\,\refeq{matrix}{145}\, [a_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m} + [b_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m} \,\refeq{transpose}{249}\, A^\trp + B^\trp.
+		\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="251">&nbsp;</p><div class="prp">
+	<b>[#251] 定義：スカラー倍の転置行列は転置行列のスカラー倍</b><br>
+		<p>任意の行列 $A$ と数 $c$ に対して</p>
+		<p><center>\begin{align*}
+			(cA)^\trp = c\,A^\trp.
+			\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $A$ は $(m,\,n)$-行列 $[a_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}$ であるとすれば</p>
+	<p><center>\begin{align*}
+		(cA)^\trp &\,\refeq{matrix}{145}\, \left([ca_{ij}]^{i=1,\,\cdots,\,m}_{j=1,\,\cdots,\,n}\right)^\trp \,\refeq{transpose}{249}\, [ca_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m} \\
+		&\,\refeq{matrix}{145}\, c\,[a_{ji}]^{j=1,\,\cdots,\,n}_{i=1,\,\cdots,\,m} \,\refeq{transpose}{249}\, c\, A^\trp.
+		\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="251">&nbsp;</p><div class="prp">
+	<b>[#251] 定義：積の転置行列は逆順の転置行列の積</b><br>
+		<p>行列 $A,\ B$ に対し積 $AB$ が定義できるとき，</p>
+		<p><center>\begin{align*}
+			(AB)^\trp = B^\trp A^\trp.
+			\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $A,\ B$ はそれぞれ $(\ell,\,m)$-行列 $[a_{ij}]^{i=1,\,\cdots,\,\ell}_{j=1,\,\cdots,\,m}$，$(m,\,n)$-行列 $[b_{jk}]^{j=1,\,\cdots,\,m}_{k=1,\,\cdots,\,n}$ であるとすれば</p>
+	<p><center>\begin{align*}
+		(AB)^\trp &\,\refeq{matrix}{180}\, \left(\left[\sum_{j=1}^{m}a_{ij}b_{jk}\right]_{\begin{array}{l}i=1,\,\cdots,\,\ell \\k=1,\,\cdots,\,n\end{array}}\right)^\trp \refeq{transpose}{249} 
+		\end{align*}</center></p>
+</Details>
+<br>
+
 <br><br>
 <div id="bib">
 <b>参考文献</b>
