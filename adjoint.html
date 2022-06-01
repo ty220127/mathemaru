@@ -1,0 +1,102 @@
+
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "複素共役行列と随伴行列"
+	document.title= ttl + "｜演習問題集"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li><a href="index.html">演習問題集</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/6/1<br>
+updated on 2022/6/1
+</p>
+
+<p id="254">&nbsp;</p><div class="def">
+	<b>[#254] 定義：転置行列</b><br>
+		<p>型の等しい行列 $A,\ C$ を考える．任意の成分 $(i,\,j)$ に対して</p>
+		<p><center>\begin{align*}
+			(C)_{ij} = \overline{(A)_{ij}}
+			\end{align*}</center></p>
+		<p>であるとする．この $C$ を $A$ の【複素共役行列 (complex conjugate matrix)】と呼び，$C=\overline{A}$ で表す．</p>
+</div>
+<br>
+
+<p id="255">&nbsp;</p><div class="prp">
+	<b>[#255] 命題：複素共役行列の自明な性質</b><br>
+		<p>行列 $A,\ B$ と複素数 $c$ に対して</p>
+		<ol>
+		<li>　$\overline{\overline{A}} = A$．</li>
+		<li>　$\overline{A+B} = \overline{A} + \overline{B}$．
+		<li>　$\overline{cA} = \overline{c}\overline{A}$．</li>
+		<li>　$\overline{AB} = \overline{A}\,\overline{B}$．
+		</ol>
+</div>
+<Details>
+	<summary>証明</summary>
+	<ol><li>　$(\overline{\overline{A}})_{ij} \,\refeq{adjoint}{254}\, \overline{(\overline{A})_{ij}} \,\refeq{adjoint}{254}\, \overline{\overline{(A)_{ij}}} =(A)_{ij}.$</li>
+	<li>　$(\overline{A+B})_{ij} \,\refeq{adjoint}{254}\, \overline{(A+B)_{ij}} \,\refeq{matrix}{145}\,  \overline{(A)_{ij}+(B)_{ij}} = \overline{(A)_{ij}}+\overline{(B)_{ij}} \,\refeq{adjoint}{254}\, (\overline{A})_{ij}+(\overline{B})_{ij} \,\refeq{matrix}{145}\, (\overline{A}+\overline{B})_{ij}$．</li>
+	<li>　$(\overline{cA} )_{ij} \,\refeq{adjoint}{245}\, \overline{(cA)_{ij}} \,\refeq{matrix}{145} \overline{c(A)_{ij}} = \overline{c} \overline{(A)_{ij}} \,\refeq{adjoint}{245}\,\overline{c} (\overline{A})_{ij} \,\refeq{matrix}{145}\, (\overline{c}\overline{A})_{ij}$．
+	<li><p>　ある $m$ が存在して</p>
+		<p><center>\begin{align*}
+			(\overline{AB})_{ik} \,\refeq{adjoint}{245}\, \overline{(AB)_{ik}} \,\refeq{matrix}{180}\, \overline{\sig_{j=1}^{m} (A)_{ij}(B)_{jk}} = \sig_{j=1}^{m} \overline{(A)_{ij}(B)_{jk}} \,\refeq{adjoint}{245}\, \sig_{j=1}^{m} (\overline{A})_{ij}(\overline{B})_{jk} \,\refeq{matrix}{180}\, (\overline{A}\,\overline{B})_{ik}
+			\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="256">&nbsp;</p><div class="def">
+	<b>[#256] 定義：随伴行列</b><br>
+		<p>行列 $A$ の複素共役行列の転置行列 $\overline{A}^\trp$ を $A$ の【随伴行列 (adjoint matrix)】或いは【<ruby><rb>Hermite</rb><rp>(</rp><rt>エルミート</rt><rp>)</rp></ruby> 転置 (Hermitian transpose)】と呼び，$A^*$ 或いは $A^\dagger$ で表す：</p>
+		<p><center>\begin{align*}
+			(A^*)_{ij} = (\overline{A}^\trp)_{ij} = (\overline{A})_{ji}
+			\end{align*}</center></p>
+</div>
+<br>
+ 	 	
+<br><br>
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>齋藤正彦: 線型代数学, 東京図書, (2014).</li>
+		<li><a href="https://www.momoyama-usagi.com/entry/math-linear-algebra-ap01">うさぎでもわかる線形代数 応用編第1羽 複素数とベクトル・複素数と行列 - 工業大学生ももやまのうさぎ塾</a></li>
+		<li><a href="https://mathlandscape.com/hermitian-transpose/">随伴行列(エルミート転置,共役転置)の定義と性質10個 - 数学の景色</a></li>
+	</ul>
+</div>
+</body>
+</html>
