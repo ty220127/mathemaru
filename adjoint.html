@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -71,8 +70,8 @@ updated on 2022/6/2
 <Details>
 	<summary>証明</summary>
 	<ol><li>　$(\overline{\overline{A}})_{ij} \,\refeq{adjoint}{254}\, \overline{(\overline{A})_{ij}} \,\refeq{adjoint}{254}\, \overline{\overline{(A)_{ij}}} =(A)_{ij}.$</li>
-	<li>　$(\overline{A+B})_{ij} \,\refeq{adjoint}{254}\, \overline{(A+B)_{ij}} \,\refeq{matrix}{145}\,  \overline{(A)_{ij}+(B)_{ij}} = \overline{(A)_{ij}}+\overline{(B)_{ij}} \,\refeq{adjoint}{254}\, (\overline{A})_{ij}+(\overline{B})_{ij} \,\refeq{matrix}{145}\, (\overline{A}+\overline{B})_{ij}$．</li>
-	<li>　$(\overline{cA} )_{ij} \,\refeq{adjoint}{254}\, \overline{(cA)_{ij}} \,\refeq{matrix}{145} \overline{c(A)_{ij}} = \overline{c} \overline{(A)_{ij}} \,\refeq{adjoint}{254}\,\overline{c} (\overline{A})_{ij} \,\refeq{matrix}{145}\, (\overline{c}\overline{A})_{ij}$．
+	<li>　$(\overline{A+B})_{ij} \,\refeq{adjoint}{254}\, \overline{(A+B)_{ij}} \,\refeq{matrix}{145}\,  \overline{(A)_{ij}+(B)_{ij}} = \overline{(A)_{ij}}+\overline{(B)_{ij}} \,\refeq{adjoint}{254}\, (\overline{A})_{ij}+(\overline{B})_{ij} \,\refeq{matrix}{145}\, (\overline{A}+\overline{B})_{ij}.$</li>
+	<li>　$(\overline{cA} )_{ij} \,\refeq{adjoint}{254}\, \overline{(cA)_{ij}} \,\refeq{matrix}{145} \overline{c(A)_{ij}} = \overline{c} \overline{(A)_{ij}} \,\refeq{adjoint}{254}\,\overline{c} (\overline{A})_{ij} \,\refeq{matrix}{145}\, (\overline{c}\overline{A})_{ij}.$
 	<li><p>　ある $m$ が存在して</p>
 		<p><center>\begin{align*}
 			(\overline{AB})_{ik} \,\refeq{adjoint}{254}\, \overline{(AB)_{ik}} \,\refeq{matrix}{180}\, \overline{\sig_{j=1}^{m} (A)_{ij}(B)_{jk}} = \sig_{j=1}^{m} \overline{(A)_{ij}(B)_{jk}} \,\refeq{adjoint}{254}\, \sig_{j=1}^{m} (\overline{A})_{ij}(\overline{B})_{jk} \,\refeq{matrix}{180}\, (\overline{A}\,\overline{B})_{ik}
@@ -108,19 +107,16 @@ updated on 2022/6/2
 		<ol>
 		<li>　$(A^*)^* = A$．</li>
 		<li>　$(A+B)^* = A^* + B^*$．
-		<li>　$(cA)^* = \overline{c}A^\trp$．</li>
+		<li>　$(cA)^* = \overline{c}A^*$．</li>
 		<li>　$(AB)^* = B^* A^*$．
 		</ol>
 </div>
 <Details>
 	<summary>証明</summary>
-	<ol><li>　$(\overline{\overline{A}})_{ij} \,\refeq{adjoint}{254}\, \overline{(\overline{A})_{ij}} \,\refeq{adjoint}{254}\, \overline{\overline{(A)_{ij}}} =(A)_{ij}.$</li>
-	<li>　$(\overline{A+B})_{ij} \,\refeq{adjoint}{254}\, \overline{(A+B)_{ij}} \,\refeq{matrix}{145}\,  \overline{(A)_{ij}+(B)_{ij}} = \overline{(A)_{ij}}+\overline{(B)_{ij}} \,\refeq{adjoint}{254}\, (\overline{A})_{ij}+(\overline{B})_{ij} \,\refeq{matrix}{145}\, (\overline{A}+\overline{B})_{ij}$．</li>
-	<li>　$(\overline{cA} )_{ij} \,\refeq{adjoint}{254}\, \overline{(cA)_{ij}} \,\refeq{matrix}{145} \overline{c(A)_{ij}} = \overline{c} \overline{(A)_{ij}} \,\refeq{adjoint}{254}\,\overline{c} (\overline{A})_{ij} \,\refeq{matrix}{145}\, (\overline{c}\overline{A})_{ij}$．
-	<li><p>　ある $m$ が存在して</p>
-		<p><center>\begin{align*}
-			(\overline{AB})_{ik} \,\refeq{adjoint}{254}\, \overline{(AB)_{ik}} \,\refeq{matrix}{180}\, \overline{\sig_{j=1}^{m} (A)_{ij}(B)_{jk}} = \sig_{j=1}^{m} \overline{(A)_{ij}(B)_{jk}} \,\refeq{adjoint}{254}\, \sig_{j=1}^{m} (\overline{A})_{ij}(\overline{B})_{jk} \,\refeq{matrix}{180}\, (\overline{A}\,\overline{B})_{ik}
-			\end{align*}</center></p>
+	<ol><li>　$(A^*)^* \ \refeq{adjoint}{256}\  \overline{(\overline{A}{}^\trp)^\trp} \ \refeq{transpose}{250}\ \overline{\overline{A}} \ \refeq{adjoint}{255}\ \ A.$</li>
+	<li>　$(A+B)^* \ \refeq{adjoint}{256}\ \overline{(A+B)^\trp} \ \refeq{transpose}{251}\ \overline{A^\trp + B^\trp} \ \refeq{adjoint}{255}\ \overline{A^\trp} + \overline{B^\trp} \ \refeq{adjoint}{256}\ A^* +B^*.$</li>
+	<li> $(cA)^* \ \refeq{adjoint}{256}\ \overline{(cA)^\trp} \ \refeq{transpose}{252}\ \overline{c A^\trp} \ \refeq{adjoint}{255} \overline{c}\overline{A^\trp} \ \refeq{adjoint}{256}\ \overline{c} A^*.$</li>
+	<li>　$(AB)^* \ \refeq{adjoint}{256}\ \overline{(AB)^\trp}\ \refeq{transpose}{253}\ \overline{B^\trp A^\trp} \ \refeq{adjoint}{255} \overline{B^\trp}\,\overline{A^\trp} \ \refeq{adjoint}{256} B^*A^*.$
 </Details>
 <br>
 
