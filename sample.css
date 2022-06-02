@@ -96,3 +96,11 @@ ol.q li::before {
 	top: 0;
 	left: 0;
 }
+
+.cor{
+        padding: 0.5%; 
+        margin-bottom: 0.3%; 
+	font-size: 14px;
+	font-weight: normal;
+	background-color: #c8c8c8;
+}
