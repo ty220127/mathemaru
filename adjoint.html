@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -44,11 +45,11 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/1<br>
-updated on 2022/6/1
+updated on 2022/6/2
 </p>
 
 <p id="254">&nbsp;</p><div class="def">
-	<b>[#254] 定義：転置行列</b><br>
+	<b>[#254] 定義：複素共役行列</b><br>
 		<p>型の等しい行列 $A,\ C$ を考える．任意の成分 $(i,\,j)$ に対して</p>
 		<p><center>\begin{align*}
 			(C)_{ij} = \overline{(A)_{ij}}
@@ -59,7 +60,7 @@ updated on 2022/6/1
 
 <p id="255">&nbsp;</p><div class="prp">
 	<b>[#255] 命題：複素共役行列の自明な性質</b><br>
-		<p>行列 $A,\ B$ と複素数 $c$ に対して</p>
+		<p>積 $AB$ を定義できる行列 $A,\ B$ と複素数 $c$ に対して</p>
 		<ol>
 		<li>　$\overline{\overline{A}} = A$．</li>
 		<li>　$\overline{A+B} = \overline{A} + \overline{B}$．
@@ -81,13 +82,48 @@ updated on 2022/6/1
 
 <p id="256">&nbsp;</p><div class="def">
 	<b>[#256] 定義：随伴行列</b><br>
-		<p>行列 $A$ の複素共役行列の転置行列 $\overline{A}^\trp$ を $A$ の【随伴行列 (adjoint matrix)】或いは【<ruby><rb>Hermite</rb><rp>(</rp><rt>エルミート</rt><rp>)</rp></ruby> 転置 (Hermitian transpose)】と呼び，$A^*$ 或いは $A^\dagger$ で表す：</p>
+		<p>行列 $A$ の転置行列の複素共役行列 $\overline{A^\trp}$ を $A$ の【随伴行列 (adjoint matrix)】或いは【<ruby><rb>Hermite</rb><rp>(</rp><rt>エルミート</rt><rp>)</rp></ruby> 転置 (Hermitian transpose)】と呼び，$A^*$ 或いは $A^\dagger$ で表す：</p>
 		<p><center>\begin{align*}
-			(A^*)_{ij} = (\overline{A}^\trp)_{ij} = (\overline{A})_{ji}
+			(A^*)_{ij} = (\overline{A}^\trp)_{ij} \,\refeq{adjoint}{254}\, \overline{(A^\trp)_{ij}} \,\refeq{transpose}{249}\, \overline{(A)_{ji}}
 			\end{align*}</center></p>
 </div>
+<Details>
+	<summary>補足</summary>
+	<p>複素共役と転置の順番は本質的な意味を持たない．つまり，先に行列 $A$ の複素共役をとり，そのあとに転置をとっても随伴行列となる：</p>
+	<p><center>\begin{align*}
+		(\overline{A}{}^\trp)_{ij} \,\refeq{transpose}{249}\, (\overline{A})_{ji} \,\refeq{adjoint}{254}\, \overline{(A)_{ji}} = (A^*)_{ij}.
+		\end{align*}</center></p>
+	<p>まとめれば，</p>
+	<div class="cor">
+	<b>系：</b>行列 $A$ に対して
+		<p><center>$A^* = \overline{A}{}^\trp.$</center></p>
+	</div>
+	<p>こちらの方を随伴行列の定義とする場合もある．</p>
+</Details>
 <br>
  	 	
+<p id="257">&nbsp;</p><div class="prp">
+	<b>[#257] 命題：随伴行列の自明な性質</b><br>
+		<p>積 $AB$ を定義できる行列 $A,\ B$ と複素数 $c$ に対して</p>
+		<ol>
+		<li>　$(A^*)^* = A$．</li>
+		<li>　$(A+B)^* = A^* + B^*$．
+		<li>　$(cA)^* = \overline{c}A^\trp$．</li>
+		<li>　$(AB)^* = B^* A^*$．
+		</ol>
+</div>
+<Details>
+	<summary>証明</summary>
+	<ol><li>　$(\overline{\overline{A}})_{ij} \,\refeq{adjoint}{254}\, \overline{(\overline{A})_{ij}} \,\refeq{adjoint}{254}\, \overline{\overline{(A)_{ij}}} =(A)_{ij}.$</li>
+	<li>　$(\overline{A+B})_{ij} \,\refeq{adjoint}{254}\, \overline{(A+B)_{ij}} \,\refeq{matrix}{145}\,  \overline{(A)_{ij}+(B)_{ij}} = \overline{(A)_{ij}}+\overline{(B)_{ij}} \,\refeq{adjoint}{254}\, (\overline{A})_{ij}+(\overline{B})_{ij} \,\refeq{matrix}{145}\, (\overline{A}+\overline{B})_{ij}$．</li>
+	<li>　$(\overline{cA} )_{ij} \,\refeq{adjoint}{254}\, \overline{(cA)_{ij}} \,\refeq{matrix}{145} \overline{c(A)_{ij}} = \overline{c} \overline{(A)_{ij}} \,\refeq{adjoint}{254}\,\overline{c} (\overline{A})_{ij} \,\refeq{matrix}{145}\, (\overline{c}\overline{A})_{ij}$．
+	<li><p>　ある $m$ が存在して</p>
+		<p><center>\begin{align*}
+			(\overline{AB})_{ik} \,\refeq{adjoint}{254}\, \overline{(AB)_{ik}} \,\refeq{matrix}{180}\, \overline{\sig_{j=1}^{m} (A)_{ij}(B)_{jk}} = \sig_{j=1}^{m} \overline{(A)_{ij}(B)_{jk}} \,\refeq{adjoint}{254}\, \sig_{j=1}^{m} (\overline{A})_{ij}(\overline{B})_{jk} \,\refeq{matrix}{180}\, (\overline{A}\,\overline{B})_{ik}
+			\end{align*}</center></p>
+</Details>
+<br>
+
 <br><br>
 <div id="bib">
 <b>参考文献</b>
@@ -95,6 +131,7 @@ updated on 2022/6/1
 		<li>齋藤正彦: 線型代数学, 東京図書, (2014).</li>
 		<li><a href="https://www.momoyama-usagi.com/entry/math-linear-algebra-ap01">うさぎでもわかる線形代数 応用編第1羽 複素数とベクトル・複素数と行列 - 工業大学生ももやまのうさぎ塾</a></li>
 		<li><a href="https://mathlandscape.com/hermitian-transpose/">随伴行列(エルミート転置,共役転置)の定義と性質10個 - 数学の景色</a></li>
+		<li><a href="https://risalc.info/src/adjoint-matrix-properties.html">随伴行列について解説 ～ 性質と公式 ～ (証明付) - 理数アラカルト -</a></li>
 	</ul>
 </div>
 </body>
