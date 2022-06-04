@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -55,6 +56,10 @@ updated on 2022/6/4
 			\end{align*}</center></p>
 		<p>であるとする．この $C$ を $A$ の【複素共役行列 (complex conjugate matrix)】と呼び，$C=\overline{A}$ で表す．</p>
 </div>
+<Details>
+	<summary>補足</summary>
+	<p>$A$ が実行列であるときは当然 $\overline{A} =A$ である．</p>
+</Details>
 <br>
 
 <p id="255">&nbsp;</p><div class="prp">
@@ -87,7 +92,7 @@ updated on 2022/6/4
 			\end{align*}</center></p>
 </div>
 <Details>
-	<summary>補足</summary>
+	<summary>補足１</summary>
 	<p>複素共役と転置の順番は本質的な意味を持たない．つまり，先に行列 $A$ の複素共役をとり，そのあとに転置をとっても随伴行列となる：</p>
 	<p><center>\begin{align*}
 		(\overline{A}{}^\trp)_{ij} \,\refeq{transpose}{249}\, (\overline{A})_{ji} \,\refeq{adjoint}{254}\, \overline{(A)_{ji}} = (A^*)_{ij}.
@@ -98,6 +103,10 @@ updated on 2022/6/4
 		<p><center>$A^* = \overline{A}{}^\trp.$</center></p>
 	</div>
 	<p>こちらの方を随伴行列の定義とする場合もある．</p>
+</Details>
+<Details>
+	<summary>補足２</summary>
+	<p>$A$ が実行列であるときは，複素共役行列の項$\nr{adjoint}{254}$ の補足より，$A^* = A^\trp$．</p>
 </Details>
 <br>
  	 	
@@ -116,14 +125,8 @@ updated on 2022/6/4
 	<ol><li>　$(A^*)^* \ \refeq{adjoint}{256}\  \overline{(\overline{A}{}^\trp)^\trp} \ \refeq{transpose}{250}\ \overline{\overline{A}} \ \refeq{adjoint}{255}\ \ A.$</li>
 	<li>　$(A+B)^* \ \refeq{adjoint}{256}\ \overline{(A+B)^\trp} \ \refeq{transpose}{251}\ \overline{A^\trp + B^\trp} \ \refeq{adjoint}{255}\ \overline{A^\trp} + \overline{B^\trp} \ \refeq{adjoint}{256}\ A^* +B^*.$</li>
 	<li>　$(cA)^* \ \refeq{adjoint}{256}\ \overline{(cA)^\trp} \ \refeq{transpose}{252}\ \overline{c A^\trp} \ \refeq{adjoint}{255} \overline{c}\overline{A^\trp} \ \refeq{adjoint}{256}\ \overline{c} A^*.$</li>
-	<li>　$(AB)^* \ \refeq{adjoint}{256}\ \overline{(AB)^\trp}\ \refeq{transpose}{253}\ \overline{B^\trp A^\trp} \ \refeq{adjoint}{255} \overline{B^\trp}\,\overline{A^\trp} \ \refeq{adjoint}{256} B^*A^*.$
+	<li>　$(AB)^* \ \refeq{adjoint}{256}\ \overline{(AB)^\trp}\ \refeq{transpose}{253}\ \overline{B^\trp A^\trp} \ \refeq{adjoint}{255} \overline{B^\trp}\,\overline{A^\trp} \ \refeq{adjoint}{256} B^*A^*.$
 </Details>
-<br>
-
-<p id="258">&nbsp;</p><div class="def">
-	<b>[#258] 定義：<ruby><rb>Hermite</rb><rp>(</rp><rt>エルミート</rt><rp>)</rp></ruby> 行列</b><br>
-	<p> $H^* =H$ を満たす行列 $H$ を【Hermite 行列 (Hermitian matrix)】と呼ぶ．</p>
-</div>
 <br>
 
 <br><br>
