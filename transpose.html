@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -44,7 +45,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/5/29<br>
-updated on 2022/5/29
+updated on 2022/6/5
 </p>
 
 <p id="249">&nbsp;</p><div class="def">
@@ -121,6 +122,49 @@ updated on 2022/5/29
 		((AB)^\trp)_{ki} &\,\refeq{transpose}{249}\, (AB)_{ik} \,\refeq{matrix}{180}\, \sum_{j=1}^{m}(A)_{ij}(B)_{jk}\\
 			&\,\refeq{transpose}{249}\, \sum_{j=1}^{m} (B^\trp)_{kj}(A^\trp)_{ji} \,\refeq{matrix}{180} (B^\trp A^\trp)_{ki}.
 		\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="264">&nbsp;</p><div class="prp">
+	<b>[#264] 命題：逆行列の転置は転置の逆行列</b><br>
+		<p>正則行列$\nr{regular}{163}$ $A$ が逆行列 $A^{-1}$ をもつならば，</p>
+		<p><center>\begin{align*}
+			(A^{-1})^\trp = (A^\trp)^{-1}.
+			\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明１</summary>
+	<p> 逆行列の定義$\nr{regular}{163}$ より</p>
+	<p><center>\begin{align*}
+		AA^{-1} = A^{-1}A =I
+		\end{align*}</center></p>
+	<p>である．ただし $I$ は $A$ と型の等しい単位行列．上式の各辺の転置をとるとそれぞれ</p>
+	<p><center>\begin{align*}
+		&(AA^{-1})^\trp \,\refeq{transpose}{253}\, (A^{-1})^\trp A^\trp,\\
+		&(A^{-1}A)^\trp \,\refeq{transpose}{253}\, A^\trp (A^{-1})^\trp,\quad
+		I^\trp \ = I.
+		\end{align*}</center></p>
+	<p>まとめると，</p>
+	<p><center>\begin{align*}
+		(A^{-1})^\trp A^\trp = A^\trp (A^{-1})^\trp =I.
+		\end{align*}</center></p>
+	<p>よって，$(A^{-1})^\trp$ は $A^\trp$ の逆行列の定義を満たす．</p>
+</Details>
+<Details>
+	<summary>証明２</summary>
+	<p>ある $m$ が存在して，</p>
+	<p><center>\begin{align*}
+		A^\trp (A^{-1})^\trp &\,\refeq{matrix}{180}\, \sum_{j=1}^{m} (A^\trp)_{ij}((A^{-1})^\trp)_{jk}\\
+			&\,\refeq{transpose}{249}\, \sum_{j=1}^{m} (A)_{ji}(A^{-1})_{kj}\\
+			&\,\refeq{matrix}{180}\, A^{-1} A = I.
+		\end{align*}</center></p>
+	<p>また，</p>
+	<p><center>\begin{align*}
+		(A^{-1})^\trp A^\trp &\,\refeq{matrix}{180}\, \sum_{j=1}^{m} ((A^{-1})^\trp)_{ij}(A^\trp)_{jk}\\
+			&\,\refeq{transpose}{249}\, \sum_{j=1}^{m} (A^{-1})_{ji}(A)_{kj}\\
+			&\,\refeq{matrix}{180}\, A A^{-1} = I.
+		\end{align*}</center></p>
+	<p>よって，$(A^{-1})^\trp$ は $A^\trp$ の逆行列の定義を満たす．</p>
 </Details>
 <br>
 
