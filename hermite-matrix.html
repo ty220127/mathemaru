@@ -50,8 +50,42 @@ updated on 2022/6/4
 
 <p id="258">&nbsp;</p><div class="def">
 	<b>[#258] 定義：<ruby><rb>Hermite</rb><rp>(</rp><rt>エルミート</rt><rp>)</rp></ruby> 行列，対称行列</b><br>
-	<p>ある行列 $H$ が【Hermite 行列 (Hermitian matrix)】であるとは，$H$ 自身がその随伴行列$\nr{adjoint}{256}$ $H^*$ と等しいことをいう．また，Hermite 行列 $H$ が実行列のときは，$H$ 自身がその転置行列$\nr{transpose}{249}$ $H^\trp$ と等しいが，この $H$ を特に【対称行列 (symmetric matrix)】と呼ぶ．</p>
+	<p>ある正方行列 $H$ が【Hermite 行列 (Hermitian matrix)】であるとは，$H$ 自身がその随伴行列$\nr{adjoint}{256}$ $H^*$ と等しいことをいう．また，Hermite 行列 $H$ が実行列のときは，$H$ 自身がその転置行列$\nr{transpose}{249}$ $H^\trp$ と等しいが，この $H$ を特に【対称行列 (symmetric matrix)】と呼ぶ．</p>
 </div>
+<details>
+	<summary>補足</summary>
+	<p> $H=H^*$ であるから，</p>
+	<p><center>\begin{align*}
+		\overline{H} = \overline{H^*}\, \refeq{adjoint}{256}\, \overline{\overline{H^\trp}}\,\refeq{adjoint}{255}\, H^\trp.
+		\end{align*}</center></p>
+</details>
+<br>
+
+<p id="259">&nbsp;</p><div class="prp">
+	<b>[#259] 命題：随伴行列との和・積は Hermite 行列</b><br>
+	<p>正方行列 $A$ に対し，$A+A^*$，$AA^*$，$A^*A$ は Hermite 行列．</p>
+</div>
+<details>
+	<summary>証明 $(A+A^*)$</summary>
+	<p><center>\begin{align*}
+		(A+A^*)^* \,\refeq{adjoint}{257}\, A^* + (A^*)^* \,\refeq{adjoint}{257}\, A^* + A \,\refeq{matrix}{157}\, A +A^*
+		\end{align*}</center></p>
+	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
+</details>
+<details>
+	<summary>証明 $(AA^*)$</summary>
+	<p><center>\begin{align*}
+		(AA^*)^* \,\refeq{adjoint}{257}\, (A^*)^* A^* \,\refeq{adjoint}{257}\, A A^*
+		\end{align*}</center></p>
+	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
+</details>
+<details>
+	<summary>証明 $(A^*A)$</summary>
+	<p><center>\begin{align*}
+		(A^*A)^* \,\refeq{adjoint}{257}\, A^* (A^*)^* \,\refeq{adjoint}{257}\, A^* A
+		\end{align*}</center></p>
+	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
+</details>
 <br>
 
 <br><br>
