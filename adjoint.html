@@ -1,4 +1,5 @@
 
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
 <html>
@@ -45,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/1<br>
-updated on 2022/6/4
+updated on 2022/6/6
 </p>
 
 <p id="254">&nbsp;</p><div class="def">
@@ -81,6 +82,28 @@ updated on 2022/6/4
 		<p><center>\begin{align*}
 			(\overline{AB})_{ik} \,\refeq{adjoint}{254}\, \overline{(AB)_{ik}} \,\refeq{matrix}{180}\, \overline{\sig_{j=1}^{m} (A)_{ij}(B)_{jk}} = \sig_{j=1}^{m} \overline{(A)_{ij}(B)_{jk}} \,\refeq{adjoint}{254}\, \sig_{j=1}^{m} (\overline{A})_{ij}(\overline{B})_{jk} \,\refeq{matrix}{180}\, (\overline{A}\,\overline{B})_{ik}
 			\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="265">&nbsp;</p><div class="prp">
+	<b>[#265] 命題：逆行列の複素共役は複素共役の逆行列</b><br>
+	<p>正方行列 $A$ が逆行列$\nr{regualr}{163}$ $A^{-1}$ をもつならば，</p>
+	<p><center>\begin{align*}
+		\overline{A^{-1}} = (\overline{A})^{-1}.
+		\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $I$ を $A$ と型の等しい単位行列とする．</p>
+	<p><center>\begin{align*}
+		&\overline{A}(\overline{A})^{-1} = (\overline{A})^{-1}\overline{A} = I\\
+	\Longleftrightarrow\,\, & \overline{\overline{A}(\overline{A})^{-1}} = \overline{(\overline{A})^{-1}\overline{A}} = \overline{I}\\
+	\reflr{adjoint}{255}\,\, & \overline{\overline{A}}\,\overline{(\overline{A})^{-1}} = \overline{(\overline{A})^{-1}}\,\overline{\overline{A}} = \overline{I}\\
+	\reflr{adjoint}{255}\,\, & A\overline{(\overline{A})^{-1}} = \overline{(\overline{A})^{-1}}A = I\\
+	\reflr{adjoint}{255}\,\, & \overline{(\overline{A})^{-1}} = A^{-1}\\
+	\Longleftrightarrow\,\, & \overline{\overline{(\overline{A})^{-1}}} = \overline{A^{-1}}\\
+	\reflr{adjoint}{255}\,\, & (\overline{A})^{-1} = \overline{A^{-1}}.
+		\end{align*}</center></p>
 </Details>
 <br>
 
@@ -126,6 +149,21 @@ updated on 2022/6/4
 	<li>　$(A+B)^* \ \refeq{adjoint}{256}\ \overline{(A+B)^\trp} \ \refeq{transpose}{251}\ \overline{A^\trp + B^\trp} \ \refeq{adjoint}{255}\ \overline{A^\trp} + \overline{B^\trp} \ \refeq{adjoint}{256}\ A^* +B^*.$</li>
 	<li>　$(cA)^* \ \refeq{adjoint}{256}\ \overline{(cA)^\trp} \ \refeq{transpose}{252}\ \overline{c A^\trp} \ \refeq{adjoint}{255} \overline{c}\overline{A^\trp} \ \refeq{adjoint}{256}\ \overline{c} A^*.$</li>
 	<li>　$(AB)^* \ \refeq{adjoint}{256}\ \overline{(AB)^\trp}\ \refeq{transpose}{253}\ \overline{B^\trp A^\trp} \ \refeq{adjoint}{255} \overline{B^\trp}\,\overline{A^\trp} \ \refeq{adjoint}{256} B^*A^*.$
+</Details>
+<br>
+
+<p id="266">&nbsp;</p><div class="prp">
+	<b>[#266] 命題：逆行列の随伴は随伴の逆行列</b><br>
+	<p>正方行列 $A$ が逆行列$\nr{regualr}{163}$ $A^{-1}$ をもつならば，</p>
+	<p><center>\begin{align*}
+		(A^{-1})^* = (A^*)^{-1}.
+		\end{align*}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		(A^{-1})^* \,\refeq{adjoint}{256}\, \overline{(A^{-1})^\trp} \,\refeq{transpose}{264}\, \overline{(A^\trp)^{-1}} \,\refeq{adjoint}{265}\, (\overline{A^\trp})^{-1} \,\refeq{adjoint}{256}\, (A^*)^{-1}.
+		\end{align*}</center></p>
 </Details>
 <br>
 
