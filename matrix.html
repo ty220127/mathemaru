@@ -1,12 +1,12 @@
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
 		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
@@ -28,7 +28,7 @@
 </script>
 <script>
 	const ttl = "行列"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
@@ -38,13 +38,13 @@
 
 <nav>
 <ul>
-<li><a href="index.html">演習問題集</a></li>
+<li style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
 </ul>
 </nav>
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/14<br>
-updated on 2022/5/29
+updated on 2022/6/11
 </p>
     
 <p id="144">&nbsp;</p><div class="def">
@@ -166,6 +166,18 @@ updated on 2022/5/29
 		\end{align*}$</center></p>
 	<p>ここで，積 $AB$ は $(\ell,\,n)$-行列であることに注意せよ．</p>
 </div>
+<details>
+	<summary>補足</summary>
+	<p>以下，ある行列 $M$ の行数を $r_M$，列数を $c_M$ とする（つまり $M$ は $(r_M,\,c_M)$-行列）．積の定義より，行列 $A,\ B$ に対して積 $AB$ を定義できることは $c_A = r_B$ であることと同値である．<br>
+		ところで，$AB$ が定義されても $BA$ が定義されるとは限らない．それは，上記より次の系が成立するためである：
+	<div class="cor">
+		<b>系：</b>行列 $A,\ B$ に対して
+	<p><center>
+		$AB$ と $BA$ がともに定義される$\ \Longleftrightarrow\ (c_A = r_B)\land (r_A = c_B).$
+		</center></p>
+	</div>
+	<p>積 $AB$ だけが定義できれば良い場合は，$r_A$ と $c_B$ には特に条件は課されない．しかし，この2つが一致するとしなければ，積 $BA$ を定義することはできない．</p>
+</details>
 <br>
 
 <p id="184">&nbsp;</p><div class="def">
@@ -188,6 +200,11 @@ updated on 2022/5/29
 		<li>  $AI_{m} = I_{\ell}A = A$（積における単位行列の性質）</li>
 	</ol>
 </div>
+<details>
+	<summary>補足</summary>
+	<p>行列の積に関して，交換法則は一般に成立しない．そもそも行列 $A,\ B$ に対して積 $AB$ と $BA$ が同時に定義できるケースも限られているが$\nr{matrix}{180}$，同時に定義できる場合でも $AB=BA$ が成り立つとは限らない．<br>
+		例えば，$A$ を $(m,\,n)$-行列，$B$ を $(n,\,m)$-行列とする．このとき $AB$ は $m$ 次正方行列，$BA$ は $n$ 次正方行列であり，そもそも型が違う．よって $AB=BA$ であるためには $m=n$ が必要条件となるが，これは十分条件とはなり得ない．</p>
+</details>
 <br>
 
 <p id="186">&nbsp;</p><div class="exr">
@@ -262,6 +279,7 @@ updated on 2022/5/29
 	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
 	<li><a href="https://www.heisei-u.ac.jp/ba/fukui/pdf/mathtextA2a.pdf">福井正康: 基礎から学ぶシリーズ１ 基礎からの数学, 2章の1, 公開pdf</a> [2022/5/29 閲覧].</li>
 	<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2020_05_03.pdf">嶺幸太郎: 線形代数学 講義ノート (2020/05/03ver.), 公開pdf</a>.</li>
+	<li><a href="https://risalc.info/src/unitary-matrix-properties.html">ユニタリ行列とは？ ～公式と性質～   (証明付) - 理数アラカルト -</a></li>
 </ul>
 </div>
       
