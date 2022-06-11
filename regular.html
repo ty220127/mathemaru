@@ -1,38 +1,54 @@
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
-  <head>
+<head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-	numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
-	bs: '\\boldsymbol', 
-	bcu: '\\displaystyle\\bigcup', 
-	bca: '\\displaystyle\\bigcap', 
-	fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
-	limit: '\\displaystyle\\lim',
-	sig: '\\displaystyle\\sum',
-	intgrl: '\\displaystyle\\int',
-	cpl: '\\mathrm{c}',
-	rd: '\\mathrm{d}',
-	twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
-      }}});
-    </script>
-    <title>正則行列と逆行列｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-    </style>
-  </head>
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+	}}});
+</script>
+<script>
+	const ttl = "正則行列と逆行列"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
 
 <body>
-<center><div id="titlehead">正則行列と逆行列</div></center>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
 
-<p style="text-align:right;">
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/29<br>
-updated on 2022/4/23
+updated on 2022/6/11
 </p>
 
-<div class="def" id="163">
+<p id="163">&nbsp;</p><div class="def">
 <b>[#163] 定義：正則，逆行列</b><br>
 	<p> $n$ 次正方行列 $A$ と $n$ 次単位行列 $I$ に対して
 	<p><center>$\begin{align*}
@@ -40,9 +56,13 @@ updated on 2022/4/23
 		\end{align*}$</center></p>
 	<p>を満たすような $n$ 次正方行列 $X$ が存在することを $A$ は【正則 (regular)】である，或いは【可逆 (invertible)】であると云う．また行列 $X$ を $A$ の【逆行列 (inverse matrix)】と呼び，$A^{-1}$ で表す．</p>
 </div>
-<br><br>
+<details>
+	<summary>補足</summary>
+	<p>行列は一般に可換ではないので$\nr{matrix}{185}$，$AX=I$ が成り立つからといって $XI=A$ が成り立つことは自明ではない（逆も同様）．よって，$X$ が $A$ の逆行列であることを定義から示す場合は，$AX=I$ と $XI=A$ の両方を示すことが原則となる（勿論，特別な条件下で可換性が保証される場合はその限りでない）．</p>
+</details>
+<br>
 
-<div class="prp" id="164">
+<p id="164">&nbsp;</p><div class="prp">
 <b>[#164] 命題：逆行列の一意性</b><br>
 	<p> $n$ 次の正則行列 $A$ に対し逆行列 $A^{-1}$ は一意に定まる．</p>
 </div>
@@ -62,9 +82,9 @@ updated on 2022/4/23
 		\end{align*}$</center></p>
 	<p>以上により $X$ と $Y$ は一致することから，これらを $A^{-1}$ と定めれば良い．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="165">
+<p id="165">&nbsp;</p><div class="prp">
 <b>[#165] 命題：逆行列の逆行列</b><br>
 	<p> $n$ 次の正則行列 $A$ に対して
 	<p><center>$\begin{align*}
@@ -82,9 +102,9 @@ updated on 2022/4/23
 		(A^{-1})^{-1} = B^{-1} = A.
 		\end{align*}$</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="166">
+<p id="166">&nbsp;</p><div class="prp">
 <b>[#166] 命題：正則行列の積の逆行列</b><br>
 	<p> $n$ 次の正則行列 $A_1,\,A_2,\,\cdots,\,A_{N-1},\,A_N$ に対して，その積 $P=A_1A_2\cdots A_{N-1}A_N$ を定義すれば，これもまた正則であり，逆行列は
 	<p><center>$\begin{align*}
@@ -104,9 +124,9 @@ updated on 2022/4/23
 		\end{align*}$</center></p>
 	<p>つまり $PX=I$ を得る．同様にして $XP=I$ も得られ，逆行列は一意である <a href="#164">[#164]</a> ことから $X=P^{-1}$ が従う．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="167">
+<p id="167">&nbsp;</p><div class="prp">
 <b>[#167] 命題：２次正方行列の逆行列</b><br>
 	<p> ２次正方行列 $A = \twobytwo{a}{b}{c}{d}$ が正則であるならば，その逆行列は
 	<p><center>$\begin{align*}
@@ -134,8 +154,9 @@ updated on 2022/4/23
 		\end{align*}$</center></p>
 	<p>この結果は <a href="matrix.html#187">[#187]</a> に一致する．</p>
 </Details>
-<br><br>
+<br>
 
+<br><br>
 <div id="bib">
 <b>参考文献</b>
 	<ul>
