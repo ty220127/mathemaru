@@ -1,13 +1,12 @@
-
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
 		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
@@ -28,8 +27,8 @@
 	}}});
 </script>
 <script>
-	const ttl = "Hermite 行列と対称行列"
-	document.title= ttl + "｜演習問題集"
+	const ttl = "Hermite行列と対称行列"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
@@ -39,13 +38,13 @@
 
 <nav>
 <ul>
-<li><a href="index.html">演習問題集</a></li>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
 </ul>
 </nav>
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/4<br>
-updated on 2022/6/5
+updated on 2022/6/12
 </p>
 
 <p id="258">&nbsp;</p><div class="def">
@@ -85,6 +84,16 @@ updated on 2022/6/5
 		(A^*A)^* \,\refeq{adjoint}{257}\, A^* (A^*)^* \,\refeq{adjoint}{257}\, A^* A
 		\end{align*}</center></p>
 	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
+</details>
+<br>
+
+<p id="268">&nbsp;</p><div class="prp">
+	<b>[#268] 命題：Hermite行列の固有値は実数</b><br>
+	<p>Hermite行列 $H$ の固有値$\nr{eigen}{160}$ は，全て実数である．</p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>
 </details>
 <br>
 
