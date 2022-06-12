@@ -24,10 +24,11 @@
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 	}}});
 </script>
 <script>
-	const ttl = "Hermite行列と対称行列"
+	const ttl = "正則行列と逆行列"
 	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
@@ -43,69 +44,132 @@
 </nav>
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
-established on 2022/6/4<br>
-updated on 2022/6/12
+established on 2022/3/29<br>
+updated on 2022/6/11
 </p>
 
-<p id="258">&nbsp;</p><div class="def">
-	<b>[#258] 定義：<ruby><rb>Hermite</rb><rp>(</rp><rt>エルミート</rt><rp>)</rp></ruby> 行列，対称行列</b><br>
-	<p>ある正方行列 $H$ が【Hermite 行列 (Hermitian matrix)】であるとは，$H$ 自身がその随伴行列$\nr{adjoint}{256}$ $H^*$ と等しいことをいう．また，Hermite 行列 $H$ が実行列のときは，$H$ 自身がその転置行列$\nr{transpose}{249}$ $H^\trp$ と等しいが，この $H$ を特に【対称行列 (symmetric matrix)】と呼ぶ．</p>
+<p id="163">&nbsp;</p><div class="def">
+<b>[#163] 定義：正則，逆行列</b><br>
+	<p> $n$ 次正方行列 $A$ と $n$ 次単位行列 $I$ に対して
+	<p><center>$\begin{align*}
+		AX=XA=I
+		\end{align*}$</center></p>
+	<p>を満たすような $n$ 次正方行列 $X$ が存在することを $A$ は【正則 (regular)】である，或いは【可逆 (invertible)】であると云う．また行列 $X$ を $A$ の【逆行列 (inverse matrix)】と呼び，$A^{-1}$ で表す．</p>
 </div>
 <details>
 	<summary>補足</summary>
-	<p> $H=H^*$ であるから，</p>
-	<p><center>\begin{align*}
-		\overline{H} = \overline{H^*}\, \refeq{adjoint}{256}\, \overline{\overline{H^\trp}}\,\refeq{adjoint}{255}\, H^\trp.
-		\end{align*}</center></p>
+	<p>行列は一般に可換ではないので$\nr{matrix}{185}$，$AX=I$ が成り立つからといって $XI=A$ が成り立つことは自明ではない（逆も同様）．よって，$X$ が $A$ の逆行列であることを定義から示す場合は，$AX=I$ と $XI=A$ の両方を示すことが原則となる（勿論，特別な条件下で可換性が保証される場合はその限りでない）．</p>
 </details>
 <br>
 
-<p id="259">&nbsp;</p><div class="prp">
-	<b>[#259] 命題：随伴行列との和・積は Hermite 行列</b><br>
-	<p>正方行列 $A$ に対し，$A+A^*$，$AA^*$，$A^*A$ は Hermite 行列．</p>
+<p id="164">&nbsp;</p><div class="prp">
+<b>[#164] 命題：逆行列の一意性</b><br>
+	<p> $n$ 次の正則行列 $A$ に対し逆行列 $A^{-1}$ は一意に定まる．</p>
 </div>
-<details>
-	<summary>証明 $(A+A^*)$</summary>
-	<p><center>\begin{align*}
-		(A+A^*)^* \,\refeq{adjoint}{257}\, A^* + (A^*)^* \,\refeq{adjoint}{257}\, A^* + A \,\refeq{matrix}{157}\, A +A^*
-		\end{align*}</center></p>
-	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
-</details>
-<details>
-	<summary>証明 $(AA^*)$</summary>
-	<p><center>\begin{align*}
-		(AA^*)^* \,\refeq{adjoint}{257}\, (A^*)^* A^* \,\refeq{adjoint}{257}\, A A^*
-		\end{align*}</center></p>
-	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
-</details>
-<details>
-	<summary>証明 $(A^*A)$</summary>
-	<p><center>\begin{align*}
-		(A^*A)^* \,\refeq{adjoint}{257}\, A^* (A^*)^* \,\refeq{adjoint}{257}\, A^* A
-		\end{align*}</center></p>
-	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
-</details>
+<Details>
+<summary>証明</summary>
+	<p>$n$ 次正方行列 $X,\,Y$ はともに $A$ の逆行列であるとする．このとき逆行列の定義 <a href="#163">[#163]</a> より</p>
+	<p><center>$\begin{align*}
+		AX=I.
+		\end{align*}$</center></p>
+	<p>いま，この式の両辺に左から $Y$ をかければ</p>
+	<p><center>$\begin{align*}
+		YAX=Y.
+		\end{align*}$</center></p>
+	<p>いま，逆行列の定義 <a href="#163">[#163]</a> より $YA=I$ であるから，</p>
+	<p><center>$\begin{align*}
+		IX=Y,\,\,\,\text{i.e.,}\,\,\,X=Y.
+		\end{align*}$</center></p>
+	<p>以上により $X$ と $Y$ は一致することから，これらを $A^{-1}$ と定めれば良い．</p>
+</Details>
 <br>
 
-<p id="268">&nbsp;</p><div class="prp">
-	<b>[#268] 命題：Hermite行列の固有値は実数</b><br>
-	<p>Hermite行列 $H$ の固有値$\nr{eigen}{160}$ は，全て実数である．</p>
+<p id="165">&nbsp;</p><div class="prp">
+<b>[#165] 命題：逆行列の逆行列</b><br>
+	<p> $n$ 次の正則行列 $A$ に対して
+	<p><center>$\begin{align*}
+		(A^{-1})^{-1} = A.
+		\end{align*}$</center></p>
 </div>
-<details>
-	<summary>証明</summary>
-	<p>
-</details>
+<Details>
+<summary>証明</summary>
+	<p>$A^{-1} = B$ とすれば逆行列の定義 <a href="#163">[#163]</a>より，$I$ を $n$ 次の単位行列として</p>
+	<p><center>$\begin{align*}
+		AB = BA = I.
+		\end{align*}$</center></p>
+	<p>この式は $A$ が $B$ の逆行列であることも意味する．つまり</p>
+	<p><center>$\begin{align*}
+		(A^{-1})^{-1} = B^{-1} = A.
+		\end{align*}$</center></p>
+</Details>
+<br>
+
+<p id="166">&nbsp;</p><div class="prp">
+<b>[#166] 命題：正則行列の積の逆行列</b><br>
+	<p> $n$ 次の正則行列 $A_1,\,A_2,\,\cdots,\,A_{N-1},\,A_N$ に対して，その積 $P=A_1A_2\cdots A_{N-1}A_N$ を定義すれば，これもまた正則であり，逆行列は
+	<p><center>$\begin{align*}
+		P^{-1} = A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}.
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p> $X=A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}$ とすれば，逆行列の定義 <a href="#163">[#163]</a> を繰り返し用いることにより</p>
+	<p><center>$\begin{align*}
+		PX =\,\,& (A_1A_2\cdots A_{N-1}A_N)(A_N^{-1} A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1})\\
+			=\,\,&A_1A_2\cdots A_{N-1}(A_NA_N^{-1}) A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}\\
+			\underset{\href{#163}{\numref{163}}}{=}& A_1A_2\cdots A_{N-1}I A_{N-1}^{-1}\cdots A_2^{-1} A_1^{-1}\\
+			=\,\,&A_1A_2\cdots A_{N-2}(A_{N-1}A_{N-1}^{-1})A_{N-2}^{-1}\cdots A_2^{-1} A_1^{-1}\\
+			=\,\,&\cdots\\
+			=\,\,&A_1A_1^{-1} \underset{\href{#163}{\numref{163}}}{=} I,
+		\end{align*}$</center></p>
+	<p>つまり $PX=I$ を得る．同様にして $XP=I$ も得られ，逆行列は一意である <a href="#164">[#164]</a> ことから $X=P^{-1}$ が従う．</p>
+</Details>
+<br>
+
+<p id="167">&nbsp;</p><div class="prp">
+<b>[#167] 命題：２次正方行列の逆行列</b><br>
+	<p> ２次正方行列 $A = \twobytwo{a}{b}{c}{d}$ が正則であるならば，その逆行列は
+	<p><center>$\begin{align*}
+		A^{-1} = \fraction{1}{ad-bc}\twobytwo{d}{-b}{-c}{a}.
+		\end{align*}$</center></p>
+</div>
+<Details>
+<summary>証明</summary>
+	<p> $X=\fraction{1}{ad-bc}\twobytwo{d}{-b}{-c}{a}$ とすれば</p>
+	<p><center>$\begin{align*}
+		AX =\,\,& \twobytwo{a}{b}{c}{d}\left(\fraction{1}{ad-bc}\twobytwo{d}{-b}{-c}{a}\right)\\
+		=\,\,& \fraction{1}{ad-bc}\twobytwo{ad-bc}{ab-ab}{cd-cd}{ad-bc} = I,
+		\end{align*}$</center></p>
+	<p><center>$\begin{align*}
+		XA =\,\,& \left(\fraction{1}{ad-bc}\twobytwo{d}{-b}{-c}{a}\right)\twobytwo{a}{b}{c}{d}\\
+		=\,\,& \fraction{1}{ad-bc}\twobytwo{ad-bc}{bd-bd}{ac-ac}{ad-bc} = I
+		\end{align*}$</center></p>
+	<p>を得る．逆行列は一意である <a href="#164">[#164]</a> ことから $X=A^{-1}$ が従う．</p>
+</Details>
+<Details>
+<summary>例</summary>
+	<p>行列 $A=\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right]$ の逆行列は</p>
+	<p><center>$\begin{align*}
+		A^{-1} = \frac{1}{1\cdot 3-2\cdot (-2)}\left[\begin{array}{cc} 3 & -2 \\ 2 & 1 \end{array}\right] = \frac{1}{7}\left[\begin{array}{cc} 3 & -2 \\ 2 & 1 \end{array}\right].
+		\end{align*}$</center></p>
+	<p>この結果は <a href="matrix.html#187">[#187]</a> に一致する．</p>
+</Details>
 <br>
 
 <br><br>
 <div id="bib">
 <b>参考文献</b>
 	<ul>
-		<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社, 2012.</li>
-		<li>齋藤正彦: 線型代数学, 東京図書, 2014.</li>
-		<li><a href="https://mathlandscape.com/hermitian-matrix/">エルミート行列の定義と性質4つとその証明 - 数学の景色</a></li>
-		<li><a href="https://mathlandscape.com/sym-matrix/">対称行列の定義と性質4つとその証明 - 数学の景色</a></li>
-	</ul>
+		<li>江川博康: 弱点克服 大学生の線形代数, 東京図書 (2006).</li>
+		<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社 (2012).</li>
+		<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
+		<li><a href="http://www.rimath.saitama-u.ac.jp/lab.jp/Fukui/lectures/Linear_algebra.pdf">福井敏純: 線形代数学講義ノート, pdf (2022)</a>.</li>
+		<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2020_05_03.pdf">嶺幸太郎: 線形代数学 講義ノート (2020/05/03ver.), pdf</a>.</li>
+</ul>	      
 </div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
 </body>
 </html>
