@@ -1,19 +1,20 @@
-
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
@@ -23,23 +24,13 @@
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
-		bra: ['\\langle #1 |', 1],
-		ket: ['| #1 \\rangle', 1],
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 	}}});
 </script>
 <script>
 	const ttl = "含意"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
-<style>
-	.cor{
-	        padding: 0.5%; 
-	        margin-bottom: 0.3%; 
-		font-size: 14px;
-		font-weight: normal;
-		background-color: #c8c8c8;
-	}
-</style>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
 
@@ -48,13 +39,13 @@
 
 <nav>
 <ul>
-<li><a href="index.html">演習問題集</a></li>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
 </ul>
 </nav>
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/8<br>
-updated on 2022/5/23<br>
+updated on 2022/6/15<br>
 </p>
     
 <p id="65">&nbsp;</p><div class="def">
@@ -77,7 +68,7 @@ updated on 2022/5/23<br>
 </Details>
 <Details>
 	<summary>補足２</summary>
-	<p>含意の考え方を用いて論理的な展開について考察するのが【推論 (inference)】の分野である．</p>
+	<p>含意の考え方を用いて論理的な展開について考察するのが【推論 (inference)】の分野である$\nr{inference}{272}$．</p>
 </Details>
 <br>
 
