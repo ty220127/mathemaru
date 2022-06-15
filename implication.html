@@ -312,6 +312,25 @@ updated on 2022/6/15<br>
 </details>
 <br>
 
+<p id="274">&nbsp;</p><div class="prp">
+	<b>[#274] 命題：三段論法</b><br>
+	<p>命題 $P,\ Q,\ R$ に対して</p>
+	<p><center>$(P\to Q)\land (Q\to R) \ \Longrightarrow\ P\to R.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		& (P\to Q)\land (Q\to R) \to (P\to R)\\
+		\refeqv{implication}{245}\ & (P\to Q)\land (Q\to R)\land P \to R\\
+		\refeqv{proposition}{60}\ & P\land (P\to Q)\land (Q\to R) \to R\\
+		\refeqv{implication}{72}\ & (P\land Q)\land (Q\to R) \to R\\
+		\refeqv{proposition}{61}\ & P\land (Q\land (Q\to R)) \to R\\
+		\refeqv{implicetion}{72}\ & P\land Q\land R \to R\\
+		\refeqv{implicetion}{88}\ & \mathsf{T}.\\
+		\end{align*}</center></p>
+</Details>
+<br>
+
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
