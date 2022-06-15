@@ -1,0 +1,110 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+	}}});
+</script>
+<script>
+	const ttl = "推論"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/6/15<br>
+updated on 2022/6/15<br>
+</p>
+    
+<p id="272">&nbsp;</p><div class="def">
+	<b>[#272] 定義：推論</b><br>
+	<p>いくつかの事柄から別のある事柄を導くことを【推論 (inference)】という．推論を行うために用意する「いくつかの事柄」を【仮定 (assumption)】，推論により一尾枯れる「別のある事柄」を【結論 (conclusion)】と呼ぶ．仮定 $P_1,\ P_2,\cdots,\ P_n$ から結論 $Q$ への推論は</p>
+	<p><center>\begin{align}
+		P_1,\ P_2,\ \cdots,\ P_n, \ \therefore\ Q
+		\end{align}</center></p>
+	<p>或いは</p>
+	<p><center>\begin{align}
+		P_1,\ P_2,\ \cdots,\ P_n \ \vdash\ Q
+		\end{align}</center></p>
+	<p>と表される．<br>
+		ある推論が【妥当 (reasonable)】であるとは，仮定をなす命題がすべて真であるときに，結論をなす命題も真となる場合をいい，又その場合に限る．</p>
+</div>
+<details>
+	<summary>補足と例</summary>
+	<p>推論が妥当であるかどうかは，真理値表をかいて確認するのが最も素朴な方法である．仮定をなす命題たちがすべて真 $(\mathsf{T})$ となっている行を抽出し，それらの行すべてで結論 $Q$ も真 $(\mathsf{T})$ であれば，推論は妥当といえる．たとえば，例題 $\numref{proposition}{237}$ は妥当な推論を行う問題と考えられ，</p>
+	<p><center>\begin{align}
+		P,\ \, (\mathrm{not}\ P)\ \mathrm{or}\ Q,\ \, \therefore\ Q
+		\end{align}</center></p>
+	<p>は妥当な推論である．</p>
+</details>
+<br>
+
+<p id="273">&nbsp;</p><div class="prp">
+	<b>[#273] 命題：推論と含意</b><br>
+	<p>命題 $P,\ Q$ に対して $P\to Q$ が恒真命題である（$P\Rightarrow Q$）ことは，推論 $P\vdash Q$ が妥当であることと同値である．</p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>$P\to Q$ の真理値表は以下の通り：</p>
+	<p><center>\begin{align}
+		\begin{array}{|c|c|c|c|c|}\hline P & Q  & P\to Q \\ \hline
+		\mathsf{T} & \mathsf{T}   & \mathsf{T} \\ \hline
+		\mathsf{T} & \mathsf{F}   & \mathsf{F} \\ \hline
+		\mathsf{F} & \mathsf{T}   & \mathsf{T} \\ \hline
+		\mathsf{F} & \mathsf{F}   & \mathsf{T} \\ \hline\end{array}
+		\end{align}</center></p>
+	<p>$P\to Q$ が恒真命題となるときは，真理値表の２行目以外が取りうる $P,\ Q$ の組み合わせとなるが，その下で $P$ が真となるのは１行目のみであり，そのとき $Q$ も真であるから $P\vdash Q$ は妥当な推論といえる．<br>
+		逆に $P\vdash Q$ が妥当な推論であるとすれば，やはり２行目以外が取りうる $P,\ Q$ の組み合わせとなるので，$P\to Q$ は恒真命題となる．</p>
+</details>
+<details>
+	<summary>補足</summary>
+	<p>この結果から，$P\Rightarrow Q$ を証明する際は，$P$ を仮定した場合に $Q$ が結論として導かれることを示すのが定石となる．</p>
+</details>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://abelard.flet.keio.ac.jp/person/takemura/class/2010/OLD/print-suiron.pdf">竹村亮: 論理学入門</a> [2022/6/14 閲覧].</li>
+	<li><a href="https://natura-tech.github.io/pdf/L.pdf">東京工業大学 哲学研究会: 論理学入門, 公開pdf</a> [2022/6/14 閲覧].</li>
+	<li>長岡亮介: 総合的研究 論理学で学ぶ数学 – 思考ツールとしてのロジック.</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
