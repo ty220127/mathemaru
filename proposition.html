@@ -1,19 +1,20 @@
-
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
@@ -23,13 +24,12 @@
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
-		bra: ['\\langle #1 |', 1],
-		ket: ['| #1 \\rangle', 1],
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 	}}});
 </script>
 <script>
 	const ttl = "命題論理"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
@@ -39,13 +39,13 @@
 
 <nav>
 <ul>
-<li><a href="index.html">演習問題集</a></li>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
 </ul>
 </nav>
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/7<br>
-updated on 2022/5/22
+updated on 2022/6/15
 </p>
     
 <p id="58">&nbsp;</p><div class="def">
@@ -303,7 +303,7 @@ updated on 2022/5/22
 <br>
 
 <p id="237">&nbsp;</p><div class="exm">
-	<b>[#237] 例題：命題の真理値</b><br>
+	<b>[#237] 例題：命題の真理値 <font size="1">→</font> $\numref{implication}{65}$ $\numref{inference}{272}$</b><br>
 	<p> $P,\ Q,\ R$ はいずれも命題である．命題 $P$ の真理値は真であり，命題 $(\mathrm{not}\ P)\ \mathrm{or}\ Q$ 及び命題 $(\mathrm{not}\ Q)\ \mathrm{or}\ R$ のいずれも真であることがわかっている．$Q,\ R$ の真理値を求めよ．ただし，$X\ \mathrm{or}\ Y$ は $X$ と $Y$ の論理和，$\mathrm{not}\ X$ は $X$ の否定を表す．</p>
 	<p style="text-align:right;">[H31春 基本情報技術者試験]</p>
 </div>
