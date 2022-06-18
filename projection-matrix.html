@@ -45,7 +45,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/15<br>
-updated on 2022/6/17<br>
+updated on 2022/6/18<br>
 </p>
     
 <p id="275">&nbsp;</p><div class="def">
@@ -58,27 +58,54 @@ updated on 2022/6/17<br>
 </div>
 <Details>
 	<summary>補足</summary>
-	<p>直交射影行列の定義をそのまま射影行列とする例も多い．特に，複素行列の範囲で議論する場合（射影行列が対称行列）は，そちらの例の方が多いかもしれない．</p>
+	<p>直交射影行列の定義をそのまま射影行列とする例も多い．特に，複素行列の範囲で議論する場合は，そちらの例の方が多いかもしれない．</p>
 </Details>
 <br>
 
 <p id="276">&nbsp;</p><div class="prp">
 	<b>[#276] 命題：射影行列の行列式</b><br>
-	<p>射影行列 $P$ の行列式の絶対値は $0$ または $1$ である．
+	<p>射影行列 $P$ の行列式は $0$ または $1$ である．
 </div>
 <Details>
 	<summary>証明</summary>
-	<p></p>
+	<p>射影行列の定義$\nr{projection-matrix}{275}$ より $P^2=P$ が成り立つが，</p>
+	<p><center>\begin{align}
+		P^2 = P\ \Longleftrightarrow\ &\det(P^2) = \det(P)\\
+			\ \Longleftrightarrow\ & \det(P)^2 = \det(P)\\
+			\ \Longleftrightarrow\ & \det(P)^2 -\det(P) = 0\\
+			\ \Longleftrightarrow\ & \det(P) = 0\ \text{or}\ 1\\
+		\end{align}</center></p>
+	<p>となることから題意を得る．</p>
 </Details>
 <br>
 
 <p id="277">&nbsp;</p><div class="prp">
 	<b>[#277] 命題：射影行列の固有値</b><br>
-	<p>射影行列 $P$ の固有値は $0$ または $1$ である．
+	<p>射影行列 $P$ の固有値$\nr{eigen}{160}$ は $0$ または $1$ である．
 </div>
 <Details>
 	<summary>証明</summary>
-	<p></p>
+	<p> $P$ の固有値を $\lambda$ とすると，固有値の定義$\nr{eigen}{160}$ より，ベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
+	<p><center>\begin{align}
+		P\bs{x} = \lambda\bs{x}
+		\end{align}</center></p>
+	<p>と書ける．一方で，このとき，$\lambda^2$ が $P^2$ の固有値の１つとなる$\nr{eigen}{278}$．つまり，</p>
+	<p><center>\begin{align}
+		P^2\bs{x} = \lambda^2\bs{x}.
+		\end{align}</center></p>
+	<p>ここで，$P$ は射影行列$\nr{projection-matrix}{275}$ であるから，</p>
+	<p><center>\begin{align}
+		P\bs{x} = P^2\bs{x}
+		\end{align}</center></p>
+	<p>である．以上により，</p>
+	<p><center>\begin{align}
+		\lambda\bs{x} = \lambda^2\bs{x},\quad\text{i.e.,}\quad (\lambda^2-\lambda)\bs{x}=\bs{0}.
+		\end{align}</center></p>
+	<p>いま，$\bs{x}\not =\bs{0}$ であるから</p>
+	<p><center>\begin{align}
+		\lambda^2-\lambda=0
+		\end{align}</center></p>
+	<p>であり，これを $\lambda$ について解けば $\lambda = 0\ \text{or}\ 1$ を得る．
 </Details>
 <br>
 
