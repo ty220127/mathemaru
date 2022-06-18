@@ -1,37 +1,54 @@
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
-  <head>
+<head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-        bs: '\\boldsymbol', 
-        bcu: '\\displaystyle\\bigcup', 
-        bca: '\\displaystyle\\bigcap', 
-        fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
-        limit: '\\displaystyle\\lim',
-	sig: '\\displaystyle\\sum',
-	intgrl: '\\displaystyle\\int',
-	cpl: '\\mathrm{c}',
-	rd: '\\mathrm{d}',
-	trp: '\\mathsf{T}',
-      }}});
-    </script>
-    <title>固有値と固有ベクトル｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-    </style>
-  </head>
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+	}}});
+</script>
+<script>
+	const ttl = "固有値と固有ベクトル"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
 
 <body>
-<center><div id="titlehead">固有値と固有ベクトル</div></center>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
 
-<p style="text-align:right;">
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/29<br>
-updated on 2022/4/22
+updated on 2022/6/18
 </p>
 
-<div class="def" id="160">
+<p id="160">&nbsp;</p><div class="def">
 <b>[#160] 定義：固有値，固有ベクトル</b><br>
 	<p> $n$ 次正方行列 $A$ に対して数 $\lambda\in\mathbb{C}$ と $n$ 次列ベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
 	<p><center>$\begin{align*}
@@ -39,9 +56,9 @@ updated on 2022/4/22
 		\end{align*}$</center></p>
 	<p>が成り立つとき，$\lambda$ を $A$ の【固有値 (eigenvalue)】，$\bs{x}$ を $\lambda$ に属する【固有ベクトル (eigenvector)】と呼ぶ．</p>
 </div>
-<br><br>
+<br>
 
-<div class="prp" id="161">
+<p id="161">&nbsp;</p><div class="prp">
 <b>[#161] 命題：特性方程式，特性多項式</b><br>
 	<p> $A$ を $n$ 次正方行列として，数 $\lambda\in\mathbb{C}$ が $A$ の固有値，$n$ 次列ベクトル $\bs{x}\not =\bs{0}$ が $\lambda$ に属する固有ベクトル $A$ の固有ベクトルであることは，以下の等式が成り立つことと同値である：</p>
 	<p><center>$\begin{align*}
@@ -50,10 +67,10 @@ updated on 2022/4/22
 	<p>ただし $I$ は $n$ 次の単位行列である．<br>
 		なお $\lambda$ が未知のとき，上の等式は $A$ の【特性方程式 (characteristic equation)】，等式の左辺は $A$ の【特性多項式 (characteristic polynomial)】と呼ばれる．</p>
 </div>
-<br><br>
+<br>
 
 
-<div class="exm" id="183">
+<p id="183">&nbsp;</p><div class="exm">
 <b>[#183] 例題：固有値と固有ベクトルの導出</b><br>
 	<p>正方行列 $A$ を</p>
 	<p><center>$\begin{align*}
@@ -102,8 +119,33 @@ updated on 2022/4/22
 		(\lambda,\,\bs{x}) = \left( -1,\,\fraction{1}{2}\left[\begin{array}{c} 1\\ -\sqrt{2}\\ 1\end{array}\right]\right),\,\left( 1,\,\fraction{1}{\sqrt{2}}\left[\begin{array}{c} 1\\ 0\\ -1\end{array}\right]\right),\,\left(3,\,\fraction{1}{2}\left[\begin{array}{c} 1\\ \sqrt{2}\\ 1\end{array}\right]\right).}
 		\end{align*}$</center></p>
 </Details>
-<br><br>
+<br>
 
+<p id="278">&nbsp;</p><div class="prp">
+<b>[#278] 定義：行列の $\bs{m}$ 乗の固有値は元の固有値の $\bs{m}$ 乗</b><br>
+	<p> $\lambda\in\mathbb{C}$ が正方行列 $A$ の固有値であるとき，任意の $m\in\mathbb{N}$ に対して $\lambda^m$ は $A^m$ の固有値である．</p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>帰納法により示す．$m=1$ のときは仮定により明らか．<br>
+		ある $m\in\mathbb{N}$ に対して $\lambda^m$ は $A^m$ の固有値である，つまりベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
+	<p><center>\begin{align*}
+		A^m \bs{x} = \lambda^m \bs{x}
+		\end{align*}</center></p>
+	<p>と書けるとする．このとき，上式の両辺に左から $A$ をかけると</p>
+	<p><center>\begin{align*}
+		AA^m \bs{x} = \lambda^m A\bs{x}
+		\end{align*}</center></p>
+	<p>が成り立つ．これは</p>
+	<p><center>\begin{align*}
+		A^{m+1} \bs{x} = \lambda^m \lambda\bs{x} = \lambda^{m+1}\bs{x}
+		\end{align*}</center></p>
+	<p>と同値であるから，$\lambda^m$ が $A^m$ の固有値であるならば，$\lambda^{m+1}$ は $A$ の固有値である．<br>
+		以上により，任意の $m\in\mathbb{N}$ に対して $\lambda^m$ は $A^m$ の固有値である．</p>
+</details>
+<br>
+
+<br><br>
 <div id="bib">
 <b>参考文献</b>
 <ul>
