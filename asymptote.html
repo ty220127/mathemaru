@@ -1,37 +1,54 @@
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
-  <head>
+<head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
-		fraction: ['\\displaystyle\\frac{\\,#1\\,}{\\,#2\\,}', 2],
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		intgrl: '\\displaystyle\\int',
 		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
-      }}});
-    </script>
-    <title>漸近記法｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-    </style>
-  </head>
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+	}}});
+</script>
+<script>
+	const ttl = "漸近記法"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
 
 <body>
-<center><div id="titlehead">漸近記法</div></center>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
 
-<p style="text-align:right;">
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/4/8<br>
-updated on 2022/4/23
+updated on 2022/6/21
 </p>
    
-<div class="def" id="174">
+<p id="174">&nbsp;</p><div class="def">
 <b>[#174] 定義：Landau の漸近記法</b><br>
 	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとする．</p>
 	<ul> 
@@ -40,15 +57,53 @@ updated on 2022/4/23
 			&f(x) = O(g(x))\,(x\rightarrow a)\,\,\\
 				\overset{\rm def}{\Longleftrightarrow}\,\,&{}^\exists C\gt 0\,\,\text{s.t.}\,\,\left[{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, |f(x)|\leq C|g(x)|]\right].
 			\end{align*}$</center></p>
-		<li>$f(x)$ の発散スピードが速くとも $g(x)$ 未満であることを $f(x) = o(g(x))\,(x\rightarrow a)$ と書く：
+		<li>$f(x)$ の発散スピードが速くとも $g(x)$ 未満であることを $f(x)\in o(g(x))$ 或いは $f(x) = o(g(x))\,(x\rightarrow a)$ と書く：
 		<p><center>$\begin{align*}
-			f(x) = o(g(x))\,(x\rightarrow a)\,\,\overset{\rm def}{\Longleftrightarrow}\,\,\lim_{x\rightarrow a} \fraction{f(x)}{g(x)} = 0.
+			f(x) = o(g(x))\,(x\rightarrow a)\,\,\overset{\rm def}{\Longleftrightarrow}\,\,\lim_{x\rightarrow a} \left|\fraction{f(x)}{g(x)}\right| = 0.
 			\end{align*}$</center></p>
 	</ul>
 	<p>こうした記法を【<ruby><rb>Landau</rb><rp>（</rp><rt>ランダウ</rt><rp>）</rp></ruby> の漸近記法 (Landau asymptotic notation)】，$O,\,o$ をまとめて【Landau の記号 (Landau symbol)】と呼ぶ．
 </div>
-<br><br>
-	  
+<details>
+	<summary>補足１</summary>
+	<p>$f(x)=O(g(x))$ や $f(x) = o(g(x))$ と書けるとき，しばしば「$f(x)$ は $g(x)$ で上から評価できる」という表現をする．</p>
+</details>
+<details>
+	<summary>補足２</summary>
+	<p>Landau の記法は，「$g(x)$ で上から評価できる関数」のクラスを定めているわけだから，その意味では集合の記号 $(\in)$ を用いて表現するのが正確といえる．しかし，多項式の末尾に $O(g(x))$ や $o(g(x))$ をつけることで「$g(x)$ で上から評価できる関数がついてくる」ことを表現できることから，イコールを用いた表現も便利であるといえる．</p>
+</details>
+<br>
+
+<p id="279">&nbsp;</p><div class="prp">
+<b>[#279] 命題：スモールオーならラージオー</b><br>
+	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとすると</p>
+	<p><center>\begin{align}
+		f(x) = o(g(x))\,(x\to a) \ \Longrightarrow\ f(x) = O(g(x))\,(x\to a).
+		\end{align}</center><p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>$f(x) = o(g(x))$ とすると，この定義$\nr{asymptote}{174}$ より</p>
+	<p><center>\begin{align}
+		\lim_{x\to a} \fraction{f(x)}{g(x)} = 0.
+		\end{align}</center></p>
+	<p>極限の定義より，これは</p>
+	<p><center>\begin{align}
+		{}^\forall \varepsilon \gt 0,\ {}^\exists \delta\in\mathbb{R} \,\,\, \text{s.t.}\ \left[0\lt |x-a|\lt \delta\ \rightarrow\ \left|\fraction{f(x)}{g(x)}\right| \lt \varepsilon \right]
+		\end{align}</center></p>
+	<p>と同値である．よって，適当に $\varepsilon$ を固定すれば，それに対して</p>
+	<p><center>\begin{align}
+		{}^\exists \delta\in\mathbb{R} \,\,\, \text{s.t.}\ \left[0\lt |x-a|\lt \delta\ \rightarrow\ |f(x)| \lt \varepsilon |g(x)| \right]
+		\end{align}</center></p>
+	<p>が成り立つ．これは，$f(x) = O(g(x))$ であるための十分条件である$\nr{asymptote}{174}$．</p>
+</details>
+<details>
+	<summary>補足</summary>
+	<p>Landau の記法の定義を言葉で書いたものを見れば，この命題は自明であるもいえる．</p>
+</details>
+<br>
+
+<br><br>	  
 <div id="bib">
 <b>参考文献</b>
 	<ul>
@@ -59,6 +114,7 @@ updated on 2022/4/23
 		<li><a href="https://www.hanachiru-blog.com/entry/2020/05/31/120000">オーダー記法(O記法，Ω記法，Θ記法)の定義についてのメモ｜はなちるのマイノート</a></li>
 		<li><a href="https://algo-logic.info/asymptotic-analysis/">漸近記法の定義とアルゴリズムの計算量の解析｜アルゴリズムロジック</a></li>
 		<li><a href="https://math-fun.net/20191217/4196/">関数のオーダー評価（ランダウの記号）をわかりやすく解説｜趣味の大学数学</a></li>
+		<li><a href="https://www.mynote-jp.com/entry/Landau-symbol">ランダウの記号の使い方 - Notes_JP</a> [2022/6/21 閲覧].</li>
 </ul>	      
 </div>
       
