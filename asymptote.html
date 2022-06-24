@@ -46,36 +46,36 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/4/8<br>
-updated on 2022/6/24
+updated on 2022/6/23
 </p>
    
 <p id="174">&nbsp;</p><div class="def">
 <b>[#174] 定義：Landau の漸近記法</b><br>
 	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとする．</p>
 	<ul> 
-		<li>$f(x)$ の発散スピードが速くとも $g(x)$ と同じ程度であることを $f(x)\in O(g(x))$ 或いは $f(x) = O(g(x))\,(x\rightarrow a)$ と書く：
+		<li>$f(x)$ の発散スピードが $g(x)$ と同じ程度かそれより遅いことを $f(x)\in \mathrm{O}(g(x))$ 或いは $f(x) = \mathrm{O}(g(x))\,(x\rightarrow a)$ と書く：
 		<p><center>$\begin{align*}
-			&f(x) = O(g(x))\,(x\rightarrow a)\,\,\\
+			&f(x) = \mathrm{O}(g(x))\,(x\rightarrow a)\,\,\\
 				\overset{\rm def}{\Longleftrightarrow}\,\,&{}^\exists C\gt 0\,\,\text{s.t.}\,\,\left[{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, |f(x)|\leq C|g(x)|]\right].
 			\end{align*}$</center></p>
-		<li>$f(x)$ の発散スピードが速くとも $g(x)$ 未満であることを $f(x)\in o(g(x))$ 或いは $f(x) = o(g(x))\,(x\rightarrow a)$ と書く：
+		<li>$f(x)$ の発散スピードが $g(x)$ より遅いことを $f(x)\in \mathrm{o}(g(x))$ 或いは $f(x) = \mathrm{o}(g(x))\,(x\rightarrow a)$ と書く：
 		<p><center>$\begin{align*}
-			f(x) = o(g(x))\,(x\rightarrow a)\,\,\overset{\rm def}{\Longleftrightarrow}\,\,\lim_{x\rightarrow a} \left|\fraction{f(x)}{g(x)}\right| = 0.
+			f(x) = \mathrm{o}(g(x))\,(x\rightarrow a)\,\,\overset{\rm def}{\Longleftrightarrow}\,\,\lim_{x\rightarrow a} \left|\fraction{f(x)}{g(x)}\right| = 0.
 			\end{align*}$</center></p>
 	</ul>
-	<p>こうした記法を【<ruby><rb>Landau</rb><rp>（</rp><rt>ランダウ</rt><rp>）</rp></ruby> の漸近記法 (Landau asymptotic notation)】，$O,\,o$ をまとめて【Landau の記号 (Landau symbol)】と呼ぶ．
+	<p>こうした記法を【<ruby><rb>Landau</rb><rp>（</rp><rt>ランダウ</rt><rp>）</rp></ruby> の漸近記法 (Landau asymptotic notation)】，$\mathrm{O,\ o}$ をまとめて【Landau の記号 (Landau symbol)】と呼ぶ．
 </div>
 <details>
 	<summary>補足１</summary>
-	<p>$f(x)=O(g(x))$ や $f(x) = o(g(x))$ と書けるとき，しばしば「$f(x)$ は $g(x)$ で上から評価できる」という表現をする．</p>
+	<p>$f(x)=\mathrm{O}(g(x))$ や $f(x) = \mathrm{o}(g(x))$ と書けるとき，しばしば「$f(x)$ は $g(x)$ で上から評価できる」という表現をする．</p>
 </details>
 <details>
 	<summary>補足２</summary>
-	<p>Landau の記法は，「$g(x)$ で上から評価できる関数」のクラスを定めているわけだから，その意味では集合の記号 $(\in)$ を用いて表現するのが正確といえる．しかし，多項式の末尾に $O(g(x))$ や $o(g(x))$ をつけることで「$g(x)$ で上から評価できる関数がついてくる」ことを表現できることから，イコールを用いた表現も便利であるといえる．</p>
+	<p>Landau の記法は，「$g(x)$ で上から評価できる関数」のクラスを定めているわけだから，その意味では集合の記号 $(\in)$ を用いて表現するのが正確といえる．しかし，多項式の末尾に $\mathrm{O}(g(x))$ や $\mathrm{o}(g(x))$ をつけることで「$g(x)$ で上から評価できる関数がついてくる」ことを表現できることから，イコールを用いた表現も便利であるといえる．</p>
 </details>
 <details>
 	<summary>補足３</summary>
-	<p>$O,\ o$ はそれぞれ「ビッグオー」，「スモールオー」と呼ぶのが慣例となっているが，正確にはギリシャ文字の「オミクロン」である．</p>
+	<p>$\mathrm{O,\ o}$ はそれぞれ「ビッグオー」，「スモールオー」と呼ぶのが慣例となっているが，正確にはギリシャ文字の「オミクロン」である．</p>
 </details>
 <br>
 
@@ -83,12 +83,12 @@ updated on 2022/6/24
 <b>[#279] 命題：スモールオーならラージオー</b><br>
 	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとすると</p>
 	<p><center>\begin{align}
-		f(x) = o(g(x))\,(x\to a) \ \Longrightarrow\ f(x) = O(g(x))\,(x\to a).
+		f(x) = \mathrm{o}(g(x))\,(x\to a) \ \Longrightarrow\ f(x) = \mathrm{O}(g(x))\,(x\to a).
 		\end{align}</center><p>
 </div>
 <details>
 	<summary>証明</summary>
-	<p>$f(x) = o(g(x))$ とすると，この定義$\nr{asymptote}{174}$ より</p>
+	<p>$f(x) = \mathrm{o}(g(x))$ とすると，この定義$\nr{asymptote}{174}$ より</p>
 	<p><center>\begin{align}
 		\lim_{x\to a} \left|\fraction{f(x)}{g(x)}\right| = 0.
 		\end{align}</center></p>
@@ -100,11 +100,11 @@ updated on 2022/6/24
 	<p><center>\begin{align}
 		{}^\exists \delta\gt 0 \,\,\, \text{s.t.}\ \left[0\lt |x-a|\lt \delta\ \rightarrow\ |f(x)| \lt \varepsilon |g(x)| \right]
 		\end{align}</center></p>
-	<p>が成り立つ．これは，$f(x) = O(g(x))$ であるための十分条件である$\nr{asymptote}{174}$．</p>
+	<p>が成り立つ．これは，$f(x) = \mathrm{O}(g(x))$ であるための十分条件である$\nr{asymptote}{174}$．</p>
 </details>
 <details>
 	<summary>補足</summary>
-	<p>Landau の記法の定義を言葉で書いたものを見れば，この命題は自明であるもいえる．つまり，「速くとも $g(x)$ 未満 $(o)$」は，「速くとも $g(x)$ と同程度 $(O)$」に含まれる．</p>
+	<p>Landau の記法の定義を言葉で書いたものを見れば，この命題は自明であるもいえる．つまり，「$g(x)$ より遅い $(\mathrm{o})$」は，「$g(x)$ と同程度かそれより遅い $(\mathrm{O})$」に含まれる$\nr{proposition}{88}$．</p>
 </details>
 <br>
 
@@ -112,30 +112,34 @@ updated on 2022/6/24
 <b>[#280] 定義：オメガ漸近記法</b><br>
 	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとする．</p>
 	<ul> 
-		<li>$f(x)$ の発散スピードが遅くとも $g(x)$ と同じ程度であることを $f(x)\in \varOmega(g(x))$ 或いは $f(x) = \varOmega(g(x))\,(x\rightarrow a)$ と書く：
+		<li>$f(x)$ の発散スピードが $g(x)$ と同じ程度かそれより速いことを $f(x)\in \Omega(g(x))$ 或いは $f(x) = \Omega(g(x))\,(x\rightarrow a)$ と書く：
 		<p><center>$\begin{align*}
-			&f(x) = \varOmega(g(x))\,(x\rightarrow a)\,\,\\
+			&f(x) = \Omega(g(x))\,(x\rightarrow a)\,\,\\
 				\overset{\rm def}{\Longleftrightarrow}\,\,&{}^\exists C\gt 0\,\,\text{s.t.}\,\,\left[{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, |f(x)|\geq C|g(x)|]\right].
 			\end{align*}$</center></p>
-		<li>$f(x)$ の発散スピードが遅くとも $g(x)$ よりは速いことを $f(x)\in \omega(g(x))$ 或いは $f(x) = \omega(g(x))\,(x\rightarrow a)$ と書く：
+		<li>$f(x)$ の発散スピードが $g(x)$ より速いことを $f(x)\in \omega(g(x))$ 或いは $f(x) = \omega(g(x))\,(x\rightarrow a)$ と書く：
 		<p><center>$\begin{align*}
 			f(x) = \omega(g(x))\,(x\rightarrow a)\,\,\overset{\rm def}{\Longleftrightarrow}\,\,\lim_{x\rightarrow a} \left|\fraction{f(x)}{g(x)}\right| = \infty.
 			\end{align*}$</center></p>
 	</ul>
 </div>
+<details>
+	<summary>補足</summary>
+	<p>Landau の漸近記法が関数を上から評価するものであるならば，オメガ漸近記法は関数を $g(x)$ で「下から評価する」ものである．</p>
+</details>
 <br>
 
 <p id="281">&nbsp;</p><div class="prp">
 <b>[#281] 命題：Landauの記法とオメガ記法の関係</b><br>
 	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとすると</p>
 	<p><center>\begin{align}
-		f(x) = \varOmega(g(x)) &\ \Longleftrightarrow\ g(x) = O(f(x)),\\
-		f(x) = \omega(g(x)) &\ \Longleftrightarrow\ g(x) = o(f(x)).
+		f(x) = \Omega(g(x)) &\ \Longleftrightarrow\ g(x) = \mathrm{O}(f(x)),\\
+		f(x) = \omega(g(x)) &\ \Longleftrightarrow\ g(x) = \mathrm{o}(f(x)).
 		\end{align}</center><p>
 </div>
 <details>
 	<summary>証明</summary>
-	<p>$f(x) = \varOmega(g(x))$ とすると，この定義$\nr{asymptote}{280}$ より</p>
+	<p>$f(x) = \Omega(g(x))$ とすると，この定義$\nr{asymptote}{280}$ より</p>
 	<p><center>\begin{align}
 		{}^\exists C\gt 0\,\,\text{s.t.}\,\,\left[{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, |f(x)|\geq C|g(x)|]\right].
 		\end{align}</center></p>
@@ -143,33 +147,33 @@ updated on 2022/6/24
 	<p><center>\begin{align}
 		{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, |g(x)|\leq D|f(x)|]
 		\end{align}</center></p>
-	<p>である．これは，$g(x) = O(f(x))$ の定義$\nr{asymptote}{174}$ である．</p>
+	<p>である．これは，$g(x) = \mathrm{O}(f(x))$ の定義$\nr{asymptote}{174}$ である．</p>
 	<p>また，</p>
 	<p><center>\begin{align}
 		\lim_{x\rightarrow a} \left|\fraction{f(x)}{g(x)}\right| = \infty \ \Longleftrightarrow\ \lim_{x\rightarrow a} \left|\fraction{g(x)}{f(x)}\right| = 0
 		\end{align}</center></p>
-	<p>であるから，$f(x) = \omega(g(x))$ と $g(x) = o(f(x))$ は同値である．</p>
+	<p>であるから，$f(x) = \omega(g(x))$ と $g(x) = \mathrm{o}(f(x))$ は同値である．</p>
 </details>
 <details>
 	<summary>補足</summary>
-	<p>関数の発散スピードを $g(x)$ の視点で考えれば直感的にも難しくない．つまり，$f(x) = \varOmega(g(x))$ のときは，$g(x)$ の発散スピードは $f(x)$ と同程度かそれより速いし，$f(x) = \omega(g(x))$ のときは，$g(x)$ の発散スピードは $f(x)$ よりも相対的に速い．</p>
+	<p>関数の発散スピードを $g(x)$ の視点で考えれば直感的にも難しくない．つまり，$f(x) = \Omega(g(x))$ のときは，$g(x)$ の発散スピードは $f(x)$ と同程度かそれより速いし，$f(x) = \omega(g(x))$ のときは，$g(x)$ の発散スピードは $f(x)$ よりも相対的に速い．</p>
 </details>
 <br>
 
 <p id="282">&nbsp;</p><div class="def">
 <b>[#282] 定義：シータ漸近記法</b><br>
-	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとするとき，$f(x)$ の発散スピードが  $g(x)$ と同じ程度であることを $f(x)\in \varTheta(g(x))$ 或いは $f(x) = \varTheta(g(x))\,(x\rightarrow a)$ と書く：
+	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとするとき，$f(x)$ の発散スピードが  $g(x)$ と同じ程度であることを $f(x)\in \Theta(g(x))$ 或いは $f(x) = \Theta(g(x))\,(x\rightarrow a)$ と書く：
 	<p><center>$\begin{align*}
-		&f(x) = \varTheta(g(x))\,(x\rightarrow a)\,\,\\
+		&f(x) = \Theta(g(x))\,(x\rightarrow a)\,\,\\
 			\overset{\rm def}{\Longleftrightarrow}\,\,&{}^\exists (C_1,\ C_2)\in [0,\ \infty)^2\,\,\text{s.t.}\\
 		&\ \left[{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, C_1|g(x)|\leq |f(x)|\leq C_2|g(x)|]\right].
 		\end{align*}$</center></p>
 </div>
 <details>
 	<summary>補足</summary>
-	<p> $f(x) = O(g(x))$ と $f(x) = \varOmega(g(x))$ を組み合わせたものが $f(x) = \varTheta(g(x))$ である．つまり，</p>
+	<p> $f(x) = \mathrm{O}(g(x))$ と $f(x) = \Omega(g(x))$ を組み合わせたものが $f(x) = \Theta(g(x))$ である．つまり，</p>
 	<p><center>\begin{align}
-		f(x) = \varTheta(g(x)) \ \Longleftrightarrow\ (f(x) = O(g(x)))\land (f(x) = \varOmega(g(x))).
+		f(x) = \Theta(g(x)) \ \Longleftrightarrow\ (f(x) = \mathrm{O}(g(x)))\land (f(x) = \Omega(g(x))).
 		\end{align}</center></p>
 </details>
 <br>
