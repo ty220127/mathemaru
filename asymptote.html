@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -45,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/4/8<br>
-updated on 2022/6/23
+updated on 2022/6/24
 </p>
    
 <p id="174">&nbsp;</p><div class="def">
@@ -71,6 +72,10 @@ updated on 2022/6/23
 <details>
 	<summary>補足２</summary>
 	<p>Landau の記法は，「$g(x)$ で上から評価できる関数」のクラスを定めているわけだから，その意味では集合の記号 $(\in)$ を用いて表現するのが正確といえる．しかし，多項式の末尾に $O(g(x))$ や $o(g(x))$ をつけることで「$g(x)$ で上から評価できる関数がついてくる」ことを表現できることから，イコールを用いた表現も便利であるといえる．</p>
+</details>
+<details>
+	<summary>補足３</summary>
+	<p>$O,\ o$ はそれぞれ「ビッグオー」，「スモールオー」と呼ぶのが慣例となっているが，正確にはギリシャ文字の「オミクロン」である．</p>
 </details>
 <br>
 
@@ -103,6 +108,72 @@ updated on 2022/6/23
 </details>
 <br>
 
+<p id="280">&nbsp;</p><div class="def">
+<b>[#280] 定義：オメガ漸近記法</b><br>
+	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとする．</p>
+	<ul> 
+		<li>$f(x)$ の発散スピードが遅くとも $g(x)$ と同じ程度であることを $f(x)\in \varOmega(g(x))$ 或いは $f(x) = \varOmega(g(x))\,(x\rightarrow a)$ と書く：
+		<p><center>$\begin{align*}
+			&f(x) = \varOmega(g(x))\,(x\rightarrow a)\,\,\\
+				\overset{\rm def}{\Longleftrightarrow}\,\,&{}^\exists C\gt 0\,\,\text{s.t.}\,\,\left[{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, |f(x)|\geq C|g(x)|]\right].
+			\end{align*}$</center></p>
+		<li>$f(x)$ の発散スピードが遅くとも $g(x)$ よりは速いことを $f(x)\in \omega(g(x))$ 或いは $f(x) = \omega(g(x))\,(x\rightarrow a)$ と書く：
+		<p><center>$\begin{align*}
+			f(x) = \omega(g(x))\,(x\rightarrow a)\,\,\overset{\rm def}{\Longleftrightarrow}\,\,\lim_{x\rightarrow a} \left|\fraction{f(x)}{g(x)}\right| = \infty.
+			\end{align*}$</center></p>
+	</ul>
+</div>
+<br>
+
+<p id="281">&nbsp;</p><div class="prp">
+<b>[#281] 命題：Landauの記法とオメガ記法の関係</b><br>
+	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとすると</p>
+	<p><center>\begin{align}
+		f(x) = \varOmega(g(x)) &\ \Longleftrightarrow\ g(x) = O(f(x)),\\
+		f(x) = \omega(g(x)) &\ \Longleftrightarrow\ g(x) = o(f(x)).
+		\end{align}</center><p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>$f(x) = \varOmega(g(x))$ とすると，この定義$\nr{asymptote}{280}$ より</p>
+	<p><center>\begin{align}
+		{}^\exists C\gt 0\,\,\text{s.t.}\,\,\left[{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, |f(x)|\geq C|g(x)|]\right].
+		\end{align}</center></p>
+	<p>いま，$C \gt 0$ であるから $D= 1/C$ なる $D \gt 0$ が存在して，</p>
+	<p><center>\begin{align}
+		{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, |g(x)|\leq D|f(x)|]
+		\end{align}</center></p>
+	<p>である．これは，$g(x) = O(f(x))$ の定義$\nr{asymptote}{174}$ である．</p>
+	<p>また，</p>
+	<p><center>\begin{align}
+		\lim_{x\rightarrow a} \left|\fraction{f(x)}{g(x)}\right| = \infty \ \Longleftrightarrow\ \lim_{x\rightarrow a} \left|\fraction{g(x)}{f(x)}\right| = 0
+		\end{align}</center></p>
+	<p>であるから，$f(x) = \omega(g(x))$ と $g(x) = o(f(x))$ は同値である．</p>
+</details>
+<details>
+	<summary>補足</summary>
+	<p>関数の発散スピードを $g(x)$ の視点で考えれば直感的にも難しくない．つまり，$f(x) = \varOmega(g(x))$ のときは，$g(x)$ の発散スピードは $f(x)$ と同程度かそれより速いし，$f(x) = \omega(g(x))$ のときは，$g(x)$ の発散スピードは $f(x)$ よりも相対的に速い．</p>
+</details>
+<br>
+
+<p id="282">&nbsp;</p><div class="def">
+<b>[#282] 定義：シータ漸近記法</b><br>
+	<p> 実数関数 $f,\,g$ が $a\in\mathbb{R}$ の近くで定義されているとするとき，$f(x)$ の発散スピードが  $g(x)$ と同じ程度であることを $f(x)\in \varTheta(g(x))$ 或いは $f(x) = \varTheta(g(x))\,(x\rightarrow a)$ と書く：
+	<p><center>$\begin{align*}
+		&f(x) = \varTheta(g(x))\,(x\rightarrow a)\,\,\\
+			\overset{\rm def}{\Longleftrightarrow}\,\,&{}^\exists (C_1,\ C_2)\in [0,\ \infty)^2\,\,\text{s.t.}\\
+		&\ \left[{}^\exists \delta\gt 0\,\,\text{s.t.}\,\,[0\lt |x-a|\lt \delta\,\,\rightarrow\,\, C_1|g(x)|\leq |f(x)|\leq C_2|g(x)|]\right].
+		\end{align*}$</center></p>
+</div>
+<details>
+	<summary>補足</summary>
+	<p> $f(x) = O(g(x))$ と $f(x) = \varOmega(g(x))$ を組み合わせたものが $f(x) = \varTheta(g(x))$ である．つまり，</p>
+	<p><center>\begin{align}
+		f(x) = \varTheta(g(x)) \ \Longleftrightarrow\ (f(x) = O(g(x)))\land (f(x) = \varOmega(g(x))).
+		\end{align}</center></p>
+</details>
+<br>
+
 <br><br>	  
 <div id="bib">
 <b>参考文献</b>
@@ -115,6 +186,7 @@ updated on 2022/6/23
 		<li><a href="https://algo-logic.info/asymptotic-analysis/">漸近記法の定義とアルゴリズムの計算量の解析｜アルゴリズムロジック</a></li>
 		<li><a href="https://math-fun.net/20191217/4196/">関数のオーダー評価（ランダウの記号）をわかりやすく解説｜趣味の大学数学</a></li>
 		<li><a href="https://www.mynote-jp.com/entry/Landau-symbol">ランダウの記号の使い方 - Notes_JP</a> [2022/6/21 閲覧].</li>
+		<li><a href="https://balance-tutorial-ja.readthedocs.io/ja/latest/appendices/asymptotic_analysis.html">漸近解析 (Asymptotic analysis) - 興奮・抑制均衡入門 v0.1.1a0</a> [2022/6/24 閲覧].</li>
 </ul>	      
 </div>
       
