@@ -45,7 +45,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/29<br>
-updated on 2022/6/18
+updated on 2022/6/28
 </p>
 
 <p id="160">&nbsp;</p><div class="def">
@@ -121,8 +121,44 @@ updated on 2022/6/18
 </Details>
 <br>
 
+<p id="284">&nbsp;</p><div class="prp">
+<b>[#284] 命題：正則行列の固有値は非零</b><br>
+	<p> $\lambda\in\mathbb{C}$ は正方行列 $A$ の固有値とするとき，$A$ が正則$\nr{regular}{163}$ であるならば，$\lambda\not =0$ である．</p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p></p>
+</details>
+<details>
+	<summary>補足</summary>
+	<p>この命題を対偶$\nr{implication}{68}$ をとれば，「行列 $A$ が $0$ を固有値として持つならば，$A$ が正則でない」となる．</p>
+</details>
+<br>
+
+<p id="285">&nbsp;</p><div class="prp">
+<b>[#285] 命題：逆行列の固有値は元の固有値の逆数</b><br>
+	<p> $\lambda\in\mathbb{C}$ が正則$\nr{regular}{163}$ な正方行列 $A$ の固有値であるとき $\lambda^{-1}$ は $A^{-1}$ の固有値である．</p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>仮定と固有値の定義$\nr{eigen}{160}$ より，ベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
+	<p><center>\begin{align}
+		A\bs{x} = \lambda\bs{x}.
+		\end{align}</center></p>
+	<p> $A$ は正則であるから逆行列 $A^{-1}$ が存在し$\nr{regular}{163}$，これを両辺に左からかけると</p>
+	<p><center>\begin{align}
+		\bs{x} = \lambda A^{-1}\bs{x}.
+		\end{align}</center></p>
+	<p>また $A$ の正則性から $\lambda \not =0$である$\nr{eigen}{284}$．よって，両辺を $\lambda$ で割れば</p>
+	<p><center>\begin{align}
+		\fraction{1}{\lambda}\,\bs{x} = A^{-1}\bs{x},\ \ \text{i.e.,}\ \ A^{-1}\bs{x} = \lambda^{-1}\bs{x}.
+		\end{align}</center></p>
+	<p>よって，$\lambda^{-1}$ は $A^{-1}$ の固有値である．</p>
+</details>
+<br>
+
 <p id="278">&nbsp;</p><div class="prp">
-<b>[#278] 定義：行列の $\bs{m}$ 乗の固有値は元の固有値の $\bs{m}$ 乗</b><br>
+<b>[#278] 命題：行列の $\bs{m}$ 乗の固有値は元の固有値の $\bs{m}$ 乗</b><br>
 	<p> $\lambda\in\mathbb{C}$ が正方行列 $A$ の固有値であるとき，任意の $m\in\mathbb{N}$ に対して $\lambda^m$ は $A^m$ の固有値である．</p>
 </div>
 <details>
@@ -150,7 +186,8 @@ updated on 2022/6/18
 <b>参考文献</b>
 <ul>
 	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
-	<li><a href="https://risalc.info/src/eigenvalue-vector.html">固有値と固有ベクトルの解説～具体例と性質～(証明付)｜理数アラカルト</a></li>
+	<li><a href="https://risalc.info/src/eigenvalue-vector.html">固有値と固有ベクトルの解説～具体例と性質～(証明付) - 理数アラカルト</a></li>
+	<li><a href="https://risalc.info/src/inverse-matrix-eigenvalue.html">逆行列の固有値 - 理数アラカルト</a> [2022/6/28 閲覧].</li>
 </ul>	      
 </div>
       
