@@ -1,20 +1,20 @@
-
-
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
@@ -24,13 +24,12 @@
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
-		bra: ['\\langle #1 |', 1],
-		ket: ['| #1 \\rangle', 1],
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 	}}});
 </script>
 <script>
 	const ttl = "述語論理"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
@@ -40,13 +39,13 @@
 
 <nav>
 <ul>
-<li><a href="index.html">演習問題集</a></li>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
 </ul>
 </nav>
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/12<br>
-updated on 2022/5/23
+updated on 2022/6/28
 </p>
     
 <p id="75">&nbsp;</p><div class="def">
@@ -112,7 +111,7 @@ updated on 2022/5/23
 <br>
   
 <p id="122">&nbsp;</p><div class="fct">
-	<b>[#122] 事実：付帯条件付き全称・存在命題の否定</b><br>
+	<b>[#122] 事実：全称・存在命題の否定</b><br>
 	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
 	<p><center>$\begin{align*}
 		&\left[\neg\left({}^\forall x,\,\,P(x)\right)\right] \equiv \left[{}^\exists x\,\,\,\text{s.t.}\,\,\,\neg P(x)\right],\\
@@ -134,7 +133,7 @@ updated on 2022/5/23
 <br>
   
 <p id="139">&nbsp;</p><div class="prp">
-	<b>[#139] 命題：全称・存在命題の否定</b><br>
+	<b>[#139] 命題：付帯条件付き全称・存在命題の否定</b><br>
 	<p>変項 $x$ についての条件 $P(x),\ Q(x)$ に対して</p>
 	<p><center>$\begin{align*}
 		&\left[\neg\left({}^\forall x:P(x),\,\,Q(x)\right)\right] \equiv \left[{}^\exists x:P(x)\,\,\,\text{s.t.}\,\,\,\neg Q(x)\right],\\
@@ -310,6 +309,29 @@ updated on 2022/5/23
 		\,\refeqv{implication}{245}\,\,& \left[{}^\forall x,\ C(x)\to (P\to Q(x))\right]\\
 		\,\refeqv{predicate}{77}\,\,\,& \left[{}^\forall x:C(x),\ P\to Q(x)\right].
  		\end{align*}</center></p>
+</details>
+
+<p id="283">&nbsp;</p><div class="prp">
+	<b>[#283] 命題：全称命題ならば存在命題</b><br>
+	<p>変項 $x$ についての条件 $P(x)$ に対して</p>
+	<p><center>$\begin{align*}
+		{}^\forall x,\ P(x)\ \Longrightarrow\ {}^\exists x\ \ \text{s.t.}\ \ P(x).
+		\end{align*}$</center></p>
+	<p>特に付帯条件 $C(x)$ のある場合</p>
+	<p><center>$\begin{align*}
+		{}^\forall x:C(x),\ P(x)\ \Longrightarrow\ {}^\exists x:C(x)\ \ \text{s.t.}\ \ P(x).
+		\end{align*}$</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>付帯条件の場合に関して，次のように示される：</p>
+	<p><center>\begin{align}
+		[{}^\forall x,\ P(x)]\rightarrow [{}^\exists x\ \ \text{s.t.}\ \ P(x)] &\ \refeqv{implication}{65} \ \neg [{}^\forall x,\ P(x)]\lor [{}^\exists x\ \ \text{s.t.}\ \ P(x)]\\
+			&\ \refeqv{predicate}{122}\ [{}^\exists x\ \ \text{s.t.}\ \ \neg P(x)]\lor [{}^\exists x\ \ \text{s.t.}\ \ P(x)]\\
+			&\ \refeqv{predicate}{140}\ [{}^\exists x\ \ \text{s.t.}\ \ \neg P(x)\lor P(x)]\\
+			&\ \refeqv{proposition}{60}\ [{}^\exists x\ \ \text{s.t.}\ \ \mathsf{T}] \equiv \mathsf{T}\\
+		\end{align}</center></p>
+	<p>付帯条件のついている場合も，対応する付帯条件命題$\nr{predicate}{139}\,\nr{predicate}{141}$ を用いることにより示される．</p>
 </details>
 
 <br><br>
