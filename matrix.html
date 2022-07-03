@@ -44,7 +44,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/14<br>
-updated on 2022/6/11
+updated on 2022/7/3
 </p>
     
 <p id="144">&nbsp;</p><div class="def">
@@ -52,7 +52,7 @@ updated on 2022/6/11
 	<p>数を長方形状に並べた表を【行列 (matrix)】と呼ぶ．特に $m,\,n$ を自然数として，数を縦に $m$ 個，横に $n$ 個並べたものを「 $(m,\,n)$ 型の行列」，或いは「 $(m,\,n)$-行列」と呼ぶ．</p>
 	<ul>
 		<li> 行列の縦の並びを【行 (row)】，横の並びを【列 (column)】と呼び，特に行列の上から $i$ 番目を【第 $i$ 行 (the $i$-th row)】，左から $j$ 番目を【第 $j$ 列 (the $j$-th column)】と呼ぶ．</li>
-		<li> $(m,\,n)$-行列が持つ $mn$ 個の各数を行列の【成分 (entry, element)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の【$(i,\,j)$-成分 ($(i,\,j)$-element)】と呼ぶ．特に $(i,\,i)$-成分のことを【対角成分 (diagonal entry)】と呼ぶ．</li>
+		<li> $(m,\,n)$-行列が持つ $mn$ 個の各数を行列の【成分 (entry, element)】と呼び，特に第 $i$ 行目にありかつ第 $j$ 列目にある成分を行列の【$(i,\,j)$-成分 ($(i,\,j)$-element)】と呼ぶ．特に $(i,\,i)$-成分のことを【対角成分 (diagonal entry)】と呼び，それ以外の成分を【非対角成分 (non-diagonal entry)】と呼ぶ．</li>
 		<li>  行と列の数が等しく，その数が $n$ であるような行列を【 $n$ 次正方行列 (square matrix of order $n$)】と呼ぶ．
 		<li> $m$ 個の数による行のみの行列（$n=1$）を【 $m$ 次行ベクトル ($m$-row vector)】，$n$ 個の数による列のみの行列（$m=1$）を【 $n$ 次列ベクトル ($n$-column vector)】と呼ばれる．</li>
 		<!--<li> 「$m\times n$ 行列 $A = [a_{ij}]$ と $s\times t$ 行列 $B=[b_{ij}]$ が等しい」とは $m=s$ かつ $n=t$ であり，更に任意の組 $(i,\,j)$ に対して $a_{ij} = b_{ij}$ が成り立つことを云う．</li>-->
@@ -128,7 +128,7 @@ updated on 2022/6/11
 <p id="179">&nbsp;</p><div class="prp">
 	<b>[#179] 定義：行列の線形演算の性質</b><br>
 	<p> $A=[a_{ij}]$，$B=[b_{ij}]$，$C=[c_{ij}]$ を $(m,\,n)$-行列，$O_{mn}$ を $(m,\,n)$ 型の零行列，$\alpha,\,\beta$ を数とする．このとき以下が成り立つ：</p>
-	<ol>
+	<ol class="q">
 		<li>  $A+B = B+A$ （交換法則）</li>
 		<li>  $(A+B)+C = A+(B+C)$　（結合法則）</li>
 		<li>  $A+O=O+A =A$　（零行列の性質１）</li>
@@ -143,7 +143,7 @@ updated on 2022/6/11
 <Details>
 <summary>証明</summary>
 	<p>$i=1,\,\cdots,\,m$，$j=1,\,\cdots,\,n$ に対してそれぞれ</p>
-	<ol>
+	<ol class="q">
 		<li> $a_{ij}+b_{ij} = b_{ij}+a_{ij}$．
 		<li> $(a_{ij}+b_{ij})+c_{ij} = a_{ij}+(b_{ij}+c_{ij})$．
 		<li> $a_{ij}+0 = 0+a_{ij} = a_{ij}$．
@@ -192,7 +192,7 @@ updated on 2022/6/11
 <p id="185">&nbsp;</p><div class="prp">
 	<b>[#185] 命題：行列の積の性質</b><br>
 	<p> $A=[a_{ij}],\,C=[c_{ij}]$ を $(\ell,\,m)$-行列，$B=[b_{ij}],\,D=[d_{ij}]$ を $(m,\,n)$-行列，$O_{mn}$ を $(m,\,n)$ 型の零行列，$I_n$ を $n$ 次の正方行列とする．このとき以下が成り立つ：</p>
-	<ol>
+	<ol class="q">
 		<li>  $A(B+D) = AB + AD$（分配法則１）</li>
 		<li>  $(A+C)B = AB + CB$（分配法則２）</li>
 		<li>  $\alpha (AB) = (\alpha A)B = A(\alpha B)$（$\alpha$ は数）</li>
