@@ -1,0 +1,181 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		diag: '\\mathrm{diag}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+	}}});
+</script>
+<script>
+	const ttl = "対角行列"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/7/3<br>
+updated on 2022/7/3
+</p>
+
+<p id="286">&nbsp;</p><div class="def">
+<b>[#286] 定義：対角行列</b><br>
+	<p>非対角成分$\nr{matrix}{144}$ がすべて $0$ である $n$ 次正方行列 $D$ を $n$ 次【対角行列 (diagonal matrix)】と呼ぶ：</p>
+	<p><center>$\begin{align*}
+		{}^\forall (i,\,j)\in [n]^2,\quad i\not =j \ \Longrightarrow\ (D)_{ij} = 0.
+		\end{align*}$</center></p>
+	<p> $i\in [n]$ に対して $(D)_{ii} = d_i$ とすれば，対角行列 $D$ は
+	<p><center>$\begin{align*}
+		D= \left[\begin{array}{cccc}
+				d_{1} & 0 & \cdots & 0\\
+				0 & d_{2} & \cdots & 0\\
+				\vdots & \vdots & \ddots & \vdots\\
+				0 & 0 & \cdots & d_{n}
+				\end{array}\right]
+		\end{align*}$</center></p>
+	<p>と書ける．また，このような $D$ を</p>
+	<p><center>$\begin{align*}
+		D = \diag (d_1,\, d_2,\, \cdots,\, d_n)
+		\end{align*}$</center></p>
+	<p>と書くことがある．</p>
+</div>
+<details>
+	<summary>補足</summary>
+	<p>すべての $i\in [n]$ に対して $d_i = 1$ であることは，$D$ が単位行列$\nr{matrix}{184}$ $I_n$ であることと同値である．
+</details>
+<br>
+
+<p id="287">&nbsp;</p><div class="prp">
+<b>[#287] 命題：対角行列の和・定数倍・積も対角行列</b><br>
+	<p>$C,\ D$ を $n$ 次対角行列</p>
+	<p><center>$\begin{align*}
+		C = \diag(c_1,\,c_2,\,\cdots,\,c_n),\quad D = \diag(d_1,\,d_2,\,\cdots,\,d_n)
+		\end{align*}$</center></p>
+	<p>とする．このとき，以下が成立する：</p>
+	<ol class="q">
+	<li>$C+D = \diag(c_1+d_1,\, c_2+d_2,\, \cdots,\, c_n+d_n)$. </li>
+	<li>$kD = \diag(kd_1,\, kd_2,\, \cdots,\, kd_n)$ （$k$ は数）.</li>
+	<li>$CD = DC = \diag(c_1d_1,\, c_2d_2,\, \cdots,\, c_nd_n)$.</li>
+	</ol>
+</div>
+<details>
+	<summary>証明</summary>
+	<ol class="q">
+	<li> 行列の和の定義$\nr{matrix}{145}$ より，$(i,\,j) \in [n]^2$ に対して
+		<p><center>\begin{align}
+			(C+D)_{ij} = (C)_{ij} + (D)_{ij}. 
+			\end{align}</center></p>
+		<p>上式は，$i\not =j$ に対して</p>
+		<p><center>\begin{align}
+			(C)_{ij} + (D)_{ij} \,\refeq{diagonal-matrix}{286}\, 0 + 0 = 0,
+			\end{align}</center></p>
+		<p>$i =j$ に対して</p>
+		<p><center>\begin{align}
+			(C)_{ii} + (D)_{ii} \,\refeq{diagonal-matrix}{286}\, c_i + d_i. 
+			\end{align}</center></p>
+		<p>と書き換えられるので，題意が成り立つ．</p></li>
+	<li> 行列の定数倍の定義$\nr{matrix}{145}$ より，$(i,\,j) \in [n]^2$ に対して
+		<p><center>\begin{align}
+			(kD)_{ij} = k(D)_{ij}. 
+			\end{align}</center></p>
+		<p>上式は，$i\not =j$ に対して</p>
+		<p><center>\begin{align}
+			k(D)_{ij} \,\refeq{diagonal-matrix}{286}\, k\cdot 0 = 0,
+			\end{align}</center></p>
+		<p>$i =j$ に対して</p>
+		<p><center>\begin{align}
+			k(D)_{ii} \,\refeq{diagonal-matrix}{286}\, kd_i. 
+			\end{align}</center></p>
+		<p>と書き換えられるので，題意が成り立つ．</p></li>
+	<li> $CD = \diag(c_1d_1,\, c_2d_2,\, \cdots,\, c_nd_n)$ を示す．$DC$ の場合も同様である．<br>
+		行列の積の定義$\nr{matrix}{145}$ より，$(i,\,j) \in [n]^2$ に対して
+		<p><center>\begin{align}
+			(CD)_{ij} = \sum_{k=1}^{n} (C)_{ik}(D)_{kj}. 
+			\end{align}</center></p>
+		<p>ここで，$i=k=j$ のとき</p>
+		<p><center>\begin{align}
+			(C)_{ik}(D)_{kj} \,\refeq{diagonal-matrix}{286}\, c_i d_i
+			\end{align}</center></p>
+		<p>が成り立つが，そうでないときは</p>
+		<p><center>\begin{align}
+			(i\not =k)\lor (k\not =j)\ \reflr{diagonal-matrix}{286}\ ((C)_{ik}=0)\lor ((D)_{kj}\not =0)
+			\end{align}</center></p>
+		<p>であることから $(C)_{ik}(D)_{kj}=0$ である．よって</p>
+		<p><center>\begin{align}
+			\sum_{k=1}^{n} (C)_{ik}(D)_{kj} = \left\{\begin{array}{ll}
+				c_id_i & (i=j)\\
+				0 & (\text{otherwise}) \end{array}\right. 
+			\end{align}</center></p>
+		<p>であることから，題意は示される．</p></li>
+</ol>
+</details>
+<br>
+
+<p id="288">&nbsp;</p><div class="prp">
+<b>[#288] 命題：対角行列の $\bs{m}$ 乗は各成分の $\bs{m}$ 乗</b><br>
+	<p>$D$ を $n$ 次対角行列</p>
+	<p><center>$\begin{align*}
+		D = \diag(d_1,\,d_2,\,\cdots,\,d_n)
+		\end{align*}$</center></p>
+	<p>とすると，</p>
+	<p><center>$\begin{align*}
+		D^m = \diag(d_1^m,\,d_2^m,\,\cdots,\,d_n^m)
+		\end{align*}$</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>数学的帰納法により示す．$m=1$ のときは自明．ある $m$ で題意が成立すると仮定する．このとき，
+	<p><center>\begin{align*}
+		D^{m+1} &\,= D^m D\\
+			&\,= \diag(d_1^m,\,d_2^m,\,\cdots,\,d_n^m)\cdot\diag(d_1,\,d_2,\,\cdots,\,d_n)\\
+			&\refeq{diagonal-matrix}{287}\,\diag(d_1^{m+1},\,d_2^{m+1},\,\cdots,\,d_n^{m+1}).
+		\end{align*}</center></p>
+	<p>よって，$m+1$ でも題意は成立するので，任意の $m$ に関して題意は成立する．</p>
+</details>
+<br>
+
+<br><br>
+<div id="bib">
+<b>参考文献</b>
+<ul>
+	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
+	<li><a href="https://mathlandscape.com/diagonal-matrix/">対角行列の定義と基本的な性質6つ - 数学の景色</a> [2022/7/3 閲覧].</li>
+</ul>	      
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
