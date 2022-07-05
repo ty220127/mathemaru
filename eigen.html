@@ -45,7 +45,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/29<br>
-updated on 2022/6/28
+updated on 2022/7/5
 </p>
 
 <p id="160">&nbsp;</p><div class="def">
@@ -123,15 +123,19 @@ updated on 2022/6/28
 
 <p id="284">&nbsp;</p><div class="prp">
 <b>[#284] 命題：正則行列の固有値は非零</b><br>
-	<p> $\lambda\in\mathbb{C}$ は正方行列 $A$ の固有値とするとき，$A$ が正則$\nr{regular}{163}$ であるならば，$\lambda\not =0$ である．</p>
+	<p>正方行列 $A$ が $0$ を固有値として持つならば，$A$ は正則でない．</p>
 </div>
 <details>
 	<summary>証明</summary>
-	<p></p>
+	<p>正方行列 $A$ が $0$ を固有値として持つことは</p>
+	<p><center>\begin{align}
+		\det A = 0
+		\end{align}</center></p>
+	<p>であることと同値である$\nr{eigen}{161}$ が，これは $A$ が正則でないことと同値である．</p>
 </details>
 <details>
 	<summary>補足</summary>
-	<p>この命題を対偶$\nr{implication}{68}$ をとれば，「行列 $A$ が $0$ を固有値として持つならば，$A$ が正則でない」となる．</p>
+	<p>この命題を対偶$\nr{implication}{68}$ をとれば，「正方行列 $A$ が 正則であるならば，$A$ は $0$ を固有値として持たない」となる．</p>
 </details>
 <br>
 
