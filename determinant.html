@@ -126,7 +126,7 @@ updated on 2022/7/5
 <br>
 
 <p id="294">&nbsp;</p><div class="prp">
-	<b>[#294] 命題：行列式と積は可換</b><br>
+	<b>[#294] 命題：積の行列式は行列式の積</b><br>
 	<p> $n$ 次正方行列 $A,\ B$ に対して</p>
 	<p><center>\begin{align*}
 		\det(AB) = \det A \det B.
@@ -151,6 +151,36 @@ updated on 2022/7/5
 </details>
 <br>
 
+<p id="295">&nbsp;</p><div class="prp">
+	<b>[#295] 命題：行列式と正則性</b><br>
+	<p> $n$ 次正方行列 $A$ が正則$\nr{regular}{163}$ であることは</p>
+	<p><center>\begin{align*}
+		\det A\not = 0
+		\end{align*}</center></p>
+	<p>なることと同値であり，$A$ が正則ならば</p>
+	<p><center>\begin{align*}
+		\det(A^{-1}) = \fraction{1}{\det A}.
+		\end{align*}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p> $A$ が正則であるならば，その逆行列 $A^{-1}$ が存在して</p>
+	<p><center>\begin{align*}
+		A A^{-1} = I_n
+		\end{align*}</center></p>
+	<p>が成り立つ（$I_n$ は $n$ 次正方行列）$\nr{regular}{163}$．ここで両辺の行列式をとると</p>
+	<p><center>\begin{align*}
+		\mathrm{(LHS)} &= \det(AA^{-1}) \,\refeq{determinant}{294}\, \det(A)\det(A^{-1}),\\
+		\mathrm{(RHS)} &= \det I_n = 1 
+		\end{align*}</center></p>
+	<p>である．よって，$\det A\not =0$ が成り立ち，</p>
+	<p><center>\begin{align*}
+		\det A^{-1} = \fraction{1}{\det A}. 
+		\end{align*}</center></p>
+	<p>逆に．$\det A\not =0$ が成り立つとする．
+</details>
+<br>
+
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
@@ -159,6 +189,7 @@ updated on 2022/7/5
 	<li><a href="https://mathlandscape.com/matrix-det/">行列式(det)の定義と現実的な求め方～計算の手順～ - 数学の景色</a> [2022/7/3 閲覧].</li>
 	<li><a href="https://risalc.info/src/determinant-formulas.html">行列式の基本的な性質と公式 - 理数アラカルト</a> [2022/7/3 閲覧].</li>
 	<li><a href="https://oguemon.com/study/linear-algebra/det-feature/">【行列式編】行列式の性質 - 大学1年生もバッチリ分かる線形代数入門</a> [2022/7/5 閲覧].</li>
+	<li><a href="https://manabitimes.jp/math/1327">行列が正則であることの意味と5つの条件 - 高校数学の美しい物語</a> [2022/7/5 閲覧].</li>
 </ul>
 </div>
       
