@@ -1,0 +1,169 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		sgn: '\\mathrm{sgn}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "行列式"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/7/5<br>
+updated on 2022/7/5
+</p>
+    
+<p id="289">&nbsp;</p><div class="def">
+	<b>[#289] 定義：行列式</b><br>
+	<p> $n$ 次正方行列 $A = [a_{ij}]$ に対して，以下で与えられる式 $\det A$ を $A$ の【行列式 (determinant)】と呼ぶ：</p>
+	<p><center>\begin{align*}
+		\det A = \sum_{\sigma\in S_n} \left(\sgn(\sigma)\prod_{k=1}^{n}a_{k\sigma(k)}\right)
+		\end{align*}</center></p>
+	<p>ただし $S_n$ は $n$ 文字の置換の集合である．$\det A$ は $|A|,\ \varDelta(A)$ などとも書かれる．また，成分を明示する際には</p>
+	<p><center>\begin{align*}
+		\det A = \left| \begin{array}{cccc}
+				a_{11} & a_{12} & \cdots & a_{1n}\\
+				a_{21} & a_{22} & \cdots & a_{2n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				a_{m1} & a_{m2} & \cdots & a_{mn}
+				\end{array}\right|
+		\end{align*}</center></p>
+	<p>とも書かれる（括弧を省略して良い）．</p>
+</div>
+<br>
+
+<p id="290">&nbsp;</p><div class="prp">
+	<b>[#290] 命題：転置行列の行列式</b><br>
+	<p> $n$ 次正方行列 $A$ に対して</p>
+	<p><center>\begin{align*}
+		\det A^\trp = \det A.
+		\end{align*}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
+<p id="291">&nbsp;</p><div class="prp">
+	<b>[#291] 命題：同一列ペアを持つ行列式は $\bs{0}$</b><br>
+	<p> $n$ 次正方行列 $A$ の第 $i$ 列の列ベクトルを $\bs{a}_i$ と表す：</p>
+	<p><center>\begin{align*}
+		A = [\bs{a}_1\ \ \bs{a}_2\ \ \cdots\ \ \bs{a}_n].
+		\end{align*}</center></p>
+	<p>いま，$i\not =j$ で $\bs{a}_i = \bs{a}_j$ なるペア $(i,\,j)\in [n]^2$ が存在するならば，$\det A =0$．</p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
+<p id="292">&nbsp;</p><div class="prp">
+	<b>[#292] 命題：行列式の多重線形性</b><br>
+	<p> $n$ 次正方行列 $A$ の第 $i$ 列の列ベクトルを $\bs{a}_i$ と表す：</p>
+	<p><center>\begin{align*}
+		A = [\bs{a}_1\ \ \bs{a}_2\ \ \cdots\ \ \bs{a}_n].
+		\end{align*}</center></p>
+	<p>いま，$s,\ t$ を数，$\bs{b},\ \bs{c}$ を $n$ 次列ベクトルとして $\bs{a}_i = s\bs{b} + t\bs{c}$ と書けるとする．このとき</p>
+	<p><center>\begin{align*}
+		B &= [\bs{a}_1\ \ \cdots\ \ \bs{b}\ \ \cdots\ \ \bs{a}_n],\\
+		C &= [\bs{a}_1\ \ \cdots\ \ \bs{c}\ \ \cdots\ \ \bs{a}_n]
+		\end{align*}</center></p>
+	<p>とおけば，</p>
+	<p><center>\begin{align*}
+		\det A = s\det B + t\det C.
+		\end{align*}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
+<p id="293">&nbsp;</p><div class="prp">
+	<b>[#293] 命題：行列式全体の定数倍</b><br>
+	<p> $n$ 次正方行列 $A$，定数 $c$ に対して</p>
+	<p><center>\begin{align*}
+		\det(cA) = c^n\det A.
+		\end{align*}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
+<p id="294">&nbsp;</p><div class="prp">
+	<b>[#294] 命題：行列式と積は可換</b><br>
+	<p> $n$ 次正方行列 $A,\ B$ に対して</p>
+	<p><center>\begin{align*}
+		\det(AB) = \det A \det B.
+		\end{align*}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<details>
+	<summary>補足</summary>
+	<p>上記から $A,\ B$ を交換した積 $BA$ の行列式を考えると</p>
+	<p><center>\begin{align}
+		\det(BA) = \det B \det A =\det A\det B
+		\end{align}</center></p>
+	<p>を得る．即ち，行列式の中では，行列の積は可換である：</p>
+	<div class="cor">
+		<b>系：</b>行列 $A,\ B$ に対して
+		<p><center>\begin{align}
+			\det(BA) = \det(AB).
+			\end{align}</center></p>
+	</div>
+</details>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
+	<li><a href="https://oguemon.com/study/linear-algebra/det-definition/">【行列式編】行列式の定義 _ 大学1年生もバッチリ分かる線形代数入門</a> [2022/7/3 閲覧].</li>
+	<li><a href="https://mathlandscape.com/matrix-det/">行列式(det)の定義と現実的な求め方～計算の手順～ - 数学の景色</a> [2022/7/3 閲覧].</li>
+	<li><a href="https://risalc.info/src/determinant-formulas.html">行列式の基本的な性質と公式 - 理数アラカルト</a> [2022/7/3 閲覧].</li>
+	<li><a href="https://oguemon.com/study/linear-algebra/det-feature/">【行列式編】行列式の性質 - 大学1年生もバッチリ分かる線形代数入門</a> [2022/7/5 閲覧].</li>
+</ul>
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
