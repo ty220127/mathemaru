@@ -1,4 +1,5 @@
 
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -46,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/14<br>
-updated on 2022/7/5
+updated on 2022/7/6
 </p>
     
 <p id="144">&nbsp;</p><div class="def">
@@ -169,7 +170,7 @@ updated on 2022/7/5
 	<p>ここで，積 $AB$ は $(\ell,\,n)$-行列であることに注意せよ．</p>
 </div>
 <details>
-	<summary>補足</summary>
+	<summary>補足１</summary>
 	<p>以下，ある行列 $M$ の行数を $r_M$，列数を $c_M$ とする（つまり $M$ は $(r_M,\,c_M)$-行列）．積の定義より，行列 $A,\ B$ に対して積 $AB$ を定義できることは $c_A = r_B$ であることと同値である．<br>
 		ところで，$AB$ が定義されても $BA$ が定義されるとは限らない．それは，上記より次の系が成立するためである：
 	<div class="cor">
@@ -180,6 +181,10 @@ updated on 2022/7/5
 	</div>
 	<p>積 $AB$ だけが定義できれば良い場合は，$r_A$ と $c_B$ には特に条件は課されない．しかし，この2つが一致するとしなければ，積 $BA$ を定義することはできない．</p>
 </details>
+<details>
+	<summary>補足２</summary>
+	<p>特に，$AA = A^2$．同様に，$A$ を $n$ 個かけた積を $A^n$ と書く．</p>
+</details>
 <br>
 
 <p id="296">&nbsp;</p><div class="exm">
@@ -189,7 +194,23 @@ updated on 2022/7/5
 </div>
 <Details>
 	<summary>解答</summary>
-	<p> </p>
+	<p> $A$ の定義より，$A^2$ の各成分は以下のように計算される$\nr{matrix}{180}$：</p>
+	<p><center>\begin{align}
+		(A^2)_{11} &= (x+1)^2 + 2\cdot (-5),\\
+		(A^2)_{12} &= (x+1)\cdot 2 + 2\cdot (y-2),\\
+		(A^2)_{21} &= -5\cdot (x+1) + (y-2)\cdot (-5),\\
+		(A^2)_{22} &= 2\cdot (-5) + (y-2)^2.\\
+		\end{align}</center></p>
+	<p>一方，$A^2$ は設問で与えられている通りであるから，行列の相等性より</p>
+	<p><center>\begin{align}
+		(x+1)^2 + 2\cdot (-5) &= 1,\\
+		2\cdot (-5) + (y-2)^2 &=1,\\
+		x+y-1 &= 0.
+		\end{align}</center></p>
+	<p>これを満たす組 $(x,\,y)$ は</p>
+	<p><center>
+		$(x,\,y) = \color{red}{(-1\pm\sqrt{11},\,2\mp\sqrt{11})}\ $（複合同順）．
+		</center></p>
 </Details>
 <br>
 
