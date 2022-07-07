@@ -1,3 +1,5 @@
+
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -294,7 +296,7 @@ updated on 2022/7/7
 <br>
 
 <p id="187">&nbsp;</p><div class="exr">
-	<b>[#187] 演習：逆行列の特定 → <a href="regular.html#163">[#163]</a>・<a href="regular.html#167">[#167]</a></b><br>
+	<b>[#187] 演習：逆行列の特定 <font size="1">→</font> $\numref{regular}{163}$ $\numref{regular}{167}$</b><br>
 	<p> 2 次正方行列 $A$ を $A=\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right]$，$I$ を 2 次単位行列とする．このとき $AX=I$ を満たすような 2 次正方行列 $X$ を求めよ．また $XA$ を計算せよ．</p>
 </div>
 <Details>
@@ -302,9 +304,9 @@ updated on 2022/7/7
 	<p> $X=\left[\begin{array}{cc} x & y \\ z & w \end{array}\right]$ とおくと</p>
 	<p><center>$\begin{align*}
 		AX = \left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right]\left[\begin{array}{cc} x & y \\ z & w \end{array}\right]
-		= \left[\begin{array}{cc} x+2z & y+2w \\ -2x+3z & -2y+3w \end{array}\right]
+		\,\refeq{matrix}{180}\,\left[\begin{array}{cc} x+2z & y+2w \\ -2x+3z & -2y+3w \end{array}\right]
 		\end{align*}$</center></p>
-	<p>が成り立ち，これが単位行列 $I=\left[\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right]$ に一致することから，以下の連立方程式を得る：</p>
+	<p>が成り立ち，これが単位行列 $I=\left[\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right]$ に一致することから，以下の連立方程式を得る$\nr{matrix}{144}$：</p>
 	<p><center>$\begin{align*}
 		\left\{\begin{array}{l} x+2z=1\\ -2x+3z=0 \end{array}\right. ,\quad \left\{\begin{array}{l} y+2w=0\\ -2y+3w=1 \end{array}\right. .
 		\end{align*}$</center></p>
@@ -314,7 +316,7 @@ updated on 2022/7/7
 		\end{align*}$</center></p>
 	<p>また，$XA$は以下のように計算される：</p>
 	<p><center>$\begin{align*}
-		XA = \displaystyle\frac{\,1\,}{7}\left[\begin{array}{cc} 3 & -2 \\ 2 & 1 \end{array}\right]\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right] = \color{red}{\left[\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right]}.
+		XA = \displaystyle\frac{\,1\,}{7}\left[\begin{array}{cc} 3 & -2 \\ 2 & 1 \end{array}\right]\left[\begin{array}{cc} 1 & 2 \\ -2 & 3 \end{array}\right] \,\refeq{matrix}{180}\, \color{red}{\left[\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right]}.
 		\end{align*}$</center></p>
 </Details>
 <Details>
