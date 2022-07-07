@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -45,16 +46,16 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/15<br>
-updated on 2022/6/18<br>
+updated on 2022/7/7<br>
 </p>
     
 <p id="275">&nbsp;</p><div class="def">
 	<b>[#275] 定義：射影行列，直交射影行列</b><br>
-	<p>正方行列 $P$ が【射影行列 (projection matrix)】であるとは，</p>
+	<p>冪等性をもつ正方行列 $P$ を【射影行列 (projection matrix)】と呼ぶ：</p>
 	<p><center>\begin{align}
 		P^2 = P
 		\end{align}</center></p>
-	<p>が成立することをいう．特に，Hermite$\nr{hermite-matrix}{258}$ である射影行列を【直交射影行列 (orthogonal projection matrix)】と呼ぶ．
+	<p>特に，Hermite$\nr{hermite-matrix}{258}$ である射影行列を【直交射影行列 (orthogonal projection matrix)】と呼ぶ．
 </div>
 <Details>
 	<summary>補足</summary>
@@ -68,14 +69,14 @@ updated on 2022/6/18<br>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>射影行列の定義$\nr{projection-matrix}{275}$ より $P^2=P$ が成り立つが，</p>
+	<p>射影行列の定義$\nr{projection-matrix}{275}$ より $P^2=P$ であるが，</p>
 	<p><center>\begin{align}
 		P^2 = P\ \Longleftrightarrow\ &\det(P^2) = \det(P)\\
-			\ \Longleftrightarrow\ & \det(P)^2 = \det(P)\\
+			\ \reflr{determinant}{294}\ & \det(P)^2 = \det(P)\\
 			\ \Longleftrightarrow\ & \det(P)^2 -\det(P) = 0\\
 			\ \Longleftrightarrow\ & \det(P) = 0\ \text{or}\ 1\\
 		\end{align}</center></p>
-	<p>となることから題意を得る．</p>
+	<p>となることより題意を得る．</p>
 </Details>
 <br>
 
