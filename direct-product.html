@@ -1,0 +1,85 @@
+
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+	}}});
+</script>
+<script>
+	const ttl = "直積"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/7/9<br>
+updated on 2022/7/9<br>
+</p>
+    
+<p id="297">&nbsp;</p><div class="def">
+	<b>[#297] 定義：直積</b><br>
+	<p>集合 $A,\ B$ の元の対による集合 $A\times B$ を $A$ と $B$ の【直積 (direct product)】或いは【<ruby><rb>Descartes</rb><rp>（</rp><rt>デカルト</rt><rp>）</rp></ruby> 積 (Cartesian product)】と呼び</p>
+	<p><center>\begin{align}
+		A\times B := \{(a,\ b)\,|\, a\in A,\ b\in B\}
+		\end{align}</center></p>
+	<p>で表す．<br>
+		より一般に，集合 $A_1,\ A_2,\ \cdots,\ A_n$ の元たちの組による集合を $A_1,\ \cdots,\ A_n$ の直積或いは Decartes 積と呼び</p>
+	<p><center>\begin{align}
+		&A_1\times A_2\times \cdots\times A_n \\
+		&\hspace{10pt}:= \{(a_1,\ a_2,\ \cdots,\ a_n)\,|\, a_1\in A_1,\,\cdots\, a_n\in A_n\}
+		\end{align}</center></p>		
+	<p>で表す．<br>
+		特に $A$ を $n$ 個並べた直積は $A^n$ と表す：</p>
+	<p><center>\begin{align}
+		\underset{n}{\underbrace{A\times A\times \cdots\times A}} = A^n.
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>余談</summary>
+	<p>Descartes 積のことを英語で Cartesian product と呼ぶのは，Descartes という人名の形容詞形が Cartesian であるからだが，Des とはフランス語で冠詞であり，形容詞化する際にこれが取れるためである．</p>
+</Details>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>齊藤正彦: 線型代数学, 東京図書, 2014.</li>
+	<li><a href="https://mathlandscape.com/product-set/">【直積集合】集合の直積について詳しく～具体例10個～ - 数学の景色</a> [2022/7/9 閲覧].</li>
+	<li><a href="http://www.jidoka.net/serv/kaishi/jaaa-kaish-kobore-134.html">自動化こぼれ話(134)カルテシアン - JAAA自動化推進協会</a> [2022/7/9 閲覧].</li>
+</ul>
+</div>
+</body>
+</html>
