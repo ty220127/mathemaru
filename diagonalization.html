@@ -1,0 +1,165 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		diag: '\\mathrm{diag}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+	}}});
+</script>
+<script>
+	const ttl = "行列の対角化"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/7/9<br>
+updated on 2022/7/9<br>
+</p>
+    
+<p id="298">&nbsp;</p><div class="def">
+	<b>[#298] 定義：行列の対角化</b><br>
+	<p>ある $n$ 次正方行列 $A$ が【対角化可能 (diagonalizable)】であるとは，$A$ に対し正則行列$\nr{regular}{163}$ $P$ と数 $\lambda_1,\ \lambda_2,\ \cdots,\ \lambda_n$ が存在して</p>
+	<p><center>\begin{align}
+		\varLambda := P^{-1}AP = \diag (\lambda_1,\,\lambda_2,\,\cdots,\,\lambda_n)
+		\end{align}</center></p>
+	<p>という対角行列$\nr{diagonal-matrix}{286}$ を作れることをいう．また，$P$ や $\varLambda$ を求める操作を【対角化 (diagonalization)】と呼ぶ．</p>
+</div>
+<br>
+
+<p id="299">&nbsp;</p><div class="prp">
+	<b>[#299] 命題：行列の対角化と固有値・固有ベクトル</b><br>
+	<p>ある $n$ 次正方行列 $A$ が，列ベクトル $\bs{p}_1,\ \bs{p}_2,\ \cdots,\ \bs{p}_n$ による正規行列 $P = [\bs{p}_1\ \ \bs{p}_2\ \ \cdots\ \ \bs{p}_n]$ で対角化可能ならば，得られた対角行列の各対角成分 $\lambda_i\ (i = 1,\ \cdots,\ n)$ は $A$ の固有値であり，各 $\bs{p}_i$ は $\lambda_i$ に属する固有ベクトルである．</p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>仮定より $A$ は対角化可能$\nr{diagonalization}{298}$ であるから，対角行列 $\varLambda = \diag (\lambda_1,\,\cdots,\,\lambda_n)$ を用いて</p>
+	<p><center>\begin{align}
+		\varLambda = P^{-1}AP
+		\end{align}</center></p>
+	<p>と表される．この式の両辺に $P$ を左からかけて整理すると</p>
+	<p><center>\begin{align}
+		\mathrm{(LHS)} &= P\varLambda = [\lambda_1\bs{p}_1\ \ \cdots\ \ \lambda_n\bs{p}_n],\\
+		\mathrm{(RHS)} &= PP^{-1}AP \,\refeq{regular}{163}\, I_nAP = AP = [A\bs{p}_1\ \ \cdots\ \ A\bs{p}_n].
+		\end{align}</center></p>
+	<p>を得る（$I_n$ は $n$ 次の単位行列）．故に，各 $i=1,\ \cdots,\ n$ に対して</p>
+	<p><center>\begin{align}
+		A\bs{p}_i = \lambda_i\bs{p}_i
+		\end{align}</center></p>
+	<p>が成立する．これは，$\lambda_i,\ \bs{p}_i$ がそれぞれ $A$ の固有値とそれに属する固有ベクトルであることを意味する$\nr{eigen}{160}$．</p>
+</details>
+<br>
+
+<p id="300">&nbsp;</p><div class="exm">
+	<b>[#300] 例題：行列の対角化</b><br>
+	<p>行列</p>
+	<p><center>\begin{align}
+		A = \left(\begin{array}{lll} 0 & 0 & 1\\ 0 & 1 & 0\\ 1 & 0 & 0\end{array}\right)
+		\end{align}</center></p>
+	<p>を考える．</p>
+	<ol class="q">
+		<li> $A$ の固有多項式を求めよ．</li>
+		<li> $P^{-1}AP$ が対角行列となるような正則行列を一つ求めよ．</p>
+	</ol>
+	<p style="text-align:right;">[2018 広島大学 大学院理学系研究科]</p>
+</div>
+<details>
+	<summary>解答</summary>
+	<p></p>
+</details>
+<br>
+
+<p id="301">&nbsp;</p><div class="prp">
+	<b>[#301] 命題：行列の対角化による行列の累乗</b><br>
+	<p>ある $n$ 次正方行列 $A$ が正規行列 $P$ で対角化できるとして，得られる対角行列を $\varLambda$ とする．このとき，$m\in\mathbb{N}$ に対して</p>
+	<p><center>\begin{align}
+		A^m = P\varLambda^mP^{-1}.
+		\end{align}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>仮定より</p>
+	<p><center>\begin{align}
+		\varLambda = P^{-1}AP
+		\end{align}</center></p>
+	<p>と表される$\nr{diagonalization}{298}$．この両辺を $m$ 乗すると</p>
+	<p><center>\begin{align}
+		\mathrm{(LHS)} &\,= \varLambda^m,\\
+		\mathrm{(RHS)} &\,= (P^{-1}AP)^m = (P^{-1}AP)(P^{-1}AP)\cdots(P^{-1}AP)\\
+				&\refeq{regular}{163} P^{-1}AI_n AI_n\cdots AI_n AP\\
+				&\refeq{matrix}{185} P^{-1}AA\cdots AP = P^{-1}A^mP.
+		\end{align}</center></p>
+	<p>つまり，</p>
+	<p><center>\begin{align}
+		\varLambda^m = P^{-1}A^mP.
+		\end{align}</center></p>
+	<p>この両辺に左から $P$，右から $P^{-1}$ をかけることで</p>
+	<p><center>\begin{align}
+		P\varLambda^m P^{-1} = A^m
+		\end{align}</center></p>
+	<p>を得る．両辺を入れ替えれば，それが所望の式である．</p>
+</details>
+<br>
+
+<p id="302">&nbsp;</p><div class="exm">
+<b>[#302] 例題：行列の累乗</b><br>
+	<p>正方行列 $A$ を</p>
+	<p><center>$\begin{align*}
+		A= \left(\begin{array}{ccc} 1 & \sqrt{2} & 0\\ \sqrt{2} & 1 & \sqrt{2} \\ 0 & \sqrt{2} & 1 \end{array}\right)
+		\end{align*}$</center></p>
+	<p>とする．<br>
+		非負整数 $n$ に対して，$A^n$ を求めよ．</p>
+	<p style="text-align:right;">[2020 東京大学 大学院情報理工学系研究科 一般教育科目(数学)]
+</div>
+<Details>
+<summary>解答</summary>
+	<p></p>
+</Details>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>江川博康: 弱点克服 大学生の線形代数, 東京図書, 2006.</li>
+	<li>齊藤正彦: 線型代数学, 東京図書, 2014.</li>
+	<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2022_04_04.pdf">嶺幸太郎: 線形代数学 講義ノート (2022/04/04ver.)</a> [2022/7/10 閲覧].</li>
+	<li><a href="https://oguemon.com/study/linear-algebra/diagonalization/">【固有値編】行列の対角化と具体的な計算例 - おぐえもん.com</a> [2022/7/10 閲覧].</li>
+	<li><a href="https://math-fun.net/20201217/7330/">行列の対角化可能性の定義とメリット、例、同値条件について解説 - 趣味の大学数学</a> [2022/7/10 閲覧].</li>
+	<li><a href="https://math-note.xyz/linear-algebra/eigenspace/">固有空間はなぜ大切か？対角化可能であるための必要十分条件 - あーるえぬ｜数学のあれこれ</a> [2022/7/10 閲覧].</li>
+	<li><a href="https://domeblog.net/matrixdiagonalization/">行列の対角化について解説 - どめブログ</a> [2022/7/10 閲覧].</li>
+</ul>
+</div>
+</body>
+</html>
