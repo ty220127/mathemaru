@@ -47,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/12<br>
-updated on 2022/6/12
+updated on 2022/7/11
 </p>
 
 <p id="269">&nbsp;</p><div class="def">
@@ -60,6 +60,25 @@ updated on 2022/6/12
 </div>
 <br>
 
+<p id="306">&nbsp;</p><div class="prp">
+	<b>[#306] 命題：特別な正規行列</b><br>
+	<p>Hermite 行列$\nr{hermitian-matrix}{258}$ とユニタリ行列$\nr{unitary-matrix}{260}$ は正規行列である．</p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p> $H$ を Hermite 行列とすれば</p>
+	<p><center>\begin{align}
+		H H^*\,\refeq{hermitian-matrix}{258}\, H^2 \,\refeq{hermitian-matrix}{258}\, H^* H
+		\end{align}</center></p>
+	<p>が成り立つから，Hermite 行列は正規行列である．<br>
+		<p> $U$ をユニタリ行列とすれば</p>
+	<p><center>\begin{align}
+		U U^* \,\refeq{unitary-matrix}{260}\, I \,\refeq{unitary-matrix}{260}\, U^* U 
+		\end{align}</center></p>
+	<p>が成り立つから，ユニタリ行列は正規行列である．</p>
+</details>
+<br>
+
 <p id="270">&nbsp;</p><div class="prp">
 	<b>[#270] 命題：正規行列の固有ベクトル同士は直交</b><br>
 	<p>正規行列 $N$ の固有値たちを $\lambda_i$ とし，これに属する固有ベクトルを $\bs{x}_i$ とすると，</p>
@@ -69,14 +88,26 @@ updated on 2022/6/12
 </div>
 <br>
 
+<p id="307">&nbsp;</p><div class="prp">
+	<b>[#307] 命題：スペクトル分解定理</b><br>
+	<p>$n$ 次正規行列 $N$ の異なる固有値$\nr{eigen}{160}$ たちを $\{\lambda_i\}_{i=1}^{r}\ (r\leq n)$，各 $\lambda_i$ の属する固有空間 $E_i$ 上の射影行列$\nr{projection-matrix}{275}$ を $P_i$ とする．このとき $N$ は</p>
+	<p><center>\begin{align*}
+		N = \sum_{i=1}^{r}\lambda_i P_i
+		\end{align*}</center></p>
+	<p>と表すことができる．</p>
+</div>
+<br>
+
 <br><br>
 <div id="bib">
 <b>参考文献</b>
 	<ul>
 		<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社, 2012.</li>
+		<li><a href="https://ocw.kyoto-u.ac.jp/wp-content/uploads/2021/03/2007_denkidenshikougakunotamenoryoushiron_05.pdf">北野正雄: 量子力学の基礎, pdf, 2007</a> [2022/7/11 閲覧].</li>
 		<li>齋藤正彦: 線型代数学, 東京図書, 2014.</li>
-		<li><a href="https://mathlandscape.com/normal-matrix/">正規行列とは～定義・性質6つとその証明～ - 数学の景色</a></li>
-		<li><a href="https://risalc.info/src/normal-matrix.html">正規行列の定義・具体例・性質 (証明付)   - 理数アラカルト -</a></li>
+		<li><a href="https://mathlandscape.com/normal-matrix/">正規行列とは～定義・性質6つとその証明～ - 数学の景色</a> [2022/6/12 閲覧]</li>
+		<li><a href="https://risalc.info/src/normal-matrix.html">正規行列の定義・具体例・性質 (証明付)   - 理数アラカルト -</a> [2022/6/12 閲覧].</li>
+		<li><a href="https://risalc.info/src/spectral-decomposition-matrix.html">行列のスペクトル分解を解説   ～具体例と必要十分条件 ～ - 理数アラカルト</a> [2022/7/11 閲覧]</li>
 	</ul>
 </div>
 </body>
