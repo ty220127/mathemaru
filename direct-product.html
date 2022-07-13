@@ -1,4 +1,5 @@
 
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -46,26 +47,32 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/9<br>
-updated on 2022/7/9<br>
+updated on 2022/7/13<br>
 </p>
     
 <p id="297">&nbsp;</p><div class="def">
 	<b>[#297] 定義：直積</b><br>
 	<p>集合 $A,\ B$ の元の対による集合 $A\times B$ を $A$ と $B$ の【直積 (direct product)】或いは【<ruby><rb>Descartes</rb><rp>（</rp><rt>デカルト</rt><rp>）</rp></ruby> 積 (Cartesian product)】と呼び</p>
 	<p><center>\begin{align}
-		A\times B := \{(a,\ b)\,|\, a\in A,\ b\in B\}
+		A\times B := \{(a,\, b)\,|\, (a\in A)\land (b\in B)\}
 		\end{align}</center></p>
 	<p>で表す．<br>
-		より一般に，集合 $A_1,\ A_2,\ \cdots,\ A_n$ の元たちの組による集合を $A_1,\ \cdots,\ A_n$ の直積或いは Decartes 積と呼び</p>
+		より一般に，集合 $A_1,\ A_2,\ \cdots,\ A_n$ の元たちの組による集合を $A_1,\ A_2,\ \cdots,\ A_n$ の直積或いは Decartes 積と呼び</p>
 	<p><center>\begin{align}
 		&A_1\times A_2\times \cdots\times A_n \\
-		&\hspace{10pt}:= \{(a_1,\ a_2,\ \cdots,\ a_n)\,|\, a_1\in A_1,\,\cdots\, a_n\in A_n\}
+		&\hspace{10pt}:= \{(a_1,\, a_2,\, \cdots,\, a_n)\,|\, (a_1\in A_1)\land \cdots\, \land (a_n\in A_n)\}
 		\end{align}</center></p>		
 	<p>で表す．<br>
 		特に $A$ を $n$ 個並べた直積は $A^n$ と表す：</p>
 	<p><center>\begin{align}
 		\underset{n}{\underbrace{A\times A\times \cdots\times A}} = A^n.
 		\end{align}</center></p>
+	<p>なお，$A_1\times A_2\times \cdots\times A_n$ の元の相等性は</p>
+	<p><center>\begin{align}
+		&(a_1,\,a_2,\,\cdots,\,a_n) = (a_1',\,a_2',\,\cdots,\,a_n')\\
+		&\hspace{10pt}\Longleftrightarrow\,\, (a_1= a_1')\land (a_2= a_2')\land \cdots\land (a_n= a_n')
+		\end{align}</center></p>		
+	<p>と定める．</p>
 </div>
 <Details>
 	<summary>余談</summary>
@@ -76,6 +83,7 @@ updated on 2022/7/9<br>
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
+	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li>齊藤正彦: 線型代数学, 東京図書, 2014.</li>
 	<li><a href="https://mathlandscape.com/product-set/">【直積集合】集合の直積について詳しく～具体例10個～ - 数学の景色</a> [2022/7/9 閲覧].</li>
 	<li><a href="http://www.jidoka.net/serv/kaishi/jaaa-kaish-kobore-134.html">自動化こぼれ話(134)カルテシアン - JAAA自動化推進協会</a> [2022/7/9 閲覧].</li>
