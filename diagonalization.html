@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -46,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/10<br>
-updated on 2022/7/11<br>
+updated on 2022/7/13<br>
 </p>
     
 <p id="298">&nbsp;</p><div class="def">
@@ -103,9 +104,9 @@ updated on 2022/7/11<br>
 
 <p id="301">&nbsp;</p><div class="prp">
 	<b>[#301] 命題：行列の対角化による行列の累乗</b><br>
-	<p>ある $n$ 次正方行列 $A$ が正規行列 $P$ で対角化できるとして，得られる対角行列を $\varLambda$ とする．このとき，$m\in\mathbb{N}$ に対して</p>
+	<p>ある $n$ 次正方行列 $A$ が対角化できるとして，対角化のための正則行列を $P$，得られる対角行列を $\varLambda = \diag (\lambda_1,\,\cdots,\,\lambda_n)$ とする．このとき，$m\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
-		A^m = P\varLambda^mP^{-1}.
+		A^m = P\,\diag (\lambda_1^m,\,\cdots,\,\lambda_n^m)\,P^{-1}.
 		\end{align}</center></p>
 </div>
 <details>
@@ -116,18 +117,18 @@ updated on 2022/7/11<br>
 		\end{align}</center></p>
 	<p>と表される$\nr{diagonalization}{298}$．この両辺を $m$ 乗すると</p>
 	<p><center>\begin{align}
-		\mathrm{(LHS)} &\,= \varLambda^m,\\
+		\mathrm{(LHS)} &\,= \varLambda^m \,\refeq{diagonal-matrix}{288}\, \diag (\lambda_1^m,\,\cdots,\,\lambda_n^m),\\
 		\mathrm{(RHS)} &\,= (P^{-1}AP)^m = (P^{-1}AP)(P^{-1}AP)\cdots(P^{-1}AP)\\
 				&\refeq{regular}{163} P^{-1}AI_n AI_n\cdots AI_n AP\\
 				&\refeq{matrix}{185} P^{-1}AA\cdots AP = P^{-1}A^mP.
 		\end{align}</center></p>
 	<p>つまり，</p>
 	<p><center>\begin{align}
-		\varLambda^m = P^{-1}A^mP.
+		\diag (\lambda_1^m,\,\cdots,\,\lambda_n^m) = P^{-1}A^mP.
 		\end{align}</center></p>
 	<p>この両辺に左から $P$，右から $P^{-1}$ をかけることで</p>
 	<p><center>\begin{align}
-		P\varLambda^m P^{-1} = A^m
+		P\,\diag (\lambda_1^m,\,\cdots,\,\lambda_n^m)\, P^{-1} = A^m
 		\end{align}</center></p>
 	<p>を得る．両辺を入れ替えれば，それが所望の式である．</p>
 </details>
