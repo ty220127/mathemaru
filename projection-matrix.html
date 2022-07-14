@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -45,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/15<br>
-updated on 2022/7/7<br>
+updated on 2022/7/14<br>
 </p>
     
 <p id="275">&nbsp;</p><div class="def">
@@ -54,11 +55,33 @@ updated on 2022/7/7<br>
 	<p><center>\begin{align}
 		P^2 = P
 		\end{align}</center></p>
-	<p>特に，Hermite$\nr{hermite-matrix}{258}$ である射影行列を【直交射影行列 (orthogonal projection matrix)】と呼ぶ．
+	<p>特に，Hermite$\nr{hermitian-matrix}{258}$ である射影行列を【直交射影行列 (orthogonal projection matrix)】と呼ぶ．
 </div>
 <Details>
 	<summary>補足</summary>
 	<p>直交射影行列の定義をそのまま射影行列とする例も多い．特に，複素行列の範囲で議論する場合は，そちらの例の方が多いかもしれない．</p>
+</Details>
+<br>
+
+<p id="308">&nbsp;</p><div class="prp">
+	<b>[#308] 命題：射影行列の相補性 (complementarity of projection matrices)</b><br>
+	<p>$n$ 次正方行列 $P$ が射影行列であるならば，$I_n -P$ もまた射影行列である．ただし，$I_n$ は $n$ 次単位行列$\nr{matrix}{184}$．特に $P$ が直交射影行列であるならば，$I_n-P$ も直交射影行列である．</p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>$P$ が射影行列であるならば
+	<p><center>\begin{align}
+		(I_n-P)^2 &\,= I_n^2 -I_nP -PI_n + P^2\\
+			&\refeq{matrix}{185} I_n -P -P +P^2\\
+			&\refeq{projection-matrix}{275} I_n -P-P +P\\
+			&\, = I_n -P.
+		\end{align}</center></p>
+	<p>よって，このとき $I_n-P$ も射影行列である．特に，$P$ が直交射影行列であるならば，上記に加え</p>
+	<p><center>\begin{align}
+		(I_n-P)^* &\refeq{adjoint}{257} I_n^* -P^*\\
+			&\refeq{hermitian-matrix}{258} I_n  -P
+		\end{align}</center></p>
+	<p>も成り立つことから，$I_n-P$ も直交射影行列になる．</p>
 </Details>
 <br>
 
