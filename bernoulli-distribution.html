@@ -1,0 +1,114 @@
+
+
+
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+	}}});
+</script>
+<script>
+	const ttl = "Bernoulli 分布"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/7/15<br>
+updated on 2022/7/15<br>
+</p>
+    
+<p id="310">&nbsp;</p><div class="def">
+	<b>[#310] 定義：Bernoulli 分布</b><br>
+	<p>確率変数$\nr{random-variable}{23}$ $X$ の分布$\nr{random-variable}{173}$ が以下で与えられることを，$X$ は【<ruby><rb>Bernoulli</rb><rp>(</rp><rt>ベルヌーイ</rt><rp>)</rp></ruby> 分布 (Bernoulli distribution)】に従うという：</p>
+	<p><center>\begin{align}
+		P(X = k) = p^k(1-p)^{1-k}\quad (k = 0,\,1).
+		\end{align}</center></p>
+	<p> $X$ がパラメータ $p$ の Bernoulli 分布に従うことを $X\sim \mathrm{Ber}(p)$ と書くことがある．</p>
+</div>
+<Details>
+	<summary>補足</summary>
+	<p> $k$ にそれぞれ $0$ と $1$ を代入してみれば，確率 $1-p$ で $X=0$，$p$ で $X=1$ となる分布であることがわかる．この $0$ と $1$ をコインの表裏や試行の失敗／成功に充てて考える例が多い．</p>
+</Details>
+<br>
+
+<p id="310">&nbsp;</p><div class="prp">
+	<b>[#311] 命題：Bernoulli 分布の期待値</b><br>
+	<p>確率変数$\nr{random-variable}{23}$ $X$ がパラメータ $p$ の Bernoulli 分布に従うとき，その期待値は</p>
+	<p><center>\begin{align}
+		\mathbb{E}[X] = p.
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		\mathbb{E}[X] = 0\cdot (1-p) + 1\cdot p = p.
+		\end{align}</center></p>
+</Details>
+<br>
+
+<p id="312">&nbsp;</p><div class="prp">
+	<b>[#312] 命題：Bernoulli 分布の分散</b><br>
+	<p>確率変数$\nr{random-variable}{23}$ $X$ がパラメータ $p$ の Bernoulli 分布に従うとき，その分散は</p>
+	<p><center>\begin{align}
+		\mathbb{V}[X] = p(1-p).
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		\mathbb{V}[X] &= \mathbb{E}[X^2] -(\mathbb{E}[X])^2 \,\refeq{bernoulli-distribution}{311}\, \mathbb{E}[X^2] -p^2.
+		\end{align}</center></p>
+	<p>ここで</p>
+	<p><center>\begin{align}
+		\mathbb{E}[X^2] = 0^2\cdot (1-p) + 1^2\cdot p = p
+		\end{align}</center></p>
+	<p>であるから，</p>
+	<p><center>\begin{align}
+		\mathbb{E}[X^2] -p^2 = p-p^2 = p(1-p).
+		\end{align}</center></p>
+	<p>以上の議論をまとめることで，題意を得る．</p>
+</Details>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://mathlandscape.com/bernoulli-distrib/">ベルヌーイ分布とは～定義と性質の導出～ - 数学の景色</a> [2022/7/15 閲覧].</li>
+</ul>
+</div>
+</body>
+</html>
