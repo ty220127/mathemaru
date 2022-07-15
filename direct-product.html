@@ -1,5 +1,3 @@
-
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -47,7 +45,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/9<br>
-updated on 2022/7/13<br>
+updated on 2022/7/15<br>
 </p>
     
 <p id="297">&nbsp;</p><div class="def">
@@ -80,6 +78,62 @@ updated on 2022/7/13<br>
 </Details>
 <br>
 
+<p id="309">&nbsp;</p><div class="prp">
+	<b>[#309] 命題：直積に関する分配法則</b><br>
+	<p>集合 $A,\ B,\ C$ に対して</p>
+	<p><center>\begin{align}
+		&(A\cap B) \times C = (A\times C)\cap (B\times C) \tag{309.1}\\
+		&(A\cup B) \times C = (A\times C)\cup (B\times C) \tag{309.2}\\
+		&A\times (B \cap C) = (A\cap B)\times (A\cap C) \tag{309.3}\\
+		&A\times (B \cup C) = (A\cup B)\times (A\cup C) \tag{309.4}\\
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明(309.1)</summary>
+	<p><center>\begin{align}
+		&(x,\,y)\in (A\cap B) \times C \\
+		\reflr{direct-product}{297}\, & (x\in A\cap B)\land (y\in C)\\
+		\reflr{set}{51}\, & ((x\in A)\land (x\in B))\land (y\in C)\\
+		\reflr{proposition}{60}\, & ((x\in A)\land (y\in C))\land ((x\in B)\land (y\in C))\\
+		\reflr{direct-product}{297}\, & ((x,\,y)\in A\times C)\land ((x,\,y)\in B\times C)\\
+		\reflr{set}{51}\, & (x,\,y)\in (A\times C) \cap (B\times C)
+		\end{align}</center></p>
+</Details>
+<Details>
+	<summary>証明(309.2)</summary>
+	<p><center>\begin{align}
+		&(x,\,y)\in (A\cup B) \times C \\
+		\reflr{direct-product}{297}\, & (x\in A\cup B)\land (y\in C)\\
+		\reflr{set}{51}\, & ((x\in A)\lor (x\in B))\land (y\in C)\\
+		\reflr{proposition}{62}\, & ((x\in A)\land (y\in C))\lor ((x\in B)\land (y\in C))\\
+		\reflr{direct-product}{297}\, & ((x,\,y)\in A\times C)\lor ((x,\,y)\in B\times C)\\
+		\reflr{set}{51}\, & (x,\,y)\in (A\times C) \cup (B\times C)
+		\end{align}</center></p>
+</Details>
+<Details>
+	<summary>証明(309.3)</summary>
+	<p><center>\begin{align}
+		&(x,\,y)\in A\times (B \cap C) \\
+		\reflr{direct-product}{297}\, & (x\in A)\land (y\in B\cap C)\\
+		\reflr{set}{51}\, & (x\in A)\land ((y\in B)\land (y\in C))\\
+		\reflr{proposition}{60}\, & ((x\in A)\land (y\in B))\land ((x\in A)\land (y\in C))\\
+		\reflr{direct-product}{297}\, & ((x,\,y)\in A\times B)\land ((x,\,y)\in A\times C)\\
+		\reflr{set}{51}\, & (x,\,y)\in (A\times B) \cap (A\times C)
+		\end{align}</center></p>
+</Details>
+<Details>
+	<summary>証明(309.4)</summary>
+	<p><center>\begin{align}
+		&(x,\,y)\in A\times (B \cup C) \\
+		\reflr{direct-product}{297}\, & (x\in A)\land (y\in B\cup C)\\
+		\reflr{set}{51}\, & (x\in A)\land ((y\in B)\lor (y\in C))\\
+		\reflr{proposition}{62}\, & ((x\in A)\land (y\in B))\lor ((x\in A)\land (y\in C))\\
+		\reflr{direct-product}{297}\, & ((x,\,y)\in A\times B)\lor ((x,\,y)\in A\times C)\\
+		\reflr{set}{51}\, & (x,\,y)\in (A\times B) \cup (A\times C)
+		\end{align}</center></p>
+</Details>
+<br>
+
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
@@ -87,6 +141,7 @@ updated on 2022/7/13<br>
 	<li>齊藤正彦: 線型代数学, 東京図書, 2014.</li>
 	<li><a href="https://mathlandscape.com/product-set/">【直積集合】集合の直積について詳しく～具体例10個～ - 数学の景色</a> [2022/7/9 閲覧].</li>
 	<li><a href="http://www.jidoka.net/serv/kaishi/jaaa-kaish-kobore-134.html">自動化こぼれ話(134)カルテシアン - JAAA自動化推進協会</a> [2022/7/9 閲覧].</li>
+	<li><a href="https://wiis.info/math/set/set/direct-product/">2つの集合の直積（カルテシアン積） - ワイズ</a> [2022/7/15 閲覧].</li>
 </ul>
 </div>
 </body>
