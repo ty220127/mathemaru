@@ -1,6 +1,3 @@
-
-
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -48,24 +45,24 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/15<br>
-updated on 2022/7/15<br>
+updated on 2022/7/16<br>
 </p>
     
 <p id="310">&nbsp;</p><div class="def">
 	<b>[#310] 定義：Bernoulli 分布</b><br>
-	<p>確率変数$\nr{random-variable}{23}$ $X$ の分布$\nr{random-variable}{173}$ が以下で与えられることを，$X$ は【<ruby><rb>Bernoulli</rb><rp>(</rp><rt>ベルヌーイ</rt><rp>)</rp></ruby> 分布 (Bernoulli distribution)】に従うという：</p>
+	<p>確率変数$\nr{random-variable}{23}$ $X$ の分布$\nr{random-variable}{173}$ が以下で与えられることを，$X$ は【<ruby><rb>Bernoulli</rb><rp>(</rp><rt>ベルヌーイ</rt><rp>)</rp></ruby> 分布 (Bernoulli distribution)】に従うという： $0\leq p\leq 1$ に対して，</p>
 	<p><center>\begin{align}
 		P(X = k) = p^k(1-p)^{1-k}\quad (k = 0,\,1).
 		\end{align}</center></p>
-	<p> $X$ がパラメータ $p$ の Bernoulli 分布に従うことを $X\sim \mathrm{Ber}(p)$ と書くことがある．</p>
+	<p>この $X$ を【Bernoulli 確率変数 (Bernoulli random variable)】と呼ぶことがある．また $X$ がパラメータ $p$ の Bernoulli 分布に従うことを $X\sim \mathrm{Ber}(p)$ と書く．</p>
 </div>
 <Details>
 	<summary>補足</summary>
-	<p> $k$ にそれぞれ $0$ と $1$ を代入してみれば，確率 $1-p$ で $X=0$，$p$ で $X=1$ となる分布であることがわかる．この $0$ と $1$ をコインの表裏や試行の失敗／成功に充てて考える例が多い．</p>
+	<p> $k$ にそれぞれ $0$ と $1$ を代入してみれば，確率 $1-p$ で $X=0$，$p$ で $X=1$ となる分布であることがわかる．この $0$ と $1$ をコインの裏表や試行の失敗／成功など，結果が２通りである試行に充ててモデル化を行う例が多い．</p>
 </Details>
 <br>
 
-<p id="310">&nbsp;</p><div class="prp">
+<p id="311">&nbsp;</p><div class="prp">
 	<b>[#311] 命題：Bernoulli 分布の期待値</b><br>
 	<p>確率変数$\nr{random-variable}{23}$ $X$ がパラメータ $p$ の Bernoulli 分布に従うとき，その期待値は</p>
 	<p><center>\begin{align}
@@ -104,11 +101,57 @@ updated on 2022/7/15<br>
 </Details>
 <br>
 
+<p id="313">&nbsp;</p><div class="exr">
+	<b>[#313] 演習：複数回のコイントス</b><br>
+	<p>裏表の出る確率が等しいコインのトスを $n$ 回繰り返し，表の出る回数を調べる．各コイントスはすべて独立とし，$n$ 回目のトスに対応する確率変数を $X_n\sim \mathrm{Ber}(1/2)$ とする．</p>
+	<ol class="q">
+	<li>コイントスを $3$ 回行ってすべて表が出る確率を求めよ．</li>
+	<li>コイントスを $5$ 回行って $3$ 回表が出る確率を求めよ．</li>
+	<li>コイントスを $5$ 回行ったときの，表が出た回数の期待値と分散を求めよ．</li>
+	</ol>
+</div>
+<Details>
+	<summary>解答</summary>
+	<p>以下，表を $1$，裏を $0$ で表す．</p>
+	<ol class="q">
+	<li>$P((X_1 = 1)\land (X_2 =1)\land (X_3 =1)) \,\refeq{independence}{209}\,P(X_1=1)P(X_2=1)P(X_3=1) = \color{red}{\fraction{1}{8}}.$</li>
+	<li>1，2回目が表，3回目以降はすべて裏の場合を考える．
+		<p><center>\begin{align}
+			&P((X_1 = 1)\land (X_2 =1)\land (X_3 =0)\land (X_4 =0)\land (X_4 =0)) \\
+			\,\refeq{independence}{209}\,&P(X_1=1)P(X_2=1)P(X_3=0)P(X_4=0)P(X_4=0) = \fraction{1}{32}.
+			\end{align}</center></p></li>
+		<p>表の出る回を別の回に変えても明らかに確率は同じである．表の出る回の組合せは $\left(\begin{array}{c}5\\ 2\end{array}\right) =10$ (通り) であるから，求める確率は</p>
+		<p><center>\begin{align}
+			 \fraction{1}{32}\times 10 = \color{red}{\fraction{5}{16}}.
+			\end{align}</center></p></li>
+	<li>コイントスを $5$ 回行ったときに表の出た回数は，
+		<p><center>\begin{align}
+			S = \sum_{k=1}^{5} X_k
+			\end{align}</center></p>
+		<p>で表される．このときの期待値と分散は</p>
+		<p><center>\begin{align}
+			&\mathbb{E}[S] = \sum_{k=1}^{5}\mathbb{E}[X_k] = \sum_{k=1}^{5}\fraction{1}{2} = \color{red}{\fraction{5}{2}},\\
+			&\mathbb{V}[S] = \sum_{k=1}^{5}\mathbb{V}[X_k] = \sum_{k=1}^{5} \left(\fraction{1}{2}\cdot \fraction{1}{2}\right) = \color{red}{\fraction{5}{4}}.
+			\end{align}</center></p>
+	</ol>
+</Details>
+<br>
+
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
+	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書, 2014.</li>
+	<li>竹居正登: 入門 確率過程, 森北出版, 2020.</li>
+	<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会, 1991.</li>
 	<li><a href="https://mathlandscape.com/bernoulli-distrib/">ベルヌーイ分布とは～定義と性質の導出～ - 数学の景色</a> [2022/7/15 閲覧].</li>
 </ul>
 </div>
+
+<div id="bib">
+<b>その他参考コンテンツ</b>
+<center>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/%E7%B5%B1%E8%A8%88?src=hash&amp;ref_src=twsrc%5Etfw">#統計</a> 教育用の図<br><br>確率pで1が、確率1-pで0が得られるベルヌーイ試行から、二項分布と負の二項分布がただちに得られるのですが、連続時間極限でポアソン分布やガンマ分布も得られます。中心極限定理で正規分布に行く。<br><br>ベルヌーイ試行は教育用によく使われる。そこから地に足をつけて進む解説法。 <a href="https://t.co/x6R6CmqePo">pic.twitter.com/x6R6CmqePo</a></p>&mdash; 黒木玄 Gen Kuroki (@genkuroki) <a href="https://twitter.com/genkuroki/status/1513909638143811584?ref_src=twsrc%5Etfw">April 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+</div>
+
 </body>
 </html>
