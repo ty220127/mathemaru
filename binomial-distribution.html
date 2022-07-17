@@ -100,10 +100,10 @@ updated on 2022/7/17<br>
 		\mathbb{E}[X]& = \sum_{k=0}^{n} kP(X=k) = 0\cdot P(X=0) + \sum_{k=1}^{n} kP(X=k)\\
 			& = \sum_{k=1}^{n} k\choose{n}{k} p^k (1-p)^{n-k}\\
 			&\underset{(*)}{=} \sum_{k=1}^{n}n\choose{n-1}{k-1}p^k (1-p)^{n-k}\\
-			& = np\sum_{k'=0}^{n-1}\choose{n-1}{k'}p^{k'}(1-p)^{(n-1)-k'}\ \ (k' := k-1)\\
+			& = np\sum_{k'=0}^{n-1}\choose{n-1}{k'}p^{k'}(1-p)^{(n-1)-k'}\\
 			& \refeq{binomial-distribution}{314} np\cdot 1 = np.
 		\end{align}</center></p>
-	<p>４行目から５行目の変形において，シグマ部分が $\mathrm{Bi}(n-1,\,k')$ の全確率になっていることに注意せよ．</p>
+	<p>ただし，５行目において $k' := k-1$．４行目から５行目の変形において，シグマ部分が $\mathrm{Bi}(n-1,\,k')$ の全確率になっていることに注意せよ．</p>
 </Details>
 <Details>
 	<summary>補足</summary>
@@ -136,10 +136,10 @@ updated on 2022/7/17<br>
 			 =\ \,&\sum_{k=0}^{n}k(k-1)P(X=k) +np\\
 			 =\ \,&\sum_{k=2}^{n} k(k-1)\choose{n}{k} p^k (1-p)^{n-k} +np\\
 			\underset{(*)}{=}\ \,&\sum_{k=1}^{n}n(n-1)\choose{n-2}{k-2}p^k (1-p)^{n-k} +np\\
-			 =\ \,&n(n-1)p^2\sum_{k'=0}^{n-1}\choose{n-2}{k'}p^{k'}(1-p)^{(n-2)-k'} +np\ \ (k' := k-2)\\
+			 =\ \,&n(n-1)p^2\sum_{k'=0}^{n-1}\choose{n-2}{k'}p^{k'}(1-p)^{(n-2)-k'} +np\\
 			 \refeq{binomial-distribution}{314}\ &n(n-1)p^2 + np. \tag{$\dagger$}
 		\end{align}</center></p>
-	<p>５行目から６行目の変形において，シグマ部分が $\mathrm{Bi}(n-2,\,k')$ の全確率になっていることに注意せよ．<br>
+	<p>ただし，６行目において $k' = k-2$．また，５行目から６行目の変形において，シグマ部分が $\mathrm{Bi}(n-2,\,k')$ の全確率になっていることに注意せよ．<br>
 	よって，$X$ の分散は</p>
 	<p><center>\begin{align}
 		\mathbb{V}[X] = \, &\mathbb{E}[X^2] -\mathbb{E}[X]^2\\
