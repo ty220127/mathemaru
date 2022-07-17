@@ -1,0 +1,161 @@
+
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "Poisson 分布"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/7/17<br>
+updated on 2022/7/17<br>
+</p>
+    
+<p id="319">&nbsp;</p><div class="def">
+	<b>[#319] 定義：Poisson 分布</b><br>
+	<p>確率変数$\nr{random-variable}{23}$ $X$ の分布$\nr{random-variable}{173}$ が以下で与えられることを，$X$ は【<ruby><rb>Poisson</rb><rp>(</rp><rt>ポアソン</rt><rp>)</rp></ruby> 分布 (Poisson distribution)】に従うという： $\lambda\gt 0$ に対して</p>
+	<p><center>\begin{align}
+		P(X = k) = e^{-\lambda}\fraction{\lambda^{k}}{k!}\quad (k \in \mathbb{N}_0).
+		\end{align}</center></p>
+	<p>ただし $e$ は Napier 数．またパラメータ $\lambda$ の二項分布を $\mathrm{Po}(\lambda)$ と書く．</p>
+</div>
+<Details>
+	<summary>前提：確率測度を満たすことの確認</summary>
+	<p></p>
+</Details>
+<br>
+
+<p id="320">&nbsp;</p><div class="prp">
+	<b>[#320] 命題：Poisson の少数の法則 (Possion's law of small numbers)</b><br>
+	<p>$\lambda\gt 0$ に対して，二項分布$\nr{binomial-distribution}{314}$ $\mathrm{Bi}(n,\,\lambda/n)$，Poisson 分布 $\mathrm{Po}(\lambda)$ に従う確率変数の確率測度をそれぞれ $Q_n,\ P$ とすれば，</p>
+	<p><center>\begin{align}
+		\lim_{n\to \infty}Q_n = P.
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+</Details>
+<br>
+
+<p id="321">&nbsp;</p><div class="prp">
+	<b>[#321] 命題：Poisson 分布の期待値</b><br>
+	<p>Poisson 分布 $\mathrm{Po}(\lambda)$ に従う確率変数 $X$ に対して</p>
+	<p><center>\begin{align}
+		\mathbb{E}[X] = \lambda.
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p></p>
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>二項分布 $\mathrm{Bi}(n,\,\lambda/n)$ から Poisson 分布を得る立場で考える場合$\nr{poisson-distribution}{320}$ は，$Y\sim \mathrm{Bi}(n,\,\lambda/n)$ に対して</p>
+	<p><center>\begin{align}
+		\mathbb{E}[Y] \,\refeq{binomial-distribution}{316}\, n\cdot \fraction{\lambda}{n} = \lambda
+		\end{align}</center></p>
+	<p>となることから，本命題は当然の結果であろう．</p>
+</Details>
+<br>
+
+<p id="322">&nbsp;</p><div class="prp">
+	<b>[#322] 命題：Poisson 分布の分散</b><br>
+	<p>Poisson 分布 $\mathrm{Po}(\lambda)$ に従う確率変数 $X$ に対して</p>
+	<p><center>\begin{align}
+		\mathbb{V}[X] = \lambda.
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p></p>
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>二項分布 $\mathrm{Bi}(n,\,\lambda/n)$ から Poisson 分布を得る立場で考える場合$\nr{poisson-distribution}{320}$ は，$Y\sim \mathrm{Bi}(n,\,\lambda/n)$ に対して</p>
+	<p><center>\begin{align}
+		\mathbb{V}[Y] \,\refeq{binomial-distribution}{317}\, n\cdot \fraction{\lambda}{n}\left(1-\fraction{\lambda}{n}\right) = \lambda\left(1-\fraction{\lambda}{n}\right) \,\longrightarrow\, \lambda\ (n\to \infty)
+		\end{align}</center></p>
+	<p>となることから，本命題は当然の結果であろう．</p>
+</Details>
+<br>
+
+<p id="323">&nbsp;</p><div class="prp">
+	<b>[#323] 命題：Poisson 分布の再生性</b><br>
+	<p>確率変数 $X,\ Y$ がそれぞれ二項分布 $\mathrm{Po}(\lambda),\ \mathrm{Po}(\mu)$ に従うとき，</p>
+	<p><center>\begin{align}
+		X+Y \sim \mathrm{Po}(\lambda +\mu).
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>これを繰り返し用いることで，次の結果を得る：</p>
+	<div class="cor">
+	<b>系：</b>$k=1,\ \cdots,\ N$ に対し，各確率変数 $X_k$ が二項分布 $\mathrm{Po}(\lambda_k)$ に従うとき，
+	<p><center>\begin{align}
+		\sum_{k=1}^{N} X_k \sim \mathrm{Po}\left(\sum_{k=1}^{N}\lambda_k\right).
+		\end{align}</center></p>
+	</div>
+</Details>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="http://www.math.tohoku.ac.jp/~akama/2013/MGF.pdf">赤間陽二: 母集団分布と極限定理, pdf</a> [2022/7/17 閲覧].</li>
+	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書, 2014.</li>
+	<li>竹居正登: 入門 確率過程, 森北出版, 2020.</li>
+	<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会, 1991.</li>
+	<li><a href="https://multivariate-statistics.com/2021/02/04/statistics-reproductive-property-discrete/">【統計学】離散分布の再生性 - ウサギさんの統計学サロン</a> [2022/7/17 閲覧].</li>
+</ul>
+</div>
+
+<div id="bib">
+<b>その他参考コンテンツ</b>
+<center>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/%E7%B5%B1%E8%A8%88?src=hash&amp;ref_src=twsrc%5Etfw">#統計</a> 教育用の図<br><br>確率pで1が、確率1-pで0が得られるベルヌーイ試行から、二項分布と負の二項分布がただちに得られるのですが、連続時間極限でポアソン分布やガンマ分布も得られます。中心極限定理で正規分布に行く。<br><br>ベルヌーイ試行は教育用によく使われる。そこから地に足をつけて進む解説法。 <a href="https://t.co/x6R6CmqePo">pic.twitter.com/x6R6CmqePo</a></p>&mdash; 黒木玄 Gen Kuroki (@genkuroki) <a href="https://twitter.com/genkuroki/status/1513909638143811584?ref_src=twsrc%5Etfw">April 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+</div>
+
+</body>
+</html>
