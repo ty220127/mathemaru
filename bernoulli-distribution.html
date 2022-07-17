@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -45,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/15<br>
-updated on 2022/7/16<br>
+updated on 2022/7/17<br>
 </p>
     
 <p id="310">&nbsp;</p><div class="def">
@@ -54,7 +55,7 @@ updated on 2022/7/16<br>
 	<p><center>\begin{align}
 		P(X = k) = p^k(1-p)^{1-k}\quad (k = 0,\,1).
 		\end{align}</center></p>
-	<p>この $X$ を【Bernoulli 確率変数 (Bernoulli random variable)】と呼ぶことがある．また $X$ がパラメータ $p$ の Bernoulli 分布に従うことを $X\sim \mathrm{Ber}(p)$ と書く．</p>
+	<p>この $X$ を【Bernoulli 確率変数 (Bernoulli random variable)】と呼ぶことがある．またパラメータ $p$ の Bernoulli 分布を $\mathrm{Ber}(p)$ と書く．</p>
 </div>
 <Details>
 	<summary>補足</summary>
@@ -102,7 +103,7 @@ updated on 2022/7/16<br>
 <br>
 
 <p id="313">&nbsp;</p><div class="exr">
-	<b>[#313] 演習：複数回のコイントス</b><br>
+	<b>[#313] 演習：複数回のコイントス <font size="1">→</font> $\numref{binomial-distribution}{315}$ $\numref{binomial-distribution}{316}$ $\numref{binomial-distribution}{317}$</b><br>
 	<p>裏表の出る確率が等しいコインのトスを $n$ 回繰り返し，表の出る回数を調べる．各コイントスはすべて独立とし，$n$ 回目のトスに対応する確率変数を $X_n\sim \mathrm{Ber}(1/2)$ とする．</p>
 	<ol class="q">
 	<li>コイントスを $3$ 回行ってすべて表が出る確率を求めよ．</li>
@@ -114,7 +115,11 @@ updated on 2022/7/16<br>
 	<summary>解答</summary>
 	<p>以下，表を $1$，裏を $0$ で表す．</p>
 	<ol class="q">
-	<li>$P((X_1 = 1)\land (X_2 =1)\land (X_3 =1)) \,\refeq{independence}{209}\,P(X_1=1)P(X_2=1)P(X_3=1) = \color{red}{\fraction{1}{8}}.$</li>
+	<li>この事象は $X_1 = X_2 =X_3 =1$ なる場合に対応し，その確率は
+		<p><center>\begin{align}
+			&P((X_1 = 1)\land (X_2 =1)\land (X_3 =1)) \\
+			\,\refeq{independence}{209}\,&P(X_1=1)P(X_2=1)P(X_3=1) = \color{red}{\fraction{1}{8}}.
+			\end{align}</center></p></li>
 	<li>1，2回目が表，3回目以降はすべて裏の場合を考える．
 		<p><center>\begin{align}
 			&P((X_1 = 1)\land (X_2 =1)\land (X_3 =0)\land (X_4 =0)\land (X_4 =0)) \\
@@ -128,7 +133,7 @@ updated on 2022/7/16<br>
 		<p><center>\begin{align}
 			S = \sum_{k=1}^{5} X_k
 			\end{align}</center></p>
-		<p>で表される．このときの期待値と分散は</p>
+		<p>で表される．$S$ の期待値と分散は</p>
 		<p><center>\begin{align}
 			&\mathbb{E}[S] = \sum_{k=1}^{5}\mathbb{E}[X_k] = \sum_{k=1}^{5}\fraction{1}{2} = \color{red}{\fraction{5}{2}},\\
 			&\mathbb{V}[S] = \sum_{k=1}^{5}\mathbb{V}[X_k] = \sum_{k=1}^{5} \left(\fraction{1}{2}\cdot \fraction{1}{2}\right) = \color{red}{\fraction{5}{4}}.
