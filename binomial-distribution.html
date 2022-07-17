@@ -47,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/16<br>
-updated on 2022/7/16<br>
+updated on 2022/7/17<br>
 </p>
     
 <p id="314">&nbsp;</p><div class="def">
@@ -87,10 +87,23 @@ updated on 2022/7/16<br>
 	<p><center>\begin{align}
 		\mathbb{E}[X] = np.
 		\end{align}</center></p>
-	<p>このとき，$S_n$ は二項分布 $\mathrm{Bi}(n,\,p)$ に従う．
 </div>
 <Details>
 	<summary>証明</summary>
+	<p> $k\in \{0,\ 1,\ \cdots,\ n\}$ に対して</p>
+	<p><center>\begin{align}
+		k\choose{n}{k}& = k\cdot \fraction{n!}{k!(n-k)!} = \fraction{n!}{(k-1)!(n-k)!}\\
+		 &= n\cdot \fraction{(n-1)!}{(k-1)!\{(n-1)-(k-1)\}!} = n\choose{n-1}{k-1}. \tag{$*$}
+		\end{align}</center></p>
+	<p>これを用いて $X$ の期待値を計算すると</p>
+	<p><center>\begin{align}
+		\mathbb{E}[X]& = \sum_{k=0}^{n} kP(X=k) = 0\cdot P(X=0) + \sum_{k=1}^{n} kP(X=k)\\
+			& = \sum_{k=1}^{n} k\choose{n}{k} p^k (1-p)^{n-k}\\
+			&\underset{(*)}{=} \sum_{k=1}^{n}n\choose{n-1}{k-1}p^k (1-p)^{n-k}\\
+			& = np\sum_{k'=0}^{n-1}\choose{n-1}{k'}p^{k'}(1-p)^{(n-1)-k'}\ \ (k' := k-1)\\
+			& \refeq{binomial-distribution}{314} np\cdot 1 = np.
+		\end{align}</center></p>
+	<p>４行目から５行目の変形において，シグマ部分が $\mathrm{Bi}(n-1,\,k')$ の全確率になっていることに注意せよ．</p>
 </Details>
 <Details>
 	<summary>補足</summary>
@@ -107,10 +120,32 @@ updated on 2022/7/16<br>
 	<p><center>\begin{align}
 		\mathbb{V}[X] = np(1-p).
 		\end{align}</center></p>
-	<p>このとき，$S_n$ は二項分布 $\mathrm{Bi}(n,\,p)$ に従う．
 </div>
 <Details>
 	<summary>証明</summary>
+	<p> $k\in \{0,\ 1,\ \cdots,\ n\}$ に対して</p>
+	<p><center>\begin{align}
+		k(k-1)\choose{n}{k}& = k(k-1)\cdot \fraction{n!}{k!(n-k)!} = \fraction{n!}{(k-2)!(n-k)!}\\
+		 & = n(n-1)\cdot \fraction{(n-2)!}{(k-2)!\{(n-2)-(k-2)\}!}\\
+		 & = n(n-1)\choose{n-2}{k-2}. \tag{$*$}
+		\end{align}</center></p>
+	<p>これを用いて $X^2$ の期待値を計算すると</p>
+	<p><center>\begin{align}
+		\mathbb{E}[X^2] =\ \, &\mathbb{E}[X(X-1) + X] = \mathbb{E}[X(X-1)] +\mathbb{E}[X]\\
+			\,\refeq{binomial-distribution}{316}\ &\mathbb{E}[X(X-1)] +np\\
+			 =\ \,&\sum_{k=0}^{n}k(k-1)P(X=k) +np\\
+			 =\ \,&\sum_{k=2}^{n} k(k-1)\choose{n}{k} p^k (1-p)^{n-k} +np\\
+			\underset{(*)}{=}\ \,&\sum_{k=1}^{n}n(n-1)\choose{n-2}{k-2}p^k (1-p)^{n-k} +np\\
+			 =\ \,&n(n-1)p^2\sum_{k'=0}^{n-1}\choose{n-2}{k'}p^{k'}(1-p)^{(n-2)-k'} +np\ \ (k' := k-2)\\
+			 \refeq{binomial-distribution}{314}\ &n(n-1)p^2 + np. \tag{$\dagger$}
+		\end{align}</center></p>
+	<p>５行目から６行目の変形において，シグマ部分が $\mathrm{Bi}(n-2,\,k')$ の全確率になっていることに注意せよ．<br>
+	よって，$X$ の分散は</p>
+	<p><center>\begin{align}
+		\mathbb{V}[X] = \, &\mathbb{E}[X^2] -\mathbb{E}[X]^2\\
+			\underset{(\dagger)}{=} \, & n(n-1)p^2 + np -n^2p^2\\
+			= \, & -np^2 + np = np(1-p).
+		\end{align}</center></p>
 </Details>
 <Details>
 	<summary>補足</summary>
@@ -121,12 +156,35 @@ updated on 2022/7/16<br>
 </Details>
 <br>
 
+<p id="318">&nbsp;</p><div class="prp">
+	<b>[#318] 命題：二項分布の再生性</b><br>
+	<p>確率変数 $X,\ Y$ がそれぞれ二項分布 $\mathrm{Bi}(m,\,p),\ \mathrm{Bi}(n,\,p)$ に従うとき，</p>
+	<p><center>\begin{align}
+		X+Y \sim \mathrm{Bi}(m+n,\ p).
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+</Details>
+<Details>
+	<summary>補足</summary>
+	<p>これを繰り返し用いることで，次の結果を得る：</p>
+	<div class="cor">
+	<b>系：</b>$k=1,\ \cdots,\ N$ に対し，各確率変数 $X_k$ が二項分布 $\mathrm{Bi}(n_k,\,p)$ に従うとき，
+	<p><center>\begin{align}
+		\sum_{k=1}^{N} X_k \sim \mathrm{Bi}\left(\sum_{k=1}^{N}n_k,\,p\right).
+		\end{align}</center></p>
+	</div>
+</Details>
+<br>
+
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書, 2014.</li>
 	<li>竹居正登: 入門 確率過程, 森北出版, 2020.</li>
 	<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会, 1991.</li>
+	<li><a href="https://multivariate-statistics.com/2021/02/04/statistics-reproductive-property-discrete/">【統計学】離散分布の再生性 - ウサギさんの統計学サロン</a> [2022/7/17 閲覧].</li>
 </ul>
 </div>
 
