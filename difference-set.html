@@ -1,50 +1,63 @@
-
-
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
-		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 	}}});
 </script>
 <script>
 	const ttl = "差集合"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
 
 <body>
-<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
-<p style="text-align:right;">
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 isolated from <a href="complement-set.html">普遍集合と補集合</a> on 2022/5/6<br>
-updated on 2022/5/6
+updated on 2022/8/5
 </p>
 
-<div class="def" id="95">
+<p id="95">&nbsp;</p><div class="def">
 	<b>[#95] 定義：差集合</b><br>
   <p>集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\setminus B$ と書く：</p>
 	    <p><center>$\begin{align*}A\setminus B &= \{x\,|\,\,(x\in A) \land (x\notin B)\}\\
         &= \{x\,|\,\,(x\in A) \land (\neg(x\in B))\}.\end{align*}$</center></p>
 </div>
-<br><br>
+<br>
   
-<div class="prp" id="211">
+<p id="211">&nbsp;</p><div class="prp">
 	<b>[#211] 命題：差集合と空集合</b><br>
 	<p>集合 $A$ に対して </p>
 	<p><center>$A\setminus \emptyset = A,\quad\emptyset\setminus A = \emptyset,\quad A\setminus A = \emptyset.$</center></p>
@@ -70,27 +83,48 @@ updated on 2022/5/6
 		x\in A\setminus A &\,\,\reflr{#95}{95}\,\,(x\in A)\land (\neg(x\in A))\\
 		&\,\,\reflr{proposition.html#60}{60}\,\,\mathsf{F}\,\,\reflr{set.html#110}{110}\,\,x\in \emptyset.\\
 	\end{align*}</center></p>
-
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="96">
+<p id="85">&nbsp;</p><div class="prp">
+	<b>[#85] 命題：補集合を用いた差集合の表現</b><br>
+	<p>集合 $A,\,B$ に対して</p>
+	<p><center>$A\setminus B=A\cap B^\cpl.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align*}
+		x\in A\setminus B\,\,\reflr{difference-set}{95}\,\,& (x\in A)\land (x\notin B)\\
+		\reflr{complement-set}{84}\,\,& (x\in A)\land (x\in B^\cpl)\\
+		\reflr{set}{51}\,\,& x\in A\cap B^\cpl.
+		\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="96">&nbsp;</p><div class="prp">
 	<b>[#96] 命題：差集合と共通部分</b><br>
 	<p>集合 $A,\,B$ に対して </p>
 	<p><center>$A \cap (B\setminus A) = \emptyset.$</center></p>
 </div>
+<details>
+	<summary>証明１（補集合を用いる）</summary>
+	<p><center>\begin{align}
+		A \cap (B\setminus A) \ \refeq{difference-set}{85}\ &A\cap B\cap A^\cpl\ \refeq{set}{52}\ A\cap A^\cpl\cap B \\
+			\refeq{complement-set}{326}\ & \emptyset\cap B \ \refeq{set}{324}\ \emptyset.
+		\end{align}</center></p>
+</details>
 <Details>
-	<summary>証明</summary>
-	<p><center> 
-		$\begin{align*} \,\,& x\in A \cap (B\setminus A)\\
-		\Longleftrightarrow\,\,& (x\in A)\land (x\in B)\land (\neg(x\in A))\\
-		\Longleftrightarrow\,\,& \mathsf{F}\land (x\in B) \equiv \mathsf{F}.\end{align*}$
-	</center></p>
-	<p>よって空集合の定義により，上の $x$ について $x\in\emptyset$．</p>
+	<summary>証明２（定義から直接）</summary>
+	<p><center> \begin{align*} 
+		\,\,& x\in A \cap (B\setminus A)\\
+		\reflr{defference-set}{95}\ & (x\in A)\land (x\in B)\land (\neg(x\in A))\\
+		\reflr{propostion}{60}\ & \mathsf{F}\land (x\in B) \ \reflr{proposition}{60}\  \mathsf{F}.
+		\end{align*}</center></p>
+	<p>よって $A \cap (B\setminus A) = \emptyset$ である$\nr{set}{110}$．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="97">
+<p id="97">&nbsp;</p><div class="prp">
 	<b>[#97] 命題：差集合と和</b><br>
 	<p>集合 $A,\,B$ に対して </p>
 	<p><center>$A \cup (B\setminus A) = A\cup B.$</center></p>
@@ -109,9 +143,9 @@ updated on 2022/5/6
 	<p>特に $A\subset B$ であるならば <a href="set.html#56">[#56]</a> より</p>
 	<p><center>$A \cup (B\setminus A) = A\cup B = B.$</center></p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="55">
+<p id="55">&nbsp;</p><div class="prp">
 	<b>[#55] 命題：直和による集合の分解</b><br>
 	<p>集合 $A,\,B$ に対して，$A\cap B$ と $A\setminus B$ は互いに素であり，
 	<p><center>$\begin{align*}
@@ -134,9 +168,9 @@ updated on 2022/5/6
 	</center></p>
 	<p>であることから $(A\cap B)\sqcup(A\setminus B) = A$ がいえる．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="212">
+<p id="212">&nbsp;</p><div class="prp">
 	<b>[#212] 命題：差集合の分配法則</b><br>
 	<p>集合 $A,\,B,\,C$ に対して </p>
 	<p><center>$\begin{align*}
@@ -164,12 +198,44 @@ updated on 2022/5/6
 		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cap (B\setminus C).
 	\end{align*}</center></p>
 </Details>
-<br><br>
+<br>
 
+<p id="325">&nbsp;</p><div class="prp">
+	<b>[#325] 命題：de Morgan の法則と差集合</b><br>
+	<p>集合 $A,\,B,\,C$ に対して </p>
+	<p><center>$\begin{align*}
+		(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C),\\
+		(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C).
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C):$</p>
+	<p><center>\begin{align*}
+		x\in (A\cup B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cup B)\land (x\not\in C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\lor (x\in B)\}\ \land (x\not\in C)\\
+		&\,\,\reflr{proposition.html#62}{62}\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
+		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\lor (x\in B\setminus C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cup (B\setminus C).
+	\end{align*}</center></p>
+
+	<p> $(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C):$</p>
+	<p><center>\begin{align*}
+		x\in (A\cap B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cap B)\land (x\not\in C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\land (x\in B)\}\ \land (x\not\in C)\\
+		&\,\,\Longleftrightarrow\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
+		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\land (x\in B\setminus C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cap (B\setminus C).
+	\end{align*}</center></p>
+</Details>
+<br>
+
+<br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-3_shugo-enzan.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第３章), 公開pdf</a>.</li>
+	<li><a href="https://math-fun.net/20210530/14400/">補集合、差集合、全体集合とは：例と性質、証明 - 趣味の大学数学</a> [2022/8/5 閲覧].</li>
 </ul>
 </div>
       
