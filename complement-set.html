@@ -1,32 +1,36 @@
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refbtn: ['\\href{#1}{\\scriptsize\\sf[\\# #2]}',2],
-		refeq: ['\\underset{\\refbtn{#1}{#2}}{=}',2],
-		reflr: ['\\underset{\\refbtn{#1}{#2}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\refbtn{#1}{#2}}{\\Longrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
-		bra: ['\\langle #1 |', 1],
-		ket: ['| #1 \\rangle', 1],
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 	}}});
 </script>
 <script>
 	const ttl = "補集合"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
@@ -36,13 +40,13 @@
 
 <nav>
 <ul>
-<li><a href="index.html">演習問題集</a></li>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
 </ul>
 </nav>
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 isolated from <a href="set.html">集合</a> on 2022/2/20<br>
-updated on 2022/5/21
+updated on 2022/8/5
 </p>
 
 <p id="84">&nbsp;</p><div class="def">
@@ -58,21 +62,6 @@ updated on 2022/5/21
 </Details>
 <br>
   
-<p id="85">&nbsp;</p><div class="prp">
-	<b>[#85] 命題：補集合を用いた差集合の表現</b><br>
-	<p>集合 $A,\,B$ に対して</p>
-	<p><center>$A\setminus B=A\cap B^\cpl.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p><center>\begin{align*}
-		x\in A\setminus B\,\,\reflr{difference-set.html#95}{95}\,\,& (x\in A)\land (x\notin B)\\
-		\reflr{#84}{84}\,\,& (x\in A)\land (x\in B^\cpl)\\
-		\reflr{set.html#51}{51}\,\,& x\in A\cap B^\cpl.
-		\end{align*}</center></p>
-</Details>
-<br><br>
-
 <div class="prp" id="86">
 	<b>[#86] 命題：補集合の包含関係</b><br>
 	<p>集合 $A,\,B$ に対して</p>
@@ -136,6 +125,7 @@ updated on 2022/5/21
 <ul>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-3_shugo-enzan.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第３章), 公開pdf</a>.</li>
+	<li><a href="https://math-fun.net/20210530/14400/">補集合、差集合、全体集合とは：例と性質、証明 - 趣味の大学数学</a> [2022/8/5 閲覧].</li>
 </ul>
 </div>
       
