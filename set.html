@@ -1,17 +1,20 @@
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
-		refeq: ['\\underset{\\numref{#1}{#2}}{=}',2],
-		reflr: ['\\underset{\\!\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
@@ -21,13 +24,13 @@
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
-		bra: ['\\langle #1 |', 1],
-		ket: ['| #1 \\rangle', 1],
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 	}}});
 </script>
 <script>
 	const ttl = "集合"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
@@ -37,13 +40,13 @@
 
 <nav>
 <ul>
-<li><a href="index.html">演習問題集</a></li>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
 </ul>
 </nav>
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/6<br>
-updated on 2022/5/22
+updated on 2022/8/5
 </p>
     
 <p id="48">&nbsp;</p><div class="def">
@@ -174,6 +177,32 @@ updated on 2022/5/22
 		&\Longleftrightarrow\,\,(x\in B) \lor (x\in A)\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
 	</center></p>
 </Details>
+<br>
+
+<p id="324">&nbsp;</p><div class="prp">
+	<b>[#324] 命題：空集合と和・共通部分</b><br>
+	<p>集合 $A$ に対して </p>
+	<p><center>$A\cup \emptyset= A$，$A\cap \emptyset =\emptyset$.</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		x\in A\cup \emptyset \  \reflr{set}{51}\  &(x\in A)\lor (x\in \emptyset)\\
+			\reflr{set}{110}\  & (x\in A)\lor \mathsf{F}\\
+			\reflr{proposition}{60}\  & x\in A.
+		\end{align}</center></p>
+	<p><center>\begin{align}
+		x\in A\cap \emptyset \  \reflr{set}{51}\  &(x\in A)\land (x\in \emptyset)\\
+			\reflr{set}{110}\  & (x\in A)\land \mathsf{F}\\
+			\reflr{proposition}{60}\  & \mathsf{F}.
+		\end{align}</center></p>
+</Details>
+<details>
+	<summary>補足</summary>
+	<p>自明であるが，集合の交換法則$\nr{set}{52}$ と組み合わせれば</p>
+	<p><center>$\emptyset\cup A= A$，$\emptyset\cap A =\emptyset$.</center></p>
+	<p>も得られる．</p>
+</details>
 <br>
 
 <p id="204">&nbsp;</p><div class="prp">
