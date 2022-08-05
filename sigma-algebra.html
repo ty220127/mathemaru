@@ -1,13 +1,12 @@
-
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
@@ -19,7 +18,7 @@
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
@@ -43,7 +42,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/1/27<br>
-updated on 2022/5/23
+updated on 2022/8/5
 </p>
 	  
 <p id="10">&nbsp;</p><div class="def">
@@ -188,6 +187,34 @@ updated on 2022/5/23
 	<p>$A\in\mathcal{F}$ とすれば，可測集合の差の性質 <a href="#14">[#14]</a> より</p>
 	<p><center>$\emptyset = A\setminus A\in\mathcal{F}.$</center></p>
 	<p>よって，補集合の可測性 <a href="#10">[#10]</a>-i より $\varOmega =\emptyset^{ \cpl}\in\mathcal{F}$.</p>
+</Details>
+<br>
+	  
+<p id="323">&nbsp;</p><div class="prp">
+	<b>[#323] 命題：共通部分によるσ加法族</b><br>
+	<p>$\mathcal{F}$ は $\varOmega$ の $\sigma$ 加法族，$S$ は $\varOmega$ の空でない部分集合とし，</p>
+	<p><center>\begin{align}
+		\mathcal{F}\cap S := \{A\cap S\,|\, A\in \mathcal{F}\}
+		\end{align}</center></p>
+	<p>と定義する．このとき組 $(S,\,\mathcal{F}\cap S)$ は可測空間である．</p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<ul class="defl">
+		<li>集合 $\varOmega$ を普遍集合と見たときの補集合を $\cpl$，$S$ を普遍集合と見たときの補集合を $\cpl'$ で表す．$B\in \mathcal{F}\cap S$ とする．このとき，定義より $B = A\cap S$ なる $A\in\mathcal{F}$ が存在する．$S$ に対する $B$ の補集合 $B^{\cpl'}$ を考えると
+		<p><center>\begin{align}
+			B^{\cpl'} \,\refeq{complement-set}{85}\ &S\setminus B = S\setminus (A\cap S)\\
+				\refeq{difference-set}{324}\ &(S\setminus A) \cup (S\setminus S)\\
+				\refeq{difference-set}{211}\ &(S\setminus A) \cup \emptyset \ \refeq{set}{325}\ S\setminus A\\
+				\refeq{complement-set}{85}\ & A^\cpl \cap S.
+			\end{align}</center></p>
+		<p>可測集合の補集合もまた可測 $(A^\cpl\in\mathcal{F})$ であるから$\nr{sigma-algebra}{10}$，$B^{\cpl'} = A^\cpl \cap S\in \mathcal{F}\cap S$．</p>
+		<li> $\{B_k\}_{k\in\mathbb{N}}\subset \mathcal{F}\cap S$ とする．このとき各 $k$ に対して $B_k = A_k\cap S$ なる $A_k$ が存在する．ここで
+		<p><center>\begin{align}
+			\bcu_{k=1}^{\infty} B_k = \bcu_{k=1}^{\infty} (A_k\cap S) \, \refeq{collection-family}{131}\, \left(\bcu_{k=1}^{\infty} A_k\right)\cap S
+			\end{align}</center></p>
+		<p>であり，有限加法性$\nr{sigma^algebra}{10}$ より $\bigcup_{k=1}^{\infty}A_k\in \mathcal{F}$ であるから，$\bigcup_{k=1}^{\infty} B_k = (\bigcup_{k=1}^{\infty} A_k)\cap S \in \mathcal{F}\cap S$．</p>
+	</ul>
 </Details>
 <br>
 	  
