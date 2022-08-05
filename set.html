@@ -102,15 +102,6 @@ updated on 2022/8/5
 </Details>
 <br>
   
-<p id="110">&nbsp;</p><div class="def">
-	<b>[#110] 定義：空集合</b><br>
-	<p>一切の記号が属さないような集合を【空集合 (empty set)】と呼び，$\emptyset$ と書く：</p>
-	<p><center>\begin{align*}
-		{}^\forall x,\,\,(x\in \emptyset) \equiv \mathsf{F}.
-		\end{align*}</center></p>
-</div>
-<br>
-  
 <p id="111">&nbsp;</p><div class="def">
 	<b>[#111] 定義：集合の包含</b><br>
 	<p> $A,\,B$ を集合とする．
@@ -129,20 +120,6 @@ updated on 2022/8/5
 </div>
 <br>
   
-<p id="49">&nbsp;</p><div class="prp">
-	<b>[#49] 命題：集合は自身の部分集合</b><br>
-	<p>空集合 $\emptyset$ は任意の集合の部分集合である．</p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p>任意の $x$ に対して $x\in\emptyset$ が成り立たないことから，含意の定義 <a href="implication.html#65">[#65]</a> よりすべての集合 $A$ に対して $[x\in\emptyset\Rightarrow x\in A]$ である．</p>
-</Details>
-<Details>
-	<summary>補足</summary>
-	<p>論理包含の命題に対して，仮定が偽である場合に結論の真偽に関わらずこれを真とすることで都合が良くなる例の一つである．</p>
-</Details>
-<br>
-
 <p id="50">&nbsp;</p><div class="prp">
 	<b>[#50] 命題：集合は自身の部分集合</b><br>
 	<p>任意の集合 $A$ に対して，$A\subset A$.</p>
@@ -177,32 +154,6 @@ updated on 2022/8/5
 		&\Longleftrightarrow\,\,(x\in B) \lor (x\in A)\,\,\Longleftrightarrow\,\, x\in B\cup A.\end{align*}$
 	</center></p>
 </Details>
-<br>
-
-<p id="324">&nbsp;</p><div class="prp">
-	<b>[#324] 命題：空集合と和・共通部分</b><br>
-	<p>集合 $A$ に対して </p>
-	<p><center>$A\cup \emptyset= A$，$A\cap \emptyset =\emptyset$.</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p><center>\begin{align}
-		x\in A\cup \emptyset \  \reflr{set}{51}\  &(x\in A)\lor (x\in \emptyset)\\
-			\reflr{set}{110}\  & (x\in A)\lor \mathsf{F}\\
-			\reflr{proposition}{60}\  & x\in A.
-		\end{align}</center></p>
-	<p><center>\begin{align}
-		x\in A\cap \emptyset \  \reflr{set}{51}\  &(x\in A)\land (x\in \emptyset)\\
-			\reflr{set}{110}\  & (x\in A)\land \mathsf{F}\\
-			\reflr{proposition}{60}\  & \mathsf{F}.
-		\end{align}</center></p>
-</Details>
-<details>
-	<summary>補足</summary>
-	<p>自明であるが，集合の交換法則$\nr{set}{52}$ と組み合わせれば</p>
-	<p><center>$\emptyset\cup A= A$，$\emptyset\cap A =\emptyset$.</center></p>
-	<p>も得られる．</p>
-</details>
 <br>
 
 <p id="204">&nbsp;</p><div class="prp">
