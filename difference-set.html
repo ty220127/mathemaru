@@ -51,122 +51,150 @@ updated on 2022/8/5
 
 <p id="95">&nbsp;</p><div class="def">
 	<b>[#95] 定義：差集合</b><br>
-  <p>集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\setminus B$ と書く：</p>
-	    <p><center>$\begin{align*}A\setminus B &= \{x\,|\,\,(x\in A) \land (x\notin B)\}\\
+  <p>集合 $A$ に属し $B$ に属さないような要素の集合を $A$ から $B$ の【差集合(set difference)】と呼び，$A\backslash B$ と書く：</p>
+	    <p><center>$\begin{align*}A\backslash B &= \{x\,|\,\,(x\in A) \land (x\notin B)\}\\
         &= \{x\,|\,\,(x\in A) \land (\neg(x\in B))\}.\end{align*}$</center></p>
 </div>
 <br>
   
-<p id="211">&nbsp;</p><div class="prp">
-	<b>[#211] 命題：差集合と空集合</b><br>
-	<p>集合 $A$ に対して </p>
-	<p><center>$A\setminus \emptyset = A,\quad\emptyset\setminus A = \emptyset,\quad A\setminus A = \emptyset.$</center></p>
-</div>
-<Details>
-	<summary>証明</summary>
-	<p> $A\setminus\emptyset =A:$</p>
-	<p><center>\begin{align*}
-		x\in A\setminus \emptyset &\,\,\reflr{#95}{95}\,\,(x\in A)\land (\neg(x\in \emptyset))\\
-		&\,\,\reflr{set.html#110}{110}\,\,(x\in A)\land (\neg\ \mathsf{F})\\
-		&\,\,\Longleftrightarrow\,\,(x\in A)\land \mathsf{T}\,\,\reflr{proposition.html#60}{60}\,\,x\in A.\\
-	\end{align*}</center></p>
-
-	<p> $\emptyset\setminus A =\emptyset:$</p>
-	<p><center>\begin{align*}
-		x\in \emptyset\setminus A &\,\,\reflr{#95}{95}\,\,(x\in \emptyset)\land (x\not\in A)\\
-		&\,\,\reflr{set.html#110}{110}\,\,\mathsf{F} \land (x\not \in A)\\
-		&\,\,\reflr{proposition.html#60}{60}\,\,\mathsf{F}\,\,\reflr{set.html#110}{110}\,\,x\in \emptyset.\\
-	\end{align*}</center></p>
-
-	<p> $A\setminus A =\emptyset:$</p>
-	<p><center>\begin{align*}
-		x\in A\setminus A &\,\,\reflr{#95}{95}\,\,(x\in A)\land (\neg(x\in A))\\
-		&\,\,\reflr{proposition.html#60}{60}\,\,\mathsf{F}\,\,\reflr{set.html#110}{110}\,\,x\in \emptyset.\\
-	\end{align*}</center></p>
-</Details>
-<br>
-
 <p id="85">&nbsp;</p><div class="prp">
 	<b>[#85] 命題：補集合を用いた差集合の表現</b><br>
 	<p>集合 $A,\,B$ に対して</p>
-	<p><center>$A\setminus B=A\cap B^\cpl.$</center></p>
+	<p><center>$A\backslash B=A\cap B^\cpl.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
 	<p><center>\begin{align*}
-		x\in A\setminus B\,\,\reflr{difference-set}{95}\,\,& (x\in A)\land (x\notin B)\\
+		x\in A\backslash B\,\,\reflr{difference-set}{95}\,\,& (x\in A)\land (x\notin B)\\
 		\reflr{complement-set}{84}\,\,& (x\in A)\land (x\in B^\cpl)\\
 		\reflr{set}{51}\,\,& x\in A\cap B^\cpl.
 		\end{align*}</center></p>
 </Details>
 <br>
 
-<p id="96">&nbsp;</p><div class="prp">
-	<b>[#96] 命題：差集合と共通部分</b><br>
-	<p>集合 $A,\,B$ に対して </p>
-	<p><center>$A \cap (B\setminus A) = \emptyset.$</center></p>
+<p id="211">&nbsp;</p><div class="prp">
+	<b>[#211] 命題：差集合と空集合</b><br>
+	<p>集合 $A$ に対して </p>
+	<p><center>$A\backslash \emptyset = A,\quad\emptyset\backslash A = \emptyset,\quad A\backslash A = \emptyset.$</center></p>
 </div>
 <details>
 	<summary>証明１（補集合を用いる）</summary>
 	<p><center>\begin{align}
-		A \cap (B\setminus A) \ \refeq{difference-set}{85}\ &A\cap B\cap A^\cpl\ \refeq{set}{52}\ A\cap A^\cpl\cap B \\
-			\refeq{complement-set}{326}\ & \emptyset\cap B \ \refeq{set}{324}\ \emptyset.
+		A\backslash \emptyset \ \refeq{difference-set}{85}\ A\cap \emptyset^\cpl\ \refeq{universal-set}{213}\ A\cap \varOmega \ \refeq{universal-set}{215}\ A,
+		\end{align}</center></p>
+	<p><center>\begin{align}
+		\emptyset\backslash A \ \refeq{difference-set}{85}\ \emptyset\cap A^\cpl\ \refeq{universal-set}{325}\ \emptyset,
+		\end{align}</center></p>
+	<p><center>\begin{align}
+		A\backslash A \ \refeq{difference-set}{85}\ A\cap A^\cpl\ \refeq{universal-set}{214}\ \emptyset.
+		\end{align}</center></p>
+</details>
+<Details>
+	<summary>証明２（定義から直接）</summary>
+	<p> $A\backslash\emptyset =A:$</p>
+	<p><center>\begin{align*}
+		x\in A\backslash \emptyset &\,\,\reflr{#95}{95}\,\,(x\in A)\land (\neg(x\in \emptyset))\\
+		&\,\,\reflr{universal-set}{110}\,\,(x\in A)\land (\neg\ \mathsf{F})\\
+		&\,\,\Longleftrightarrow\,\,(x\in A)\land \mathsf{T}\,\,\reflr{proposition}{60}\,\,x\in A.\\
+	\end{align*}</center></p>
+
+	<p> $\emptyset\backslash A =\emptyset:$</p>
+	<p><center>\begin{align*}
+		x\in \emptyset\backslash A &\,\,\reflr{difference-set}{95}\,\,(x\in \emptyset)\land (x\not\in A)\\
+		&\,\,\reflr{universal-set}{110}\,\,\mathsf{F} \land (x\not \in A)\\
+		&\,\,\reflr{proposition}{60}\,\,\mathsf{F}\,\,\reflr{universal-set}{110}\,\,x\in \emptyset.\\
+	\end{align*}</center></p>
+
+	<p> $A\backslash A =\emptyset:$</p>
+	<p><center>\begin{align*}
+		x\in A\backslash A &\,\,\reflr{difference-set}{95}\,\,(x\in A)\land (\neg(x\in A))\\
+		&\,\,\reflr{proposition}{60}\,\,\mathsf{F}\,\,\reflr{universal-set}{110}\,\,x\in \emptyset.\\
+	\end{align*}</center></p>
+</Details>
+<br>
+
+<p id="96">&nbsp;</p><div class="prp">
+	<b>[#96] 命題：差集合と共通部分</b><br>
+	<p>集合 $A,\,B$ に対して </p>
+	<p><center>$A \cap (B\backslash A) = \emptyset.$</center></p>
+</div>
+<details>
+	<summary>証明１（補集合を用いる）</summary>
+	<p><center>\begin{align}
+		A \cap (B\backslash A) \ \refeq{difference-set}{85}\ &A\cap B\cap A^\cpl\ \refeq{set}{52}\ A\cap A^\cpl\cap B \\
+			\refeq{universal-set}{214}\ & \emptyset\cap B \ \refeq{universal-set}{325}\ \emptyset.
 		\end{align}</center></p>
 </details>
 <Details>
 	<summary>証明２（定義から直接）</summary>
 	<p><center> \begin{align*} 
-		\,\,& x\in A \cap (B\setminus A)\\
+		\,\,& x\in A \cap (B\backslash A)\\
 		\reflr{defference-set}{95}\ & (x\in A)\land (x\in B)\land (\neg(x\in A))\\
-		\reflr{propostion}{60}\ & \mathsf{F}\land (x\in B) \ \reflr{proposition}{60}\  \mathsf{F}.
+		\reflr{proposition}{60}\ & \mathsf{F}\land (x\in B) \ \reflr{proposition}{60}\  \mathsf{F}.
 		\end{align*}</center></p>
-	<p>よって $A \cap (B\setminus A) = \emptyset$ である$\nr{set}{110}$．</p>
+	<p>よって $A \cap (B\backslash A) = \emptyset$ である$\nr{universal-set}{110}$．</p>
 </Details>
 <br>
 
 <p id="97">&nbsp;</p><div class="prp">
 	<b>[#97] 命題：差集合と和</b><br>
 	<p>集合 $A,\,B$ に対して </p>
-	<p><center>$A \cup (B\setminus A) = A\cup B.$</center></p>
+	<p><center>$A \cup (B\backslash A)= A\cup B.$</center></p>
 	<p>特に $A\subset B$ であるならば
-	<p><center>$A \cup (B\setminus A) = B.$</center></p>
+	<p><center>$A \cup (B\backslash A) = B.$</center></p>
 </div>
+<details>
+	<summary>証明１（補集合を用いる）</summary>
+	<p><center>\begin{align}
+		A \cup (B\backslash A) \ \refeq{difference-set}{85}\ &A\cup (B\cap A^\cpl)\\
+			\refeq{set}{54}\ &(A\cup B)\cap (A\cap A^\cpl)\\
+			\refeq{universal-set}{214}\ &(A\cup B)\cap \varOmega \ \refeq{universal-set}{215}\ A\cup B.\\
+		\end{align}</center></p>
+	<p>特に $A\subset B$ であるならば</p>
+	<p><center>$A \cup (B\backslash A) = A\cup B \ \refeq{set}{56}\ B.$</center></p>
+</details>
 <Details>
-	<summary>証明</summary>
+	<summary>証明２（定義から直接）</summary>
 	<p><center> 
-		$\begin{align*} \,\,& x\in A \cup (B\setminus A)\\
-		\underset{\href{#95}{\sf[\# 95]}}{\Longleftrightarrow}\,\,& (x\in A)\lor ((x\in B)\land \neg(x\in A))\\
-		\underset{\href{proposition.html#62}{\sf[\# 62]}}{\Longleftrightarrow}\,\,& ((x\in A)\lor (x\in A))\land ((x\in A)\lor \neg(x\in A))\\
-		\underset{\href{proposition.html#60}{\sf[\# 60]}}{\Longleftrightarrow}\,\,& (x\in A\cup B)\land \mathsf{T}\\
-		\underset{\href{proposition.html#60}{\sf[\# 60]}}{\Longleftrightarrow}\,\,& x\in A\cup B.\end{align*}$
+		$\begin{align*} \,\,& x\in A \cup (B\backslash A)\\
+		\reflr{defference-set}{95}\ & (x\in A)\lor ((x\in B)\land \neg(x\in A))\\
+		\reflr{proposition}{62}\ & ((x\in A)\lor (x\in A))\land ((x\in A)\lor \neg(x\in A))\\
+		\reflr{proposition}{60}\ & (x\in A\cup B)\land \mathsf{T}\\
+		\reflr{proposition}{60}\ & x\in A\cup B.\end{align*}$
 	</center></p>
-	<p>特に $A\subset B$ であるならば <a href="set.html#56">[#56]</a> より</p>
-	<p><center>$A \cup (B\setminus A) = A\cup B = B.$</center></p>
+	<p>よって $A \cup (B\backslash A)= A\cup B$ が成り立つ．</p>
 </Details>
 <br>
 
 <p id="55">&nbsp;</p><div class="prp">
 	<b>[#55] 命題：直和による集合の分解</b><br>
-	<p>集合 $A,\,B$ に対して，$A\cap B$ と $A\setminus B$ は互いに素であり，
+	<p>集合 $A,\,B$ に対して，$A\cap B$ と $A\backslash B$ は互いに素であり，
 	<p><center>$\begin{align*}
-		(A\cap B)\sqcup(A\setminus B) = A.
+		(A\cap B)\sqcup(A\backslash B) = A.
 		\end{align*}$</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<details>
+	<summary>証明１（補集合を用いる）</summary>
 	<p>まず，</p>
 	<p><center>\begin{align*}
-		(A\cap B)\cap (A\setminus B) \refeq{set.html#53}{53} A\cap \{B\cap (A\setminus B)\}
-			\refeq{#96}{96} A\cap \emptyset = \emptyset
+		(A\cap B)\cap (A\backslash B) \ \refeq{set}{53}\ A\cap \{B\cap (A\backslash B)\}
+			\ \refeq{difference-set}{96}\ A\cap \emptyset \ \refeq{universal-set}{325}\  \emptyset
 		\end{align*}</center></p>
-	<p>より $A\cap B$ と $A\setminus B$ は互いに素である．また，これらの和（直和）について，</p>
+	<p>より $A\cap B$ と $A\backslash B$ は互いに素である．また，これらの和（直和）について，</p>
+	<p<center>\begin{align}
+		(A\cap B)\cup (A\backslash B) \ \refeq{difference-set}{95}\ &(A\cap B)\cup (A\cap B^\cpl)\\
+		\ \refeq{set}{54}\ &A\cap (B\cup B^\cpl) \ \refeq{universal-set}{214}\ A\cap \varOmega \ \refeq{universal-set}{215}\ A.
+		\end{align}</center></p>
+</details>
+<Details>
+	<summary>証明２（定義から直接）</summary>
 	<p><center> 
-		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\setminus B)\,\,\reflr{set.html#51}{51}\,\, (x\in A\cap B) \lor (x\in (A\setminus B))\\
+		$\begin{align*} \,\,& x\in (A\cap B)\cup (A\backslash B)\,\,\reflr{set.html#51}{51}\,\, (x\in A\cap B) \lor (x\in (A\backslash B))\\
 		\reflr{#95}{95}\,\,& ((x\in A) \land (x\in B)) \lor ((x\in A) \land (x\notin B))\\
 		\reflr{proposition.html#62}{62}\,\,& (x\in A) \land ((x\in B) \lor (x\notin B))\\
 		\reflr{proposition.html#58}{58}\,\,& (x\in A) \land \mathsf{T}\,\,\reflr{proposition.html#60}{60}\,\, x\in A.\end{align*}$
 	</center></p>
-	<p>であることから $(A\cap B)\sqcup(A\setminus B) = A$ がいえる．</p>
+	<p>よって $(A\cap B)\sqcup(A\backslash B) = A$ がいえる．</p>
 </Details>
 <br>
 
@@ -174,59 +202,64 @@ updated on 2022/8/5
 	<b>[#212] 命題：差集合の分配法則</b><br>
 	<p>集合 $A,\,B,\,C$ に対して </p>
 	<p><center>$\begin{align*}
-		(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C),\\
-		(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C).
+		(A\cup B)\backslash C = (A\backslash C)\cup (B\backslash C),\\
+		(A\cap B)\backslash C = (A\backslash C)\cap (B\backslash C).
 		\end{align*}$</center></p>
 </div>
+<details>
+	<summary>証明１（補集合を用いる）</summary>
+	<p><center>\begin{align}
+		(A\cup B)\backslash C \ \refeq{difference-set}{85}\ &(A\cup B)\cap C^\cpl \\
+			\ \refeq{set}{54}\ &(A\cap C^\cpl)\cup (B\cap C^\cpl) \\
+			\ \refeq{difference-set}{85}\ &(A\backslash C)\cup (B\backslash C),
+		\end{align}</center></p>
+	<p><center>\begin{align}
+		(A\cap B)\backslash C \ \refeq{difference-set}{85}\ &(A\cap B)\cap C^\cpl \\
+			\ \refeq{set}{52}\ &(A\cap C^\cpl)\cap (B\cap C^\cpl) \\
+			\ \refeq{difference-set}{85}\ &(A\backslash C)\cap (B\backslash C).
+		\end{align}</center></p>
+</details>
 <Details>
-	<summary>証明</summary>
-	<p> $(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C):$</p>
+	<summary>証明２（定義から直接）</summary>
+	<p> $(A\cup B)\backslash C = (A\backslash C)\cup (B\backslash C):$</p>
 	<p><center>\begin{align*}
-		x\in (A\cup B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cup B)\land (x\not\in C)\\
+		x\in (A\cup B)\backslash C &\,\,\reflr{#95}{95}\,\,(x\in A\cup B)\land (x\not\in C)\\
 		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\lor (x\in B)\}\ \land (x\not\in C)\\
 		&\,\,\reflr{proposition.html#62}{62}\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
-		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\lor (x\in B\setminus C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cup (B\setminus C).
+		&\,\,\reflr{#95}{95}\,\,(x\in A\backslash C)\lor (x\in B\backslash C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\backslash C)\cup (B\backslash C).
 	\end{align*}</center></p>
 
-	<p> $(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C):$</p>
+	<p> $(A\cap B)\backslash C = (A\backslash C)\cap (B\backslash C):$</p>
 	<p><center>\begin{align*}
-		x\in (A\cap B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cap B)\land (x\not\in C)\\
+		x\in (A\cap B)\backslash C &\,\,\reflr{#95}{95}\,\,(x\in A\cap B)\land (x\not\in C)\\
 		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\land (x\in B)\}\ \land (x\not\in C)\\
 		&\,\,\Longleftrightarrow\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
-		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\land (x\in B\setminus C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cap (B\setminus C).
+		&\,\,\reflr{#95}{95}\,\,(x\in A\backslash C)\land (x\in B\backslash C)\\
+		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\backslash C)\cap (B\backslash C).
 	\end{align*}</center></p>
 </Details>
 <br>
 
-<p id="325">&nbsp;</p><div class="prp">
-	<b>[#325] 命題：de Morgan の法則と差集合</b><br>
+<p id="326">&nbsp;</p><div class="prp">
+	<b>[#326] 命題：de Morgan の法則と差集合</b><br>
 	<p>集合 $A,\,B,\,C$ に対して </p>
 	<p><center>$\begin{align*}
-		(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C),\\
-		(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C).
+		C\backslash (A\cup B)= (C\backslash A)\cap (C\backslash B),\\
+		C\backslash (A\cap B)= (C\backslash A)\cup (C\backslash B),\\
 		\end{align*}$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p> $(A\cup B)\setminus C = (A\setminus C)\cup (B\setminus C):$</p>
-	<p><center>\begin{align*}
-		x\in (A\cup B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cup B)\land (x\not\in C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\lor (x\in B)\}\ \land (x\not\in C)\\
-		&\,\,\reflr{proposition.html#62}{62}\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
-		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\lor (x\in B\setminus C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cup (B\setminus C).
-	\end{align*}</center></p>
-
-	<p> $(A\cap B)\setminus C = (A\setminus C)\cap (B\setminus C):$</p>
-	<p><center>\begin{align*}
-		x\in (A\cap B)\setminus C &\,\,\reflr{#95}{95}\,\,(x\in A\cap B)\land (x\not\in C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,\{(x\in A)\land (x\in B)\}\ \land (x\not\in C)\\
-		&\,\,\Longleftrightarrow\,\,\{(x\in A)\land (x\not\in C)\}\lor \{(x\in B)\land (x\not\in C)\}\\
-		&\,\,\reflr{#95}{95}\,\,(x\in A\setminus C)\land (x\in B\setminus C)\\
-		&\,\,\reflr{set.html#51}{51}\,\,x\in (A\setminus C)\cap (B\setminus C).
-	\end{align*}</center></p>
+	<p><center>\begin{align}
+		C\backslash (A\cup B) \ \refeq{difference-set}{85}\ &C\cap (A\cup B)^\cpl \ \refeq{complement-set}{74}\ C\cap A^\cpl \cap B^\cpl\\
+ 			=\ & C\cap C\cap A^\cpl \cap B^\cpl \ \refeq{set}{52}\ C\cap A^\cpl\cap C \cap B^\cpl\\
+			\refeq{difference-set}{85}\ &(C\backslash A)\cap (C\backslash B),
+		\end{align}</center></p> 
+	<p><center>\begin{align}
+		C\backslash (A\cap B) \ \refeq{difference-set}{85}\ &C\cap (A\cap B)^\cpl \ \refeq{complement-set}{74}\ C\cap (A^\cpl \cup B^\cpl)\\
+ 			\refeq{set}{54}\ & (C\cap A^\cpl) \cup (C\cap B^\cpl)\ \refeq{difference-set}{85}\ (C\backslash A)\cup (C\backslash B),
+		\end{align}</center></p> 
 </Details>
 <br>
 
