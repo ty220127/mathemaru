@@ -1,0 +1,96 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "集合の濃度"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/8/6<br>
+updated on 2022/8/6
+</p>
+    
+<p id="328">&nbsp;</p><div class="def">
+	<b>[#328] 定義：濃度</b><br>
+	<p>$A,\ B$ を集合とする．</p>
+	<ul>
+	<li><p>$A$ と $B$ の間に全単射$\nr{injection-surjection}{100}$ $f:A\to B$ が存在することを，$A$ と $B$ は【濃度 (cardinality)】が等しいといい，$|A| = |B|$ と書く．</p></li>
+	<li><p>$A$ と $B$ の間に単射$\nr{injection-surjection}{100}$ $f: A\to B$ が存在することを，$A$ の濃度は $B$ の濃度以下といい，$|A|\leq |B|$ と書く．</p></li>
+	<li><p>$|A|\leq |B|$ かつ $|A|\not =|B|$ であることを $A$ の濃度は $B$ の濃度未満といい，$|A|\lt |B|$ と書く．</p></li>
+	</ul>
+	<p>集合の濃度 $|A|$ は $\# A$ や $\mathrm{card}\,A$ などとも書く．</p>
+</div>
+<details>
+	<summary>補足</summary>
+	<p>集合の濃度とは，集合の「大きさ」を定める概念である．大雑把に言えば，集合の大きさとは集合の要素の数のことであり，特に要素数が有限個の集合においてはその値がそのまま集合の濃度となる．</p>
+</details>
+<br>
+
+<p id="329">&nbsp;</p><div class="def">
+	<b>[#329] 定義：有限集合，無限集合</b><br>
+	<p>$[n] := \mathbb{N}\cap \{m\,|\,1\leq m\leq n\} = \{1,\,2,\,\cdots,\,n\}$ とする．</p>
+	<ul>
+	<li><p>$|A| = |[n]|$ なる $n$ が存在する集合 $A$ を【有限集合 (finite set)】と呼ぶ．また，このような $A$ を濃度が $n$ であるといい，$|A| = n$ と書く．</p></li>
+	<li><p>有限集合でない集合を【無限集合 (infinite set)】と呼ぶ．特に，$|A| = |\mathbb{N}|$ なる無限集合 $A$ を【可算集合 (countable set)】と呼び，$|A| = \aleph_0$ と書く．また，可算でない無限集合を【非可算集合 (uncountable set)】と呼ぶ．</p></li>
+	</ul>
+</div>
+<details>
+	<summary>補足</summary>
+	<p>非可算集合に関して，$\aleph_0$ の次に大きい濃度を $\aleph_1$，その次に大きい濃度を $\aleph_2$，…と書く．</p>
+</details>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-6_yugen.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第６章), 公開pdf</a> [2022/8/6 閲覧].</li>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-7_kasan.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第７章), 公開pdf</a> [2022/8/6 閲覧].</li>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-8_hikasan.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第８章), 公開pdf</a> [2022/8/6 閲覧].</li>
+	<li><a href="http://www4.math.sci.osaka-u.ac.jp/~matsumoto/courses/2016-fs2/docs/2016-fs2-B-mod-20161027.pdf">松本佳彦: 数学の楽しみ 2D［テキストその２（修正版）］ 集合の濃度, 公開pdf, 2016</a> [2022/8/6 閲覧].</li>
+	<li><a href="https://mathlandscape.com/set-card/">集合の濃度をわかりやすく丁寧に - 数学の景色</a> [2022/8/6 閲覧].</li>
+	<li><a href="https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AC%E3%83%95%E6%95%B0">アレフ数 - Wikipedia</a> [2022/8/6 閲覧].</li>
+</ul>
+</div>
+
+</body>
+</html>
