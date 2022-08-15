@@ -1,0 +1,76 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "自然数"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/8/15<br>
+updated on 2022/8/15
+</p>
+
+<p id="338">&nbsp;</p><div class="def">
+	<b>[#338] 定義：Peano の公理，自然数</b><br>
+	<p>集合 $\mathbb{N}$ がある元 $e\in \mathbb{N}$ と写像 $\sigma: \mathbb{N}\to \mathbb{N}$ に対して次の条件を満たすことを，$\mathbb{N}$ は【<ruby><rb>Peano</rb><rp>(</rp><rt>ペアノ</rt><rp>)</rp></ruby> の公理】を満たすという：</p>
+	<ul class="defl">
+	<li><p> $\sigma$ は単射$\nr{injection-surjection}{100}$ である．</p></li>
+	<li><p> $\sigma(\mathbb{N}) \subset \mathbb{N}\backslash \{e\}.$</p></li>
+	<li><p> $\mathbb{N}$ の部分集合 $M$ に対して</p>
+		<p><center>\begin{align}
+		(e\in M)\land (\sigma(M)\subset M)\,\,\Longrightarrow\,\, M = \mathbb{N}.
+		\end{align}</center></p>
+	</ul>
+	<p>ここで，写像 $\sigma$ を【後継者写像 (successor mapping)】，集合 $\mathbb{N}$ を【自然数 (natural number)】と呼ぶ．</p>
+</div>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="http://www.ozawa.phys.waseda.ac.jp/pdf/kazu.pdf">小澤徹: 数の構成, 公開pdf (2011)</a> [2022/8/15 閲覧].</li>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/TaikeiBook/Taikei-Book_15.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第15章), 公開pdf</a> [2022/8/15 閲覧].</li>
+	<li><a href="https://mathematics-pdf.com/pdf/construction_of_numbers.pdf">MATHEMATICS.PDF, 数の構成 自然数から複素数まで, 公開pdf</a> [2022/8/15 閲覧].</li>
+</ul>
+</div>
+</body>
+</html>
