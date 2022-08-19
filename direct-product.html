@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -28,7 +29,7 @@
 	}}});
 </script>
 <script>
-	const ttl = "直積"
+	const ttl = "順序組と直積"
 	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
@@ -45,9 +46,40 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/9<br>
-updated on 2022/7/15<br>
+updated on 2022/8/19<br>
 </p>
     
+<p id="339">&nbsp;</p><div class="def">
+	<b>[#339] 定義：順序対，順序組</b><br>
+	<p>記号 $a,\ b$ に対して集合 $(a,\,b)$ を</p>
+	<p><center>\begin{align}
+		(a,\,b) := \{\{a\},\,\{a,\ b\}\}
+		\end{align}</center></p>
+	<p>と定め，【順序対 (ordered pair)】と呼ぶ．また，記号 $a,\ b,\ c$ に対して集合 $(a,\,b,\,c)$ を</p>
+	<p><center>\begin{align}
+		(a,\,b,\,c) = ((a,\,b),\,c)
+		\end{align}</center></p>
+	<p>と定め，３個の【順序組 (ordered tuplet)】と呼ぶ．同様にして，帰納的に $n$ 個の記号 $a_1,\ a_2,\ \cdots,\ a_n$ の順序組を
+	<p><center>\begin{align}
+		(a_1,\,a_2,\,\cdots,\,a_n) = ((\underset{n-1}{\underbrace{a_1,\,a_2,\,\cdots,\,a_{n-1}}}),\,a_n)
+		\end{align}</center></p>
+	<p>と定める．</p>
+</div>
+<br>
+
+<p id="340">&nbsp;</p><div class="prp">
+	<b>[#340] 命題：順序組の相等</b><br>
+	<p>記号 $a_1,\ a_2,\ \cdots,\ a_n,\ b_1,\ b_2,\ \cdots,\ b_n$ に対して</p>
+	<p><center>\begin{align}
+		&(a_1,\,a_2,\,\cdots,\,a_n) = (b_1,\,b_2,\,\cdots,\,b_n)\\
+		&\hspace{10pt}\Longleftrightarrow\,\, (a_1= b_1)\land (a_2= b_2)\land \cdots\land (a_n= b_n)
+		\end{align}</center></p>		
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
 <p id="297">&nbsp;</p><div class="def">
 	<b>[#297] 定義：直積</b><br>
 	<p>集合 $A,\ B$ の元の対による集合 $A\times B$ を $A$ と $B$ の【直積 (direct product)】或いは【<ruby><rb>Descartes</rb><rp>（</rp><rt>デカルト</rt><rp>）</rp></ruby> 積 (Cartesian product)】と呼び</p>
@@ -65,12 +97,6 @@ updated on 2022/7/15<br>
 	<p><center>\begin{align}
 		\underset{n}{\underbrace{A\times A\times \cdots\times A}} = A^n.
 		\end{align}</center></p>
-	<p>なお，$A_1\times A_2\times \cdots\times A_n$ の元の相等性は</p>
-	<p><center>\begin{align}
-		&(a_1,\,a_2,\,\cdots,\,a_n) = (a_1',\,a_2',\,\cdots,\,a_n')\\
-		&\hspace{10pt}\Longleftrightarrow\,\, (a_1= a_1')\land (a_2= a_2')\land \cdots\land (a_n= a_n')
-		\end{align}</center></p>		
-	<p>と定める．</p>
 </div>
 <Details>
 	<summary>余談</summary>
@@ -142,6 +168,9 @@ updated on 2022/7/15<br>
 	<li><a href="https://mathlandscape.com/product-set/">【直積集合】集合の直積について詳しく～具体例10個～ - 数学の景色</a> [2022/7/9 閲覧].</li>
 	<li><a href="http://www.jidoka.net/serv/kaishi/jaaa-kaish-kobore-134.html">自動化こぼれ話(134)カルテシアン - JAAA自動化推進協会</a> [2022/7/9 閲覧].</li>
 	<li><a href="https://wiis.info/math/set/set/direct-product/">2つの集合の直積（カルテシアン積） - ワイズ</a> [2022/7/15 閲覧].</li>
+	<li><a href="https://sorai-note.com/math/200402/">集合を使って「写像」を作る｜順序対・直積・写像の構成 - 蛍雪に染まる。</a> [2022/8/19 閲覧].</li>
+	<li><a href="http://www.ffortune.net/kazu/set/basic/basic06.htm">集合の基礎(6)順序対・非順序対</a> [2022/8/19 閲覧].</li>
+	<li><a href="https://www.blue271828.com/terms/%E9%A0%86%E5%BA%8F%E5%AF%BE/">順序対 - blue271828's misc :-)</a> [2022/8/19 閲覧].</li>
 </ul>
 </div>
 </body>
