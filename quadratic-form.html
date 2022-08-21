@@ -1,0 +1,82 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		rtwobytwo: ['\\left(\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right)', 4],
+		ronebytwo: ['\\left(\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "２次形式"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/8/21<br>
+updated on 2022/8/21
+</p>
+
+<p id="344">&nbsp;</p><div class="exm">
+<b>[#344] 例題：２次形式の標準形</b><br>
+	<p>　座標平面上において，方程式 $3x^2 +2xy +3y^2 =12$ で表される図形 $C$ を考える．行列 $A=\rtwobytwo{3}{1}{1}{3}$ を用いると，この方程式は $(x\quad y)A\ronebytwo{x}{y} = 12$ と表せる．<br>
+		　$0\lt \theta\lt \pi$ である $\theta$ を用いて，$P = \rtwobytwo{\cos\theta}{-\sin\theta}{\sin\theta}{\cos\theta}$ と表される行列 $P$ が，ある実数 $\alpha,\ \beta\ （\alpha\lt \beta)$ に対し，$AP = P\rtwobytwo{\alpha}{0}{0}{\beta}$ を満たすとする．このとき，$\theta = \fbox{ （ア） }$ であり，$\alpha = \fbox{ （イ） }$，$\beta = \fbox{ （ウ） }$ である．$\ronebytwo{x}{y} = P\ronebytwo{s}{t}$ とおくと，図形 $C$ の方程式 $3x^2+2xy+3y^2 = 12$ は</p>
+	<p><center>\begin{align}
+		\fraction{s^2}{\fbox{ （エ） }} + \fraction{t^2}{\fbox{ （オ） }} = 1
+		\end{align}</center></p>
+	<p>となる．<br>
+		　図形 $C$ 上の２点間の距離の最大値は $\fbox{ （カ） }$ であり，この最大値を与える図形 $C$ 上の２点の座標は $\fbox{ （キ） }$ と $\fbox{ （ク） }$ である．
+	<p style="text-align:right;">[2013 慶應義塾大学(理工)]</p>
+</div>
+<details>
+	<summary>解答</summary>
+	<p></p>
+</details>
+<br>
+
+<br><br>
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li><a href="https://manabitimes.jp/math/1240">二次形式の意味，微分，標準形など - 高校数学の美しい物語</a> [2022/8/21 閲覧].</li>
+</ul>	      
+</div>
+      
+<p style="text-align:right;">
+<a href="index.html">トップページに戻る</a>
+</p>
+</body>
+</html>
