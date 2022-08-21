@@ -29,7 +29,7 @@
 	}}});
 </script>
 <script>
-	const ttl = "自然数"
+	const ttl = "Peanoの公理と自然数"
 	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
@@ -46,26 +46,44 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/8/15<br>
-updated on 2022/8/15
+updated on 2022/8/21
 </p>
 
 <p id="338">&nbsp;</p><div class="def">
-	<b>[#338] 定義：Peano の公理，自然数</b><br>
-	<p>集合 $\mathbb{N}$ がある元 $e\in \mathbb{N}$ と写像 $\sigma: \mathbb{N}\to \mathbb{N}$ に対して次の条件を満たすことを，$\mathbb{N}$ は【<ruby><rb>Peano</rb><rp>(</rp><rt>ペアノ</rt><rp>)</rp></ruby> の公理】を満たすという：</p>
+	<b>[#338] 定義：Peano の公理，Peano 系</b><br>
+	<p>集合 $N$ がある元 $e\in N$ と $N$ 上の変換$\nr{map}{99}$ $\sigma$ に対して次の条件を満たすことを，$N$ は【<ruby><rb>Peano</rb><rp>(</rp><rt>ペアノ</rt><rp>)</rp></ruby> の公理】を満たすという：</p>
 	<ul class="defl">
 	<li><p> $\sigma$ は単射$\nr{injection-surjection}{100}$ である．</p></li>
-	<li><p> $\sigma(\mathbb{N}) \subset \mathbb{N}\backslash \{e\}.$</p></li>
-	<li><p> $\mathbb{N}$ の部分集合 $M$ に対して</p>
+	<li><p> $\sigma(N) \subset N\backslash \{e\}$（$\sigma(N)$ は $\sigma$ による $N$ の像$\nr{image}{112}$）．</p></li>
+	<li><p> $N$ の部分集合 $M$ に対して</p>
 		<p><center>\begin{align}
-		(e\in M)\land (\sigma(M)\subset M)\,\,\Longrightarrow\,\, M = \mathbb{N}.
+		(e\in M)\land (\sigma(M)\subset M)\,\,\Longrightarrow\,\, M = N.
 		\end{align}</center></p>
 	</ul>
-	<p>ここで，写像 $\sigma$ を【後継者写像 (successor mapping)】，集合 $\mathbb{N}$ を【自然数 (natural number)】と呼ぶ．また $e$ を $1$ と書く．</p>
+	<p>ここで，写像 $\sigma$ を【後継者写像 (successor mapping)】，組 $(N,\,e,\,\sigma)$ を【Peano 系 (Peano system)】と呼ぶ．</p>
 </div>
 <details>
 	<summary>補足</summary>
 	<p>本サイトでは，上で述べた通り，最小の自然数を $1$ と定義する．流派によっては，最小の自然数を $0$ とする場合もあるが，重要なのは $\mathbb{N}$ は上の Peano の公理を満たすことである．</p>
 </details>	
+<br>
+
+<p id="341">&nbsp;</p><div class="prp">
+	<b>[#341] 命題：Peano 系における元の前者の存在性</b><br>
+	<p>組 $(N,\,e,\,\sigma)$ を Peano 系とする．$e$ でない任意の $N$ の元 $m$ に対して，$\sigma(n) = m$ なる $n\in N$ が一意に存在する．</p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
+<p id="342">&nbsp;</p><div class="prp">
+	<b>[#342] 命題：Peano 系における前後者の不一致性</b><br>
+	<p>組 $(N,\,e,\,\sigma)$ を Peano 系とする．任意の $n\in N$ に対して，$\sigma(n)\not =n.$</p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
 <br>
 
 <br><br>
