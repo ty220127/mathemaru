@@ -118,6 +118,44 @@ updated on 2022/8/9
 </Details>
 <br>
 
+<p id="345">&nbsp;</p><div class="prp">
+	<b>[#345] 命題：集合系の和と包含</b><br>
+	<p> $\varLambda$ に添字づけられた集合系 $\{A_\lambda\}_{\lambda\in\varLambda}$ と集合 $B$ に対して</p>
+	<p><center>$\begin{align*}
+		({}^\forall \lambda\in\varLambda,\ A_\lambda\subset B)\ \Longleftrightarrow \bigcup_{\lambda\in\varLambda}A_\lambda\subset B.
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		& {}^\forall \lambda\in\varLambda,\ A_\lambda\subset B\\
+		\reflr{set}{111}\ & {}^\forall \lambda\in\varLambda,\ (x\in A_\lambda)\to (x\in B)\\
+		\reflr{predicate}{241}\ & \left({}^\exists \lambda\in\varLambda\ \text{s.t.}\ x\in A_\lambda\right)\to (x\in B)\\
+		\reflr{collection-family}{130}\ & \left(x\in \bigcup_{\lambda\in\varLambda}A_\lambda\right)\to (x\in B)\\
+		\reflr{set}{111}\ & \bigcup_{\lambda\in\varLambda}A_\lambda \subset B.
+		\end{align}</center></p>
+</Details>
+<br>
+
+<p id="346">&nbsp;</p><div class="prp">
+	<b>[#346] 命題：集合系の共通部分と包含</b><br>
+	<p> 集合 $A$ と $\varLambda$ に添字づけられた集合系 $\{B_\lambda\}_{\lambda\in\varLambda}$ に対して</p>
+	<p><center>$\begin{align*}
+		({}^\forall \lambda\in\varLambda,\ A\subset B_\lambda)\ \Longleftrightarrow A\subset \bigcap_{\lambda\in\varLambda}B_\lambda.
+		\end{align*}$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		& {}^\forall \lambda\in\varLambda,\ A\subset B_\lambda\\
+		\reflr{set}{111}\ & {}^\forall \lambda\in\varLambda,\ (x\in A)\to (x\in B_\lambda)\\
+		\reflr{predicate}{241}\ & x\in A \to ({}\forall \lambda\in\varLambda,\ x\in B_\lambda)\\
+		\reflr{collection-family}{130}\ & (x\in A) \to \left(x\in \bigcap_{\lambda\in\varLambda}B_\lambda\right)\\
+		\reflr{set}{111}\ & A \subset \bigcap_{\lambda\in\varLambda}B_\lambda.
+		\end{align}</center></p>
+</Details>
+<br>
+
 <p id="132">&nbsp;</p><div class="prp">
 	<b>[#132] 命題：集合系に対する de Morgan の法則</b><br>
 	<p> $\varLambda$ に添字づけられた集合系 $\{A_\lambda\}_{\lambda\in\varLambda}$ に対して</p>
