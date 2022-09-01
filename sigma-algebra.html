@@ -236,22 +236,18 @@ updated on 2022/9/2
 
 <p id="90">&nbsp;</p><div class="def">
 	<b>[#90] 定義：σ加法族の生成</b><br>
-	<p>$\varOmega$ のある部分集合族 $\mathcal{E}$ を含む最小の $\varOmega$ 上の $\sigma$ 加法族 $\sigma(\mathcal{E})$ を 「$\mathcal{E}$ から生成される $\sigma$ 加法族」と云う．
-		つまり，$\sigma(\mathcal{E})$ は以下を課される：</p>
-	<ul class="defl">
-		<li> $\sigma(\mathcal{E})$ は $\varOmega$ 上の $\sigma$ 加法族．
-		<li> $\mathcal{E}\subset \sigma(\mathcal{E}).$</li>
-		<li> $\mathcal{E}$ を含む $\varOmega$ 上の $\sigma$ 加法族の集合を $\mathfrak{S}$ として， $\mathcal{F}\in \mathfrak{S} \Rightarrow \sigma(\mathcal{E})\subset \mathcal{F}.$</li>
-	</ul>
+	<p>$\varOmega$ のある部分集合族 $\mathcal{E}$ を含む最小の $\varOmega$ 上の $\sigma$ 加法族 $\sigma(\mathcal{E})$ を 「$\mathcal{E}$ から生成される $\sigma$ 加法族」という：集合 $\mathfrak{S}$ を</p>
+	<p><center>\begin{align}
+		\mathfrak{S} := \{\mathcal{F}\,|\,(\mathcal{E}\subset\mathcal{F})\land (\mathcal{F}:\text{$\sigma\!$ -algebra})\}
+		\end{align}</center></p>
+	<p>とすれば</p>
+	<p><center>
+		$\sigma(\mathcal{E})\in \mathfrak{S}$　かつ　$\mathcal{F}\in \mathfrak{S}\Rightarrow \mathcal{F}\supset \sigma(\mathcal{E}).$
+		</center></p>
 </div>
 <details>
 	<summary>補足</summary>
-	<p> $\sigma(\mathcal{E})$ に関して，ii よりこれは $\mathcal{E}$ を含み，i より $\sigma$ 加法族であることから，以下が成り立つ：</p>
-	<div class="cor">
-	<b>系：</b>
-		<p><center>$\sigma(\mathcal{E})\in \mathfrak{S}.$</center></p>
-	</div>
-	<p>故に，iii を課すことにより，$\sigma(\mathcal{E})$ は $\mathcal{E}$ を含む最小の $\sigma$ 加法族と定められる．</p>
+	<p> $\varOmega$ の冪集合 $2^\varOmega$ は $\mathcal{E}\subset 2^\varOmega$ で $\varOmega$ 上の $\sigma$ 加法族である$\nr{sigma-algebra}{45}$ から，$2^\varOmega \in\mathfrak{S}$．よって，$\mathfrak{S}$ は空でない．</p>
 </details>
 <br>
 
@@ -261,21 +257,17 @@ updated on 2022/9/2
 </div>
 <Details>
 	<summary>証明</summary>
-	<p> $\mathcal{E}$ を含む $\varOmega$ 上の $\sigma$ 加法族の集合を $\mathfrak{S}$ とおく：</p>
-	<p><center>\begin{align}
-		\mathfrak{S} := \{\mathcal{F}\,|\,(\mathcal{E}\subset\mathcal{F})\land (\mathcal{F}:\text{$\sigma\!$ -algebra})\}.
-		\end{align}</center></p>
-	<p> $2^\varOmega$ は $\mathcal{E}\subset 2^\varOmega$ で $\varOmega$ 上の $\sigma$ 加法族である$\nr{sigma-algebra}{45}$ から，$2^\varOmega \in\mathfrak{S}$，つまり $\mathfrak{S} \not = \emptyset$ である．ここで，$\mathfrak{S}$ の元を集合 $\varLambda$ で添字付ける$\nr{collection-family}{223}$：
+	<p> $\mathcal{E}$ を含む $\varOmega$ 上の $\sigma$ 加法族の集合を $\mathfrak{S}$ とおき，その元を集合 $\varLambda$ で添字付ける$\nr{collection-family}{223}$：
 	<p><center>\begin{align}
 		\mathcal{G}: \varLambda \to \mathfrak{S}.
 		\end{align}</center></p>
-	<p>つまり，$\mathfrak{S} = \{\mathcal{G}_\lambda\,|\,\lambda\in\varLambda\}$ と書ける．また</p>
+	<p>つまり，$\mathfrak{S} = \{\mathcal{G}_\lambda\,|\,\lambda\in\varLambda\}$ と書ける．ここで</p>
 	<p><center>\begin{align}
 		\sigma(\mathcal{E}) = \bigcap_{\lambda\in\varLambda} \mathcal{G}_{\lambda}
 		\end{align}</center></p>				
-	<p>とおくと，これは $\mathcal{E}$ から生成される $\sigma$ 加法族$\nr{sigma-algebra}{90}$である：$\sigma(\mathcal{E})$ は $\sigma$ 加法族の共通部分であるから，$\sigma(\mathcal{E})$ もまた $\sigma$ 加法族である$\nr{sigma-algebra}{31}$．また，任意の $\lambda\in\varLambda$ に対して $\mathcal{E} \subset \mathcal{G}_\lambda$ であるから，$\mathcal{E}\subset \bigcap_{\lambda\in\varLambda}\mathcal{G}_\lambda = \sigma(\mathcal{E})$．さらに，集合族の元の共通部分に関する性質より，任意の $\mu\in\varLambda$ に対して $\sigma(\mathcal{E}) = \bigcap_{\lambda\in\varLambda} \mathcal{G}_\lambda\subset \mathcal{G}_{\mu}$．</p>
+	<p>とおくと，これは $\sigma$ 加法族の共通部分であるから，$\sigma(\mathcal{E})$ もまた $\sigma$ 加法族である$\nr{sigma-algebra}{31}$．また，任意の $\lambda\in\varLambda$ に対して $\mathcal{E} \subset \mathcal{G}_\lambda$ であるから，$\mathcal{E}\subset \bigcap_{\lambda\in\varLambda}\mathcal{G}_\lambda = \sigma(\mathcal{E})$ $\nr{collection-family}{346}$．さらに，集合族の元の共通部分に関する性質より，任意の $\mu\in\varLambda$ に対して $\sigma(\mathcal{E}) = \bigcap_{\lambda\in\varLambda} \mathcal{G}_\lambda\subset \mathcal{G}_{\mu}$．以上により，$\sigma(\mathcal{E})$ は $\mathcal{E}$ から生成される $\sigma$ 加法族$\nr{sigma-algebra}{90}$ である．</p>
 
-	<p>続いて，一意性を示す．ある集合族 $\mathcal{H}$ もまた $\mathcal{E}$ から生成される $\sigma$ 加法族であるとする．いま，定義 iii より，$\sigma(\mathcal{E})$ と $\mathcal{H}$ はともに $\mathfrak{S}$ に属する．よって $\sigma(\mathcal{E})\subset \mathcal{H}$ かつ $\sigma(\mathcal{E})\supset \mathcal{H}$ であり，集合の相等性$\nr{set}{111}$ から $\sigma(\mathcal{E})= \mathcal{H}$ が成り立つ．</p>
+	<p>続いて，一意性を示す．ある集合族 $\mathcal{H}$ もまた $\mathcal{E}$ から生成される $\sigma$ 加法族であるとする．いま，性質 iii より，$\sigma(\mathcal{E})$ と $\mathcal{H}$ はともに $\mathfrak{S}$ に属する．よって $\sigma(\mathcal{E})\subset \mathcal{H}$ かつ $\sigma(\mathcal{E})\supset \mathcal{H}$ であり，集合の相等性$\nr{set}{111}$ から $\sigma(\mathcal{E})= \mathcal{H}$ が成り立つ．</p>
 </Details>
 <br>
 
