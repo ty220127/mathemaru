@@ -47,15 +47,16 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 isolated from <a href="complement-set.html">補集合</a> on 2022/5/8<br>
-updated on 2022/8/5
+updated on 2022/9/2
 </p>
 
 <p id="110">&nbsp;</p><div class="def">
 	<b>[#110] 定義：空集合</b><br>
 	<p>一切の記号が属さないような集合を【空集合 (empty set)】と呼び，$\emptyset$ と書く：</p>
 	<p><center>\begin{align*}
-		{}^\forall x,\,\,(x\in \emptyset) \equiv \mathsf{F}.
+		{}^\forall x,\,\,(x\in \emptyset) \equiv \mathsf{F},
 		\end{align*}</center></p>
+	<p>つまり，任意の記号 $x$ に関して $x\not \in \emptyset$ である．</p>
 </div>
 <br>
   
@@ -82,8 +83,9 @@ updated on 2022/8/5
 	<b>[#83] 定義：普遍集合</b><br>
 	<p>すべての記号が属する集合 $\varOmega$ を【普遍集合 (全体集合; universal set)】と呼ぶ：</p>
 	<p><center>\begin{align*}
-		{}^\forall x,\,\,(x\in \varOmega) \equiv \mathsf{T}.
+		{}^\forall x,\,\,(x\in \varOmega) \equiv \mathsf{T},
 		\end{align*}</center></p>
+	<p>つまり任意の記号 $x$ に関して $x\in \varOmega$ である．
 </div>
 <details>
 	<summary>補足</summary>
@@ -114,7 +116,7 @@ updated on 2022/8/5
 <Details>
 <summary>証明</summary>
 	<p><center>\begin{align*}
-		x\in \varOmega^\cpl\,\,\reflr{universal-set}{83}\,\,\neg \mathsf{T}\,\,\reflr{proposition}{58}\,\,\mathsf{F}
+		x\in \varOmega^\cpl\ \reflr{complement-set}{84}\ \neg(x\in \varOmega)\ \reflr{universal-set}{83}\  \neg \mathsf{T}\,\,\reflr{proposition}{58}\,\,\mathsf{F}
 		\end{align*}</center></p>
 	<p>より $\varOmega^\cpl = \emptyset$ である$\nr{set}{110}$．また，この式の両辺の補集合をとれば，
 	<p><center>\begin{align*}
@@ -132,12 +134,38 @@ updated on 2022/8/5
 
 <p id="214">&nbsp;</p><div class="prp">
 	<b>[#214] 命題：補集合と相補法則 (complement law)</b><br>
-	<p>任意の集合 $A$ に対して</p>
-	<p><center>$A\cap A^\cpl = \emptyset,\quad A\cup A^\cpl = \varOmega.$</center></p>
+	<p>任意の集合 $A,\ B$ に対して</p>
+	<p><center>$(A\cap B = \emptyset)\land (A\cup B = \varOmega) \ \Longleftrightarrow\ B = A^\cpl.$</center></p>
 	<p>ただし $\varOmega$ は普遍集合．</p>
 </div>
 <Details>
 	<summary>証明</summary>
+	<p>$(\Rightarrow):$ まず，$A\cap B = \emptyset$ であることから，任意の記号 $x$ に関して
+	<p><center>\begin{align}
+		x \in (A\cap B)^\cpl
+		\end{align}</center></p>
+	<p>である$\nr{universal-set}{110}$$\nr{complement-set}{84}$．ここで
+	<p><center>\begin{align}
+		x \in (A\cap B)^\cpl&\ \reflr{complement-set}{74}\ x\in A^\cpl \cup  B^\cpl\\
+				&\ \reflr{set}{51}\ (x\in A^\cpl)\lor (x\in B^\cpl)\\
+				&\ \reflr{proposition}{60}\ (x\in B^\cpl)\lor (x\in A^\cpl)\\
+				&\ \reflr{complement-set}{84}\ \neg(x\in B)\lor (x\in A^\cpl)\\
+				&\ \reflr{implication}{65}\ (x\in B)\to (x\in A^\cpl)\\
+				&\ \reflr{set}{111}\ B\subset A^\cpl
+		\end{align}</center></p>
+	<p>である．一方，$A\cup B = \varOmega$ であることから，任意の記号 $x$ に関して</p>
+	<p><center>\begin{align}
+		(x\in A)\lor (x\in B)
+		\end{align}</center></p>
+	<p>である$\nr{universal-set}{83}$$\nr{set}{51}$．ここで
+	<p><center>\begin{align}
+		(x\in A)\lor (x\in B)&\ \reflr{proposition}{60}\ \neg(\neg(x\in A))\lor (x\in B)\\
+			&\ \reflr{complement-set}{84}\ \neg(x\in A^\cpl)\lor (x\in B)\\
+			&\ \reflr{implication}{65}\ (x\in A^\cpl)\to (x\in B)\\
+			&\ \reflr{set}{111}\ A^\cpl\subset B
+		\end{align}</center></p>
+	<p>である．以上により，$B\subset A^\cpl$ かつ $A^\cpl\subset B$ であるから，集合の相等性$\nr{set}{111}$ より $B= A^\cpl$．</p>
+	<p>$(\Leftarrow):$ </p>
 	<p><center>\begin{align*}
 		x\in A\cap A^\cpl \ \reflr{set}{51}\ (x\in A)\land (\neg(x\in A))\ \reflr{proposition}{60}\ \mathsf{F}
 		\end{align*}</center></p>
