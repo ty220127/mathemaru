@@ -1,7 +1,8 @@
 
 
+
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
@@ -10,16 +11,20 @@
 	MathJax.Hub.Config({ TeX: { Macros: {
 		numref: ['\\href{https://ty220127.github.io/problemath/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
-		refeq: ['\\underset{\\numref{#1}{#2}}{=}',2],
-		reflr: ['\\underset{\\!\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
@@ -39,13 +44,13 @@
 
 <nav>
 <ul>
-<li><a href="index.html">演習問題集</a></li>
+<li><a href="index.html">MATHEMARU</a></li>
 </ul>
 </nav>
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom:-2em">
 established on 2022/3/15<br>
-updated on 2022/5/27
+updated on 2022/9/5
 </p>
     
 <p id="148">&nbsp;</p><div class="def">
@@ -61,9 +66,20 @@ updated on 2022/5/27
 	<b>[#246] 命題：区間は１次元 Borel 集合</b><br>
 	<p>以下はすべて $\mathbb{R}$ 上の Borel 集合である： $-\infty\leq a\lt b\leq \infty$ を満たす任意の $a,\ b\in\mathbb{R}$ に対して</p>
 	<p><center>\begin{align*}
-		(a,\ b),\ [a,\ b],\ (a,\ b],\ [a,\ b),\ \{a\}.
+		(a,\ b),\ [a,\ b],\ \{a\},\ [a,\ b),\ (a,\ b] \in \mathcal{B}(\mathbb{R}).
 		\end{align*}</center></p>
 </div>
+<details>
+	<summary>証明</summary>
+	<p>まず，$(a,\ b)\in\mathcal{O}(\mathbb{R})\refsb{sigma-algebra}{90} \sigma(\mathcal{O}(\mathbb{R})) \refeq{borel-set}{148} \mathcal{B}(\mathbb{R}).$</p>
+	<p>続いて，$[a,\ b]$ は閉集合$\nr{topological-space}{98}$ より，その補集合 $[a,\ b]^\cpl$ は開集合．つまり $[a,\ b]^\cpl\in \mathcal{B}(\mathbb{R})$ であるが，補集合の可測性$\nr{sigma-algebra}{10}$ により $[a,\ b] \refeq{complement-set}{218} ([a,\ b]^\cpl)^\cpl\in \mathcal{B}(\mathbb{R})$ である．</p>
+	<p>同様にして，一点集合 $\{a\}$ も閉集合であるから $\{a\}\in\mathcal{B}(\mathbb{R}).$</p>
+	<p>ここで，閉集合 $A_n$ を</p>
+	<p><center>\begin{align}
+		A_n = \left[a,\ b-\fraction{1}{n}\right]
+		\end{align}</center></p>
+	<p>で定義し，集合系 $\{A_n\}_{n\in \mathbb{N}}$ の和をとると</p>
+</details>
 <br>
 
 <p id="247">&nbsp;</p><div class="prp">
