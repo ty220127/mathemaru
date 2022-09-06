@@ -12,6 +12,7 @@
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
 		bs: '\\boldsymbol', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
@@ -191,7 +192,7 @@ updated on 2022/9/2
 <br>
 	  
 <p id="323">&nbsp;</p><div class="prp">
-	<b>[#323] 命題：共通部分によるσ加法族</b><br>
+	<b>[#323] 命題：共通部分による $\bs{\sigma}$ 加法族</b><br>
 	<p>$\mathcal{F}$ は $\varOmega$ の $\sigma$ 加法族，$S$ は $\varOmega$ の空でない部分集合とし，</p>
 	<p><center>\begin{align}
 		\mathcal{F}\cap S := \{A\cap S\,|\, A\in \mathcal{F}\}
@@ -219,7 +220,7 @@ updated on 2022/9/2
 <br>
 	  
 <p id="31">&nbsp;</p><div class="prp">
-	<b>[#31] 命題：σ加法族の共通部分</b><br>
+	<b>[#31] 命題：$\bs{\sigma}$ 加法族の共通部分</b><br>
 	<p>$\varLambda$ を添字集合とし，$\{\mathcal{F}_{\lambda}\}_{\lambda\in\varLambda}$ を集合 $\varOmega$ 上の $\sigma$ 加法族の族とする．
 		このとき，$\bca_{\lambda\in\varLambda} \mathcal{F}_{\lambda}$ もまた $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
@@ -235,7 +236,7 @@ updated on 2022/9/2
 <br>
 
 <p id="90">&nbsp;</p><div class="def">
-	<b>[#90] 定義：σ加法族の生成</b><br>
+	<b>[#90] 定義：$\bs{\sigma}$ 加法族の生成</b><br>
 	<p>$\varOmega$ のある部分集合族 $\mathcal{E}$ を含む最小の $\varOmega$ 上の $\sigma$ 加法族 $\sigma(\mathcal{E})$ を 「$\mathcal{E}$ から生成される $\sigma$ 加法族」という：集合 $\mathfrak{S}$ を</p>
 	<p><center>\begin{align}
 		\mathfrak{S} := \{\mathcal{F}\,|\,(\mathcal{E}\subset\mathcal{F})\land (\mathcal{F}:\text{$\sigma\!$ -algebra})\}
@@ -252,7 +253,7 @@ updated on 2022/9/2
 <br>
 
 <p id="91">&nbsp;</p><div class="prp">
-	<b>[#91] 命題：σ加法族の生成の一意性</b><br>
+	<b>[#91] 命題：$\bs{\sigma}$ 加法族の生成の一意性</b><br>
 	<p>$\varOmega$ の任意の部分集合族 $\mathcal{E}$ から生成される $\sigma$ 加法族$\nr{sigma-algebra}{90}$ が唯一つ存在する．</p>
 </div>
 <Details>
@@ -268,6 +269,19 @@ updated on 2022/9/2
 	<p>とおくと，これは $\sigma$ 加法族の共通部分であるから，$\sigma(\mathcal{E})$ もまた $\sigma$ 加法族である$\nr{sigma-algebra}{31}$．また，任意の $\lambda\in\varLambda$ に対して $\mathcal{E} \subset \mathcal{G}_\lambda$ であるから，$\mathcal{E}\subset \bigcap_{\lambda\in\varLambda}\mathcal{G}_\lambda = \sigma(\mathcal{E})$ $\nr{collection-family}{346}$．さらに，集合族の元の共通部分に関する性質より，任意の $\mu\in\varLambda$ に対して $\sigma(\mathcal{E}) = \bigcap_{\lambda\in\varLambda} \mathcal{G}_\lambda\subset \mathcal{G}_{\mu}$．以上により，$\sigma(\mathcal{E})$ は $\mathcal{E}$ から生成される $\sigma$ 加法族$\nr{sigma-algebra}{90}$ である．</p>
 
 	<p>続いて，一意性を示す．ある集合族 $\mathcal{H}$ もまた $\mathcal{E}$ から生成される $\sigma$ 加法族であるとする．いま，性質 iii より，$\sigma(\mathcal{E})$ と $\mathcal{H}$ はともに $\mathfrak{S}$ に属する．よって $\sigma(\mathcal{E})\subset \mathcal{H}$ かつ $\sigma(\mathcal{E})\supset \mathcal{H}$ であり，集合の相等性$\nr{set}{111}$ から $\sigma(\mathcal{E})= \mathcal{H}$ が成り立つ．</p>
+</Details>
+<br>
+
+<p id="91">&nbsp;</p><div class="prp">
+	<b>[#347] 命題：生成される $\bs{\sigma}$ 加法族の包含</b><br>
+	<p>$\varOmega$ の部分集合族 $\mathcal{E},\ \mathcal{F}$ に対して</p>
+	<p><center>\begin{align}
+		\mathcal{E}\subset \mathcal{F}\ \Longrightarrow\ \sigma(\mathcal{E})\subset \sigma(\mathcal{F}).
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $\mathcal{E}\subset \mathcal{F} \refsb{sigma-algebra}{90} \sigma(\mathcal{F})$ であり，かつ $\sigma(\mathcal{F})$ は $\varOmega$ 上の $\sigma$ 加法族であるから，生成される $\sigma$ 加法族の定義$\nr{sigma-algebra}{90}$ より $\sigma(\mathcal{E}) \subset \sigma(\mathcal{F})$ である．</p>
 </Details>
 <br>
 
