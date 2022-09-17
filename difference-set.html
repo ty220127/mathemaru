@@ -46,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 isolated from <a href="complement-set.html">普遍集合と補集合</a> on 2022/5/6<br>
-updated on 2022/8/5
+updated on 2022/9/17
 </p>
 
 <p id="95">&nbsp;</p><div class="def">
@@ -270,6 +270,32 @@ updated on 2022/8/5
  			\refeq{set}{54}\ & (C\cap A^\cpl) \cup (C\cap B^\cpl)\ \refeq{difference-set}{85}\ (C\setminus A)\cup (C\setminus B),
 		\end{align}</center></p> 
 </Details>
+<br>
+
+<p id="348">&nbsp;</p><div class="prp">
+	<b>[#348] 命題：対称差 (symmetric difference)</b><br>
+	<p>集合 $A,\,B$ に対して </p>
+	<p><center>$\begin{align*}
+		A\triangle B = (A\cup B)\backslash (A\cap B)
+		\end{align*}$</center></p>
+	<p>とすれば</p>
+	<p><center>\begin{align}
+		A\triangle  B = (A\backslash B)\cup (B\backslash A).
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		(A\cup B)\backslash (A\cap B) &\refeq{difference-set}{212} (A\backslash (A\cap B))\cup (B\backslash (A\cap B))\\
+			&\refeq{difference-set}{326} (A\backslash A)\cup (A\backslash B)\cup (B\backslash A)\cup (B\backslash B)\\
+			&\refeq{difference-set}{211} \emptyset \cup (A\backslash B)\cup (B\backslash A)\cup \emptyset\\
+			&\refeq{universal-set}{215} (A\backslash B)\cup (B\backslash A).
+		\end{align}</center></p> 
+</Details>
+<details>
+	<summary>補足</summary>
+	<p>対称差は，論理命題の排他的論理和$\nr{proposition}{87}$ に対応する．</p>
+</details>
 <br>
 
 <br><br>
