@@ -47,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/21<br>
-updated on 2022/7/13
+updated on 2022/9/19
 </p>
     
 <p id="99">&nbsp;</p><div class="def">
@@ -59,6 +59,10 @@ updated on 2022/7/13
 		また，写像 $f$ により $y$ が $x$ に対応することはしばしば</p>
 	<p><center>$f:x\mapsto y$　あるいは　$y=f(x)$</center></p>
 	<p>などと表現され，$y$ もとい $f(x)$ は $x$ の【像 (image)】と呼ばれる．</p>
+	<p>なお，写像 $f:X\to Y,\ g:Z\to W$ の相等性を以下で定義する：</p>
+	<p><center>\begin{align}
+		(X = Z)\land (Y = W)\land ({}^\forall x\in X,\,f(x) = g(x)).
+		\end{align}</center></p>
 </div>
 <br>
   
@@ -66,7 +70,7 @@ updated on 2022/7/13
 	<b>[#102] 定義：合成写像</b><br>
 	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ に対して</p>
 	<p><center>$g\circ f(x) = g(f(x))\quad(x\in X)$</center></p>
-	<p>と定義される $X$ から $Z$ への写像 $g\circ f$ を $f$ と $g$ の【合成写像 (composition)】と呼ぶ．</p>
+	<p>と定義される $X$ から $Z$ への写像 $g\circ f : X\to Z$ を $f$ と $g$ の【合成写像 (composition)】と呼ぶ．</p>
 </div>
 <br>
   
@@ -108,6 +112,23 @@ updated on 2022/7/13
 </Details>
 <br>
 
+<p id="353">&nbsp;</p><div class="def">
+	<b>[#353] 定義：制限写像</b><br>
+	<p>写像 $f:X\rightarrow Y$ と $X$ の部分集合 $A$ に関して，$f$ の始域を $A$ に狭めた写像 $f|_A$ を $f$ の $A$ への【制限写像 (restriction map)】と呼ぶ：</p>
+	<p><center>\begin{align}
+		f|_A: A\to Y,\quad x\mapsto f(x).
+		\end{align}</center></p>
+</div>
+<details>
+	<summary>補足１</summary>
+	<p>制限写像の概念を導入することで，後に定義される「単射」「全射」「全単射」といった概念$\nr{injection-surjection}{100}$ の汎用性が高まる．</p>
+</details>
+<details>
+	<summary>補足２</summary>
+	<p> $f$ と $f|_A$ は一般には始域が異なっているので，等しいとはいえない$\nr{map}{99}$．</p>
+</details>
+<br>
+  
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
