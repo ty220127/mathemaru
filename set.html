@@ -46,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/6<br>
-updated on 2022/9/18
+updated on 2022/9/19
 </p>
     
 <p id="48">&nbsp;</p><div class="def">
@@ -265,61 +265,6 @@ updated on 2022/9/18
 </Details>
 <br>
 
-<p id="56">&nbsp;</p><div class="prp">
-	<b>[#56] 命題：集合の包含と和</b><br>
-	<p>集合 $A,\,B$ について</p>
-	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A\cup B=B.$</center></p>
-</div>
-<Details>
-	<summary>証明 $(\Rightarrow)$</summary>
-	<p>まず，<a href="#204">[#204]</a> より $A\cup B\supset B$ である．<br>
-		一方，$A\subset B$ であることから，その定義 <a href="#111">[#111]</a> より $[\,x\in A\ \Rightarrow\ x\in B\,\,\cdots (*)\,]$ ．よって</p>
-	<p><center>\begin{align*}
-		x\in A\cup B\,\,&\reflr{set}{51}\,\, \underline{(x\in A)}\lor (x\in B)\\
-		&\,\underset{(*)}{\Longrightarrow}\,\, \underline{(x\in B)}\lor (x\in B)\,\,\Longleftrightarrow\,\, x\in B,
-		\end{align*}</center></p>
-	<p>つまり $A\cup B\subset B.$<br>
-		以上により，$A\cup B= B.$</p>
-</Details>
-<Details>
-	<summary>証明 $(\Leftarrow)$</summary>
-	<p> $A\cup B= B\,\cdots (\dagger)$ であることに注意して，</p>
-	<p><center>\begin{align*}
-		x\in A\,\,&\,\,\refr{set}{204}\,\, x\in A\cup B\\
-		&\,\underset{(\dagger)}{\Longleftrightarrow}\,\, x\in B
-		\end{align*}</center></p>
-	<p>より $A\subset B.$</p>
-</Details>
-<br>
-	
-<p id="57">&nbsp;</p><div class="prp">
-	<b>[#57] 命題：集合の包含と共通部分</b><br>
-	<p>集合 $A,\,B$ について</p>
-	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A\cap B=A.$</center></p>
-</div>
-<Details>
-	<summary>証明 $(\Rightarrow)$</summary>
-	<p>まず，<a href="#204">[#204]</a> より $A\cap B\subset A$ である．<br>
-		一方，</p>
-	<p><center>\begin{align*}
-		A\subset B\,\,\reflr{set}{111}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in B\,]\\
-			\reflr{implication}{88}\,\,&[\,x\in A\,\,\longrightarrow\,\,(x\in A) \land (x\in B)\,]\\
-			\reflr{set}{51}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in A\cap B\,]\\
-			\,\,\reflr{set}{111}\,\,& A\subset A\cap B.
-		\end{align*}</center></p>
-	<p>以上により，$A\cap B= A.$</p>
-</Details>
-<Details>
-	<summary>証明 $(\Leftarrow)$</summary>
-	<p> $A\cap B= A\,\cdots (\dagger)$ であることに注意して，</p>
-	<p><center>\begin{align*}
-		x\in A\,\,&\,\underset{(\dagger)}{\Longleftrightarrow}\,\, x\in A\cap B\\
-			&\,\,\refr{set}{204}\,\, x\in B
-		\end{align*}</center></p>
-	<p>より $A\subset B.$</p>
-</Details>
-<br><br>
-
 <p id="243">&nbsp;</p><div class="prp">
 	<b>[#243] 命題：複数の集合に含まれる集合</b><br>
 	<p>集合 $A,\ B,\ C$ について</p>
@@ -336,7 +281,7 @@ updated on 2022/9/18
 			&\reflr{set}{111}\ A\subset B\cap C.
 		\end{align*}</center></p>
 </Details>
-<br><br>
+<br>
 	
 <p id="244">&nbsp;</p><div class="prp">
 	<b>[#244] 命題：複数の集合を含む集合</b><br>
@@ -354,8 +299,101 @@ updated on 2022/9/18
 			&\reflr{set}{111}\ A\cup B \subset C.
 		\end{align*}</center></p>
 </Details>
-<br><br>
+<br>
 	
+<p id="56">&nbsp;</p><div class="prp">
+	<b>[#56] 命題：集合の包含と和</b><br>
+	<p>集合 $A,\,B$ について</p>
+	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A\cup B=B.$</center></p>
+</div>
+<details>
+	<summary>証明１</summary>
+	<p>$(\Rightarrow):$ 集合の相等性の定義$\nr{set}{111}$ より $A\cup B\supset B$ と $A\cup B\subset B$ を示せばよい：
+	<ul>
+	<li>まず，集合の和の性質$\nr{set}{204}$ より $A\cup B\supset B$ である．</li>
+	<li>また，仮定より $A\subset B$，集合の性質$\nr{set}{50}$ より $B\subset B$ であるから $A\cup B\subset B$ が成り立つ$\nr{set}{244}.$</li>
+	</ul>
+	<p>以上により，題意は示された．</p>
+
+	<p>$(\Leftarrow):$ $A\cup B=B$ であるから $A\cup B\subset B$ であり$\nr{set}{111}$，故に $A\subset B$ である$\nr{set}{244}$．</p>
+	<details>
+		<summary>論理演算によるまとめ</summary>
+		<p><center>\begin{align}
+			A\subset B \ \reflr{set}{204}\ &(A\subset B)\land (A\cup B\supset B)\\
+				\reflr{set}{50}\ &(A\subset B)\land (B\subset B)\land (A\cup B\supset B)\\
+				\reflr{set}{244}\ & (A\cup B\subset B)\land (A\cup B\supset B)\\
+				\reflr{set}{111}\ & A\cup B = B
+			\end{align}</center></p>
+	</details>
+</details>
+<details>
+	<summary>証明２</summary>
+	<p>$(\Rightarrow):$ 集合の和の性質$\nr{set}{204}$ より $A\cup B\supset B$ である．<br>
+		一方，$A\subset B$ であることから，その定義$\nr{set}{111}$ より $[\,x\in A\ \Rightarrow\ x\in B\,\,\cdots (*)\,]$ ．よって</p>
+	<p><center>\begin{align*}
+		x\in A\cup B\,\,&\reflr{set}{51}\,\, \underline{(x\in A)}\lor (x\in B)\\
+		&\,\underset{(*)}{\Longrightarrow}\,\, \underline{(x\in B)}\lor (x\in B)\,\,\reflr{proposition}{60}\,\, x\in B,
+		\end{align*}</center></p>
+	<p>つまり $A\cup B\subset B.$<br>
+		以上により，$A\cup B= B.$</p>
+
+	<p>$(\Leftarrow):$ $A\cup B= B\,\cdots (\dagger)$ であることに注意して，</p>
+	<p><center>\begin{align*}
+		x\in A\,\,&\,\,\refr{set}{204}\,\, x\in A\cup B\\
+		&\,\underset{(\dagger)}{\Longleftrightarrow}\,\, x\in B
+		\end{align*}</center></p>
+	<p>より $A\subset B.$</p>
+</details>
+<br>
+	
+<p id="57">&nbsp;</p><div class="prp">
+	<b>[#57] 命題：集合の包含と共通部分</b><br>
+	<p>集合 $A,\,B$ について</p>
+	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A\cap B=A.$</center></p>
+</div>
+<details>
+	<summary>証明１</summary>
+	<p>$(\Rightarrow):$ 集合の相等性の定義$\nr{set}{111}$ より $A\cap B\subset B$ と $A\subset A\cap B$ を示せばよい：
+	<ul>
+	<li>まず，集合の和の性質$\nr{set}{204}$ より $A\cap B\subset B$ である．</li>
+	<li>また，仮定より $A\subset B$，集合の性質$\nr{set}{50}$ より $A\subset A$ であるから $A\subset A\cap B$ が成り立つ$\nr{set}{243}.$</li>
+	</ul>
+	<p>以上により，題意は示された．</p>
+
+	<p>$(\Leftarrow):$ $A\cap B=B$ であるから $A\subset A\cap B$ であり$\nr{set}{111}$，故に $A\subset B$ である$\nr{set}{243}$．</p>
+	<details>
+		<summary>論理演算によるまとめ</summary>
+		<p><center>\begin{align}
+			A\subset B \ \reflr{set}{204}\ &(A\subset B)\land (A\cap B\subset B)\\
+				\reflr{set}{50}\ &(A\subset B)\land (A\subset A)\land (A\cup B\supset B)\\
+				\reflr{set}{243}\ & (A\subset A\cap B)\land (A\cup B\supset B)\\
+				\reflr{set}{111}\ & A\cap B = B
+			\end{align}</center></p>
+	</details>
+</details>
+
+<details>
+	<summary>証明２</summary>
+	<p>$(\Rightarrow):$ まず集合の共通部分の性質$\nr{set}{204}$ より $A\cap B\subset A$ である．<br>
+		一方，</p>
+	<p><center>\begin{align*}
+		A\subset B\,\,\reflr{set}{111}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in B\,]\\
+			\reflr{implication}{88}\,\,&[\,x\in A\,\,\longrightarrow\,\,(x\in A) \land (x\in B)\,]\\
+			\reflr{set}{51}\,\,&[\,x\in A\,\,\longrightarrow\,\,x\in A\cap B\,]\\
+			\,\,\reflr{set}{111}\,\,& A\subset A\cap B.
+		\end{align*}</center></p>
+	<p>以上により，$A\cap B= A.$</p>
+
+	<p>$(\Leftarrow):$ $A\cap B= A\,\cdots (\dagger)$ であることに注意して，</p>
+	<p><center>\begin{align*}
+		x\in A\,\,&\,\underset{(\dagger)}{\Longleftrightarrow}\,\, x\in A\cap B\\
+			&\,\,\refr{set}{204}\,\, x\in B
+		\end{align*}</center></p>
+	<p>より $A\subset B.$</p>
+
+</details>
+<br>
+
 <p id="194">&nbsp;</p><div class="def">
 	<b>[#194] 定義：集合族</b><br>
 	<p>集合の集まり（集合）を【集合族 (family of sets)】と呼ぶ．</p>
