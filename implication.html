@@ -313,16 +313,15 @@ updated on 2022/9/18<br>
 <p id="349">&nbsp;</p><div class="prp">
 	<b>[#349] 命題：含意と論理積</b><br>
 	<p>命題 $P,\ Q,\ R$ に対して</p>
-	<p><center>$(P\to Q)\land R \ \Longrightarrow\ (P\to R)\land (Q\to R).$</center></p>
+	<p><center>$(P\to Q)\land R \ \Longrightarrow\ (P\land R)\to (Q\land R).$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
 	<p><center>\begin{align*}
-		&((P\to Q)\land R)\to((P\to R)\land (Q\to R))\\
-			\refeqv{implication}{239}\ & ((P\to Q)\land R)\to((P\lor Q)\to R)\\
-			\refeqv{implication}{245}\ & ((P\to Q)\land R\land (P\lor Q))\to R\\
-			\refeqv{proposition}{60}\ & ((P\to Q)\land (P\lor Q)\land R)\to R\\
-			\refeqv{implication}{88}\ & \mathsf{T}.
+		&((P\to Q)\land R)\to((P\land R)\to (Q\land R))\\
+			\refeqv{implication}{245}\ & ((P\to Q)\land R\land (P\land R))\to (Q\land R)\\
+			\refeqv{proposition}{60}\ & ((P\to Q)\land P\land R)\to (Q\land R)\\
+			\refeqv{implication}{72}\ & (P\land Q\land R)\to (Q\land R)\ \refeqv{implication}{88}\ \mathsf{T}\\
 		\end{align*}</center></p>
 </Details>
 <br>
