@@ -47,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/21<br>
-updated on 2022/9/19
+updated on 2022/9/20
 </p>
     
 <p id="99">&nbsp;</p><div class="def">
@@ -68,9 +68,11 @@ updated on 2022/9/19
   
 <p id="102">&nbsp;</p><div class="def">
 	<b>[#102] 定義：合成写像</b><br>
-	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ に対して</p>
-	<p><center>$g\circ f(x) = g(f(x))\quad(x\in X)$</center></p>
-	<p>と定義される $X$ から $Z$ への写像 $g\circ f : X\to Z$ を $f$ と $g$ の【合成写像 (composition)】と呼ぶ．</p>
+	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ に対して，$X$ の元を $f$ で写し，さらに $g$ で写すような写像を $f$ と $g$ の【合成写像 (composition)】と呼ぶ：</p>
+	<p><center>$
+		g\circ f: X\to Z,\quad x\mapsto g(f(x)).
+		$</center></p>
+	<p>すなわち $g\circ f(x) = g(f(x))$ である．</p>
 </div>
 <br>
   
@@ -90,15 +92,15 @@ updated on 2022/9/19
 <br>
   
 <p id="107">&nbsp;</p><div class="def">
-	<b>[#107] 定義：恒等写像</b><br>
-	<p>何も変えない $X$ 上の（$X$ から $X$ への）写像 $\mathrm{id}_X$ を $X$ 上の【恒等写像 (identity map)】と云う：</p>
+	<b>[#107] 定義：恒等変換</b><br>
+	<p>何も変えない $X$ 上の変換 $\mathrm{id}_X$ を $X$ 上の【恒等変換 (identity transformation)】或いは【恒等写像 (identity map)】と呼ぶ：</p>
 	<p><center>$\mathrm{id}_X:X\rightarrow X,\quad x\mapsto x.$</center></p>
 	<p>すなわち $\mathrm{id}_X(x)=x$ である．</p>
 </div>
 <br>
   
 <p id="108">&nbsp;</p><div class="prp">
-	<b>[#108] 命題：恒等写像の意味</b><br>
+	<b>[#108] 命題：恒等変換との合成</b><br>
 	<p>写像 $f:X\rightarrow Y$ に対して</p>
 	<p><center>$f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.$</center></p>
 </div>
@@ -125,7 +127,7 @@ updated on 2022/9/19
 </details>
 <details>
 	<summary>補足２</summary>
-	<p> $f$ と $f|_A$ は一般には始域が異なっているので，等しいとはいえない$\nr{map}{99}$．</p>
+	<p> $f|_A(x) = f(x)$ は成り立つが，$f$ と $f|_A$ は一般には始域が異なっているので，等しいとはいえない$\nr{map}{99}$．</p>
 </details>
 <br>
   
