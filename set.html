@@ -20,6 +20,7 @@
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
+		definedas: '\\overset{\\mathrm{def}}{\\Longleftrightarrow}',
 		cpl: '\\mathrm{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
@@ -46,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/6<br>
-updated on 2022/9/19
+updated on 2022/9/21
 </p>
     
 <p id="48">&nbsp;</p><div class="def">
@@ -103,24 +104,39 @@ updated on 2022/9/19
 <br>
   
 <p id="111">&nbsp;</p><div class="def">
-	<b>[#111] 定義：集合の包含</b><br>
+	<b>[#111] 定義：集合の包含，相等性</b><br>
 	<p> $A,\,B$ を集合とする．
 	<ul>
 		<li><p> $A$ のすべての元が $B$ にも属することを「$A$ は $B$ に含まれる ( $A$ is included in $B$ )」と云い，$A\subset B$ と表す：</p>
 			<p><center>\begin{align*}
-				[\,A\subset B\,] \equiv [\,a\in A\,\,\longrightarrow\,\,a\in B\,].
+				A\subset B \ \definedas\ &{}^\forall x,\ (x\in A) \to (x\in B)\\
+					\reflr{predicate}{77}\ &{}^\forall x\in A,\ x\in B.
 				\end{align*}</center></p>
 			<p>また $A$ を $B$ の【部分集合 (subset)】と呼ぶ．</p>
 		<li><p> $A$ が $B$ に含まれ，また $B$ も $A$ に含まれていること，つまり $A$ と $B$ のそれぞれに属する元の組み合わせが全く同じであることを「集合 $A$ と $B$ は等しい ($A$ and $B$ are equal)」と云い，$A=B$ と表す：</p>
 			<p><center>\begin{align*}
-				[\,A= B\,] \equiv\ &\bigl[\,(A\subset B)\land (B\subset A)\,\bigr]\\
-					\equiv\ & [(a\in A)\longleftrightarrow (a\in B)].
+				A=B \ \definedas\ (A\subset B)\land (A\supset B).
 				\end{align*}</center></p>
 		<li><p>$A\subset B$ かつ $A\neq B$ であるような集合 $A$ を $B$ の【真部分集合 (proper subset)】と呼ぶ．</p>
 	</ul>
 </div>
 <br>
   
+<p id="354">&nbsp;</p><div class="prp">
+	<b>[#354] 命題：集合の相等性の換言</b><br>
+	<p><center>$A=B \ \Longleftrightarrow\ {}^\forall x,\ (x\in A) \leftrightarrow (x\in B)$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		A=B\ \reflr{set}{111}\ &(A\subset B)\land (B\supset A)\\
+			\reflr{set}{111}\ & ({}^\forall x,\ (x\in A) \to (x\in B))\land ({}^\forall x,\ (x\in B) \to (x\in A))\\
+			\reflr{predicate}{140}\ & {}^\forall x,\ ((x\in A) \to (x\in B))\land ((x\in B) \to (x\in A))\\
+			\reflr{implication}{65}\ & {}^\forall x,\ (x\in A) \leftrightarrow (x\in B)
+		\end{align}</center></p>
+</Details>
+<br>
+
 <p id="50">&nbsp;</p><div class="prp">
 	<b>[#50] 命題：集合は自身の部分集合</b><br>
 	<p>任意の集合 $A$ に対して，$A\subset A$.</p>
