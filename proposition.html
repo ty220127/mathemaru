@@ -45,20 +45,22 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/7<br>
-updated on 2022/8/5
+updated on 2022/9/21
 </p>
     
 <p id="58">&nbsp;</p><div class="def">
 	<b>[#58] 定義：命題に関する諸定義</b><br>
-  	<p>ある物事について，それが「成り立つ」か「成り立たない」かを判定することができるとき，その物事を【命題 (proposition)】と呼ぶ．
-	また，命題が成り立つことを【真 (true)】であると云い，成り立たないことを【偽 (false)】であると云う．以下，$P$，$Q$ を命題であるとする．</p>
-  	<ul>
-    		<li> 「命題 $P$ が成り立たない」という命題を$P$ の【否定 (negation)】と云い．$\neg P$ と書く．</li>
-    		<li> 「命題 $P$，$Q$ の両方が成り立つ」という命題を $P$ と $Q$ の【合接 (連言; conjunction)】または【論理積 (logical product)】と呼び，$P\land Q$ と書いて「$P$ かつ $Q$ ($P$ and $Q$)」と読む．</li>
-    		<li> 「命題 $P$，$Q$ の少なくとも何れかが成り立つ」という命題を $P$ と $Q$ の【離接 (選言; disjunction)】または【論理和 (logical sum)】と呼び，$P\lor Q$ と書いて「$P$ または $Q$ ($P$ or $Q$)」と読む．</li>
-  	</ul>
-	<p>以下，命題が真であることを $\mathsf{T}$，偽であることを $\mathsf{F}$ で表す（これらをまとめて【真理値 (truth value)】と呼ぶ）．$P$ および $Q$ の真偽により，上で定義した命題は下表のような真偽となる．
-		これらのような真偽をまとめた表を【真理値表 (truth table)】と呼ぶ．</p>
+	<p>ある物事について，それが「成り立つ」か「成り立たない」かを判定することができる主張を【命題 (proposition)】と呼ぶ．命題が成り立つことを【真 (true)】であると云い，成り立たないことを【偽 (false)】であるという．形式的には，以下で定義される（形式的に定義される命題のことを【論理式 (well-formed formula)】とも呼ぶ）：
+	<ul>
+	<li> 命題は真 $(\mathsf{T})$ あるいは偽 $(\mathsf{F})$ の一方の値をとる．$\mathsf{T}$ と $\mathsf{F}$ をまとめて【真理値】と呼ぶ．</li>
+	<li> 真偽の確定しない命題を【命題変項 (propotional variable)】と呼ぶ．</li>
+	<li> 真偽の確定している命題を【命題定項 (propotional constant)】と呼ぶ．命題定項のうち，常に真なる命題を【恒真命題 (tautology)】と呼び $\mathbb{T}$ 或いは $\top$ と表し，常に偽なる命題を【恒偽命題 (non-tautology)】と呼び $\mathbb{F}$ 或いは $\bot$ と表す．</li>
+	<li> 2つの命題 $P,\ Q$ が常に一致することを $P$ と $Q$ は【同値 (equivalent)】であるといい，$P\equiv Q$ で表す．</li>
+	<li> 命題 $P$ に対して $\neg P$ は命題であり，$P$ の【否定 (negation)】と呼ばれる．</li>
+	<li> 命題 $P,\ Q$ に対して $P\land Q$ は命題であり，$P$ と $Q$ の【論理積 (logical product)】或いは【合接 (連言; conjunction)】と呼ばれる．</li>
+	<li> 命題 $P,\ Q$ に対して $P\lor Q$ は命題であり，$P$ と $Q$ の【論理和 (logical sum)】或いは【離接 (選言; disjunction)】と呼ばれる．</li>
+	</ul>
+	<p>ここで，$\neg P,\ P\land Q,\ P\lor Q$ の真偽は下表のように決定される．これらのような真偽をまとめた表を【真理値表 (truth table)】と呼ぶ．</p>
 	<center>
 		$\begin{array}{|c||c|}\hline P & \neg P \\ \hline \mathsf{T} & \mathsf{F} \\ \hline \mathsf{F} & \mathsf{T} \\ \hline \end{array}\quad
 		\begin{array}{|c|c||c|c|}\hline P & Q & P\land Q& P\lor Q \\ \hline
@@ -67,9 +69,6 @@ updated on 2022/8/5
 		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} \\ \hline 
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline \end{array}$
 	</center>
-	<p>2 つの命題 $P,\,Q$ があらゆる状況において等しい真理値をもつとき，$P$ と $Q$ は【同値 (equivalent)】であると云い，$P\equiv Q$ と書く．
-		また，常に真であるような命題を【恒真命題 (tautology)】，常に偽であるような命題を【恒偽命題 (non-tautology)】と呼び，
-		命題 $P$ が恒真命題であることを $P\equiv\mathsf{T}$，恒偽命題であることを $P\equiv \mathsf{F}$ と書く．</p>
 </div>
 <Details>
 	<summary>補足１</summary>
@@ -77,8 +76,12 @@ updated on 2022/8/5
 </Details>
 <Details>
 	<summary>補足２</summary>
-	<p>命題 $P$ の【証明 (proof)】とは，$P$ が（時にいくつかの条件も加味した上で）常に真であること，つまり $P\equiv\mathsf{T}$ であることを論理的に導くことである．</p>
+	<p>命題 $P$ の【証明 (proof)】とは，$P$ が（時にいくつかの条件も加味した上で）常に真であること，つまり $P\equiv\mathbb{T}$ であることを論理的に導くことである．</p>
 </Details>
+<details>
+	<summary>補足３</summary>
+	<p>真理値表を最初に導入したのは，哲学者の <ruby><rb>Wittgenstein</rb><rp>（</rp><rt>ウィトゲンシュタイン</rt><rp>）</rp></ruby> である．Wittgenstain の論理学に関する書籍は『論理哲学論考』が有名であり，有名な「語りえぬものについては沈黙しなければならない」という文言もこの書籍で登場する．
+</details>
 <br>
   
 <p id="60">&nbsp;</p><div class="prp">
@@ -88,12 +91,12 @@ updated on 2022/8/5
 		<li> $P\land P \equiv P$ 【冪等則 (idempotent law)１】</li>
 		<li> $P\lor P \equiv P$ 【冪等則２】</li>
 		<li> $\neg(\neg P) \equiv P$ 【二重否定 (double negation)】</li>
-		<li> $P\lor \neg P\equiv\mathsf{T}$ 【排中律 (law of excluded middle)】</li>
-		<li> $P\land \neg P\equiv \mathsf{F}$ 【矛盾律 (law of contradiction)】</li>
-		<li> $P\land \mathsf{T} \equiv P$ 【同一則 (identity law)】</li>
-		<li> $P\lor \mathsf{F} \equiv P$ 【同一則２】</li>
-		<li> $P\land \mathsf{F} \equiv \mathsf{F}$ 【統治則 (domination law)】</li>
-		<li> $P\lor \mathsf{T} \equiv \mathsf{T}$ 【統治則２】</li>
+		<li> $P\lor \neg P\equiv\mathbb{T}$ 【排中律 (law of excluded middle)】</li>
+		<li> $P\land \neg P\equiv \mathbb{F}$ 【矛盾律 (law of contradiction)】</li>
+		<li> $P\land \mathbb{T} \equiv P$ 【同一則 (identity law)】</li>
+		<li> $P\lor \mathbb{F} \equiv P$ 【同一則２】</li>
+		<li> $P\land \mathbb{F} \equiv \mathbb{F}$ 【統治則 (domination law)】</li>
+		<li> $P\lor \mathbb{T} \equiv \mathbb{T}$ 【統治則２】</li>
 		<li> $P\land Q \equiv Q\land P$ 【交換法則 (commutative law)１】</li>
 		<li> $P\lor Q \equiv Q\lor P$ 【交換法則２】</li>
 	</ul>
@@ -101,9 +104,9 @@ updated on 2022/8/5
 <Details>
 	<summary>証明</summary>
 	<p>いずれも以下の真理値表の通り示される．たとえば，$P$ が真偽のいずれであっても $P\land P$ は $P$ と同じ真理値となることから $P\land P$ と $P$ は同値であること，つまり $P\land P\equiv P$ がいえる．
-		また，$P$ が真偽のいずれであっても $P\lor \neg P$ は真であることから $P\lor \neg P$ は恒真命題であること，つまり $P\lor \neg P\equiv\mathsf{T}$ がいえる．</p>
+		また，$P$ が真偽のいずれであっても $P\lor \neg P$ は真であることから $P\lor \neg P$ は恒真命題であること，つまり $P\lor \neg P\equiv\mathbb{T}$ がいえる．</p>
 	<p><center>
-		$\begin{array}{|c||c|c|c|c|c|c|c|c|}\hline P & \neg P & P\land P & P\lor P & \neg(\neg P)  & P\lor \neg P& P\land \neg P & P\land\mathsf{T} & P\lor\mathsf{F} & P\land\mathsf{F} & P\lor\mathsf{T}\\ \hline
+		$\begin{array}{|c||c|c|c|c|c|c|c|c|}\hline P & \neg P & P\land P & P\lor P & \neg(\neg P)  & P\lor \neg P& P\land \neg P & P\land\mathbb{T} & P\lor\mathbb{F} & P\land\mathsf{F} & P\lor\mathsf{T}\\ \hline
 		\mathsf{T} & \mathsf{F} & \mathsf{T} &\mathsf{T} &\mathsf{T} &\mathsf{T} & \mathsf{F} &\mathsf{T} &\mathsf{T} &\mathsf{F} &\mathsf{T} \\ \hline 
 		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} & \mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{F} &\mathsf{T} \\ \hline\end{array}$<br>
 		
