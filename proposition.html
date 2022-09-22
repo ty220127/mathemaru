@@ -45,7 +45,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/7<br>
-updated on 2022/9/21
+updated on 2022/9/22
 </p>
     
 <p id="58">&nbsp;</p><div class="def">
@@ -238,7 +238,58 @@ updated on 2022/9/21
 							&\equiv (P\land R)\lor (P\land S)\lor (Q\land R)\lor (Q\land S),\\
 				(P\land Q)\lor (R\land S) &\equiv (P\lor R)\land (P\lor S)\land (Q\lor R)\land (Q\lor S).\end{align*}$
 	</center></p>
-</Details><br>
+</Details>
+<br>
+
+<p id="355">&nbsp;</p><div class="prp">
+	<b>[#355] 命題：論理積・論理和と否定</b><br>
+	<p>命題 $P,\,Q$ に対して</p>
+	<p><center>
+		$\begin{align*} (P\land Q)\lor (\neg Q) &\equiv P\lor (\neg Q),\\
+				(P\lor Q)\land (\neg P) &\equiv P\land (\neg Q). \end{align*}$
+	</center></p>
+</div>
+<details>
+	<summary>証明１（真理値表を用いる）</summary>
+	<p>前者について，以下により成立する．</p>
+	<p><center>
+		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & \neg Q & P\land Q & \color{red}{(P\land Q)\lor (\neg Q)} & \color{red}{P\lor (\neg Q)} \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}}\\ \hline
+		\end{array}$
+	</center></p>
+	<p>後者について，以下により成立する．</p>
+	<p><center>
+		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & \neg Q & P\lor Q & \color{red}{(P\lor Q)\land (\neg Q)} & \color{red}{P\land (\neg Q)} \\ \hline
+		\mathsf{T} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \color{red}{\mathsf{T}}\\ \hline
+		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}}\\ \hline
+		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}}\\ \hline
+		\end{array}$
+	</center></p>
+</details>
+<details>
+	<summary>証明２（既知の命題から導出）</summary>
+	<p>前者について</p>
+	<p><center>\begin{align}
+		(P\land Q)\lor (\neg Q) \ \refeqv{proposition}{62}\ & (P\lor (\neg Q))\land (Q\lor (\neg Q))\\
+			\refeqv{proposition}{60}\ &  (P\lor (\neg Q))\land \mathbb{T}\\
+			\refeqv{proposition}{60}\ &  P\lor (\neg Q)
+		\end{align}</center></p>
+	<p>後者について</p>
+	<p><center>\begin{align}
+		(P\lor Q)\land (\neg Q) \ \refeqv{proposition}{62}\ & (P\land (\neg Q))\lor (Q\land (\neg Q))\\
+			\refeqv{proposition}{60}\ &  (P\land (\neg Q))\lor \mathbb{F}\\
+			\refeqv{proposition}{60}\ &  P\land (\neg Q)
+		\end{align}</center></p>
+</details>
+<details>
+	<summary>補足</summary>
+	<p>証明２の前者を回りくどく説明する．まず $(P\land Q)\lor (\neg Q)$ と $(P\lor (\neg Q))\land (Q\lor (\neg Q))$ の真理値表が一致することは，分配法則$\nr{proposition}{62}$ により保証されている．また，$Q\lor (\neg Q)$ は恒真命題 $\mathbb{T}$ と同値であることが排中律$\nr{proposition}{60}$ によりわかる．これは， $(P\lor (\neg Q))\land (Q\lor (\neg Q))$ の $Q\lor (\neg Q)$ の部分を $\mathbb{T}$ に置き換えても全体の真理値に影響を及ぼさないことを意味する．最後に，$(P\lor (\neg Q))\land \mathbb{T}$ は $\land \mathbb{T}$ の部分を取り除いても同じであることが同一則$\nr{proposition}{60}$ により保証されているので，全体として題意の同値性が示される．このように，既知の命題を用いて他の命題を示すことが，今後の議論では中心となる．
+</details>
+<br>
 
 <p id="63">&nbsp;</p><div class="prp">
 	<b>[#63] 命題：de Morgan の法則</b><br>
@@ -416,6 +467,7 @@ updated on 2022/9/21
 	<li><a href="https://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">岡田光弘: 「論理学入門」講義ノート, 公開pdf</a>.</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-1_meidaironri.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第1章), 公開pdf</a>.
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2021/L02_0421.pdf">桂田祐史: 数理リテラシー 第 2 回 ～ 論理 (2) ～, 公開pdf</a>.</li>
+	<li><a href="https://natura-tech.github.io/pdf/L.pdf">東京工業大学 哲学研究会: 論理学入門, 公開pdf</a> [2022/9/22 閲覧].</li>
 	<li>長岡亮介: 総合的研究 論理学で学ぶ数学 – 思考ツールとしてのロジック.</li>
 	<li><a href="https://wiis.info/math/logic/propositional-logic/value-of-exclusive-disjunction/">命題論理における排他的論理和|WIIS</a></li>
 </ul>
