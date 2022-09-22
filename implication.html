@@ -21,7 +21,7 @@
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}',
+		trp: '\\mathbb{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
 		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
@@ -73,13 +73,13 @@ updated on 2022/9/19<br>
 <p id="66">&nbsp;</p><div class="prp">
 	<b>[#66] 命題：自分への含意</b><br>
 	<p>命題 $P$ に対して</p>
-	<p><center>$P\rightarrow P \equiv \mathsf{T},\quad P\rightarrow \neg P \equiv \neg P.$</center></p>
+	<p><center>$P\rightarrow P \equiv \mathbb{T},\quad P\rightarrow \neg P \equiv \neg P.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
 	<p>含意の定義　<a href="#65">[#65]</a> と <a href="proposition.html#60">[#60]</a> より</p>
 	<p>
-		<center>$\begin{align*}P\rightarrow P &\equiv \neg P\lor P\equiv \mathsf{T},\\
+		<center>$\begin{align*}P\rightarrow P &\equiv \neg P\lor P\equiv \mathbb{T},\\
 		P\rightarrow \neg P &\equiv \neg P\lor \neg P \equiv \neg P.\end{align*}$</center>
 	</p>
 </Details>
@@ -102,7 +102,7 @@ updated on 2022/9/19<br>
 		\equiv &\,\,  ((\neg P\lor Q)\land \neg Q)\lor ((\neg P\lor Q)\land P)\\
 		\equiv &\,\,  (\neg P\land \neg Q)\lor (Q\land \neg Q)\lor (\neg P\land P)\lor (Q\land P)\end{align*}$
 	</center>
-	<p>を得る．ここで <a href="proposition.html#60">[#60]</a> より $Q\land \neg Q\equiv \neg P\land P\equiv \mathsf{F}$ であり，また選言で結ばれた $\mathsf{F}$ は無視してよいから，</p>
+	<p>を得る．ここで <a href="proposition.html#60">[#60]</a> より $Q\land \neg Q\equiv \neg P\land P\equiv \mathbb{F}$ であり，また選言で結ばれた $\mathbb{F}$ は無視してよいから，</p>
 	<center>
 		$\begin{align*}&\,\,(\neg P\land \neg Q)\lor (Q\land \neg Q)\lor (\neg P\land P)\lor (Q\land P)\\
 		\equiv &\,\, (\neg P\land \neg Q)\lor (Q\land P).\end{align*}$
@@ -154,19 +154,19 @@ updated on 2022/9/19<br>
 	<p>(1) 式について，</p>
 	<p><center>$\begin{align*} (P\land Q)\rightarrow P &\equiv \neg (P\land Q)\lor P\\
 		&\equiv \neg P\lor \neg Q\lor P\\
-		&\equiv \mathsf{T}\lor \neg Q\equiv \mathsf{T}.
+		&\equiv \mathbb{T}\lor \neg Q\equiv \mathbb{T}.
 		\end{align*}$</center></p>
 	<p>(2) 式について，</p>
 	<p><center>$\begin{align*} P\rightarrow (P\lor Q) &\equiv \neg P \lor (P\lor Q)\\
-		&\equiv \mathsf{T}\lor Q\equiv \mathsf{T}.
+		&\equiv \mathbb{T}\lor Q\equiv \mathbb{T}.
 		\end{align*}$</center></p>
 	<p>(3) 式について，</p>
 	<p><center>$\begin{align*} P\rightarrow (P\land Q) &\equiv \neg P\lor (P\land Q)\\
-		&\equiv \mathsf{T}\land (\neg P\lor Q)\equiv P\rightarrow Q.
+		&\equiv \mathbb{T}\land (\neg P\lor Q)\equiv P\rightarrow Q.
 		\end{align*}$</center></p>
 	<p>(4) 式について，</p>
 	<p><center>$\begin{align*} (P\lor Q)\rightarrow P &\equiv \neg (P\lor Q) \lor P\equiv (\neg P\land \neg Q)\lor P\\
-		&\equiv \mathsf{T}\land (\neg Q\lor P)\equiv Q\rightarrow P.
+		&\equiv \mathbb{T}\land (\neg Q\lor P)\equiv Q\rightarrow P.
 		\end{align*}$</center></p>
 </Details>
 <br>
@@ -180,15 +180,10 @@ updated on 2022/9/19<br>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>含意の定義 <a href="#65">[#65]</a> と分配法則 <a href="proposition.html#62">[#62]</a> より</p>
-	<p><center>
-		$\begin{align*}&\,\, (P\rightarrow Q)\land P\\
-		\equiv &\,\, (\neg P\lor Q)\land P\\
-		\equiv &\,\, (P\land (\neg P))\lor (P\land Q)\\
-		\equiv &\,\, \mathsf{F}\lor (P\land Q)\\
-		\equiv &\,\, P\land Q.\end{align*}$
-	</center></p>
-	<p>また，<a href="#88">[#88]</a> より $P\land Q\Rightarrow Q$ であるから，</p>
+	<p><center>\begin{align}
+		(P\rightarrow Q)\land P \ \refeqv{implication}{65}\ (\neg P \lor Q)\land P \ \refeqv{proposition}{355}\ P\land Q.
+		\end{align}</center></p>
+	<p>また，$P\land Q\Rightarrow Q$ であるから$\nr{implication}{88}$，</p>
 	<p><center>$(P\rightarrow Q)\land P\,\,\Longrightarrow\,\,Q.$</center></p>
 </Details>
 <br>
@@ -196,35 +191,71 @@ updated on 2022/9/19<br>
 <p id="92">&nbsp;</p><div class="prp">
 	<b>[#92] 命題：後件否定 (denying the consequent; modus tollens)</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
-	<p><center>$(P\rightarrow Q)\land \neg Q\,\,\Longrightarrow\,\,\neg P.$</center></p>
+	<p><center>$(P\rightarrow Q)\land (\neg Q)\equiv (\neg P)\land (\neg Q)$</center></p>
+	<p>であり，特に</p>
+	<p><center>$(P\rightarrow Q)\land (\neg Q)\,\,\Longrightarrow\,\,\neg P.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>含意の命題の対偶 <a href="#68">[#68]</a> の性質より $P\rightarrow Q\equiv \neg Q\rightarrow \neg P$ であるから，</p>
-	<p><center>
-		$(P\rightarrow Q)\land \neg Q\equiv (\neg Q\rightarrow \neg P)\land \neg Q.$
-	</center></p>
-	<p>よって，前件肯定 <a href="#72">[#72]</a> の論理式より</p>
-	<p><center>$(\neg Q\rightarrow \neg P)\land \neg Q\,\,\Longrightarrow\,\,\neg P$</center></p>
-	<p>であることから，題意が示される．</p>
+	<p><center>\begin{align}
+		(P\rightarrow Q)\land (\neg Q) \ \refeqv{implication}{68}\ & (\neg Q\to \neg P)\land (\neg Q)\\
+			\refeqv{implication}{72}\ & (\neg Q)\land (\neg P)\\
+			\refeqv{proposition}{60}\ & (\neg P)\land (\neg Q)\\
+			\refr{proposition}{88}\,&\neg P
+		\end{align}</center></p>
 </Details>
+<br>
+
+<p id=356">&nbsp;</p><div class="prp">
+	<b>[#356] 命題：選言三段論法 (disjunctive syllogism; modus tollendo ponens)</b><br>
+	<p>命題 $P,\,Q$ に対して</p>
+	<p><center>$(P\lor Q)\land (\neg Q)\,\,\Longrightarrow\,\,P.$</center></p>
+</div>
 <Details>
-	<summary>補足</summary>
-	<p>【背理法 (proof by contrasiction)】の原理にもなっている．</p>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		(P\lor Q)\land (\neg Q) \ \refeqv{proposition}{355}\ & P\land (\neg Q)\\
+			\ \refr{implication}{88}\,& P.
+		\end{align}</center></p>
 </Details>
+<details>
+	<summary>補足</summary>
+	<p>推論の文脈で重要．</p>
+</details>
+<br>
+
+<p id=357">&nbsp;</p><div class="prp">
+	<b>[#357] 命題：背理法 (proof by contradiction)</b><br>
+	<p>命題 $P,\,Q$ に対して</p>
+	<p><center>$P\to Q \equiv (P\land (\neg Q))\to \mathbb{F}.$</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		P\to Q \ \refeqv{implication}{65}\ & \neg P\lor Q\\
+			\refeqv{proposition}{60}\ & \neg P\lor \neg (\neg Q)\\
+			\refeqv{proposition}{63}\ & \neg (P\land (\neg Q))\\
+			\refeqv{proposition}{60}\ & \neg (P\land (\neg Q))\lor \mathbb{F}\\
+			\refeqv{implication}{65}\ & (P\land (\neg Q))\to \mathbb{F}\\
+		\end{align}</center></p>
+</Details>
+<details>
+	<summary>補足</summary>
+	<p>背理法では，与えられた仮定 $P$ と所望の結論 $Q$ の否定を論理積で結ぶと矛盾が生じることを導くことで，$P$ から $Q$ を推論する．</p>
+</details>
 <br>
 
 <p id="69">&nbsp;</p><div class="prp">
 	<b>[#69] 命題：含意の離接</b><br>
 	<p>命題 $P,\,Q$ に対して</p>
-	<p><center>$(P\rightarrow Q)\lor (Q\rightarrow P)\equiv \mathsf{T}.$</center></p>
+	<p><center>$(P\rightarrow Q)\lor (Q\rightarrow P)\equiv \mathbb{T}.$</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
 	<p>含意の定義 <a href="#65">[#65]</a> より</p>
 	<p><center>
 		$\begin{align*}&\,\,(P\rightarrow Q)\land (Q\rightarrow P)\\
-		\equiv &\,\, (\neg P)\lor Q\lor (\neg Q)\lor P\equiv \mathsf{T}.\end{align*}$
+		\equiv &\,\, (\neg P)\lor Q\lor (\neg Q)\lor P\equiv \mathbb{T}.\end{align*}$
 	</center></p>
 </Details>
 <br>
@@ -244,7 +275,7 @@ updated on 2022/9/19<br>
 	</center></p>
 	<p>よって，<a href="#66">[#66]</a> より，
 	<p><center>
-		$((P\rightarrow Q)\rightarrow P)\rightarrow P \equiv P\rightarrow P \equiv \mathsf{T}.$
+		$((P\rightarrow Q)\rightarrow P)\rightarrow P \equiv P\rightarrow P \equiv \mathbb{T}.$
 	</center></p>
 </Details>
 <br>
@@ -321,7 +352,7 @@ updated on 2022/9/19<br>
 		&((P\to Q)\land R)\to((P\land R)\to (Q\land R))\\
 			\refeqv{implication}{245}\ & ((P\to Q)\land R\land (P\land R))\to (Q\land R)\\
 			\refeqv{proposition}{60}\ & ((P\to Q)\land P\land R)\to (Q\land R)\\
-			\refeqv{implication}{72}\ & (P\land Q\land R)\to (Q\land R)\ \refeqv{implication}{88}\ \mathsf{T}\\
+			\refeqv{implication}{72}\ & (P\land Q\land R)\to (Q\land R)\ \refeqv{implication}{88}\ \mathbb{T}\\
 		\end{align*}</center></p>
 </Details>
 <br>
@@ -340,7 +371,7 @@ updated on 2022/9/19<br>
 		\refeqv{implication}{72}\ & (P\land Q)\land (Q\to R) \to R\\
 		\refeqv{proposition}{61}\ & P\land (Q\land (Q\to R)) \to R\\
 		\refeqv{implication}{72}\ & P\land Q\land R \to R\\
-		\refeqv{implication}{88}\ & \mathsf{T}.\\
+		\refeqv{implication}{88}\ & \mathbb{T}.\\
 		\end{align*}</center></p>
 </Details>
 <br>
@@ -351,6 +382,7 @@ updated on 2022/9/19<br>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-1_meidaironri.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第1章), 公開pdf</a>.
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2021/L03_0428.pdf">桂田祐史: 数理リテラシー 第 3 回 ～ 論理 (3) ～, 　公開pdf</a>.
+	<li><a href="https://natura-tech.github.io/pdf/L.pdf">東京工業大学 哲学研究会: 論理学入門, 公開pdf</a> [2022/9/22 閲覧].</li>
 	<li>長岡亮介: 総合的研究 論理学で学ぶ数学 – 思考ツールとしてのロジック.</li>
 	<li><a href="https://wiis.info/math/logic/propositional-logic/value-of-implication/">命題論理における含意｜ワイズ</a></li>
 </ul>
