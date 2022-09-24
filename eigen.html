@@ -45,7 +45,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/3/29<br>
-updated on 2022/7/5
+updated on 2022/9/24
 </p>
 
 <p id="160">&nbsp;</p><div class="def">
@@ -54,21 +54,29 @@ updated on 2022/7/5
 	<p><center>$\begin{align*}
 		A\bs{x} = \lambda\bs{x}
 		\end{align*}$</center></p>
-	<p>が成り立つとき，$\lambda$ を $A$ の【固有値 (eigenvalue)】，$\bs{x}$ を $\lambda$ に属する【固有ベクトル (eigenvector)】と呼ぶ．</p>
+	<p>が成り立つとき，$\lambda$ を $A$ の【固有値 (eigenvalue)】，$\bs{x}$ を $\lambda$ に属する【固有ベクトル (eigenvector)】と呼ぶ．また，$A$ の固有値の集合を $A$ の【スペクトル (spectrum)】と呼び，$\mathrm{Spec}(A)$ 或いは $\sigma(A)$ で表す．</p>
 </div>
 <br>
 
-<p id="161">&nbsp;</p><div class="prp">
-<b>[#161] 命題：特性方程式，特性多項式</b><br>
-	<p> $A$ を $n$ 次正方行列として，数 $\lambda\in\mathbb{C}$ が $A$ の固有値，$n$ 次列ベクトル $\bs{x}\not =\bs{0}$ が $\lambda$ に属する固有ベクトル $A$ の固有ベクトルであることは，以下の等式が成り立つことと同値である：</p>
-	<p><center>$\begin{align*}
-		\det(A -\lambda I) = 0.
-		\end{align*}$</center></p>
-	<p>ただし $I$ は $n$ 次の単位行列である．<br>
-		なお $\lambda$ が未知のとき，上の等式は $A$ の【特性方程式 (characteristic equation)】，等式の左辺は $A$ の【特性多項式 (characteristic polynomial)】と呼ばれる．</p>
+<p id="161">&nbsp;</p><div class="def">
+<b>[#161] 定義：固有多項式，固有方程式</b><br>
+	<p> $n$ 次正方行列 $A$ に対して，$\lambda\in \mathbb{C}$ に関する多項式 $\varPhi_A(\lambda)$ を $A-\lambda I_n$ の行列式$\nr{determinant}{289}$ で定義し（ただし $I_n$ は $n$ 次単位行列$\nr{matrix}{184}$），$A$ の【固有多項式 (特性多項式; characteristic polynomial)】と呼ぶ：</p>
+	<p><center>\begin{align}
+		\varPhi_A(\lambda) := \det (A-\lambda I_n).
+		\end{align}</center></p>
+	<p>また，方程式</p>
+	<p><center>\begin{align}
+		\varPhi_A(\lambda) = 0
+		\end{align}</center></p>
+	<p>を $A$ の【固有方程式 (特性方程式; characteristic equation)】と呼ぶ．</p>
 </div>
 <br>
 
+<p id="358">&nbsp;</p><div class="prp">
+<b>[#358] 命題：固有値と固有方程式</b><br>
+	<p> $A$ を $n$ 次正方行列とする．$\lambda\in \mathbb{C}$ が $A$ の固有値$\nr{eigen}{160}$ であることは，その $\lambda$ が $A$ の固有方程式$\nr{eigen}{161}$ の解である（つまり $A$ の固有多項式の根である）ことと同値である．</p>
+</div>
+<br>
 
 <p id="183">&nbsp;</p><div class="exm">
 <b>[#183] 例題：固有値と固有ベクトルの導出</b><br>
@@ -82,19 +90,19 @@ updated on 2022/7/5
 </div>
 <Details>
 <summary>解答</summary>
-	<p> $A$ の固有値を $\lambda$ とすれば，命題 <a href="#161">[#161]</a> より固有方程式</p>
+	<p> $A$ の固有値を $\lambda$ とすれば，固有方程式</p>
 	<p><center>$\begin{align*}
 		\det (A-\lambda I) = 0,\,\,\text{i.e.,}\,\,
 			\left|\begin{array}{cc} 1-\lambda & \sqrt{2} & 0\\ \sqrt{2} & 1-\lambda & \sqrt{2} \\ 0 & \sqrt{2} & 1-\lambda\end{array}\right| =0
 		\end{align*}$</center></p>
-	<p>が成り立つ．ここで $I$ は３次の単位行列である．左辺を整理すると</p>
+	<p>が成り立つ$\nr{eigen}{358}$．ここで $I$ は３次の単位行列である．左辺を整理すると</p>
 	<p><center>$\begin{align*}
 		\left|\begin{array}{cc} 1-\lambda & \sqrt{2} & 0\\ \sqrt{2} & 1-\lambda & \sqrt{2} \\ 0 & \sqrt{2} & 1-\lambda\end{array}\right| &= (1-\lambda)^3 -4(1-\lambda) \\
 			&= (1-\lambda)(1-2\lambda+\lambda^2 -4)\\
 			&= -(\lambda -1)(\lambda +1)(\lambda -3)
 		\end{align*}$</center></p>
 	<p>となるから，固有方程式の解は $\lambda = \pm 1,\,3$ であり，これらが $A$ の固有値となる．<br>
-		以下，各固有値 $\lambda$ に対応する固有ベクトル $\bs{x} = [x\,\,y\,\,z]^\trp$ を求める．まず，固有値の定義 <a href="#160">[#160]</a>より
+		以下，各固有値 $\lambda$ に対応する固有ベクトル $\bs{x} = [x\,\,y\,\,z]^\trp$ を求める．まず，固有値の定義$\nr{eigen}{160}$ より
 	<p><center>$\begin{align*}
 		A\bs{x} = \lambda\bs{x},\,\,\text{i.e.,}\,\,
 		\left[\begin{array}{ccc} 1-\lambda & \sqrt{2} & 0\\ \sqrt{2} & 1-\lambda & \sqrt{2} \\ 0 & \sqrt{2} & 1-\lambda \end{array}\right]\left[\begin{array}{c} x\\ y\\ z\end{array}\right]= \bs{0}
@@ -131,7 +139,7 @@ updated on 2022/7/5
 	<p><center>\begin{align}
 		\det A = 0
 		\end{align}</center></p>
-	<p>であることと同値である$\nr{eigen}{161}$ が，これは $A$ が正則でないことと同値である．</p>
+	<p>であることと同値である$\nr{eigen}{358}$ が，これは $A$ が正則でないことと同値である．</p>
 </details>
 <details>
 	<summary>補足</summary>
@@ -189,6 +197,7 @@ updated on 2022/7/5
 <div id="bib">
 <b>参考文献</b>
 <ul>
+	<li><a href="https://www.akita-pu.ac.jp/system/elect/ins/kusakari/japanese/teaching/Old/LinearAlgebra/2009/index.html">草苅良至: 線型代数学2009, 第10回 固有値とその応用, 公開pdf</a> [2022/9/24 閲覧].</li>
 	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
 	<li><a href="https://risalc.info/src/eigenvalue-vector.html">固有値と固有ベクトルの解説～具体例と性質～(証明付) - 理数アラカルト</a></li>
 	<li><a href="https://risalc.info/src/inverse-matrix-eigenvalue.html">逆行列の固有値 - 理数アラカルト</a> [2022/6/28 閲覧].</li>
