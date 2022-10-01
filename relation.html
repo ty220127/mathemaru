@@ -46,20 +46,21 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/8/9<br>
-updated on 2022/8/9
+updated on 2022/10/1
 </p>
 
 <p id="334">&nbsp;</p><div class="def">
 	<b>[#334] 定義：関係，グラフ</b><br>
-	<p>直積集合$\nr{direct-product}{297}$ $X\times Y$ の命題関数$\nr{predicate}{75}$ $\mathcal{R}$ を $X\times Y$ 上の【関係 (relation)】と呼ぶ．$(x,\,y)\in X\times Y$ に対して $\mathcal{R}(x,\,y) \equiv \mathsf{T}$ であることを $x\mathcal{R}y$ と書く．特に $X=Y$ のときは $\mathcal{R}$ を $X$ 上の【二項関係 (binary relation)】と呼ぶ．また，</p>
-	<p><center>\begin{align}
-		G(\mathcal{R}) = \{(x,\,y)\in X\times Y\,|\,x\mathcal{R}y\} \subset X\times Y
-		\end{align}</center></p>
-	<p>を関係 $\mathcal{R}$ の【グラフ (graph)】と呼ぶ．</p>
+	<p>直積集合$\nr{direct-product}{297}$ $X\times Y$ の部分集合 $R$ をしばしば $X\times Y$ 上の【関係 (relation)】と呼ぶ．$(x,\,y)\in X\times Y$ に対して $(x,\,y)\in R$ であることを $x\,R\,y$ と書く．特に $X=Y$ のときは $R$ を $X$ 上の【二項関係 (binary relation)】と呼ぶ．</p>
 </div>
 <details>
 	<summary>補足</summary>
-	<p> $\mathcal{R}$ と $G(\mathcal{R})$ を区別しない例も多く，その際は「関係」という名称，$\mathcal{R}$ の記号で統一される．実際，集合$\nr{set}{48}$ の定義より関係とグラフは１対１の関係なので，同一視しても問題はない．</p>
+	<p> 関係を写像$\nr{map}{99}$（あるいは命題関数$\nr{predicate}{75}$）$\mathcal{R}:X\times Y\to \{\mathsf{T},\,\mathsf{F}\}$ で定義することもある．このとき，集合</p>
+	<p><center>\begin{align}
+		G(\mathcal{R}) := \{(x,\,y)\,|\, \mathcal{R}(x,\,y) = \mathsf{T}\}
+		\end{align}</center></p>
+	<p>を $\mathcal{R}$ の【グラフ (graph)】と呼ぶ．ここで定義されたグラフ $G(\mathcal{R})$ が，黄枠の中で定義された関係 $R$ と一致するものである．<br>
+		ただし，補足中の概念は，「グラフ」という用語がグラフ理論における「グラフ$\nr{graph}{93}$」と紛らわしいので，基本的には用いない．</p>
 </details>
 <br>
 
@@ -87,23 +88,26 @@ updated on 2022/8/9
 
 <p id="337">&nbsp;</p><div class="def">
 	<b>[#337] 定義：前順序集合，半順序集合，全順序集合</b><br>
-	<p>集合 $X$ 上の二項関係$\nr{relation}{334}$ $\leq$ が</p>
+	<p>集合 $X$ 上の二項関係$\nr{relation}{334}$ $\preccurlyeq$ が</p>
 	<ul class="defl">
-	<li><p> 任意の $x\in X$ に対して $x\leq x$【反射律 (reflexive relation)】</p></li>
-	<li><p> 任意の $x,\ y,\ z\in X$ に対して $(x\leq y)\land (y\leq z) \Rightarrow x\leq z$【推移律 (transitive relation)】</p></li>
-	<li><p> 任意の $x,\ y\in X$ に対して $(x\leq y)\land (y\leq x) \Rightarrow x=y$【反対称律 (antisymmetric relation)】</p></li>
-	<li><p> 任意の $x,\ y\in X$ に対して $(x\leq y)\lor (y\leq x)$【完全律 (total relation)】
+	<li><p> 任意の $x\in X$ に対して $x\preccurlyeq x$【反射律 (reflexive relation)】</p></li>
+	<li><p> 任意の $x,\ y,\ z\in X$ に対して $(x\preccurlyeq y)\land (y\preccurlyeq z) \Rightarrow x\preccurlyeq z$【推移律 (transitive relation)】</p></li>
+	<li><p> 任意の $x,\ y\in X$ に対して $(x\preccurlyeq y)\land (y\preccurlyeq x) \Rightarrow x=y$【反対称律 (antisymmetric relation)】</p></li>
+	<li><p> 任意の $x,\ y\in X$ に対して $(x\preccurlyeq y)\lor (y\preccurlyeq x)$【完全律 (total relation)】
 	</ul>
-	<p>のうち i, ii のみを満たすものを【前順序関係 (preorderd relation)】，i〜iii のみを満たすものを【半順序関係 (partially ordered relation)】，i〜iv すべてを満たすものを【全順序関係 (totally ordered relation)】と呼ぶ．前順序集合，半順序集合，全順序集合を与えられた集合をそれぞれ【前順序集合 (preordered set)】，【半順序集合 (partially ordered set; poset)】，【全順序集合 (totally ordered set)】と呼ぶ．</p>
+	<p>のうち i, ii のみを満たすものを【前順序関係 (preordered relation)】，i 〜 iii のみを満たすものを【半順序関係 (partially ordered relation)】，i 〜 iv すべてを満たすものを【全順序関係 (totally ordered relation)】と呼ぶ．前順序集合，半順序集合，全順序集合を与えられた集合をそれぞれ【前順序集合 (preordered set)】，【半順序集合 (partially ordered set; poset)】，【全順序集合 (totally ordered set)】と呼ぶ．</p>
 </div>
 <br>
 
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
+	<li>Matoušek, J., Nešetřil, J.: Invitation to Discrete Mathematics, Oxford University Press, USA; 2nd edition (2008).</li>
+	<li><a href="https://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/15F/IntroGeom1/Geom15note.pdf">市原一裕: 幾何学序論講義ノート, 公開pdf</a> [2022/9/30 閲覧].</li>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="http://dopal.cs.uec.ac.jp/okamotoy/lect/2017/discretemath/lect10.pdf">岡本吉央: 離散数学 第10回 関係(1)：関係, 公開pdf</a> [2022/8/9 閲覧].</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-5_douchi.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第5章), 公開pdf</a> [2022/8/9 閲覧].</li>
+	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2022/">桂田祐史: 数理リテラシー (2022年度) Part IV. 同値関係</a> [2022/10/1 閲覧].</li>
 	<li><a href="https://www.math.nagoya-u.ac.jp/~yanagida/16W/yanagida-2W16-05.pdf">柳田伸太郎: 2W数学演習V・VI 同値関係と商集合, 公開pdf</a> [2022/8/9 閲覧].</li>
 	<li><a href="https://mathlandscape.com/binary-relation/">二項関係とは - 数学の景色</a> [2022/8/9 閲覧].</li>
 	<li><a href="https://mathlandscape.com/equiv-relation/">同値関係の定義と重要な具体例5つ - 数学の景色</a> [2022/8/9 閲覧].</li>
