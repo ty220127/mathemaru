@@ -1,0 +1,87 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "同値関係と同値類"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/10/2<br>
+updated on 2022/10/2
+</p>
+
+<p id="335">&nbsp;</p><div class="def">
+	<b>[#335] 定義：同値関係</b><br>
+	<p>集合 $X$ 上の二項関係$\nr{relation}{334}$ $\sim$ が以下の3条件を満たすことを，$\sim$ は【同値関係 (equivalence relation)】であるという：</p>
+	<ul class="defl">
+	<li><p> 任意の $x\in X$ に対して $x\sim x$【反射律 (reflexive relation)】</p></li>
+	<li><p> 任意の $x,\ y\in X$ に対して $x\sim y \Rightarrow y\sim x$【対称律 (symmetric relation)】<p></li>
+	<li><p> 任意の $x,\ y,\ z\in X$ に対して $(x\sim y)\land (y\sim z) \Rightarrow x\sim z$【推移律 (transitive relation)】</p></li>
+	</ul>
+	<p>$x,\ y\in X$ に対して $x\sim y$ であることを $x$ と $y$ は【同値 (equivalent)】であるという．</p>
+</div>
+<br>
+
+<p id="336">&nbsp;</p><div class="def">
+	<b>[#336] 定義：同値類，商空間</b><br>
+	<p> $\sim$ を $X$ 上の同値関係$\nr{relation}{335}$ とする．このとき</p>
+	<p><center>\begin{align}
+		C(x) := \{y\in X\,|\,y\sim x\}
+		\end{align}</center></p>
+	<p>を $x$ を含む【同値類 (equivalence class)】と呼び，$x$ を $C(x)$ の【代表元 (representative element)】と呼ぶ．各 $C(x)$ を元とする集合族 $X/\!\sim$ を $X$ の $\sim$ による【商空間 (quotient space)】或いは【類別空間 (classifying space)】と呼ぶ．</p>
+</div>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>Matoušek, J., Nešetřil, J.: Invitation to Discrete Mathematics, Oxford University Press, USA; 2nd edition (2008).</li>
+	<li><a href="https://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/15F/IntroGeom1/Geom15note.pdf">市原一裕: 幾何学序論講義ノート, 公開pdf</a> [2022/9/30 閲覧].</li>
+	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-5_douchi.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第5章), 公開pdf</a> [2022/8/9 閲覧].</li>
+	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2022/">桂田祐史: 数理リテラシー (2022年度) Part IV. 同値関係</a> [2022/10/1 閲覧].</li>
+	<li><a href="https://www.math.nagoya-u.ac.jp/~yanagida/16W/yanagida-2W16-05.pdf">柳田伸太郎: 2W数学演習V・VI 同値関係と商集合, 公開pdf</a> [2022/8/9 閲覧].</li>
+	<li><a href="https://mathlandscape.com/equiv-relation/">同値関係の定義と重要な具体例5つ - 数学の景色</a> [2022/8/9 閲覧].</li>
+</ul>
+</div>
+</body>
+</html>
