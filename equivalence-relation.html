@@ -46,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/10/2<br>
-updated on 2022/10/2
+updated on 2022/10/3
 </p>
 
 <p id="335">&nbsp;</p><div class="def">
@@ -63,11 +63,71 @@ updated on 2022/10/2
 
 <p id="336">&nbsp;</p><div class="def">
 	<b>[#336] 定義：同値類，商空間</b><br>
-	<p> $\sim$ を $X$ 上の同値関係$\nr{relation}{335}$ とする．このとき</p>
+	<p> $\sim$ を $X$ 上の同値関係$\nr{equivalence-relation}{335}$ とする．このとき $X$ の部分集合</p>
 	<p><center>\begin{align}
 		C(x) := \{y\in X\,|\,y\sim x\}
 		\end{align}</center></p>
 	<p>を $x$ を含む【同値類 (equivalence class)】と呼び，$x$ を $C(x)$ の【代表元 (representative element)】と呼ぶ．各 $C(x)$ を元とする集合族 $X/\!\sim$ を $X$ の $\sim$ による【商空間 (quotient space)】或いは【類別空間 (classifying space)】と呼ぶ．</p>
+</div>
+<br>
+
+<p id="359">&nbsp;</p><div class="prp">
+	<b>[#359] 命題：同値類はその代表元を含む</b><br>
+	<p>集合 $X$ 上のある同値関係$\nr{equivalence-relation}{335}$ に関する $x\in X$ の同値類$\nr{equivalence-relation}{336}$ $C(x)$ に対して</p>
+	<p><center>\begin{align}
+		{}^\forall a\in X,\ a\in C(a).
+		\end{align}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>同値関係 $\sim$ は反射律を満たす$\nr{equivalence-relation}{335}$ ので，任意の $a\in X$ に対して $a\sim a$ である．つまり，同値類の定義より $a\in C(a).$
+</details>
+<br>
+
+<p id="360">&nbsp;</p><div class="prp">
+	<b>[#360] 命題：同値類の取り方は任意</b><br>
+	<p>集合 $X$ 上のある同値関係$\nr{equivalence-relation}{335}$ に関する $x\in X$ の同値類$\nr{equivalence-relation}{336}$ $C(x)$ に対して</p>
+	<p><center>\begin{align}
+		a\sim b\ \Longleftrightarrow\ C(a)=C(b).
+		\end{align}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
+<p id="361">&nbsp;</p><div class="prp">
+	<b>[#361] 命題：同値類たちは互いに素</b><br>
+	<p>集合 $X$ 上のある同値関係$\nr{equivalence-relation}{335}$ に関する $x\in X$ の同値類$\nr{equivalence-relation}{336}$ $C(x)$ に対して</p>
+	<p><center>\begin{align}
+		C(a) \not =C(b)\ \Longleftrightarrow\ C(a)\cap C(b) = \emptyset.
+		\end{align}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
+<p id="362">&nbsp;</p><div class="prp">
+	<b>[#362] 命題：同値類たちの直和</b><br>
+	<p>集合 $X$ 上のある同値関係$\nr{equivalence-relation}{335}$ に関する $x\in X$ の同値類$\nr{equivalence-relation}{336}$ $C(x)$ に対して</p>
+	<p><center>\begin{align}
+		\bigcup_{x\in X} C(x) = X.
+		\end{align}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+</details>
+<br>
+
+<p id="363">&nbsp;</p><div class="def">
+	<b>[#363] 定義：商写像，誘導写像</b><br>
+	<p>集合 $X$ 上のある同値関係$\nr{equivalence-relation}{335}$ に対し，写像</p>
+	<p><center>\begin{align}
+		\pi: X\longrightarrow X/\!\sim
+		\end{align}</center></p>
+	<p>を $X$ の $\sim$ による【商写像 (quotient map)】或いは【標準射影 (canonical projection)】或いは【自然な射影 (natural projection)】と呼ぶ．<br>
+		また，写像 $f: X\to Y$ が，ある写像 $\tilde{f}: X/\!\sim\, \to Y$ と $\pi$ の合成写像$\nr{map}{102}$ $f= \tilde{f}\circ \pi$ で表せるとき，$\tilde{f}$ を $f$ の【誘導写像 (induced map)】と呼ぶ．</p>
 </div>
 <br>
 
@@ -81,6 +141,7 @@ updated on 2022/10/2
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2022/">桂田祐史: 数理リテラシー (2022年度) Part IV. 同値関係</a> [2022/10/1 閲覧].</li>
 	<li><a href="https://www.math.nagoya-u.ac.jp/~yanagida/16W/yanagida-2W16-05.pdf">柳田伸太郎: 2W数学演習V・VI 同値関係と商集合, 公開pdf</a> [2022/8/9 閲覧].</li>
 	<li><a href="https://mathlandscape.com/equiv-relation/">同値関係の定義と重要な具体例5つ - 数学の景色</a> [2022/8/9 閲覧].</li>
+	<li><a href="https://mathrelish.com/mathematics/quotient-topological-space">商位相とは - Math Relish</a> [2022/10/3 閲覧].</li>
 </ul>
 </div>
 </body>
