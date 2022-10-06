@@ -43,7 +43,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/1/27<br>
-updated on 2022/9/6
+updated on 2022/10/6
 </p>
 	  
 <p id="10">&nbsp;</p><div class="def">
@@ -69,13 +69,13 @@ updated on 2022/9/6
 </Details>
 <br>
     
-<p id="45">&nbsp;</p><div class="prp">
-	<b>[#45] 命題：冪集合は $\bs{\sigma}$ 加法族</b><br>
-	<p>組 $(\varOmega,\,2^{\varOmega})$ は可測空間．すなわち，$2^{\varOmega}$ は $\varOmega$ 上の $\sigma$ 加法族である．</p>
+<p id="45">&nbsp;</p><div class="exm">
+	<b>[#45] 例：冪集合は $\bs{\sigma}$ 加法族</b><br>
+	<p>組 $(\varOmega,\,2^{\varOmega})$ は可測空間．すなわち，$\varOmega$ の冪集合$\nr{set}{194}$ $2^{\varOmega}$ は $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
 <Details>
     <summary>証明</summary>
-	<p>$2^{\varOmega} = \{A\,|\,A\subset \varOmega\}$ であることに注意して，$\sigma$ 加法族の定義 <a href="#10">[#10]</a> に沿って示す．</p>
+	<p>$2^{\varOmega} = \{A\,|\,A\subset \varOmega\}$ であることに注意して，$\sigma$ 加法族の定義$\nr{sigma-algebra}{10}$ に沿って示す．</p>
 	<ul class="defl">
 		<li> $A\in 2^\varOmega$ とすれば，$A^\cpl = \varOmega\setminus A\subset\varOmega$ であるから，$A^\cpl\in\ 2^\varOmega.$</li>
 		<li> $\{A_i\}_{i\in\mathbb{N}}\subset 2^\varOmega$ とすれば，すべての $i\in\mathbb{N}$ に対して $A_i\subset\varOmega$ であることから，$\bcu_{i\in\mathbb{N}}A_i\subset\varOmega$，すなわち $\bcu_{i\in\mathbb{N}}A_i\in 2^\varOmega.$</li>
@@ -83,13 +83,13 @@ updated on 2022/9/6
 </Details>
 <br>
 	  
-<p id="82">&nbsp;</p><div class="prp">
-	<b>[#82] 命題：最小の $\bs{\sigma}$ 加法族</b><br>
+<p id="82">&nbsp;</p><div class="exm">
+	<b>[#82] 例：最小の $\bs{\sigma}$ 加法族</b><br>
 	<p>組 $(\varOmega,\,\{\emptyset,\,\varOmega\})$ は可測空間．すなわち，$\{\emptyset,\,\varOmega\}$ は $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
 <Details>
 	<summary>証明</summary>
-	<p>$\sigma$ 加法族の定義 <a href="#10">[#10]</a> に沿って示す．</p>
+	<p>$\sigma$ 加法族の定義$\nr{sigma-algebra}{10}$ に沿って示す．</p>
 	<ul class="defl">
 		<li> $\emptyset = \varOmega^\cpl$ より従う．</li>
 		<li> 部分集合列 $\{A_i\}_{i\in\mathbb{N}}\subset \{\emptyset,\,\varOmega\}$ を考える．$A_i$ たちがすべて $\emptyset$ ならば，
@@ -100,10 +100,14 @@ updated on 2022/9/6
 	</ul>
 </Details>
 <Details>
-	<summary>補足</summary>
-	<p>全体集合 $\varOmega$ 上の $\sigma$ 加法族 $\mathcal{F}$ は必ず空集合 $\emptyset$ と全体集合 $\varOmega$ を持つ <a href="#11">[#11]</a>．
+	<summary>補足１</summary>
+	<p>全体集合 $\varOmega$ 上の $\sigma$ 加法族 $\mathcal{F}$ は必ず空集合 $\emptyset$ と全体集合 $\varOmega$ を持つ$\nr{sigma-algebra}{11}$．
 		この事実から，集合族 $\{\emptyset,\,\varOmega\}$ は最も小さい $\varOmega$ の $\sigma$ 加法族であるといえる．</p>
 </Details>
+<details>
+	<summary>補足２</summary>
+	<p>冪集合$\nr{sigma-algebra}{45}$ $2^\varOmega$ とこの $\{\emptyset,\ \varOmega\}$ は「自明な $\sigma$ 加法族」と呼ばれている．</p>
+</details>
 <br>
 	  
 <p id="41">&nbsp;</p><div class="prp">
@@ -248,7 +252,7 @@ updated on 2022/9/6
 </div>
 <details>
 	<summary>補足</summary>
-	<p> $\varOmega$ の冪集合 $2^\varOmega$ は $\mathcal{E}\subset 2^\varOmega$ で $\varOmega$ 上の $\sigma$ 加法族である$\nr{sigma-algebra}{45}$ から，$2^\varOmega \in\mathfrak{S}$．よって，$\mathfrak{S}$ は空でない．</p>
+	<p> $\varOmega$ の冪集合$\nr{set}{194}$ $2^\varOmega$ は $\mathcal{E}\subset 2^\varOmega$ で $\varOmega$ 上の $\sigma$ 加法族である$\nr{sigma-algebra}{45}$ から，$2^\varOmega \in\mathfrak{S}$．よって，$\mathfrak{S}$ は空でない．</p>
 </details>
 <br>
 
