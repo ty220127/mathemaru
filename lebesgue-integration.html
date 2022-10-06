@@ -1,42 +1,55 @@
-
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
-		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
-		intgrl: '\\displaystyle\\int',
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 	}}});
 </script>
 <script>
 	const ttl = "Lebesgue 積分"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
 
 <body>
-<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
-<p style="text-align:right;">
-established on 2022/1/31<br>
-updated on 2022/5/17
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/5/8<br>
+updated on 2022/10/6
 </p>
    
-<div class="def" id="44">
+<p id="44">&nbsp;</p><div class="def">
 <b>[#44] 定義：非負単関数の Lebesgue 積分</b><br>
 	<p>可測集合列 $\{A_k\}_{k=1}^{n}$ が普遍集合 $\varOmega$ の分割 <a href="mutually-disjoint.html#197">[#197]</a> になっているとする．これと非負な数列 $\{a_k\}_{k=1}^{n}$ により定義される単関数 <a href="simple-function.html#159">[#159]</a> $\varphi(x) = \sum_{k=1}^{n} a_n\mathbf{1}_{A_n}(x)$ に対して，積分を以下のように定義する：</p>
 	<p><center>$\begin{align*}
@@ -47,27 +60,48 @@ updated on 2022/5/17
 	<summary>補足</summary>
 	<p>この積分を  $\intgrl_{\varOmega}\varphi(x)\rd\mu(x),\,\intgrl_{\varOmega}\varphi(x)\mu(\rd x)$ と表記することもある．</p>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="162">
+<p id="367">&nbsp;</p><div class="exm">
+<b>[#367] 命題：指示関数の Lebesgue 積分</b><br>
+	<p> 集合 $A\subset\varOmega$ の指示関数$\nr{indicator-function}{158}$ を $\mathbf{1}_A(x)$ とすれば</p>
+	<p><center>$\begin{align*}
+		\int_{\varOmega}\mathbf{1}_A(x)\rd \mu = \mu(A).
+		\end{align*}$</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p>指示関数は，以下のように非負単関数$\nr{simple-function}{159}$ と捉えることができる：</p>
+	<p><center>\begin{align}
+		\mathbf{1}_A(x) = 0\cdot \mathbf{1}_{A^\cpl}(x) + 1\cdot \mathbf{1}_{A}(x),
+		\end{align}</center></p>
+	<p>ここで，$\{A,\ A^\cpl\}$ が $\varOmega$ の分割であることに基づいている．よって，非負単関数として Lebesgue 積分でき，</p>
+	<p><center>\begin{align}
+		\intgrl_{\varOmega}\mathbf{1}_A(x) \rd\mu =&\, \intgrl_{\varOmega}(0\cdot \mathbf{1}_{A^\cpl}(x) + 1\cdot \mathbf{1}_{A}(x)) \rd\mu\\
+			=&\, 0\cdot \mu(A^\cpl) + 1\cdot \mu(A) = \mu(A). 
+		\end{align}</center></p>
+</details>
+<br>
+
+<p id="162">&nbsp;</p><div class="prp">
 <b>[#162] 命題：単調収束定理 (monotone convergence theorem)</b><br>
 	<p> $(X,\,\mathcal{F},\,\mu)$ を測度空間とする．$X$ 上の非負の可測関数 $\{f_n\}_{n\in\mathbb{N}}$ が増大列で，かつある $X$ 上の可測関数 $f$ が存在して $f_n\rightarrow f$ であるとき，</p>
 	<p><center>$\begin{align*}
 		\lim_{n\rightarrow\infty}\int_{X}f_n(x)\rd \mu = \int_{X}f(x)\rd \mu \left(= \int_{X}\lim_{n\rightarrow\infty}f_n(x)\rd \mu\right).
 		\end{align*}$</center></p>
 </div>
-<br><br>
+<br>
 
-<div class="prp" id="156">
+<p id="156">&nbsp;</p><div class="prp">
 <b>[#156] 命題：<ruby><rb>Fatou</rb><rp>（</rp><rt>ファトゥー</rt><rp>）</rp></ruby> の補題</b><br>
 	<p>非負の可測関数 $\{f_n\}_{n\in\mathbb{N}}$ に対して</p>
 	<p><center>$\begin{align*}
 		\int_{X}\underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\ f_n(x)\rd \mu \leq \underset{n\rightarrow\infty}{\mathrm{lim\,inf}}\int_{X}f(x)\rd \mu.
 		\end{align*}$</center></p>
 </div>
-<br><br>
+<br>
 
-<div class="prp" id="157">
+<p id="157">&nbsp;</p><div class="prp">
 <b>[#157] 命題：Lebesgue の優収束定理 (Lebesgue's dominated convergence theorem)</b><br>
 	<p>$L(X)$ の関数列 $\{f_n\}_{n\in\mathbb{N}}$ が次の２つの条件を満たすとする：</p>
 	<ul class="defl">
@@ -84,8 +118,9 @@ updated on 2022/5/17
 		\end{align*}$</center></p>
 	<p>ここで，関数 $g$ は【優関数 (dominated function)】と呼ばれる．
 </div>
-<br><br>
+<br>
 
+<br><br>
 <div id="bib">
 <b>参考文献</b>
 	<ul>
@@ -101,7 +136,7 @@ updated on 2022/5/17
 <div id="bib">
 <b>その他参考コンテンツ</b>
 <center>
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">lim, ∫, Σ, d/dxが交換できる条件をまとめました。全ての組合せ(∫と∫の交換等、同じ記号同士も含む10通り)に対応しています。<br><br>Σは数え上げ測度に関する積分、微分は差分商の極限と見れば、∫やlimとの交換に帰着できる場合も多いです。<br>最低限、ルベーグの収束定理とフビニの定理は押さえましょう <a href="https://t.co/eC4Rp84mgT">pic.twitter.com/eC4Rp84mgT</a></p>&mdash; 佐久間 (@keisankionwykip) <a href="https://twitter.com/keisankionwykip/status/1320577083337129991?ref_src=twsrc%5Etfw">October 26, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">lim, ∫, Σ, d/dxが交換できる条件をまとめました。全ての組合せ(∫と∫の交換等、同じ記号同士も含む10通り)に対応しています。<br>Σは数え上げ測度に関する積分、微分は差分商の極限と見れば、∫やlimとの交換に帰着できる場合も多いです。<br>最低限、ルベーグの収束定理とフビニの定理は押さえましょう <a href="https://t.co/eC4Rp84mgT">pic.twitter.com/eC4Rp84mgT</a></p>&mdash; 佐久間 (@keisankionwykip) <a href="https://twitter.com/keisankionwykip/status/1320577083337129991?ref_src=twsrc%5Etfw">October 26, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
 	      
 </div>
