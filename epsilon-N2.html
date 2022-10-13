@@ -1,98 +1,172 @@
-
-   <link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
-  <head>
+<head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
-      MathJax.Hub.Config({ TeX: { Macros: { 
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		intgrl: '\\displaystyle\\int',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
-      }}});
-    </script>
-    <title>漸近記法｜演習問題集</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-    <style>
-    </style>
-  </head>
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "数列の収束"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
 
 <body>
-<center><div id="titlehead">数列の収束</div></center>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
 
-<p style="text-align:right;">
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/1/29<br>
-updated on 2022/4/23
+updated on 2022/10/13
 </p>
         
-<div class="def" id="8">
-	<b>[#8] 定義：数列の収束</b><br>
-	<p> $\{a_n\}$ を実数の数列とする．$\alpha$ を実数としたとき，任意の $\varepsilon>0$ に対してある自然数 $N$ が存在して，</p>
-	<p><center>$n\geq N\,\,\Longrightarrow\,\,|a_n-\alpha|<\varepsilon$</center></p>
-	<p>を満たすならば，$\{a_n\}$ は $\alpha$ に【収束する (converge)】と云い，</p>
+<p id="8">&nbsp;</p><div class="def">
+	<b>[#8] 定義：数列の収束，極限</b><br>
+	<p> $\{a_n\}_{n\in\mathbb{N}}$ を実数の列$\nr{collection-family}{223}$ とする．$\alpha$ を実数として以下が成り立つことを，$\{a_n\}$ は $\alpha$ に【収束する (converge)】という：</p>
+	<p><center>\begin{align}
+		{}^\forall \varepsilon \gt 0,\ \left[{}^\exists N\in\mathbb{N}\,\, \text{s.t.}\ {}^\forall n\in \mathbb{N},\ \left[ n\geq N\,\to\,|a_n-\alpha|<\varepsilon\right]\right].
+		\end{align}</center></p>
+	<p>$\{a_n\}$ が $\alpha$ に収束することを
 	<p><center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \alpha\,$ 或いは $\,a_n\rightarrow\alpha\,(n\rightarrow\infty)$</center></p>
-	<p>と書く．</p>
+	<p>などと書く．また，この $\alpha$ を $\{a_n\}$ の【極限 (limit)】或いは【極限値 (limit value)】と呼ぶ．</p>
 </div>
-<br><br>
+<br>
     
-<div class="prp" id="9">
-	<b>[#9] 命題：収束する数列の例</b><br>
+<p id="9">&nbsp;</p><div class="exm">
+	<b>[#9] 例：収束する数列</b><br>
 	<p>$\limit_{n\rightarrow\infty}\fraction{\,1\,}{\,n\,} = 0$.</p>
 </div>
 <Details>
 	<summary>証明</summary>
 </Details>
-<br><br>
+<br>
     
-<div class="prp" id="35">
-	<b>[#35] 命題：収束する数列の例</b><br>
+<p id="35">&nbsp;</p><div class="exm">
+	<b>[#35] 例：収束する数列の例</b><br>
 	<p>$k$ を定数として，$\limit_{n\rightarrow\infty}\fraction{\,n\,}{\,n+k\,} = 1.$</p>
 </div>
 <Details>
 	<summary>証明</summary>
 </Details>
-<br><br>
+<br>
     
-<div class="prp" id="36">
+<p id="371">&nbsp;</p><div class="prp">
+	<b>[#371] 命題：極限値の一意性</b><br>
+	<p>任意の数列 $\{a_n\}_{n\in\mathbb{N}}$ に対し，その極限は一意である：</p>
+	<p><center>\begin{align}
+		\left(\lim_{n\to\infty}a_n= \alpha\right)\land \left(\lim_{n\to\infty}a_n= \beta\right) \ \Longleftrightarrow\ \alpha = \beta.
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p> $\alpha \gt \beta$ とする．いま，$\varepsilon = (\alpha -\beta)/2$ とすれば，極限の定義$\nr{epsilon-N2}{8}$ より，ある自然数 $N_1,\ N_2$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
+	<p><center>\begin{align}
+		&n\geq N_1 \ \Longrightarrow\ |a_n-\alpha |\lt \varepsilon,\\
+		&n\geq N_2 \ \Longrightarrow\ |a_n-\beta |\lt \varepsilon\\
+		\end{align}</center></p>
+	<p>が成り立つ．ここで，$N_{12} = \max\{N_1,\ N_2\}$ とおけば，</p>
+	<p><center>\begin{align}
+		&n\geq N_{12} \ \Longrightarrow\ (|a_n-\alpha |\lt \varepsilon)\land (|a_n-\beta |\lt \varepsilon)\\
+		\end{align}</center></p>
+	<p>が従う．この下では更に
+	<p><center>\begin{align}
+		|a_n-\alpha| + |a_n-\beta | \lt 2\varepsilon = \alpha -\beta\\
+		\end{align}</center></p>
+	<p>が成り立つ．一方，三角不等式より</p>
+	<p><center>\begin{align}
+		|a_n-\alpha| + |a_n-\beta | \gt |\alpha -a_n + a_n -\beta| = |\alpha -\beta|\\
+		\end{align}</center></p>
+	<p>が成り立つ．以上をまとめると</p>
+	<p><center>\begin{align}
+		|\alpha -\beta|\lt \alpha -\beta\\
+		\end{align}</center></p>
+	<p>となるが，これは矛盾である．つまり $\alpha\lt \beta$ は成り立たない．<br>
+		同様にして $\beta\lt \alpha$ も成立しないので，$\alpha = \beta$ である．</p>
+</Details>
+<br>
+    
+<p id="36">&nbsp;</p><div class="prp">
 	<b>[#36] 命題：収束する数列の定数倍</b><br>
 	<p>定数 $c$ に対して，$\limit_{n\rightarrow\infty}a_n = \alpha\,\,\Longrightarrow\,\,\limit_{n\rightarrow\infty}ca_n = c\alpha.$</p>
 </div>
 <Details>
 	<summary>証明</summary>
 </Details>
-<br><br>
+<br>
     
-<div class="prp" id="37">
+<p id="37">&nbsp;</p><div class="prp">
 	<b>[#37] 命題：収束する数列の絶対値</b><br>
 	<p>$\limit_{n\rightarrow\infty}a_n = \alpha\,\,\Longrightarrow\,\,\limit_{n\rightarrow\infty}|a_n| = |\alpha|.$</p>
 </div>
 <Details>
 	<summary>証明</summary>
 </Details>
-<br><br>
+<br>
     
-<div class="def" id="188">
-	<b>[#188] 定義：有界な数列</b><br>
-	<p>実数列 $\{a_n\}$ に対してある実数 $B\gt 0$ が存在して，</p>
-	<p><center>$n\in \mathbb{N},\,\,\,|a_n|\leq B$</center></p>
-	<p>を満たすならば，$\{a_n\}$ は【有界 (bounded)】であると云う．</center></p>
+<p id="188">&nbsp;</p><div class="def">
+	<b>[#188] 定義：上界，下界，有界</b><br>
+	<p>数列 $\{a_n\}$ に対してある実数 $B$ が存在して，</p>
+	<p><center>${}^\forall n\in \mathbb{N},\,\,\,a_n\leq B$</center></p>
+	<p>を満たすことを $\{a_n\}$ は【上に有界 (bounded from above)】であるといい，この $B$ を【上界 (upper bound)】と呼ぶ．</p>
+	<p>また，数列 $\{a_n\}$ に対してある実数 $b$ が存在して，
+	<p><center>${}^\forall n\in \mathbb{N},\,\,\,a_n\geq b$</center></p>
+	<p>を満たすことを $\{a_n\}$ は【下に有界 (bounded from below)】であるといい，この $b$ を【下界 (lower bound)】と呼ぶ．</p>
+	<p>更に，$\{a_n\}$ が上に有界でかつ下に有界であることを $\{a_n\}$ は【有界 (bounded)】という．</p>
 </div>
-<br><br>
+<br>
     
+<p id="372">&nbsp;</p><div class="prp">
+	<b>[#372] 命題：有界と極限</b><br>
+	<p>数列 $\{a_n\}$ に対して，$b,\ B\in \mathbb{R}$ がそれぞれ $\{a_n\}$ の下界，上界であるならば，</p>
+	<p><center>\begin{align}
+		b\leq \lim_{n\to\infty}a_n\leq B.
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+</Details>
+<br>
+    
+<br><br>
 <div id="bib">
 	<b>参考文献</b>
 	<ul>
 		<li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
+		<li>一樂重雄: 新版 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 		<li>加藤文元(監修): チャート式シリーズ 大学教養 微分積分, 数研出版 (2019).</li>
+		<li><a href="http://tau.doshisha.ac.jp/lectures/2009.calculus-I/html.dir/">近藤弘一: 解析学 I, 4.12 数列の有界性と単調性</a> [2022/10/13 閲覧].</li>
 		<li>原惟行, 松永秀章: イプシロン・デルタ論法 完全攻略, 共立出版 (2011).</li>
 		<li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
+		<li><a href="https://risalc.info/src/bounded.html">有界・上界・下界とは？ ～具体例と解説～ - 理数アラカルト</a> [2022/10/13 閲覧].</li>
 	</ul>
 </div>
 	  
