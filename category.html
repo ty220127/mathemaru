@@ -1,0 +1,104 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		definedas: '\\overset{\\mathrm{def}}{\\Longleftrightarrow}',
+		cpl: '\\mathrm{c}',
+		ob: '\\mathrm{ob}',
+		mol: '\\mathrm{mol}',
+		dom: '\\mathrm{dom}',
+		cod: '\\mathrm{cod}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "圏"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/10/13<br>
+updated on 2022/10/13
+</p>
+    
+<p id="368">&nbsp;</p><div class="def">
+	<b>[#368] 定義：圏</b><br>
+	<p>以下で定義される６つ組 $\mathcal{C} = (\mathrm{ob}\,\mathcal{C},\ \mathrm{mol}\,\mathcal{C},\ \mathrm{dom},\ \mathrm{cod},\ \mathrm{id},\ \circ)$ で，その下の条件 i, ii を満たすものを【圏 (category)】と呼ぶ：</p>
+	<ul>
+		<li> $\mathrm{ob}\,\mathcal{C}$ は集合$\nr{set}{48}$ であり，この要素を【対象 (object)】と呼ぶ．</li>
+		<li> $\mathrm{mol}\,\mathcal{C}$ は集合であり，この要素を 【射 (morphism)】と呼ぶ．</li>
+		<li> $\mathrm{dom}$ は $\mathrm{mol}\,\mathcal{C}$ から $\mathrm{ob}\,\mathcal{C}$ への写像$\nr{map}{99}$ であり，$f\in\mol\,\mathcal{C}$ に対して $\dom\,f$ を【始域 (domain)】と呼ぶ．</li>
+		<li> $\mathrm{cod}$ は $\mathrm{mol}\,\mathcal{C}$ から $\mathrm{ob}\,\mathcal{C}$ への写像であり，$f\in\mol\,\mathcal{C}$ に対して $\cod\,f$ を【終域 (codomain)】と呼ぶ．ここで，$A = \dom\,f$，$B = \cod\,f$ であることを $f: A\to B$ と書く．また，$f:A\to B$ なる射 $f\in \mol\,\mathcal{C}$ 全体の集合を $\mathrm{Hom}_{\mathcal{C}}(A,\,B)$ と書く．特に $\mathcal{C}$ が明らかな場合は単に $\mathrm{Hom}(A,\,B)$ と書く．</li>
+		<li> $\mathrm{id}$ は $\mathrm{ob}\,\mathcal{C}$ から $\mathrm{mol}\,\mathcal{C}$ への写像であり，$A\in \ob\,\mathcal{C}$ に対して $\mathrm{id}(A) =: \mathrm{id}_A$ は $\mathrm{id}_A : A\to A$ を満たす．これを $A$ の【恒等射 (identity)】と呼ぶ．</li>
+		<li> $\circ$ は $A,\ B,\ C\in \ob\,\mathcal{C}$ に対して以下で定義される写像：
+			<p><center>\begin{align}
+				\circ : \mathrm{Hom}(A,\,B)\times \mathrm{Hom}(B,\,C) \to \mathrm{Hom}(A,\,C),\quad (f,\,g)\mapsto g\circ f.
+				\end{align}</center></p>
+		$g\circ f$ は $f$ と $g$ の【合成 (composite)】と呼ばれる．</li>
+	</ul>
+	<ul class="defl">
+		<li>【結合律 (associative law)】$f\in\mathrm{Hom}(A,\,B),\ g\in\mathrm{Hom}(B,\,C),\ h\in\mathrm{Hom}(C,\,D)$ に対して
+			<p><center>\begin{align}
+			h\circ (g\circ f) = (h\circ g)\circ f \in \mathrm{Hom}(A,\,D).
+				\end{align}</center></p></li>
+		<li>【単位律 (identity law)】$f\in\mathrm{Hom}(A,\,B)$ に対して
+			<p><center>\begin{align}
+			1_{B}\circ f = f\circ 1_{A} \in \mathrm{Hom}(A,\,B).
+				\end{align}</center></p></li>
+	</ul>
+</div>
+<br>
+    
+<p id="369">&nbsp;</p><div class="def">
+	<b>[#369] 定義：引き込み，切断</b><br>
+	<p>$\mathcal{C}$ を圏とする．$A,\ B\in\ob\,\mathcal{C}$ に対し，射 $f: A\to B$ に対して $g\circ f = 1_{A}$ なる $g: B\to A$ が存在するとして，この $g$ を【引き込み (retraction)】と呼ぶ．また，$f\circ h= 1_{B}$ なる $h: B\to A$ が存在するとして，この $h$ を【切断 (section)】と呼ぶ．</div>
+<br>
+    
+<p id="370">&nbsp;</p><div class="def">
+	<b>[#370] 定義：可逆，逆射，同型射，同型</b><br>
+	<p>$\mathcal{C}$ を圏とする．$A,\ B\in\ob\,\mathcal{C}$ に対し，射 $f: A\to B$ が【可逆 (invertible)】とは，$f$ に対し引き込み$\nr{category}{369}$ かつ切断$\nr{category}{369}$ となる射 $g: B\to A$ が存在することをいう．ここで，$g$ を $f$ の【逆射 (inverse)】と呼び $f^{-1}$ と書く．また可逆な射を【同型射 (isomorphism)】と呼ぶ．さらに，$\mathrm{Hom}(A,\,B)$ が同型射をもつことを $A$ と $B$ は【同型 (isomorphic)】であるといい，$A\simeq B$ などと書く．</div>
+<br>
+    
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://www.math.nagoya-u.ac.jp/~hasimoto/LN.html">橋本光靖: 圏と関手入門</a> [2022/10/13 閲覧].</li>
+	<li><a href="https://www.math.s.chiba-u.ac.jp/~matsu/math/">松田茂樹: 圏と関手</a> [2022/10/13 閲覧].</li>
+	<li><a href="https://choreographlife.jp/pdf/intro.pdf">森田真生: 哲学者のための圏論入門</a> [2022/10/13 閲覧].</li>
+</ul>
+</div>
+</body>
+</html>
