@@ -23,7 +23,7 @@
 		definedas: '\\overset{\\mathrm{def}}{\\Longleftrightarrow}',
 		cpl: '\\mathrm{c}',
 		ob: '\\mathrm{ob}',
-		mol: '\\mathrm{mol}',
+		mor: '\\mathrm{mor}',
 		dom: '\\mathrm{dom}',
 		cod: '\\mathrm{cod}',
 		trp: '\\mathsf{T}',
@@ -56,13 +56,13 @@ updated on 2022/10/13
     
 <p id="368">&nbsp;</p><div class="def">
 	<b>[#368] 定義：圏</b><br>
-	<p>以下で定義される６つ組 $\mathcal{C} = (\mathrm{ob}\,\mathcal{C},\ \mathrm{mol}\,\mathcal{C},\ \mathrm{dom},\ \mathrm{cod},\ \mathrm{id},\ \circ)$ で，その下の条件 i, ii を満たすものを【圏 (category)】と呼ぶ：</p>
+	<p>以下で定義される６つ組 $\mathcal{C} = (\mathrm{ob}\,\mathcal{C},\ \mathrm{mor}\,\mathcal{C},\ \mathrm{dom},\ \mathrm{cod},\ \mathrm{id},\ \circ)$ で，その下の条件 i, ii を満たすものを【圏 (category)】と呼ぶ：</p>
 	<ul>
 		<li> $\mathrm{ob}\,\mathcal{C}$ は集合$\nr{set}{48}$ であり，この要素を【対象 (object)】と呼ぶ．</li>
-		<li> $\mathrm{mol}\,\mathcal{C}$ は集合であり，この要素を 【射 (morphism)】と呼ぶ．</li>
-		<li> $\mathrm{dom}$ は $\mathrm{mol}\,\mathcal{C}$ から $\mathrm{ob}\,\mathcal{C}$ への写像$\nr{map}{99}$ であり，$f\in\mol\,\mathcal{C}$ に対して $\dom\,f$ を【始域 (domain)】と呼ぶ．</li>
-		<li> $\mathrm{cod}$ は $\mathrm{mol}\,\mathcal{C}$ から $\mathrm{ob}\,\mathcal{C}$ への写像であり，$f\in\mol\,\mathcal{C}$ に対して $\cod\,f$ を【終域 (codomain)】と呼ぶ．ここで，$A = \dom\,f$，$B = \cod\,f$ であることを $f: A\to B$ と書く．また，$f:A\to B$ なる射 $f\in \mol\,\mathcal{C}$ 全体の集合を $\mathrm{Hom}_{\mathcal{C}}(A,\,B)$ と書く．特に $\mathcal{C}$ が明らかな場合は単に $\mathrm{Hom}(A,\,B)$ と書く．</li>
-		<li> $\mathrm{id}$ は $\mathrm{ob}\,\mathcal{C}$ から $\mathrm{mol}\,\mathcal{C}$ への写像であり，$A\in \ob\,\mathcal{C}$ に対して $\mathrm{id}(A) =: \mathrm{id}_A$ は $\mathrm{id}_A : A\to A$ を満たす．これを $A$ の【恒等射 (identity)】と呼ぶ．</li>
+		<li> $\mathrm{mor}\,\mathcal{C}$ は集合であり，この要素を 【射 (morphism)】と呼ぶ．</li>
+		<li> $\mathrm{dom}$ は $\mathrm{mor}\,\mathcal{C}$ から $\mathrm{ob}\,\mathcal{C}$ への写像$\nr{map}{99}$ であり，$f\in\mor\,\mathcal{C}$ に対して $\dom\,f$ を【始域 (domain)】と呼ぶ．</li>
+		<li> $\mathrm{cod}$ は $\mathrm{mor}\,\mathcal{C}$ から $\mathrm{ob}\,\mathcal{C}$ への写像であり，$f\in\mor\,\mathcal{C}$ に対して $\cod\,f$ を【終域 (codomain)】と呼ぶ．ここで，$A = \dom\,f$，$B = \cod\,f$ であることを $f: A\to B$ と書く．また，$f:A\to B$ なる射 $f\in \mor\,\mathcal{C}$ 全体の集合を $\mathrm{Hom}_{\mathcal{C}}(A,\,B)$ と書く．特に $\mathcal{C}$ が明らかな場合は単に $\mathrm{Hom}(A,\,B)$ と書く．</li>
+		<li> $\mathrm{id}$ は $\mathrm{ob}\,\mathcal{C}$ から $\mathrm{mor}\,\mathcal{C}$ への写像であり，$A\in \ob\,\mathcal{C}$ に対して $\mathrm{id}(A) =: \mathrm{id}_A$ は $\mathrm{id}_A : A\to A$ を満たす．これを $A$ の【恒等射 (identity)】と呼ぶ．</li>
 		<li> $\circ$ は $A,\ B,\ C\in \ob\,\mathcal{C}$ に対して以下で定義される写像：
 			<p><center>\begin{align}
 				\circ : \mathrm{Hom}(A,\,B)\times \mathrm{Hom}(B,\,C) \to \mathrm{Hom}(A,\,C),\quad (f,\,g)\mapsto g\circ f.
