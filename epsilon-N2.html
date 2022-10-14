@@ -46,14 +46,14 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/1/29<br>
-updated on 2022/10/13
+updated on 2022/10/14
 </p>
         
 <p id="8">&nbsp;</p><div class="def">
 	<b>[#8] 定義：数列の収束，極限</b><br>
-	<p> $\{a_n\}_{n\in\mathbb{N}}$ を実数の列$\nr{collection-family}{223}$ とする．$\alpha$ を実数として以下が成り立つことを，$\{a_n\}$ は $\alpha$ に【収束する (converge)】という：</p>
+	<p> $\{a_n\}_{n\in\mathbb{N}}$ を実数列$\nr{collection-family}{223}$，$\alpha$ を実数とする．任意の正の数 $\varepsilon$ に対して適当な番号 $N(\varepsilon)$ を定めると，それ以上の自然数 $n$ に対して $|a_n-\alpha|\lt\varepsilon$ が成り立つとして，これを $\{a_n\}$ は $\alpha$ に【収束する (converge)】という：</p>
 	<p><center>\begin{align}
-		{}^\forall \varepsilon \gt 0,\ \left[{}^\exists N\in\mathbb{N}\,\, \text{s.t.}\ {}^\forall n\in \mathbb{N},\ \left[ n\geq N\,\to\,|a_n-\alpha|<\varepsilon\right]\right].
+		{}^\forall \varepsilon \gt 0,\ \left[{}^\exists N(\varepsilon)\in\mathbb{N}\,\, \text{s.t.}\ {}^\forall n\in \mathbb{N},\, \left[\,n\geq N(\varepsilon)\,\to\,|a_n-\alpha|<\varepsilon\right]\right].
 		\end{align}</center></p>
 	<p>$\{a_n\}$ が $\alpha$ に収束することを
 	<p><center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \alpha\,$ 或いは $\,a_n\rightarrow\alpha\,(n\rightarrow\infty)$</center></p>
@@ -63,20 +63,43 @@ updated on 2022/10/13
     
 <p id="9">&nbsp;</p><div class="exm">
 	<b>[#9] 例：収束する数列</b><br>
-	<p>$\limit_{n\rightarrow\infty}\fraction{\,1\,}{\,n\,} = 0$.</p>
+	<p>$\limit_{n\rightarrow\infty}\fraction{1}{n} = 0$.</p>
 </div>
-<Details>
+<details>
 	<summary>証明</summary>
-</Details>
+	<p> $\varepsilon\gt 0$ を任意に固定し，それに対し $N(\varepsilon) = \lfloor \varepsilon^{-1} \rfloor$ とおく．このとき，$N(\varepsilon) \geq \varepsilon^{-1}$ である．ここで，$n\geq N(\varepsilon)$ なる自然数 $n$ に対して</p>
+	<p><center>\begin{align}
+		\left|\fraction{1}{n}-0\right| = \fraction{1}{n} \lt \fraction{1}{N(\varepsilon)} \leq \varepsilon
+		\end{align}</center></p>
+	<p>が成り立つ．すなわち，$\limit_{n\rightarrow\infty}\fraction{1}{n} = 0$ である．</p>
+</details>
 <br>
     
 <p id="35">&nbsp;</p><div class="exm">
 	<b>[#35] 例：収束する数列の例</b><br>
 	<p>$k$ を定数として，$\limit_{n\rightarrow\infty}\fraction{\,n\,}{\,n+k\,} = 1.$</p>
 </div>
-<Details>
+<details>
 	<summary>証明</summary>
-</Details>
+	<p> $\varepsilon\gt 0$ を任意に固定し，それに対し
+	<p><center>\begin{align}
+		N(\varepsilon) = \max\left\{\left\lfloor \fraction{(1-\varepsilon)k}{\varepsilon} \right\rfloor,\ 0\right\} = \left\{\begin{array}{cc} \left\lfloor \fraction{(1-\varepsilon)k}{\varepsilon} \right\rfloor & (0\lt \varepsilon\leq 1) \\ 0 & (1\lt \varepsilon)\end{array}\right.
+		\end{align}</center></p>
+	<p>とおく．ここで，$n\geq N(\varepsilon)$ なる自然数 $n$ に対して</p>
+	<p><center>\begin{align}
+		\left|\fraction{n}{n+k}-1\right| = \left|-\fraction{k}{n+k}\right| = \fraction{k}{n+k}\leq \fraction{k}{N(\varepsilon)+k}.
+		\end{align}</center></p>
+	<p>$0\lt \varepsilon\leq 1$ に対して，</p>
+	<p><center>\begin{align}
+		\left|\fraction{n}{n+k}-1\right| &\leq \fraction{k}{N(\varepsilon)+k} = \fraction{k}{\left\lfloor \fraction{(1-\varepsilon)k}{\varepsilon} \right\rfloor+k}\\
+			&\leq \fraction{\varepsilon k}{(1-\varepsilon)k +\varepsilon k} =\varepsilon.
+		\end{align}</center></p>
+	<p>$\varepsilon \gt 1$ に対して，</p>
+	<p><center>\begin{align}
+		\left|\fraction{n}{n+k}-1\right| &\leq \fraction{k}{N(\varepsilon)+k} = \fraction{k}{0+k} = 1\lt \varepsilon.\\
+		\end{align}</center></p>
+	<p>よっていずれの場合においても $\limit_{n\rightarrow\infty}\fraction{n}{n+k} = 1.$
+</details>
 <br>
     
 <p id="371">&nbsp;</p><div class="prp">
