@@ -20,22 +20,6 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
 	line-height:3
 }
 
-#titlehead2{
-	font-size: 200%;
-	font-family: sans-serif;
-	font-weight: bold;
-	width: 100%;
-	position: fixed;
-	background: #abf;
-	top:0; left:0; padding:3px; opacity:.8;
-}
-
-#titlehead{
-	font-size: 200%;
-	font-family: sans-serif;
-	font-weight: bold;
-}
-
 #bib{
 }
 
