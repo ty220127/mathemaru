@@ -1,0 +1,85 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "超幾何関数"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/10/16<br>
+updated on 2022/10/16
+</p>
+        
+<p id="379">&nbsp;</p><div class="def">
+	<b>[#379] 定義：超幾何関数</b><br>
+	<p> $a,\ b,\ c,\ z\in\mathbb{C}$ に対して，以下で定義される関数 $F(a,\,b,\,c;\,z)$ を【超幾何関数 (hypergeometric function)】と呼ぶ：</p>
+	<p><center>\begin{align}
+		F(a,\,b,\,c;\,z) = \sum_{n=0}^{\infty}\fraction{(a)_n(b)_n}{(c)_n}\fraction{z^n}{n!}.
+		\end{align}</center></p>
+	<p>ただし，$w\in\mathbb{C}$ に対して $(w)_n$ は【<ruby><rb>Pochhammer</rb><rp>(</rp><rt>ポッホハマー</rt><rp>)</rp></ruby> 記号 (Pochhammer symbol)】であり，以下で与えられている：</p>
+	<p><center>\begin{align}
+		(w)_n = \prod_{j=0}^{n-1} (w+j) = w(w+1)\cdots (w+n-1).
+		\end{align}</center></p>
+</div>
+<br>
+
+<p id="380">&nbsp;</p><div class="prp">
+	<b>[#380] 定義：超幾何関数の積分表示</b><br>
+	<p> 超幾何関数 $F$ は $a,\ b,\ c,\ z\in\mathbb{C}$ に対して</p>
+	<p><center>\begin{align}
+		F(a,\,b,\,c;\,z) = \fraction{\varGamma(c)}{\varGamma(a)\varGamma(c-a)}\int_{0}^{1}t^{a-1}(1-t)^{c-a-1}(1-tz)^{-b} dt
+		\end{align}</center></p>
+	<p>を満たす．ただし $\varGamma$ はガンマ関数$\nr{gamma-function}{376}$．</p>
+</div>
+<br>
+
+<br><br>
+<div id="bib">
+	<b>参考文献</b>
+	<ul>
+		<li><a href="https://mathlog.info/articles/1980">超幾何関数のいろいろな公式 - Mathlog</a> [2022/10/16 閲覧].</li>
+		<li><a href="https://tsujimotter.hatenablog.com/entry/hypergeometric-function-and-connection-problem">超幾何関数の積分表示と接続問題 - tsujimotterのノートブック</a> [2022/10/16 閲覧].</li>
+		<li><a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%83%E3%83%9B%E3%83%8F%E3%83%9E%E3%83%BC%E8%A8%98%E5%8F%B7">ポッホハマー記号 - Wikipedia</a> [2022/10/16 閲覧].</li>
+	</ul>
+</div>
+</body>
+</html>
