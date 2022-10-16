@@ -46,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/1/29<br>
-updated on 2022/10/15
+updated on 2022/10/16
 </p>
         
 <p id="8">&nbsp;</p><div class="def">
@@ -124,14 +124,14 @@ updated on 2022/10/15
 </div>
 <Details>
 	<summary>証明</summary>
-	<p> $\alpha \gt \beta$ とする．いま，$\varepsilon = (\alpha -\beta)/2$ とすれば，極限の定義$\nr{epsilon-N2}{8}$ より，ある自然数 $N_1,\ N_2$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
+	<p> $\alpha \gt \beta$ とする．いま，$\varepsilon = (\alpha -\beta)/2$ に対して，極限の定義$\nr{epsilon-N2}{8}$ より，ある自然数 $N_1(\varepsilon),\ N_2(\varepsilon)$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
-		&n\geq N_1 \ \Longrightarrow\ |a_n-\alpha |\lt \varepsilon,\\
-		&n\geq N_2 \ \Longrightarrow\ |a_n-\beta |\lt \varepsilon\\
+		&n\geq N_1(\varepsilon) \ \Longrightarrow\ |a_n-\alpha |\lt \varepsilon,\\
+		&n\geq N_2(\varepsilon) \ \Longrightarrow\ |a_n-\beta |\lt \varepsilon\\
 		\end{align}</center></p>
-	<p>が成り立つ．ここで，$N_{12} = \max\{N_1,\ N_2\}$ とおけば，</p>
+	<p>が成り立つ．ここで，$N_{12}(\varepsilon) = \max\{N_1(\varepsilon),\ N_2(\varepsilon)\}$ とおけば，</p>
 	<p><center>\begin{align}
-		&n\geq N_{12} \ \Longrightarrow\ (|a_n-\alpha |\lt \varepsilon)\land (|a_n-\beta |\lt \varepsilon)\\
+		&n\geq N_{12}(\varepsilon) \ \Longrightarrow\ (|a_n-\alpha |\lt \varepsilon)\land (|a_n-\beta |\lt \varepsilon)\\
 		\end{align}</center></p>
 	<p>が従う．この下では更に
 	<p><center>\begin{align}
@@ -145,13 +145,13 @@ updated on 2022/10/15
 	<p><center>\begin{align}
 		|\alpha -\beta|\lt \alpha -\beta\\
 		\end{align}</center></p>
-	<p>となるが，これは矛盾である．つまり $\alpha\lt \beta$ は成り立たない．<br>
-		同様にして $\beta\lt \alpha$ も成立しないので，$\alpha = \beta$ である．</p>
+	<p>となるが，これは矛盾である．つまり $\alpha\gt \beta$ は成り立たない．<br>
+		同様にして $\alpha\lt \beta$ も成立しないので，$\alpha = \beta$ である．</p>
 </Details>
 <br>
     
 <p id="374">&nbsp;</p><div class="prp">
-	<b>[#374] 命題：和の極限は極限の和</b><br>
+	<b>[#374] 命題：極限の和は和の極限</b><br>
 	<p>極限を持つ数列 $\{a_n\},\ \{b_n\}$ に対して</p>
 	<p><center>\begin{align}
 		\lim_{n\to\infty} (a_n +b_n) = \lim_{n\to\infty}a_n + \lim_{n\to\infty}b_n.
@@ -164,7 +164,7 @@ updated on 2022/10/15
 		n\geq M_1(\eta)\ &\Longrightarrow\ |a_n-\alpha |\lt \eta,\\
 		n\geq M_2(\eta)\ &\Longrightarrow\ |b_n-\beta |\lt \eta
 		\end{align}</center></p>
-	<p>が成り立つ．ここで，$\varepsilon\gt 0$ を任意に固定して，自然数 $N(\varepsilon)$　を</p>
+	<p>が成り立つ．ここで，$\varepsilon\gt 0$ を任意に固定して，自然数 $N(\varepsilon)$ を</p>
 	<p><center>\begin{align}
 		N(\varepsilon) = \max\left\{M_1\left(\fraction{\varepsilon}{2}\right),\ M_2\left(\fraction{\varepsilon}{2}\right)\right\}
 		\end{align}</center></p>
@@ -193,13 +193,13 @@ updated on 2022/10/15
 	<summary>証明</summary>
 	<p>$\lim_{n\to\infty} a_n = \alpha$ とする．このとき，極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\eta \gt 0$ に対して $M(\eta)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
-		n\geq M(\eta)\ &\Longrightarrow\ |ca_n-c\alpha |\lt \eta
+		n\geq M(\eta)\ &\Longrightarrow\ |a_n-\alpha |\lt \eta
 		\end{align}</center></p>
-	<p>が成り立つ．ここで $\varepsilon \gt 0$ を任意に固定し，自然数 $N$ を</p>
+	<p>が成り立つ．ここで $\varepsilon \gt 0$ を任意に固定し，自然数 $N(\varepsilon)$ を</p>
 	<p><cetner>\begin{align}
 		N(\varepsilon) = M\left(\fraction{\varepsilon}{|c|}\right)
 		\end{align}</center></p>
-	<p>で定める．このとき，$n\geq N(\varepsilon)$ に対して</p>
+	<p>で定める．すると $n\geq N(\varepsilon)$ に対して</p>
 	<p><center>\begin{align}
 		|ca_n-c\alpha| &= |c||a_n-\alpha|\leq |c|\fraction{\varepsilon}{|c|} = \varepsilon
 		\end{align}</center></p>
@@ -208,11 +208,25 @@ updated on 2022/10/15
 <br>
     
 <p id="37">&nbsp;</p><div class="prp">
-	<b>[#37] 命題：収束する数列の絶対値</b><br>
-	<p>$\limit_{n\rightarrow\infty}a_n = \alpha\,\,\Longrightarrow\,\,\limit_{n\rightarrow\infty}|a_n| = |\alpha|.$</p>
+	<b>[#37] 命題：絶対値の極限は極限の絶対値</b><br>
+	<p>極限を持つ数列 $\{a_n\}$ に対して</p>
+	<p><center>\begin{align}
+		\lim_{n\to\infty}|a_n| = \left| \lim_{n\to\infty}a_n\right|.
+		\end{align}</center></p>
 </div>
 <Details>
 	<summary>証明</summary>
+	<p>$\lim_{n\to\infty} a_n = \alpha$ とする．このとき，極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\varepsilon \gt 0$ に対して $N(\varepsilon)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
+	<p><center>\begin{align}
+		n\geq N(\varepsilon)\ &\Longrightarrow\ |a_n-\alpha |\lt \varepsilon
+		\end{align}</center></p>
+	<p>が成り立つ．このとき，三角不等式を用いれば，$n\geq N(\varepsilon)$ に対して</p>
+	<p><center>\begin{align}
+		\left| |a_n|-|\alpha| \right| &= \left| |a_n -\alpha +\alpha|-|\alpha| \right|\\
+			&\leq \left| |a_n-\alpha| + |\alpha| -|\alpha|\right|\\
+			&= |a_n-\alpha| \lt \varepsilon
+		\end{align}</center></p>
+	<p>がいえるから，題意は成立する．</p>
 </Details>
 <br>
     
@@ -240,6 +254,36 @@ updated on 2022/10/15
 </Details>
 <br>
     
+<p id="375">&nbsp;</p><div class="prp">
+	<b>[#375] 命題：はさみうちの定理</b><br>
+	<p>極限を持つ数列 $\{a_n\},\ \{b_n\},\ \{c_n\}$ が任意の $n\in\mathbb{N}$ に対して $a_n\leq b_n\leq c_n$ を満たすとする．このとき，$\alpha\in\mathbb{R}$ として</p>
+	<p><center>\begin{align}
+		\left(\lim_{n\to\infty} a_n = \alpha\right)\land \left(\lim_{n\to\infty}c_n =\alpha\right) \ \Longrightarrow\ \lim_{n\to\infty} b_n = \alpha.
+		\end{align}</center></p>
+</div>
+<Details>
+	<summary>証明</summary>
+	<p>極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\varepsilon \gt 0$ に対して $N_a(\varepsilon),\ N_c(\varepsilon)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
+	<p><center>\begin{align}
+		n\geq N_a(\varepsilon)\ &\Longrightarrow\ |a_n-\alpha |\lt \varepsilon,\\
+		n\geq N_c(\varepsilon)\ &\Longrightarrow\ |c_n-\alpha |\lt \varepsilon
+		\end{align}</center></p>
+	<p>が成り立つ．上記命題の各右辺の絶対値を外せば</p>
+	<p><center>\begin{align}
+		n\geq N_a(\varepsilon)\ &\Longrightarrow\ \alpha -\varepsilon \lt a_n\lt \alpha + \varepsilon,\\
+		n\geq N_c(\varepsilon)\ &\Longrightarrow\ \alpha -\varepsilon \lt c_n\lt \alpha + \varepsilon 
+		\end{align}</center></p>
+	<p>と書き換えることができる．ここで，$N_b(\varepsilon) = \max\{N_a(\varepsilon),\ N_b(\varepsilon)\}$ とおくと，$n\geq N_b(\varepsilon)$ に対して $n\geq N_a(\varepsilon)$ かつ $n\geq N_c(\varepsilon)$ であるから，上記命題が同時に成り立つ．この下で仮定を用いれば，</p>
+	<p><center>\begin{align}
+		\alpha-\varepsilon \lt a_n\leq b_n\leq c_n\lt \alpha + \varepsilon
+		\end{align}</center></p>
+	<p>がいえる．つまり</p>
+	<p><center>\begin{align}
+		n\geq N_b(\varepsilon)\ &\Longrightarrow\ |b_n-\alpha |\lt \varepsilon.\\
+		\end{align}</center></p>
+</Details>
+<br>
+    
 <br><br>
 <div id="bib">
 	<b>参考文献</b>
@@ -247,7 +291,7 @@ updated on 2022/10/15
 		<li>E. Hairer, G. Wanner: Analysis by Its History, Springer (1996).</li>
 		<li>一樂重雄: 新版 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 		<li>加藤文元(監修): チャート式シリーズ 大学教養 微分積分, 数研出版 (2019).</li>
-		<li><a href="http://tau.doshisha.ac.jp/lectures/2009.calculus-I/html.dir/">近藤弘一: 解析学 I, 4.12 数列の有界性と単調性</a> [2022/10/13 閲覧].</li>
+		<li><a href="http://tau.doshisha.ac.jp/lectures/2009.calculus-I/html.dir/">近藤弘一: 解析学 I, web テキスト</a> [2022/10/13 閲覧].</li>
 		<li>原惟行, 松永秀章: イプシロン・デルタ論法 完全攻略, 共立出版 (2011).</li>
 		<li><a href="https://mathlandscape.com/eps-n/">イプシロンエヌ論法をわかりやすく丁寧に～数列の極限の定義～ | 数学の景色</a></li>
 		<li><a href="https://risalc.info/src/bounded.html">有界・上界・下界とは？ ～具体例と解説～ - 理数アラカルト</a> [2022/10/13 閲覧].</li>
