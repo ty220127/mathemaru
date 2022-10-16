@@ -1,0 +1,91 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "ガンマ関数"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/10/16<br>
+updated on 2022/10/16
+</p>
+        
+<p id="376">&nbsp;</p><div class="def">
+	<b>[#376] 定義：ガンマ関数</b><br>
+	<p> $x\gt 0$ に対して，以下で定義される関数 $\varGamma: [0,\ \infty)\to \mathbb{R}$ を【ガンマ関数 (gamma function)】と呼ぶ：</p>
+	<p><center>\begin{align}
+		\varGamma(x) = \int_{0}^{\infty} t^{x-1}e^{-t}\rd t.
+		\end{align}</center></p>
+</div>
+<br>
+
+<p id="377">&nbsp;</p><div class="prp">
+	<b>[#377] 命題：ガンマ関数の漸化式</b><br>
+	<p> ガンマ関数 $\varGamma$ は $x\gt 0$ に対して</p>
+	<p><center>\begin{align}
+		\varGamma(x+1) = x\varGamma(x)
+		\end{align}</center></p>
+	<p>を満たす．</p>
+</div>
+<br>
+
+<p id="378">&nbsp;</p><div class="prp">
+	<b>[#378] 命題：ガンマ関数は階乗の一般化</b><br>
+	<p> ガンマ関数 $\varGamma$ は $n\in\mathbb{N}$ に対して</p>
+	<p><center>\begin{align}
+		\varGamma(n) = (n-1)!
+		\end{align}</center></p>
+	<p>を満たす．</p>
+</div>
+<br>
+
+<br><br>
+<div id="bib">
+	<b>参考文献</b>
+	<ul>
+		<li><a href="https://risalc.info/src/gamma-function.html">ガンマ関数の定義と性質 - 理数アラカルト</a> [2022/10/16 閲覧].</li>
+		<li><a href="https://mathlandscape.com/gamma-func/">ガンマ関数とは～定義と性質をわかりやすく～ - 数学の景色</a> [2022/10/16 閲覧].</li>
+		<li><a href="https://manabitimes.jp/math/960">ガンマ関数（階乗の一般化）の定義と性質 - 高校数学の美しい物語</a></li>
+	</ul>
+</div>
+</body>
+</html>
