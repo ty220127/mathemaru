@@ -49,8 +49,9 @@ established on 2022/1/29<br>
 updated on 2022/10/16
 </p>
         
-<p id="8">&nbsp;</p><div class="def">
-	<b>[#8] 定義：数列の収束，極限</b><br>
+<p id="8">&nbsp;</p>
+<div class="deftl">[#8] 定義：数列の収束，極限</div>
+<div class="def">
 	<p> $\{a_n\}_{n\in\mathbb{N}}$ を実数列$\nr{collection-family}{223}$ とする．この $\{a_n\}$ に対して実数 $\alpha$ が存在して，任意の正の数 $\varepsilon$ に対して適当な番号 $N(\varepsilon)$ を定めると，それ以上の自然数 $n$ に対して $|a_n-\alpha|\lt\varepsilon$ が成り立つとき，このことを $\{a_n\}$ は $\alpha$ に【収束する (converge)】という：</p>
 	<p><center>\begin{align}
 		{}^\exists \alpha\in\mathbb{R}\,\,\text{s.t.}\,{}^\forall \varepsilon \gt 0,\, {}^\exists N(\varepsilon)\in\mathbb{N}\,\, \text{s.t.}\ {}^\forall n\in \mathbb{N},\, \left[\,n\geq N(\varepsilon)\,\to\,|a_n-\alpha|<\varepsilon\right].
@@ -61,20 +62,24 @@ updated on 2022/10/16
 </div>
 <br>
     
-<p id="9">&nbsp;</p><div class="exm">
-	<b>[#9] 例：収束する数列の例</b><br>
+<p id="9">&nbsp;</p>
+<div class="exmtl">[#9] 例：収束する数列の例</div>
+<div class="exm">
 	<p>$\limit_{n\rightarrow\infty}\fraction{1}{n} = 0$.</p>
 </div>
-<details>
+<details class="exmtl" style="margin-top: -0.5%;">
 	<summary>証明</summary>
+	<div class="exm">
 	<p> $\varepsilon\gt 0$ を任意に固定し，それに対し $N(\varepsilon) = \lfloor \varepsilon^{-1} \rfloor +1$ とおく．このとき，$N(\varepsilon) \gt \varepsilon^{-1}$ である．ここで，$n\geq N(\varepsilon)$ なる自然数 $n$ に対して</p>
 	<p><center>\begin{align}
 		\left|\fraction{1}{n}-0\right| = \fraction{1}{n} \leq \fraction{1}{N(\varepsilon)} \lt \varepsilon
 		\end{align}</center></p>
 	<p>が成り立つ．すなわち，$\limit_{n\rightarrow\infty}\fraction{1}{n} = 0$ である．</p>
+	</div>
 </details>
-<details>
+<details class="exmtl">
 	<summary>補足</summary>
+	<div class="exm">
 	<p>証明の検討過程としては，まず絶対値を $N(\varepsilon)$ の式で上から押さえることを考える．これにより</p>
 	<p><center>\begin{align}
 		\left|\fraction{1}{n}-0\right| = \fraction{1}{n} \leq \fraction{1}{N(\varepsilon)}
@@ -84,15 +89,18 @@ updated on 2022/10/16
 		\fraction{1}{N(\varepsilon)} \lt \varepsilon
 		\end{align}</center></p>
 	<p>が成立するための $N(\varepsilon)$ の必要条件を考え，それに基づき $N(\varepsilon)$ を決定する．今回は $N(\varepsilon)\gt \varepsilon^{-1}$ がそれに当たるので，それを満たす一例として $N(\varepsilon) = \lfloor \varepsilon^{-1} \rfloor +1$ を選んだ．</p>
+	</div>
 </details>
 <br>
     
-<p id="35">&nbsp;</p><div class="exm">
-	<b>[#35] 例：収束する数列の例</b><br>
+<p id="35">&nbsp;</p>
+<div class="exmtl">[#35] 例：収束する数列の例</div>
+<div class="exm">
 	<p>$k$ を定数として，$\limit_{n\rightarrow\infty}\fraction{\,n\,}{\,n+k\,} = 1.$</p>
 </div>
-<details>
+<details class="exmtl" style="margin-top: -0.5%;">
 	<summary>証明</summary>
+	<div class="exm">
 	<p> $\varepsilon\gt 0$ を任意に固定し，それに対し
 	<p><center>\begin{align}
 		N(\varepsilon) &= \max\left\{\left\lfloor \fraction{(1-\varepsilon)k}{\varepsilon} \right\rfloor +1,\ 0\right\}\\
@@ -112,18 +120,21 @@ updated on 2022/10/16
 		\left|\fraction{n}{n+k}-1\right| &\leq \fraction{k}{N(\varepsilon)+k} = \fraction{k}{0+k} = 1\lt \varepsilon.\\
 		\end{align}</center></p>
 	<p>よっていずれの場合においても $\limit_{n\rightarrow\infty}\fraction{n}{n+k} = 1.$
+	</div>
 </details>
 <br>
     
-<p id="371">&nbsp;</p><div class="prp">
-	<b>[#371] 命題：極限値の一意性</b><br>
+<p id="371">&nbsp;</p>
+<div class="prptl">[#371] 命題：極限値の一意性</div>
+<div class="prp">
 	<p>任意の数列 $\{a_n\}_{n\in\mathbb{N}}$ に対し，その極限は一意である：</p>
 	<p><center>\begin{align}
 		\left(\lim_{n\to\infty}a_n= \alpha\right)\land \left(\lim_{n\to\infty}a_n= \beta\right) \ \Longleftrightarrow\ \alpha = \beta.
 		\end{align}</center></p>
 </div>
-<Details>
+<details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
+	<div class="prp">
 	<p> $\alpha \gt \beta$ とする．いま，$\varepsilon = (\alpha -\beta)/2$ に対して，極限の定義$\nr{epsilon-N2}{8}$ より，ある自然数 $N_1(\varepsilon),\ N_2(\varepsilon)$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
 		&n\geq N_1(\varepsilon) \ \Longrightarrow\ |a_n-\alpha |\lt \varepsilon,\\
@@ -147,18 +158,21 @@ updated on 2022/10/16
 		\end{align}</center></p>
 	<p>となるが，これは矛盾である．つまり $\alpha\gt \beta$ は成り立たない．<br>
 		同様にして $\alpha\lt \beta$ も成立しないので，$\alpha = \beta$ である．</p>
+	</div>
 </Details>
 <br>
     
-<p id="374">&nbsp;</p><div class="prp">
-	<b>[#374] 命題：極限の和は和の極限</b><br>
+<p id="374">&nbsp;</p>
+<div class="prptl">[#374] 命題：和の極限は極限の和</div>
+<div class="prp">
 	<p>極限を持つ数列 $\{a_n\},\ \{b_n\}$ に対して</p>
 	<p><center>\begin{align}
 		\lim_{n\to\infty} (a_n +b_n) = \lim_{n\to\infty}a_n + \lim_{n\to\infty}b_n.
 		\end{align}</center></p>
 </div>
-<Details>
+<details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>$\lim_{n\to\infty} a_n = \alpha,\ \lim_{n\to\infty}b_n = \beta$ とする．このとき，極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\eta \gt 0$ に対して $M_1(\eta),\ M_2(\eta)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
 		n\geq M_1(\eta)\ &\Longrightarrow\ |a_n-\alpha |\lt \eta,\\
@@ -179,18 +193,21 @@ updated on 2022/10/16
 			&\lt \fraction{\varepsilon}{2} + \fraction{\varepsilon}{2} = \varepsilon
 		\end{align}</center></p>
 	<P>を得ることから，題意は示される．</P>
+	</div>
 </Details>
 <br>
     
-<p id="36">&nbsp;</p><div class="prp">
-	<b>[#36] 命題：定数倍の極限は極限の定数倍</b><br>
+<p id="36">&nbsp;</p>
+<div class="prptl">[#36] 命題：定数倍の極限は極限の定数倍</div>
+<div class="prp">
 	<p>極限を持つ数列 $\{a_n\}$ と定数 $c$ に対して</p>
 	<p><center>\begin{align}
 		\lim_{n\to\infty}ca_n = c\lim_{n\to\infty}a_n.
 		\end{align}</center></p>
 </div>
-<Details>
+<details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>$\lim_{n\to\infty} a_n = \alpha$ とする．このとき，極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\eta \gt 0$ に対して $M(\eta)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
 		n\geq M(\eta)\ &\Longrightarrow\ |a_n-\alpha |\lt \eta
@@ -204,18 +221,21 @@ updated on 2022/10/16
 		|ca_n-c\alpha| &= |c||a_n-\alpha|\leq |c|\fraction{\varepsilon}{|c|} = \varepsilon
 		\end{align}</center></p>
 	<p>を得ることから，題意が示される．</p>
+	</div>
 </Details>
 <br>
     
-<p id="37">&nbsp;</p><div class="prp">
-	<b>[#37] 命題：絶対値の極限は極限の絶対値</b><br>
+<p id="37">&nbsp;</p>
+<div class="prptl">[#37] 命題：絶対値の極限は極限の絶対値</div>
+<div class="prp">
 	<p>極限を持つ数列 $\{a_n\}$ に対して</p>
 	<p><center>\begin{align}
 		\lim_{n\to\infty}|a_n| = \left| \lim_{n\to\infty}a_n\right|.
 		\end{align}</center></p>
 </div>
-<Details>
+<details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>$\lim_{n\to\infty} a_n = \alpha$ とする．このとき，極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\varepsilon \gt 0$ に対して $N(\varepsilon)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
 		n\geq N(\varepsilon)\ &\Longrightarrow\ |a_n-\alpha |\lt \varepsilon
@@ -227,11 +247,13 @@ updated on 2022/10/16
 			&= |a_n-\alpha| \lt \varepsilon
 		\end{align}</center></p>
 	<p>がいえるから，題意は成立する．</p>
+	</div>
 </Details>
 <br>
     
-<p id="188">&nbsp;</p><div class="def">
-	<b>[#188] 定義：上界，下界，有界</b><br>
+<p id="188">&nbsp;</p>
+<div class="deftl">[#188] 定義：上界，下界，有界</div>
+<div class="def">
 	<p>数列 $\{a_n\}$ に対してある実数 $B$ が存在して，</p>
 	<p><center>${}^\forall n\in \mathbb{N},\,\,\,a_n\leq B$</center></p>
 	<p>を満たすことを $\{a_n\}$ は【上に有界 (bounded from above)】であるといい，この $B$ を【上界 (upper bound)】と呼ぶ．</p>
@@ -242,27 +264,32 @@ updated on 2022/10/16
 </div>
 <br>
     
-<p id="372">&nbsp;</p><div class="prp">
-	<b>[#372] 命題：有界と極限</b><br>
+<p id="372">&nbsp;</p>
+<div class="prptl">[#372] 命題：有界と極限</div>
+<div class="prp">
 	<p>数列 $\{a_n\}$ に対して，$b,\ B\in \mathbb{R}$ がそれぞれ $\{a_n\}$ の下界，上界であるならば，</p>
 	<p><center>\begin{align}
 		b\leq \lim_{n\to\infty}a_n\leq B.
 		\end{align}</center></p>
 </div>
-<Details>
+<details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
+	<div class="prp">
+	</div>
 </Details>
 <br>
     
-<p id="375">&nbsp;</p><div class="prp">
-	<b>[#375] 命題：はさみうちの定理</b><br>
+<p id="375">&nbsp;</p>
+<div class="prptl">[#375] 命題：はさみうちの定理</div>
+<div class="prp">
 	<p>極限を持つ数列 $\{a_n\},\ \{b_n\},\ \{c_n\}$ が任意の $n\in\mathbb{N}$ に対して $a_n\leq b_n\leq c_n$ を満たすとする．このとき，$\alpha\in\mathbb{R}$ として</p>
 	<p><center>\begin{align}
 		\left(\lim_{n\to\infty} a_n = \alpha\right)\land \left(\lim_{n\to\infty}c_n =\alpha\right) \ \Longrightarrow\ \lim_{n\to\infty} b_n = \alpha.
 		\end{align}</center></p>
 </div>
-<Details>
+<details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\varepsilon \gt 0$ に対して $N_a(\varepsilon),\ N_c(\varepsilon)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
 		n\geq N_a(\varepsilon)\ &\Longrightarrow\ |a_n-\alpha |\lt \varepsilon,\\
@@ -281,6 +308,7 @@ updated on 2022/10/16
 	<p><center>\begin{align}
 		n\geq N_b(\varepsilon)\ &\Longrightarrow\ |b_n-\alpha |\lt \varepsilon.\\
 		\end{align}</center></p>
+	</div>
 </Details>
 <br>
     
