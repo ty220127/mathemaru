@@ -60,6 +60,7 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
       background-color: #b2f9ff;
       color:#000000;
       font-weight: normal;
+      padding:10px;
 }
 .prptl{
       background:#23237b;
@@ -75,6 +76,7 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
       background-color: #b2ffb2;
       color:#000000;
       font-weight: normal;
+      padding:10px;
 }
 .exmtl{
       background:#237b23;
@@ -90,6 +92,7 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
       background-color: #ffc8c8;
       color:#000000;
       font-weight: normal;
+      padding:10px;
 }
 .exrtl{
       background:#7b2323;
@@ -105,6 +108,7 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
       background-color: #c8c8c8;
       color:#000000;
       font-weight: normal;
+      padding:10px;
 }
 .fcttl{
       background:#646464;
