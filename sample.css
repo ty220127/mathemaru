@@ -40,42 +40,79 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
 }
 
 .def{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #aaaa4a; 
-      border-bottom:0.1em solid #aaaa4a;
+      border-left: solid 0.3em #7b7b35; 
+      border-bottom:0.1em solid #7b7b35;
       background-color: #ffff99;
+      color:#000000;
+      font-weight: normal;
 }
+.deftl{
+      background:#7b7b35;
+      border:1px solid #7b7b35; 
+      padding-left:5px;
+      font-weight:bold;
+      color:#FFFFFF;
+}
+
 .prp{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #597dff;
-      border-bottom:0.1em solid #597dff;
+      border-left: solid 0.3em #23237b;
+      border-bottom:0.1em solid #23237b;
       background-color: #b2f9ff;
+      color:#000000;
+      font-weight: normal;
 }
+.prptl{
+      background:#23237b;
+      border:1px solid #23237b; 
+      padding-left:5px;
+      font-weight:bold;
+      color:#FFFFFF;
+}
+
 .exm{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #59c859; 
-      border-bottom:0.1em solid #59c859;
+      border-left: solid 0.3em #237b23;
+      border-bottom:0.1em solid #237b23;
       background-color: #b2ffb2;
+      color:#000000;
+      font-weight: normal;
 }
+.exmtl{
+      background:#237b23;
+      border:1px solid #237b23; 
+      padding-left:5px;
+      font-weight:bold;
+      color:#FFFFFF;
+}
+
 .exr{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #c85959; 
-      border-bottom:0.1em solid #c85959;
+      border-left: solid 0.3em #7b2323;
+      border-bottom:0.1em solid #7b2323;
       background-color: #ffc8c8;
+      color:#000000;
+      font-weight: normal;
+}
+.exrtl{
+      background:#7b2323;
+      border:1px solid #7b2323; 
+      padding-left:5px;
+      font-weight:bold;
+      color:#FFFFFF;
 }
 
 .fct{
-      padding: 0.5%; 
-      margin-bottom: 0.5%; 
-      border-left: solid 0.3em #646464; 
+      border-left: solid 0.3em #646464;
       border-bottom:0.1em solid #646464;
       background-color: #c8c8c8;
+      color:#000000;
+      font-weight: normal;
 }
-
+.fcttl{
+      background:#646464;
+      border:1px solid #646464; 
+      padding-left:5px;
+      font-weight:bold;
+      color:#FFFFFF;
+}
 
 ul.defl{
       list-style-type: lower-roman;
