@@ -58,24 +58,72 @@ updated on 2022/10/16
 </div>
 <br>
 
-<p id="377">&nbsp;</p><div class="prp">
-	<b>[#377] 命題：ガンマ関数の漸化式</b><br>
+<p id="377">&nbsp;</p><div class="exm">
+	<b>[#377] 例：ガンマの１</b><br>
+	<p> ガンマ関数 $\varGamma$ に対して</p>
+	<p><center>\begin{align}
+		\varGamma(1) = 1.
+		\end{align}</center></p>
+</div>
+<details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		\varGamma(1) &\refeq{gamma-function}{376}\, \int_{0}^{\infty} t^{1-1}e^{-t}\rd t = \int_{0}^{\infty} e^{-t}\rd t\\
+			&\,= \left[ -e^{-t} \right]_{0}^{\infty}  =1.
+		\end{align}</center></p>
+</details>
+<br>
+
+<p id="378">&nbsp;</p><div class="exm">
+	<b>[#378] 例：ガンマの 1/2</b><br>
+	<p> ガンマ関数 $\varGamma$ に対して</p>
+	<p><center>\begin{align}
+		\varGamma\left(\fraction{1}{2}\right) = \sqrt{\pi}.
+		\end{align}</center></p>
+</div>
+<br>
+
+<p id="379">&nbsp;</p><div class="prp">
+	<b>[#379] 命題：ガンマ関数の漸化式</b><br>
 	<p> ガンマ関数 $\varGamma$ は $x\gt 0$ に対して</p>
 	<p><center>\begin{align}
 		\varGamma(x+1) = x\varGamma(x)
 		\end{align}</center></p>
 	<p>を満たす．</p>
 </div>
+<details>
+	<summary>証明</summary>
+	<p><center>\begin{align}
+		\varGamma(x+1) &\,\refeq{gamma-function}{376}\, \int_{0}^{\infty} t^{x}e^{-t}\rd t\\
+			&\,= \left[-t^{x}e^{-t}\right]_{0}^{\infty} -\left(-x\int_{0}^{\infty}t^{x-1}e^{-t}\rd t \right)\\
+			&\,= 0-0+x\int_{0}^{\infty}t^{x-1}e^{-t}\rd t \,\refeq{gamma-function}{376}\, x\varGamma(x).
+		\end{align}</center></p>
+</details>
 <br>
 
-<p id="378">&nbsp;</p><div class="prp">
-	<b>[#378] 命題：ガンマ関数は階乗の一般化</b><br>
+<p id="380">&nbsp;</p><div class="prp">
+	<b>[#380] 命題：ガンマ関数は階乗の一般化</b><br>
 	<p> ガンマ関数 $\varGamma$ は $n\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
 		\varGamma(n) = (n-1)!
 		\end{align}</center></p>
 	<p>を満たす．</p>
 </div>
+<details>
+	<summary>証明</summary>
+	<p>$n\geq 2$ に対して
+	<p><center>\begin{align}
+		\varGamma(n) &\,\refeq{gamma-function}{376}\, (n-1)\varGamma(n-1) \\
+			&\,\refeq{gamma-function}{376}\, (n-1)(n-2)\varGamma(n-2) \\
+			&\,\refeq{gamma-function}{376}\,\cdots \,\refeq{gamma-function}{376}\, (n-1)(n-2)\cdots 2\cdot 1\varGamma(1) \\
+			&\,\refeq{gamma-function}{377}\, (n-1)(n-2)\cdots 2\cdot 1\cdot 1 = (n-1)!.
+		\end{align}</center></p>
+	<p>$n = 1$ のときも $\varGamma(1)\,\refeq{gamma-function}{377}\, 1 = 0!$ であるから，すべての $n\in\mathbb{N}$ に対して題意は成り立つ．</p>
+</details>
+<details>
+	<summary>補足</summary>
+	<p>この命題を成立させることが，$0$ の階乗を $1$ で定義することのメリットの一つである．
+</details>
 <br>
 
 <br><br>
@@ -87,5 +135,13 @@ updated on 2022/10/16
 		<li><a href="https://manabitimes.jp/math/960">ガンマ関数（階乗の一般化）の定義と性質 - 高校数学の美しい物語</a> [2022/10/16 閲覧].</li>
 	</ul>
 </div>
+
+<b>その他参考コンテンツ</b>
+<center>
+<iframe width="480" height="270" src="https://www.youtube.com/embed/K-HwL3N4P5Q" title="【大学数学】ガンマ関数①(定義と性質)【解析学】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p style="margin-bottom: 2em;">
+<iframe width="480" height="270" src="https://www.youtube.com/embed/dy40up4jnc0" title="【大学数学】ガンマ関数②(収束性の証明)【解析学】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 </body>
 </html>
