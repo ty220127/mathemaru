@@ -44,79 +44,113 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/5<br>
-updated on 2022/6/7
+updated on 2022/10/17
 </p>
 
-<p id="260">&nbsp;</p><div class="def">
-	<b>[#260] 定義：ユニタリ行列，直交行列</b><br>
+<p id="260">&nbsp;</p>
+<div class="deftl">[#260] 定義：ユニタリ行列，直交行列</div>
+<div class="def">
 	<p>ある正方行列 $U$ が【ユニタリ行列 (unitary matrix)】であるとは，$U$ の逆行列$\nr{regular}{163}$ $U^{-1}$ が存在して，更に $U^{-1}$ がその随伴行列$\nr{adjoint}{256}$ $U^*$ と等しいことをいう．また，ユニタリ行列 $U$ が実行列のときは，$U^{-1}$ がその転置行列$\nr{transpose}{249}$ $U^\trp$ と等しいが，この $U$ を特に【直交行列 (orthogonal matrix)】と呼ぶ．</p>
 </div>
-<details>
+<details class="deftl" style="margin-top: -0.5%;">
 	<summary>補足</summary>
+	<div class="def">
 	<p> 逆行列の定義$\nr{regular}{163}$ より，$U$ が $n$ 次正方行列であるならば，単位行列$\nr{matrix}{184}$ $I_n$ を用いて</p>
 	<p><center>\begin{align*}
 		UU^* = U^*U = I_n
 		\end{align*}</center></p>
 	<p>が成り立つ．</p>
-</details>
-<br>
-
-<p id="261">&nbsp;</p><div class="prp">
-	<b>[#261] 命題：ユニタリ行列の積はユニタリ行列</b><br>
-	<p>行列 $U,\ V$ が共にユニタリならば，積 $UV$ もユニタリ行列である．</p>
-</div>
-<details>
-	<summary>証明</summary>
-	<p><center>\begin{align*}
-		(UV)^{-1} \,\refeq{matrix}{166}\, V^{-1}U^{-1} \,\refeq{unitary-matrix}{260}\, V^* U^* \,\refeq{adjoint}{257}\, (UV)^*.
-		\end{align*}</center></p>
-	<p>より，$UV$ はユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>	
-</details>
-<details>
-	<summary>補足</summary>
-	<p>この命題を繰り返し用いることで，次も成り立つ：</p>
-	<div class="cor">
-	<b>系：</b>行列 $U_1,\ U_2,\ \cdots,\ U_N$ がすべてユニタリであるならば，その積 $P = \prod_{n=1}^{N}U_n$ もまたユニタリ行列である．</p>
 	</div>
 </details>
 <br>
 
-<p id="262">&nbsp;</p><div class="prp">
-	<b>[#262] 命題：ユニタリ行列の逆行列はユニタリ行列</b><br>
-	<p>行列 $U$ がユニタリならば，逆行列 $U^{-1}$ もユニタリ行列である．</p>
-</div>
-<details>
-	<summary>証明</summary>
+<p id="383">&nbsp;</p>
+<div class="exmtl">[#383] 例：２次ユニタリ行列</div>
+<div class="exm">
+	<p>$a,\ b\in \mathbb{C},\ \delta\in [0,\,2\pi)$ に対して以下で定義される２次正方行列 $U$ はユニタリ行列である．</p>
 	<p><center>\begin{align*}
-		(U^{-1})^{-1} \,\refeq{unitary-matrix}{260}\, (U^*)^{-1} \,\refeq{adjoint}{266}\, (U^{-1})^*
+		U = \left[\begin{array}{cc}a & b\\ -e^{i\delta}\overline{b} & e^{i\delta}\overline{a} \end{array}\right].
 		\end{align*}</center></p>
-	<p>より，$U^{-1}$ はユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>	
+	<p>また，任意の２次のユニタリ行列は $(a,\ b,\ \delta)$ を適当に与えることでこの形で表せる．</p>
+</div>
+<details class="exmtl" style="margin-top: -0.5%">
+	<summary>証明</summary>
+	<div class="exm">
+	</div>
 </details>
 <br>
 
-<p id="263">&nbsp;</p><div class="prp">
-	<b>[#263] 命題：ユニタリ行列の随伴行列はユニタリ行列</b><br>
+<p id="261">&nbsp;</p>
+<div class="prptl">[#261] 命題：ユニタリ行列の積はユニタリ行列</div>
+<div class="prp">
+	<p>行列 $U,\ V$ が共にユニタリならば，積 $UV$ もユニタリ行列である．</p>
+</div>
+<details class="prptl" style="margin-top: -0.5%">
+	<summary>証明</summary>
+	<div class="prp">
+	<p><center>\begin{align*}
+		(UV)^{-1} \,\refeq{matrix}{166}\, V^{-1}U^{-1} \,\refeq{unitary-matrix}{260}\, V^* U^* \,\refeq{adjoint}{257}\, (UV)^*.
+		\end{align*}</center></p>
+	<p>より，$UV$ はユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>
+	</div>
+</details>
+<details class="prptl">
+	<summary>補足</summary>
+	<div class="prp">
+	<p>この命題を繰り返し用いることで，次も成り立つ：</p>
+	<div class="fcttl">系</div>
+	<div class="fct">
+	<p>行列 $U_1,\ U_2,\ \cdots,\ U_N$ がすべてユニタリであるならば，その積 $P = \prod_{n=1}^{N}U_n$ もまたユニタリ行列である．</p>
+	</div>
+	</div>
+</details>
+<br>
+
+<p id="262">&nbsp;</p>
+<div class="prptl">[#262] 命題：ユニタリ行列の逆行列はユニタリ行列</div>
+<div class="prp">
+	<p>行列 $U$ がユニタリならば，逆行列 $U^{-1}$ もユニタリ行列である．</p>
+</div>
+<details class="prptl" style="margin-top: -0.5%">
+	<summary>証明</summary>
+	<div class="prp">
+	<p><center>\begin{align*}
+		(U^{-1})^{-1} \,\refeq{unitary-matrix}{260}\, (U^*)^{-1} \,\refeq{adjoint}{266}\, (U^{-1})^*
+		\end{align*}</center></p>
+	<p>より，$U^{-1}$ はユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>
+	</div>	
+</details>
+<br>
+
+<p id="263">&nbsp;</p>
+<div class="prptl">[#263] 命題：ユニタリ行列の随伴行列はユニタリ行列</div>
+<div class="prp">
 	<p>行列 $U$ がユニタリならば，随伴行列 $U^*$ もユニタリ行列である．</p>
 </div>
-<details>
+<details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
+	<div class="prp">
 	<p> $U$ を $n$ 次の正方行列とすれば</p>
 	<p><center>\begin{align*}
 		U^{-1} = U^* \ \Longleftrightarrow\ (U^{-1})^* = (U^*)^* \ \reflr{adjoint}{266}\ (U^*)^{-1} = (U^*)^*.
 		\end{align*}</center></p>
 	<p>よって，$U^*$ 自身もユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>
+	</div>
 </details>
 <br>
 
-<p id="267">&nbsp;</p><div class="prp">
-	<b>[#267] 命題：ユニタリ行列の行列式の絶対値</b><br>
+<p id="267">&nbsp;</p>
+<div class="prptl">[#267] 命題：ユニタリ行列の行列式の絶対値</div>
+<div class="prp">
 	<p>ユニタリ行列 $U$ に対して</p>
 	<p><center>\begin{align*}
 		|\mathrm{det}\, U| = 1.
 		\end{align*}</center></p>
 </div>
-<details>
+<details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
+	<div class="prp">
+	</div>
 </details>
 <br>
 
@@ -127,7 +161,7 @@ updated on 2022/6/7
 		<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社, 2012.</li>
 		<li>齋藤正彦: 線型代数学, 東京図書, 2014.</li>
 		<li><a href="https://mathlandscape.com/unitary-matrix/">ユニタリ行列の定義と性質10個とその証明 - 数学の景色</a></li>
-		<li><a href="https://risalc.info/src/unitary-matrix-properties.html">ユニタリ行列とは？ ～公式と性質～   (証明付) - 理数アラカルト -</a></li>
+		<li><a href="https://risalc.info/src/unitary-matrix-properties.html">ユニタリ行列とは？ ～公式と性質～   (証明付) - 理数アラカルト -</a></li>
 	</ul>
 </div>
 </body>
