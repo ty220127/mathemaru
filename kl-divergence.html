@@ -1,0 +1,72 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "KL 擬距離"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/10/18<br>
+updated on 2022/10/18
+</p>
+        
+<p id="387">&nbsp;</p>
+<div class="deftl">[#387] 定義：Kullback-Leibler 擬距離</div>
+<div class="def">
+	<p> 確率分布$\nr{random-variable}{173}$ $P,\ Q$ が確率密度関数$\nr{dist-func}{172}$ $p(x),\ q(x)$ をもつとき，以下で定義される量 $D_\mathrm{KL}(P\|Q)$ を【<ruby><rb>Kullback</rb><rp>(</rp><rt>カルバック</rt><rp>)</rp></ruby>-<ruby><rb>Leibler</rb><rp>(</rp><rt>ライブラー</rt><rp>)</rp></ruby> 擬距離 (KL擬距離; Kullback-Leibler divergence)】と呼ぶ：</p>
+	<p><center>\begin{align}
+		D_\mathrm{KL}(P\|Q) = \int_{-\infty}^{\infty} p(x) \log \frac{p(x)}{q(x)} \,\rd x
+		\end{align}</center></p>
+</div>
+<br>
+
+<br><br>
+<div id="bib">
+	<b>参考文献</b>
+	<ul>
+		<li><a href="https://kikaben.com/kl-divergence/">情報理論：KLダイバージェンス - KiKaBeN</a> [2022/10/18 閲覧].</li>
+		<li><a href="https://yul.hatenablog.com/entry/2019/01/07/152738">Kullback-Leibler Divergenceについてまとめる - 閃き- blog</a> [2022/10/18 閲覧].</li>
+		<li><a href="https://dx-consultant-fast-evolving.com/the-meaning-of-kl-divergence/">【基礎から理解しよう】KLダイバージェンスの意味 - DXコンサルのIT資格学習支援室</a> [2022/10/18 閲覧].</li>
+	</ul>
+</div>
+</body>
+</html>
