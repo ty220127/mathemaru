@@ -45,11 +45,12 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/15<br>
-updated on 2022/9/23<br>
+updated on 2022/10/21<br>
 </p>
     
-<p id="272">&nbsp;</p><div class="def">
-	<b>[#272] 定義：推論</b><br>
+<p id="272">&nbsp;</p>
+<div class="deftl">[#272] 定義：推論，意味論的妥当性</div>
+<div class="def">
 	<p>いくつかの事柄から別のある事柄を導くことを【推論 (inference)】という．推論を行うために用意する「いくつかの事柄」を【仮定 (assumption)】，推論により一尾枯れる「別のある事柄」を【結論 (conclusion)】と呼ぶ．仮定 $P_1,\ P_2,\cdots,\ P_n$ から結論 $Q$ への推論は</p>
 	<p><center>\begin{align}
 		P_1,\ P_2,\ \cdots,\ P_n, \ \therefore\ Q
@@ -59,20 +60,23 @@ updated on 2022/9/23<br>
 		P_1,\ P_2,\ \cdots,\ P_n \ \vdash\ Q
 		\end{align}</center></p>
 	<p>と表される．<br>
-		ある推論が【妥当 (reasonable)】或いは【有効 (effective)】であるとは，仮定をなす命題がすべて真であるときに，結論をなす命題も真となる場合をいい，又その場合に限る．</p>
+		ある推論が【意味論的に妥当 (semantically reasonable)】或いは【意味論的に有効 (semantically effective)】であるとは，仮定をなす命題がすべて真であるときに，結論をなす命題も真となる場合をいい，又その場合に限る．</p>
 </div>
-<details>
+<details class="deftl">
 	<summary>補足と例</summary>
+	<div class="def">
 	<p>推論が妥当であるかどうかは，真理値表をかいて確認するのが最も素朴な方法である．仮定をなす命題たちがすべて真 $(\mathsf{T})$ となっている行を抽出し，それらの行すべてで結論 $Q$ も真 $(\mathsf{T})$ であれば，推論は妥当といえる．たとえば，例題 $\numref{proposition}{237}$ は妥当な推論を行う問題と考えられ，</p>
 	<p><center>\begin{align}
 		P,\ \, (\mathrm{not}\ P)\ \mathrm{or}\ Q,\ \, \therefore\ Q
 		\end{align}</center></p>
 	<p>は妥当な推論である．</p>
+	</div>
 </details>
 <br>
 
-<p id="273">&nbsp;</p><div class="fct">
-	<b>[#273] 事実：推論と含意</b><br>
+<p id="273">&nbsp;</p>
+<div class="fcttl">[#273] 事実：推論と含意</div>
+<div class="fct">
 	<p>命題 $P_1,\ P_2,\ \cdots,\ P_n,\ ,\ Q$ に対して 推論
 	<p><center>\begin{align}
 		P_1,\ P_2,\ \cdots,\ P_n \vdash Q
@@ -83,8 +87,9 @@ updated on 2022/9/23<br>
 		\end{align}</center></p>
 	<p>が恒真命題$\nr{proposition}{58}$ である $(P_1\land P_2\land \cdots \land P_n\Rightarrow Q)$ ときであり，またそのときに限る．</p>
 </div>
-<details>
+<details class="fcttl">
 	<summary>説明（証明とはいえない）</summary>
+	<div class="fct">
 	<p>$P_1\land P_2\land \cdots \land P_n\equiv P$ とすれば，仮定をなす命題がすべて真なるとき $P$ も真である．ここで，$P\to Q$ の真理値表は以下の通り：</p>
 	<p><center>\begin{align}
 		\begin{array}{|c|c|c|c|c|}\hline P & Q  & P\to Q \\ \hline
@@ -95,10 +100,13 @@ updated on 2022/9/23<br>
 		\end{align}</center></p>
 	<p>$P\to Q$ が恒真命題となるときは，真理値表の２行目以外が取りうる $P,\ Q$ の組み合わせとなるが，その下で $P$ が真となるのは１行目のみであり，そのとき $Q$ も真であるから $P\vdash Q$ は妥当な推論といえる．<br>
 		逆に $P\vdash Q$ が妥当な推論であるとすれば，やはり２行目以外が取りうる $P,\ Q$ の組み合わせとなるので，$P\to Q$ は恒真命題となる．</p>
+	</div>
 </details>
-<details>
+<details class="fcttl">
 	<summary>補足</summary>
+	<div class="fct">
 	<p>仮定 $P$ から結論 $Q$ を示すときは，$P$ をもとに $Q$ を主張することが妥当である根拠を与えねばならない．それが恒真命題 $P\Rightarrow Q$ となる．</p>
+	</div>
 </details>
 <br>
 
