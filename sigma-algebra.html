@@ -43,11 +43,12 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/1/27<br>
-updated on 2022/10/6
+updated on 2022/10/21
 </p>
 	  
-<p id="10">&nbsp;</p><div class="def">
-	<b>[#10] 定義：</b>$\bs{\sigma}$ <b>加法族，可測空間，可測集合</b><br>
+<p id="10">&nbsp;</p>
+<div class="deftl">[#10] 定義：$\bs{\sigma}$ 加法族，可測空間，可測集合</div>
+<div class="def">
 	<p>ある全体集合 $\varOmega$ の空でない部分集合族 $\mathcal{F}(\subset 2^\varOmega)$ が以下の条件を満たすとき，これを $\varOmega$ 上の【 $\sigma$ 加法族 (sigma algebra)】或いは【完全加法族 (completely additive class)】と呼ぶ：</p>
 	<ul class="defl">
 		<li> $A\in\mathcal{F}\,\,\Longrightarrow\,\,A^\cpl\in\mathcal{F}$【補集合の可測性】, </li>
@@ -55,40 +56,49 @@ updated on 2022/10/6
 	</ul>
 	<p>また，組 $(\varOmega,\,\mathcal{F})$ を【可測空間 (measurable space)】と呼ぶ．また，$A\in\mathcal{F}$ なる集合を $\mathcal{F}$ の【可測集合 (measurable set)】と呼ぶ．</p>
 </div>
-<Details>
+<Details class="deftl">
 	<summary>補足１</summary>
+	<div class="def">
 	<p>$\sigma$ 加法族の定義に空集合 $\emptyset$ や全体集合 $\varOmega$ の可測性，つまり $\emptyset,\,\varOmega\in\mathcal{F}$ であることを盛り込むことが多いが，
 		実は　<a href="#11">[#11]</a> に示した通りこれらは上の２条件とそこから得られる性質によって導くことができる．</p>
+	</div>
 </Details>
-<Details>
+<Details class="deftl">
 	<summary>補足２</summary>
+	<div class="def">
 	<p>$\sigma$ 加法族の定義 ii を【有限加法性 (finite additivity)】：</p>
 	<p><center>$A,\,B\in\mathcal{F}\,\,\Longrightarrow\,\,A\cup B\in\mathcal{F}$</center></p>
 	<p>に代えたとき，$\mathcal{F}$ を $\varOmega$ の【有限加法族 (finite additive class)】と呼ぶ．
 		実は，任意の $\sigma$ 加法族は有限加法族である（ <a href="#41">[#41]</a> ）．一方で，すべての有限加法族が $\sigma$ 加法族であるわけではない．</p>
+	</div>
 </Details>
 <br>
     
-<p id="45">&nbsp;</p><div class="exm">
-	<b>[#45] 例：冪集合は $\bs{\sigma}$ 加法族</b><br>
+<p id="45">&nbsp;</p>
+<div class="exmtl">[#45] 例：冪集合は $\bs{\sigma}$ 加法族</div>
+<div class="exm">
 	<p>組 $(\varOmega,\,2^{\varOmega})$ は可測空間．すなわち，$\varOmega$ の冪集合$\nr{set}{194}$ $2^{\varOmega}$ は $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
-<Details>
+<Details class="exmtl">
     <summary>証明</summary>
+	<div class="exm">
 	<p>$2^{\varOmega} = \{A\,|\,A\subset \varOmega\}$ であることに注意して，$\sigma$ 加法族の定義$\nr{sigma-algebra}{10}$ に沿って示す．</p>
 	<ul class="defl">
 		<li> $A\in 2^\varOmega$ とすれば，$A^\cpl = \varOmega\setminus A\subset\varOmega$ であるから，$A^\cpl\in\ 2^\varOmega.$</li>
 		<li> $\{A_i\}_{i\in\mathbb{N}}\subset 2^\varOmega$ とすれば，すべての $i\in\mathbb{N}$ に対して $A_i\subset\varOmega$ であることから，$\bcu_{i\in\mathbb{N}}A_i\subset\varOmega$，すなわち $\bcu_{i\in\mathbb{N}}A_i\in 2^\varOmega.$</li>
 	</ul>
+	</div>
 </Details>
 <br>
 	  
-<p id="82">&nbsp;</p><div class="exm">
-	<b>[#82] 例：最小の $\bs{\sigma}$ 加法族</b><br>
+<p id="82">&nbsp;</p>
+<div class="exmtl">[#82] 例：最小の $\bs{\sigma}$ 加法族</div>
+<div class="exm">
 	<p>組 $(\varOmega,\,\{\emptyset,\,\varOmega\})$ は可測空間．すなわち，$\{\emptyset,\,\varOmega\}$ は $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
-<Details>
+<Details class="exmtl">
 	<summary>証明</summary>
+	<div class="exm">
 	<p>$\sigma$ 加法族の定義$\nr{sigma-algebra}{10}$ に沿って示す．</p>
 	<ul class="defl">
 		<li> $\emptyset = \varOmega^\cpl$ より従う．</li>
@@ -98,62 +108,77 @@ updated on 2022/10/6
 			<p><center>$\bcu_{i\in\mathbb{N}}A_i = \varOmega\in\mathcal{F}.$</center></p>
 			よって，何れにしても $\sigma$ 加法性は成立する．</li>
 	</ul>
+	</div>
 </Details>
-<Details>
+<Details class="exmtl">
 	<summary>補足１</summary>
+	<div class="exm">
 	<p>全体集合 $\varOmega$ 上の $\sigma$ 加法族 $\mathcal{F}$ は必ず空集合 $\emptyset$ と全体集合 $\varOmega$ を持つ$\nr{sigma-algebra}{11}$．
 		この事実から，集合族 $\{\emptyset,\,\varOmega\}$ は最も小さい $\varOmega$ の $\sigma$ 加法族であるといえる．</p>
+	</div>
 </Details>
-<details>
+<details class="exmtl">
 	<summary>補足２</summary>
+	<div class="exm">
 	<p>冪集合$\nr{sigma-algebra}{45}$ $2^\varOmega$ とこの $\{\emptyset,\ \varOmega\}$ は「自明な $\sigma$ 加法族」と呼ばれている．</p>
+	</div>
 </details>
 <br>
 	  
-<p id="41">&nbsp;</p><div class="prp">
-	<b>[#41] 命題：$\bs{\sigma}$ 加法族の有限加法性</b><br>
+<p id="41">&nbsp;</p>
+<div class="prptl">[#41] 命題：$\bs{\sigma}$ 加法族の有限加法性</div>
+<div class="prp">
 	<p>組 $(\varOmega,\,\mathcal{F})$ を可測空間とすれば，有限個の集合の族 $\{A_i\}_{i=1}^{n}$ に対して，</p>
 	<p><center>$\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,\Longrightarrow\,\,\bcu_{i=1}^{n}A_i\in\mathcal{F}.$</center></p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>$\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ とし，$A_{n+1}=A_{n+2}=\cdots= A_1$ と定義すれば $\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}$ が成り立つから，$\sigma$ 加法性 <a href="#10">[#10]</a>-ii より</p>
 	<p><center>$\bcu_{i=1}^{n}A_i=\bcu_{i}A_i\in\mathcal{F}.$</center></p>
+	</div>
 </Details>
-<Details>
+<Details class="prptl">
 	<summary>補足</summary>
+	<div class = "prp">
 	<p>$\sigma$ 加法族の定義で空集合 $\emptyset$ の可測性を仮定する場合は，
 	<p><center>$A_{n+1}=A_{n+2}=\cdots= \emptyset$</center></p>
 	<p>として証明を行う場合も多い．</p>
+	</div>
 </Details>
 <br>
     
-<p id="42">&nbsp;</p><div class="prp">
-	<b>[#42] 命題：可測集合の共通部分の可測性</b><br>
+<p id="42">&nbsp;</p>
+<div class="prptl">[#42] 命題：可測集合の共通部分の可測性</div>
+<div class="prp">
 	<p>可算無限個の集合族 $\{A_i\}_{i\in\mathbb{N}}$ と有限個の集合族 $\{A_i\}_{i=1}^{n}$ に対して</p>
 	<p><center>$\begin{align*}\{A_i\}_{i\in\mathbb{N}}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i\in\mathbb{N}}A_i\in\mathcal{F},\\
 		\{A_i\}_{i=1}^{n}\subset\mathcal{F}\,\,&\Longrightarrow\,\,\bca_{i=1}^{n}A_i\in\mathcal{F}.\end{align*}$</p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>$\{A_i\}_{i\in\mathbb{N}},\,\{A_i\}_{i=1}^{n}\subset\mathcal{F}$ とする．このときそれぞれの集合族の元の補集合の族 $\{A_i^\cpl\}_{i\in\mathbb{N}}$，$\{A_i^\cpl\}_{i=1}^{n}$ を考えれば補集合の可測性 <a href="#10">[#10]</a>-i より，
 		何れも $\mathcal{F}$ の部分集合である．よって，$\sigma$ 加法性 <a href="#10">[#10]</a>-ii および有限加法性 <a href="#41">[#41]</a> より</p>
 	<p><center>$\bcu_{i\in\mathbb{N}}A_i^\cpl,\,\,\bcu_{i=1}^{n}A_i^\cpl\in\mathcal{F}.$</center></p>
 	<p>ここで，de Morgan の法則 <a href="complement-set.html#132">[#132]</a> を適用すると</p>
 	<p><center>$\bcu_{i\in\mathbb{N}}A_i^\cpl = \left(\bca_{i\in\mathbb{N}}A_i \right)^\cpl,\quad \bcu_{i=1}^{n}A_i^\cpl = \left(\bca_{i=1}^{n}A_i \right)^\cpl$</center></p>
 	<p>が云える．よって，再び補集合の可測性 <a href="#10">[#10]</a>-i を用いることで題意を示すことができる．</p>
+	</div>
 </Details>
 <br>
 	  
-<p id="234">&nbsp;</p><div class="prp">
-	<b>[#234] 命題：上（下）極限集合の可測性</b><br>
+<p id="234">&nbsp;</p>
+<div class="prptl">[#234] 命題：上（下）極限集合の可測性</div>
+<div class="prp">
 	<p>可算無限個の可測集合族 $\{A_n\}_{n\in\mathbb{N}}\subset\mathcal{F}$ に対し，その上極限集合と下極限集合 <a href="limit-set.html#189">[#189]</a> も可測：</p>
 	<p><center>\begin{align*}
 		\underset{n\rightarrow\infty}{\mathrm{lim\, sup}}\ A_n,\,\underset{n\rightarrow\infty}{\mathrm{lim\, inf}}\ A_n\in\mathcal{F}.\\
 		\end{align*}</center></p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>上極限集合の定義 <a href="limit-set.html#189">[#189]</a> より</p>
 	<p><center>\begin{align*}
 		\underset{n\rightarrow\infty}{\mathrm{lim\, sup}}\ A_n = \bca_{n=1}^{\infty}\bcu_{m=n}^{\infty}A_m.
@@ -166,45 +191,55 @@ updated on 2022/10/6
 	<p><center>\begin{align*}
 		\underset{n\rightarrow\infty}{\mathrm{lim\, inf}}\ A_n\refeq{limit-set}{189} \bcu_{n=1}^{\infty}\underset{\in\,\mathcal{F}\,\,\numref{sigma-algebra}{42}}{\underline{\bca_{m=n}^{\infty}A_m}}\underset{\numref{sigma-algebra}{10}}{\in} \mathcal{F}.
 		\end{align*}</center></p>
+	</div>
 </Details>
 <br>
 	  
-<p id="14">&nbsp;</p><div class="prp">
-	<b>[#14] 命題：可測集合の差の可測性</b><br>
+<p id="14">&nbsp;</p>
+<div class="prptl">[#14] 命題：可測集合の差の可測性</div>
+<div class="prp">
 	<p>$A,\,B$ が可測空間 $(\varOmega,\,\mathcal{F})$ の可測集合であるならば，$A\setminus B$ もまた可測集合である．</p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>仮定と補集合の可測性 <a href="#10">[#10]</a>-i より $B^\cpl\in\mathcal{F}$ である．よって可測集合の積に関する命題 <a href="#42">[#42]</a> より</p>
 	<p><center>$\begin{align*}
 		A\setminus B \refeq{complement-set.html#85}{85} A\cap B^\cpl\in\mathcal{F}.
-		\end{align*}$</center></p>		
+		\end{align*}$</center></p>
+	</div>		
 </Details>
 <br>
 
-<p id="11">&nbsp;</p><div class="prp">
-	<b>[#11] 命題：空集合および全体集合の可測性</b><br>
+<p id="11">&nbsp;</p>
+<div class="prptl">[#11] 命題：空集合および全体集合の可測性</div>
+<div class="prp">
 	<p>任意の可測空間 $(\varOmega,\,\mathcal{F})$ に対して </p>
 	<p><center>$\emptyset,\,\varOmega\in\mathcal{F}$.</center></p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>$A\in\mathcal{F}$ とすれば，可測集合の差の性質 <a href="#14">[#14]</a> より</p>
 	<p><center>$\emptyset = A\setminus A\in\mathcal{F}.$</center></p>
 	<p>よって，補集合の可測性 <a href="#10">[#10]</a>-i より $\varOmega =\emptyset^{ \cpl}\in\mathcal{F}$.</p>
+	</div>
 </Details>
 <br>
 	  
-<p id="323">&nbsp;</p><div class="prp">
-	<b>[#323] 命題：共通部分による $\bs{\sigma}$ 加法族</b><br>
+<p id="323">&nbsp;</p>
+<div class="prptl">[#323] 命題：共通部分による $\bs{\sigma}$ 加法族</div>
+<div class="prp">
 	<p>$\mathcal{F}$ は $\varOmega$ の $\sigma$ 加法族，$S$ は $\varOmega$ の空でない部分集合とし，</p>
 	<p><center>\begin{align}
 		\mathcal{F}\cap S := \{A\cap S\,|\, A\in \mathcal{F}\}
 		\end{align}</center></p>
 	<p>と定義する．このとき組 $(S,\,\mathcal{F}\cap S)$ は可測空間である．</p>
+	</div>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<ul class="defl">
 		<li>集合 $\varOmega$ を普遍集合と見たときの補集合を $\cpl$，$S$ を普遍集合と見たときの補集合を $\cpl'$ で表す．$B\in \mathcal{F}\cap S$ とする．このとき，定義より $B = A\cap S$ なる $A\in\mathcal{F}$ が存在する．$S$ に対する $B$ の補集合 $B^{\cpl'}$ を考えると
 		<p><center>\begin{align}
@@ -220,27 +255,32 @@ updated on 2022/10/6
 			\end{align}</center></p>
 		<p>であり，有限加法性$\nr{sigma-algebra}{10}$ より $\bigcup_{k=1}^{\infty}A_k\in \mathcal{F}$ であるから，$\bigcup_{k=1}^{\infty} B_k = (\bigcup_{k=1}^{\infty} A_k)\cap S \in \mathcal{F}\cap S$．</p>
 	</ul>
+	</div>
 </Details>
 <br>
 	  
-<p id="31">&nbsp;</p><div class="prp">
-	<b>[#31] 命題：$\bs{\sigma}$ 加法族の共通部分</b><br>
+<p id="31">&nbsp;</p>
+<div class="prptl">[#31] 命題：$\bs{\sigma}$ 加法族の共通部分</div>
+<div class="prp">
 	<p>$\varLambda$ を添字集合とし，$\{\mathcal{F}_{\lambda}\}_{\lambda\in\varLambda}$ を集合 $\varOmega$ 上の $\sigma$ 加法族の族とする．
 		このとき，$\bca_{\lambda\in\varLambda} \mathcal{F}_{\lambda}$ もまた $\varOmega$ 上の $\sigma$ 加法族である．</p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>各 $\mathcal{F}_\lambda$ が $\sigma$ 加法族であることに注意し，$\sigma$ 加法族の定義 <a href="#10">[#10]</a> に沿って証明する．</p>
 	<ul class="defl">
 		<!--<li> すべての $\lambda\in\varLambda$ に対して $\emptyset\in\mathcal{F}_\lambda$ であるから，$\emptyset\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>-->
 		<li> $A\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda$ であるとすると，定義 <a href="set.html#130">[#130]</a> より任意の $\lambda\in\varLambda$ に対して $A\in\mathcal{F}_\lambda$ であり，故に補集合の可測性 <a href="#10">[#10]</a>-i から任意の $\lambda\in\varLambda$ に対して $A^\cpl\in\mathcal{F}_\lambda$ が云える．よって $A^\cpl\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>
 		<li> 各 $A_i\,(i\in\mathbb{N})$ について $A_i\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda$ であるとする．このとき上と同様，任意の $\lambda\in\varLambda$ に対して $A_i\in\mathcal{F}_\lambda$ であり，故に $\sigma$ 加法性 <a href="#10">[#10]</a>-ii から任意の $\lambda\in\varLambda$ に対して $\bcu_{i\in\mathbb{N}}A_i\in\mathcal{F}_\lambda$ が云える．よって $\bcu_{i\in\mathbb{N}}A_i\in\bca_{\lambda\in\varLambda}\mathcal{F}_\lambda.$</li>
 	</ul>
+	</div>
 </Details>
 <br>
 
-<p id="90">&nbsp;</p><div class="def">
-	<b>[#90] 定義：$\bs{\sigma}$ 加法族の生成</b><br>
+<p id="90">&nbsp;</p>
+<div class="deftl">[#90] 定義：$\bs{\sigma}$ 加法族の生成</div>
+<div class="def">
 	<p>$\varOmega$ のある部分集合族 $\mathcal{E}$ を含む最小の $\varOmega$ 上の $\sigma$ 加法族 $\sigma(\mathcal{E})$ を 「$\mathcal{E}$ から生成される $\sigma$ 加法族」という：集合 $\mathfrak{S}$ を</p>
 	<p><center>\begin{align}
 		\mathfrak{S} := \{\mathcal{F}\,|\,(\mathcal{E}\subset\mathcal{F})\land (\mathcal{F}:\text{$\sigma\!$ -algebra})\}
@@ -250,18 +290,22 @@ updated on 2022/10/6
 		$\sigma(\mathcal{E})\in \mathfrak{S}$　かつ　$\mathcal{F}\in \mathfrak{S}\Rightarrow \mathcal{F}\supset \sigma(\mathcal{E}).$
 		</center></p>
 </div>
-<details>
+<details class="deftl">
 	<summary>補足</summary>
+	<div class="def">
 	<p> $\varOmega$ の冪集合$\nr{set}{194}$ $2^\varOmega$ は $\mathcal{E}\subset 2^\varOmega$ で $\varOmega$ 上の $\sigma$ 加法族である$\nr{sigma-algebra}{45}$ から，$2^\varOmega \in\mathfrak{S}$．よって，$\mathfrak{S}$ は空でない．</p>
+	</div>
 </details>
 <br>
 
-<p id="91">&nbsp;</p><div class="prp">
-	<b>[#91] 命題：$\bs{\sigma}$ 加法族の生成の一意性</b><br>
+<p id="91">&nbsp;</p>
+<div class="prptl">[#91] 命題：$\bs{\sigma}$ 加法族の生成の一意性</div>
+<div class="prp">
 	<p>$\varOmega$ の任意の部分集合族 $\mathcal{E}$ から生成される $\sigma$ 加法族$\nr{sigma-algebra}{90}$ が唯一つ存在する．</p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p> $\mathcal{E}$ を含む $\varOmega$ 上の $\sigma$ 加法族の集合を $\mathfrak{S}$ とおき，その元を集合 $\varLambda$ で添字付ける$\nr{collection-family}{223}$：
 	<p><center>\begin{align}
 		\mathcal{G}: \varLambda \to \mathfrak{S}.
@@ -273,37 +317,46 @@ updated on 2022/10/6
 	<p>とおくと，これは $\sigma$ 加法族の共通部分であるから，$\sigma(\mathcal{E})$ もまた $\sigma$ 加法族である$\nr{sigma-algebra}{31}$．また，任意の $\lambda\in\varLambda$ に対して $\mathcal{E} \subset \mathcal{G}_\lambda$ であるから，$\mathcal{E}\subset \bigcap_{\lambda\in\varLambda}\mathcal{G}_\lambda = \sigma(\mathcal{E})$ $\nr{collection-family}{346}$．さらに，集合族の元の共通部分に関する性質より，任意の $\mu\in\varLambda$ に対して $\sigma(\mathcal{E}) = \bigcap_{\lambda\in\varLambda} \mathcal{G}_\lambda\subset \mathcal{G}_{\mu}$．以上により，$\sigma(\mathcal{E})$ は $\mathcal{E}$ から生成される $\sigma$ 加法族$\nr{sigma-algebra}{90}$ である．</p>
 
 	<p>続いて，一意性を示す．ある集合族 $\mathcal{H}$ もまた $\mathcal{E}$ から生成される $\sigma$ 加法族であるとする．いま，性質 iii より，$\sigma(\mathcal{E})$ と $\mathcal{H}$ はともに $\mathfrak{S}$ に属する．よって $\sigma(\mathcal{E})\subset \mathcal{H}$ かつ $\sigma(\mathcal{E})\supset \mathcal{H}$ であり，集合の相等性$\nr{set}{111}$ から $\sigma(\mathcal{E})= \mathcal{H}$ が成り立つ．</p>
+	</div>
 </Details>
 <br>
 
-<p id="347">&nbsp;</p><div class="prp">
-	<b>[#347] 命題：生成される $\bs{\sigma}$ 加法族の包含</b><br>
+<p id="347">&nbsp;</p>
+<div class="prptl">[#347] 命題：生成される $\bs{\sigma}$ 加法族の包含</div>
+<div class="prp">
 	<p>$\varOmega$ の部分集合族 $\mathcal{E},\ \mathcal{M}$ に対して</p>
 	<p><center>\begin{align}
 		\mathcal{E}\subset \mathcal{M}\ \Longrightarrow\ \sigma(\mathcal{E})\subset \sigma(\mathcal{M}).
 		\end{align}</center></p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p> $\mathcal{E}\subset \mathcal{M} \refsb{sigma-algebra}{90} \sigma(\mathcal{M})$ であり，かつ $\sigma(\mathcal{M})$ は $\varOmega$ 上の $\sigma$ 加法族であるから，生成される $\sigma$ 加法族の定義$\nr{sigma-algebra}{90}$ より $\sigma(\mathcal{E}) \subset \sigma(\mathcal{M})$ である．</p>
+	</div>
 </Details>
 <br>
 
-<p id="32">&nbsp;</p><div class="exr">
-	<b>[#32] 演習：集合族により生成される $\sigma$ 加法族</b><br>
+<p id="32">&nbsp;</p>
+<div class="exrtl">[#32] 演習：集合族により生成される $\sigma$ 加法族</div>
+<div class="exr">
 	<p>$\varOmega = \{a,\,b,\,c\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{b\},\,\{c\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．</p>
 </div>
-<Details>
+<Details class="exrtl">
 	<summary>証明</summary>
+	<div class="exr">
+	</div>
 </Details>
 <br>
 	  
-<p id="33">&nbsp;</p><div class="exr">
-      <b>[#33] 演習：集合族により生成される $\sigma$ 加法族</b><br>
+<p id="33">&nbsp;</p>
+<div class="exrtl">[#33] 演習：集合族により生成される $\sigma$ 加法族</div>
+<div class="exr">
       $\varOmega = \{a,\,b,\,c,\,d,\,e\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{b\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．
     </div>
-    <Details>
-    <summary>証明</summary>
+<Details class="exrtl">
+	<summary>証明</summary>
+	<div class="exr">
 	<ul>
 	<li> $\varOmega$の$\sigma$加法族は$\emptyset$と$\varOmega$を含む．</li>
 	<li> $\sigma(\mathcal{A})$は$\mathcal{A}$を含むので，$\{a\},\,\{b\}\in\sigma(\mathcal{A})$．</li>
@@ -314,17 +367,20 @@ updated on 2022/10/6
 	<center>
 	$\boxed{\sigma(\mathcal{A}) = \{\emptyset,\,\{a\},\,\{b\},\,\{a,\,b\},\,\{c,\,d,\,e\},\,\{b,\,c,\,d,\,e\},\,\{a,\,c,\,d,\,e\},\varOmega\}}\,.$
 	</center>
+	</div>
     </Details>
     <br>
 	  
-<p id="34">&nbsp;</p><div class="exr">
-      <b>[#34] 演習：集合族により生成される $\sigma$ 加法族</b><br>
+<p id="34">&nbsp;</p>
+<div class="exrtl">[#34] 演習：集合族により生成される $\sigma$ 加法族</div>
+<div class="exr">
       $\varOmega = \{a,\,b,\,c,\,d,\,e\}$ とする．このとき，$\varOmega$ の部分集合族 $\mathcal{A} = \{\{a\},\,\{a,\,b,\,c\}\}$ を含む最小の $\sigma$ 加法族 $\sigma(\mathcal{A})$ を求めよ．
     </div>
-    <Details>
-    <summary>証明</summary>
-	    
-    </Details>
+<Details class="exrtl">
+	<summary>証明</summary>
+	<div class="exr">
+	</div>	    
+</Details>
     <br>
 	  
 <div id="bib">
