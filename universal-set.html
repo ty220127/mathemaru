@@ -47,74 +47,89 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 isolated from <a href="complement-set.html">補集合</a> on 2022/5/8<br>
-updated on 2022/9/2
+updated on 2022/10/22
 </p>
 
-<p id="110">&nbsp;</p><div class="def">
-	<b>[#110] 定義：空集合</b><br>
+<p id="110">&nbsp;</p>
+<div class="deftl">[#110] 定義：空集合</div>
+<div class="def">
 	<p>一切の記号が属さないような集合を【空集合 (empty set)】と呼び，$\emptyset$ と書く：</p>
 	<p><center>\begin{align*}
-		{}^\forall x,\,\,(x\in \emptyset) \equiv \mathsf{F},
+		{}^\forall x,\ x\not \in \emptyset.
 		\end{align*}</center></p>
-	<p>つまり，任意の記号 $x$ に関して $x\not \in \emptyset$ である．</p>
 </div>
+<details class="deftl">
+	<summary>補足</summary>
+	<div class="def">
+	<p>空集合を内包的記法$\nr{set}{48}$ により表記すると</p>
+	<p><center>\begin{align}
+		\emptyset  =\{\}.
+		\end{align}</center></p>
+	</div>
+</details>
 <br>
   
-<p id="49">&nbsp;</p><div class="prp">
-	<b>[#49] 命題：空集合と包含</b><br>
+<p id="49">&nbsp;</p>
+<div class="prptl">[#49] 命題：空集合と包含</div>
+<div class="prp">
 	<p>空集合 $\emptyset$ は任意の集合の部分集合$\nr{set}{111}$ である．</p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>任意の集合 $A$ と記号 $x$ に対して</p>
 	<p><center>\begin{align}
 		(x\in \emptyset)\to (x\in A) \ \reflr{implication}{65}\ &\neg (x\in \emptyset)\lor (x\in A)\\
 		 \ \reflr{universal-set}{83}\ &\neg\, \mathsf{F}\lor (x\in A) \,\reflr{proposition}{58} \,\mathsf{T}\lor (x\in A) \,\reflr{proposition}{60}\,\mathsf{T}
 		\end{align}</center></p>
 	<p>であるから，$\emptyset \subset A$ である$\nr{set}{111}$．</p>
+	</div>
 </Details>
-<!--<Details>
-	<summary>補足</summary>
-	<p>論理包含の命題に対して，仮定が偽である場合に結論の真偽に関わらずこれを真とすることで都合が良くなる例の一つである．</p>
-</Details>-->
 <br>
 
-<p id="83">&nbsp;</p><div class="def">
-	<b>[#83] 定義：普遍集合</b><br>
+<p id="83">&nbsp;</p>
+<div class="deftl">[#83] 定義：普遍集合</div>
+<div class="def">
 	<p>すべての記号が属する集合 $\varOmega$ を【普遍集合 (全体集合; universal set)】と呼ぶ：</p>
 	<p><center>\begin{align*}
-		{}^\forall x,\,\,(x\in \varOmega) \equiv \mathsf{T},
+		{}^\forall x,\ x\in \varOmega.
 		\end{align*}</center></p>
-	<p>つまり任意の記号 $x$ に関して $x\in \varOmega$ である．
 </div>
-<details>
+<details class="deftl">
 	<summary>補足</summary>
+	<div class="def">
 	<p>集合を用いた複雑な議論を行う際，しばしば予め大きな（多くの元を持つ）集合を定義し，その部分集合の範囲で議論を行うことを考える．この大きな集合を普遍集合と捉えて議論を進めていく．</p>
+	</div>
 </details>
 <br>
 
-<p id="324">&nbsp;</p><div class="prp">
-	<b>[#324] 命題：普遍集合と包含</b><br>
+<p id="324">&nbsp;</p>
+<div class="prptl">[#324] 命題：普遍集合と包含</div>
+<div class="prp">
 	<p>任意の集合は普遍集合の部分集合$\nr{set}{111}$ である．</p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>任意の集合 $A$ と記号 $x$ に対して</p>
 	<p><center>\begin{align}
 		(x\in A)\to (x\in \varOmega) \ \reflr{implication}{65}\ &\neg (x\in A)\lor (x\in \varOmega)\\
 		 \ \reflr{universal-set}{83}\ &\neg (x\in A)\lor \mathsf{T} \ \reflr{proposition}{60} \mathsf{T}
 		\end{align}</center></p>
 	<p>であるから，$A\subset \varOmega$ である$\nr{set}{111}$．</p>
+	</div>
 </Details>
 <br>
 
-<p id="213">&nbsp;</p><div class="prp">
-	<b>[#213] 命題：普遍集合と空集合の補集合</b><br>
+<p id="213">&nbsp;</p>
+<div class="prptl">[#213] 命題：普遍集合と空集合の補集合</div>
+<div class="prp">
 	<p>普遍集合 $\varOmega$ と空集合 $\emptyset$ に対して</p>
 	<p><center>$\varOmega^\cpl = \emptyset,\quad \emptyset^\cpl = \varOmega.$</center></p>
 </div>
-<Details>
-<summary>証明</summary>
+<Details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
 	<p><center>\begin{align*}
 		x\in \varOmega^\cpl\ \reflr{complement-set}{84}\ \neg(x\in \varOmega)\ \reflr{universal-set}{83}\  \neg \mathsf{T}\,\,\reflr{proposition}{58}\,\,\mathsf{F}
 		\end{align*}</center></p>
@@ -122,24 +137,20 @@ updated on 2022/9/2
 	<p><center>\begin{align*}
 		\emptyset^\cpl = (\varOmega^\cpl)^\cpl \refeq{complement-set}{218} \varOmega.
 		\end{align*}</center></p>
+	</div>
 </Details>
-<!--<Details>
-	<summary>証明</summary>
-	<p><center>\begin{align*}\begin{array}{ccccc}
-		x\in\varOmega^\cpl  &  \reflr{complement-set.html#83}{83}  &  x\in\varOmega\setminus\varOmega  &  \reflr{difference-set.html#211}{211}  &  x\in\emptyset,\\
-		x\in\emptyset^\cpl  &  \reflr{complement-set.html#83}{83}  &  x\in\varOmega\setminus\emptyset  &  \reflr{difference-set.html#211}{211}  &  x\in\varOmega.\\
-		\end{array}\end{align*}</center></p>
-</Details>-->
 <br>
 
-<p id="214">&nbsp;</p><div class="prp">
-	<b>[#214] 命題：補集合と相補法則 (complement law)</b><br>
+<p id="214">&nbsp;</p>
+<div class="prptl">[#214] 命題：補集合と相補法則 (complement law)</div>
+<div class="prp">
 	<p>任意の集合 $A,\ B$ に対して</p>
 	<p><center>$(A\cap B = \emptyset)\land (A\cup B = \varOmega) \ \Longleftrightarrow\ B = A^\cpl.$</center></p>
 	<p>ただし $\varOmega$ は普遍集合．</p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>$(\Rightarrow):$ まず，$A\cap B = \emptyset$ であることから，任意の記号 $x$ に関して
 	<p><center>\begin{align}
 		x \in (A\cap B)^\cpl
@@ -174,52 +185,64 @@ updated on 2022/9/2
 		x\in A\cup A^\cpl \ \reflr{set}{51}\ (x\in A)\lor (\neg(x\in A))\ \reflr{proposition}{60}\ \mathsf{T}
 		\end{align*}</center></p>
 	<p>より $A\cup A^\cpl = \varOmega$ である$\nr{universal-set}{83}$．</p>
+	</div>
 </Details>
 <br>
 
-<p id="215">&nbsp;</p><div class="prp">
-	<b>[#215] 命題：集合の同一則 (identity law)</b><br>
+<p id="215">&nbsp;</p>
+<div class="prptl">[#215] 命題：集合の同一則 (identity law)</div>
+<div class="prp">
 	<p>任意の集合 $A$ と普遍集合 $\varOmega$ に対して</p>
 	<p><center>$A\cap \varOmega= A\cup \emptyset =A$.</center></p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>任意の集合 $A$ は普遍集合 $\varOmega$ の部分集合である$\nr{universal-set}{324}$ から，集合の包含と共通部分に関する性質$\nr{set}{57}$ により $A\cap \varOmega =A$ が成り立つ．<br>
 		また任意の集合 $A$ は空集合 $\emptyset$ を含む$\nr{universal-set}{49}$ から，集合の包含と和に関する性質$\nr{set}{56}$ により $A\cup \emptyset =A$ が成り立つ．</p>
+	</div>
 </Details>
-<details>
+<Details class="prptl">
 	<summary>補足</summary>
+	<div class="prp">
 	<p>自明であるが，集合の交換法則$\nr{set}{52}$ と組み合わせれば</p>
 	<p><center>$\varOmega\cap A= \emptyset\cup A =A$</center></p>
 	<p>も得られる．</p>
+	</div>
 </details>
 <br>
 
-<p id="325">&nbsp;</p><div class="prp">
-	<b>[#325] 命題：集合の統治則 (domination law)</b><br>
+<p id="325">&nbsp;</p>
+<div class="prptl">[#325] 命題：集合の統治則 (domination law)</div>
+<div class="prp">
 	<p>集合 $A$ に対して </p>
 	<p><center>$A\cup \varOmega= \varOmega$，$A\cap \emptyset =\emptyset$.</center></p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>任意の集合 $A$ は普遍集合 $\varOmega$ の部分集合である$\nr{universal-set}{324}$ から，集合の包含と和に関する性質$\nr{set}{56}$ により $A\cup \varOmega =\varOmega$ が成り立つ．<br>
 		また任意の集合 $A$ は空集合 $\emptyset$ を含む$\nr{universal-set}{49}$ から，集合の包含と共通部分に関する性質$\nr{set}{57}$ により $A\cap \emptyset =\emptyset$ が成り立つ．</p>
 </Details>
-<details>
+<Details class="prptl">
 	<summary>補足</summary>
+	<div class="prp">
 	<p>自明であるが，集合の交換法則$\nr{set}{52}$ と組み合わせれば</p>
 	<p><center>$\varOmega\cup A= \varOmega$，$\emptyset\cap A =\emptyset$</center></p>
 	<p>も得られる．</p>
+	</div>
 </details>
 <br>
 
-<p id="216">&nbsp;</p><div class="prp">
-	<b>[#216] 命題：集合による含意の換言</b><br>
+<p id="216">&nbsp;</p>
+<div class="prptl">[#216] 命題：集合による含意の換言</div>
+<div class="prp">
 	<p>集合 $A,\,B$ に対して</p>
 	<p><center>$A\subset B\,\,\Longleftrightarrow\,\, A^\cpl\cup B = \varOmega.$</center></p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>$(\Rightarrow):$ まず，普遍集合は任意の集合を包含するから$\nr{universal-set}{327}$，$A^\cpl\cup B\subset \varOmega$．一方で $A\subset B$ であることに注意すれば</p>
 	<p><center>\begin{align*}
 		A^\cpl\cup B \supset A^\cpl\cup A\ \refeq{universal-set}{214}\ \varOmega.
@@ -232,6 +255,7 @@ updated on 2022/9/2
 		&\ \refeq{set}{54}\ (A\cap A^\cpl)\cup (A\cap B)\ \refeq{universal-set}{214}\ \emptyset \cup (A\cap B)\\
 		&\ \refeq{universal-set}{215}\ A\cap B \refsb{set}{204} B.
 		\end{align*}</center></p>
+	</div>
 </Details>
 <br>
 	
@@ -241,6 +265,7 @@ updated on 2022/9/2
 	<li><a href="https://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/15F/IntroGeom1/Geom15note.pdf">市原一裕: 幾何学序論講義ノート, 公開pdf (2015)</a> [2022/9/2 閲覧].</li>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-3_shugo-enzan.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第３章), 公開pdf</a>.</li>
+	<li>原啓介: 測度・確率・ルベーグ積分 応用への最短コース, 講談社 (2017).</li>
 	<li><a href="https://math-fun.net/20210530/14400/">補集合、差集合、全体集合とは：例と性質、証明 - 趣味の大学数学</a> [2022/8/5 閲覧].</li>
 	<li><a href="https://math24.net/set-identities.html">Set Identities - Math24.net</a> [2022/8/5 閲覧].</li>
 </ul>
