@@ -79,7 +79,6 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
       font-weight: normal;
       padding:10px;
 }
-.exr a{color:#0000EE}
 .exrtl{
       background:#7b2323;
       border:1px solid #7b2323; 
@@ -88,6 +87,7 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
       color:#FFFFFF;
 }
 .exrtl a{color:#FFFFFF}
+.exrtl div.exr a{color:#0000EE}
 
 .fct{
       border-left: solid 0.3em #646464;
