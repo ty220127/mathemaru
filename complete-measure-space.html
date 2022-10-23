@@ -1,15 +1,20 @@
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
-		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
@@ -18,30 +23,36 @@
 		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
 	}}});
 </script>
 <script>
 	const ttl = "零集合と完備測度空間"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-	table{
-		font-size: 14px;
-	}
-</style>
 </head>
 
 <body>
-<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
-<p style="text-align:right;">
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/5/13<br>
-updated on 2022/5/14
+updated on 2022/10/23
 </p>
     
-<div class="def" id="228">
-	<b>[#228] 定義：零集合</b><br>
-	<p>測度空間 <a href="sigma-algebra.html#10">[#10]</a> $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合 $N\in\mathcal{F}$ で</p>
+<p id="228">&nbsp;</p>
+	<div class="deftl">[#228] 定義：零集合</div>
+<div class="def">
+	<p>測度空間$\nr{sigma-algebra}{10}$ $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合 $N\in\mathcal{F}$ で</p>
 	<p><center>\begin{align*}
 		\mu(N) = 0
 		\end{align*}</center></p>
@@ -49,40 +60,39 @@ updated on 2022/5/14
 </div>
 <br><br>
 
-<div class="def" id="229">
-	<b>[#229] 定義：完備測度空間</b><br>
-	<p>測度空間 <a href="sigma-algebra.html#10">[#10]</a> $(\varOmega,\,\mathcal{F},\,\mu)$ が【完備 (complete)】であるとは，任意の零集合 $N\in\mathcal{F}$ の部分集合が可測であることを云う：</p>
+<p id="229">&nbsp;</p>
+	<div class="deftl">[#229] 定義：完備測度空間</div>
+<div class="def">
+	<p>測度空間$\nr{sigma-algebra}{10}$ $(\varOmega,\,\mathcal{F},\,\mu)$ が【完備 (complete)】であるとは，任意の零集合 $N\in\mathcal{F}$ の部分集合が可測であることを云う：</p>
 	<p><center>\begin{align*}
 		{}^\forall N\in\mathcal{F},\,\,(\mu(N)=0)\land (A\subset N)\,\,\Longrightarrow\,\,A\in\mathcal{F}.
 		\end{align*}</center></p>
 </div>
 <br><br>
 
-<div class="def" id="230">
-	<b>[#230] 定義：ほとんど至るところ</b><br>
-	<p>測度空間 <a href="sigma-algebra.html#10">[#10]</a> $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合を $F$ とする．$\omega\in F$ についての条件 <a href="predicate.html#75">[#75]</a> $\mathcal{P}(\omega)$ が $F$ 上の【ほとんど至るところ (almost everywhere)】で成立するとは，$\mathcal{P}(\omega)$ の否定により定義される可測集合が零集合であることを云う：</p>
+<p id="230">&nbsp;</p>
+	<div class="deftl">[#230] 定義：ほとんど至るところ</div>
+<div class="def">
+	<p>測度空間$\nr{sigma-algebra}{10}$ $(\varOmega,\,\mathcal{F},\,\mu)$ 上の可測集合を $F$ とする．$\omega\in F$ についての条件$\nr{predicate}{75}$ $\mathcal{P}(\omega)$ が $F$ 上の【ほとんど至るところ (almost everywhere)】で成立するとは，零集合$\nr{complete-measure-space}{228}$ $N$ が存在して，$\mathcal{P}(\omega)$ が任意の $F\setminus N$ 上で成り立つことをいう：</p>
 	<p><center>\begin{align*}
-		\mu\left(\bigl\{\omega\in F\,|\,\neg\mathcal{P}(\omega)\bigr\}\right)= \mu\left(\bigl\{\omega\in F\,|\,\mathcal{P}(\omega)\bigr\}^\cpl\right) = 0.
+		\omega\in F\setminus N\ \Longrightarrow \mathcal{P}(\omega).
 		\end{align*}</center></p>
-	<Details>
-	<summary>記法</summary>
-		<p>$\mathcal{P}(\omega)$ がほとんど至るところで成立することは</p>
-		<p><center>
-			$\mathcal{P}(\omega),\,\,\,\text{a.e.}\,\,\,\text{on}\,\,F$
-			</center></p>
-		<p>などと書く．測度が $\mu$ であることを強調する場合は "$\text{a.e.}$" を "$\mu\,\text{-a.e.}$" と書く．また，$F=\varOmega$ の場合は "$\text{on}\,\,F$" を省略して良い．</p>
-	</Details>
+	<p>$\mathcal{P}(\omega)$ がほとんど至るところで成立することを</p>
+	<p><center>
+		$\mathcal{P}(\omega),\ \,\mu\text{-a.e.}\ \,\text{on}\ F,$
+		</center></p>
+	<p>或いは単に $\mathcal{P}(\omega),\ \mu\text{-a.e.},\ $ $\mathcal{P}(\omega),\ \text{a.e.}$ などと略記する（略記するか否かは，その部分が自明かどうかに拠る）．</p>
 </div>
 <br><br>
 
 <div id="bib"><b>参考文献</b>
 <ul>
+	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/labo/text/functional-analysis-2/functional-analysis-2.html">桂田祐史: 関数解析入門 II 積分・関数空間ノート</a> [2022/10/23 閲覧].</li>
 	<li><a href="https://www.ms.u-tokyo.ac.jp/~kyuta/probability.pdf">小池祐太: 測度論的確率論, 公開pdf, (2022)</a>.</li>
 	<li>佐藤坦: はじめての確率論 測度から確率へ, 共立出版 (1994).</li>
 	<li>舟木直久: 講座＜数学の考え方＞20 確率論, 朝倉書店 (2004).</li>
-	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/labo/text/functional-analysis-2/node4.html">1.2 零集合、完備な測度空間 - 関数解析入門 II 積分・関数空間ノート 桂田 祐史</a></li>
-	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/labo/text/functional-analysis-2/node5.html">1.3 ほとんど至るところ等しい - 関数解析入門 II 積分・関数空間ノート 桂田 祐史</a></li>
 	<li><a href="https://mathlandscape.com/almost-every/">ほとんどいたるところ(almost everywhere, a.e.)の議論 - 数学の景色</a></li>
+	<li><a href="https://math-fun.net/20220825/26449/">ほとんど至る所（a.e.）とは：簡単な関数を例に - 趣味の大学数学</a> [2022/10/23 閲覧].</li>
 	<li><a href="https://mathematics-pdf.com/pdf/measure.pdf">測度 - MATHEMATICS.PDF, 公開pdf</a>.</li>
 </ul>
 </div>
