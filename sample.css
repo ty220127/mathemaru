@@ -88,6 +88,7 @@ nav li a:hover{color:#dfdfdf;text-decoration:underline}
 }
 .exrtl a{color:#FFFFFF}
 .exrtl div.exr a{color:#0000EE}
+.exrtl div.exr a:visited{color:#551A8B}
 
 .fct{
       border-left: solid 0.3em #646464;
