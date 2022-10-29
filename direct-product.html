@@ -45,11 +45,12 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/9<br>
-updated on 2022/9/19<br>
+updated on 2022/10/29<br>
 </p>
     
-<p id="339">&nbsp;</p><div class="def">
-	<b>[#339] 定義：順序対，順序組</b><br>
+<p id="339">&nbsp;</p><div class="deftl">
+	[#339] 定義：順序対，順序組</div>
+<div class="def">
 	<p>記号 $a,\ b$ に対して集合 $(a,\,b)$ を</p>
 	<p><center>\begin{align}
 		(a,\,b) := \{\{a\},\,\{a,\ b\}\}
@@ -64,31 +65,33 @@ updated on 2022/9/19<br>
 		\end{align}</center></p>
 	<p>と定める．</p>
 </div>
-<details>
-	<summary>補足１</summary>
+<details class="deftl">
+	<summary>補足１</summary><div class="def">
 	<p>順序組は，順序対を一般化した概念と捉えて良い．</p>
-</details>
-<details>
-	<summary>補足２</summary>
+</div></details>
+<details class="deftl">
+	<summary>補足２</summary><div class="def">
 	<p>順序対 $(a,\,b)$ に対して，集合 $\{a,\,b\}$ を【非順序対 (unordered pair)】と呼ぶことがある．同様に，順序組 $(a_1,\,a_2,\,\cdots,\,a_n)$ に対して，集合 $\{a_1,\,a_2,\,\cdots,\,a_n\}$ を【非順序組 (unordered tuplet)】と呼ぶことがある．非順序対や非順序組は，持っている元の順番を変えても同じ集合である（例えば $\{a,\,b,\,c\} = \{a,\,c,\,b\}$）一方で，順序対や順序組は，持っている元の順番を変えると別の集合になってしまう$\nr{direct-product}{340}$．
-</details>
+</div></details>
 <br>
 
-<p id="340">&nbsp;</p><div class="prp">
-	<b>[#340] 命題：順序組の相等</b><br>
+<p id="340">&nbsp;</p><div class="prptl">
+	[#340] 命題：順序組の相等</div>
+<div class="prp">
 	<p>記号 $a_1,\ a_2,\ \cdots,\ a_n,\ b_1,\ b_2,\ \cdots,\ b_n$ に対して</p>
 	<p><center>\begin{align}
 		&(a_1,\,a_2,\,\cdots,\,a_n) = (b_1,\,b_2,\,\cdots,\,b_n)\\
 		&\hspace{10pt}\Longleftrightarrow\,\, (a_1= b_1)\land (a_2= b_2)\land \cdots\land (a_n= b_n)
 		\end{align}</center></p>		
 </div>
-<details>
-	<summary>証明</summary>
-</details>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
+</div></details>
 <br>
 
-<p id="297">&nbsp;</p><div class="def">
-	<b>[#297] 定義：直積</b><br>
+<p id="297">&nbsp;</p><div class="deftl">
+	[#297] 定義：直積</div>
+<div class="def">
 	<p>集合 $A,\ B$ の元による順序対$\nr{direct-product}{339}$ の集合 $A\times B$ を $A$ と $B$ の【直積 (direct product)】或いは【<ruby><rb>Descartes</rb><rp>（</rp><rt>デカルト</rt><rp>）</rp></ruby> 積 (Cartesian product)】と呼び</p>
 	<p><center>\begin{align}
 		A\times B := \{(a,\, b)\,|\, (a\in A)\land (b\in B)\}
@@ -105,31 +108,53 @@ updated on 2022/9/19<br>
 		\underset{n}{\underbrace{A\times A\times \cdots\times A}} = A^n.
 		\end{align}</center></p>
 </div>
-<Details>
-	<summary>余談</summary>
+<details class="deftl">
+	<summary>余談</summary><div class="def">
 	<p>Descartes 積のことを英語で Cartesian product と呼ぶのは，Descartes という人名の形容詞形が Cartesian であるからだが，Des とはフランス語で冠詞であり，形容詞化する際にこれが取れるためである．</p>
-</Details>
+</div></details>
 <br>
 
-<p id="351">&nbsp;</p><div class="prp">
-	<b>[#351] 命題：直積の部分集合</b><br>
+<p id="351">&nbsp;</p><div class="prptl">
+	[#351] 命題：直積の部分集合</div>
+<div class="prp">
 	<p>集合 $X,\ Y$ に対して，その部分集合をそれぞれ $A,\ B$ とすれば</p>
 	<p><center>\begin{align}
 		A\times B\subset X\times Y.
 		\end{align}</center></p>
 </div>
-<details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p><center>\begin{align*}
 		(a,\,b)\in A\times B \ \reflr{direct-product}{297}\ & (a\in A)\land (b\in B)\\
 			\refr{set}{111}\ & (a\in X)\land (b\in Y)\\
 			\reflr{direct-product}{297}\ & (a,\,b) \in X\times Y.
 		\end{align*}</center></p>
-</details>
+</div></details>
 <br>
 
-<p id="309">&nbsp;</p><div class="prp">
-	<b>[#309] 命題：直積に関する分配法則</b><br>
+<p id="389">&nbsp;</p><div class="prptl">
+	[#389] 命題：直積と零集合</div>
+<div class="prp">
+	<p>集合 $X$ に対して</p>
+	<p><center>\begin{align}
+		X\times \emptyset = \emptyset\times X = \emptyset.
+		\end{align}</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
+	<p>任意の記号 $y$ に対して $y\not\in \emptyset$ である$\nr{universal-set}{110}$ から，任意の記号 $x,\ y$ に対して</p>
+	<p><center> $x\not\in X$ または $y\not\in \emptyset$</center></p>
+	<p>である$\nr{implication}{88}$．つまり，de Morgan の法則$\nr{proposition}{63}$ より</p>
+	<p><center>\begin{align}
+		\neg((x\in X)\land (y\in \emptyset)) \refeqv{direct-product}{297} (x,\,y)\not\in X\times \emptyset.
+		\end{align}</center></p>
+	<p>よって $X\times \emptyset = \emptyset$ である．同様にして，$\emptyset\times X = \emptyset.$
+</div></details>
+<br>
+
+<p id="309">&nbsp;</p><div class="prptl">
+	[#309] 命題：直積に関する分配法則</div>
+<div class="prp">
 	<p>集合 $A,\ B,\ C$ に対して</p>
 	<p><center>\begin{align}
 		&(A\cap B) \times C = (A\times C)\cap (B\times C) \tag{309.1}\\
@@ -138,8 +163,8 @@ updated on 2022/9/19<br>
 		&A\times (B \cup C) = (A\cup B)\times (A\cup C) \tag{309.4}\\
 		\end{align}</center></p>
 </div>
-<Details>
-	<summary>証明(309.1)</summary>
+<details class="prptl">
+	<summary>証明(309.1)</summary><div class="prp">
 	<p><center>\begin{align}
 		&(x,\,y)\in (A\cap B) \times C \\
 		\reflr{direct-product}{297}\, & (x\in A\cap B)\land (y\in C)\\
@@ -148,9 +173,9 @@ updated on 2022/9/19<br>
 		\reflr{direct-product}{297}\, & ((x,\,y)\in A\times C)\land ((x,\,y)\in B\times C)\\
 		\reflr{set}{51}\, & (x,\,y)\in (A\times C) \cap (B\times C)
 		\end{align}</center></p>
-</Details>
-<Details>
-	<summary>証明(309.2)</summary>
+</div></details>
+<details class="prptl">
+	<summary>証明(309.2)</summary><div class="prp">
 	<p><center>\begin{align}
 		&(x,\,y)\in (A\cup B) \times C \\
 		\reflr{direct-product}{297}\, & (x\in A\cup B)\land (y\in C)\\
@@ -159,9 +184,9 @@ updated on 2022/9/19<br>
 		\reflr{direct-product}{297}\, & ((x,\,y)\in A\times C)\lor ((x,\,y)\in B\times C)\\
 		\reflr{set}{51}\, & (x,\,y)\in (A\times C) \cup (B\times C)
 		\end{align}</center></p>
-</Details>
-<Details>
-	<summary>証明(309.3)</summary>
+</div></details>
+<details class="prptl">
+	<summary>証明(309.3)</summary><div class="prp">
 	<p><center>\begin{align}
 		&(x,\,y)\in A\times (B \cap C) \\
 		\reflr{direct-product}{297}\, & (x\in A)\land (y\in B\cap C)\\
@@ -170,9 +195,9 @@ updated on 2022/9/19<br>
 		\reflr{direct-product}{297}\, & ((x,\,y)\in A\times B)\land ((x,\,y)\in A\times C)\\
 		\reflr{set}{51}\, & (x,\,y)\in (A\times B) \cap (A\times C)
 		\end{align}</center></p>
-</Details>
-<Details>
-	<summary>証明(309.4)</summary>
+</div></details>
+<details class="prptl">
+	<summary>証明(309.4)</summary><div class="prp">
 	<p><center>\begin{align}
 		&(x,\,y)\in A\times (B \cup C) \\
 		\reflr{direct-product}{297}\, & (x\in A)\land (y\in B\cup C)\\
@@ -181,18 +206,19 @@ updated on 2022/9/19<br>
 		\reflr{direct-product}{297}\, & ((x,\,y)\in A\times B)\lor ((x,\,y)\in A\times C)\\
 		\reflr{set}{51}\, & (x,\,y)\in (A\times B) \cup (A\times C)
 		\end{align}</center></p>
-</Details>
+</div></details>
 <br>
 
-<p id="352">&nbsp;</p><div class="prp">
-	<b>[#352] 命題：直積の差集合</b><br>
+<p id="352">&nbsp;</p><div class="prptl">
+	[#352] 命題：直積の差集合</div>
+<div class="prp">
 	<p>集合 $X,\ Y$ に対して，その部分集合をそれぞれ $A,\ B$ とすれば</p>
 	<p><center>\begin{align}
 		(X\times Y)\backslash (A\times B) = ((X\backslash A)\times Y)\cup (X\times (Y\backslash B)).
 		\end{align}</center></p>
 </div>
-<details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p><center>\begin{align*}
 		&(x,\,y)\in (X\times Y)\backslash (A\times B)\\
 			\reflr{difference-set}{95}\ & ((x,\,y)\in (X\times Y))\land \neg((x,\,y)\in (A\times B))\\
@@ -202,11 +228,11 @@ updated on 2022/9/19<br>
 			\reflr{direct-product}{297}\ & ((x,\,y)\in (X\backslash A)\times Y))\lor ((x,\,y)\in X\times (Y\backslash B))\\
 			\reflr{set}{51}\ & (x,\,y)\in ((X\backslash A)\times Y) \cup (X\times (Y\backslash B))
 		\end{align*}</center></p>
-</details>
+</div></details>
 <br>
 
 <br><br>
-<div id="bib"><b>参考文献</b>
+<div id="bib">参考文献</b>
 <ul>
 	<li><a href="https://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/15F/IntroGeom1/Geom15note.pdf">市原一裕: 幾何学序論講義ノート, 公開pdf</a> [2022/9/18 閲覧].</li>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
