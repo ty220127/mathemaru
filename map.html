@@ -47,27 +47,47 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/21<br>
-updated on 2022/9/20
+updated on 2022/10/29
 </p>
     
-<p id="99">&nbsp;</p><div class="def">
-	<b>[#99] 定義：写像</b><br>
-	<p>$X,\,Y$ を集合とする．$X$の任意の元 $x$ について $Y$ の元 $y$ がただ１つ決まるような対応を $X$ から $Y$ への【写像 (map)】と呼び，
-		写像 $f$ が $X$ から $Y$ への写像であることをしばしば</p>
-	<p><center>$f:X\rightarrow Y$　あるいは　$X\overset{f}{\longrightarrow}Y$</center></p>
-	<p>などと表現する．特に $X=Y$ の場合は $f$ を $X$ 上の【変換 (transformation)】とも呼ぶ．ここで，$X$ は $f$ の【始域 (定義域; domain)】，$Y$ は $f$ の【終域 (codomain)】と呼ばれる．
-		また，写像 $f$ により $y$ が $x$ に対応することはしばしば</p>
-	<p><center>$f:x\mapsto y$　あるいは　$y=f(x)$</center></p>
-	<p>などと表現され，$y$ もとい $f(x)$ は $x$ の【像 (image)】と呼ばれる．</p>
-	<p>なお，写像 $f:X\to Y,\ g:Z\to W$ の相等性を以下で定義する：</p>
+<p id="99">&nbsp;</p><div class="deftl">
+	[#99] 定義：写像</div>
+<div class="def">
+	<p>$X,\,Y$ を集合とする．$X$ の任意の元 $x$ について $Y$ の元 $y$ がただ１つ決まるような対応を $X$ から $Y$ への【写像 (mapping; map)】と呼ぶ．形式的には，$X,\ Y$ と，以下で定義される直積$\nr{direct-product}{297}$ $X\times Y$ の部分集合$\nr{set}{111}$ $\varGamma$ による３つ組 $f = (X,\, Y,\, \varGamma)$ から成る：</p>
 	<p><center>\begin{align}
-		(X = Z)\land (Y = W)\land ({}^\forall x\in X,\,f(x) = g(x)).
+		{}^\forall x\in X,\ {}^\exists y\in Y\ \text{s.t.}\ ((x,\,y)\in\varGamma)\land ((x,\,y')\in\varGamma\,\to\, y=y').
 		\end{align}</center></p>
+	<p>ここで，$X,\ Y,\ \varGamma$ をそれぞれ $f$ の【始域 (定義域; domain)】，【終域 (codomain)】，【グラフ (graph)】と呼ぶ．また $(x,\,y)\in\varGamma$ であることを，$f$ は $x$ を $y$ に【写す (移す; map)】という．更に，この下で $y$ を $f$ による $x$ の【像 (image)】を呼び，$f(x)$ と書く．</p>
+	<p> $f$ が $X$ から $Y$ の写像であり，また $x\in X$ を $f(x)$ に写すことをしばしば</p>
+	<p><center>\begin{align}
+		f: X\to Y,\quad x\mapsto f(x)
+		\end{align}</center></p>
+	<p>と書く．</p>
+	<p>写像のうち，始域と終域がともにある集合 $X$ であるものを，$X$ 上の【変換 (transformation)】と呼ぶ．</p>
 </div>
+<details class="deftl">
+	<summary>補足１</summary>
+	<div class="def">
+	<p>$\varGamma$ の定義は，つまり $x\in X$ に対して $y\in Y$ が一意に決まるよう定義されることをいっている：</p>
+	<p><center>\begin{align}
+		{}^\forall x\in X,\ {}^{\exists !} y\in Y\ \text{s.t.}\ (x,\,y)\in\varGamma.
+		\end{align}</center></p>
+	</div>
+</details>
+<details class="deftl">
+	<summary>補足２</summary>
+	<div class="def">
+	<p>写像の相等性は，順序組$\nr{direct-product}{339}$ の相等性$\nr{direct-product}{340}$ に則る．つまり，$f = (X,\,Y,\,\varGamma)$ と $g=(Z,\,W,\,\varDelta)$ に対して</p>
+	<p><center>\begin{align}
+		f=g\ \Longleftrightarrow\ (X=Z)\land (Y=W)\land (\varGamma = \varDelta).
+		\end{align}</center></p>
+	<p>これにより，始域と終域が一致する下で，任意の $x$ に対して $f(x)=g(x)$ であることは $f=g$ であることの特徴づけとなる．</p>
+</details>
 <br>
   
-<p id="102">&nbsp;</p><div class="def">
-	<b>[#102] 定義：合成写像</b><br>
+<p id="102">&nbsp;</p><div class="deftl">
+	[#102] 定義：合成写像</div>
+<div class="def">
 	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ に対して，$X$ の元を $f$ で写し，さらに $g$ で写すような写像を $f$ と $g$ の【合成写像 (composition)】と呼ぶ：</p>
 	<p><center>$
 		g\circ f: X\to Z,\quad x\mapsto g(f(x)).
@@ -76,70 +96,77 @@ updated on 2022/9/20
 </div>
 <br>
   
-<p id="109">&nbsp;</p><div class="prp">
-	<b>[#109] 命題：合成写像の結合法則</b><br>
+<p id="109">&nbsp;</p><div class="prptl">
+	[#109] 命題：合成写像の結合法則</div>
+<div class="prp">
 	<p>写像 $f:X\rightarrow Y,\,g:Y\rightarrow Z,\,h:Z\rightarrow W$ に対して，</p>
 	<p><center>$(h\circ g)\circ f = h\circ (g\circ f).$</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>合成写像の定義 <a href="#102">[#102]</a> を繰り返し用いることにより，両者が等しいことが確認される：</p>
 	<p><center>$\begin{align*}
 		((h\circ g)\circ f)(x) &= h\circ g(f(x)) = h(g(f(x))),\\
 		(h\circ (g\circ f))(x) &= h(g\circ f(x)) = h(g(f(x))).
 		\end{align*}$</center></p>
-</Details>
+</div></details>
 <br>
   
-<p id="107">&nbsp;</p><div class="def">
-	<b>[#107] 定義：恒等変換</b><br>
+<p id="107">&nbsp;</p><div class="deftl">
+	[#107] 定義：恒等変換</div>
+<div class="def">
 	<p>何も変えない $X$ 上の変換 $\mathrm{id}_X$ を $X$ 上の【恒等変換 (identity transformation)】或いは【恒等写像 (identity map)】と呼ぶ：</p>
 	<p><center>$\mathrm{id}_X:X\rightarrow X,\quad x\mapsto x.$</center></p>
 	<p>すなわち $\mathrm{id}_X(x)=x$ である．</p>
 </div>
 <br>
   
-<p id="108">&nbsp;</p><div class="prp">
-	<b>[#108] 命題：恒等変換との合成</b><br>
+<p id="108">&nbsp;</p><div class="prptl">
+	[#108] 命題：恒等変換との合成</div>
+<div class="prp">
 	<p>写像 $f:X\rightarrow Y$ に対して</p>
 	<p><center>$f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.$</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>恒等写像の定義 <a href="#107">[#107]</a> より，$x\in X$ に対して</p>
 	<p><center>$f\circ\mathrm{id}_X(x) = f(\mathrm{id}_X(x)) = f(x)$</center></p>
 	<p>であり，</p>
 	<p><center>$\mathrm{id}_Y\circ f(x) = \mathrm{id}_Y(f(x)) = f(x)$</center></p>
 	<p>である．故に $f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.$</p>
-</Details>
+</div></details>
 <br>
 
-<p id="353">&nbsp;</p><div class="def">
-	<b>[#353] 定義：制限写像</b><br>
+<p id="353">&nbsp;</p><div class="deftl">
+	[#353] 定義：制限写像</div>
+<div class="def">
 	<p>写像 $f:X\rightarrow Y$ と $X$ の部分集合 $A$ に関して，$f$ の始域を $A$ に狭めた写像 $f|_A$ を $f$ の $A$ への【制限写像 (restriction map)】と呼ぶ：</p>
 	<p><center>\begin{align}
 		f|_A: A\to Y,\quad x\mapsto f(x).
 		\end{align}</center></p>
 </div>
-<details>
-	<summary>補足１</summary>
+<details class="deftl">
+	<summary>補足１</summary><div class="def">
 	<p>制限写像の概念を導入することで，後に定義される「単射」「全射」「全単射」といった概念$\nr{injection-surjection}{100}$ の汎用性が高まる．</p>
-</details>
-<details>
-	<summary>補足２</summary>
+</div></details>
+<details class="deftl">
+	<summary>補足２</summary><div class="def">
 	<p> $f|_A(x) = f(x)$ は成り立つが，$f$ と $f|_A$ は一般には始域が異なっているので，等しいとはいえない$\nr{map}{99}$．</p>
-</details>
+</div></details>
 <br>
   
 <br><br>
-<div id="bib"><b>参考文献</b>
+<div id="bib">参考文献</b>
 <ul>
 	<li><a href="https://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/15F/IntroGeom1/Geom15note.pdf">市原一裕: 幾何学序論講義ノート, 公開pdf</a> [2022/9/18 閲覧].</li>
 	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-4_shazo.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第4章), 公開pdf</a> [2022/7/13 閲覧].</li>
 	<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社 (2012).</li>
-	<li>星明考: 群論序説, 日本評論社 (2016).</li>
 	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2014/mapping.pdf">桂田祐史: 写像, pdf</a>.</li>
+	<li><a href="http://ysserve.wakasato.jp/Lecture/SetTheory3/settheory02-1/settheory02-1.html">師玉康成: 集合の基礎的性質 その２－１</a> [2022/10/29 閲覧].</li>
+	<li>星明考: 群論序説, 日本評論社 (2016).</li>
+	<li><a href="http://www4.math.sci.osaka-u.ac.jp/~matsumoto/courses/2016-fs2/">松本佳彦: 2016年度2学期 数学の楽しみ2D</a> [2022/10/28 閲覧].</li>
+	<li><a href="https://sorai-note.com/math/200402/">集合を使って「写像」を作る｜順序対・直積・写像の構成 - 蛍雪に染まる。</a> [2022/10/28 閲覧].</li>
 </ul>
 </div>
       
