@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -46,25 +47,49 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/8/9<br>
-updated on 2022/10/28
+updated on 2022/10/31
 </p>
+
 
 <p id="334">&nbsp;</p><div class="deftl">
 	[#334] 定義：関係</div>
 <div class="def">
-	<p>直積集合$\nr{direct-product}{297}$ $X\times Y$ の部分集合 $R$ をしばしば $X\times Y$ 上の【関係 (relation)】と呼ぶ．$(x,\,y)\in X\times Y$ に対して $(x,\,y)\in R$ であることを $x\,R\,y$ と書く．特に $X=Y$ のときは $R$ を $X$ 上の【二項関係 (binary relation)】と呼ぶ．</p>
+	<p>ある集合 $X,\ Y$ とそれらの直積$\nr{direct-product}{339}$ $X\times Y$ の部分集合$\nr{set}{111}$ $\varGamma$ からなる３つ組 $\mathcal{R}=(X,\,Y,\,\varGamma)$ を $X$ と $Y$ の間の【関係 (relation)】と呼ぶ．ここで $\varGamma$ を $\mathcal{R}$ の【グラフ (graph)】と呼ぶ．また $(x,\,y)\in\varGamma$ であることを $x$ と $y$ は【関係がある (related)】といい，しばしば $x\mathcal{R}y$ と書いて $x$ と $y$ の命題関数として扱われる$\nr{predicate}{}$．<br>
+		関係のうち，$X$ と $X$ の間に定義された関係を $X$ 上の【二項関係 (binary relation)】と呼ぶ．</p>
 </div>
-<!--<details class="deftl">
-	<summary>補足</summary>
+<details class="deftl">
+	<summary>補足１</summary>
 	<div class="def">
-	<p> 関係を写像$\nr{map}{99}$（あるいは命題関数$\nr{predicate}{75}$）$\mathcal{R}:X\times Y\to \{\mathsf{T},\,\mathsf{F}\}$ で定義することもある．このとき，集合</p>
-	<p><center>\begin{align}
-		G(\mathcal{R}) := \{(x,\,y)\,|\, \mathcal{R}(x,\,y) = \mathsf{T}\}
-		\end{align}</center></p>
-	<p>を $\mathcal{R}$ の【グラフ (graph)】と呼ぶ．ここで定義されたグラフ $G(\mathcal{R})$ が，黄枠の中で定義された関係 $R$ と一致するものである．<br>
-		ただし，補足中の概念は，「グラフ」という用語がグラフ理論における「グラフ$\nr{graph}{93}$」と紛らわしいので，基本的には用いない．</p>
+	<p>関係の定義より，二項関係は $\mathcal{R}_\mathrm{b} = (X,\, X,\, \varGamma_\mathrm{b})$ と書くことができ，$\varGamma_\mathrm{b}\subset X^2.$</p>
 	</div>
-</details>-->
+</details>
+<details class="deftl">
+	<summary>補足２</summary>
+	<div class="def">
+	<p>ここで定義されるグラフは，「グラフ理論」におけるグラフ$\nr{graph}{93}$ とは別物である．</p>
+	</div>
+</details>
+<br>
+
+<p id="390">&nbsp;</p><div class="deftl">
+	[#390] 定義：反射律</div>
+<div class="def">
+	<p>集合 $X$ 上の二項関係 $\mathcal{R}$ が，任意の $x\in X$ に対して $x\mathcal{R}x$ を満たすとき，$\mathcal{R}$ は【反射的 (reflexive)】であるという．</p>
+</div>
+<br>
+
+<p id="391">&nbsp;</p><div class="deftl">
+	[#391] 定義：対称律</div>
+<div class="def">
+	<p>集合 $X$ 上の二項関係 $\mathcal{R}$ が，任意の $x,\ y\in X$ に対して $[x\mathcal{R}y\to y\mathcal{R}x]$ が成り立つとき，$\mathcal{R}$ は【対称的 (symmetric)】であるという．</p>
+</div>
+<br>
+
+<p id="392">&nbsp;</p><div class="deftl">
+	[#392] 定義：推移律</div>
+<div class="def">
+	<p>集合 $X$ 上の二項関係 $\mathcal{R}$ が，任意の $x,\ y,\ z\in X$ に対して $[x\mathcal{R}y \land y\mathcal{R}z \to x\mathcal{R}z]$ が成り立つとき，$\mathcal{R}$ は【推移的 (transitive)】であるという．</p>
+</div>
 <br>
 
 <p id="337">&nbsp;</p><div class="deftl">
@@ -91,6 +116,7 @@ updated on 2022/10/28
 	<li><a href="https://www.math.nagoya-u.ac.jp/~yanagida/16W/yanagida-2W16-05.pdf">柳田伸太郎: 2W数学演習V・VI 同値関係と商集合, 公開pdf</a> [2022/8/9 閲覧].</li>
 	<li><a href="https://mathlandscape.com/binary-relation/">二項関係とは - 数学の景色</a> [2022/8/9 閲覧].</li>
 	<li><a href="https://mathlandscape.com/ordered-set-2/">半順序集合・全順序集合の定義・具体例4つとその周辺 - 数学の景色</a> [2022/8/9 閲覧].</li>
+	<li><a href="https://mathlog.info/articles/2029">「写像は二項関係の特殊なもの」という考え方によるwell-definedの解釈 - Mathlog</a> [2022/10/31/ 閲覧].</li>
 </ul>
 </div>
 </body>
