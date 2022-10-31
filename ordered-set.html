@@ -1,0 +1,88 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "順序"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/10/31<br>
+updated on 2022/10/31
+</p>
+
+<p id="337">&nbsp;</p><div class="deftl">
+	[#337] 定義：前順序関係と前順序集合</div>
+<div class="def">
+	<p>集合 $X$ 上の二項関係$\nr{relation}{334}$ で，対称律$\nr{relation}{390}$ と推移律$\nr{relation}{391}$ をみたすもの $\preccurlyeq$ を【前順序関係 (preordered relation)】と呼ぶ．集合 $X$ とその上の前順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【前順序集合 (preordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，前順序集合を単に $X$ のように略記する．</p>
+</div>
+<details class="deftl">
+	<summary>補足</summary>
+	<div class="def">
+	<p>条件を比較すれば明らかに，前順序関係ならば同値関係$\nr{equivalence-relation}{335}$ である．</p>
+	</div>
+</details>
+<br>
+
+<p id="395">&nbsp;</p><div class="deftl">
+	[#395] 定義：順序関係と順序集合</div>
+<div class="def">
+	<p>集合 $X$ 上の前順序関係$\nr{order}{337}$ で，さらに反対称律$\nr{relation}{393}$ をみたすもの $\preccurlyeq$ を【順序関係 (ordered relation)】或いは【半順序関係 (partially ordered relation)】と呼ぶ．集合 $X$ とその上の順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【順序集合 (ordered set)】或いは【半順序集合 (partially ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，順序集合を単に $X$ のように略記する．</p>
+</div>
+<br>
+
+<p id="396">&nbsp;</p><div class="deftl">
+	[#396] 定義：全順序関係と全順序集合</div>
+<div class="def">
+	<p>集合 $X$ 上の順序関係$\nr{order}{395}$ で，さらに完全律$\nr{relation}{394}$ をみたすもの $\preccurlyeq$ を【全順序関係 (totally ordered relation)】と呼ぶ．集合 $X$ とその上の全順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【全順序集合 (totally ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，全順序集合を単に $X$ のように略記する．</p>
+</div>
+<br>
+
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-12_Ordered.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第12章)</a> [2022/10/31 閲覧].</li>
+	<li><a href="https://mathlandscape.com/ordered-set-2/">半順序集合・全順序集合の定義・具体例4つとその周辺 - 数学の景色</a> [2022/10/31 閲覧].</li>
+	<li><a href="https://nunuki.hatenablog.com/entry/2016/12/23/182301">半順序？弱順序？二項関係・順序関係まとめ - ぬぬろぐ</a> [2022/10/31 閲覧].</li>
+</ul>
+</div>
+</body>
+</html>
