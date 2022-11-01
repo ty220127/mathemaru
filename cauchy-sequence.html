@@ -1,0 +1,118 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "Cauchy 列"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/11/1<br>
+updated on 2022/11/1
+</p>
+
+<p id="399">&nbsp;</p><div class="deftl">
+	[#399] 定義：Cauchy 列</div>
+<div class="def">
+	<p>実数列$\nr{collection-family}{223}$ $\{a_n\}_{n\in\mathbb{N}}$ が【<ruby><rb>Cauchy</rb><rp>(</rp><rt>コーシー</rt><rp>)</rp></ruby> 列 (Cauchy sequence)】或いは【基本列 (fundamental sequence)】であるとは，$\{a_n\}$ が以下を満たすことをいう：</p>
+	<p><center>\begin{align}
+		&{}^\forall \varepsilon \gt 0,\, {}^\exists N(\varepsilon)\in\mathbb{N}\,\, \text{s.t.}\,\,{}^\forall n\in \mathbb{N},\, {}^\forall m\in\mathbb{N},\,\\
+			&\hspace{20mm} \left[\,(n\geq N(\varepsilon))\land(m\geq N(\varepsilon))\,\to\,|a_n-a_m|<\varepsilon\right].
+		\end{align}</center></p>
+</div>
+<details class="deftl">
+	 <summary>補足</summary>
+	<div class="def">
+	<p>Cauchy 列は，収束$\nr{epsilon-N2}{8}$ する数列の条件を緩めたものであり，「収束しそうな（だが本当に収束するとは限らない）列」を表す．</p>
+	</div>
+</details>
+<br>
+
+<p id="400">&nbsp;</p><div class="prptl">
+	[#400] 命題：収束列は Cauchy 列</div>
+<div class="prp">
+	<p>収束$\nr{epsilon-N2}{8}$ する数列 $\{a_n\}_{n\in\mathbb{N}}$ は Cauchy 列である．</p>
+</div>
+<details class="prptl">
+	 <summary>証明</summary>
+	<div class="prp">
+
+	</div>
+</details>
+<br>
+
+<p id="401">&nbsp;</p><div class="prptl">
+[#401] 命題：Cauchy 列の和は Cauchy 列</div>
+<div class="prp">
+	<p>Cauchy 列 $\{a_n\},\ \{b_n\}$ に対して，$\{a_n+b_n\}$ も Cauchy 列である．</p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	
+	</div>
+</Details>
+<br>
+   
+<p id="402">&nbsp;</p><div class="prptl">
+[#402] 命題：Cauchy 列は有界</div>
+<div class="prp">
+	<p>Cauchy 列は有界$\nr{epsilon-N2}{188}$ である．</p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	
+	</div>
+</Details>
+<br>
+   
+<br><br>
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li>一樂重雄: 新版 集合と位相 そのまま書ける答えの書き方, 講談社 (2016).</li>
+	<li><a href="https://mathlandscape.com/cauchy-seq/">【微分積分学】コーシー列とは～定義と収束性の証明～ - 数学の景色</a> [2022/11/1 閲覧].</li>
+	<li><a href="https://risalc.info/src/Cauchy-sequence.html">コーシー列と数列の収束 (証明付) - 理数アラカルト</a> [2022/11/1 閲覧].</li>
+	<li><a href="https://rikei-jouhou.com/cauchy-sequence/">【１変数】コーシー列の定義から実数の構成までを解説 - 生命系のための理工学基礎</a> [2022/11/1 閲覧].</li>
+</ul>
+</div>
+</body>
+</html>
