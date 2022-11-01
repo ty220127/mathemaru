@@ -46,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/10/31<br>
-updated on 2022/10/31
+updated on 2022/11/1
 </p>
 
 <p id="337">&nbsp;</p><div class="deftl">
@@ -72,16 +72,47 @@ updated on 2022/10/31
 <p id="396">&nbsp;</p><div class="deftl">
 	[#396] 定義：全順序関係と全順序集合</div>
 <div class="def">
-	<p>集合 $X$ 上の順序関係$\nr{ordered-set}{395}$ で，さらに完全律$\nr{relation}{394}$ をみたすもの $\preccurlyeq$ を【全順序関係 (totally ordered relation)】と呼ぶ．集合 $X$ とその上の全順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【全順序集合 (totally ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，全順序集合を単に $X$ のように略記する．</p>
+	<p>集合 $X$ 上の順序関係$\nr{ordered-set}{395}$ で，さらに完全律$\nr{relation}{394}$ をみたすもの $\preccurlyeq$ を【全順序関係 (totally ordered relation)】或いは【線形順序関係 (linearly ordered relation)】と呼ぶ．集合 $X$ とその上の全順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【全順序集合 (totally ordered set)】或いは【線形順序集合 (linearly ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，全順序集合を単に $X$ のように略記する．</p>
+</div>
+<br>
+
+<p id="397">&nbsp;</p><div class="exmtl">
+	[#397] 例：集合の包含関係は順序関係</div>
+<div class="exm">
+	<p>集合 $\varOmega$ に対して，その冪集合$\nr{set}{194}$ $2^\varOmega$ と集合の包含$\nr{set}{111}$ の記号 $\subset$ の組 $(2^\varOmega,\,\subset)$ は順序集合である．ただし，これは一般に全順序集合ではない．</p>
+</div>
+<details class="exmtl">
+	<summary>証明</summary>
+	<div class="exm">
+
+	</div>
+</details>
+<br>
+
+<p id="398">&nbsp;</p><div class="deftl">
+	[#398] 定義：最大元，最小元</div>
+<div class="def">
+	<p>順序集合 $(X,\,\preccurlyeq)$ の空でない部分集合 $A$ に対し，その中で最も後の順序にある元が存在するとき，それを $A$ の【最大元 (maximum element; last element)】と呼び，$\max A$ と書く：</p>
+	<p><center>\begin{align}
+		{}\forall x\in A,\quad x\preccurlyeq \max A.
+		\end{align}</center></p>
+	<p>同様に，$A$ に対し，その中で最も前の順序にある元が存在するとき，それを $A$ の【最小元 (minimum element; first element)】と呼び，$\min A$ と書く：
+	<p><center>\begin{align}
+		{}\forall x\in A,\quad \min A\preccurlyeq x.
+		\end{align}</center></p>
 </div>
 <br>
 
 <br><br>
 <div id="bib"><b>参考文献</b>
 <ul>
+	<li>Matoušek, J., Nešetřil, J.: Invitation to Discrete Mathematics, Oxford University Press, USA; 2nd edition (2008).</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-12_Ordered.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第12章)</a> [2022/10/31 閲覧].</li>
+	<li>星明考: 群論序説, 日本評論社 (2016).</li>
+	<li>横井英夫, 硲野敏博: 数学演習ライブラリ=5 代数演習[新訂版], サイエンス社 (2003).</li>
 	<li><a href="https://mathlandscape.com/ordered-set-2/">半順序集合・全順序集合の定義・具体例4つとその周辺 - 数学の景色</a> [2022/10/31 閲覧].</li>
 	<li><a href="https://nunuki.hatenablog.com/entry/2016/12/23/182301">半順序？弱順序？二項関係・順序関係まとめ - ぬぬろぐ</a> [2022/10/31 閲覧].</li>
+	<li><a href="https://wiis.info/math/set/relation/">関係 - WIIS</a> [2022/11/1 閲覧].</li>
 </ul>
 </div>
 </body>
