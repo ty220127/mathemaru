@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -47,11 +46,11 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/1/29<br>
-updated on 2022/10/18
+updated on 2022/11/6
 </p>
         
 <p id="8">&nbsp;</p>
-<div class="deftl">[#8] 定義：数列の収束，極限</div>
+<div class="deftl">[#8] 定義：数列の収束，極限（ $\bs{\varepsilon\,\text{-}\,N}$ 論法）</div>
 <div class="def">
 	<p> $\{a_n\}_{n\in\mathbb{N}}$ を実数列$\nr{collection-family}{223}$ とする．この $\{a_n\}$ に対して実数 $\alpha$ が存在して，任意の正の数 $\varepsilon$ に対して適当な番号 $N(\varepsilon)$ を定めると，それ以上の自然数 $n$ に対して $|a_n-\alpha|\lt\varepsilon$ が成り立つとき，このことを $\{a_n\}$ は $\alpha$ に【収束する (converge)】という：</p>
 	<p><center>\begin{align}
@@ -62,6 +61,31 @@ updated on 2022/10/18
 	<p><center>$\displaystyle\lim_{n\rightarrow\infty}a_n = \alpha\,$ 或いは $\,a_n\rightarrow\alpha\,(n\rightarrow\infty)$</center></p>
 	<p>などと書く．また，この $\alpha$ を $\{a_n\}$ の【極限 (limit)】或いは【極限値 (limit value)】と呼ぶ．</p>
 </div>
+<br>
+    
+<p id="404">&nbsp;</p>
+<div class="prptl">[#404] 命題：種々の極限の表現</div>
+<div class="prp">
+	<p> 数列 $\{a_n\}$ に対して，以下は互いに同値である：</p>
+	<ul>
+	<li>${}^\exists \alpha\in\mathbb{R}\ \text{s.t.}\ \displaystyle\lim_{n\to\infty}a_n = \alpha$</li>
+	<li>${}^\exists \alpha\in\mathbb{R}\ \text{s.t.}\ {}^\forall \varepsilon \gt 0,\, {}^\exists N(\varepsilon)\in\mathbb{N}\ \text{s.t.}\, {}^\forall n\in\mathbb{N},\ [n\geq N(\varepsilon) \to |a_n-\alpha|\leq \varepsilon].$</li>
+	<li>${}^\exists \alpha\in\mathbb{R}\ \text{s.t.}\ {}^\forall \varepsilon \gt 0,\, {}^\exists N(\varepsilon)\in\mathbb{N}\ \text{s.t.}\, {}^\forall n\in\mathbb{N},\ [n\gt N(\varepsilon) \to |a_n-\alpha|\lt \varepsilon].$</li>
+	<li>${}^\exists \alpha\in\mathbb{R}\ \text{s.t.}\ {}^\forall \varepsilon \gt 0,\, {}^\exists N(\varepsilon)\in\mathbb{N}\ \text{s.t.}\, {}^\forall n\in\mathbb{N},\ [n\gt N(\varepsilon) \to |a_n-\alpha|\leq \varepsilon].$</li>
+	</ul>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+
+	</div>
+</details>
+<details class="prptl">
+	<summary>補足</summary>
+	<div class="prp">
+	<p> $\varepsilon\,\text{-}\,N$ 論法による数列の収束の定義において，実は不等号の扱いが書籍によってまちまちである．この命題は，そうした不等号の揺らぎが議論に本質的な影響を及ぼさないことを主張している．
+	</div>
+</details>
 <br>
     
 <p id="9">&nbsp;</p>
@@ -164,6 +188,34 @@ updated on 2022/10/18
 </Details>
 <br>
     
+<p id="36">&nbsp;</p>
+<div class="prptl">[#36] 命題：定数倍の極限は極限の定数倍</div>
+<div class="prp">
+	<p>極限を持つ数列 $\{a_n\}$ と定数 $c$ に対して</p>
+	<p><center>\begin{align}
+		\lim_{n\to\infty}ca_n = c\lim_{n\to\infty}a_n.
+		\end{align}</center></p>
+</div>
+<details class="prptl" style="margin-top: -0.5%">
+	<summary>証明</summary>
+	<div class="prp">
+	<p>$\lim_{n\to\infty} a_n = \alpha$ とする．このとき，極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\eta \gt 0$ に対して $M(\eta)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
+	<p><center>\begin{align}
+		n\geq M(\eta)\ &\Longrightarrow\ |a_n-\alpha |\lt \eta
+		\end{align}</center></p>
+	<p>が成り立つ．ここで $\varepsilon \gt 0$ を任意に固定し，自然数 $N(\varepsilon)$ を</p>
+	<p><cetner>\begin{align}
+		N(\varepsilon) = M\left(\fraction{\varepsilon}{|c|}\right)
+		\end{align}</center></p>
+	<p>で定める．すると $n\geq N(\varepsilon)$ に対して</p>
+	<p><center>\begin{align}
+		|ca_n-c\alpha| &= |c||a_n-\alpha|\lt |c|\fraction{\varepsilon}{|c|} = \varepsilon
+		\end{align}</center></p>
+	<p>を得ることから，題意が示される．</p>
+	</div>
+</Details>
+<br>
+    
 <p id="374">&nbsp;</p>
 <div class="prptl">[#374] 命題：和の極限は極限の和</div>
 <div class="prp">
@@ -197,32 +249,39 @@ updated on 2022/10/18
 	<P>を得ることから，題意は示される．</P>
 	</div>
 </Details>
+<details class="prptl">
+	<summary>補足</summary>
+	<div class="prp">
+	<p>この命題と定数倍に関する極限の議論$\nr{epsilon-N2}{36}$ を組み合わせることで，次のような式変形を行える：$c_1,\ c_2$ を定数，$\{a_n\},\ \{b_n\}$ を極限を持つ数列として，</p>
+	<p><center>\begin{align}
+		\lim_{n\to\infty} (c_1a_n + c_2b_n) &\,\refeq{epsilon-N2}{374}\, \lim_{n\to\infty} (c_1a_n) + \lim_{n\to\infty} (c_2b_n) \\
+			&\,\,\refeq{epsilon-N2}{36}\,\, c_1\lim_{n\to\infty}a_n + c_2\lim_{n\to\infty}b_n.
+		\end{align}</center></p>
+	<p>より一般には，以下の系が成り立つ：</p>
+	
+	<div class="fcttl">系</div>
+	<div class="fct">
+	<p> $k\in 1,\ 2,\ \cdots,\ K$ に対して，実数列 $\left\{a^{(k)}_n\right\}_{n\in\mathbb{N}}$ がすべて極限を持つとする．この下で，定数 $c_k\ (k=1,\ 2,\ \cdots,\ K)$ に対して</p>
+	<p><center>\begin{align}
+		\lim_{n\to\infty}\left(\sum_{k=1}^{K}c_ka^{(k)}_n\right) = \sum_{k=1}^{K}c_k\lim_{n\to\infty}a^{(k)}_n.
+		\end{align}</center></p>
+	</div>
+	</div>
+</details>
 <br>
     
-<p id="36">&nbsp;</p>
-<div class="prptl">[#36] 命題：定数倍の極限は極限の定数倍</div>
+<p id="405">&nbsp;</p>
+<div class="prptl">[#405] 命題：積の極限は極限の積</div>
 <div class="prp">
-	<p>極限を持つ数列 $\{a_n\}$ と定数 $c$ に対して</p>
+	<p>極限を持つ数列 $\{a_n\},\ \{b_n\}$ に対して</p>
 	<p><center>\begin{align}
-		\lim_{n\to\infty}ca_n = c\lim_{n\to\infty}a_n.
+		\lim_{n\to\infty} (a_n b_n) = \left(\lim_{n\to\infty}a_n\right)\left(\lim_{n\to\infty}b_n\right).
 		\end{align}</center></p>
 </div>
 <details class="prptl" style="margin-top: -0.5%">
 	<summary>証明</summary>
 	<div class="prp">
-	<p>$\lim_{n\to\infty} a_n = \alpha$ とする．このとき，極限の定義$\nr{epsilon-N2}{8}$ より，任意の $\eta \gt 0$ に対して $M(\eta)\in \mathbb{N}$ が存在して，任意の $n\in\mathbb{N}$ に対して</p>
-	<p><center>\begin{align}
-		n\geq M(\eta)\ &\Longrightarrow\ |a_n-\alpha |\lt \eta
-		\end{align}</center></p>
-	<p>が成り立つ．ここで $\varepsilon \gt 0$ を任意に固定し，自然数 $N(\varepsilon)$ を</p>
-	<p><cetner>\begin{align}
-		N(\varepsilon) = M\left(\fraction{\varepsilon}{|c|}\right)
-		\end{align}</center></p>
-	<p>で定める．すると $n\geq N(\varepsilon)$ に対して</p>
-	<p><center>\begin{align}
-		|ca_n-c\alpha| &= |c||a_n-\alpha|\lt |c|\fraction{\varepsilon}{|c|} = \varepsilon
-		\end{align}</center></p>
-	<p>を得ることから，題意が示される．</p>
+	<p></p>
 	</div>
 </Details>
 <br>
