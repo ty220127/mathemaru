@@ -46,7 +46,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/10/31<br>
-updated on 2022/11/1
+updated on 2022/11/7
 </p>
 
 <p id="337">&nbsp;</p><div class="deftl">
@@ -63,9 +63,10 @@ updated on 2022/11/1
 <br>
 
 <p id="395">&nbsp;</p><div class="deftl">
-	[#395] 定義：順序関係と順序集合</div>
+	[#395] 定義：順序関係と順序集合，比較可能</div>
 <div class="def">
-	<p>集合 $X$ 上の前順序関係$\nr{ordered-set}{337}$ で，さらに反対称律$\nr{relation}{393}$ をみたすもの $\preccurlyeq$ を【順序関係 (ordered relation)】或いは【半順序関係 (partially ordered relation)】と呼ぶ．集合 $X$ とその上の順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【順序集合 (ordered set)】或いは【半順序集合 (partially ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，順序集合を単に $X$ のように略記する．</p>
+	<p>集合 $X$ 上の前順序関係$\nr{ordered-set}{337}$ で，さらに反対称律$\nr{relation}{393}$ をみたすもの $\preccurlyeq$ を【順序関係 (ordered relation)】或いは【半順序関係 (partially ordered relation)】と呼ぶ．集合 $X$ とその上の順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【順序集合 (ordered set)】或いは【半順序集合 (partially ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，順序集合を単に $X$ のように略記する．<br>
+$x,\ y\in X$ が $x \preccurlyeq y$ または $y\preccurlyeq x$ であることを，$x$ と $y$ は【比較可能 (comparable)】という．</p>
 </div>
 <br>
 
@@ -74,6 +75,12 @@ updated on 2022/11/1
 <div class="def">
 	<p>集合 $X$ 上の順序関係$\nr{ordered-set}{395}$ で，さらに完全律$\nr{relation}{394}$ をみたすもの $\preccurlyeq$ を【全順序関係 (totally ordered relation)】或いは【線形順序関係 (linearly ordered relation)】と呼ぶ．集合 $X$ とその上の全順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【全順序集合 (totally ordered set)】或いは【線形順序集合 (linearly ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，全順序集合を単に $X$ のように略記する．</p>
 </div>
+<details class="deftl">
+	<summary>補足</summary>
+	<div class="def">
+	<p>順序集合が完全律をもつことは，すべての $X$ の元が互いに比較可能$\nr{ordered-set}{395}$ であることを意味する．</p>
+	</div>
+</details>
 <br>
 
 <p id="397">&nbsp;</p><div class="exmtl">
@@ -89,17 +96,43 @@ updated on 2022/11/1
 </details>
 <br>
 
+<p id="188">&nbsp;</p>
+<div class="deftl">[#188] 定義：有界，上界，下界</div>
+<div class="def">
+	<p>順序集合 $(X,\,\preccurlyeq)$ に対し，$A$ を $X$ の空でない部分集合$\nr{set}{111}$ とする．</p>
+	<p>ある $u\in X$ が存在して，任意の $x\in A$ に対して $x\preccurlyeq u$ を満たすことを，$A$ は【上に有界 (bounded from above)】であるといい，この $u$ を $A$ の【上界 (upper bound)】と呼ぶ．</p>
+	<p>ある $\ell\in X$ が存在して，任意の $x\in A$ に対して $\ell\preccurlyeq x$ を満たすことを，$A$ は【下に有界 (bounded from below)】であるといい，この $\ell$ を $A$ の【下界 (lower bound)】と呼ぶ．</p>
+	<p>更に，$A$ が上に有界でかつ下に有界であることを，$A$ は【有界 (bounded)】という．</p>
+</div>
+<br>
+
 <p id="398">&nbsp;</p><div class="deftl">
 	[#398] 定義：最大元，最小元</div>
 <div class="def">
 	<p>順序集合 $(X,\,\preccurlyeq)$ の空でない部分集合 $A$ に対し，その中で最も後の順序にある元が存在するとき，それを $A$ の【最大元 (maximum element; last element)】と呼び，$\max A$ と書く：</p>
 	<p><center>\begin{align}
-		{}\forall x\in A,\quad x\preccurlyeq \max A.
+		{}^\forall x\in A,\quad x\preccurlyeq \max A.
 		\end{align}</center></p>
 	<p>同様に，$A$ に対し，その中で最も前の順序にある元が存在するとき，それを $A$ の【最小元 (minimum element; first element)】と呼び，$\min A$ と書く：
 	<p><center>\begin{align}
-		{}\forall x\in A,\quad \min A\preccurlyeq x.
+		{}^\forall x\in A,\quad \min A\preccurlyeq x.
 		\end{align}</center></p>
+</div>
+<br>
+
+<p id="406">&nbsp;</p><div class="deftl">
+	[#406] 定義：極大元，極大元</div>
+<div class="def">
+	<p>順序集合 $(X,\,\preccurlyeq)$ の空でない部分集合 $A$ に対し，元 $a\in X$ が存在して，任意の $x\in A$ に対して</p>
+	<p><center>\begin{align}
+		a\preccurlyeq x\ \Longrightarrow\ x=a
+		\end{align}</center></p>
+	<p>が成り立つとき，$a$ を $X$ の【極大元 (maximal element)】と呼ぶ．</p>
+	<p>また，元 $a\in X$ が存在して，任意の $x\in A$ に対して</p>
+	<p><center>\begin{align}
+		x\preccurlyeq a\ \Longrightarrow\ x=a
+		\end{align}</center></p>
+	<p>が成り立つとき，$a$ を $X$ の【極小元 (minimal element)】と呼ぶ．</p>
 </div>
 <br>
 
@@ -107,12 +140,14 @@ updated on 2022/11/1
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>Matoušek, J., Nešetřil, J.: Invitation to Discrete Mathematics, Oxford University Press, USA; 2nd edition (2008).</li>
+	<li><a href="http://dopal.cs.uec.ac.jp/okamotoy/lect/2014/discretemath/">岡本吉央: 離散数学 (2014年度前学期)</a> [2022/11/7 閲覧].</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-12_Ordered.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第12章)</a> [2022/10/31 閲覧].</li>
 	<li>星明考: 群論序説, 日本評論社 (2016).</li>
 	<li>横井英夫, 硲野敏博: 数学演習ライブラリ=5 代数演習[新訂版], サイエンス社 (2003).</li>
 	<li><a href="https://mathlandscape.com/ordered-set-2/">半順序集合・全順序集合の定義・具体例4つとその周辺 - 数学の景色</a> [2022/10/31 閲覧].</li>
 	<li><a href="https://nunuki.hatenablog.com/entry/2016/12/23/182301">半順序？弱順序？二項関係・順序関係まとめ - ぬぬろぐ</a> [2022/10/31 閲覧].</li>
 	<li><a href="https://wiis.info/math/set/relation/">関係 - WIIS</a> [2022/11/1 閲覧].</li>
+	<li><a href="https://kaikiblog.com/max/">順序関係と順序集合、最大元、極大元、上限 - kaikiblog</a> [2022/11/7 閲覧].</li>
 </ul>
 </div>
 </body>
