@@ -50,30 +50,30 @@ updated on 2022/11/9
 </p>
 
 <p id="337">&nbsp;</p><div class="deftl">
-	[#337] 定義：前順序関係と前順序集合</div>
+	[#337] 定義：前順序と前順序集合</div>
 <div class="def">
-	<p>集合 $X$ 上の二項関係$\nr{relation}{334}$ で，対称律$\nr{relation}{390}$ と推移律$\nr{relation}{391}$ をみたすもの $\preccurlyeq$ を【前順序関係 (preordered relation)】と呼ぶ．集合 $X$ とその上の前順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【前順序集合 (preordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，前順序集合を単に $X$ のように略記する．</p>
+	<p>集合 $X$ 上の二項関係$\nr{relation}{334}$ で，反射律$\nr{relation}{390}$ と推移律$\nr{relation}{391}$ をみたすもの $\preccurlyeq$ を【前順序 (preorder)】或いは【擬順序 (pseudo-order)】と呼ぶ．集合 $X$ とその上の前順序 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【前順序集合 (preordered set)】或いは【擬順序集合 (pseudo-ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，前順序集合を単に $X$ のように略記する．</p>
 </div>
 <details class="deftl">
 	<summary>補足</summary>
 	<div class="def">
-	<p>条件を比較すれば明らかに，前順序関係ならば同値関係$\nr{equivalence-relation}{335}$ である．</p>
+	<p>条件を比較すれば明らかに，前順序ならば同値関係$\nr{equivalence-relation}{335}$ である．</p>
 	</div>
 </details>
 <br>
 
 <p id="395">&nbsp;</p><div class="deftl">
-	[#395] 定義：順序関係と順序集合，比較可能</div>
+	[#395] 定義：順序と順序集合，比較可能</div>
 <div class="def">
-	<p>集合 $X$ 上の前順序関係$\nr{ordered-set}{337}$ で，さらに反対称律$\nr{relation}{393}$ をみたすもの $\preccurlyeq$ を【順序関係 (ordered relation)】或いは【半順序関係 (partially ordered relation)】と呼ぶ．集合 $X$ とその上の順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【順序集合 (ordered set)】或いは【半順序集合 (partially ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，順序集合を単に $X$ のように略記する．<br>
+	<p>集合 $X$ 上の前順序$\nr{ordered-set}{337}$ で，さらに反対称律$\nr{relation}{393}$ をみたすもの $\preccurlyeq$ を【順序 (order)】或いは【半順序 (partial order)】と呼ぶ．集合 $X$ とその上の順序 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【順序集合 (ordered set)】或いは【半順序集合 (partially ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，順序集合を単に $X$ のように略記する．<br>
 $x,\ y\in X$ が $x \preccurlyeq y$ または $y\preccurlyeq x$ であることを，$x$ と $y$ は【比較可能 (comparable)】という．</p>
 </div>
 <br>
 
 <p id="396">&nbsp;</p><div class="deftl">
-	[#396] 定義：全順序関係と全順序集合</div>
+	[#396] 定義：全順序と全順序集合</div>
 <div class="def">
-	<p>集合 $X$ 上の順序関係$\nr{ordered-set}{395}$ で，さらに完全律$\nr{relation}{394}$ をみたすもの $\preccurlyeq$ を【全順序関係 (totally ordered relation)】或いは【線形順序関係 (linearly ordered relation)】と呼ぶ．集合 $X$ とその上の全順序関係 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【全順序集合 (totally ordered set)】或いは【線形順序集合 (linearly ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，全順序集合を単に $X$ のように略記する．</p>
+	<p>集合 $X$ 上の順序$\nr{ordered-set}{395}$ で，さらに完全律$\nr{relation}{394}$ をみたすもの $\preccurlyeq$ を【全順序 (total order)】或いは【線形順序 (linear order)】と呼ぶ．集合 $X$ とその上の全順序 $\preccurlyeq$ による組 $(X,\, \preccurlyeq)$ を【全順序集合 (totally ordered set)】或いは【線形順序集合 (linearly ordered set)】と呼ぶ．$\preccurlyeq$ が自明な場合は，全順序集合を単に $X$ のように略記する．</p>
 </div>
 <details class="deftl">
 	<summary>補足</summary>
@@ -83,8 +83,15 @@ $x,\ y\in X$ が $x \preccurlyeq y$ または $y\preccurlyeq x$ であること�
 </details>
 <br>
 
+<p id="409">&nbsp;</p><div class="deftl">
+	[#409] 定義：狭義半順序と狭義半順序集合</div>
+<div class="def">
+	<p>集合 $X$ 上の二項関係$\nr{relation}{334}$ で，非反射律$\nr{relation}{408}$ と推移律$\nr{relation}{392}$ を満たすもの $\prec$ を【狭義半順序 (strict partial order)】と呼ぶ．また，集合 $X$ とその上の狭義半順序 $\prec$ による組 $(X,\, \prec)$ を【狭義半順序集合 (strictly partially ordered set)】と呼ぶ．$\prec$ が自明の場合は単に $X$ と書く．</p>
+</div>
+<br>
+
 <p id="397">&nbsp;</p><div class="exmtl">
-	[#397] 例：集合の包含関係は順序関係</div>
+	[#397] 例：集合の包含関係は順序</div>
 <div class="exm">
 	<p>集合 $\varOmega$ に対して，その冪集合$\nr{set}{194}$ $2^\varOmega$ と集合の包含$\nr{set}{111}$ の記号 $\subset$ の組 $(2^\varOmega,\,\subset)$ は順序集合である．ただし，これは一般に全順序集合ではない．</p>
 </div>
@@ -139,8 +146,8 @@ $x,\ y\in X$ が $x \preccurlyeq y$ または $y\preccurlyeq x$ であること�
 <p id="407">&nbsp;</p><div class="deftl">
 	[#407] 定義：上限，下限</div>
 <div class="def">
-	<p>順序集合 $(X,\,\preccurlyeq)$ の空でない部分集合 $A$ に対し，$A$ の上界$\nr{ordered-set}{188}$ の集合を $U(A)$ とおく．このとき，$U(A)$ に最小元$\nr{ordered-set}{398}$ $\min U(A)$ が存在するとき，これを $A$ の【上限 (supremum)】と呼び，$\sup A$ と書く．</p>
-	<p>同様に，$A$ の下界$\nr{ordered-set}{188}$ の集合を $L(A)$ とおく．このとき，$L(A)$ に最大元$\nr{ordered-set}{398}$ $\max L(A)$ が存在するとき，これを $A$ の【下限 (infimum)】と呼び，$\inf A$ と書く．</p>
+	<p>順序集合 $(X,\,\preccurlyeq)$ の空でない部分集合 $A$ に対し，$A$ の上界$\nr{ordered-set}{188}$ の集合を $U(A)$ とおく．このとき，$U(A)$ に最小元$\nr{ordered-set}{398}$ $\min U(A)$ が存在するとき，これを $A$ の【上限 (supremum)】或いは【最小上界 (least upper bound)】と呼び，$\sup A$ と書く．</p>
+	<p>同様に，$A$ の下界$\nr{ordered-set}{188}$ の集合を $L(A)$ とおく．このとき，$L(A)$ に最大元$\nr{ordered-set}{398}$ $\max L(A)$ が存在するとき，これを $A$ の【下限 (infimum)】或いは【最大下界 (greatest lower bound)】と呼び，$\inf A$ と書く．</p>
 </div>
 <br>
 
@@ -148,9 +155,11 @@ $x,\ y\in X$ が $x \preccurlyeq y$ または $y\preccurlyeq x$ であること�
 <div id="bib"><b>参考文献</b>
 <ul>
 	<li>Matoušek, J., Nešetřil, J.: Invitation to Discrete Mathematics, Oxford University Press, USA; 2nd edition (2008).</li>
-	<li><a href="http://dopal.cs.uec.ac.jp/okamotoy/lect/2014/discretemath/">岡本吉央: 離散数学 (2014年度前学期)</a> [2022/11/7 閲覧].</li>
+	<li><a href="http://dopal.cs.uec.ac.jp/okamotoy/lect/2014/discretemath/">岡本吉央: 離散数学, 2014年度講義</a> [2022/11/7 閲覧].</li>
 	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-12_Ordered.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第12章)</a> [2022/10/31 閲覧].</li>
+	<li><a href="https://ocw.nagoya-u.jp/files/16/lec02.pdf">草刈圭一朗: 講義資料(2): 関係・順序, 離散数学, 2013年度講義</a> [2022/11/9 閲覧].</li>
 	<li>星明考: 群論序説, 日本評論社 (2016).</li>
+	<li><a href="http://www.mu.c.titech.ac.jp/Dmath/index.html">室伏俊明: 離散構造, 2021年度講義</a> [2022/11/9 閲覧].</li>
 	<li>横井英夫, 硲野敏博: 数学演習ライブラリ=5 代数演習[新訂版], サイエンス社 (2003).</li>
 	<li><a href="https://mathlandscape.com/ordered-set-2/">半順序集合・全順序集合の定義・具体例4つとその周辺 - 数学の景色</a> [2022/10/31 閲覧].</li>
 	<li><a href="https://nunuki.hatenablog.com/entry/2016/12/23/182301">半順序？弱順序？二項関係・順序関係まとめ - ぬぬろぐ</a> [2022/10/31 閲覧].</li>
