@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -116,7 +115,14 @@ updated on 2022/11/28
 <details class="prptl">
 	<summary>証明</summary>
 	<div class="prp">
-	<p></p>
+	<p>行列 $A,\ B$ のサイズは $n\times n$ とする．</p>
+	<p><center>\begin{align}
+		\tr (AB) &\refeq{trace}{411}\ \sum_{i=1}^{n}(AB)_{ii}\\
+			&\refeq{matrix}{180}\ \sum_{i=1}^{n}\sum_{k=1}^{n}(A)_{ik}(B)_{ki}\\
+			&\,=\ \sum_{k=1}^{n}\sum_{i=1}^{n} (B)_{ki}(A)_{ik}\\
+			&\refeq{matrix}{180}\ \sum_{k=1}^{n} (BA)_{kk}\\
+			&\refeq{trace}{411}\ \tr (BA).
+		\end{align}</center></p>
 	</div>
 </details>
 <br>
@@ -126,6 +132,7 @@ updated on 2022/11/28
 <b>参考文献</b>
 	<ul>
 	<li><a href="https://manabitimes.jp/math/1135">行列のトレースのいろいろな性質とその証明 - 高校数学の美しい物語</a> [2022/11/28 閲覧].</li>
+	<li><a href="https://risalc.info/src/trace-matrix.html">行列のトレース -公式_性質- (証明付) - 理数アラカルト</a> [2022/11/28 閲覧].</li>
 </ul>	      
 </div>
 </body>
