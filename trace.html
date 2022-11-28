@@ -1,0 +1,132 @@
+
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		rtwobytwo: ['\\left(\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right)', 4],
+		ronebytwo: ['\\left(\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "跡"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/11/28<br>
+updated on 2022/11/28
+</p>
+
+<p id="411">&nbsp;</p>
+<div class="deftl">[#411] 定義：跡</div>
+<div class="def">
+	<p> $n$ 次正方行列 $A$ に対して，対角成分$\nr{matrix}{144}$ の和</p>
+	<p><center>\begin{align}
+		T = \sum_{i=1}^{n} (A)_{ii}
+		\end{align}</center></p>
+	<p>を $A$ の【跡 (トレース; trace)】と呼び，$\DeclareMathOperator{\tr}{tr} \tr A$ で表す．</p>
+</div>
+<br>
+
+<p id="412">&nbsp;</p>
+<div class="prptl">[#412] 命題：跡の線形性</div>
+<div class="prp">
+	<p>$A,\ B$ を互いに同じサイズの正方行列とする．このとき，$a,\ b$ を定数として，以下が成り立つ：</p>
+	<p><center>\begin{align}
+		\tr (aA + bB)  = a\tr A + b\tr B.
+		\end{align}</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	<p>行列のサイズは $n\times n$ とする．</p>
+	<p><center>\begin{align}
+		\tr (aA + bB) &\refeq{trace}{411}\ \sum_{i=1}^{n} (aA +bB)_{ii} \\
+			&\refeq{matrix}{145}\  \sum_{i=1}^{n} (a(A)_{ii} + b(B)_{ii}) \\
+			&\, = a\sum_{i=1}^{n}(A)_{ii} + b\sum_{i=1}^{n}(B)_{ii}\\
+			&\refeq{trace}{411}\ a \tr A + b \tr B.
+		\end{align}</center></p>
+	</div>
+</details>
+<br>
+
+<p id="413">&nbsp;</p>
+<div class="prptl">[#413] 命題：転置行列の跡</div>
+<div class="prp">
+	<p>$A$ を任意のサイズの正方行列とする．</p>
+	<p><center>\begin{align}
+		\tr A^\trp  = \tr A.
+		\end{align}</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	<p>行列のサイズは $n\times n$ とする．
+	<p><center>\begin{align}
+		\tr A^\trp &\refeq{trace}{411}\ \sum_{i=1}^{n} (A^\trp)_{ii}\\
+			&\refeq{transpose}{249}\ \sum_{i=1}^{n} (A)_{ii}\\
+			&\refeq{trace}{411}\ \tr A.
+		\end{align}</center></p>
+	</div>
+</details>
+<br>
+
+<p id="414">&nbsp;</p>
+<div class="prptl">[#414] 命題：跡の交換法則</div>
+<div class="prp">
+	<p>$A,\ B$ を互いに同じサイズの正方行列とする．</p>
+	<p><center>\begin{align}
+		\tr (AB)  = \tr (BA).
+		\end{align}</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	<p></p>
+	</div>
+</details>
+<br>
+
+<br><br>
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+	<li><a href="https://manabitimes.jp/math/1135">行列のトレースのいろいろな性質とその証明 - 高校数学の美しい物語</a> [2022/11/28 閲覧].</li>
+</ul>	      
+</div>
+</body>
+</html>
