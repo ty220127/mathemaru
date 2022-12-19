@@ -1,15 +1,20 @@
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		refeq: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{=}',2],
-		reflr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longleftrightarrow}',2],
-		refr: ['\\underset{\\href{#1}{\\scriptsize\\sf[\\# #2]}}{\\Longrightarrow}',2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
@@ -18,39 +23,47 @@
 		cpl: '\\mathrm{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		rtwobytwo: ['\\left(\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right)', 4],
+		ronebytwo: ['\\left(\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right)', 2],
 	}}});
 </script>
 <script>
 	const ttl = "期待値と分散"
-	document.title= ttl + "｜演習問題集"
+	document.title= ttl + "｜MATHEMARU"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-	table{
-		font-size: 14px;
-	}
-</style>
 </head>
 
 <body>
-<center><div id="titlehead"><script>document.write(ttl)</script></div></center>
-<p style="text-align:right;">
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/5/1<br>
-updated on 2022/5/11
+updated on 2022/12/19
 </p>
     
-<div class="def" id="198">
-	<b>[#198] 定義：期待値</b><br>
+<p id="198">&nbsp;</p>
+<div class="deftl">[#198] 定義：期待値</div>
+<div class="def">
 	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，Lebesgue 積分 <a href="lebesgue-integration.html#44">[#44]</a></p>
 	<p><center>\begin{align*}
 		\mathbb{E}[X] := \int_{\varOmega}X(\omega)\,P(\rd\omega)
 		\end{align*}</center></p>
 	<p>が存在するとき，この $\mathbb{E}[X]$ を $X$ の【期待値 (expectation)】或いは【平均値 (mean)】と呼ぶ．
 </div>
-<br><br>
+<br>
 
-<div class="def" id="199">
-	<b>[#199] 定義：分散，標準偏差</b><br>
+<p id="199">&nbsp;</p>
+<div class="deftl">[#199] 定義：分散，標準偏差</div>
+<div class="def">
 	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，</p>
 	<p><center>\begin{align*}
 		\mathbb{V}[X] := \mathbb{E}\left[(X-\mathbb{E}[X])^2\right]
@@ -58,19 +71,21 @@ updated on 2022/5/11
 	<p>が存在するとき，この $\mathbb{V}[X]$ を $X$ の【分散 (variance)】と呼ぶ．<br>
 		また $\mathbb{D}[X] := \sqrt{\mathbb{V}[X]}$ を $X$ の【標準偏差 (standard deviation)】と呼ぶ．</p>
 </div>
-<br><br>
+<br>
 
-<div class="prp" id="224">
-	<b>[#224] 命題：<ruby><rb>Markov</rb><rp>（</rp><rt>マルコフ</rt><rp>）</rp></ruby> の不等式 (Markov's inequality)</b><br>
+<p id="224">&nbsp;</p>
+<div class="prptl">[#224] 命題：<ruby><rb>Markov</rb><rp>（</rp><rt>マルコフ</rt><rp>）</rp></ruby> の不等式 (Markov's inequality)</div>
+<div class="prp">
 	<p> $a\gt 0$ とする．確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の非負確率変数 $X$ に対して</p>
 	<p><center>\begin{align*}
 		P(X\geq a) \leq \fraction{\mathbb{E}[X]}{a}. 
 		\end{align*}</center></p>
 </div>
-<br><br>
+<br>
 
-<div class="prp" id="225">
-	<b>[#225] 命題：<ruby><rb>Chebyshev</rb><rp>（</rp><rt>チェビシェフ</rt><rp>）</rp></ruby> の不等式 (Chebyshev's inequality)</b><br>
+<p id="225">&nbsp;</p>
+<div class="prptl">[#225] 命題：<ruby><rb>Chebyshev</rb><rp>（</rp><rt>チェビシェフ</rt><rp>）</rp></ruby> の不等式 (Chebyshev's inequality)</div>
+<div class="prp">
 	<p> $a\gt 0$ とする．確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して</p>
 	<p><center>\begin{align*}
 		P(|X-\mathbb{E}[X]|\geq a) \leq \fraction{\mathbb{V}[X]}{a^2}. 
@@ -80,8 +95,9 @@ updated on 2022/5/11
 		P(|X-\mathbb{E}[X]|\geq k\,\mathbb{D}[X]) \leq \fraction{1}{k^2}. 
 		\end{align*}</center></p>
 </div>
-<Details>
+<Details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>確率変数 $X$ に対して $|X-\mathbb{E}[X]|$ は非負であることから $a\gt 0$ に対して</p>
 	<p><center>\begin{align*}
 		|X-\mathbb{E}[X]|\geq a\,\,\Longleftrightarrow\,\, |X-\mathbb{E}[X]|^2 \geq a^2.
@@ -98,39 +114,64 @@ updated on 2022/5/11
 	<p><center>\begin{align*}
 		P(|X-\mathbb{E}[X]|\geq k\,\mathbb{D}[X]) \leq \fraction{\mathbb{V}[X]}{(k\,\mathbb{D}[X])^2} \refeq{#199}{199} \fraction{\mathbb{V}[X]}{k^2\,\mathbb{V}[X]} = \fraction{1}{k^2}.
 		\end{align*}</center></p>
+	</div>
 </Details>
-<br><br>
+<br>
 
-<div class="prp" id="154">
-	<b>[#154] 命題：大数の弱法則 (weak law of large numbers)</b><br>
+<p id="154">&nbsp;</p>
+<div class="prptl">[#154] 命題：大数の弱法則 (weak law of large numbers)</div>
+<div class="prp">
 	<p>確率変数列 $\{X_i\}_{i\in\mathbb{N}}$ は独立同分布で $\mathbb{E}[X_1{}^2]\lt\infty$ であるとすれば，$X_i$ たちの平均は分布の期待値に確率収束 <a href="stochastic-convergence.html#80">[#80]</a> する：</p>
 	<p><center>$\begin{align*}
 		\fraction{1}{n}\sum_{i\in\mathbb{N}}X_i\,\,\overset{\mathrm{P}}{\longrightarrow}\,\,\mathbb{E}[X_1].
 		\end{align*}$</center></p>
 </div>
-<br><br>
+<br>
 
-<div class="prp" id="155">
-	<b>[#155] 命題：大数の強法則 (strong law of large numbers)</b><br>
+<p id="155">&nbsp;</p>
+<div class="prptl">[#155] 命題：大数の強法則 (strong law of large numbers)</div>
+<div class="prp">
 	<p>確率変数列 $\{X_i\}_{i\in\mathbb{N}}$ は独立同分布で $\mathbb{E}[|X_1|]\lt\infty$ であるとすれば，$X_i$ たちの平均は分布の期待値に概収束 <a href="stochastic-convergence.html#78">[#78]</a> する：</p>
 	<p><center>$\begin{align*}
 		\fraction{1}{n}\sum_{i\in\mathbb{N}}X_i\,\,\rightarrow\,\,\mathbb{E}[X_1]\quad\text{a.s.}
 		\end{align*}$</center></p>
 </div>
-<br><br>
+<details class="prptl">
+	<summary>補足</summary>
+	<div class="prp">
+	<p>この法則は統計学でも極めて大きな役割を演じる．即ちこの法則は，データを取れば取るほどその平均値は期待値に近づいていくことを意味する．大数の法則により，ある事象の真の確率も調べることができる$\nr{expectation}{415}$．</p>
+	</div>
+</details>
+<br>
 
-<div class="def" id="200">
-	<b>[#200] 定義：積率，中心積率</b><br>
+<p id="415">&nbsp;</p>
+<div class="exmtl">[#415] 例：大数の法則による真の確率の導出</div>
+<div class="exm">
+	<p>偏りのないサイコロを投げて $1$ の目が出る確率は $\fraction{1}{6}.$</p>
+</div>
+<details class="exmtl">
+	<summary>証明</summary>
+	<div class="exm">
+	<p></p>
+	</div>
+</details>
+<br>
+
+<p id="200">&nbsp;</p>
+<div class="deftl">[#200] 定義：積率，中心積率</div>
+<div class="def">
 	<p> $k$ を $1$ 以上の整数とする．確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，</p>
 	<ul>
 		<p><li> $\mu_k := \mathbb{E}\left[X^k\right]$ を $X$ に関する $k$ 次の【積率 (モーメント; moment)】と呼ぶ．</li></p>
 		<p><li> $\mu'_k := \mathbb{E}\left[(X-\mathbb{E}[X])^k\right]$ を $X$ に関する $k$ 次の【中心積率 (中心モーメント; central moment)】と呼ぶ．</li></p>
 </div>
-<Details>
+<Details class="deftl">
 <summary>補足</summary>
+	<div class="def">
 	<p> $k=1$ のとき $\mu_1 = \mathbb{E}[X]$ は $X$ の期待値， $k=2$ のとき $\mu'_2 = \mathbb{E}\left[(X-\mathbb{E}[X])^2\right]$ は $X$ の分散である．</p>
+	</div>
 </Details>
-<br><br>
+<br>
 
 <div id="bib"><b>参考文献</b>
 <ul>
@@ -138,6 +179,8 @@ updated on 2022/5/11
 	<li>今野紀雄, 井手勇介, 瀬川悦生, 竹居正登, 大塚一路: 横浜発 確率・統計入門, 産業図書 (2014).</li>
 	<li>竹居正登: 入門 確率過程, 森北出版 (2020).</li>
 	<li>東京大学教養学部統計学教室: 基礎統計学I 統計学入門, 東京大学出版会 (1991).</li>
+	<li><a href="https://physnotes.jp/stat/lln/">大数の法則 - 高校物理の備忘録</a> [2022/12/19 閲覧].</li>
+	<li><a href="https://manabitimes.jp/math/990">大数の法則をわかりやすく【意味・具体例・証明】 - 高校数学の美しい物語</a> [2022/12/19 閲覧].</li>
 	<li><a href="https://manabitimes.jp/math/937">マルコフの不等式とその証明 _ 高校数学の美しい物語</a></li>
 	<li><a href="https://mathlandscape.com/markov-ineq/">マルコフの不等式とその証明をわかりやすく厳密に _ 数学の景色</a></li>
 	<li><a href="https://mathlandscape.com/chebyshev-ineq/">【確率論】チェビシェフの不等式とその例題・証明 _ 数学の景色</a></li>
