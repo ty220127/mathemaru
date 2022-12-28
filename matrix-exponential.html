@@ -1,0 +1,120 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		rtwobytwo: ['\\left(\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right)', 4],
+		ronebytwo: ['\\left(\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "行列指数関数"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2022/12/28<br>
+updated on 2022/12/28
+</p>
+    
+<p id="416">&nbsp;</p>
+<div class="deftl">[#416] 定義：行列指数関数</div>
+<div class="def">
+	<p>正方行列 $A$ に対し以下で与えられる行列 $\mathrm{e}^A$ を $A$ の【指数関数行列 (matrix exponential)】と呼ぶ：</p>
+	<p><center>\begin{align}
+		\mathrm{e}^A = \sum_{k=0}^{\infty} \fraction{A^k}{k!} = I_n + A + \fraction{A^2}{2!} + \fraction{A^3}{3!} + \cdots.
+		\end{align}</center></p>
+	<p>ただし $I_n$ は $n$ 次単位行列$\nr{matrix}{184}$ である．なお，$\mathrm{e}^A$ は $\exp A$ などと書くこともある．</p>
+</div>
+<details class="deftl">
+	<summary>補足</summary>
+	<div class="def">
+	<p>指数関数行列は，指数関数 $\mathrm{e}^x$ の Maclaurin 展開に形式的に正方行列 $A$ を代入したものである．</p>
+	</div>
+</details>
+<br>
+
+<p id="417">&nbsp;</p>
+<div class="exmtl">[#417] 例：対角行列の行列指数関数</div>
+<div class="exm">
+	<p>$(n,\, n)$ 型零行列$\nr{matrix}{178}$ $O_{nn}$ に対して以下が成り立つ：</p>
+	<p><center>\begin{align}
+		\mathrm{e}^{O_{nn}} = I_n.
+		\end{align}</center></p>
+</div>
+<details class="exmtl">
+	<summary>証明</summary>
+	<div class="exm">
+	<p> $k\geq 1$ に対して</p>
+	<p><center>\begin{align}
+		\fraction{(O_{nn})^k}{k!} = O_{nn}
+		\end{align}</center></p>
+	<p>であるから，</p>
+	<p><center>\begin{align}
+		\mathrm{e}^{O_{nn}} = I_n + O_{nn} \,\refeq{matrix}{179}\, I_n.
+		\end{align}</center></p>
+	</div>
+</details>
+<br>
+
+<p id="418">&nbsp;</p>
+<div class="prptl">[#418] 定義：対角行列の行列指数関数</div>
+<div class="prp">
+	<p>$n$ 次対角行列$\nr{diagonal-matrix}{286}$ $\DeclareMathOperator{\diag}{diag} D= \diag(d_1,\ d_2,\ \cdots,\ d_n)$ に対して，</p>
+	<p><center>\begin{align}
+		\mathrm{e}^D = \diag(\mathrm{e}^{d_1},\ \mathrm{e}^{d_2},\ \cdots,\ \mathrm{e}^{d_n}).	
+		\end{align}</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	<p></p>
+	</div>
+</details>
+<br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://ramenhuhu.com/math-matrix_exponential">行列の指数関数の定義と計算例 - 新米夫婦のふたりごと</a> [2022/12/28 閲覧].</li>
+	<li><a href="https://manabitimes.jp/math/1312">行列の指数関数とその性質 - 高校数学の美しい物語</a> [2022/12/28 閲覧].</li>
+</ul>
+</div>
+<b>その他参考コンテンツ</b>
+<center>
+<iframe width="480" height="270" src="https://www.youtube.com/embed/utSsCamAMmk" title="行列指数関数への招待" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+</body>
+</html>
