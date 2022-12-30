@@ -47,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/12/28<br>
-updated on 2022/12/28
+updated on 2022/12/30
 </p>
     
 <p id="416">&nbsp;</p>
@@ -68,7 +68,7 @@ updated on 2022/12/28
 <br>
 
 <p id="417">&nbsp;</p>
-<div class="exmtl">[#417] 例：零行列の行列指数関数</div>
+<div class="exmtl">[#417] 例：対角行列の行列指数関数</div>
 <div class="exm">
 	<p>$(n,\, n)$ 型零行列$\nr{matrix}{178}$ $O_{nn}$ に対して以下が成り立つ：</p>
 	<p><center>\begin{align}
@@ -84,24 +84,30 @@ updated on 2022/12/28
 		\end{align}</center></p>
 	<p>であるから，</p>
 	<p><center>\begin{align}
-		\mathrm{e}^{O_{nn}} = I_n + O_{nn} \,\refeq{matrix}{179}\, I_n.
+		\mathrm{e}^{O_{nn}} \,\refeq{matrix-exponential}{416}\, I_n + \sum_{k=1}^{\infty} \fraction{(O_{nn})^k}{k!} \,\refeq{matrix}{179}\, I_n.
 		\end{align}</center></p>
 	</div>
 </details>
 <br>
 
 <p id="418">&nbsp;</p>
-<div class="prptl">[#418] 命題：対角行列の行列指数関数</div>
+<div class="prptl">[#418] 定義：対角行列の行列指数関数</div>
 <div class="prp">
 	<p>$n$ 次対角行列$\nr{diagonal-matrix}{286}$ $\DeclareMathOperator{\diag}{diag} D= \diag(d_1,\ d_2,\ \cdots,\ d_n)$ に対して，</p>
 	<p><center>\begin{align}
 		\mathrm{e}^D = \diag(\mathrm{e}^{d_1},\ \mathrm{e}^{d_2},\ \cdots,\ \mathrm{e}^{d_n}).	
 		\end{align}</center></p>
+	<p>ただし，$D^0 = I_n$ ( $n$ 次単位行列）とする．</p>
 </div>
 <details class="prptl">
 	<summary>証明</summary>
 	<div class="prp">
-	<p></p>
+	<p><center>\begin{align}
+		\mathrm{e}^D &\,\refeq{matrix-exponential}{416}\, \sum_{k=0}^{\infty} \fraction{(\diag(d_1,\ d_2,\ \cdots,\ d_n))^k}{k!}\\
+		&\,\refeq{diagonal-matrix}{288}\, \sum_{k=0}^{\infty} \fraction{(\diag(d_1^k,\ d_2^k,\ \cdots,\ d_n^k))}{k!}\\
+		&\,=\, \diag\left( \sum_{k=0}^{\infty}\fraction{d_1^k}{k!},\ \sum_{k=0}^{\infty}\fraction{d_2^k}{k!},\ \cdots,\ \sum_{k=0}^{\infty}\fraction{d_n^k}{k!}\right)\\
+		&\,=\, \diag(\mathrm{e}^{d_1},\ \mathrm{e}^{d_2},\ \cdots,\ \mathrm{e}^{d_n}).
+		\end{align}</center></p>
 	</div>
 </details>
 <br>
