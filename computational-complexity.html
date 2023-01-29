@@ -1,0 +1,128 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		rtwobytwo: ['\\left(\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right)', 4],
+		ronebytwo: ['\\left(\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "計算複雑性"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<style>
+strong{font-weight:bold}
+</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2023/1/29<br>
+updated on 2023/1/29
+</p>
+    
+<p id="419">&nbsp;</p>
+<div class="deftl">[#419] 定義：クラス P</div>
+<div class="def">
+	<p>多項式時間で正しい解を<strong>発見</strong>できる判定問題の集合を【クラス P (class polynomial)】と呼び，$\mathrm{P}$ で表す：選択肢数が $n$ の判定問題 $p\in \mathrm{P}$ について，正しい解を見つけるまでの計算時間 $t_p$ は $\alpha\in\mathbb{R}$ として</p>
+	<p><center>\begin{align}
+		t_p \in \mathrm{O}(n^\alpha).
+		\end{align}</center></p>
+</div>
+<details class="deftl">
+	<summary>補足</summary>
+	<div class="def">
+	<p>問題がクラス P に属することは，その問題が効率良く解くことができることを意味する．</p>
+	</div>
+</details>
+<br>
+
+<p id="420">&nbsp;</p>
+<div class="deftl">[#420] 定義：クラス NP</div>
+<div class="def">
+	<p>多項式時間で解の正当性を<strong>検証</strong>できる判定問題の集合を【クラス NP (class non-deterministic polynomial)】と呼び，$\mathrm{NP}$ で表す：選択肢数が $n$ の判定問題 $p\in \mathrm{NP}$ について，与えられた解の正当性を示すまでの計算時間 $t_p$ は $\alpha\in\mathbb{R}$ として</p>
+	<p><center>\begin{align}
+		t_p \in \mathrm{O}(n^\alpha).
+		\end{align}</center></p>
+</div>
+<details class="deftl">
+	<summary>補足１</summary>
+	<div class="def">
+	<p>NP は「not P」を意味するものではないことに注意．</p>
+	</div>
+</details>
+<details class="deftl">
+	<summary>補足２</summary>
+	<div class="def">
+	<p>問題がクラス NP に属することは，効率の良い解き方は存在しないかもしれないが，すべての選択肢を虱潰しにすれば解決できることを意味する．</p>
+	</div>
+</details>
+<br>
+
+<p id="421">&nbsp;</p>
+<div class="prptl">[#421] 命題：クラス P とクラス NP の関係</div>
+<div class="prp">
+	<p><center>\begin{align}
+		\mathrm{P} \subseteq \mathrm{NP}.
+		\end{align}</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	<p>定義より自明．</p>
+	</div>
+</details>
+<details class="prptl">
+	<summary>補足</summary>
+	<div class="prp">
+	<p>この命題の逆が成り立つかどうか，つまり $\mathrm{NP}\subseteq \mathrm{P}$ が成り立つかどうかは未解決である．これが成り立てば $\mathrm{P} = \mathrm{NP}$ となり，与えられた解の正当性を検証できるような問題は，その解が与えられていない場合でも効率よく解く方法が存在することになる．$\mathrm{P}$ と $\mathrm{NP}$ の相等性の是非を問う問題は【P 対 NP 問題 (P vs NP problem)】と呼ばれ，クレイ数学研究所により提出されている７つの未解決問題（ミレニアム問題）の１つとなっている．なお，多くの研究者の間ではこの２つは等しくならないと予想されていることから【$\mathrm{P}\not =\mathrm{NP}$ 問題】とも呼ばれている．</p>
+	</div>
+</details>
+<br>
+
+<div id="bib"><b>参考文献</b>
+<ul>
+	<li><a href="https://tex2e.github.io/blog/math/p-np-problem">P問題とNP問題の違い - 晴耕雨読</a> [2023/1/29 閲覧].</li>
+	<li><a href="https://daigakudenki.com/np-hard/">P、NP、NP完全、NP困難の違いは？［具体例で解説］ - 大学の知識で学ぶ電気電子工学</a> [2023/1/29 閲覧].</li>
+	<li><a href="https://nazesuugaku.com/p_vs_np_problem/">P対NP問題をわかりやすく解説！解けたら1億円の未解決問題！ - naze数gaku</a> [2023/1/29 閲覧].</li>
+	<li><a href="https://www.momoyama-usagi.com/entry/info-p-np">うさぎでもわかるP vs NP問題（NP完全、NP困難の違い） - 工業大学生ももやまのうさぎ塾</a> [2023/1/29 閲覧].</li>
+	<li><a href="">初心者が学ぶP,NP,NP困難(Hard),NP完全(Complete)とは（わかりやすく解説） - MotoJapan's Tech-Memo</a> [2023/1/29 閲覧].</li>
+	<li><a href="https://www.jaist.ac.jp/~uehara/course/2017/i216/">計算量の理論と離散数学, 講義ページ(上原隆平, 北陸先端科学技術大学院大学)</a> [2023/1/29 閲覧].</li>
+	<li><a href="http://www.claymath.org/millennium-problems/p-vs-np-problem">P vs NP Problem - Clay Mathematics Institute</a> [2023/1/29 閲覧].</li>
+</ul>
+</div>
+
+</body>
+</html>
