@@ -56,7 +56,7 @@ updated on 2023/1/29
 <p id="419">&nbsp;</p>
 <div class="deftl">[#419] 定義：クラス P</div>
 <div class="def">
-	<p>多項式時間で正しい解を<strong>発見</strong>できる判定問題の集合を【クラス P (class polynomial)】と呼び，$\mathrm{P}$ で表す：選択肢数が $n$ の判定問題 $p\in \mathrm{P}$ について，正しい解を見つけるまでの計算時間 $t_p$ は $\alpha\in\mathbb{R}$ として</p>
+	<p>多項式時間で正しい解を<strong>発見</strong>できる判定問題の集合を【クラス P (class polynomial)】と呼び，$\mathrm{P}$ で表す：選択肢数が $n$ の判定問題 $p\in \mathrm{P}$ について，正しい解を見つけるまでの計算時間 $t_p$ に対して $\alpha\in\mathbb{R}$ が存在して</p>
 	<p><center>\begin{align}
 		t_p \in \mathrm{O}(n^\alpha).
 		\end{align}</center></p>
@@ -72,7 +72,7 @@ updated on 2023/1/29
 <p id="420">&nbsp;</p>
 <div class="deftl">[#420] 定義：クラス NP</div>
 <div class="def">
-	<p>多項式時間で解の正当性を<strong>検証</strong>できる判定問題の集合を【クラス NP (class non-deterministic polynomial)】と呼び，$\mathrm{NP}$ で表す：選択肢数が $n$ の判定問題 $p\in \mathrm{NP}$ について，与えられた解の正当性を示すまでの計算時間 $t_p$ は $\alpha\in\mathbb{R}$ として</p>
+	<p>多項式時間で解の正当性を<strong>検証</strong>できる判定問題の集合を【クラス NP (class non-deterministic polynomial)】と呼び，$\mathrm{NP}$ で表す：選択肢数が $n$ の判定問題 $p\in \mathrm{NP}$ について，与えられた解の正当性を示すまでの計算時間 $t_p$ に対して $\alpha\in\mathbb{R}$ が存在して</p>
 	<p><center>\begin{align}
 		t_p \in \mathrm{O}(n^\alpha).
 		\end{align}</center></p>
@@ -107,7 +107,7 @@ updated on 2023/1/29
 <details class="prptl">
 	<summary>補足</summary>
 	<div class="prp">
-	<p>この命題の逆が成り立つかどうか，つまり $\mathrm{NP}\subseteq \mathrm{P}$ が成り立つかどうかは未解決である．これが成り立てば $\mathrm{P} = \mathrm{NP}$ となり，与えられた解の正当性を検証できるような問題は，その解が与えられていない場合でも効率よく解く方法が存在することになる．$\mathrm{P}$ と $\mathrm{NP}$ の相等性の是非を問う問題は【P 対 NP 問題 (P vs NP problem)】と呼ばれ，クレイ数学研究所により提出されている７つの未解決問題（ミレニアム問題）の１つとなっている．なお，多くの研究者の間ではこの２つは等しくならないと予想されていることから【$\mathrm{P}\not =\mathrm{NP}$ 問題】とも呼ばれている．</p>
+	<p>この命題の逆が成り立つかどうか，つまり $\mathrm{NP}\subseteq \mathrm{P}$ が成り立つかどうかは未解決である．これが成り立てば $\mathrm{P} = \mathrm{NP}$ となり，与えられた解の正当性を検証できるような問題は，その解が与えられていない場合でも効率よく解く方法が存在することになる．$\mathrm{P}$ と $\mathrm{NP}$ の相等性の是非を問う問題は【P 対 NP 問題 (P vs NP problem)】と呼ばれ，クレイ数学研究所により提出されている７つの未解決問題（ミレニアム問題）の１つとなっている．なお，多くの研究者の間ではこの２つは等しくならないと考えられていることから【$\mathrm{P}\not =\mathrm{NP}$ 予想 (P is not NP)】とも呼ばれている．</p>
 	</div>
 </details>
 <br>
