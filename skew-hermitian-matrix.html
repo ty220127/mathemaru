@@ -1,0 +1,82 @@
+<meta charset="UTF-8">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "歪 Hermite 行列と交代行列"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2023/2/14<br>
+updated on 2023/2/14
+</p>
+
+<p id="422">&nbsp;</p>
+<div class="deftl">[#422] 歪 Hermite 行列，交代行列</div>
+<div class="def">
+	<p>ある正方行列 $S$ が【歪 Hermite 行列 (skew-Hermitian matrix)】或いは【反 Hermite 行列 (anti-Hermitian matrix)】であるとは，$S$ が
+	\begin{align*}
+		S^* = -S
+		\end{align*}
+	を満たすことをいう．歪 Hermite 行列 $S$ が実行列のときは，$S$ の転置$\nr{transpose}{249}$ $S^\trp$ が $-S$ に等しくなるが，この $S$ を特に【交代行列 (alternating matrix)】と呼ぶ．</p>
+</div>
+<details class="deftl" style="margin-top: -0.5%;">
+	<summary>補足</summary>
+	<div class="def">
+	<p>歪 Hermite 行列の両辺の転置をとることで</p>
+	\begin{align*}
+		\overline{S} = -S^\trp
+		\end{align*}
+	<p>を得る．これを歪 Hermite 行列の定義とする場合もある．</p>
+	</div>
+</details>
+<br>
+
+<br><br>
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li><a href="https://mathlandscape.com/skew-hermitian-matrix/">歪エルミート行列の定義と重要な性質5つ - 数学の景色</a> [2023/2/14 閲覧].</li>
+		<li><a href="https://mathlandscape.com/alter-matrix/">交代行列の定義と重要な性質5つ - 数学の景色</a> [2023/2/14 閲覧].</li>
+		<li><a href="https://eman-physics.net/math/linear15.html">ユニタリ行列 - EMANの物理数学</a> [2023/2/14 閲覧].</li>
+	</ul>
+</div>
+</body>
+</html>
