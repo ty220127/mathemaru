@@ -1,0 +1,80 @@
+
+<meta charset="UTF-8">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "各点収束"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2023/3/1<br>
+updated on 2023/3/1
+</p>
+
+<p id="260">&nbsp;</p>
+<div class="deftl">[#425] 定義：各点収束</div>
+<div class="def">
+	<p>$D\subset \mathbb{R}^n$ 上の関数列 $\{f_n\}$ が，$D$ 上で関数 $f$ に【各点収束 (pontwisely converge)】するとは</p>
+	<p><center>\begin{align*}
+		\lim_{n\to\infty}\sup_{x\in D} |f_n(x) - f(x)|  = 0
+		\end{align*}</center></p>
+	<p>が成り立つことを云う．</p>
+</div>
+<details class="deftl" style="margin-top: -0.5%;">
+	<summary>補足</summary>
+	<div class="def">
+	<p>収束の定義により，各点収束の定義は以下の通り同値変形できる．一様収束の確認にあたっては，適宜これらの変形された命題を用いる．</p>
+	</div>
+</details>
+<br>
+
+<br><br>
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li><a href="https://mathlandscape.com/uniformly-pointwise-convergence/">一様収束と各点収束の違いを4つの例とともに理解する - 数学の景色</a> [2023/3/1 閲覧].</li>	
+		<li><a href="https://manabitimes.jp/math/1099">各点収束と一様収束の違いと具体例 - 高校数学の美しい物語</a> [2023/3/1 閲覧].</li>
+		<li><a href="https://mamekebi-science.com/math/limit/pointwise-uniform-converge/">【ε論法】関数列の各点収束と一様収束 - まめけびのごきげん数学・物理</a> [2023/3/1 閲覧].</li>
+		<li><a><a href="https://wiis.info/math/real-number/sequence-of-functions/pointwise-convergence-of-sequence-of-functions/">各点収束する関数列 - WIIS</a> [2023/3/1 閲覧].</li>
+	</ul>
+</div>
+</body>
+</html>
