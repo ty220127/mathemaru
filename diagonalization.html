@@ -47,25 +47,38 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/10<br>
-updated on 2022/7/13<br>
+updated on 2022/3/5<br>
 </p>
     
-<p id="298">&nbsp;</p><div class="def">
-	<b>[#298] 定義：行列の対角化</b><br>
+<p id="298">&nbsp;</p>
+<div class="deftl">[#298] 定義：行列の対角化</div>
+<div class="def">
 	<p>ある $n$ 次正方行列 $A$ が【対角化可能 (diagonalizable)】であるとは，$A$ に対し正則行列$\nr{regular}{163}$ $P$ と数 $\lambda_1,\ \lambda_2,\ \cdots,\ \lambda_n$ が存在して</p>
 	<p><center>\begin{align}
 		\varLambda := P^{-1}AP = \diag (\lambda_1,\,\lambda_2,\,\cdots,\,\lambda_n)
 		\end{align}</center></p>
 	<p>という対角行列$\nr{diagonal-matrix}{286}$ を作れることをいう．また，$P$ や $\varLambda$ を求める操作を【対角化 (diagonalization)】と呼ぶ．</p>
 </div>
+<details class="deftl">
+	<summary>補足</summary>
+	<div class="def">
+		<p>定義式の両辺に，左右からそれぞれ $P$ と $P^{-1}$ をかけることにより</p>
+		\begin{align}
+			A = P\varLambda P^{-1}
+		\end{align}	
+		<p>を得る．</p>
+	</div>
+</details>
 <br>
 
-<p id="299">&nbsp;</p><div class="prp">
-	<b>[#299] 命題：行列の対角化と固有値・固有ベクトル</b><br>
+<p id="299">&nbsp;</p>
+<div class="prptl">[#299] 命題：行列の対角化と固有値・固有ベクトル</div>
+<div class="prp">
 	<p>ある $n$ 次正方行列 $A$ が対角化可能ならば，得られた対角行列 $\varLambda$ の各対角成分 $\lambda_i := (\varLambda)_{ii}\ (i = 1,\ \cdots,\ n)$ は $A$ の固有値であり，対角化のための正則行列 $P = [\bs{p}_1\ \ \bs{p}_2\ \ \cdots\ \ \bs{p}_n]$ をなす各列ベクトル $\bs{p}_i$ は $\lambda_i$ に属する固有ベクトルである．</p>
 </div>
-<details>
+<details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>仮定より $A$ は対角化可能$\nr{diagonalization}{298}$ であるから，対角行列 $\varLambda = \diag (\lambda_1,\,\cdots,\,\lambda_n)$ を用いて</p>
 	<p><center>\begin{align}
 		\varLambda = P^{-1}AP
@@ -80,11 +93,13 @@ updated on 2022/7/13<br>
 		A\bs{p}_i = \lambda_i\bs{p}_i
 		\end{align}</center></p>
 	<p>が成立する．これは，$\lambda_i,\ \bs{p}_i$ がそれぞれ $A$ の固有値とそれに属する固有ベクトルであることを意味する$\nr{eigen}{160}$．</p>
+	</div>
 </details>
 <br>
 
-<p id="300">&nbsp;</p><div class="exm">
-	<b>[#300] 例題：行列の対角化</b><br>
+<p id="300">&nbsp;</p>
+<div class="exmtl">[#300] 例題：行列の対角化</div>
+<div class="exm">
 	<p>行列</p>
 	<p><center>\begin{align}
 		A = \left(\begin{array}{lll} 0 & 0 & 1\\ 0 & 1 & 0\\ 1 & 0 & 0\end{array}\right)
@@ -96,21 +111,25 @@ updated on 2022/7/13<br>
 	</ol>
 	<p style="text-align:right;">[2018 広島大学 大学院理学系研究科]</p>
 </div>
-<details>
+<details class="exmtl">
 	<summary>解答</summary>
+	<div class="exm">
 	<p></p>
+	</div>
 </details>
 <br>
 
-<p id="301">&nbsp;</p><div class="prp">
-	<b>[#301] 命題：行列の対角化による行列の累乗</b><br>
+<p id="301">&nbsp;</p>
+<div class="prptl">[#301] 命題：行列の対角化による行列の累乗</div>
+<div class="prp">
 	<p>ある $n$ 次正方行列 $A$ が対角化できるとして，対角化のための正則行列を $P$，得られる対角行列を $\varLambda = \diag (\lambda_1,\,\cdots,\,\lambda_n)$ とする．このとき，$m\in\mathbb{N}$ に対して</p>
 	<p><center>\begin{align}
 		A^m = P\,\diag (\lambda_1^m,\,\cdots,\,\lambda_n^m)\,P^{-1}.
 		\end{align}</center></p>
 </div>
-<details>
+<details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>仮定より</p>
 	<p><center>\begin{align}
 		\varLambda = P^{-1}AP
@@ -131,11 +150,19 @@ updated on 2022/7/13<br>
 		P\,\diag (\lambda_1^m,\,\cdots,\,\lambda_n^m)\, P^{-1} = A^m
 		\end{align}</center></p>
 	<p>を得る．両辺を入れ替えれば，それが所望の式である．</p>
+	</div>
+</details>
+<details class="prptl">
+	<summary>補足</summary>
+	<div class="prp">
+	<p> $A$ が対角化可能であるならば $A^m$ もまた対角化可能であり，得られる対角行列は $\varLambda^m$ であることを示している．</p>
+	</div>
 </details>
 <br>
 
-<p id="302">&nbsp;</p><div class="exm">
-<b>[#302] 例題：行列の累乗</b><br>
+<p id="302">&nbsp;</p>
+<div class="exmtl">[#302] 例題：行列の累乗</div>
+<div class="exm">
 	<p>正方行列 $A$ を</p>
 	<p><center>$\begin{align*}
 		A= \left(\begin{array}{ccc} 1 & \sqrt{2} & 0\\ \sqrt{2} & 1 & \sqrt{2} \\ 0 & \sqrt{2} & 1 \end{array}\right)
@@ -144,24 +171,30 @@ updated on 2022/7/13<br>
 		非負整数 $n$ に対して，$A^n$ を求めよ．</p>
 	<p style="text-align:right;">[2020 東京大学 大学院情報理工学系研究科 一般教育科目(数学)]
 </div>
-<Details>
+<Details class="exmtl">
 <summary>解答</summary>
+	<div class="exm">
 	<p></p>
+	</div>
 </Details>
 <br>
 
-<p id="303">&nbsp;</p><div class="prp">
-<b>[#303] 命題：行列の対角化可能性</b><br>
+<p id="303">&nbsp;</p>
+<div class="prptl">[#303] 命題：行列の対角化可能性</div>
+<div class="prp">
 	<p> $n$ 次正方行列 $A$ が対角化可能$\nr{diagonalization}{298}$ であることは，$A$ が $n$ 個の線形独立な固有ベクトルを持つことと同値である．</p>
 </div>
-<Details>
+<Details class="prptl">
 <summary>証明</summary>
+	<div class="prp">
 	<p></p>
+	</div>
 </Details>
 <br>
 
-<p id="304">&nbsp;</p><div class="exm">
-<b>[#304] 例題：行列の対角化可能性</b><br>
+<p id="304">&nbsp;</p>
+<div class="exmtl">[#304] 例題：行列の対角化可能性</div>
+<div class="exm">
 	<p> $A$ を $3\times 3$ 行列とする．$\displaystyle \bs{v}_1 = \left(\begin{array}{c} 1 \\ -1 \\ 0\end{array}\right),\ \bs{v}_2 = \left(\begin{array}{c} 0 \\ 0 \\ 1\end{array}\right),\ \bs{v}_3 = \left(\begin{array}{c} 1 \\ 0 \\ -1\end{array}\right)$ が，それぞれ $\lambda_1 = -1,\ \lambda_2 = 1,\ \lambda_3 = -3$ を固有値とする $A$ の固有ベクトルになっているとする．このとき，次の問に答えよ．</p>
 	<ol class="q">
 		<li> $A$ が対角化可能かどうか調べよ．対角化可能ならば，$P^{-1}AP$ が対角行列になるような正則行列 $P$ を1つ求め，対角行列 $P^{-1}AP$ を与えよ．</li>
@@ -170,14 +203,17 @@ updated on 2022/7/13<br>
 	</ol>
 	<p style="text-align:right;">[2018 青山学院大学 大学院理工学研究科理工学専攻]
 </div>
-<Details>
+<Details class="exmtl">
 <summary>解答</summary>
+	<div class="exm">
 	<p></p>
+	</div>
 </Details>
 <br>
 
-<p id="305">&nbsp;</p><div class="exm">
-<b>[#305] 例題：行列の対角化可能性</b><br>
+<p id="305">&nbsp;</p>
+<div class="exmtl">[#305] 例題：行列の対角化可能性</div>
+	<div class="exm">
 	<p>行列 $A = \displaystyle\left(\begin{array}{ccc}4 & a & -3\\ 1 & 2 & -1\\ 2 & 2 & -1\end{array}\right)$ に対し，以下の問に答えよ．ただし $a$ は実数の定数とする．</p>
 	<ol class="q">
 		<li>$A$ が対角化可能であるための $a$ の条件を求めよ．</li>
@@ -185,9 +221,11 @@ updated on 2022/7/13<br>
 	</ol>
 	<p style="text-align:right;">[2020 青山学院大学 大学院理工学研究科理工学専攻]
 </div>
-<Details>
+<Details class="exmtl">
 <summary>解答</summary>
+	<div class="exm">
 	<p></p>
+	</div>
 </Details>
 <br>
 
