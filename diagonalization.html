@@ -47,20 +47,26 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/7/10<br>
-updated on 2022/3/5<br>
+updated on 2022/3/11<br>
 </p>
     
 <p id="298">&nbsp;</p>
-<div class="deftl">[#298] 定義：行列の対角化</div>
+<div class="deftl">[#298] 定義：対角化可能</div>
 <div class="def">
-	<p>ある $n$ 次正方行列 $A$ が【対角化可能 (diagonalizable)】であるとは，$A$ に対し正則行列$\nr{regular}{163}$ $P$ と数 $\lambda_1,\ \lambda_2,\ \cdots,\ \lambda_n$ が存在して</p>
+	<p>ある $n$ 次正方行列 $A$ が正則行列$\nr{regular}{163}$ $P$ で【対角化可能 (diagonalizable)】とは，$A,\ P$ に対して数 $\lambda_1,\ \lambda_2,\ \cdots,\ \lambda_n$ が存在して</p>
 	<p><center>\begin{align}
 		\varLambda := P^{-1}AP = \diag (\lambda_1,\,\lambda_2,\,\cdots,\,\lambda_n)
 		\end{align}</center></p>
-	<p>という対角行列$\nr{diagonal-matrix}{286}$ を作れることをいう．また，$P$ や $\varLambda$ を求める操作を【対角化 (diagonalization)】と呼ぶ．</p>
+	<p>という対角行列$\nr{diagonal-matrix}{286}$ を作れることをいう．また，$A$ に対してそのような $P$ が存在することを単に $A$ は対角化可能という．</p>
 </div>
 <details class="deftl">
-	<summary>補足</summary>
+	<summary>補足１</summary>
+	<div class="def">
+		<p>$A$ に対して $P$ や $\varLambda$ を求める操作を【対角化 (diagonalization)】と呼ぶ．</p>
+	</div>
+</details>
+<details class="deftl">
+	<summary>補足２</summary>
 	<div class="def">
 		<p>定義式の両辺に，左右からそれぞれ $P$ と $P^{-1}$ をかけることにより</p>
 		\begin{align}
