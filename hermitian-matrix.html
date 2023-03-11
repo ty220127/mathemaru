@@ -44,56 +44,82 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/6/4<br>
-updated on 2022/6/12
+updated on 2022/3/11
 </p>
 
-<p id="258">&nbsp;</p><div class="def">
-	<b>[#258] 定義：<ruby><rb>Hermite</rb><rp>(</rp><rt>エルミート</rt><rp>)</rp></ruby> 行列，対称行列</b><br>
+<p id="258">&nbsp;</p>
+<div class="deftl">[#258] 定義：<ruby><rb>Hermite</rb><rp>(</rp><rt>エルミート</rt><rp>)</rp></ruby> 行列，対称行列</div>
+<div class="def">
 	<p>ある正方行列 $H$ が【Hermite 行列 (Hermitian matrix)】であるとは，$H$ 自身がその随伴行列$\nr{adjoint}{256}$ $H^*$ と等しいことをいう．また，Hermite 行列 $H$ が実行列のときは，$H$ 自身がその転置行列$\nr{transpose}{249}$ $H^\trp$ と等しいが，この $H$ を特に【対称行列 (symmetric matrix)】と呼ぶ．</p>
 </div>
-<details>
+<details class="deftl">
 	<summary>補足</summary>
+	<div class="def">
 	<p> $H=H^*$ であるから，</p>
 	<p><center>\begin{align*}
 		\overline{H} = \overline{H^*}\, \refeq{adjoint}{256}\, \overline{\overline{H^\trp}}\,\refeq{adjoint}{255}\, H^\trp.
 		\end{align*}</center></p>
+	</div>
 </details>
 <br>
 
-<p id="259">&nbsp;</p><div class="prp">
-	<b>[#259] 命題：随伴行列との和・積は Hermite 行列</b><br>
+<p id="259">&nbsp;</p>
+<div class="prptl">[#259] 命題：随伴行列との和・積は Hermite 行列</div>
+<div class="prp">
 	<p>正方行列 $A$ に対し，$A+A^*$，$AA^*$，$A^*A$ は Hermite 行列．</p>
 </div>
-<details>
+<details class="prptl">
 	<summary>証明 $(A+A^*)$</summary>
+	<div class="prp">
 	<p><center>\begin{align*}
 		(A+A^*)^* \,\refeq{adjoint}{257}\, A^* + (A^*)^* \,\refeq{adjoint}{257}\, A^* + A \,\refeq{matrix}{157}\, A +A^*
 		\end{align*}</center></p>
 	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
+	</div>
 </details>
-<details>
+<details class="prptl">
 	<summary>証明 $(AA^*)$</summary>
+	<div class="prp">
 	<p><center>\begin{align*}
 		(AA^*)^* \,\refeq{adjoint}{257}\, (A^*)^* A^* \,\refeq{adjoint}{257}\, A A^*
 		\end{align*}</center></p>
 	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
+	</div>
 </details>
-<details>
+<details class="prptl">
 	<summary>証明 $(A^*A)$</summary>
+	<div class="prp">
 	<p><center>\begin{align*}
 		(A^*A)^* \,\refeq{adjoint}{257}\, A^* (A^*)^* \,\refeq{adjoint}{257}\, A^* A
 		\end{align*}</center></p>
 	<p>より，Hermite 行列の定義$\nr{hermite-matrix}{258}$ を満たす．</p>
+	</div>
 </details>
 <br>
 
-<p id="268">&nbsp;</p><div class="prp">
-	<b>[#268] 命題：Hermite行列の固有値は実数</b><br>
+<p id="268">&nbsp;</p>
+<div class="prptl">[#268] 命題：Hermite行列の固有値は実数</div>
+<div class="prp">
 	<p>Hermite行列 $H$ の固有値$\nr{eigen}{160}$ は，全て実数である．</p>
 </div>
-<details>
+<details class="prptl">
 	<summary>証明</summary>
+	<div class="prp">
 	<p>
+	</div>
+</details>
+<br>
+
+<p id="426">&nbsp;</p>
+<div class="prptl">[#268] 命題：Hermite行列のユニタリ対角化可能性</div>
+<div class="prp">
+	<p>任意の Hermite 行列 $H$ に対してユニタリ行列$\nr{unitary-matrix}{260}$ $U$ が存在して，$H$ は $U$ で対角化可能$\nr{diagonalization}{298}$ である．</p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	<p>
+	</div>
 </details>
 <br>
 
@@ -105,6 +131,7 @@ updated on 2022/6/12
 		<li>齋藤正彦: 線型代数学, 東京図書, 2014.</li>
 		<li><a href="https://mathlandscape.com/hermitian-matrix/">エルミート行列の定義と性質4つとその証明 - 数学の景色</a></li>
 		<li><a href="https://mathlandscape.com/sym-matrix/">対称行列の定義と性質4つとその証明 - 数学の景色</a></li>
+		<li><ah ref="https://manabitimes.jp/math/2616">エルミート行列とその性質，ユニタリ対角化の証明 - 高校数学の美しい物語</a> [2023/3/11 閲覧]．</li>
 	</ul>
 </div>
 </body>
