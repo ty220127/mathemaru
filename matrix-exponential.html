@@ -68,7 +68,7 @@ updated on 2022/3/12
 <br>
 
 <p id="417">&nbsp;</p>
-<div class="exmtl">[#417] 例：対角行列の行列指数関数</div>
+<div class="exmtl">[#417] 例：零行列の行列指数関数</div>
 <div class="exm">
 	<p>$(n,\, n)$ 型零行列$\nr{matrix}{178}$ $O_{nn}$ に対して以下が成り立つ：</p>
 	<p><center>\begin{align}
@@ -91,17 +91,17 @@ updated on 2022/3/12
 <br>
 
 <p id="418">&nbsp;</p>
-<div class="prptl">[#418] 定義：対角行列の行列指数関数</div>
-<div class="prp">
+<div class="exmtl">[#418] 例：対角行列の指数関数</div>
+<div class="exm">
 	<p>$n$ 次対角行列$\nr{diagonal-matrix}{286}$ $\DeclareMathOperator{\diag}{diag} D= \diag(d_1,\ d_2,\ \cdots,\ d_n)$ に対して，</p>
 	<p><center>\begin{align}
 		\mathrm{e}^D = \diag(\mathrm{e}^{d_1},\ \mathrm{e}^{d_2},\ \cdots,\ \mathrm{e}^{d_n}).	
 		\end{align}</center></p>
 	<p>ただし，$D^0 = I_n$ ( $n$ 次単位行列）とする．</p>
 </div>
-<details class="prptl">
+<details class="exmtl">
 	<summary>証明</summary>
-	<div class="prp">
+	<div class="exm">
 	<p><center>\begin{align}
 		\mathrm{e}^D &\,\refeq{matrix-exponential}{416}\, \sum_{k=0}^{\infty} \fraction{(\diag(d_1,\ d_2,\ \cdots,\ d_n))^k}{k!}\\
 		&\,\refeq{diagonal-matrix}{288}\, \sum_{k=0}^{\infty} \fraction{(\diag(d_1^k,\ d_2^k,\ \cdots,\ d_n^k))}{k!}\\
@@ -112,8 +112,52 @@ updated on 2022/3/12
 </details>
 <br>
 
+<p id="428">&nbsp;</p>
+<div class="prptl">[#428] 命題：行列指数関数の積は和の行列指数関数</div>
+<div class="prp">
+	<p>正方行列 $A,\ B$ が可換であるならば</p>
+	<p><center>\begin{align}
+		\mathrm{e}^A \mathrm{e}^B = \mathrm{e}^{A+B}.	
+		\end{align}</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+	</div>
+</details>
+<br>
+
+<p id="429">&nbsp;</p>
+<div class="prptl">[#429] 定義：行列指数関数の逆行列</div>
+<div class="prp">
+	<p>任意の正方行列 $A$ に対して行列指数関数 $\mathrm{e}^A$ は正則$\nr{regular}{163}$ であり，</p>
+	<p><center>\begin{align}
+		(\mathrm{e}^A)^{-1} = \mathrm{e}^{-A}.	
+		\end{align}</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+		<p>任意の正方行列 $A$ に対して，$A$ と $-A$ は可換である：</p>
+		<p>\begin{align}A\cdot (-A) = (-A)\cdot A = -A^2.\end{align}</p>
+		<p>よって，これらの行列指数関数の積に関し以下が成り立つ（ただし $O,\ I$ はそれぞれ $A$ と同じサイズの零行列と単位行列）：</p>
+		<p>\begin{align}
+			&\mathrm{e}^{A}\mathrm{e}^{-A}\,\refeq{matrix-exponential}{428}\, \mathrm{e}^{A-A} = \mathrm{e}^{O} \,\refeq{matrix-exponential}{417}\, I,\\
+			&\mathrm{e}^{-A}\mathrm{e}^{A}\,\refeq{matrix-exponential}{428}\, \mathrm{e}^{-A+A} = \mathrm{e}^{O} \,\refeq{matrix-exponential}{417}\, I.
+			\end{align}</p>
+		<p>つまり $\mathrm{e}^{A}\mathrm{e}^{-A} = \mathrm{e}^{-A}\mathrm{e}^{A} = I$ であるから，$\mathrm{e}^{A}$ は正則であり，その逆行列は $\mathrm{e}^{-A}$ である$\nr{regular}{163}$．</p>
+	</div>
+</details>
+<details class="prptl">
+	<summary>別証明（正則について）</summary>
+	<div class="prp">
+		<p></p>
+	</div>
+</details>
+<br>
+
 <p id="427">&nbsp;</p>
-<div class="prptl">[#427] 命題：対角化可能な行列の行列指数関数</div>
+<div class="prptl">[#427] 命題：対角化可能な行列の指数関数</div>
 <div class="prp">
 	<p>正方行列 $A$ が正則行列$\nr{regular}{163}$ $P$ で対角化可能$\nr{diagonalization}{298}$ であり，その際の対角行列$\nr{diagonal-matrix}{286}$ が $\varLambda$ であるとき，$\mathrm{e}^A$ は $P$ で $\mathrm{e}^\varLambda$ に対角化される$\nr{matrix-exponential}{418}$．</p>
 </div>
@@ -153,6 +197,7 @@ updated on 2022/3/12
 <ul>
 	<li><a href="https://ramenhuhu.com/math-matrix_exponential">行列の指数関数の定義と計算例 - 新米夫婦のふたりごと</a> [2022/12/28 閲覧].</li>
 	<li><a href="https://manabitimes.jp/math/1312">行列の指数関数とその性質 - 高校数学の美しい物語</a> [2022/12/28 閲覧].</li>
+	<li><a href="https://ushitora.net/archives/2642">行列の指数関数の定義と性質、その証明 - USHITORA Lab.</a> [2023/3/12 閲覧].</li>
 	<li><a href="https://risalc.info/src/unitary-Hermite-exponential.html">ユニタリー行列はエルミート行列の指数関数 - 理数アラカルト</a> [2023/2/9 閲覧].</li>
 	<li><a href="https://blueqat.com/tetsurotabata/c40f3051-1b6c-4b19-98c0-3f5d70e04fb3">量子コンピュータの基本 - exp(iA) がユニタリー行列になる理由 by Tetsuro Tabata - blueqat</a> [2023/2/9 閲覧].</li>
 </ul>
