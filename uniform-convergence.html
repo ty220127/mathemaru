@@ -61,7 +61,37 @@ updated on 2023/3/12
 <details class="deftl" style="margin-top: -0.5%;">
 	<summary>補足</summary>
 	<div class="def">
-	<p>収束の定義により，一様収束の定義は以下の通り同値変形できる．一様収束の確認にあたっては，適宜これらの変形された命題を用いる．</p>
+		<p>$\varepsilon -N$ 論法による収束の定義$\nr{epsilon-N2}{8}$ により，一様収束の定義は以下の通り同値変形できる：</p>
+		<p>\begin{align}
+			&\lim_{n\to\infty}\sup_{x\in D} |f_n(x) - f(x)|  = 0\\
+			\reflr{epsilon-N2}{8}\, & \left[\begin{array}{l}
+				{}^\forall \varepsilon\gt 0,\ {}^\exists N(\varepsilon)\in\mathbb{N}\,\,\text{s.t.}\\
+				\hspace{5mm} {}^\forall n\in\mathbb{N},\ \left[n\geq N(\varepsilon)\ \to\ \displaystyle\left|\sup_{x\in D}|f_n(x) - f(x)|-0\right|\lt \varepsilon\right]
+				\end{array}\right]\\
+			\Longleftrightarrow\, & \left[\begin{array}{l}
+				{}^\forall \varepsilon\gt 0,\ {}^\exists N(\varepsilon)\in\mathbb{N}\,\,\text{s.t.}\\
+				\hspace{5mm} {}^\forall n\in\mathbb{N},\ \left[n\geq N(\varepsilon)\ \to\ \displaystyle\sup_{x\in D}|f_n(x) - f(x)|\lt \varepsilon\right]
+				\end{array}\right]\\
+			\reflr{ordered-set}{409}\, & \left[\begin{array}{l}
+				{}^\forall \varepsilon\gt 0,\ {}^\exists N(\varepsilon)\in\mathbb{N}\,\,\text{s.t.}\,\,{}^\forall n\in\mathbb{N},\\
+				\hspace{10mm} \left[n\geq N(\varepsilon)\ \to\ {}^\forall x\in D,\ |f_n(x) - f(x)|\lt \varepsilon\right]
+				\end{array}\right]\\
+			\end{align}</p>
+		<p>各点収束$\nr{pointwise-convergence}{424}$ の定義との違いは，$N$ が（必ずしも）$x$ に依存しない点である．</p>
+		<p>一様収束はただ各点でただ収束するだけでなく，その速さがどこでも同じことを主張する．その意味で，各点収束よりも強い概念である$\nr{uniform-convergence}{430}$．</p>
+	</div>
+</details>
+<br>
+
+<p id="430">&nbsp;</p>
+<div class="prptl">[#430] 命題：一様収束ならば各点収束</div>
+<div class="prp">
+	<p>$D\subset \mathbb{R}^n$ 上の関数列 $\{f_n\}$ が，$D$ 上で関数 $f$ に一様収束するならば，$\{f_n\}$ は $D$ 上で関数 $f$ に各点収束$\nr{pointwise-convergence}{424}$ する．</p>
+</div>
+<details class="prptl" style="margin-top: -0.5%;">
+	<summary>補足</summary>
+	<div class="prp">
+	<p></p>
 	</div>
 </details>
 <br>
@@ -70,6 +100,7 @@ updated on 2023/3/12
 <div id="bib">
 <b>参考文献</b>
 	<ul>
+		<li>馬場敬之, 高杉豊: スバラシク実力がつくと評判の フーリエ変換 キャンパス・ゼミ, マセマ出版社 (2007).</li>
 		<li><a href="https://mathlandscape.com/uniformly-pointwise-convergence/">一様収束と各点収束の違いを4つの例とともに理解する - 数学の景色</a> [2023/3/1 閲覧].</li>	
 		<li><a href="https://manabitimes.jp/math/1099">各点収束と一様収束の違いと具体例 - 高校数学の美しい物語</a> [2023/3/1 閲覧].</li>
 		<li><a href="https://mamekebi-science.com/math/limit/pointwise-uniform-converge/">【ε論法】関数列の各点収束と一様収束 - まめけびのごきげん数学・物理</a> [2023/3/1 閲覧].</li>
