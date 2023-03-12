@@ -61,7 +61,13 @@ updated on 2023/3/12
 <details class="deftl" style="margin-top: -0.5%;">
 	<summary>補足</summary>
 	<div class="def">
-	<p>収束の定義により，各点収束の定義は以下の通り同値変形できる．一様収束の確認にあたっては，適宜これらの変形された命題を用いる．</p>
+		<p>収束の定義により，各点収束の定義は以下の通り同値変形できる：</p>
+		<p>\begin{align}
+			&{}\forall x\in D,\ \lim_{n\to\infty} f_n(x) = f(x)\\
+			\reflr{epsilon-N2}{8}\, & \left[\begin{array}{l}\forall x\in D,\ {}\forall \varepsilon\gt 0,\ {}^\exists N(x,\,\varepsilon)\in\mathbb{N}\,\, \text{s.t.}\\
+				\hspace{20mm}{}^\forall n\in\mathbb{N},\, \left[\,n\geq N(x,\,\varepsilon)\,\to\,|f_n(x)-f(x)|<\varepsilon\right]\end{array}\right].
+			\end{align}</p>
+		<p>ここで，$N$ は $\varepsilon$ だけでなく $x$ にも依存していることに注意する．これが，一様収束$\nr{uniform-convergence}{425}$ との大きな違いである．</p>
 	</div>
 </details>
 <br>
@@ -70,6 +76,7 @@ updated on 2023/3/12
 <div id="bib">
 <b>参考文献</b>
 	<ul>
+		<li>馬場敬之, 高杉豊: スバラシク実力がつくと評判の フーリエ変換 キャンパス・ゼミ, マセマ出版社 (2007).</li>
 		<li><a href="https://mathlandscape.com/uniformly-pointwise-convergence/">一様収束と各点収束の違いを4つの例とともに理解する - 数学の景色</a> [2023/3/1 閲覧].</li>	
 		<li><a href="https://manabitimes.jp/math/1099">各点収束と一様収束の違いと具体例 - 高校数学の美しい物語</a> [2023/3/1 閲覧].</li>
 		<li><a href="https://mamekebi-science.com/math/limit/pointwise-uniform-converge/">【ε論法】関数列の各点収束と一様収束 - まめけびのごきげん数学・物理</a> [2023/3/1 閲覧].</li>
