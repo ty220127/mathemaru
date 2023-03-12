@@ -47,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/12/28<br>
-updated on 2022/3/11
+updated on 2022/3/12
 </p>
     
 <p id="416">&nbsp;</p>
@@ -108,6 +108,27 @@ updated on 2022/3/11
 		&\,=\, \diag\left( \sum_{k=0}^{\infty}\fraction{d_1^k}{k!},\ \sum_{k=0}^{\infty}\fraction{d_2^k}{k!},\ \cdots,\ \sum_{k=0}^{\infty}\fraction{d_n^k}{k!}\right)\\
 		&\,=\, \diag(\mathrm{e}^{d_1},\ \mathrm{e}^{d_2},\ \cdots,\ \mathrm{e}^{d_n}).
 		\end{align}</center></p>
+	</div>
+</details>
+<br>
+
+<p id="427">&nbsp;</p>
+<div class="prptl">[#427] 命題：対角化可能な行列の行列指数関数</div>
+<div class="prp">
+	<p>正方行列 $A$ が正則行列$\nr{regular}{163}$ $P$ で対角化可能$\nr{diagonalization}{298}$ であり，その際の対角行列$\nr{diagonal-matrix}{286}$ が $\varLambda$ であるとき，$\mathrm{e}^A$ は $P$ で $\mathrm{e}^\varLambda$ に対角化される$\nr{matrix-exponential}{418}$．</p>
+</div>
+<details class="prptl" style="margin-top: -0.5%">
+	<summary>証明</summary>
+	<div class="prp">
+		<p>正方行列 $A$ に関する仮定より，$k\in\mathbb{N}$ に対して</p>
+		<p>\begin{align}A^k = P\varLambda^k P^{-1}\tag{$*$}\end{align}</p>
+		<p>が成り立つ$\nr{diagonalization}{301}$．また，任意の行列 $M$ に対して $M^0 = I$(単位行列) と仮定すれば</p>
+		<p>\begin{align}P\varLambda^0 P^{-1} = PP^{-1} \,\refeq{regular}{163}\, I = A^0\end{align}</p>
+		<p>であるから，$k\in \mathbb{N}\cup \{0\}$ に対して $(*)$ が成立する．よって</p>
+		<p>\begin{align}
+			\mathrm{e}^A &= \sum_{k=0}^{\infty} \fraction{A^k}{k!}  \,\refeq{matrix-exponential}{416}\, \sum_{k=0}^{\infty} \fraction{P\varLambda^k P^{-1}}{k!}\\
+			&= P\left( \sum_{k=0}^{\infty} \fraction{\varLambda^k}{k!}\right) P^{-1} = P\mathrm{e}^\varLambda P^{-1}.
+			\end{align}</p>
 	</div>
 </details>
 <br>
