@@ -1,5 +1,3 @@
-
-
 <meta charset="UTF-8">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
@@ -57,21 +55,55 @@ updated on 2023/3/13
 	<p>\begin{align}
 		\mathbb{K}^n = \{(v_1,\,v_2,\,\cdots,\,v_n)\,|\,{}^\forall i,\ v_i\in \mathbb{K}^n\}
 		\end{align}</p>
-	<p>で，$\bs{u} = (u_1,\,u_2,\,\cdots,\,u_n),\ \bs{v} = (v_1,\,v_2,\,\cdots,\,v_n)\in \mathbb{K}^n$ と $\alpha\in \mathbb{K}$ に対して以下のような演算が定義されているとする：</p>
+	<p>で，$\bs{u} = (u_1,\,u_2,\,\cdots,\,u_n),\ \bs{v} = (v_1,\,v_2,\,\cdots,\,v_n)\in \mathbb{K}^n$ と $k\in \mathbb{K}$ に対して以下のような演算が定義されているとする：</p>
 	<p>\begin{align}
 		\bs{u} + \bs{v} &:= (u_1+v_1,\,u_2+v_2,\,\cdots,\,u_n+v_n),\\
-		\alpha\bs{v} &:= (\alpha v_1,\,\alpha v_2,\,\cdots,\,\alpha v_n).
+		k\bs{v} &:= (k v_1,\,k v_2,\,\cdots,\,k v_n).
 		\end{align}</p>
-	<p>この $\mathbb{K}^n$ を $\mathbb{K}$ 上の $n$ 次元【数ベクトル空間 (numerical vector space)】と呼び，その成分 $\bs{v} := (v_1,\,v_2,\,\cdots,\,v_n)$ を $\mathbb{K}$ 上の $n$ 次元【数ベクトル (numerical vector)】と呼ぶ．また上記演算を順に【和 (sum)】，【スカラー倍 (scalar product)】と呼ぶ．</p>
+	<p>この $\mathbb{K}^n$ を $\mathbb{K}$ 上の $n$ 次元【数ベクトル空間 (numerical vector space)】或いは単に【ベクトル空間 (vector space)】と呼び，上記演算を順に【加法 (addition)】，【スカラー倍 (scalar product)】と呼ぶ．また，加法の結果を $\bs{u}$ と $\bs{v}$ の【和 (sum)】と呼ぶ．</p>
+	<p>$\mathbb{K}^n$ の元を $\mathbb{K}$ 上の $n$ 次元【数ベクトル (numerical vector)】或いは単に【ベクトル (vector)】と呼ぶ．また，ベクトル $\bs{v} = (v_1,\,v_2,\,\cdots,\,v_n)$ に対して各 $v_i\,(i = 1,\,2,\,\cdots,\,n)$ を $\bs{v}$ の【成分 (element)】と呼び，特に $v_i$ を $\bs{v}$ の【第 $i$ 成分 ($i$-th element)】と呼ぶ．</p>
 </div>
+<details class="deftl">
+	<summary>補足</summary>
+	<div class="def">
+		<p>数ベクトルは上記のように太字で表すことがあるほか，$\vec{v}$ などと矢印を付記することで表すこともある．</p>
+	</div>
+</details>
+<br>
+
+<p id="433">&nbsp;</p>
+<div class="deftl">[#433] 定義：逆ベクトル，ベクトルの減法</div>
+<div class="def">
+	<p>体 $\mathbb{K}$ 上の $n$ 次元ベクトル $\bs{v} = (v_1,\,v_2,\,\cdots,\,v_n)\in \mathbb{K}^n$ に対して，</p>
+	<p>\begin{align}
+		(-1)\bs{v} \,\refeq{numerical-vector}{432}\, (-v_1,\,-v_2,\,\cdots,\,-v_n)
+		\end{align}</p>
+	<p>を $\bs{v}$ の【逆ベクトル (inverse vector)】と呼び，$-\bs{v}$ で表す．</p>
+	<p>また，$\bs{u},\ \bs{v}\in\mathbb{K}^n$ に対して，加法 </p>
+	<p>\begin{align}
+		\bs{u} + (-\bs{v}) \,\refeq{numerical-vector}{432}\, (u_1-v_1,\,u_2-v_2,\,\cdots,\,u_n-v_n)
+		\end{align}</p>
+	<p>を $\bs{u}$ と $\bs{v}$ の【差 (difference)と呼び，$\bs{u}-\bs{v}$ で表す．またこの演算を【減法 (subtraction)】と呼ぶ．</p>
+</div>
+<br>
+
+<p id="434">&nbsp;</p>
+<div class="deftl">[#434] 定義：零ベクトル</div>
+<div class="def">
+	<p>体 $\mathbb{K}$ 上の $n$ 次元ベクトルで，すべての成分が $0$ であるものを $\mathbb{K}^n$ 上の【零ベクトル (zero vector)】と呼び，$\mathbf{0},\ \bs{o}$ などで表す：</p>
+	<p>\begin{align}
+		\mathbf{0} = (0,\,0,\,\cdots,\,0).
+		\end{align}</p>
+</div>
+<br>
 
 <br><br>
 <div id="bib">
 <b>参考文献</b>
 	<ul>
 		<li>馬場敬之: スバラシク実力がつくと評判の 線形代数 キャンパス・ゼミ, 改訂3, マセマ出版社 (2014).</li>
-		<li><a href="https://mathlandscape.com/numerical-vector/">数ベクトルの定義と数ベクトルにおけるノルム・内積 _ 数学の景色</a> [2023/3/12 閲覧].</li>
-		<li><a href="https://www.ne.jp/asahi/search-center/internationalrelation/mathWeb/tupleN/TupleNDef.htm">定義：数ベクトル空間 _ 数学についてのwebノート</a> [2023/3/13 閲覧].</li>
+		<li><a href="https://mathlandscape.com/numerical-vector/">数ベクトルの定義と数ベクトルにおけるノルム・内積 - 数学の景色</a> [2023/3/12 閲覧].</li>
+		<li><a href="https://www.ne.jp/asahi/search-center/internationalrelation/mathWeb/tupleN/TupleNDef.htm">定義：数ベクトル空間 - 数学についてのwebノート</a> [2023/3/13 閲覧].</li>
 	</ul>
 </div>
 
