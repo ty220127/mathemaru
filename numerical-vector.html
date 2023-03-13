@@ -1,0 +1,79 @@
+
+
+<meta charset="UTF-8">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const ttl = "数ベクトル"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2023/3/13<br>
+updated on 2023/3/13
+</p>
+
+<p id="432">&nbsp;</p>
+<div class="deftl">[#432] 定義：数ベクトル，数ベクトル空間</div>
+<div class="def">
+	<p> $n$ 個の体 $\mathbb{K}$ による直積</p>
+	<p>\begin{align}
+		\mathbb{K}^n = \{(v_1,\,v_2,\,\cdots,\,v_n)\,|\,{}^\forall i,\ v_i\in \mathbb{K}^n\}
+		\end{align}</p>
+	<p>で，$\bs{u} = (u_1,\,u_2,\,\cdots,\,u_n),\ \bs{v} = (v_1,\,v_2,\,\cdots,\,v_n)\in \mathbb{K}^n$ と $\alpha\in \mathbb{K}$ に対して以下のような演算が定義されているとする：</p>
+	<p>\begin{align}
+		\bs{u} + \bs{v} &:= (u_1+v_1,\,u_2+v_2,\,\cdots,\,u_n+v_n),\\
+		\alpha\bs{v} &:= (\alpha v_1,\,\alpha v_2,\,\cdots,\,\alpha v_n).
+		\end{align}</p>
+	<p>この $\mathbb{K}^n$ を $\mathbb{K}$ 上の $n$ 次元【数ベクトル空間 (numerical vector space)】と呼び，その成分 $\bs{v} := (v_1,\,v_2,\,\cdots,\,v_n)$ を $\mathbb{K}$ 上の $n$ 次元【数ベクトル (numerical vector)】と呼ぶ．また上記演算を順に【和 (sum)】，【スカラー倍 (scalar product)】と呼ぶ．</p>
+</div>
+
+<br><br>
+<div id="bib">
+<b>参考文献</b>
+	<ul>
+		<li>馬場敬之: スバラシク実力がつくと評判の 線形代数 キャンパス・ゼミ, 改訂3, マセマ出版社 (2014).</li>
+		<li><a href="https://mathlandscape.com/numerical-vector/">数ベクトルの定義と数ベクトルにおけるノルム・内積 _ 数学の景色</a> [2023/3/12 閲覧].</li>
+		<li><a href="https://www.ne.jp/asahi/search-center/internationalrelation/mathWeb/tupleN/TupleNDef.htm">定義：数ベクトル空間 _ 数学についてのwebノート</a> [2023/3/13 閲覧].</li>
+	</ul>
+</div>
+
+</body>
+</html>
