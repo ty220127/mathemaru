@@ -1,0 +1,82 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		choose: ['\\left(\\begin{array}{c} #1\\\\ #2\\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "畳み込み"
+	document.title= ttl + "｜MATHEMARU"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+</head>
+
+<body>
+<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+
+<nav>
+<ul>
+<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
+</ul>
+</nav>
+
+<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
+established on 2023/3/20<br>
+updated on 2023/3/20
+</p>
+        
+<p id="435">&nbsp;</p>
+<div class="deftl">[#435] 定義：畳み込み</div>
+<div class="def">
+	<p> $\mathrm{R}$ 上の関数 $f,\,g$ に対し，関数 $f*g$ を</p>
+	<p><center>\begin{align}
+		f*g(x) = \int_{-\infty}^{\infty} f(t)g(x-t)\rd t
+    \end{align}</center></p>
+  <p>で定義し，これを $f$ と $g$ の【畳み込み (重畳積, 合成積, 接合積; convolution)】と呼ぶ．</p>
+</div>
+<br>
+
+<br><br>
+<div id="bib">
+	<b>参考文献</b>
+	<ul>
+		<li><a href="https://manabitimes.jp/math/954">合成積（畳み込み）の意味と応用３つ - 高校数学の美しい物語</a> [2023/3/20 閲覧].</li>
+    <li><a href="https://eman-physics.net/math/fourier08.html">合成積 - EMANの物理数学</a> [2023/3/20 閲覧].</li>
+	</ul>
+</div>
+
+<!--
+<b>その他参考コンテンツ</b>
+<center>
+<iframe width="480" height="270" src="https://www.youtube.com/embed/K-HwL3N4P5Q" title="【大学数学】ガンマ関数①(定義と性質)【解析学】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p style="margin-bottom: 2em;">
+<iframe width="480" height="270" src="https://www.youtube.com/embed/dy40up4jnc0" title="【大学数学】ガンマ関数②(収束性の証明)【解析学】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+-->
+  
+</body>
+</html>
