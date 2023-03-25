@@ -45,11 +45,12 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/2/7<br>
-updated on 2022/9/23
+updated on 2023/3/25
 </p>
     
-<p id="58">&nbsp;</p><div class="def">
-	<b>[#58] 定義：命題に関する諸定義</b><br>
+<p id="58">&nbsp;</p><div class="deftl">
+	[#58] 定義：命題に関する諸定義</div>
+	<div class="def">
 	<p>ある物事について，それが「成り立つ」か「成り立たない」かを判定することができる主張を【命題 (proposition)】と呼ぶ．命題が成り立つことを【真 (true)】であると云い，成り立たないことを【偽 (false)】であるという．形式的には，以下で定義される（形式的に定義される命題のことを【論理式 (formula)】とも呼ぶ）：
 	<ul>
 	<li> 命題は真 $(\mathsf{T})$ あるいは偽 $(\mathsf{F})$ の一方の値をとる．$\mathsf{T}$ と $\mathsf{F}$ をまとめて【真理値 (truth value)】と呼ぶ．</li>
@@ -71,22 +72,23 @@ updated on 2022/9/23
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} \\ \hline \end{array}$
 	</center>
 </div>
-<Details>
-	<summary>補足１</summary>
+<details class="deftl">
+	<summary>補足１</summary><div class="def">
 	<p>これらの用語は，<a href="set.html">集合</a>のそれらと非常に相性が良い．実際，集合論における基本的な法則は，命題論理における法則と強い対応を持っている．</p>
-</Details>
-<Details>
-	<summary>補足２</summary>
+</div></details>
+<details class="deftl">
+	<summary>補足２</summary><div class="def">
 	<p>命題 $P$ の【証明 (proof)】とは，$P$ が（時にいくつかの条件も加味した上で）常に真であること，つまり $P\equiv\mathbb{T}$ であることを論理的に導くことである．</p>
-</Details>
-<details>
-	<summary>補足３</summary>
+</div></details>
+<details class="deftl">
+	<summary>補足３</summary><div class="def">
 	<p>真理値表を最初に導入したのは，哲学者の <ruby><rb>Wittgenstein</rb><rp>（</rp><rt>ウィトゲンシュタイン</rt><rp>）</rp></ruby> である．Wittgenstain の論理学に関する書籍は『論理哲学論考』が有名であり，有名な「語りえぬものについては沈黙しなければならない」という文言もこの書籍で登場する．
-</details>
+</div></details>
 <br>
   
-<p id="60">&nbsp;</p><div class="prp">
-	<b>[#60] 命題：命題に関する自明な事実</b><br>
+<p id="60">&nbsp;</p><div class="prptl">
+	[#60] 命題：命題に関する自明な事実</div>
+<div class="prp">
 	<p>命題$P,\,Q$ に対して以下が成立する：</p> 
 	<ul>
 		<li> $P\land P \equiv P$ 【冪等則 (idempotent law)１】</li>
@@ -102,8 +104,8 @@ updated on 2022/9/23
 		<li> $P\lor Q \equiv Q\lor P$ 【交換法則２】</li>
 	</ul>
 </div>
-<Details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>いずれも以下の真理値表の通り示される．たとえば，$P$ が真偽のいずれであっても $P\land P$ は $P$ と同じ真理値となることから $P\land P$ と $P$ は同値であること，つまり $P\land P\equiv P$ がいえる．
 		また，$P$ が真偽のいずれであっても $P\lor \neg P$ は真であることから $P\lor \neg P$ は恒真命題であること，つまり $P\lor \neg P\equiv\mathbb{T}$ がいえる．</p>
 	<p><center>
@@ -117,19 +119,20 @@ updated on 2022/9/23
     		\mathsf{F} & \mathsf{T} & \mathsf{F} &\mathsf{F} & \mathsf{T}& \mathsf{T} \\ \hline 
     		\mathsf{F} & \mathsf{F} & \mathsf{F} &\mathsf{F} &\mathsf{F} & \mathsf{F} \\ \hline \end{array}$
 	</center></p>
-</Details>
+</div></details>
 <br>
 
-<p id="70">&nbsp;</p><div class="prp">
-	<b>[#70] 命題：命題の吸収法則 (absorption law)</b><br>
+<p id="70">&nbsp;</p><div class="prptl">
+	[#70] 命題：命題の吸収法則 (absorption law)</div>
+<div class="prp">
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>
 		$\begin{align*} P\lor (P\land Q)\equiv P,\\
 				P\land (P\lor Q)\equiv P. \end{align*}$
 	</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>以下の真理値表の通り示される．</p>
 	<p><center>
 		$\begin{array}{|c|c||c|c||c|c|}\hline P & Q & P\land Q& P\lor Q & P\lor (P\land Q) & P\land (P\lor Q)\\ \hline
@@ -138,18 +141,19 @@ updated on 2022/9/23
 		\mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \mathsf{F}\\ \hline 
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F}\\ \hline \end{array}$
 	</center></p>
-</Details>
+</div></details>
 <br>
 
-<p id="61">&nbsp;</p><div class="prp">
-	<b>[#61] 命題：命題の結合法則 (associative law)</b><br>
+<p id="61">&nbsp;</p><div class="prptl">
+	[#61] 命題：命題の結合法則 (associative law)</div>
+<div class="prp">
 	<p>命題 $P,\,Q,\,R$ に対して</p>
 	<p><center>
 		$\begin{align*} (P\land Q)\land R &\equiv P\land (Q\land R),\\ (P\lor Q)\lor R &\equiv P\lor (Q\lor R). \end{align*}$
 	</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>前者について，以下の真理値表の通り示される．</p>
 	<center>
 		$\begin{array}{|c|c|c||c|c||c|c|}\hline P & Q & R & P\land Q & Q\land R & \color{red}{(P\land Q)\land R} & \color{red}{P\land (Q\land R)}\\ \hline
@@ -176,27 +180,28 @@ updated on 2022/9/23
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}} \\\hline
 		\end{array}$
 	</center></p>
-</Details>
-<Details>
-	<summary>補足</summary>
+</div></details>
+<details class="prptl">
+	<summary>補足</summary><div class="prp">
 	<p>この命題から，同値で結ばれた2つの命題に対して括弧付けによる区別は不要であるため，しばしば括弧は省略される：</p>
 	<p><center>
 		$\begin{align*} (P\land Q)\land R &\equiv P\land (Q\land R) \equiv P\land Q\land R,\\
 		(P\lor Q)\lor R &\equiv P\lor (Q\lor R)  \equiv P\lor Q\lor R. \end{align*}$
 	</center></p>
-</Details>
+</div></details>
 <br>
 
-<p id="62">&nbsp;</p><div class="prp">
-	<b>[#62] 命題：命題の分配法則 (distributive law)</b><br>
+<p id="62">&nbsp;</p><div class="prptl">
+	[#62] 命題：命題の分配法則 (distributive law)</div>
+<div class="prp">
 	<p>命題 $P,\,Q,\,R$ に対して</p>
 	<p><center>
 		$\begin{align*} (P\land Q)\lor R &\equiv (P\lor R)\land (Q\lor R),\\
 				(P\lor Q)\land R &\equiv (P\land R)\lor (Q\land R). \end{align*}$
 	</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>前者について，以下の真理値表の通り示される．</p>
 	<p><center>
 		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & R & P\land Q & \color{red}{(P\land Q)\lor R} & P\lor R  & Q\lor R & \color{red}{(P\lor R)\land (Q\lor R)} \\ \hline
@@ -223,35 +228,36 @@ updated on 2022/9/23
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{F}}\\\hline
 		\end{array}$
 	</center></p>
-</Details>
-<Details>
-	<summary>補足１</summary>
+</div></details>
+<details class="prptl">
+	<summary>補足１</summary><div class="prp">
 	<p>命題の交換法則$\nr{proposition}{58}$ と組み合わせることにより，右側に括弧がある場合：</p>
 	<p><center>$\begin{align*} P\lor (Q\land R) &\equiv (P\lor Q)\land (P\lor R)，\\<br>
 		P\land (Q\lor R) &\equiv (P\land Q)\lor (P\land R).\end{align*}$</center></p>
 	<p>の成立も確認できる．</p>
-</Details>
-<Details>
-	<summary>補足２</summary>
+</div></details>
+<details class="prptl">
+	<summary>補足２</summary><div class="prp">
 	<p>この命題を繰り返し用いることにより，合接同士の離接や離接同士の合接に関する分解を行える：</p>
 	<p><center>
 		$\begin{align*} (P\lor Q)\land (R\lor S) &\equiv \{P\land (R\lor S)\}\lor \{Q \land (R\lor S)\}\\
 							&\equiv (P\land R)\lor (P\land S)\lor (Q\land R)\lor (Q\land S),\\
 				(P\land Q)\lor (R\land S) &\equiv (P\lor R)\land (P\lor S)\land (Q\lor R)\land (Q\lor S).\end{align*}$
 	</center></p>
-</Details>
+</div></details>
 <br>
 
-<p id="355">&nbsp;</p><div class="prp">
-	<b>[#355] 命題：論理積・論理和と否定</b><br>
+<p id="355">&nbsp;</p><div class="prptl">
+	[#355] 命題：論理積・論理和と否定</div>
+<div class="prp">
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>
 		$\begin{align*} (P\land Q)\lor (\neg Q) &\equiv P\lor (\neg Q),\\
 				(P\lor Q)\land (\neg P) &\equiv P\land (\neg Q). \end{align*}$
 	</center></p>
 </div>
-<details>
-	<summary>証明１（真理値表を用いる）</summary>
+<details class="prptl">
+	<summary>証明１（真理値表を用いる）</summary><div class="prp">
 	<p>前者について，以下により成立する．</p>
 	<p><center>
 		$\begin{array}{|c|c|c||c||c||c|c||c|}\hline P & Q & \neg Q & P\land Q & \color{red}{(P\land Q)\lor (\neg Q)} & \color{red}{P\lor (\neg Q)} \\ \hline
@@ -270,9 +276,9 @@ updated on 2022/9/23
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}} & \color{red}{\mathsf{F}}\\ \hline
 		\end{array}$
 	</center></p>
-</details>
-<details>
-	<summary>証明２（既知の命題から導出）</summary>
+</div></details>
+<details class="prptl">
+	<summary>証明２（既知の命題から導出）</summary><div class="prp">
 	<p>前者について</p>
 	<p><center>\begin{align}
 		(P\land Q)\lor (\neg Q) \ \refeqv{proposition}{62}\ & (P\lor (\neg Q))\land (Q\lor (\neg Q))\\
@@ -285,23 +291,24 @@ updated on 2022/9/23
 			\refeqv{proposition}{60}\ &  (P\land (\neg Q))\lor \mathbb{F}\\
 			\refeqv{proposition}{60}\ &  P\land (\neg Q)
 		\end{align}</center></p>
-</details>
-<details>
-	<summary>補足</summary>
+</div></details>
+<details class="prptl">
+	<summary>補足</summary><div class="prp">
 	<p>証明２の前者を回りくどく説明する．まず $(P\land Q)\lor (\neg Q)$ と $(P\lor (\neg Q))\land (Q\lor (\neg Q))$ の真理値表が一致することは，分配法則$\nr{proposition}{62}$ により保証されている．また，$Q\lor (\neg Q)$ は恒真命題 $\mathbb{T}$ と同値であることが排中律$\nr{proposition}{60}$ によりわかる．これは， $(P\lor (\neg Q))\land (Q\lor (\neg Q))$ の $Q\lor (\neg Q)$ の部分を $\mathbb{T}$ に置き換えても全体の真理値に影響を及ぼさないことを意味する．最後に，$(P\lor (\neg Q))\land \mathbb{T}$ は $\land \mathbb{T}$ の部分を取り除いても同じであることが同一則$\nr{proposition}{60}$ により保証されているので，全体として題意の同値性が示される．このように，既知の命題を用いて他の命題を示すことが，今後の議論では中心となる．
-</details>
+</div></details>
 <br>
 
-<p id="63">&nbsp;</p><div class="prp">
-	<b>[#63] 命題：de Morgan の法則</b><br>
+<p id="63">&nbsp;</p><div class="prptl">
+	[#63] 命題：de Morgan の法則</div>
+<div class="prp">
 	<p>命題 $P,\,Q$ に対して</p>
 	<p><center>
 		$\begin{align*} \neg (P\land Q) &\equiv (\neg P)\lor (\neg Q),\\
 				\neg (P\lor Q) &\equiv (\neg P)\land (\neg Q). \end{align*}$
 	</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>前者について，以下の真理値表の通り示される．</p>
 	<p><center>
 		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & P\land Q & \color{red}{\neg(P\land Q)}  & \neg P & \neg Q & \color{red}{(\neg P)\lor (\neg Q)} \\ \hline
@@ -318,22 +325,23 @@ updated on 2022/9/23
 		\mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{F}} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
 	</center></p>
-</Details>
-<details>
-<summary>補足</summary>
-	<p>この命題を繰り返し用いることにより，3 つ以上（有限個）の命題についても同様の議論ができる．例えば 3 個の命題 $P,\,Q,\,R$ に対して</p>
+</div></details>
+<details class="prptl">
+<summary>補足</summary><div class="prp">
+	<p>この命題を繰り返し用いることにより，3 個の命題 $P,\,Q,\,R$ に対しても以下のような結果を得られる：</p>
 	<p><center>\begin{align*}
 		\neg (P\land Q\land R) &\,\refeqv{proposition}{62}\, \neg((P\land Q)\color{red}{\land} R)\\
 			&\,\refeqv{proposition}{63}\, \neg(P\color{blue}{\land} Q)\color{red}{\lor} (\neg R)\\
 			&\,\refeqv{proposition}{63}\, ((\neg P)\color{blue}{\lor} (\neg Q))\lor (\neg R)\\
 			&\,\refeqv{proposition}{62}\, (\neg P)\lor (\neg Q)\lor (\neg R).
 		\end{align*}</center></p>
-	<p>
-</details>
+	<p>同様にして，任意の個数の命題に対して議論ができるが，この段階では「一般の $n$ に対する de Morgan の法則」はまだ考えられない．これを考えるためには，「個数」をより数学的に扱うためのフレーム―自然数と数学的帰納法―を導入しなければならない．
+</div></details>
 <br>
 
-<p id="64">&nbsp;</p><div class="exr">
-	<b>[#64] 演習：含意と双条件 <font size="1">→</font> $\numref{implication}{65}$</b><br>
+<p id="64">&nbsp;</p><div class="exrtl">
+	[#64] 演習：含意と双条件 <font size="1">→</font> $\numref{implication}{65}$</div>
+<div class="exr">
 	<p>命題 $P,\,Q$ に対して論理演算子 $\rightarrow$ を</p>
 	<center>
 		$P\rightarrow Q\equiv \neg P\lor Q$
@@ -344,8 +352,8 @@ updated on 2022/9/23
 	</center>
 	<p>で定義する．このとき $P\rightarrow Q$ と $P\leftrightarrow Q$ の真理値表を作成せよ．</p>
 </div>
-<Details>
-	<summary>解答</summary>
+<details class="exrtl">
+	<summary>解答</summary><div class="exr">
 	<p>真理値表は以下の通り．</p>
 	<p><center>
 		$\begin{array}{|c|c|c|c|c|c|c|}\hline P & Q & \neg P & \neg Q & \color{red}{P\rightarrow Q} & Q\rightarrow P & \color{red}{P\leftrightarrow Q}\\ \hline
@@ -354,16 +362,17 @@ updated on 2022/9/23
 		\mathsf{F} & \mathsf{T} & \mathsf{T} & \mathsf{F} & \color{red}{\mathsf{T}} & \mathsf{F} & \color{red}{\mathsf{F}} \\ \hline
 		\mathsf{F} & \mathsf{F} & \mathsf{T} & \mathsf{T} & \color{red}{\mathsf{T}} & \mathsf{T} & \color{red}{\mathsf{T}} \\ \hline\end{array}$
 	</center></p>
-</Details>
+</div></details>
 <br>
 
-<p id="237">&nbsp;</p><div class="exm">
-	<b>[#237] 例題：命題の真理値 <font size="1">→</font> $\numref{implication}{65}$ $\numref{inference}{272}$</b><br>
+<p id="237">&nbsp;</p><div class="exmtl">
+	[#237] 例題：命題の真理値 <font size="1">→</font> $\numref{implication}{65}$ $\numref{inference}{272}$</div>
+<div class="exm">
 	<p> $P,\ Q,\ R$ はいずれも命題である．命題 $P$ の真理値は真であり，命題 $(\mathrm{not}\ P)\ \mathrm{or}\ Q$ 及び命題 $(\mathrm{not}\ Q)\ \mathrm{or}\ R$ のいずれも真であることがわかっている．$Q,\ R$ の真理値を求めよ．ただし，$X\ \mathrm{or}\ Y$ は $X$ と $Y$ の論理和，$\mathrm{not}\ X$ は $X$ の否定を表す．</p>
 	<p style="text-align:right;">[H31春 基本情報技術者試験]</p>
 </div>
-<details>
-	<summary>解答</summary>
+<details class="exmtl">
+	<summary>解答</summary><div class="exm">
 	<p>$(\mathrm{not}\ P)\ \mathrm{or}\ Q$ の真理値表は以下の通り：</p>
 	<p><center>
 		$\begin{array}{|c|c|c|c|c|c|}\hline P & Q & \neg P & (\mathrm{not}\ P)\ \mathrm{or}\ Q \\ \hline
@@ -374,19 +383,20 @@ updated on 2022/9/23
 	</center></p>
 	<p> $P$ と $(\mathrm{not}\ P)\ \mathrm{or}\ Q$ はともに真であるから，$Q$ も<font color="red">真</font>である．<br>
 		そして $P$ を $Q$，$Q$ を $R$ に置き換えれば，全く同じ議論で $R$ が<font color="red">真</font>であると結論付けられる．</p>
-</details>
-<details>
-	<summary>補足</summary>
+</div></details>
+<details class="exmtl">
+	<summary>補足</summary><div class="exm">
 	<p>$(\mathrm{not}\ P)\ \mathrm{or}\ Q\ (\equiv (\neg P)\lor Q)$ は含意$\nr{implication}{65}$  $P\rightarrow Q$ の定義であり，これに照らせば当然 $Q$ は真と（直観的に）結論づけられる．同様に $(\mathrm{not}\ Q)\ \mathrm{or}\ R\ (\equiv (\neg Q)\lor R\equiv Q\rightarrow R)$ も真なので，$Q$ が真より $R$ も真といえる．なお，これは「前件肯定$\nr{implication}{72}$」という重要な推論である．</p>
-</details>
+</div></details>
 <br>
 
-<p id="71">&nbsp;</p><div class="exr">
-	<b>[#71] 演習：論理演算子の関係</b><br>
+<p id="71">&nbsp;</p><div class="exrtl">
+	[#71] 演習：論理演算子の関係</div>
+<div class="exr">
 	<p>命題 $P\land Q$ を論理演算子 $\neg,\,\lor$ を用いて書き換えよ．ただし他の論理演算子は用いず，また演算子の個数も必要最小限とすること．</p>
 </div>
-<Details>
-	<summary>解答</summary>
+<details class="exrtl">
+	<summary>解答</summary><div class="exr">
 	<p>de Morgan の法則 <a href="#63">[#63]</a> より</p>
 	<p><center>
 		$\neg(P\land Q) \equiv (\neg P)\lor (\neg Q).$
@@ -404,12 +414,13 @@ updated on 2022/9/23
 		$\color{red}{P\land Q \equiv \neg((\neg P)\lor (\neg Q))}$
 	</center></p>
 	<p>を得る．</p>
-</Details>
-</Details>
+</div></details>
+</div></details>
 <br>
 
-<p id="87">&nbsp;</p><div class="exr">
-	<b>[#87] 演習：排他的論理和 (exclusive logical sum)</b><br>
+<p id="87">&nbsp;</p><div class="exrtl">
+	[#87] 演習：排他的論理和 (exclusive logical sum)</div>
+<div class="exr">
 	<p>命題 $P,\,Q$ に対して論理演算子 $\veebar$ は以下の真理値表の通り定義されるとする：</p>
 	<p><center>
 		$\begin{array}{|c|c||c|}\hline P & Q & P\veebar Q \\ \hline
@@ -422,8 +433,8 @@ updated on 2022/9/23
 		また，$P\veebar Q$ が $U$ と $V$ の複合命題 $U\land V$ と同値であるとき，$U,\,V$ はどんな命題であるか．
 		それぞれ $P,\,Q$ と論理演算子 $\neg,\,\lor,\,\land$ から必要なものを最低限用いて表せ．</p>
 </div>
-<Details>
-	<summary>解答</summary>
+<details class="exrtl">
+	<summary>解答</summary><div class="exr">
 	<p>$P\veebar Q\equiv R\lor S$ なる命題 $R,\,S$ は次のように構成すればよい：</p>
 		<p><center>
 		$\begin{array}{|c|c|}\hline R & S\\ \hline
@@ -454,11 +465,11 @@ updated on 2022/9/23
 	<p>先ほどの $P,\,Q$ およびそれらの否定に関する真理値表と比較することにより，</p>
 	<p><center>$\color{red}{U\equiv P\lor Q,\quad V\equiv \neg P\lor \neg Q}$</center></p>
 	<p>を得る．<br>
-</Details>
-<Details>
-	<summary>補足</summary>
+</div></details>
+<details class="exrtl">
+	<summary>補足</summary><div class="exr">
 	<p>交換法則 <a href="#58">[#58]</a> が成り立つので，$R$ と $S$，$U$ と $V$ はそれぞれ順不同である．</p>
-</Details>
+</div></details>
 <br>
 
 <br><br>
