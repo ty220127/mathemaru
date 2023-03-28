@@ -101,24 +101,22 @@ updated on 2023/3/28
 <p id="74">&nbsp;</p><div class="prptl">
 	[#74] 命題：集合の de Morgan の法則</div><div class="prp">
 	<p>集合 $A,\,B$ に対して</p>
-	<p><center>$\begin{align*}(A\cap B)^{\rm c} &=A^{\rm c}\cup B^{\rm c},\\
-				(A\cup B)^{\rm c} &=A^{\rm c}\cap B^{\rm c}.\end{align*}$</center></p>
+	<p><center>$\begin{align*}(A\cap B)^\cpl &=A^\cpl\cup B^\cpl,\\
+				(A\cup B)^\cpl &=A^\cpl\cap B^\cpl.\end{align*}$</center></p>
 </div>
 <Details class="prptl">
 	<summary>証明</summary><div class="prp">
-	<p>命題の de Morgan の法則 <a href="proposition.html#63">[#63]</a> により従う．前者は $[\neg (P\land Q) \equiv (\neg P)\lor (\neg Q)]$ を用いて</p>
 	<p><center>
-		$\begin{align*} x\in (A\cap B)^{\rm c} \,\,\Longleftrightarrow\,\, & \neg(x\in A\cap B)\\
-		\Longleftrightarrow\,\, & \neg((x\in A)\land (x\in B))\\
-		\Longleftrightarrow\,\, & (\neg(x\in A))\lor (\neg(x\in B))\\
-		\Longleftrightarrow\,\, & x\in A^{\rm c}\cup B^{\rm c}.\end{align*}$
+		$\begin{align*} x\in (A\cap B)^\cpl \,\,\reflr{complement-set}{84}\,\, & \neg(x\in A\cap B)\\
+		\reflr{set}{51}\,\, & \neg((x\in A)\land (x\in B))\\
+		\reflr{proposition}{63}\,\, & (\neg(x\in A))\lor (\neg(x\in B))\\
+		\reflr{set}{51}\,\, & x\in A^\cpl\cup B^\cpl,\end{align*}$
 	</center></p>
-	<p>後者は $[\neg (P\lor Q) \equiv (\neg P)\land (\neg Q)]$ を用いて</p>
 	<p><center>
-		$\begin{align*} x\in (A\cup B)^{\rm c}\,\,\Longleftrightarrow\,\, & \neg(x\in A\cup B)\\
-		\Longleftrightarrow\,\, & \neg((x\in A)\lor (x\in B))\\
-		\Longleftrightarrow\,\, & (\neg(x\in A))\land (\neg(x\in B))\\
-		\Longleftrightarrow\,\, & x\in A^{\rm c}\cap B^{\rm c}.\end{align*}$
+		$\begin{align*} x\in (A\cup B)^\cpl\,\,\reflr{complement-set}{84}\,\, & \neg(x\in A\cup B)\\
+		\reflr{set}{51}\,\, & \neg((x\in A)\lor (x\in B))\\
+		\reflr{proposition}{63}\,\, & (\neg(x\in A))\land (\neg(x\in B))\\
+		\reflr{set}{51}\,\, & x\in A^\cpl\cap B^\cpl.\end{align*}$
 	</center></p>
 </div></Details>
 <Details class="prptl">
