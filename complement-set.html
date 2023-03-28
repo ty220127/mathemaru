@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
 <html>
@@ -47,29 +46,32 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 isolated from <a href="set.html">集合</a> on 2022/2/20<br>
-updated on 2022/8/5
+updated on 2023/3/28
 </p>
 
-<p id="84">&nbsp;</p><div class="def">
-	<b>[#84] 定義：補集合</b><br>
+<p id="84">&nbsp;</p><div class="deftl">
+	[#84] 定義：補集合</div>
+<div class="def">
 	<p>ある集合 $A$ に含まれないような記号の集合を $A$ の【補集合 (complement)】と呼び，$A^\cpl$ 或いは $\overline{A}$ を書く：</p>
 	<p><center>$A^\cpl := \{x\,|\,x\notin A\} = \{x\,|\,\neg(x\in A)\}.$</center></p>
 </div>
-<Details>
-<summary>補足</summary>
+<Details class="deftl">
+<summary>補足</summary><div class="prp">
+	<div class="def">
 	<p>特に $A$ が命題関数 $P(x)$ で定義されるとき</p>
 	<p><center>$A^\cpl  = \{x\,|\,\neg P(x)\}.$</center></p>
 	<p> <a href="set.html#48">[#48]</a> の補足を参照せよ．</p>
-</Details>
+	</div>
+</div></Details>
 <br>
   
-<p id="86">&nbsp;</p><div class="prp">
-	<b>[#86] 命題：補集合の包含関係</b><br>
+<p id="86">&nbsp;</p><div class="prptl">
+	[#86] 命題：補集合の包含関係</div><div class="prp">
 	<p>集合 $A,\,B$ に対して</p>
 	<p><center>$A\subset B\,\,\Longleftrightarrow\,\,B^\cpl \subset A^\cpl.$</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<Details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>集合の包含の定義 <a href="set.html#48">[#48]</a> より</p>
 	<p><center>$A\subset B\,\,\Longleftrightarrow\,\,[x\in A\rightarrow x\in B].$</center></p>
 	<p>この命題の対偶は同値である <a href="implication.html#68">[#68]</a> から</p>
@@ -79,31 +81,31 @@ updated on 2022/8/5
 	<p>集合の包含の定義 <a href="set.html#48">[#48]</a> より</p>
 	<p><center>$[x\in B^\cpl\rightarrow x\in A^\cpl]\,\,\Longleftrightarrow\,\,B^\cpl\subset A^\cpl.$</center></p>
 	<p>以上の議論をまとめることで，題意を得る．</p>
-</Details>
+</div></Details>
 <br>
   
-<p id="218">&nbsp;</p><div class="prp">
-	<b>[#218] 命題：補集合の補集合</b><br>
+<p id="218">&nbsp;</p><div class="prptl">
+	[#218] 命題：補集合の補集合</div><div class="prp">
 	<p>集合 $A$ に対して</p>
 	<p><center>$(A^\cpl)^\cpl = A.$</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<Details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p><center>\begin{align*}
 		x\in (A^\cpl)^\cpl &\,\,\reflr{#84}{84}\,\, x\notin A^\cpl \,\,\Longleftrightarrow\,\,\neg(x \in A^\cpl)\\
 			&\,\,\Longleftrightarrow\,\,\neg(\neg(x\in A))\,\,\reflr{proposition.html#60}{60}\,\,x\in A.
 		\end{align*}</center></p>
-</Details>
+</div></Details>
 <br>
   
-<p id="74">&nbsp;</p><div class="prp">
-	<b>[#74] 命題：集合の de Morgan の法則</b><br>
+<p id="74">&nbsp;</p><div class="prptl">
+	[#74] 命題：集合の de Morgan の法則</div><div class="prp">
 	<p>集合 $A,\,B$ に対して</p>
 	<p><center>$\begin{align*}(A\cap B)^{\rm c} &=A^{\rm c}\cup B^{\rm c},\\
 				(A\cup B)^{\rm c} &=A^{\rm c}\cap B^{\rm c}.\end{align*}$</center></p>
 </div>
-<Details>
-	<summary>証明</summary>
+<Details class="prptl">
+	<summary>証明</summary><div class="prp">
 	<p>命題の de Morgan の法則 <a href="proposition.html#63">[#63]</a> により従う．前者は $[\neg (P\land Q) \equiv (\neg P)\lor (\neg Q)]$ を用いて</p>
 	<p><center>
 		$\begin{align*} x\in (A\cap B)^{\rm c} \,\,\Longleftrightarrow\,\, & \neg(x\in A\cap B)\\
@@ -118,6 +120,21 @@ updated on 2022/8/5
 		\Longleftrightarrow\,\, & (\neg(x\in A))\land (\neg(x\in B))\\
 		\Longleftrightarrow\,\, & x\in A^{\rm c}\cap B^{\rm c}.\end{align*}$
 	</center></p>
+</div></Details>
+<Details class="prptl">
+	<summary>補足</summary>
+	<div class="prp">
+		<p>この命題を繰り返し用いることで，複数集合に対する de Morgan の法則を導くこともできる．例えば，3つの集合に対して</p>
+		<p>\begin{align}
+			(A\cap B\cap C)^\cpl &\refeq{set}{53} ((A\cap B)\cap C)^\cpl \refeq{complement-set}{74} (A\cap B)^\cpl \cup C^\cpl\\
+			&\refeq{complement-set}{74} (A^\cpl \cup B^\cpl)\cup C^\cpl \refeq{set}{53} A^\cpl \cup B^\cpl \cup C^\cpl,
+			\end{align}</p>
+		<p>\begin{align}
+			(A\cup B\cup C)^\cpl &\refeq{set}{53} ((A\cup B)\cup C)^\cpl \refeq{complement-set}{74} (A\cup B)^\cpl \cap C^\cpl\\
+			&\refeq{complement-set}{74} (A^\cpl \cap B^\cpl)\cap C^\cpl \refeq{set}{53} A^\cpl \cap B^\cpl \cap C^\cpl.
+			\end{align}</p>
+		<p>同様にしていくつの集合に対する de Morgan の法則についても証明できるが，命題に関する de Morgan の法則$\nr{proposition}{63}$ と同様，抽象的な個数，つまり　$n$ 個の集合に対する証明はこの段階では不可能であり，これを示すには自然数や数学的帰納法といった「個数」に関する数学的な枠組みが必要になってくる．</p>
+	</div>
 </Details>
 <br>
 
