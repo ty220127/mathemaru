@@ -47,7 +47,7 @@
 
 <p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
 established on 2022/5/1<br>
-updated on 2022/12/19
+updated on 2023/4/4
 </p>
     
 <p id="198">&nbsp;</p>
@@ -55,6 +55,7 @@ updated on 2022/12/19
 <div class="def">
 	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，Lebesgue 積分 <a href="lebesgue-integration.html#44">[#44]</a></p>
 	<p><center>\begin{align*}
+		\DeclareMathOperator{\Ex}{\mathbb{E}}
 		\mathbb{E}[X] := \int_{\varOmega}X(\omega)\,P(\rd\omega)
 		\end{align*}</center></p>
 	<p>が存在するとき，この $\mathbb{E}[X]$ を $X$ の【期待値 (expectation)】或いは【平均値 (mean)】と呼ぶ．
@@ -66,11 +67,33 @@ updated on 2022/12/19
 <div class="def">
 	<p>確率空間 $(\varOmega,\,\mathcal{F},\,P)$ 上の確率変数 $X$ に対して，</p>
 	<p><center>\begin{align*}
-		\mathbb{V}[X] := \mathbb{E}\left[(X-\mathbb{E}[X])^2\right]
+		\DeclareMathOperator{\Var}{\mathbb{V}}
+		\Var[X] := \Ex\left[(X-\Ex[X])^2\right]
 		\end{align*}</center></p>
 	<p>が存在するとき，この $\mathbb{V}[X]$ を $X$ の【分散 (variance)】と呼ぶ．<br>
 		また $\mathbb{D}[X] := \sqrt{\mathbb{V}[X]}$ を $X$ の【標準偏差 (standard deviation)】と呼ぶ．</p>
 </div>
+<br>
+
+<p id="436">&nbsp;</p>
+<div class="prptl">[#436] 命題：二乗平均による分散の公式</div>
+<div class="prp">
+	<p>ある確率空間上の確率変数 $X$ について</p>
+	<p><center>$\begin{align*}
+		\mathbb{V}[X] = \mathbb{E}[X^2] -\mathbb{E}[X].
+		\end{align*}$</center></p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+		<p>\begin{align}
+			\mathbb{V}[X] \,\refeq{expectation}{199}\,& \mathbb{E}[(X-\mathbb{E}[X])^2]\\
+			=\,\,& \Ex [X^2] -2\Ex [X] X +\Ex [X]^2\\
+			=\,\,& \Ex [X^2]- 2\Ex [X]\cdot \Ex [X] + \Ex [X]^2\\
+			=\,\,& \Ex [X^2]- \Ex [X]^2.
+			\end{align}</p>
+	</div>
+</details>
 <br>
 
 <p id="224">&nbsp;</p>
