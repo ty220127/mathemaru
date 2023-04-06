@@ -16,7 +16,7 @@ refs[i] = "https://ty220127.github.io/mathemaru/markov.html";
 ttls[i] = "Markov 連鎖";
 j = 0;
 j++; mpath = j; bns[i][j] = "命題：パスの確率";
-j++; y = j;
+j++; mst = j; bns[i][j] = "定義：定常分布";
 j++; x = j;
 
 //1:RW
