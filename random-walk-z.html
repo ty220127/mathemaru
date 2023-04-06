@@ -4,29 +4,29 @@
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["¥¥(","¥¥)"]] } });	
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['¥¥href{https://ty220127.github.io/mathemaru/#1.html###2}{¥¥scriptsize¥¥sf[¥¥# #2]}',2],
-		nr: ['^¥¥numref{#1}{#2}', 2],
-		refeq: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{=}',2],
-		refleq: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{¥¥leq}',2],
-		refeqv: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{¥¥equiv}',2],
-		reflr: ['¥¥underset{¥¥hspace{-0.5mm}¥¥numref{#1}{#2}}{¥¥Longleftrightarrow}',2],
-		refr: ['¥¥underset{¥¥numref{#1}{#2}}{¥¥Longrightarrow}',2],
-		bs: '¥¥boldsymbol', 
-		bsqcu: '¥¥displaystyle¥¥bigsqcup', 
-		bcu: '¥¥displaystyle¥¥bigcup', 
-		bca: '¥¥displaystyle¥¥bigcap', 
-		fraction: ['¥¥displaystyle¥¥frac{#1}{#2}', 2],
-		limit: '¥¥displaystyle¥¥lim',
-		sig: '¥¥displaystyle¥¥sum',
-		cpl: '¥¥mathrm{c}',
-		trp: '¥¥mathsf{T}',
-		rd: '¥¥mathrm{d}',
-		intgrl: '¥¥displaystyle¥¥int',
-		twobytwo: ['¥¥left[¥¥begin{array}{cc} #1 & #2¥¥¥¥ #3 & #4¥¥end{array}¥¥right]', 4],
-		rtwobytwo: ['¥¥left(¥¥begin{array}{cc} #1 & #2¥¥¥¥ #3 & #4¥¥end{array}¥¥right)', 4],
-		ronebytwo: ['¥¥left(¥¥begin{array}{c} #1 ¥¥¥¥ #2 ¥¥end{array}¥¥right)', 2],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		rtwobytwo: ['\\left(\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right)', 4],
+		ronebytwo: ['\\left(\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right)', 2],
 	}}});
 </script>
 <script>
@@ -51,15 +51,15 @@
 <div class="modeln">
 <center><script>document.write(ttl)</script></center>
 <div class="modelx">
-	<p>$t¥in ¥mathbb{N}_0$ に対して確率変数列 $¥{¥xi_t¥}_{t¥in¥mathbb{N}_0}$ の分布が</p>
-	<p>¥begin{align}
-		¥mathbb{P}(¥xi_t = 1) = p,¥quad ¥mathbb{P}(¥xi_t = -1) = 1-p =: q
-		¥end{align}</p>
-	<p>で与えられているとき，確率過程 $¥{X_t¥}_{t¥in¥mathbb{N}_0}$ を以下で与える：</p>
-	<p>¥begin{align}
-		X_0 = a,¥quad X_{t+1} = X_{t} + ¥xi_t.
-		¥end{align}</p>
-	<p>ただし，$a¥in¥mathbb{Z}$ である．この $¥{X_t¥}_{t¥in¥mathbb{N}_0}$ を $a$ を出発点とする【１次元ランダムウォーク (one-dimensional random walk)】或いは【<ruby><rb>Bernoulli</rb><rp>(</rp><rt>ベルヌーイ</rt><rp>)</rp></ruby> ランダムウォーク (Bernoulli random walk)】と呼ぶ．</p>
+	<p>$t\in \mathbb{N}_0$ に対して確率変数列 $\{\xi_t\}_{t\in\mathbb{N}_0}$ の分布が</p>
+	<p>\begin{align}
+		\mathbb{P}(\xi_t = 1) = p,\quad \mathbb{P}(\xi_t = -1) = 1-p =: q
+		\end{align}</p>
+	<p>で与えられているとき，確率過程 $\{X_t\}_{t\in\mathbb{N}_0}$ を以下で与える：</p>
+	<p>\begin{align}
+		X_0 = a,\quad X_{t+1} = X_{t} + \xi_t.
+		\end{align}</p>
+	<p>ただし，$a\in\mathbb{Z}$ である．この $\{X_t\}_{t\in\mathbb{N}_0}$ を $a$ を出発点とする【１次元ランダムウォーク (one-dimensional random walk)】或いは【<ruby><rb>Bernoulli</rb><rp>(</rp><rt>ベルヌーイ</rt><rp>)</rp></ruby> ランダムウォーク (Bernoulli random walk)】と呼ぶ．</p>
 </div>
 <p style="text-align: right; margin-top: -5.6px; font-size: 14px; font-weight: normal; border-right: solid 0.3em #000000;">
 Page No. <b><script>document.write(rw1)</script></b> &ensp;
