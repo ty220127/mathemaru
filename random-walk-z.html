@@ -86,6 +86,7 @@
 </head>
 
 <body>
+<script src="test.js"></script>
 
 <div class="mathemaru">
 <center><a href="index.html">MATHEMARU</a></center>
@@ -107,15 +108,15 @@
 	<p>ただし，$a\in\mathbb{Z}$ である．この $\{X_t\}_{t\in\mathbb{N}_0}$ を $a$ を出発点とする【１次元ランダムウォーク (one-dimensional random walk)】或いは【<ruby><rb>Bernoulli</rb><rp>(</rp><rt>ベルヌーイ</rt><rp>)</rp></ruby> ランダムウォーク (Bernoulli random walk)】と呼ぶ．</p>
 </div>
 <p style="text-align: right; margin-top: -5.6px; font-size: 14px; font-weight: normal; border-right: solid 0.3em #000000;">
-Page No. <b>1</b> &ensp;
+Page No. <b><script>document.write(rw1)</script></b> &ensp;
 <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
 <span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
 </p>
 </div>
 
     
-<p id="1">&nbsp;</p><script>i++; returnprob = i</script>
-<div class="prptl">[#1-<script>document.write(i)</script>] 命題：再帰確率は 1</div>
+<p id="1">&nbsp;</p>
+<div class="prptl"><script>nr(rw1,returnprob)</script> 命題：再帰確率は 1</div>
 <div class="prp">
 	<p>任意の位置を出発点とするランダムウォークにおいて，再帰確率は $1$ である．</p>
 </div>
@@ -126,7 +127,7 @@ Page No. <b>1</b> &ensp;
 	</div>
 </details>
 <br>
-    
+        
 <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
 	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
 		<li>尾畑伸明: 確率モデル要論―確率論の基礎からマルコフ連鎖へ (数理情報科学シリーズ), 牧野書店 (2012). </li>
