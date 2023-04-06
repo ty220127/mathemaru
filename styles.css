@@ -40,3 +40,40 @@
       font-weight: normal;
       padding:10px;	
 }
+
+.def{
+      border-left: solid 0.3em #7b7b35; 
+      border-bottom:0.1em solid #7b7b35;
+      background-color: #ffff99;
+      color:#000000;
+      font-weight: normal;
+      padding:10px;
+}
+.deftl{
+      background:#7b7b35;
+      border:1px solid #7b7b35; 
+      padding-left:5px;
+      font-weight:bold;
+      color:#FFFFFF;
+}
+
+.prp{
+      border-left: solid 0.3em #23237b;
+      border-bottom:0.1em solid #23237b;
+      background-color: #b2f9ff;
+      color:#000000;
+      font-weight: normal;
+      padding:10px;
+}
+.prptl{
+      background:#23237b;
+      border:1px solid #23237b; 
+      padding-left:5px;
+      font-weight:bold;
+      color:#FFFFFF;
+}
+
+.footer{
+	background:#abf;
+	padding:30px;
+}
