@@ -18,6 +18,7 @@
 .mathemaru a:hover{color:#dfdfdf;text-decoration:underline}
 
 .boxes{
+	font-size: 14px;
 	border-left: solid 0.5em transparent;
 	border-right: solid 0.5em transparent;
 }
