@@ -14,7 +14,7 @@ i++; markov = i;
 refs[i] = "https://ty220127.github.io/mathemaru/markov.html";
 ttls[i] = "Markov 連鎖";
 j = 0;
-j++; mpath = j; bns[i][j] = "パスの確率";
+j++; mpath = j;
 j++; y = j;
 j++; x = j;
 
