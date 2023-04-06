@@ -1,55 +1,114 @@
-<link rel="stylesheet" href="https://ty220127.github.io/problemath/sample.css"/>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
 <head>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } ,
-			     TeX: {  extensions: ["cancel.js"] },
-			   });	
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
 	MathJax.Hub.Config({ TeX: { Macros: {
-		numref: ['{\\scriptsize\\sf [\\# #1]}', 1],
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
 		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
 		cpl: '\\mathrm{c}',
-		trp: '\\mathsf{T}'
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		rtwobytwo: ['\\left(\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right)', 4],
+		ronebytwo: ['\\left(\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right)', 2],
 	}}});
 </script>
-<title>Markov 連鎖｜演習問題集</title>
+<script>
+	const established = "2022/3/7"
+	const updated = "2023/4/6"
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
-<style>
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<center><div id="titlehead">Markov 連鎖</div></center>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>document.title= ttls[markov] + "｜MATHEMARU"</script>
 
-<p style="text-align:right;">
-established on 2022/3/7<br>
-updated on 2022/3/7
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
+
+<div class="boxes">
+
+<div class="modeln">
+<center><script>document.write(ttls[markov])</script></center>
+<div class="modelx">
+	<p>未来の状態が現在の状態によってのみ決定される離散的な確率過程 $\{S_t\}_{t\in\mathbb{N}}$ を【<ruby><rb>Markov</rb><rp>(</rp><rt>マルコフ</rt><rp>)</rp></ruby> 連鎖 (Markov chain)】と呼ぶ：状態空間 $\varOmega$ に対して</p>
+	<p><center>\begin{align}
+		&P\bigl(S_t=\omega_t\,|\,(S_{t-1},\,\cdots,\,S_0)=(\omega_{t-1},\,\cdots,\,\omega_{0})\bigr) \\
+		&\hspace{45mm}= P(S_t=\omega_t\,|\,S_{t-1}=\omega_{t-1}).
+		\end{align}</center></p>
+	<p>また Markov 連鎖のこの性質をしばしば【Markov 性 (Markov property)】と呼ぶ．</p>
+</div>
+<p style="text-align: right; margin-top: -5.6px; font-size: 14px; font-weight: normal; border-right: solid 0.3em #000000;">
+Page No. <b><script>document.write(markov)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
 </p>
+</div>
+<br>
     
-<div class="def" id="143">
-	<b>[#143]定義：Markov 連鎖</b><br>
-  <p>未来の状態が現在の状態によってのみ決定される離散的な確率過程 $\{S_t\}_{t\in\mathbb{N}}$ を【 Markov 連鎖 (Markov chain)】と呼ぶ：状態空間 $\varOmega$ に対して</p>
-  <p><center>$\begin{align*}
-    P(S_t=\omega_t\,|\,(S_{t-1},\,\cdots,\,S_0)=(\omega_{t-1},\,\cdots,\,\omega_{0})) = P(S_t=\omega_t\,|\,S_{t-1}=\omega_{t-1}).
-    \end{align*}$</center></p>
-  <p>また Markov 連鎖のこの性質をしばしば【 Markov 性 (Markov property)】と呼ぶ．</p>
+<p id="1">&nbsp;</p>
+<div class="prptl"><script>nr(markov,mpath)</script>&nbsp; <script>document.write(bns[markov][mpath])</script></div>
+<div class="prp">	
+	<p>初期分布を $\{\nu_\omega\}_{\omega\in \varOmega}$ とするとき，
+	<p>\begin{align}
+		P\bigl((S_t,\,\cdots,\,S_0)=(\omega_{t},\,\cdots,\,\omega_{0})\bigr) = \nu_{\omega_0}p_{\omega_{0}\omega_{1}}p_{\omega_{1}\omega_{2}}\cdots p_{\omega_{t-1}\omega_{t}}
+		\end{align}</p>
 </div>
-<br><br>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+		<p></p>
+	</div>
+</details>
+<br>
+        
+<p id="1">&nbsp;</p>
+<div class="deftl"><script>nr(markov,mst)</script>&nbsp; <script>document.write(bns[markov][mst])</script></div>
+<div class="def">	
+	<p>分布 $(\pi_\omega)_{\omega\in \varOmega}$ による行ベクトル $\bs{\pi} = [\pi_0\ \pi_1\ \cdots\ \pi_t]$ が
+	<p>\begin{align}
+		\bs{\pi}P = \bs{\pi}
+		\end{align}</p>
+	<p>を満たすとき，$(\pi_{\omega})$ は推移確率行列 $P$ に対する【定常分布 (stationary distribution)】或いは【不変分布 (invariant distribution)】であるという．</p>
+</div>
+<details class="deftl">
+	<summary>補足</summary>
+	<div class="def">
+		<p></p>
+	</div>
+</details>
+<br>
+        
+<br>
+<div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li>尾畑伸明: 確率モデル要論―確率論の基礎からマルコフ連鎖へ (数理情報科学シリーズ), 牧野書店 (2012). </li>
+		<li>竹居正登: 入門 確率過程, 森北出版 (2020).</li>
+	</ul>
+</div>
 
-<div id="bib"><b>参考文献</b>
-<ul>
-	<li><a href="https://manabitimes.jp/math/1269">ノルムの意味とL1，L2，L∞ノルム｜高校数学の美しい物語</a>.</li>
-</ul>
 </div>
-      
-<p style="text-align:right;">
-<a href="index.html">トップページに戻る</a>
-</p>
+
+<div class="footer"></div>
+
 </body>
 </html>
