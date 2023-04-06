@@ -1,0 +1,144 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		bs: '\\boldsymbol', 
+		bsqcu: '\\displaystyle\\bigsqcup', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathrm{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
+		rtwobytwo: ['\\left(\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right)', 4],
+		ronebytwo: ['\\left(\\begin{array}{c} #1 \\\\ #2 \\end{array}\\right)', 2],
+	}}});
+</script>
+<script>
+	const ttl = "１次元ランダムウォーク"
+	document.title= ttl + "｜MATHEMARU"
+	const established = "2023/4/6"
+	const updated = "2023/4/6"
+	i = 0
+</script>
+<style>
+	* { 
+	    margin: 0px; 
+	    padding: 0px; 
+	}
+	.mathemaru{
+		width:100%;
+		position:fixed; 
+		top:0; left:0; 
+		padding:5px 0; 
+		opacity:.8; 
+		background:#abf; 
+		z-index:1
+	}
+	.mathemaru a{
+		color:#000; text-decoration:none; font-weight:bold;
+	}
+	.mathemaru a:hover{color:#dfdfdf;text-decoration:underline}
+	.boxes{
+		border-left: solid 0.5em transparent;
+		border-right: solid 0.5em transparent;
+	}
+	.modeln{
+		background: #000000;
+		color: #FFFFFF;
+		font-size: 200%;
+		font-family: sans-serif;
+		font-weight: bold;
+		margin-top:3%;
+		<!--- line-height:3--->
+	}
+	.modelx{
+	      border-left: solid 0.3em #000000;
+	      border-right: solid 0.3em #000000;
+	      border-bottom:0.3em solid #000000;
+	      background:#c8c8c8;
+	      color:#000000;
+	      font-size: 14px;
+	      font-weight: normal;
+	      padding:10px;	
+	}
+	.module-page-footer-link-inner{background-color:rgba(153,153,153,.8)}
+	.module-page-footer-link-list{max-width:1260px;width:940px;margin:0 auto;padding:20px 0;display:flex;align-items:flex-start}
+	.module-page-footer-link-list dl{flex:auto}.module-page-footer-link-list a{display:inline-block;padding:4px 0;font-size:.875rem}.module-page-footer-link-list a i{margin-right:6px}.module-page-footer-link-bottom{text-align:center;padding:40px 0;background-color:#fff}
+</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
+
+<div class="boxes">
+
+<div class="modeln">
+<center><script>document.write(ttl)</script></center>
+<div class="modelx">
+	<p>$t\in \mathbb{N}_0$ に対して確率変数列 $\{\xi_t\}_{t\in\mathbb{N}_0}$ の分布が</p>
+	<p>\begin{align}
+		\mathbb{P}(\xi_t = 1) = p,\quad \mathbb{P}(\xi_t = -1) = 1-p =: q
+		\end{align}</p>
+	<p>で与えられているとき，確率過程 $\{X_t\}_{t\in\mathbb{N}_0}$ を以下で与える：</p>
+	<p>\begin{align}
+		X_0 = a,\quad X_{t+1} = X_{t} + \xi_t.
+		\end{align}</p>
+	<p>ただし，$a\in\mathbb{Z}$ である．この $\{X_t\}_{t\in\mathbb{N}_0}$ を $a$ を出発点とする【１次元ランダムウォーク (one-dimensional random walk)】或いは【<ruby><rb>Bernoulli</rb><rp>(</rp><rt>ベルヌーイ</rt><rp>)</rp></ruby> ランダムウォーク (Bernoulli random walk)】と呼ぶ．</p>
+</div>
+<p style="text-align: right; margin-top: -5.6px; font-size: 14px; font-weight: normal; border-right: solid 0.3em #000000;">
+Page No. <b>1</b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+</div>
+
+    
+<p id="1">&nbsp;</p><script>i++; returnprob = i</script>
+<div class="prptl">[#1-<script>document.write(i)</script>] 命題：再帰確率は 1</div>
+<div class="prp">
+	<p>任意の位置を出発点とするランダムウォークにおいて，再帰確率は $1$ である．</p>
+</div>
+<details class="prptl">
+	<summary>証明</summary>
+	<div class="prp">
+		<p>test</p>
+	</div>
+</details>
+<br>
+    
+<div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li>尾畑伸明: 確率モデル要論―確率論の基礎からマルコフ連鎖へ (数理情報科学シリーズ), 牧野書店 (2012). </li>
+		<li>竹居正登: 入門 確率過程, 森北出版 (2020).</li>
+	</ul>
+</div>
+
+</div>
+
+<div style="background:#abf; padding:30px;">
+</div>
+
+</div>
+</body>
+</html>
