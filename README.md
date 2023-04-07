@@ -1,2 +1,2 @@
-# problemath
-abcd
+# MATHEMARU
+explanation of mathematical models
