@@ -34,7 +34,7 @@ body{
 	font-size: 200%;
 	font-family: sans-serif;
 	font-weight: bold;
-	margin-top:3%;
+	margin-top: 40px;
 }
 .modelx{
       border-left: solid 0.3em #000000;
@@ -45,6 +45,14 @@ body{
       font-size: 14px;
       font-weight: normal;
       padding:10px;	
+}
+
+.modelf{
+	text-align: right; 
+	margin-top: -4.5px; 
+	font-size: 14px; 
+	font-weight: normal; 
+	border-right: solid 0.3em #000000;
 }
 
 .def{
