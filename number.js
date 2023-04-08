@@ -12,7 +12,7 @@ i = 0;
 //3:measurable_space
 i++; measurable = i;
 bns[i] = [];
-refs[i] = "https://ty220127.github.io/mathemaru/sigma_algebra.html";
+refs[i] = "https://ty220127.github.io/mathemaru/sigmaalgebra.html";
 ttls[i] = "可測空間";
 j = 0;
 j++; measurable_power = j; bns[i][j] = "例：冪集合は可測空間を成す";
