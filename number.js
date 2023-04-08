@@ -23,7 +23,7 @@ j++; measurable_limit = j; bns[i][j] = "命題：上（下）極限集合の可�
 j++; measurable_difference = j; bns[i][j] = "命題：可測集合の差の可測性";
 j++; measurable_empty_universal = j; bns[i][j] = "命題：空集合及び全体集合の可測性";
 j++; sigma_by_intersection = j; bns[i][j] = "命題：共通部分によるσ加法族";
-j++; sigma_intersection = j; bns[i][j] = "命題：共通部分によるσ加法族";
+j++; sigma_intersection = j; bns[i][j] = "命題：σ加法族の共通部分";
 j++; sigma_generation = j; bns[i][j] = "例：σ加法族の生成";
 j++; sigma_gen_unique = j; bns[i][j] = "例：σ加法族の生成の一意性";
 j++; sigma_gen_inclusion = j; bns[i][j] = "例：生成されるσ加法族の包含";
