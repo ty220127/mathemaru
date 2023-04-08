@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
@@ -39,7 +40,10 @@
 
 <body>
 <script src="https://ty220127.github.io/mathemaru/number.js"></script>
-<script>document.title= ttls[markov] + "｜MATHEMARU"</script>
+<script>
+	const N = rw1;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
 	
 <div class="mathemaru">
 <center><a href="index.html">MATHEMARU</a></center>
@@ -48,7 +52,7 @@
 <div class="boxes">
 
 <div class="modeln">
-<center><script>document.write(ttls[rw1])</script></center>
+<center><script>document.write(ttls[N])</script></center>
 <div class="modelx">
 	<p>$t\in \mathbb{N}_0$ に対して確率変数列 $\{\xi_t\}_{t\in\mathbb{N}_0}$ の分布が</p>
 	<p>\begin{align}
@@ -60,25 +64,26 @@
 		\end{align}</p>
 	<p>ただし，$a\in\mathbb{Z}$ である．この $\{X_t\}_{t\in\mathbb{N}_0}$ を $a$ を出発点とする【１次元ランダムウォーク (one-dimensional random walk)】或いは【<ruby><rb>Bernoulli</rb><rp>(</rp><rt>ベルヌーイ</rt><rp>)</rp></ruby> ランダムウォーク (Bernoulli random walk)】と呼ぶ．</p>
 </div>
-<p style="text-align: right; margin-top: -5.6px; font-size: 14px; font-weight: normal; border-right: solid 0.3em #000000;">
-Page No. <b><script>document.write(rw1)</script></b> &ensp;
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
 <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
 <span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
 </p>
 </div>
 
     
-<p id="1">&nbsp;</p>
-<div class="prptl"><script>nr(rw1,returnprob)</script>&nbsp; <script>document.write(bns[rw1][returnprob])</script></div>
-<div class="prp">
+<p id="1">&nbsp;</p><script>var curbox = returnprob</script>
+<div class="prpn"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>任意の位置を出発点とするランダムウォークにおいて，再帰確率は $1$ である．</p>
 </div>
-<details class="prptl">
+<details class="dtl">
 	<summary>証明</summary>
-	<div class="prp">
+	<div id="tx">
 		<p>test</p>
 	</div>
 </details>
+</div>
 <br>
         
 <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
@@ -87,6 +92,7 @@ Page No. <b><script>document.write(rw1)</script></b> &ensp;
 		<li>竹居正登: 入門 確率過程, 森北出版 (2020).</li>
 	</ul>
 </div>
+<br>
 
 </div>
 
