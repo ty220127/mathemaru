@@ -46,12 +46,18 @@ body{
       font-weight: normal;
       padding:10px;	
 }
-
 .modelf{
 	text-align: right; 
 	font-size: 14px; 
 	font-weight: normal; 
 	border-right: solid 0.3em #000000;
+}
+.dtl{
+      border:1px solid transparent; 
+      padding-left:5px;
+      font-weight:bold;
+      color:#FFFFFF;
+      font-size: 14px;
 }
 
 .def{
@@ -84,6 +90,29 @@ body{
       padding-left:5px;
       font-weight:bold;
       color:#FFFFFF;
+}
+
+ul.defl{	
+	margin-top: 5.6px;
+	margin-left: 3em;
+	margin-bottom: 5.6px;
+	list-style-type: lower-roman;
+}
+
+ol.q li {
+	list-style-type: none;
+	counter-increment: cnt;
+	position: relative;
+}
+ 
+ol.q li::before {
+	content: "(" counter(cnt) ")　";
+	display: inline-block;
+	margin-left: -2.5em;
+	width: 3em;
+	text-align: right;
+	top: 0;
+	left: 0;
 }
 
 .footer{
