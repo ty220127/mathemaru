@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
@@ -39,7 +40,10 @@
 
 <body>
 <script src="https://ty220127.github.io/mathemaru/number.js"></script>
-<script>document.title= ttls[markov] + "｜MATHEMARU"</script>
+<script>
+	const N = markov;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
 
 <div class="mathemaru">
 <center><a href="index.html">MATHEMARU</a></center>
@@ -48,7 +52,7 @@
 <div class="boxes">
 
 <div class="modeln">
-<center><script>document.write(ttls[markov])</script></center>
+<center><script>document.write(ttls[N])</script></center>
 <div class="modelx">
 	<p>未来の状態が現在の状態によってのみ決定される離散的な確率過程 $\{S_t\}_{t\in\mathbb{N}}$ を【<ruby><rb>Markov</rb><rp>(</rp><rt>マルコフ</rt><rp>)</rp></ruby> 連鎖 (Markov chain)】と呼ぶ：状態空間 $\varOmega$ に対して</p>
 	<p><center>\begin{align}
@@ -57,45 +61,47 @@
 		\end{align}</center></p>
 	<p>また Markov 連鎖のこの性質をしばしば【Markov 性 (Markov property)】と呼ぶ．</p>
 </div>
-<p style="text-align: right; margin-top: -5.6px; font-size: 14px; font-weight: normal; border-right: solid 0.3em #000000;">
-Page No. <b><script>document.write(markov)</script></b> &ensp;
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
 <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
 <span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
 </p>
 </div>
 <br>
     
-<p id="1">&nbsp;</p>
-<div class="prptl"><script>nr(markov,mpath)</script>&nbsp; <script>document.write(bns[markov][mpath])</script></div>
-<div class="prp">	
+<p id="1">&nbsp;</p><script>var curbox = mpath</script>
+<div class="prpn"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>初期分布を $\{\nu_\omega\}_{\omega\in \varOmega}$ とするとき，
 	<p>\begin{align}
 		P\bigl((S_t,\,\cdots,\,S_0)=(\omega_{t},\,\cdots,\,\omega_{0})\bigr) = \nu_{\omega_0}p_{\omega_{0}\omega_{1}}p_{\omega_{1}\omega_{2}}\cdots p_{\omega_{t-1}\omega_{t}}
 		\end{align}</p>
 </div>
-<details class="prptl">
+<details class="dtl">
 	<summary>証明</summary>
-	<div class="prp">
+	<div id="tx">
 		<p></p>
 	</div>
 </details>
+</div>
 <br>
         
-<p id="1">&nbsp;</p>
-<div class="deftl"><script>nr(markov,mst)</script>&nbsp; <script>document.write(bns[markov][mst])</script></div>
-<div class="def">	
+<p id="1">&nbsp;</p><script>var curbox = mst</script>
+<div class="defn"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>分布 $(\pi_\omega)_{\omega\in \varOmega}$ による行ベクトル $\bs{\pi} = [\pi_0\ \pi_1\ \cdots\ \pi_t]$ が
 	<p>\begin{align}
 		\bs{\pi}P = \bs{\pi}
 		\end{align}</p>
 	<p>を満たすとき，$(\pi_{\omega})$ は推移確率行列 $P$ に対する【定常分布 (stationary distribution)】或いは【不変分布 (invariant distribution)】であるという．</p>
 </div>
-<details class="deftl">
+<details class="dtl">
 	<summary>補足</summary>
-	<div class="def">
+	<div id="tx">
 		<p></p>
 	</div>
 </details>
+</div>
 <br>
         
 <br>
@@ -105,6 +111,7 @@ Page No. <b><script>document.write(markov)</script></b> &ensp;
 		<li>竹居正登: 入門 確率過程, 森北出版 (2020).</li>
 	</ul>
 </div>
+<br>
 
 </div>
 
