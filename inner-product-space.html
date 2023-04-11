@@ -52,7 +52,7 @@
 <div class="modelx">
 	<p>体 $\mathbb{K}$ 上の線形空間 $V$  で，以下の条件を満たす関数 $\braket{\cdot}{\cdot}: V\times V\to \mathbb{K}$ が定義されているものを【内積空間 (inner product space)】，【計量線形空間 (metric linear space)】，或いは【前 Hilbert 空間 (pre-Hilbert space)】と呼ぶ：</p>
 	<ul class="defl">
-		<li>【共軛対称性 (conjugate symmetry)】
+		<li>【共役対称性 (conjugate symmetry)】
 			<p>\begin{align}
 				{}^\forall x,\,y\in V,\ \braket{x}{y} = \overline{\braket{y}{x}}. 
 				\end{align}</p>
@@ -91,6 +91,16 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
+		<p>\begin{align}
+			\braket{x}{ky + \ell z} &= \overline{ky + \ell z}{x} = \overline{k\braket{y}{x} + \ell\braket{z}{x}}\\
+			&= \bar{k}\overline{\braket{y}{x}} + \bar{\ell}\overline{\braket{z}{x}} = \bar{k}\braket{x}{y} + \bar{\ell}\braket{x}{z}.
+			\end{align}</p>
+	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>このような性質を【反線形性 (anti-linearlity)】或いは【共役線形性 (conjugate linearity)】と呼ぶ．通常の線形性との違いは，定数を関数の外に出すとその定数が元の共役になることである．</p>
 	</div>
 </details>
 </div>
