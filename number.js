@@ -54,4 +54,5 @@ bns[i] = [];
 refs[i] = "https://ty220127.github.io/mathemaru/inner-product-space.html";
 ttls[i] = "内積空間";
 j = 0;
+j++; antilinearity = j; bns[i][j] = "第二成分の反線形性";
 j++; inprodisnorm = j; bns[i][j] = "内積空間はノルム空間";
