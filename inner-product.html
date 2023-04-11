@@ -1,0 +1,132 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		braket: ['\\langle{#1},\\,{#2}\\rangle', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const established = "2022/4/11"
+	const updated = "2023/4/11"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+	const N = inprod;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
+	
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
+
+<div class="boxes">
+
+<div class="modeln">
+<center><script>document.write(ttls[N])</script></center>
+<div class="modelx">
+	<p>体 $\mathbb{K}$ 上の線形空間 $V$  で，以下の条件を満たす関数 $\braket{\cdot}{\cdot}: V\times V\to \mathbb{K}$ が定義されているものを【内積空間 (inner product space)】，【計量線形空間 (metric linear space)】，或いは【前 Hilbert 空間 (pre-Hilbert space)】と呼ぶ：</p>
+	<ul class="defl">
+		<li>【共軛対称性 (conjugate symmetry)】
+			<p>\begin{align}
+				{}^\forall x,\,y\in V,\ \braket{x}{y} = \overline{\braket{y}{x}}. 
+				\end{align}</p>
+			</li>
+		<li>【線形性 (linearity)】
+			<p>\begin{align}
+				{}^\forall a,\ b\in \mathbb{K},\ {}^\forall x,\,y,\,z\in V,\ \braket{ax+by}{z} = a\braket{x}{z} + b\braket{y}{z}.
+				\end{align}
+				</p>
+			</li>
+		<li>【正定値性 (positive definiteness)】
+			<p>\begin{align}
+				{}^\forall x\in V,\ (\braket{x}{x}\geq 0)\land (\braket{x}{x} = 0 \to x = 0)
+				\end{align}
+				</p>
+			</li>
+	</ul>
+	<p>この関数 $\braket{\cdot}{\cdot}$ を【内積 (inner product)】と呼ぶ．</p>
+</div>
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+</div>
+<br>
+    
+<p id="1">&nbsp;</p><script>var curbox = antilinearity</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>任意の $k,\ \ell\in \mathbb{K}$ と 任意の $x,\ y,\ z\in V$ に対して</p>
+	<p>\begin{align}
+		\braket{x}{ky + \ell z} = \bar{k}\braket{x}{y} + \bar{\ell}\braket{x}{z}
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	</div>
+</details>
+</div>
+<br>
+
+<p id="1">&nbsp;</p><script>var curbox = inprodisnorm</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>内積空間 $V$ において，関数 $\|\cdot\|: V\to [0,\ \infty)$ を</p>
+	<p>\begin{align}
+			\|x\| = \sqrt{\braket{x}{x}}
+			\end{align}</p>
+	<p>により定めると，これはノルムである．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	</div>
+</details>
+</div>
+<br>
+
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li><a href="https://mathlandscape.com/inner-product/">【内積空間】 内積の定義・具体例と中線定理 - 数学の景色</a> [2023/4/11 閲覧].</li>
+		<li><a href="https://university-note.com/inner-product-space/">【入門線形代数】内積空間とは-内積空間- - 大学ますまとめ</a> [2023/4/11 閲覧].</li>
+		<li><a href="https://k-san.link/vector-space/">ベクトル空間(線形空間)および計量ベクトル空間(内積空間)の定義と公理【線形代数】 - k-san.link</a> [2023/4/11 閲覧].</li>
+		<li><a href="https://linky-juku.com/metric-vector-space-1/">計量線形空間の定義_意味からコーシー=シュワルツの不等式まで解説 - スマナビング!高校数学_物理_化学と線形代数をスマホで学ぶサイト</a> [2023/4/11 閲覧].</li>
+	</ul>
+</div>
+<br>
+	
+</div>
+
+<div class="footer"></div>
+
+</body>
+</html>
