@@ -47,3 +47,11 @@ j = 0;
 j++; returnprob = j; bns[i][j] = "命題：再帰確率は $1$";
 j++; y = j;
 j++; x = j;
+
+//4:inner-product-space
+i++; inprod = i;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/mathemaru/inner-product-space.html";
+ttls[i] = "内積空間";
+j = 0;
+j++; inprodisnorm = j; bns[i][j] = "内積空間はノルム空間";
