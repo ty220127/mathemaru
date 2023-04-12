@@ -48,6 +48,14 @@ j++; returnprob = j; bns[i][j] = "命題：再帰確率は $1$";
 j++; y = j;
 j++; x = j;
 
+//5:norm-space
+i++; norm = i;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/mathemaru/norm-space.html";
+ttls[i] = "ノルム空間";
+j = 0;
+j++; normisdist = j; bns[i][j] = "ノルム空間は距離空間";
+
 //4:inner-product-space
 i++; inprod = i;
 bns[i] = [];
