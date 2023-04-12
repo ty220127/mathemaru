@@ -1,0 +1,114 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
+		nr: ['^\\numref{#1}{#2}', 2],
+		braket: ['\\langle{#1},\\,{#2}\\rangle', 2],
+		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
+		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
+		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
+		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
+		bs: '\\boldsymbol', 
+		bcu: '\\displaystyle\\bigcup', 
+		bca: '\\displaystyle\\bigcap', 
+		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
+		limit: '\\displaystyle\\lim',
+		sig: '\\displaystyle\\sum',
+		cpl: '\\mathsf{c}',
+		trp: '\\mathsf{T}',
+		rd: '\\mathrm{d}',
+		intgrl: '\\displaystyle\\int',
+	}}});
+</script>
+<script>
+	const established = "2023/4/12"
+	const updated = "2023/4/12"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+	const N = norm;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
+	
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
+
+<div class="boxes">
+
+<div class="modeln">
+<center><script>document.write(ttls[N])</script></center>
+<div class="modelx">
+	<p>体 $\mathbb{K}$ 上の線形空間 $V$  で，以下の条件を満たす関数 $\|\cdot\|: V\to \mathbb{K}$ が定義されているものを【ノルム空間 (norm space)】と呼ぶ：</p>
+	<ul class="defl">
+		<li>【正値性 (positivity)】
+			<p>\begin{align}
+				{}^\forall x\in V,\ (\|x\| \geq 0)\land (\|x\|= 0\to x = 0). 
+				\end{align}</p>
+			</li>
+		<li>【斉次性 (homogeneity)】
+			<p>\begin{align}
+				{}^\forall \alpha\in \mathbb{K},\ {}^\forall x\in V,\ \|\alpha x\| = |\alpha| \|x\|.
+				\end{align}
+				</p>
+			</li>
+		<li>【三角不等式 (triangle inequality)】
+			<p>\begin{align}
+				{}^\forall x,\ y\in V,\ \|x+y\| \leq \|x\| + \|y\|.
+				\end{align}
+				</p>
+			</li>
+	</ul>
+	<p>この関数 $\|\cdot\|$ を $V$ 上の【ノルム (norm)】と呼ぶ．</p>
+</div>
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+</div>
+<br>
+    
+<p id="1">&nbsp;</p><script>var curbox = antilinearity</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>ノルム空間 $V$ 上の関数 $d: V\times V\to [0,\ \infty)$ を
+	<p>\begin{align}
+		d(x,\,y) = \|x-y\|
+		\end{align}</p>
+	<p>と定めると，これは距離関数となる．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	</div>
+</details>
+</div>
+<br>
+
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li><a href="https://mathlandscape.com/norm/">ノルムとは～ノルム空間の定義と具体例～ - 数学の景色</a> [2023/4/12 閲覧].</li>
+		<li><a href="https://takataninote.com/operator/norm.html">ノルム空間【例と証明】 - Takatani Note</a> [2023/4/11 閲覧].</li>
+	</ul>
+</div>
+<br>
+	
+</div>
+
+<div class="footer"></div>
+
+</body>
+</html>
