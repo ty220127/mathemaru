@@ -9,6 +9,17 @@ var bns = [];
 
 i = 0;
 
+//6:numerical-vector-space
+i++; numvec = i;
+bns[i] = [];
+refs[i] = "https://ty220127.github.io/mathemaru/numerical-vector.html";
+ttls[i] = "数ベクトル空間";
+j = 0;
+j++; numvecprop = j; bns[i][j] = "数ベクトルの交換・結合・分配法則";
+j++; invnumvec = j; bns[i][j] = "逆ベクトル，ベクトルの減法";
+j++; zeronumvec = j; bns[i][j] = "零ベクトル";
+j++; invzeronumvecprop = j; bns[i][j] = "逆・零ベクトルに関する性質";
+
 //3:measurable_space
 i++; measurable = i;
 bns[i] = [];
