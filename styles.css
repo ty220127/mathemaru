@@ -112,6 +112,12 @@ ul.defl{
 	list-style-type: lower-roman;
 }
 
+ol.q{	
+	margin-top: 5.6px;
+	margin-left: 3em;
+	margin-bottom: 5.6px;
+}
+
 ol.q li {
 	list-style-type: none;
 	counter-increment: cnt;
