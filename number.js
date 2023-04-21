@@ -15,10 +15,10 @@ bns[i] = [];
 refs[i] = "https://ty220127.github.io/mathemaru/numerical-vector.html";
 ttls[i] = "数ベクトル空間";
 j = 0;
-j++; numvecprop = j; bns[i][j] = "数ベクトルの交換・結合・分配法則";
-j++; invnumvec = j; bns[i][j] = "逆ベクトル，ベクトルの減法";
-j++; zeronumvec = j; bns[i][j] = "零ベクトル";
-j++; invzeronumvecprop = j; bns[i][j] = "逆・零ベクトルに関する性質";
+j++; numvecprop = j; bns[i][j] = "命題：数ベクトルの交換・結合・分配法則";
+j++; invnumvec = j; bns[i][j] = "定義：逆ベクトル，数ベクトルの減法";
+j++; zeronumvec = j; bns[i][j] = "定義：零ベクトル";
+j++; invzerosnumvecprop = j; bns[i][j] = "命題：逆・零ベクトルに関する性質";
 
 //3:measurable_space
 i++; measurable = i;
