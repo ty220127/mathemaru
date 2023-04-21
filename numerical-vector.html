@@ -1,7 +1,6 @@
 
-<meta charset="UTF-8">
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
 <head>
 <script type="text/javascript" async
@@ -10,48 +9,48 @@
 	MathJax.Hub.Config({ TeX: { Macros: {
 		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
+		braket: ['\\langle{#1},\\,{#2}\\rangle', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
-		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
 		bs: '\\boldsymbol', 
-		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
 	}}});
 </script>
 <script>
-	const ttl = "数ベクトル"
-	document.title= ttl + "｜MATHEMARU"
+	const established = "2023/3/13"
+	const updated = "2023/4/21"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+	const N = numvec;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
+	
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
 
-<nav>
-<ul>
-<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
-</ul>
-</nav>
+<div class="boxes">
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
-established on 2023/3/13<br>
-updated on 2023/3/15
-</p>
-
-<p id="432">&nbsp;</p>
-<div class="deftl">[#432] 定義：数ベクトル，数ベクトル空間</div>
-<div class="def">
+<div class="modeln">
+<center><script>document.write(ttls[N])</script></center>
+<div class="modelx">
 	<p> $n$ 個の体 $\mathbb{K}$ による直積</p>
 	<p>\begin{align}
 		\mathbb{K}^n = \{(v_1,\,v_2,\,\cdots,\,v_n)\,|\,{}^\forall i,\ v_i\in \mathbb{K}^n\}
@@ -64,9 +63,14 @@ updated on 2023/3/15
 	<p>この $\mathbb{K}^n$ を $\mathbb{K}$ 上の $n$ 次元【数ベクトル空間 (numerical vector space)】或いは単に【ベクトル空間 (vector space)】と呼び，上記演算を順に【加法 (addition)】，【スカラー倍 (scalar product)】と呼ぶ．また，加法の結果を $\vec{u}$ と $\vec{v}$ の【和 (sum)】と呼ぶ．</p>
 	<p>$\mathbb{K}^n$ の元を $\mathbb{K}$ 上の $n$ 次元【数ベクトル (numerical vector)】或いは単に【ベクトル (vector)】と呼ぶ．また，ベクトル $\vec{v} = (v_1,\,v_2,\,\cdots,\,v_n)$ に対して各 $v_i\,(i = 1,\,2,\,\cdots,\,n)$ を $\vec{v}$ の【成分 (element)】と呼び，特に $v_i$ を $\vec{v}$ の【第 $i$ 成分 ($i$-th element)】と呼ぶ．</p>
 </div>
-<details class="deftl">
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+<details class="dtl">
 	<summary>記法</summary>
-	<div class="def">
+	<div class="modelx">
 		<ul>
 			<li>数ベクトルは上記のように矢印を付記することの他，$\bs{v}$ のように太字で表すこともある．</li>
 			<li>組 $(v_1,\,v_2,\,\cdots,\,v_n)$ をベクトルと見るとき，
@@ -77,11 +81,32 @@ updated on 2023/3/15
 		</ul>
 	</div>
 </details>
+</div>
+<br>
+    
+<p id="1">&nbsp;</p><script>var curbox = numvecprop</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$n$ 次元ベクトル $\vec{u},\ \vec{v},\ \vec{w}\in \mathbb{K}^n$ と $k,\ \ell\in \mathbb{K}$ に対して以下が成り立つ：</p>
+	<ol class="q">
+		<li> $(\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w})$ </li>
+		<li> $\vec{u} + \vec{v} = \vec{v} + \vec{u}$ </li>
+		<li> $k(\vec{u} + \vec{v}) = k\vec{u} + k\vec{v}$ </li>
+		<li> $(k + \ell)\vec{u} = k\vec{u} + \ell\vec{u}$ </li>
+		<li>$(k\ell )\vec{u} = k(\ell \vec{u})$ </li>
+		</ol>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	</div>
+</details>
+</div>
 <br>
 
-<p id="433">&nbsp;</p>
-<div class="deftl">[#433] 定義：逆ベクトル，ベクトルの減法</div>
-<div class="def">
+<p id="1">&nbsp;</p><script>var curbox = invnumvec</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>体 $\mathbb{K}$ 上の $n$ 次元ベクトル $\vec{v} = (v_1,\,v_2,\,\cdots,\,v_n)\in \mathbb{K}^n$ に対して，</p>
 	<p>\begin{align}
 		(-1)\vec{v} \,\refeq{numerical-vector}{432}\, (-v_1,\,-v_2,\,\cdots,\,-v_n)
@@ -93,28 +118,51 @@ updated on 2023/3/15
 		\end{align}</p>
 	<p>を $\vec{u}$ と $\vec{v}$ の【差 (difference)】と呼び，$\vec{u}-\vec{v}$ で表す．またこの演算を【減法 (subtraction)】と呼ぶ．</p>
 </div>
+</div>
 <br>
 
-<p id="434">&nbsp;</p>
-<div class="deftl">[#434] 定義：零ベクトル</div>
-<div class="def">
+<p id="1">&nbsp;</p><script>var curbox = zeronumvec</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>体 $\mathbb{K}$ 上の $n$ 次元ベクトルで，すべての成分が $0$ であるものを $\mathbb{K}^n$ 上の【零ベクトル (zero vector)】と呼び，$\vec{0},\ \vec{o}$ などで表す：</p>
 	<p>\begin{align}
 		\vec{0} = (0,\,0,\,\cdots,\,0).
 		\end{align}</p>
 </div>
+</div>
 <br>
 
-<br><br>
-<div id="bib">
-<b>参考文献</b>
-	<ul>
+<p id="1">&nbsp;</p><script>var curbox = invzeronumvecprop</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$n$ 次元ベクトル $\vec{u}\in \mathbb{K}^n$ に対して以下が成り立つ：</p>
+	<ol class="q">
+		<li> $\vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u}$ </li>
+		<li> $\vec{u} - \vec{u} = -\vec{u} + \vec{u} = \vec{0}$ </li>
+		</ol>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	</div>
+</details>
+</div>
+<br>
+
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
 		<li><a href="https://web.econ.keio.ac.jp/staff/tose/cours/LA/STlin100/">戸瀬信之: Linear Algebra for Economics Students</a> [2023/3/15 閲覧].</li>
 		<li>馬場敬之: スバラシク実力がつくと評判の 線形代数 キャンパス・ゼミ, 改訂3, マセマ出版社 (2014).</li>
 		<li><a href="https://mathlandscape.com/numerical-vector/">数ベクトルの定義と数ベクトルにおけるノルム・内積 - 数学の景色</a> [2023/3/12 閲覧].</li>
 		<li><a href="https://www.ne.jp/asahi/search-center/internationalrelation/mathWeb/tupleN/TupleNDef.htm">定義：数ベクトル空間 - 数学についてのwebノート</a> [2023/3/13 閲覧].</li>
 	</ul>
 </div>
+<br>
+	
+</div>
+
+<div class="footer"></div>
 
 </body>
 </html>
