@@ -1,6 +1,5 @@
-<meta charset="UTF-8">
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
 <head>
 <script type="text/javascript" async
@@ -9,128 +8,138 @@
 	MathJax.Hub.Config({ TeX: { Macros: {
 		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
+		braket: ['\\langle{#1},\\,{#2}\\rangle', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
-		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
 		bs: '\\boldsymbol', 
-		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
 	}}});
 </script>
 <script>
-	const ttl = "ユニタリ行列と直交行列"
-	document.title= ttl + "｜MATHEMARU"
+	const established = "2022/6/5"
+	const updated = "2023/5/17"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+	const N = 7;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
+	
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
 
-<nav>
-<ul>
-<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
-</ul>
-</nav>
+<div class="boxes">
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
-established on 2022/6/5<br>
-updated on 2023/3/11
-</p>
-
-<p id="260">&nbsp;</p>
-<div class="deftl">[#260] 定義：ユニタリ行列，直交行列</div>
-<div class="def">
+<div class="modeln">
+<center><script>document.write(ttls[N])</script></center>
+<div class="modelx">
 	<p>ある正方行列 $U$ が【ユニタリ行列 (unitary matrix)】であるとは，$U$ の逆行列$\nr{regular}{163}$ $U^{-1}$ が存在して，更に $U^{-1}$ がその随伴行列$\nr{adjoint}{256}$ $U^*$ と等しいことをいう．また，ユニタリ行列 $U$ が実行列のときは，$U^{-1}$ がその転置行列$\nr{transpose}{249}$ $U^\trp$ と等しいが，この $U$ を特に【直交行列 (orthogonal matrix)】と呼ぶ．</p>
 </div>
-<details class="deftl" style="margin-top: -0.5%;">
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+<details class="dtl">
 	<summary>補足</summary>
-	<div class="def">
-	<p> 逆行列の定義$\nr{regular}{163}$ より，$U$ が $n$ 次正方行列であるならば，単位行列$\nr{matrix}{184}$ $I_n$ を用いて</p>
-	<p><center>\begin{align*}
-		UU^* = U^*U = I_n
-		\end{align*}</center></p>
-	<p>が成り立つ．</p>
+	<div class="modelx">
+		<p> 逆行列の定義$\nr{regular}{163}$ より，$U$ が $n$ 次正方行列であるならば，単位行列$\nr{matrix}{184}$ $I_n$ を用いて</p>
+		<p><center>\begin{align*}
+			UU^* = U^*U = I_n
+			\end{align*}</center></p>
+		<p>が成り立つ．</p>
 	</div>
 </details>
+</div>
 <br>
-
-<p id="383">&nbsp;</p>
-<div class="exmtl">[#383] 例：２次ユニタリ行列</div>
-<div class="exm">
+    
+<p id="1">&nbsp;</p><script>var curbox = td7</script>
+<div class="exm"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>$a,\ b\in \mathbb{C},\ \delta\in [0,\,2\pi)$ に対して以下で定義される２次正方行列 $U$ はユニタリ行列である．</p>
 	<p><center>\begin{align*}
 		U = \left[\begin{array}{cc}a & b\\ -e^{i\delta}\overline{b} & e^{i\delta}\overline{a} \end{array}\right].
 		\end{align*}</center></p>
 	<p>また，任意の２次のユニタリ行列は $(a,\ b,\ \delta)$ を適当に与えることでこの形で表せる．</p>
 </div>
-<details class="exmtl" style="margin-top: -0.5%">
+<details class="dtl">
 	<summary>証明</summary>
-	<div class="exm">
+	<div id="tx">
 	</div>
 </details>
-<br>
-
-<p id="261">&nbsp;</p>
-<div class="prptl">[#261] 命題：ユニタリ行列の積はユニタリ行列</div>
-<div class="prp">
-	<p>行列 $U,\ V$ が共にユニタリならば，積 $UV$ もユニタリ行列である．</p>
 </div>
-<details class="prptl" style="margin-top: -0.5%">
-	<summary>証明</summary>
-	<div class="prp">
-	<p><center>\begin{align*}
-		(UV)^{-1} \,\refeq{matrix}{166}\, V^{-1}U^{-1} \,\refeq{unitary-matrix}{260}\, V^* U^* \,\refeq{adjoint}{257}\, (UV)^*.
-		\end{align*}</center></p>
-	<p>より，$UV$ はユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>
-	</div>
-</details>
-<details class="prptl">
-	<summary>補足</summary>
-	<div class="prp">
-	<p>この命題を繰り返し用いることで，次も成り立つ：</p>
-	<div class="fcttl">系</div>
-	<div class="fct">
-	<p>行列 $U_1,\ U_2,\ \cdots,\ U_N$ がすべてユニタリであるならば，その積 $P = \prod_{n=1}^{N}U_n$ もまたユニタリ行列である．</p>
-	</div>
-	</div>
-</details>
 <br>
 
-<p id="262">&nbsp;</p>
-<div class="prptl">[#262] 命題：ユニタリ行列の逆行列はユニタリ行列</div>
-<div class="prp">
+<p id="1">&nbsp;</p><script>var curbox = pr7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>行列 $U,\ V$ が共にユニタリ行列であるならば，積 $UV$ もまたユニタリ行列である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p><center>\begin{align*}
+		(UV)^{-1} \,\refeq{matrix}{166}\, V^{-1}U^{-1} \,\refeq{unitary-matrix}{260}\, V^* U^* \,\refeq{adjoint}{257}\, (UV)^*.
+			\end{align*}</center></p>
+		<p>より，$UV$ はユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>
+	</div>
+</details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p>この命題を繰り返し用いることで，次も成り立つ：</p>
+		<div class="fct"><p style="border-left:5px solid transparent;">系</p>
+		<div id="cortx">
+		<p>行列 $U_1,\ U_2,\ \cdots,\ U_N$ がすべてユニタリであるならば，その積 $P = \prod_{n=1}^{N}U_n$ もまたユニタリ行列である．</p>
+		</div>
+		</div>
+	</div>
+</details>
+</div>
+<br>
+
+<p id="1">&nbsp;</p><script>var curbox = iv7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>行列 $U$ がユニタリならば，逆行列 $U^{-1}$ もユニタリ行列である．</p>
 </div>
-<details class="prptl" style="margin-top: -0.5%">
+<details class="dtl">
 	<summary>証明</summary>
-	<div class="prp">
+	<div id="tx">
 	<p><center>\begin{align*}
 		(U^{-1})^{-1} \,\refeq{unitary-matrix}{260}\, (U^*)^{-1} \,\refeq{adjoint}{266}\, (U^{-1})^*
 		\end{align*}</center></p>
 	<p>より，$U^{-1}$ はユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>
-	</div>	
+	</div>
 </details>
+</div>
 <br>
 
-<p id="263">&nbsp;</p>
-<div class="prptl">[#263] 命題：ユニタリ行列の随伴行列はユニタリ行列</div>
-<div class="prp">
+<p id="1">&nbsp;</p><script>var curbox = ad7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>行列 $U$ がユニタリならば，随伴行列 $U^*$ もユニタリ行列である．</p>
 </div>
-<details class="prptl" style="margin-top: -0.5%">
+<details class="dtl">
 	<summary>証明</summary>
-	<div class="prp">
+	<div id="tx">
 	<p> $U$ を $n$ 次の正方行列とすれば</p>
 	<p><center>\begin{align*}
 		U^{-1} = U^* \ \Longleftrightarrow\ (U^{-1})^* = (U^*)^* \ \reflr{adjoint}{266}\ (U^*)^{-1} = (U^*)^*.
@@ -138,27 +147,28 @@ updated on 2023/3/11
 	<p>よって，$U^*$ 自身もユニタリ行列の定義$\nr{unitary-matrix}{260}$ を満たす．</p>
 	</div>
 </details>
+</div>
 <br>
 
-<p id="267">&nbsp;</p>
-<div class="prptl">[#267] 命題：ユニタリ行列の行列式の絶対値</div>
-<div class="prp">
+<p id="1">&nbsp;</p><script>var curbox = da7</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>ユニタリ行列 $U$ に対して</p>
 	<p><center>\begin{align*}
 		|\mathrm{det}\, U| = 1.
 		\end{align*}</center></p>
 </div>
-<details class="prptl" style="margin-top: -0.5%">
+<details class="dtl">
 	<summary>証明</summary>
-	<div class="prp">
+	<div id="tx">
 	</div>
 </details>
+</div>
 <br>
 
-<br><br>
-<div id="bib">
-<b>参考文献</b>
-	<ul>
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
 		<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社, 2012.</li>
 		<li>齋藤正彦: 線型代数学, 東京図書, 2014.</li>
 		<li><a href="https://mathlandscape.com/unitary-matrix/">ユニタリ行列の定義と性質10個とその証明 - 数学の景色</a></li>
@@ -166,6 +176,11 @@ updated on 2023/3/11
 		<li><a href="https://eman-physics.net/math/lie02.html">ユニタリ行列の性質 - EMANの物理数学</a> [2023/2/9 閲覧].</li>
 	</ul>
 </div>
+<br>
+	
+</div>
+
+<div class="footer"></div>
+
 </body>
 </html>
-
