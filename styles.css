@@ -105,6 +105,14 @@ body{
       padding:10px;
 }
 
+.cor{
+        padding: 0.5%; 
+        margin-bottom: 0.3%; 
+	font-size: 14px;
+	font-weight: normal;
+	background-color: #c8c8c8;
+}
+
 ul.defl{	
 	margin-top: 5.6px;
 	margin-left: 3em;
