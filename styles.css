@@ -105,12 +105,19 @@ body{
       padding:10px;
 }
 
-.cor{
-        padding: 0.5%; 
-        margin-bottom: 0.3%; 
-	font-size: 14px;
-	font-weight: normal;
-	background-color: #c8c8c8;
+.fct{
+	background: #646464;
+	color: #FFFFFF;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.fct #tx{
+      border-left: solid 0.8em #646464;
+      border-bottom:0.1em solid #646464;
+      background-color: #c8c8c8;
+      color:#000000;
+      font-weight: normal;
+      padding:10px;
 }
 
 ul.defl{	
