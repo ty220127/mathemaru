@@ -7,23 +7,41 @@ var refs = [];
 var ttls = [];
 var bns = [];
 
-//1:RW
-bns[1] = [];
-refs[1] = "https://ty220127.github.io/mathemaru/random-walk-z.html";
-ttls[1] = "１次元ランダムウォーク";
+//7:unitary matrix
+bns[7] = [];
+refs[7] = "https://ty220127.github.io/mathemaru/unitary-matrix.html";
+ttls[7] = "ユニタリ行列と直交行列";
 j = 0;
-j++; returnprob = j; bns[1][j] = "命題：再帰確率は $1$";
-j++; y = j;
-j++; x = j;
+j++; td7 = j; bns[7][j] = "例：２次ユニタリ行列";
+j++; pr7 = j; bns[7][j] = "命題：ユニタリ行列の積はユニタリ行列";
+j++; iv7 = j; bns[7][j] = "命題：ユニタリ行列の逆行列はユニタリ行列";
+j++; ad7 = j; bns[7][j] = "命題：ユニタリ行列の随伴行列はユニタリ行列";
+j++; da7 = j; bns[7][j] = "命題：ユニタリ行列の行列式の絶対値";
 
-//2:Markov
-bns[2] = [];
-refs[2] = "https://ty220127.github.io/mathemaru/markov.html";
-ttls[2] = "Markov 連鎖";
+//6:numerical-vector-space
+bns[6] = [];
+refs[6] = "https://ty220127.github.io/mathemaru/numerical-vector.html";
+ttls[6] = "数ベクトル空間";
 j = 0;
-j++; mpath = j; bns[2][j] = "命題：パスの確率";
-j++; mst = j; bns[2][j] = "定義：定常分布";
-j++; x = j;
+j++; numvecprop = j; bns[6][j] = "命題：数ベクトルの交換・結合・分配法則";
+j++; invnumvec = j; bns[6][j] = "定義：逆ベクトル，数ベクトルの減法";
+j++; zeronumvec = j; bns[6][j] = "定義：零ベクトル";
+j++; invzeronumvecprop = j; bns[6][j] = "命題：逆・零ベクトルに関する性質";
+
+//5:norm-space
+bns[5] = [];
+refs[5] = "https://ty220127.github.io/mathemaru/norm-space.html";
+ttls[5] = "ノルム空間";
+j = 0;
+j++; normisdist = j; bns[5][j] = "ノルム空間は距離空間";
+
+//4:inner-product-space
+bns[4] = [];
+refs[4] = "https://ty220127.github.io/mathemaru/inner-product-space.html";
+ttls[4] = "内積空間";
+j = 0;
+j++; antilinearity = j; bns[4][j] = "第二成分の反線形性";
+j++; inprodisnorm = j; bns[4][j] = "内積空間はノルム空間";
 
 //3:measurable_space
 bns[3] = [];
@@ -43,28 +61,21 @@ j++; sigma_generation = j; bns[3][j] = "例：σ加法族の生成";
 j++; sigma_gen_unique = j; bns[3][j] = "例：σ加法族の生成の一意性";
 j++; sigma_gen_inclusion = j; bns[3][j] = "例：生成されるσ加法族の包含";
 
-//4:inner-product-space
-bns[4] = [];
-refs[4] = "https://ty220127.github.io/mathemaru/inner-product-space.html";
-ttls[4] = "内積空間";
+//2:Markov
+bns[2] = [];
+refs[2] = "https://ty220127.github.io/mathemaru/markov.html";
+ttls[2] = "Markov 連鎖";
 j = 0;
-j++; antilinearity = j; bns[4][j] = "第二成分の反線形性";
-j++; inprodisnorm = j; bns[4][j] = "内積空間はノルム空間";
+j++; mpath = j; bns[2][j] = "命題：パスの確率";
+j++; mst = j; bns[2][j] = "定義：定常分布";
+j++; x = j;
 
-//5:norm-space
-bns[5] = [];
-refs[5] = "https://ty220127.github.io/mathemaru/norm-space.html";
-ttls[5] = "ノルム空間";
+//1:RW
+bns[1] = [];
+refs[1] = "https://ty220127.github.io/mathemaru/random-walk-z.html";
+ttls[1] = "１次元ランダムウォーク";
 j = 0;
-j++; normisdist = j; bns[5][j] = "ノルム空間は距離空間";
-
-//6:numerical-vector-space
-bns[6] = [];
-refs[6] = "https://ty220127.github.io/mathemaru/numerical-vector.html";
-ttls[6] = "数ベクトル空間";
-j = 0;
-j++; numvecprop = j; bns[6][j] = "命題：数ベクトルの交換・結合・分配法則";
-j++; invnumvec = j; bns[6][j] = "定義：逆ベクトル，数ベクトルの減法";
-j++; zeronumvec = j; bns[6][j] = "定義：零ベクトル";
-j++; invzeronumvecprop = j; bns[6][j] = "命題：逆・零ベクトルに関する性質";
+j++; returnprob = j; bns[1][j] = "命題：再帰確率は $1$";
+j++; y = j;
+j++; x = j;
 
