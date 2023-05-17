@@ -119,6 +119,15 @@ body{
       font-weight: normal;
       padding:10px;
 }
+.fct #cortx{
+      border-left: solid 0.3em #646464;
+      border-right: solid 0.3em #646464;
+      border-bottom:0.3em solid #646464;
+      background-color: #c8c8c8;
+      color:#000000;
+      font-weight: normal;
+      padding:10px;
+}
 
 ul.defl{	
 	margin-top: 5.6px;
