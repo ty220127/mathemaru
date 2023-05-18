@@ -59,6 +59,8 @@
 <center>
 <table rules="rows" style="font-size: 14px">
 <tbody>
+<tr><td rowspan="1" valign="top" nowrap=""><font color="green">230517</font>&nbsp;</td>			
+	<td><script>i = 7; document.write("No. " + i)</script> <a href="unitary-matrix.html"><script>document.write(ttls[7])</script></a>：内容を整理<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230421</font>&nbsp;</td>			
 	<td><a href="numerical-vector.html"><script>document.write(ttls[6])</script></a>：内容を整理<br>
 		追加：「<script>document.write(bns[6][numvecprop])</script>」<br>
@@ -521,3 +523,24 @@
 
 </body>
 </html>
+
+<script>
+ var moji = "PgNo"
+    var tmp = document.getElementsByClassName("page") ;
+	console.log(tmp)
+
+    for(var i=0; i<=tmp.length-1;i++){
+        //id追加
+        tmp[i].setAttribute("id",moji+i);
+    }
+
+var tt = [];
+
+for(var i = 0; i <= tmp.length-1; i++){
+	tt[i] = document.getElementById("PgNo" + i);
+	tt[i].href = refs[i+1];
+}
+console.log(tt)
+console.log(tt.href)
+
+</script>
