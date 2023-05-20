@@ -1,6 +1,5 @@
-
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
 <head>
 <script type="text/javascript" async
@@ -9,66 +8,76 @@
 	MathJax.Hub.Config({ TeX: { Macros: {
 		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
+		braket: ['\\langle{#1},\\,{#2}\\rangle', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
-		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
 		bs: '\\boldsymbol', 
-		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
-		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 	}}});
 </script>
 <script>
-	const ttl = "射影行列"
-	document.title= ttl + "｜MATHEMARU"
+	const established = "2022/6/5"
+	const updated = "2023/5/20"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+	const N = 8;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
+	
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
 
-<nav>
-<ul>
-<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
-</ul>
-</nav>
+<div class="boxes">
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
-established on 2022/6/15<br>
-updated on 2022/7/14<br>
-</p>
-    
-<p id="275">&nbsp;</p><div class="def">
-	<b>[#275] 定義：射影行列，直交射影行列</b><br>
+<div class="modeln">
+<center><script>document.write(ttls[N])</script></center>
+<div class="modelx">
 	<p>冪等性をもつ正方行列 $P$ を【射影行列 (projection matrix)】と呼ぶ：</p>
 	<p><center>\begin{align}
 		P^2 = P
 		\end{align}</center></p>
 	<p>特に，Hermite$\nr{hermitian-matrix}{258}$ である射影行列を【直交射影行列 (orthogonal projection matrix)】と呼ぶ．
 </div>
-<Details>
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+<details class="dtl">
 	<summary>補足</summary>
+	<div class="modelx">
 	<p>直交射影行列の定義をそのまま射影行列とする例も多い．特に，複素行列の範囲で議論する場合は，そちらの例の方が多いかもしれない．</p>
-</Details>
+	</div>
+</details>
+</div>
 <br>
-
-<p id="308">&nbsp;</p><div class="prp">
-	<b>[#308] 命題：射影行列の相補性 (complementarity of projection matrices)</b><br>
+    
+<p id="1">&nbsp;</p><script>var curbox = cp8</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>$n$ 次正方行列 $P$ が射影行列であるならば，$I_n -P$ もまた射影行列である．ただし，$I_n$ は $n$ 次単位行列$\nr{matrix}{184}$．特に $P$ が直交射影行列であるならば，$I_n-P$ も直交射影行列である．</p>
 </div>
-<Details>
+<details class="dtl">
 	<summary>証明</summary>
+	<div id="tx">
 	<p>$P$ が射影行列であるならば
 	<p><center>\begin{align}
 		(I_n-P)^2 &\,= I_n^2 -I_nP -PI_n + P^2\\
@@ -82,74 +91,91 @@ updated on 2022/7/14<br>
 			&\refeq{hermitian-matrix}{258} I_n  -P
 		\end{align}</center></p>
 	<p>も成り立つことから，$I_n-P$ も直交射影行列になる．</p>
-</Details>
-<details>
-	<summary>補足</summary>
-	<p> $I_n-P$ は，幾何的には $P$ と直交する関係である．実際，$P$ と $I_n-P$ の積は零行列である：</p>
-	<p><center>\begin{align}
-		&P(I_n- P) \,\refeq{matrix}{185}\, P - P^2 \,\refeq{projection-matrix}{275} P - P = O,\\
-		&(I_n- P)P \,\refeq{matrix}{185}\, P - P^2 \,\refeq{projection-matrix}{275} P - P = O.
-
-		\end{align}</center></p>
+	</div>
 </details>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+		<p> $I_n-P$ は，幾何的には $P$ と直交する関係である．実際，$P$ と $I_n-P$ の積は零行列である：</p>
+		<p><center>\begin{align}
+			&P(I_n- P) \,\refeq{matrix}{185}\, P - P^2 \,\refeq{projection-matrix}{275} P - P = O,\\
+			&(I_n- P)P \,\refeq{matrix}{185}\, P - P^2 \,\refeq{projection-matrix}{275} P - P = O.
+			\end{align}</center></p>
+	</div>
+</details>
+</div>
 <br>
 
-<p id="276">&nbsp;</p><div class="prp">
-	<b>[#276] 命題：射影行列の行列式</b><br>
+<p id="1">&nbsp;</p><script>var curbox = dt8</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>射影行列 $P$ の行列式は $0$ または $1$ である．
 </div>
-<Details>
+<details class="dtl">
 	<summary>証明</summary>
-	<p>射影行列の定義$\nr{projection-matrix}{275}$ より $P^2=P$ であるが，</p>
-	<p><center>\begin{align}
-		P^2 = P\ \Longleftrightarrow\ &\det(P^2) = \det(P)\\
-			\ \reflr{determinant}{294}\ & \det(P)^2 = \det(P)\\
-			\ \Longleftrightarrow\ & \det(P)^2 -\det(P) = 0\\
-			\ \Longleftrightarrow\ & \det(P) = 0\ \text{or}\ 1\\
-		\end{align}</center></p>
-	<p>となることより題意を得る．</p>
-</Details>
+	<div id="tx">
+		<p>射影行列の定義$\nr{projection-matrix}{275}$ より $P^2=P$ であるが，</p>
+		<p><center>\begin{align}
+			P^2 = P\ \Longleftrightarrow\ &\det(P^2) = \det(P)\\
+				\ \reflr{determinant}{294}\ & \det(P)^2 = \det(P)\\
+				\ \Longleftrightarrow\ & \det(P)^2 -\det(P) = 0\\
+				\ \Longleftrightarrow\ & \det(P) = 0\ \text{or}\ 1\\
+			\end{align}</center></p>
+		<p>となることより題意を得る．</p>
+	</div>
+</details>
+</div>
 <br>
 
-<p id="277">&nbsp;</p><div class="prp">
-	<b>[#277] 命題：射影行列の固有値</b><br>
+<p id="1">&nbsp;</p><script>var curbox = ev8</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>射影行列 $P$ の固有値$\nr{eigen}{160}$ は $0$ または $1$ である．
 </div>
-<Details>
+<details class="dtl">
 	<summary>証明</summary>
-	<p> $P$ の固有値を $\lambda$ とすると，固有値の定義$\nr{eigen}{160}$ より，ベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
-	<p><center>\begin{align}
-		P\bs{x} = \lambda\bs{x}
-		\end{align}</center></p>
-	<p>と書ける．一方で，このとき，$\lambda^2$ が $P^2$ の固有値の１つとなる$\nr{eigen}{278}$．つまり，</p>
-	<p><center>\begin{align}
-		P^2\bs{x} = \lambda^2\bs{x}.
-		\end{align}</center></p>
-	<p>ここで，$P$ は射影行列$\nr{projection-matrix}{275}$ であるから，</p>
-	<p><center>\begin{align}
-		P\bs{x} = P^2\bs{x}
-		\end{align}</center></p>
-	<p>である．以上により，</p>
-	<p><center>\begin{align}
-		\lambda\bs{x} = \lambda^2\bs{x},\quad\text{i.e.,}\quad (\lambda^2-\lambda)\bs{x}=\bs{0}.
-		\end{align}</center></p>
-	<p>いま，$\bs{x}\not =\bs{0}$ であるから</p>
-	<p><center>\begin{align}
-		\lambda^2-\lambda=0
-		\end{align}</center></p>
-	<p>であり，これを $\lambda$ について解けば $\lambda = 0\ \text{or}\ 1$ を得る．
-</Details>
+	<div id="tx">
+		<p> $P$ の固有値を $\lambda$ とすると，固有値の定義$\nr{eigen}{160}$ より，ベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
+		<p><center>\begin{align}
+			P\bs{x} = \lambda\bs{x}
+			\end{align}</center></p>
+		<p>と書ける．一方で，このとき，$\lambda^2$ が $P^2$ の固有値の１つとなる$\nr{eigen}{278}$．つまり，</p>	
+		<p><center>\begin{align}
+			P^2\bs{x} = \lambda^2\bs{x}.
+			\end{align}</center></p>
+		<p>ここで，$P$ は射影行列$\nr{projection-matrix}{275}$ であるから，</p>
+		<p><center>\begin{align}
+			P\bs{x} = P^2\bs{x}
+			\end{align}</center></p>
+		<p>である．以上により，</p>
+		<p><center>\begin{align}
+			\lambda\bs{x} = \lambda^2\bs{x},\quad\text{i.e.,}\quad (\lambda^2-\lambda)\bs{x}=\bs{0}.
+			\end{align}</center></p>
+		<p>いま，$\bs{x}\not =\bs{0}$ であるから</p>
+		<p><center>\begin{align}
+			\lambda^2-\lambda=0
+			\end{align}</center></p>
+		<p>であり，これを $\lambda$ について解けば $\lambda = 0\ \text{or}\ 1$ を得る．
+	</div>
+</details>
+</div>
 <br>
 
-<br><br>
-<div id="bib"><b>参考文献</b>
-<ul>
-	<li>石川智, 小川朋宏, 河内亮周, 木村元, 林正人: 量子情報科学入門, 共立出版, 2012.</li>
-	<li><a href="https://www.chart.co.jp/subject/sugaku/suken_tsushin/72/72-6.pdf">杉本幸司: 行列のスペクトル分解とそれに由来する大学入試問題</a> [2022/7/7 閲覧].</li>
-	<li><a href="https://manabitimes.jp/math/2486">射影行列のイメージと楽しい公式 _ 高校数学の美しい物語</a> [2022/6/15 閲覧].</li>
-	<li><a href="https://risalc.info/src/projection-matrix-properties.html">射影行列の性質_公式 (証明付) - 理数アラカルト -</a> [2022/6/15 閲覧].</li>
-	<li><a href="https://math-fun.net/20210620/15275/">射影行列、射影作用素とは：例、定義、性質 - 趣味の大学数学</a> [2022/6/17 閲覧].</li>
-</ul>
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li>石川智, 小川朋宏, 河内亮周, 木村元, 林正人: 量子情報科学入門, 共立出版, 2012.</li>
+		<li><a href="https://www.chart.co.jp/subject/sugaku/suken_tsushin/72/72-6.pdf">杉本幸司: 行列のスペクトル分解とそれに由来する大学入試問題</a> [2022/7/7 閲覧].</li>
+		<li><a href="https://manabitimes.jp/math/2486">射影行列のイメージと楽しい公式 _ 高校数学の美しい物語</a> [2022/6/15 閲覧].</li>
+		<li><a href="https://risalc.info/src/projection-matrix-properties.html">射影行列の性質_公式 (証明付) - 理数アラカルト -</a> [2022/6/15 閲覧].</li>
+		<li><a href="https://math-fun.net/20210620/15275/">射影行列、射影作用素とは：例、定義、性質 - 趣味の大学数学</a> [2022/6/17 閲覧].</li>
+	</ul>
 </div>
+<br>
+	
+</div>
+
+<div class="footer"></div>
+
 </body>
 </html>
