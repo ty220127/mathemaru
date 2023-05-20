@@ -7,6 +7,15 @@ var refs = [];
 var ttls = [];
 var bns = [];
 
+//8:projection matrix
+bns[8] = [];
+refs[8] = "https://ty220127.github.io/mathemaru/projection-matrix.html";
+ttls[8] = "射影行列";
+j = 0;
+j++; cp8 = j; bns[8][j] = "命題：射影行列の相補性";
+j++; dt8 = j; bns[8][j] = "命題：射影行列の行列式";
+j++; ev8 = j; bns[8][j] = "命題：射影行列の固有値";
+
 //7:unitary matrix
 bns[7] = [];
 refs[7] = "https://ty220127.github.io/mathemaru/unitary-matrix.html";
