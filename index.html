@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
@@ -14,6 +13,7 @@
 <script>
 	const ttl = "MATHEMARU"
 	document.title= ttl
+	const LIST = [6, 7, 8, 3, 2, 1, 4, 5];
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
@@ -32,27 +32,40 @@
 </center>
 <br><br>
 
-<script>i = 0;</script>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
-<script>i++; document.write(i)</script> <a class="page"><script>document.write(ttls[i])</script></a><br>
+<script>i = -1;</script>
+
+<Details style="border-left: solid 1em transparent; border-bottom: solid 0.5em transparent;">
+  <summary><field>線形代数A</field></summary>
+  <ul style="border-left: solid 2em transparent;">
+    <li><script>i++; document.write(LIST[i] + ".")</script> &nbsp <a class="page"><script>document.write(ttls[LIST[i]])</script></a></li>
+    <li><script>i++; document.write(LIST[i] + ".")</script> &nbsp <a class="page"><script>document.write(ttls[LIST[i]])</script></a></li>
+    <li><script>i++; document.write(LIST[i] + ".")</script> &nbsp <a class="page"><script>document.write(ttls[LIST[i]])</script></a></li>
+  </ul>
+</Details>
+
+<Details style="border-left: solid 1em transparent; border-bottom: solid 0.5em transparent;">
+  <summary><field>測度論</field></summary>
+  <ul style="border-left: solid 2em transparent;">
+    <li><script>i++; document.write(LIST[i] + ".")</script> &nbsp <a class="page"><script>document.write(ttls[LIST[i]])</script></a></li>
+  </ul>
+</Details>
+
+<Details style="border-left: solid 1em transparent; border-bottom: solid 0.5em transparent;">
+  <summary><field>確率過程</field></summary>
+  <ul style="border-left: solid 2em transparent;">
+    <li><script>i++; document.write(LIST[i] + ".")</script> &nbsp <a class="page"><script>document.write(ttls[LIST[i]])</script></a></li>
+    <li><script>i++; document.write(LIST[i] + ".")</script> &nbsp <a class="page"><script>document.write(ttls[LIST[i]])</script></a></li>
+  </ul>
+</Details>
+
+<Details style="border-left: solid 1em transparent; border-bottom: solid 0.5em transparent;">
+  <summary><field>集合と位相</field></summary>
+  <ul style="border-left: solid 2em transparent;">
+    <li><script>i++; document.write(LIST[i] + ".")</script> &nbsp <a class="page"><script>document.write(ttls[LIST[i]])</script></a></li>
+    <li><script>i++; document.write(LIST[i] + ".")</script> &nbsp <a class="page"><script>document.write(ttls[LIST[i]])</script></a></li>
+  </ul>
+</Details>
+
 
 <details style="margin-top: 1%">
 	<summary>リニューアル前の状態のページ</summary>
@@ -252,16 +265,16 @@
     var tmp = document.getElementsByClassName("page") ;
 	console.log(tmp)
 
-    for(var i=0; i<=tmp.length-1;i++){
+    for(var j=0; j<=tmp.length-1;j++){
         //id追加
-        tmp[i].setAttribute("id",moji+i);
+        tmp[j].setAttribute("id",moji+ j);
     }
 
 var tt = [];
 
-for(var i = 0; i <= tmp.length-1; i++){
-	tt[i] = document.getElementById("PgNo" + i);
-	tt[i].href = refs[i+1];
+for(var j = 0; j <= tmp.length-1; j++){
+	tt[j] = document.getElementById("PgNo" + j);
+	tt[j].href = refs[LIST[j]];
 }
 console.log(tt)
 console.log(tt.href)
