@@ -1,5 +1,6 @@
+
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
 <head>
 <script type="text/javascript" async
@@ -8,58 +9,65 @@
 	MathJax.Hub.Config({ TeX: { Macros: {
 		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
+		braket: ['\\langle{#1},\\,{#2}\\rangle', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
-		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
 		bs: '\\boldsymbol', 
-		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
-		twobytwo: ['\\left[\\begin{array}{cc} #1 & #2\\\\ #3 & #4\\end{array}\\right]', 4],
 	}}});
 </script>
 <script>
-	const ttl = "固有値と固有ベクトル"
-	document.title= ttl + "｜MATHEMARU"
+	const established = "2022/3/29"
+	const updated = "2023/8/3"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+	const N = 9;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
+	
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
 
-<nav>
-<ul>
-<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
-</ul>
-</nav>
+<div class="boxes">
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
-established on 2022/3/29<br>
-updated on 2022/9/24
-</p>
-
-<p id="160">&nbsp;</p><div class="def">
-<b>[#160] 定義：固有値，固有ベクトル</b><br>
+<div class="modeln">
+<center><script>document.write(ttls[N])</script></center>
+<div class="modelx">
 	<p> $n$ 次正方行列 $A$ に対して数 $\lambda\in\mathbb{C}$ と $n$ 次列ベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
 	<p><center>$\begin{align*}
 		A\bs{x} = \lambda\bs{x}
 		\end{align*}$</center></p>
-	<p>が成り立つとき，$\lambda$ を $A$ の【固有値 (eigenvalue)】，$\bs{x}$ を $\lambda$ に属する【固有ベクトル (eigenvector)】と呼ぶ．また，$A$ の固有値の集合を $A$ の【スペクトル (spectrum)】と呼び，$\mathrm{Spec}(A)$ 或いは $\sigma(A)$ で表す．</p>
+	<p>が成り立つとき，$\lambda$ を $A$ の【固有値 (eigenvalue)】，$\bs{x}$ を $\lambda$ に属する【固有ベクトル (eigenvector)】と呼ぶ．また，$A$ の固有値の集合を $A$ の【スペクトル (spectrum)】と呼び，$\operatorname{Spec}(A)$ 或いは $\sigma(A)$ で表す．</p>
+</div>
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
 </div>
 <br>
-
-<p id="161">&nbsp;</p><div class="def">
-<b>[#161] 定義：固有多項式，固有方程式</b><br>
+    
+<p id="1">&nbsp;</p><script>var curbox = ch9</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p> $n$ 次正方行列 $A$ に対して，$\lambda\in \mathbb{C}$ に関する多項式 $\varPhi_A(\lambda)$ を $A-\lambda I_n$ の行列式$\nr{determinant}{289}$ で定義し（ただし $I_n$ は $n$ 次単位行列$\nr{matrix}{184}$），$A$ の【固有多項式 (特性多項式; characteristic polynomial)】と呼ぶ：</p>
 	<p><center>\begin{align}
 		\varPhi_A(\lambda) := \det (A-\lambda I_n).
@@ -70,16 +78,27 @@ updated on 2022/9/24
 		\end{align}</center></p>
 	<p>を $A$ の【固有方程式 (特性方程式; characteristic equation)】と呼ぶ．</p>
 </div>
-<br>
-
-<p id="358">&nbsp;</p><div class="prp">
-<b>[#358] 命題：固有値と固有方程式</b><br>
-	<p> $A$ を $n$ 次正方行列とする．$\lambda\in \mathbb{C}$ が $A$ の固有値$\nr{eigen}{160}$ であることは，その $\lambda$ が $A$ の固有方程式$\nr{eigen}{161}$ の解である（つまり $A$ の固有多項式の根である）ことと同値である．</p>
 </div>
 <br>
 
-<p id="183">&nbsp;</p><div class="exm">
-<b>[#183] 例題：固有値と固有ベクトルの導出</b><br>
+<p id="1">&nbsp;</p><script>var curbox = ce9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p> $A$ を $n$ 次正方行列とする．$\lambda\in \mathbb{C}$ が $A$ の固有値$\nr{eigen}{160}$ であることは，その $\lambda$ が $A$ の固有方程式$\nr{eigen}{161}$ の解である（つまり $A$ の固有多項式の根である）ことと同値である．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+		<p></p>
+	</div>
+</details>
+</div>
+<br>
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = exe9</script>
+<div class="exm"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>正方行列 $A$ を</p>
 	<p><center>$\begin{align*}
 		A= \left[\begin{array}{ccc} 1 & \sqrt{2} & 0\\ \sqrt{2} & 1 & \sqrt{2} \\ 0 & \sqrt{2} & 1 \end{array}\right]
@@ -88,8 +107,9 @@ updated on 2022/9/24
 		$A$ のすべての固有値と，それらに対応する固有ベクトルを求めよ．ただし，固有ベクトルとして，ノルムは $1$ かつ第一要素は非負実数であるものを選べ．</p>
 	<p style="text-align:right;">[2020 東京大学 大学院情報理工学系研究科 一般教育科目(数学)]
 </div>
-<Details>
+<details class="dtl">
 <summary>解答</summary>
+	<div id="tx">
 	<p> $A$ の固有値を $\lambda$ とすれば，固有方程式</p>
 	<p><center>$\begin{align*}
 		\det (A-\lambda I) = 0,\,\,\text{i.e.,}\,\,
@@ -126,33 +146,50 @@ updated on 2022/9/24
 	<p><center>$\begin{align*}\color{red}{
 		(\lambda,\,\bs{x}) = \left( -1,\,\fraction{1}{2}\left[\begin{array}{c} 1\\ -\sqrt{2}\\ 1\end{array}\right]\right),\,\left( 1,\,\fraction{1}{\sqrt{2}}\left[\begin{array}{c} 1\\ 0\\ -1\end{array}\right]\right),\,\left(3,\,\fraction{1}{2}\left[\begin{array}{c} 1\\ \sqrt{2}\\ 1\end{array}\right]\right).}
 		\end{align*}$</center></p>
-</Details>
-<br>
-
-<p id="284">&nbsp;</p><div class="prp">
-<b>[#284] 命題：正則行列の固有値は非零</b><br>
-	<p>正方行列 $A$ が $0$ を固有値として持つならば，$A$ は正則でない．</p>
+	</div>
+</details>
 </div>
-<details>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = reg9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>正方行列 $A$ が正則であることは，$A$ が $0$ を固有値に持たないことと同値である．</p>
+</div>
+<details class="dtl">
 	<summary>証明</summary>
+	<div id="tx">
 	<p>正方行列 $A$ が $0$ を固有値として持つことは</p>
 	<p><center>\begin{align}
 		\det A = 0
 		\end{align}</center></p>
 	<p>であることと同値である$\nr{eigen}{358}$ が，これは $A$ が正則でないことと同値である．</p>
+	</div>
 </details>
-<details>
+<details class="dtl">
 	<summary>補足</summary>
+	<div id="tx">
 	<p>この命題を対偶$\nr{implication}{68}$ をとれば，「正方行列 $A$ が 正則であるならば，$A$ は $0$ を固有値として持たない」となる．</p>
+	</div>
 </details>
-<br>
-
-<p id="285">&nbsp;</p><div class="prp">
-<b>[#285] 命題：逆行列の固有値は元の固有値の逆数</b><br>
-	<p> $\lambda\in\mathbb{C}$ が正則$\nr{regular}{163}$ な正方行列 $A$ の固有値であるとき $\lambda^{-1}$ は $A^{-1}$ の固有値である．</p>
 </div>
-<details>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = inv9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>正則行列 $A$ に対して，</p>
+	<p>\begin{align}
+		\operatorname{Spec}(A^{-1}) = \left\{\frac{1}{\lambda} \mathrel{ }\middle|\mathrel{ } \lambda\in \operatorname{Spec}(A)\right\}.
+		\end{align}</p>
+</div>
+<details class="dtl">
 	<summary>証明</summary>
+	<div id="tx">
 	<p>仮定と固有値の定義$\nr{eigen}{160}$ より，ベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
 	<p><center>\begin{align}
 		A\bs{x} = \lambda\bs{x}.
@@ -166,15 +203,24 @@ updated on 2022/9/24
 		\fraction{1}{\lambda}\,\bs{x} = A^{-1}\bs{x},\ \ \text{i.e.,}\ \ A^{-1}\bs{x} = \lambda^{-1}\bs{x}.
 		\end{align}</center></p>
 	<p>よって，$\lambda^{-1}$ は $A^{-1}$ の固有値である．</p>
+	</div>
 </details>
-<br>
-
-<p id="278">&nbsp;</p><div class="prp">
-<b>[#278] 命題：行列の $\bs{m}$ 乗の固有値は元の固有値の $\bs{m}$ 乗</b><br>
-	<p> $\lambda\in\mathbb{C}$ が正方行列 $A$ の固有値であるとき，任意の $m\in\mathbb{N}$ に対して $\lambda^m$ は $A^m$ の固有値である．</p>
 </div>
-<details>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = pow9</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>正方行列 $A$ と $m\in \mathbb{N}$ に対して，</p>
+	<p>\begin{align}
+		\operatorname{Spec}(A^{m}) = \left\{\lambda^m \mathrel{ }\middle|\mathrel{ } \lambda\in \operatorname{Spec}(A)\right\}.
+		\end{align}</p>
+</div>
+<details class="dtl">
 	<summary>証明</summary>
+	<div id="tx">
 	<p>帰納法により示す．$m=1$ のときは仮定により明らか．<br>
 		ある $m\in\mathbb{N}$ に対して $\lambda^m$ は $A^m$ の固有値である，つまりベクトル $\bs{x}\not =\bs{0}$ が存在して</p>
 	<p><center>\begin{align*}
@@ -190,22 +236,27 @@ updated on 2022/9/24
 		\end{align*}</center></p>
 	<p>と同値であるから，$\lambda^m$ が $A^m$ の固有値であるならば，$\lambda^{m+1}$ は $A$ の固有値である．<br>
 		以上により，任意の $m\in\mathbb{N}$ に対して $\lambda^m$ は $A^m$ の固有値である．</p>
+	</div>
 </details>
-<br>
-
-<br><br>
-<div id="bib">
-<b>参考文献</b>
-<ul>
-	<li><a href="https://www.akita-pu.ac.jp/system/elect/ins/kusakari/japanese/teaching/Old/LinearAlgebra/2009/index.html">草苅良至: 線型代数学2009, 第10回 固有値とその応用, 公開pdf</a> [2022/9/24 閲覧].</li>
-	<li>齋藤正彦: 線型代数学, 東京図書 (2014).</li>
-	<li><a href="https://risalc.info/src/eigenvalue-vector.html">固有値と固有ベクトルの解説～具体例と性質～(証明付) - 理数アラカルト</a></li>
-	<li><a href="https://risalc.info/src/inverse-matrix-eigenvalue.html">逆行列の固有値 - 理数アラカルト</a> [2022/6/28 閲覧].</li>
-</ul>	      
 </div>
-      
-<p style="text-align:right;">
-<a href="index.html">トップページに戻る</a>
-</p>
+<br>
+<!-- End of a box -->
+
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li>石川智, 小川朋宏, 河内亮周, 木村元, 林正人: 量子情報科学入門, 共立出版, 2012.</li>
+		<li><a href="https://www.chart.co.jp/subject/sugaku/suken_tsushin/72/72-6.pdf">杉本幸司: 行列のスペクトル分解とそれに由来する大学入試問題</a> [2022/7/7 閲覧].</li>
+		<li><a href="https://manabitimes.jp/math/2486">射影行列のイメージと楽しい公式 _ 高校数学の美しい物語</a> [2022/6/15 閲覧].</li>
+		<li><a href="https://risalc.info/src/projection-matrix-properties.html">射影行列の性質_公式 (証明付) - 理数アラカルト -</a> [2022/6/15 閲覧].</li>
+		<li><a href="https://math-fun.net/20210620/15275/">射影行列、射影作用素とは：例、定義、性質 - 趣味の大学数学</a> [2022/6/17 閲覧].</li>
+	</ul>
+</div>
+<br>
+	
+</div>
+
+<div class="footer"></div>
+
 </body>
 </html>
