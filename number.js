@@ -7,6 +7,18 @@ var refs = [];
 var ttls = [];
 var bns = [];
 
+//9:eigenvalue_eigenvector
+bns[9] = [];
+refs[9] = "https://ty220127.github.io/mathemaru/eigen.html";
+ttls[9] = "固有値と固有ベクトル";
+j = 0;
+j++; ch9 = j; bns[9][j] = "固有多項式，固有方程式";
+j++; ce9 = j; bns[9][j] = "命題：固有方程式の解は固有値";
+j++; exe9 = j; bns[9][j] = "例題：固有値と固有ベクトルの計算";
+j++; reg9 = j; bns[9][j] = "命題：正則行列の固有値は非零";
+j++; inv9 = j; bns[9][j] = "命題：逆行列の固有値は元の行列の固有値の逆数";
+j++; pow9 = j; bns[9][j] = "命題：行列の $m$ 乗の固有値は元の固有値の $m$ 乗";
+
 //8:projection matrix
 bns[8] = [];
 refs[8] = "https://ty220127.github.io/mathemaru/projection-matrix.html";
