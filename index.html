@@ -20,6 +20,19 @@
 
 <body>
 <script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+const pad2 = (n) =>  { return n < 10 ? '0' + n : n }
+
+var no = [];
+for(i = 1; i<dates.length; i++){
+no[i] = dates[i].getFullYear().toString() 
+　　　　　　　+ pad2(dates[i].getMonth() + 1) 
+　　　　　　　+ pad2(dates[i].getDate()) 
+}
+no.sort();
+
+console.log(no);
+</script>
 
 <div class="mathemaru">
 <center style="font-size: 200%"><a href="index.html">MATHEMARU</a></center>
