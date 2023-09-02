@@ -1,5 +1,5 @@
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/sample.css"/>
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
 <head>
 <script type="text/javascript" async
@@ -8,51 +8,48 @@
 	MathJax.Hub.Config({ TeX: { Macros: {
 		numref: ['\\href{https://ty220127.github.io/mathemaru/#1.html###2}{\\scriptsize\\sf[\\# #2]}',2],
 		nr: ['^\\numref{#1}{#2}', 2],
+		braket: ['\\langle{#1},\\,{#2}\\rangle', 2],
 		refeq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{=}',2],
-		refleq: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\leq}',2],
 		refeqv: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\equiv}',2],
 		reflr: ['\\underset{\\hspace{-0.5mm}\\numref{#1}{#2}}{\\Longleftrightarrow}',2],
 		refr: ['\\underset{\\numref{#1}{#2}}{\\Longrightarrow}',2],
+		refsb: ['\\underset{\\hspace{-1mm}\\numref{#1}{#2}}{\\subset}',2],
 		bs: '\\boldsymbol', 
-		bsqcu: '\\displaystyle\\bigsqcup', 
 		bcu: '\\displaystyle\\bigcup', 
 		bca: '\\displaystyle\\bigcap', 
 		fraction: ['\\displaystyle\\frac{#1}{#2}', 2],
 		limit: '\\displaystyle\\lim',
 		sig: '\\displaystyle\\sum',
-		cpl: '\\mathrm{c}',
+		cpl: '\\mathsf{c}',
 		trp: '\\mathsf{T}',
 		rd: '\\mathrm{d}',
 		intgrl: '\\displaystyle\\int',
-		bra: ['\\langle{#1}|', 1],
-		ket: ['|{#1}\\rangle', 1],
-		braket: ['\\langle{#1}|{#2}\\rangle', 2],
 	}}});
 </script>
 <script>
-	const ttl = "写像"
-	document.title= ttl + "｜MATHEMARU"
+	const established = "2022/2/21"
+	const updated = "2023/9/2"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<center><div id="ttlhead"><script>document.write(ttl)</script></div></center>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+	const N = 10;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
+	
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
 
-<nav>
-<ul>
-<li  style="left:-78%;"><a href="index.html">MATHEMARU</a></li>
-</ul>
-</nav>
+<div class="boxes">
 
-<p style="text-align:right;  margin-top:-1em; margin-bottom: -2em;">
-established on 2022/2/21<br>
-updated on 2023/3/12
-</p>
-    
-<p id="99">&nbsp;</p><div class="deftl">
-	[#99] 定義：写像</div>
-<div class="def">
+<div class="modeln">
+<center><script>document.write(ttls[N])</script></center>
+<div class="modelx">
 	<p>$X,\,Y$ を集合とする．$X$ の任意の元 $x$ について $Y$ の元 $y$ がただ１つ関係するよう定められた関係$\nr{relation}{334}$ $f = (X,\,Y,\,\varGamma)$ を $X$ から $Y$ への【写像 (mapping; map)】と呼ぶ．グラフ $\varGamma$ は，形式的には以下で定義される：</p>
 	<p><center>\begin{align}
 		{}^\forall x\in X,\ {}^\exists y\in Y\ \text{s.t.}\ ((x,\,y)\in\varGamma)\land ((x,\,y')\in\varGamma\,\to\, y'=y).
@@ -65,99 +62,126 @@ updated on 2023/3/12
 	<p>と書く．</p>
 	<p>写像のうち，始域と終域がともにある集合 $X$ であるもの（二項関係から定義される写像）を $X$ 上の【変換 (transformation)】と呼ぶ．</p>
 </div>
-<details class="deftl">
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+<details class="dtl">
 	<summary>補足１</summary>
-	<div class="def">
+	<div class="modelx">
 	<p>$\varGamma$ の定義は，つまり $x\in X$ に対して $y\in Y$ が一意に決まるよう定義されることをいっている：</p>
 	<p><center>\begin{align}
 		{}^\forall x\in X,\ {}^{\exists !} y\in Y\ \text{s.t.}\ (x,\,y)\in\varGamma.
 		\end{align}</center></p>
 	</div>
 </details>
-<details class="deftl">
+<details class="dtl">
 	<summary>補足２</summary>
-	<div class="def">
+	<div class="modelx">
 	<p>写像の相等性は，順序組$\nr{direct-product}{339}$ の相等性$\nr{direct-product}{340}$ に則る．つまり，$f = (X,\,Y,\,\varGamma)$ と $g=(Z,\,W,\,\varDelta)$ に対して</p>
 	<p><center>\begin{align}
 		f=g\ \Longleftrightarrow\ (X=Z)\land (Y=W)\land (\varGamma = \varDelta).
 		\end{align}</center></p>
 	<p>これにより，始域と終域が一致する下で，任意の $x$ に対して $f(x)=g(x)$ であることは $f=g$ であることの特徴づけとなる．</p>
+	</div>
 </details>
+</div>
 <br>
-  
-<p id="102">&nbsp;</p><div class="deftl">
-	[#102] 定義：合成写像</div>
-<div class="def">
+    
+<p id="1">&nbsp;</p><script>var curbox = Cp10</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>写像 $f:X\rightarrow Y$ と $g:Y\rightarrow Z$ に対して，$X$ の元を $f$ で写し，さらに $g$ で写すような写像を $f$ と $g$ の【合成写像 (composition)】と呼ぶ：</p>
-	<p><center>$
+	<p>\begin{align}
 		g\circ f: X\to Z,\quad x\mapsto g(f(x)).
-		$</center></p>
+		\end{align}</p>
 	<p>すなわち $g\circ f(x) = g(f(x))$ である．</p>
 </div>
-<br>
-  
-<p id="109">&nbsp;</p><div class="prptl">
-	[#109] 命題：合成写像の結合法則</div>
-<div class="prp">
-	<p>写像 $f:X\rightarrow Y,\,g:Y\rightarrow Z,\,h:Z\rightarrow W$ に対して，</p>
-	<p><center>$(h\circ g)\circ f = h\circ (g\circ f).$</center></p>
 </div>
-<details class="prptl">
-	<summary>証明</summary><div class="prp">
-	<p>合成写像の定義 <a href="#102">[#102]</a> を繰り返し用いることにより，両者が等しいことが確認される：</p>
-	<p><center>$\begin{align*}
-		((h\circ g)\circ f)(x) &= h\circ g(f(x)) = h(g(f(x))),\\
-		(h\circ (g\circ f))(x) &= h(g\circ f(x)) = h(g(f(x))).
-		\end{align*}$</center></p>
-</div></details>
-<br>
-  
-<p id="107">&nbsp;</p><div class="deftl">
-	[#107] 定義：恒等変換</div>
-<div class="def">
-	<p>何も変えない $X$ 上の変換 $\mathrm{id}_X$ を $X$ 上の【恒等変換 (identity transformation)】或いは【恒等写像 (identity map)】と呼ぶ：</p>
-	<p><center>$\mathrm{id}_X:X\rightarrow X,\quad x\mapsto x.$</center></p>
-	<p>すなわち $\mathrm{id}_X(x)=x$ である．</p>
-</div>
-<br>
-  
-<p id="108">&nbsp;</p><div class="prptl">
-	[#108] 命題：恒等変換との合成</div>
-<div class="prp">
-	<p>写像 $f:X\rightarrow Y$ に対して</p>
-	<p><center>$f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.$</center></p>
-</div>
-<details class="prptl">
-	<summary>証明</summary><div class="prp">
-	<p>恒等写像の定義 <a href="#107">[#107]</a> より，$x\in X$ に対して</p>
-	<p><center>$f\circ\mathrm{id}_X(x) = f(\mathrm{id}_X(x)) = f(x)$</center></p>
-	<p>であり，</p>
-	<p><center>$\mathrm{id}_Y\circ f(x) = \mathrm{id}_Y(f(x)) = f(x)$</center></p>
-	<p>である．故に $f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.$</p>
-</div></details>
 <br>
 
-<p id="353">&nbsp;</p><div class="deftl">
-	[#353] 定義：制限写像</div>
-<div class="def">
-	<p>写像 $f:X\rightarrow Y$ と $X$ の部分集合 $A$ に関して，$f$ の始域を $A$ に狭めた写像 $f|_A$ を $f$ の $A$ への【制限写像 (restriction map)】と呼ぶ：</p>
-	<p><center>\begin{align}
-		f|_A: A\to Y,\quad x\mapsto f(x).
-		\end{align}</center></p>
+<p id="1">&nbsp;</p><script>var curbox = CpAs10</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>写像 $f:X\rightarrow Y,\,g:Y\rightarrow Z,\,h:Z\rightarrow W$ に対して，</p>
+	<p>\begin{align}(h\circ g)\circ f = h\circ (g\circ f).\end{align}</p>
 </div>
-<details class="deftl">
-	<summary>補足１</summary><div class="def">
-	<p>制限写像の概念を導入することで，後に定義される「単射」「全射」「全単射」といった概念$\nr{injection-surjection}{100}$ の汎用性が高まる．</p>
-</div></details>
-<details class="deftl">
-	<summary>補足２</summary><div class="def">
-	<p> $f|_A(x) = f(x)$ は成り立つが，$f$ と $f|_A$ は一般には始域が異なっているので，等しいとはいえない$\nr{map}{99}$．</p>
-</div></details>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>合成写像の定義 <a href="#102">[#102]</a> を繰り返し用いることにより，両者が等しいことが確認される：</p>
+	<p>\begin{align*}
+		((h\circ g)\circ f)(x) &= h\circ g(f(x)) = h(g(f(x))),\\
+		(h\circ (g\circ f))(x) &= h(g\circ f(x)) = h(g(f(x))).
+		\end{align*}</p>
+	</div>
+</details>
+</div>
 <br>
-  
-<p id="431">&nbsp;</p><div class="exrtl">
-	[#431] 演習：置換と合成写像</div>
-<div class="exr">
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Id10</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>何も変えない $X$ 上の変換 $\mathrm{id}_X$ を $X$ 上の【恒等変換 (identity transformation)】或いは【恒等写像 (identity map)】と呼ぶ：</p>
+	<p>\begin{align}\mathrm{id}_X:X\rightarrow X,\quad x\mapsto x.\end{align}</p>
+	<p>すなわち $\mathrm{id}_X(x)=x$ である．</p>
+</div>
+</div>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = IdCp10</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>写像 $f:X\rightarrow Y$ に対して</p>
+	<p>\begin{align}f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>恒等写像の定義 <a href="#107">[#107]</a> より，$x\in X$ に対して</p>
+	<p>\begin{align}f\circ\mathrm{id}_X(x) = f(\mathrm{id}_X(x)) = f(x)\end{align}</p>
+	<p>であり，</p>
+	<p>\begin{align}\mathrm{id}_Y\circ f(x) = \mathrm{id}_Y(f(x)) = f(x)\end{align}</p>
+	<p>である．故に $f\circ \mathrm{id}_X = \mathrm{id}_Y\circ f = f.$</p>
+	</div>
+</details>
+</div>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Rs10</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>写像 $f:X\rightarrow Y$ と $X$ の部分集合 $A$ に関して，$f$ の始域を $A$ に狭めた写像 $f|_A$ を $f$ の $A$ への【制限写像 (restriction map)】と呼ぶ：</p>
+	<p>\begin{align}
+		f|_A: A\to Y,\quad x\mapsto f(x).
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>補足１</summary>
+	<div id="tx">
+	<p>制限写像の概念を導入することで，後に定義される「単射」「全射」「全単射」といった概念$\nr{injection-surjection}{100}$ の汎用性が高まる．</p>
+	</div>
+</details>
+<details class="dtl">
+	<summary>補足２</summary>
+	<div id="tx">
+	<p> $f|_A(x) = f(x)$ は成り立つが，$f$ と $f|_A$ は一般には始域が異なっているので，等しいとはいえない$\nr{map}{99}$．</p>
+	</div>
+</details>
+</div>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Pm10</script>
+<div class="exm"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
 	<p>写像 $\sigma,\ \tau$ はともに集合 $\varOmega = \{1,\,2,\,3\}$ 上の変換であり，</p>
 	<p><center>\begin{align}
 		&\sigma: 1\mapsto 2,\ \,2\mapsto 3,\ \,3\mapsto 1,\\
@@ -169,34 +193,38 @@ updated on 2023/3/12
 		<li>$\varOmega$ の各元の $\tau\circ \sigma$ による像を求めよ．</li>
 		<li>$\sigma\circ\sigma\circ\sigma$ はどんな写像か．</li>
 	</ol>
-
 </div>
-<details class="exrtl">
-	<summary>解答</summary><div class="exr">
-	<p></p>
-</div></details>
+<details class="dtl">
+	<summary>解答</summary>
+	<div id="tx">
+	</div>
+</details>
+</div>
 <br>
-  
-<br><br>
-<div id="bib">参考文献</b>
-<ul>
-	<li><a href="https://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/15F/IntroGeom1/Geom15note.pdf">市原一裕: 幾何学序論講義ノート, 公開pdf</a> [2022/9/18 閲覧].</li>
-	<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
-	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-4_shazo.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第4章), 公開pdf</a> [2022/7/13 閲覧].</li>
-	<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-5_douchi.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第5章), 公開pdf</a> [2022/10/31 閲覧].</li>
-	<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社 (2012).</li>
-	<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2014/mapping.pdf">桂田祐史: 写像, pdf</a>.</li>
-	<li><a href="http://ysserve.wakasato.jp/Lecture/SetTheory3/settheory02-1/settheory02-1.html">師玉康成: 集合の基礎的性質 その２－１</a> [2022/10/29 閲覧].</li>
-	<li>星明考: 群論序説, 日本評論社 (2016).</li>
-	<li><a href="http://www4.math.sci.osaka-u.ac.jp/~matsumoto/courses/2016-fs2/">松本佳彦: 2016年度2学期 数学の楽しみ2D</a> [2022/10/28 閲覧].</li>
-	<li><a href="https://sorai-note.com/math/200402/">集合を使って「写像」を作る｜順序対・直積・写像の構成 - 蛍雪に染まる。</a> [2022/10/28 閲覧].</li>
-	<li><a href="https://mathlog.info/articles/2029">「写像は二項関係の特殊なもの」という考え方によるwell-definedの解釈 - Mathlog</a> [2022/10/31 閲覧].</li>
-	<li><a href="http://www.ffortune.net/kazu/set/basic/basic08.htm">集合の基礎(8)写像</a> [2022/10/31 閲覧].</li>
-</ul>
+<!-- End of a box -->
+
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li><a href="https://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/15F/IntroGeom1/Geom15note.pdf">市原一裕: 幾何学序論講義ノート, 公開pdf</a> [2022/9/18 閲覧].</li>
+		<li>一樂重雄: 集合と位相 そのまま使える答えの書き方, 講談社 (2016).</li>
+		<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-4_shazo.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第4章), 公開pdf</a> [2022/7/13 閲覧].</li>
+		<li><a href="https://www.math.is.tohoku.ac.jp/~obata/student/subject/file/2018-5_douchi.pdf">尾畑伸明: 集合・写像・数の体系 数学リテラシーとして (草稿第5章), 公開pdf</a> [2022/10/31 閲覧].</li>
+		<li>梶原健: 図で整理！ 例題で納得！ 線型空間入門, 日本評論社 (2012).</li>
+		<li><a href="http://nalab.mind.meiji.ac.jp/~mk/lecture/literacy-2014/mapping.pdf">桂田祐史: 写像, pdf</a>.</li>
+		<li><a href="http://ysserve.wakasato.jp/Lecture/SetTheory3/settheory02-1/settheory02-1.html">師玉康成: 集合の基礎的性質 その２－１</a> [2022/10/29 閲覧].</li>
+		<li>星明考: 群論序説, 日本評論社 (2016).</li>
+		<li><a href="http://www4.math.sci.osaka-u.ac.jp/~matsumoto/courses/2016-fs2/">松本佳彦: 2016年度2学期 数学の楽しみ2D</a> [2022/10/28 閲覧].</li>
+		<li><a href="https://sorai-note.com/math/200402/">集合を使って「写像」を作る｜順序対・直積・写像の構成 - 蛍雪に染まる。</a> [2022/10/28 閲覧].</li>
+		<li><a href="https://mathlog.info/articles/2029">「写像は二項関係の特殊なもの」という考え方によるwell-definedの解釈 - Mathlog</a> [2022/10/31 閲覧].</li>
+		<li><a href="http://www.ffortune.net/kazu/set/basic/basic08.htm">集合の基礎(8)写像</a> [2022/10/31 閲覧].</li>
+	</ul>
 </div>
-      
-<p style="text-align:right;">
-<a href="index.html">トップページに戻る</a>
-</p>
+<br>
+	
+</div>
+
+<div class="footer"></div>
+
 </body>
 </html>
