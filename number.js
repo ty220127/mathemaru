@@ -7,6 +7,18 @@ var refs = [];
 var ttls = [];
 var bns = [];
 
+//10:map
+bns[10] = [];
+refs[10] = "https://ty220127.github.io/mathemaru/map.html";
+ttls[10] = "写像";
+j = 0;
+j++; Cp10 = j; bns[10][j] = "合成写像";
+j++; CpAs10 = j; bns[10][j] = "合成写像の結合法則";
+j++; Id10 = j; bns[10][j] = "恒等写像";
+j++; IdCp10 = j; bns[10][j] = "恒等写像との合成写像";
+j++; Rs10 = j; bns[10][j] = "制限写像";
+j++; Pm10 = j; bns[10][j] = "置換と合成写像";
+
 //9:eigenvalue_eigenvector
 bns[9] = [];
 refs[9] = "https://ty220127.github.io/mathemaru/eigen.html";
