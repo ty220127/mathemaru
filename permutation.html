@@ -35,6 +35,13 @@
 </head>
 
 <body>
+$\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\diag}{diag}
+\newenvironment{case}[1]
+  {\left\{ \begin{array}{#1}}
+  {\end{array}\right.}$
 <script src="https://ty220127.github.io/mathemaru/number.js"></script>
 <script>
 	const N = 11;
@@ -49,14 +56,6 @@
 
 <div class="modeln">
 <center><script>document.write(ttls[N])</script></center>
-$\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\im}{Im}
-\DeclareMathOperator{\diag}{diag}
-\newenvironment{case}[1]
-  {\left\{ \begin{array}{#1}}
-  {\end{array}\right.}$
-
 <div class="modelx">
 	<p>集合 $[n] := \{1,\,2,\,\cdots,\,n\}$ における全単射の変換 $\sigma : [n]\to [n]$ を，$n$ 文字の<b><u>置換 (permutation)</u></b>と呼ぶ．置換 $\sigma$ はしばしば</p>
 	<p>\begin{align}
