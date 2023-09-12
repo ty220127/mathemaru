@@ -1,0 +1,127 @@
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
+<html>
+<head>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["¥¥(","¥¥)"]] } });	
+	MathJax.Hub.Config({ TeX: { Macros: {
+		numref: ['¥¥href{https://ty220127.github.io/mathemaru/#1.html###2}{¥¥scriptsize¥¥sf[¥¥# #2]}',2],
+		nr: ['^¥¥numref{#1}{#2}', 2],
+		braket: ['¥¥langle{#1},¥¥,{#2}¥¥rangle', 2],
+		refeq: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{=}',2],
+		refeqv: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{¥¥equiv}',2],
+		reflr: ['¥¥underset{¥¥hspace{-0.5mm}¥¥numref{#1}{#2}}{¥¥Longleftrightarrow}',2],
+		refr: ['¥¥underset{¥¥numref{#1}{#2}}{¥¥Longrightarrow}',2],
+		refsb: ['¥¥underset{¥¥hspace{-1mm}¥¥numref{#1}{#2}}{¥¥subset}',2],
+		bs: '¥¥boldsymbol', 
+		bcu: '¥¥displaystyle¥¥bigcup', 
+		bca: '¥¥displaystyle¥¥bigcap', 
+		fraction: ['¥¥displaystyle¥¥frac{#1}{#2}', 2],
+		limit: '¥¥displaystyle¥¥lim',
+		sig: '¥¥displaystyle¥¥sum',
+		cpl: '¥¥mathsf{c}',
+		trp: '¥¥mathsf{T}',
+		rd: '¥¥mathrm{d}',
+		intgrl: '¥¥displaystyle¥¥int',
+	}}});
+</script>
+<script>
+	const established = "2022/9/12"
+	const updated = "2023/9/12"
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<script src="https://ty220127.github.io/mathemaru/number.js"></script>
+<script>
+	const N = 11;
+	document.title= ttls[N] + "｜MATHEMARU";
+</script>
+	
+<div class="mathemaru">
+<center><a href="index.html">MATHEMARU</a></center>
+</div>
+
+<div class="boxes">
+
+<div class="modeln">
+<center><script>document.write(ttls[N])</script></center>
+$¥DeclareMathOperator{¥spn}{span} ¥DeclareMathOperator{¥modulo}{mod}
+¥DeclareMathOperator{¥tr}{tr}
+¥DeclareMathOperator{¥im}{Im}
+¥DeclareMathOperator{¥diag}{diag}
+¥newenvironment{case}[1]
+  {¥left¥{ ¥begin{array}{#1}}
+  {¥end{array}¥right.}$
+
+<div class="modelx">
+	<p>集合 $[n] := ¥{1,¥,2,¥,¥cdots,¥,n¥}$ における全単射の変換 $¥sigma : [n]¥to [n]$ を，$n$ 文字の<b><u>置換 (permutation)</u></b>と呼ぶ．置換 $¥sigma$ はしばしば</p>
+	<p>¥begin{align}
+		¥left( ¥begin{array}{cccc}
+			1 & 2 & ¥cdots & n¥¥ ¥sigma(1) & ¥sigma(2) & ¥cdots & ¥sigma(n)
+		¥end{array}¥right)
+		¥end{align}</p>
+	<p>の形で表現される．この表現を<b><u>置換行列 (permutation matrix)</u></b>と呼ぶことがある（cf. <a href="https://ty220127.github.io/mathemaru/matrix.html">行列</a>）．</p>
+	<ul style="margin-top: 5pt; margin-left: 20pt">
+		<li>恒等変換による $n$ 文字の置換 $¥mathbf{1}_n$ を<b><u>恒等置換 (identity permutation)</u></b> と呼ぶ：
+			<p>¥begin{align}
+		¥mathbf{1}_n = ¥left( ¥begin{array}{cccc}
+			1 & 2 & ¥cdots & n¥¥ 1 & 2 & ¥cdots & n
+		¥end{array}¥right).
+			¥end{align}</p></li>
+		<li>置換 $¥sigma$ に対する逆変換による置換 $¥sigma^{-1}$を $¥sigma$ の<b><u>逆置換 (inverse permutation)</u></b>と呼ぶ．</li>
+		<li>２つの置換 $¥sigma,¥ ¥tau$ による合成変換 $¥tau¥circ ¥sigma$ を $¥sigma$ と $¥tau$ の<b><u>積 (product)</u></b>と呼び，しばしば演算子を省略し $¥tau¥sigma$ と表す．</p>
+	</ul>
+</div>
+<p class="modelf">
+Page No. <b><script>document.write(N)</script></b> &ensp;
+<i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<script>document.write(established)</script>&ensp;
+<span class="fa fa-history" aria-hidden="true"></span>&nbsp;<script>document.write(updated)</script>
+</p>
+<details class="dtl">
+	<summary>例</summary>
+	<div class="modelx">
+	<p>演習 <script>nr(10,Pm10)</script> において，変換 $¥sigma,¥ ¥tau$ はそれぞれ</p>
+	<p>¥begin{align}
+		¥sigma = ¥left(¥begin{array}{ccc} 1 & 2 & 3¥¥ 2 & 3 & 1 ¥end{array}¥right),¥quad
+		¥tau = ¥left(¥begin{array}{ccc} 1 & 2 & 3¥¥ 1 & 3 & 2 ¥end{array}¥right)
+		¥end{align}</p>
+	<p>と書き表すことのできる置換である．また $¥sigma¥circ¥sigma¥circ¥sigma = ¥mathbf{1}_3$ である．</p>
+	</div>
+</details>
+</div>
+<br>
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Cy11</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$n$ 文字の置換 $¥sigma: [n]¥to [n]$ で，ある２文字 $i,¥ j ¥in [n]¥ (i¥not = j)$ のみを交換し，他は変えない置換を<b><u>互換 (transposition)</u></b>またはと呼ぶ：</p>
+	<p>¥begin{align}
+		¥sigma(k) = ¥begin{case}{cc} j & (k = i)¥¥ i & (k = j)¥¥ k & (¥text{otherwise}) ¥end{case}
+		¥end{align}</p>
+	<p>$i$ と $j$ を交換する互換をしばしば $(i,¥,j)$ と書く．</p>
+</div>
+</div>
+<br>
+<!-- End of a box -->
+
+<br>
+        <div style="border-left: solid 0.5em transparent; border-right: solid 0.5em transparent; margin-bottom: 1%"><b>参考文献</b>
+	<ul style="border-left: solid 2em transparent; border-right: solid 1em transparent;">
+		<li>齋藤正彦 (2014): 線型代数学, 東京図書.</li>
+		<li><a href="http://www.math.kanagawa-u.ac.jp/mine/linear_alg/linear_alg_2022_04_04.pdf">嶺幸太郎 (2022): 線形代数学講義ノート, 公開pdf</a></li>
+		<li><a href= "https://mathlandscape.com/permutation/">線形代数(行列)における置換・奇置換・偶置換の最低限必要な知識- 数学の景色</a> [2023/9/12 閲覧].</li>
+	</ul>
+</div>
+<br>
+	
+</div>
+
+<div class="footer"></div>
+
+</body>
+</html>
