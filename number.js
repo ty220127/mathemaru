@@ -12,7 +12,7 @@ bns[11] = [];
 refs[11] = "https://ty220127.github.io/mathemaru/permutation.html";
 ttls[11] = "置換";
 j = 0;
-j++; Cy11 = j; bns[11][j] = "サイクル";
+j++; Cy11 = j; bns[11][j] = "互換と巡回置換";
 
 //10:map
 bns[10] = [];
