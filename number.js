@@ -13,6 +13,7 @@ refs[11] = "https://ty220127.github.io/mathemaru/permutation.html";
 ttls[11] = "置換";
 j = 0;
 j++; Cy11 = j; bns[11][j] = "互換と巡回置換";
+j++; CyTr11 = j; bns[11][j] = "命題：互換の積による巡回置換の表示";
 
 //10:map
 bns[10] = [];
