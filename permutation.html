@@ -1,3 +1,4 @@
+
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
@@ -28,7 +29,7 @@
 </script>
 <script>
 	const established = "2022/9/12"
-	const updated = "2023/9/13"
+	const updated = "2023/9/18"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,6 +40,7 @@ $\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\im}{Im}
 \DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sgn}{sgn}
 \newenvironment{case}[1]
   {\left\{ \begin{array}{#1}}
   {\end{array}\right.}$
@@ -69,7 +71,7 @@ $\DeclareMathOperator{\spn}{span} \DeclareMathOperator{\modulo}{mod}
 			<p>\begin{align}
 		\mathbf{1}_n = \left( \begin{array}{cccc}
 			1 & 2 & \cdots & n\\ 1 & 2 & \cdots & n
-		\end{array}\right).
+		\end{array}\right)\, \left(= \mathrm{id}_{[n]}\right).
 			\end{align}</p></li>
 		<li>置換 $\sigma$ に対する逆変換による置換 $\sigma^{-1}$を $\sigma$ の<b><u>逆置換 (inverse permutation)</u></b>と呼ぶ．</li>
 		<li>２つの置換 $\sigma,\ \tau$ による合成変換 $\tau\circ \sigma$ を $\sigma$ と $\tau$ の<b><u>積 (product)</u></b>と呼び，しばしば演算子を省略し $\tau\sigma$ と表す．</p>
@@ -112,6 +114,9 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\sigma(k) = \begin{case}{cl} i_{r+1} & (k = i_r,\ r = 1,\,\cdots,\,\ell-1)\\ i_1 & (k = i_\ell)\\ k & (\text{otherwise}) \end{case}
 		\end{align}</p>
 	<p>で定められているとき，$\sigma$ は長さ $\ell$ の<b><u>巡回置換 (cyclic permutation)</u></b>あるいは <b><u>$\ell$-サイクル ($\ell$-cycle)</u></b>であるといい，しばしば  $(i_1,\,i_2,\,\cdots,\,i_\ell)$ で書き表す．ここで，互換は長さ $2$ の巡回置換である．</p>
+	<ul style="margin-top: 5pt; margin-left: 20pt">
+		<li> ある置換 $\sigma$ が構成要素の互いに重複しないサイクルの積で書き表すことができるとき，その表記を「サイクルの<u><b>分離積 (decomposition)</b></u>で表す」と云う．</li>
+	</ul>
 </div>
 <details class="dtl">
 	<summary>例</summary>
@@ -127,12 +132,95 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 <p id="1">&nbsp;</p><script>var curbox = CyTr11</script>
 <div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
 <div id="tx">
-	<p>任意の $2$ 以上の自然数 $\ell$ に対して，長さ $\ell$ の巡回置換は $(\ell -1)$ 個の互換の積で書き表すことができる．</p>
+	<p>任意の $2$ 以上の自然数 $\ell$ に対して，長さ $\ell$ の巡回置換は</p>
+	<p>\begin{align}
+		(i_1,\,i_2,\,\cdots,\,i_{\ell}) = (i_1,\,i_2)(i_2,\,i_3)\cdots (i_{\ell-1},\,i_{\ell})(i_{\ell},\,i_1)
+		\end{align}</p>
+	<p>のように互換の積で書き表すことができる．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
 	<div id="tx">
-	<p>本命題を数学的帰納法により示す．まず，$\ell = 2$ の場合はそれ自体が互換であるので当然成立する．次にある $\ell$ において本命題が成り立つと仮定する．</p>
+	<p>$2$ 以上の自然数 $\ell$ に対して本命題を $P(\ell)$ とする：
+	<p>\begin{align}
+		P(\ell):(i_1,\,i_2,\,\cdots,\,i_{\ell}) = (i_1,\,i_2)(i_2,\,i_3)\cdots (i_{\ell-1},\,i_{\ell})(i_{\ell},\,i_1).
+		\end{align}</p>
+	<p>以下，$P(\ell)$ を数学的帰納法により示す．まず，$P(2)$ が真であることは，サイクルと互換の関係より自明である．次に，$P(\ell)$ は真と仮定する．このとき，積 $(i_1,\,i_2,\,\cdots,\,i_{\ell})(i_{\ell},\,i_{\ell +1})$ の作用は以下のようにまとめられる：</p>
+	<p>\begin{align}
+		&(i_1,\,i_2,\,\cdots,\,i_{\ell})(i_{\ell},\,i_{\ell +1}) (k)\Rule{0px}{0px}{15px}\\
+			&= \begin{case}{cl}(i_1,\,i_2,\,\cdots,\,i_{\ell})(i_{\ell +1}) & (k = i_{\ell}) \\ (i_1,\,i_2,\,\cdots,\,i_{\ell})(i_{\ell}) & (k = i_{\ell +1}) \\ (i_1,\,i_2,\,\cdots,\,i_{\ell})(k) & (\text{otherwise})\end{case}\Rule{0px}{0px}{40px}\\
+			&=\begin{case}{cl} i_{\ell +1} & (k = i_{\ell}) \\ i_1 & (k= i_{\ell +1}) \\ i_{r+1} & (k = i_r;\, r = 1,\,\cdots,\,\ell -1) \\ k & (\text{otherwise}) \end{case}\Rule{0px}{0px}{55px}\\
+			&=\begin{case}{cl} i_{r+1} & (k = i_r;\, r = 1,\,\cdots,\,\ell ) \\ i_1 & (k= i_{\ell +1}) \\ k & (\text{otherwise}) \end{case}\Rule{0px}{0px}{40px}\\
+			&= (i_1,\,i_2,\,\cdots,\,i_{\ell},\,i_{\ell +1})(k),
+		\end{align}</p>
+	<p>つまり $(i_1,\,i_2,\,\cdots,\,i_{\ell})(i_{\ell},\,i_{\ell +1}) = (i_1,\,i_2,\,\cdots,\,i_{\ell},\,i_{\ell +1})$ である．故に仮定 $P(\ell)$ より</p>
+	<p>\begin{align}
+		(i_1,\,i_2,\,\cdots,\,i_{\ell},\,i_{\ell +1}) =  (i_1,\,i_2)(i_2,\,i_3)\cdots (i_{\ell-1},\,i_{\ell})(i_{\ell},\,i_1)(i_{\ell},\,i_{\ell +1}) 
+		\end{align}</p>
+	<p>を得る．つまり $P(\ell)$ が真ならば $P(\ell +1)$ も真である．以上により，任意の $2$ 以上の自然数 $\ell$ に対して $P(\ell)$ は真である．</p>
+	</div>
+</details>
+</div>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = DeCo11</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>サイクルの分離積は可換である： $\rho_1,\ \rho_2$ を要素の重複のないサイクルとすれば</p>
+	<p>\begin{align}
+		\rho_1 \rho_2 = \rho_2 \rho_1.
+		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p></p>
+	</div>
+</details>
+</div>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = Sg11</script>
+<div class="def"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$\rho_1,\ \rho_2,\ \cdots,\ \rho_m$ を互いに重複のないサイクルとし，置換 $\sigma : [n] \to [n]$ が</p>
+	<p>\begin{align}
+		\sigma = \rho_1 \rho_2 \cdots \rho_m
+		\end{align}</p>
+	<p>のように $\rho_k\, (k = 1,\,\cdots,\,m)$ たちの分離積で書き表されるとする．また，サイクル $\rho$ の長さを $\ell(\rho)$ とする．この下で，$n$ 文字の置換の集合を $S_n$ とし，関数 $p: S_n \to \mathbb{Z}$ を</p>
+	<p>\begin{align}
+		p(\sigma) := \sum_{k=1}^{m} (\ell(\rho_k) -1) = \sum_{k=1}^{m} \ell(\rho_k) -m
+		\end{align}</p>
+	<p>と定義する．これを用いて，関数 $\sgn: S_n \to \{+1,\,-1\}$ を</p>
+	<p>\begin{align}
+		\sgn \sigma := (-1)^{p(\sigma)}
+		\end{align}</p>
+	<p>と定義する．この $\sgn\sigma$ を $\sigma$ の<u><b>符号 (signature, sign)</b></u>と呼ぶ．</p>
+</div>
+<details class="dtl">
+	<summary>解答</summary>
+	<div id="tx">
+	<p></p>
+	</div>
+</details>
+</div>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = SgTh11</script>
+<div class="exm"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$S_3$ を $3$ 要素 $[3] = \{1,\,2,\,3\}$ の置換の集合とし，$\sigma \in S_3$ に対し $\sgn \sigma = +1$ なるものの集合を $S_3^+$，$\sgn \sigma = -1$ なるものの集合を $S_3^-$ とする．このとき $S_3$ の元を $S_3^+,\ S_3^-$ のそれぞれに属するものに分類せよ．</p>
+</div>
+<details class="dtl">
+	<summary>補足</summary>
+	<div id="tx">
+	<p></p>
 	</div>
 </details>
 </div>
