@@ -7,6 +7,13 @@ var refs = [];
 var ttls = [];
 var bns = [];
 
+//12:determinant
+bns[12] = [];
+refs[12] = "https://ty220127.github.io/mathemaru/determinant.html";
+ttls[12] = "行列式";
+j = 0;
+j++; DetSm12 = j; bns[12][j] = "計算：サイズの小さい行列の行列式";
+
 //11:permutation
 bns[11] = [];
 refs[11] = "https://ty220127.github.io/mathemaru/permutation.html";
