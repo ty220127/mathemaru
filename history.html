@@ -43,6 +43,7 @@
 <script>
 	const ttl = "更新履歴"
 	document.title= ttl + "｜MATHEMARU"
+	var LIST = [];
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 </head>
@@ -57,51 +58,54 @@
 </div>
 
 <center>
+<script>i = -1;</script>
 <table rules="rows" style="font-size: 14px">
 <tbody>
-<tr><td rowspan="1" valign="top" nowrap=""><font color="green">230922</font>&nbsp;</td>			
-	<td><a href="determinant.html"><script>document.write(ttls[12])</script></a>：内容を整理<br>
-		[追加]「<script>document.write(bns[12][DetSm12])</script>」<br>
+<tr><td rowspan="2" valign="top" nowrap=""><font color="green">230922</font>&nbsp;</td>
+	<td><a href="history.html">更新履歴</a>：内部制御をアップデート<br>
+<tr>
+	<td><script>i++; LIST[i] = 12; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：内容を整理<br>
+		[追加]「<script>document.write(bns[LIST[i]][DetSm12])</script>」<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230919</font>&nbsp;</td>			
-	<td><a href="permutation.html"><script>document.write(ttls[11])</script></a><br>
-		[本文]「<script>document.write(bns[11][Sg11])</script>」<br>
-		[解答]「<script>document.write(bns[11][SgTh11])</script>」<br>
+	<td><script>i++; LIST[i] = 11; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a><br>
+		[本文]「<script>document.write(bns[LIST[i]][Sg11])</script>」<br>
+		[解答]「<script>document.write(bns[LIST[i]][SgTh11])</script>」<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230918</font>&nbsp;</td>			
-	<td><a href="permutation.html"><script>document.write(ttls[11])</script></a>：ヘッド本文を修正<br>
+	<td><script>i++; LIST[i] = 11; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：ヘッド本文を修正<br>
 		[本文]「<script>document.write(bns[11][Cy11])</script>」<br>
 		[本文][証明]「<script>document.write(bns[11][CyTr11])</script>」<br>
 		[追加]「<script>document.write(bns[11][DeCo11])</script>」<br>
 		[追加]「<script>document.write(bns[11][Sg11])</script>」<br>
 		[追加]「<script>document.write(bns[11][SgTh11])</script>」<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230913</font>&nbsp;</td>			
-	<td><a href="permutation.html"><script>document.write(ttls[11])</script></a><br>
+	<td><script>i++; LIST[i] = 11; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a><br>
 		[本文]「<script>document.write(bns[11][Cy11])</script>」<br>
 		[追加]「<script>document.write(bns[11][CyTr11])</script>」<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230912</font>&nbsp;</td>			
-	<td><a href="permutation.html"><script>document.write(ttls[11])</script></a>：新規作成<br>
+	<td><script>i++; LIST[i] = 11; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：新規作成<br>
 		[追加]「<script>document.write(bns[11][Cy11])</script>」<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230902</font>&nbsp;</td>			
-	<td><a href="map.html"><script>document.write(ttls[10])</script></a>：内容を整理<br>
+	<td><script>i++; LIST[i] = 10; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：内容を整理<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230803</font>&nbsp;</td>			
-	<td><a href="eigen.html"><script>document.write(ttls[9])</script></a>：内容を整理<br>
+	<td><script>i++; LIST[i] = 9; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：内容を整理<br>
 		[本文]「<script>document.write(bns[9][reg9])</script>」<br>
 		[本文]「<script>document.write(bns[9][inv9])</script>」<br>
 		[本文]「<script>document.write(bns[9][pow9])</script>」<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230606</font>&nbsp;</td>			
 	<td><a href="index.html">トップページ</a>：目次を整理<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230520</font>&nbsp;</td>			
-	<td><script>i = 8; document.write("No. " + i)</script> <a href="projection-matrix.html"><script>document.write(ttls[8])</script></a>：内容を整理<br>
+	<td><script>i++; LIST[i] = 8; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：内容を整理<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230517</font>&nbsp;</td>			
-	<td><script>i = 7; document.write("No. " + i)</script> <a href="unitary-matrix.html"><script>document.write(ttls[7])</script></a>：内容を整理<br>
+	<td><script>i++; LIST[i] = 7; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：内容を整理<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230421</font>&nbsp;</td>			
-	<td><a href="numerical-vector.html"><script>document.write(ttls[6])</script></a>：内容を整理<br>
+	<td><script>i++; LIST[i] = 6; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：内容を整理<br>
 		追加：「<script>document.write(bns[6][numvecprop])</script>」<br>
 		追加：「<script>document.write(bns[6][invzeronumvecprop])</script>」<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230412</font>&nbsp;</td>			
-	<td><a href="norm-space.html"><script>document.write(ttls[5])</script></a>：ページ作成<br>
+	<td><script>i++; LIST[i] = 5; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：ページ作成<br>
 		追加：「<script>document.write(bns[5][normisdist])</script>」<br>
 <tr><td rowspan="1" valign="top" nowrap=""><font color="green">230411</font>&nbsp;</td>			
-	<td><a href="inner-product-space.html"><script>document.write(ttls[4])</script></a>：ページ作成／以下を追加：<br>
+	<td><script>i++; LIST[i] = 4; document.write(LIST[i]+". ")</script><a class="page"><script>document.write(ttls[LIST[i]])</script></a>：ページ作成<br>
 		「<script>document.write(bns[4][antilinearity])</script>」<br>
 		「<script>document.write(bns[4][inprodisnorm])</script>」<br>
 <tr><td rowspan="2" valign="top" nowrap=""><font color="green">230408</font>&nbsp;</td>			
@@ -557,20 +561,22 @@
 </html>
 
 <script>
+console.log(LIST);
+
  var moji = "PgNo"
     var tmp = document.getElementsByClassName("page") ;
 	console.log(tmp)
 
-    for(var i=0; i<=tmp.length-1;i++){
+    for(var j=0; j<=tmp.length-1;j++){
         //id追加
-        tmp[i].setAttribute("id",moji+i);
+        tmp[j].setAttribute("id",moji+ j);
     }
 
 var tt = [];
 
-for(var i = 0; i <= tmp.length-1; i++){
-	tt[i] = document.getElementById("PgNo" + i);
-	tt[i].href = refs[i+1];
+for(var j = 0; j <= tmp.length-1; j++){
+	tt[j] = document.getElementById("PgNo" + j);
+	tt[j].href = refs[LIST[j]];
 }
 console.log(tt)
 console.log(tt.href)
