@@ -13,6 +13,12 @@ refs[12] = "https://ty220127.github.io/mathemaru/determinant.html";
 ttls[12] = "行列式";
 j = 0;
 j++; DetSm12 = j; bns[12][j] = "計算：サイズの小さい行列の行列式";
+j++; DetTr12 = j; bns[12][j] = "命題：転置行列の行列式";
+j++; DetId12 = j; bns[12][j] = "命題：同一ペアを持つ行列式は0";
+j++; DetLn12 = j; bns[12][j] = "命題：行列式の多重線形性";
+j++; DetCt12 = j; bns[12][j] = "命題：行列式の定数倍";
+j++; DetPr12 = j; bns[12][j] = "命題：行列式の積は積の行列式";
+j++; DetIv12 = j; bns[12][j] = "命題：逆行列と正則性と行列式";
 
 //11:permutation
 bns[11] = [];
