@@ -1,4 +1,3 @@
-
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="https://ty220127.github.io/mathemaru/styles.css"/>
 <html>
@@ -29,7 +28,7 @@
 </script>
 <script>
 	const established = "2022/9/12"
-	const updated = "2023/9/19"
+	const updated = "2023/9/29"
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -91,6 +90,20 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 		\tau = \left(\begin{array}{ccc} 1 & 2 & 3\\ 1 & 3 & 2 \end{array}\right)
 		\end{align}</p>
 	<p>と書き表すことのできる置換である．また $\sigma\circ\sigma\circ\sigma = \mathbf{1}_3$ である．</p>
+	</div>
+</details>
+<details class="dtl">
+	<summary>表記</summary>
+	<div class="modelx">
+	<p>置換 $\sigma$ に関して，以下のような表記は許容されるとする：</p>
+	<ul style="margin-top: 5pt; margin-left: 20pt; margin-bottom: 5pt">
+		<li>元の置換から列を入れ換えた表記をしても良い．</li>
+		<li>置換 $\sigma$ で動かない（$\sigma(i) = i$）のとき，該当する列は略記してよい．</li>
+	</ul>
+	<p>例えば，</p>
+	<p>\begin{align}
+		\left(\begin{array}{ccc} 1 & 2 & 3 & 4\\ 4 & 2 & 1 & 3 \end{array}\right) = \left(\begin{array}{ccc} 3 & 1 & 4 & 2\\ 1 & 4 & 3 & 2\end{array}\right) = \left(\begin{array}{ccc} 1 & 4 & 3\\ 4 & 3 & 1 \end{array}\right).
+		\end{align}</p>
 	</div>
 </details>
 </div>
@@ -172,6 +185,50 @@ Page No. <b><script>document.write(N)</script></b> &ensp;
 	<p>\begin{align}
 		\rho_1 \rho_2 = \rho_2 \rho_1.
 		\end{align}</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p></p>
+	</div>
+</details>
+</div>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = PmCy11</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$n$ 文字の置換 $\sigma: [n]\to [n]$ について，任意の $k\in [n]$ に対して</p>
+	<p>\begin{align}
+		\sigma^m (k) = k
+		\end{align}</p>
+	<p>を満たす自然数 $m$ が存在する．</p>
+</div>
+<details class="dtl">
+	<summary>証明</summary>
+	<div id="tx">
+	<p>$[n] = \{1,\,2,\,\cdots,\,n\}$ は有限集合であるから，列 $(\sigma^m(k))_{m=1}^{\infty}$ には重複する項が存在する．つまり $\sigma^{m_1}(k) = \sigma^{m_2}(k)$ なる自然数 $m_1 \gt m_2$ が存在する．この下で，$k' := \sigma^{m_1 -m_2}(k) = k$ であることを示す．</p>
+	<p>\begin{align}
+		\sigma^{m_1}(k) = \sigma^{m_2}(\sigma^{m_1-m_2}(k)) = \sigma^{m_2}(k')
+		\end{align}</p>
+	<p>であり，$m_1,\ m_2$ の決め方より</p>
+	<p>\begin{align}
+		\sigma^{m_2}(k') = \sigma^{m_2}(k)
+		\end{align}</p>
+	<p>とわかる．$\sigma$ は全単射であるから，$k' = k$．つまり $m = m_1 -m_2$ とすれば目標の $m$ が得られる．</p>
+	</div>
+</details>
+</div>
+<br>
+<!-- End of a box -->
+
+<!-- Beginning of a box -->
+<p id="1">&nbsp;</p><script>var curbox = PmCl11</script>
+<div class="prp"><p style="border-left:5px solid transparent;"><script>nr(N,curbox)</script>&nbsp; <script>document.write(bns[N][curbox])</script></p>
+<div id="tx">
+	<p>$A_p = \{ \sigma^t(k)\,|\,t = 0,\,1,\,2,\,\cdots\}$ とおくと，制限写像 $\sigma|_{A_p}$ は $A_p$ 上の恒等置換か巡回置換になる．</p>
 </div>
 <details class="dtl">
 	<summary>証明</summary>
